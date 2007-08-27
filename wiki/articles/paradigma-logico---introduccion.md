@@ -55,3 +55,24 @@ Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca d
 [predicados](predicado.html) : Los predicados son las cosas que queremos decir (o predicar, je) acerca de los invividuos. En este ejemplo los predicados son **mortal** y **hombre**.  
 
 Ojo que cuando decimos que Sócrates es un individuo no tiene que ver con que sea una persona, no pasa por ahí. Si hicieramos por ejemplo un sistema para controlar correlatividades entre las materias de la facultad, las materias serían individuos. Y podríamos tener un predicado que cuente qué materias cursaste y otro que refleje las correlatividades de la carrera, a partir de esa información el motor te podría decir qué materias podés cursar (traten de hacer este sistema en prolog y luego en C y vean la diferencia).
+
+Universo Cerrado
+----------------
+
+**¿Qué pasa si pregunto si aristóteles es mortal?**: <code>
+
+    ?- mortal(aristoteles).
+
+</code>
+
+El motor va a arrancar buscando los hechos y reglas que hablen de los mortales. Al hacer esto se va a encontrar con nuestra única regla, que dice que los hombres son mortales. Acto seguido intentará verificar si aristoteles es un hombre, ¿y qué pasa? Nuestra base de conocimientos no dice nada acerca de aristóteles, por lo tanto no se puede verificar que Aristóteles sea mortal.
+
+En este momento aparece un concepto que llamamos [principio de universo cerrado](principio-de-universo-cerrado.html), que dice que el motor asume como falso todo lo que no pueda probar como verdadero, es decir que si al preguntarle si aristoteles es mortal, me va a contestar que no!
+
+Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares) trabajan con este principio, pero ojo, no es la única forma de trabajar. Sin embargo es algo bastante frecuente, dado que lo contrario es en general más complicado para el motor.
+
+¿Cómo se soluciona esto? Bueno fácil: <code>
+
+    hombre(aristoteles).
+
+</code> Si volvemos a hacer la misma consulta ahora vamos a tener el resultado esperado.
