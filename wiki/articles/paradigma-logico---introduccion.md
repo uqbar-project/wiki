@@ -23,7 +23,8 @@ qué mortales conoce, y nos va a decir que socrates es mortal
 
 Esos son los dos tipos de preguntas básicas que el motor va a saber contestar, después vamos a bajar en detalle sobre esto.
 
-### ¿Cómo lo bajamos a código?
+¿Cómo lo bajamos a código?
+--------------------------
 
 Programemos este mismo ejemplo en Prolog, en realidad es bastante simple: <code>
 
@@ -32,7 +33,14 @@ Programemos este mismo ejemplo en Prolog, en realidad es bastante simple: <code>
 
 </code>
 
-¿Qué quiere decir esto? Vamos por partes, primero la base de conocimientos se compone de predicados e individuos.
+¿Qué quiere decir esto? Bueno, es bastante fácil.
+
+-   `hombre(socrates)`hola.
+
+Más detallado
+-------------
+
+Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada, la base de conocimientos se compone de predicados e individuos.
 
 [individuos](individuo.html) : Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En este ejemplo el único individuo que aparece es **socrates**.
 [predicados](predicado.html) : Los predicados son las cosas que queremos decir (o predicar, je) acerca de los invividuos. En este ejemplo los predicados son **mortal** y **hombre**.  
