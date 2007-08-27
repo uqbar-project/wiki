@@ -46,8 +46,8 @@ Pero la principal diferencia entre el hecho y la regla es que la regla tiene un 
 
 Los hechos me permiten definir **por extensión** el conjunto de individuos que tienen una característica. Las reglas me permiten hacer esa misma definición **por comprensión**.
 
-Más detallado
--------------
+Un poco más de teoría
+---------------------
 
 Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada, la base de conocimientos se compone de predicados e individuos.
 
