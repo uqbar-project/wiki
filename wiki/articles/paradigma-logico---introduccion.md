@@ -77,7 +77,9 @@ En este momento aparece un concepto que llamamos [principio de universo cerrado]
 
 Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares) trabajan con este principio. Aunque no es la única forma de trabajar, es algo bastante frecuente dado que lo contrario es en general más complicado de implementar y de utilizar.
 
-*¿Cómo solucionar el problema?* Agregando el hecho que indica que Aristóteles es un hombre: <code>
+*¿Cómo solucionar el problema?*
+
+Agregando el hecho que indica que Aristóteles es un hombre: <code>
 
     hombre(aristoteles).
 
