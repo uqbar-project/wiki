@@ -35,7 +35,8 @@ En este punto seguramente se preguntarán si es posible hacer un programa que ex
                                                                  // del alumno
       not(curso(Alumno, Materia)),                               // No cursó la materia
       forall(correlativa(Materia, Corr), curso(Alumno, Corr)).   // Cursó todas las correlativas
-    </code>
+
+</code>
 
 Elementos en un programa declarativo
 ------------------------------------
