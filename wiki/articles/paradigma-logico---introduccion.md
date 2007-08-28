@@ -59,7 +59,7 @@ Ojo que cuando decimos que Sócrates es un individuo no tiene que ver con que se
 Los predicados se componen de [cláusulas](clausula.html), que tienen dos formas:
 
 [hechos](hecho.html) : Que hacen una afirmación incondicional, generalmente sobre un individuo particular.
-[reglass](reglas.html) : Que definen una implicación, es decir que se puede saber si se cumple un predicado a partir de la definición de otros predicados. Una regla se compone de una **cabeza** (`mortal(X)`) y un **cuerpo** (`hombre(X)`), unidos por el símbolo :- que denominamos **cuello**. La implicación tiene el orden de antecedente invertido a lo usual: cabeza ⇐ cuerpo.  
+[reglas](regla.html) : Que definen una implicación, es decir que se puede saber si se cumple un predicado a partir de la definición de otros predicados. Una regla se compone de una **cabeza** (`mortal(X)`) y un **cuerpo** (`hombre(X)`), unidos por el símbolo :- que denominamos **cuello**. La implicación tiene el orden de antecedente invertido a lo usual: cabeza ⇐ cuerpo.  
 
 Universo Cerrado
 ----------------
