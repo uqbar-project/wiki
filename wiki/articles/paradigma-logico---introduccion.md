@@ -59,9 +59,7 @@ Ojo que cuando decimos que Sócrates es un individuo no tiene que ver con que se
 Universo Cerrado
 ----------------
 
-##### ¿Qué pasa si ahora quiero preguntar si Aristóteles es mortal?
-
-<code>
+***¿Qué pasa si ahora quiero preguntar si Aristóteles es mortal?*** <code>
 
     ?- mortal(aristoteles).
 
