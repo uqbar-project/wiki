@@ -73,9 +73,9 @@ Universo Cerrado
 
 En este momento aparece un concepto que llamamos [principio de universo cerrado](principio-de-universo-cerrado.html), que dice que el motor asume como falso todo lo que no pueda probar como verdadero, es decir que si al preguntarle si aristoteles es mortal, me va a contestar que no!
 
-Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares) trabajan con este principio, pero ojo, no es la única forma de trabajar. Sin embargo es algo bastante frecuente, dado que lo contrario es en general más complicado para el motor.
+Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares) trabajan con este principio. Aunque no es la única forma de trabajar, es algo bastante frecuente dado que lo contrario es en general más complicado de implementar y de utilizar.
 
-¿Cómo se soluciona esto? Bueno fácil, hay que agregar el hecho que indica que Aristóteles es un hombre: <code>
+*¿Cómo solucionar el problema?* Agregando el hecho que indica que Aristóteles es un hombre: <code>
 
     hombre(aristoteles).
 
