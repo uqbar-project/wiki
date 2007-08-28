@@ -65,6 +65,8 @@ Universo Cerrado
 
 </code>
 
+Al ejecutar esa consulta, la secuencia de pasos del motor (simplificada) es la siguiente:
+
 1.  El motor buscará en la base de conocimientos las diferentes cláusulas del predicado `mortal/1`, en particular las que matcheen con `mortal(aristoteles)`.
 2.  Al hacer esto encontrará una única regla: `mortal(X):-hombre(X)`. Ergo, para probar que Aristóteles es mortal, deberá probar que es hombre.
 3.  Al intentar verificar si aristoteles es un hombre, es decir la consulta `hombre(aristoteles)`.
