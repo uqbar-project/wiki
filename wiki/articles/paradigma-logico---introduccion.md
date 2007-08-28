@@ -51,15 +51,18 @@ Un poco más de teoría
 
 Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada, la base de conocimientos se compone de predicados e individuos.
 
-[individuos](individuo.html) : Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En este ejemplo el único individuo que aparece es **socrates**.
-[predicados](predicado.html) : Los predicados son las cosas que queremos decir (o predicar, je) acerca de los invividuos. En este ejemplo los predicados son **mortal** y **hombre**.  
-
-Ojo que cuando decimos que Sócrates es un individuo no tiene que ver con que sea una persona, no pasa por ahí. Si hicieramos por ejemplo un sistema para controlar correlatividades entre las materias de la facultad, las materias serían individuos. Y podríamos tener un predicado que cuente qué materias cursaste y otro que refleje las correlatividades de la carrera, a partir de esa información el motor te podría decir qué materias podés cursar (traten de hacer este sistema en prolog y luego en C y vean la diferencia).
+[individuos](individuo.html) : Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En este ejemplo el único individuo que aparece es **socrates**. Cabe aclarar que al decir que Sócrates es un individuo eso no tiene que ver con que sea una persona, individuo es cualquier entidad acerca de la cual nos interese estudiar sus características o sus relaciones con otros individuos. Si hicieramos por ejemplo un sistema para controlar correlatividades entre las materias de la facultad, las materias serían individuos.
+[predicados](predicado.html) : Los predicados son las cosas que queremos decir (o predicar, je) acerca de los invividuos. En este ejemplo los predicados son **mortal** y **hombre**. Volviendo al ejemplo del sistema de correlatividades, seguramente tendría un predicado que indiquen qué materias cursó un alumno y otro que indique la correlatividad entre dos materias.  
 
 Los predicados se componen de [cláusulas](clausula.html), que tienen dos formas:
 
 [hechos](hecho.html) : Que hacen una afirmación incondicional, generalmente sobre un individuo particular.
 [reglas](regla.html) : Que definen una implicación, es decir que se puede saber si se cumple un predicado a partir de la definición de otros predicados. Una regla se compone de una **cabeza** (`mortal(X)`) y un **cuerpo** (`hombre(X)`), unidos por el símbolo :- que denominamos **cuello**. La implicación tiene el orden de antecedente invertido a lo usual: cabeza ⇐ cuerpo.  
+
+Al predicado mortal se lo suele nombrar `mortal/1` porque tiene un parámetro. La clasificación de los predicados según la cantidad de parámetros que tienen es interesante para comprender el signifidado de un programa:
+
+[Predicado Monádico](predicado-monadico.html) (un único parámetro) : Expresan características de los individuos.
+[Predicado Poliádico](predicado-poliadico.html) (dos o más parámetros) : Expresan relaciones entre los individuos.  
 
 Universo Cerrado
 ----------------
