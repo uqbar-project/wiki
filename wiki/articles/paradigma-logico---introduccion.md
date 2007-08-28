@@ -36,8 +36,7 @@ Programemos este mismo ejemplo en Prolog, en realidad es bastante simple: <code>
 ¿Qué quiere decir esto?
 
 -   `hombre(socrates)` afirma que Sócrates es un hombre, o dicho de otra manera que *socrates* tiene la característica *hombre*. Es una afirmación que afecta únicamente a Sócrates y la llamamos un [hecho](hecho.html).
--   `mortal(X):-hombre(X)` es lo que llamamos una [regla](regla.html). La regla es una implicación, el antecedente es `hombre(X)` y el consecuente es `mortal(X)`. Esto quiere decir que para todo X que tenga la característica *hombre* se da que ese X también tiene la característica *mortal* (o más corto: todos los hombres son mortales).
-    Se puede leer como: X es hombre ⇒ X es mortal;
+-   `mortal(X):-hombre(X)` es lo que llamamos una [regla](regla.html) y se puede leer como: *X es hombre ⇒ X es mortal*. La regla es una implicación, el antecedente es `hombre(X)` y el consecuente es `mortal(X)`. Esto quiere decir que para todo X que tenga la característica *hombre* se da que ese X también tiene la característica *mortal* (o más corto: todos los hombres son mortales).
 
 Fijate que *socrates* está en minúscula, mientras que la *X* aparece en mayúscula, ¿por qué? Los términos en minúscula se refieren a cosas particulares y las palabras en mayúscula son [incógnitas](incognita.html) (o variables).
 
