@@ -65,7 +65,11 @@ Universo Cerrado
 
 </code>
 
-El motor va a arrancar buscando los hechos y reglas que hablen de los mortales. Al hacer esto se va a encontrar con nuestra única regla, que dice que los hombres son mortales. Acto seguido intentará verificar si aristoteles es un hombre, ¿y qué pasa? Nuestra base de conocimientos no dice nada acerca de aristóteles, por lo tanto no se puede verificar que Aristóteles sea mortal.
+1.  El motor buscará en la base de conocimientos las diferentes cláusulas del predicado `mortal/1`, en particular las que matcheen con `mortal(aristoteles)`.
+2.  Al hacer esto encontrará una única regla: `mortal(X):-hombre(X)`. Ergo, para probar que Aristóteles es mortal, deberá probar que es hombre.
+3.  Al intentar verificar si aristoteles es un hombre, es decir la consulta `hombre(aristoteles)`.
+4.  Pero la única definición del predicado hombre no matchea con `hombre(aristoteles)`.
+5.  La base de conocimientos no dice nada acerca de aristóteles, por lo tanto no se puede verificar que Aristóteles sea mortal.
 
 En este momento aparece un concepto que llamamos [principio de universo cerrado](principio-de-universo-cerrado.html), que dice que el motor asume como falso todo lo que no pueda probar como verdadero, es decir que si al preguntarle si aristoteles es mortal, me va a contestar que no!
 
