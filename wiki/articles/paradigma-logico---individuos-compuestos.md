@@ -27,4 +27,4 @@ donde, como la cola también es una lista, puedo hacer
 
 Probar p.ej. con esta consulta
 
-`  ?- [Elem1 | [ Elem2 | Resto ] ] = [a,e,i,o,u]`
+`  ?- [Elem1 | [ Elem2 | Resto ] ] = [a,e,i,o,u].`
