@@ -67,7 +67,8 @@ En este caso necesito dos ciudades del país, las voy a llamar C1 y C2.
   
 Resolvamos pasaPorPais/2 ... acá necesitamos
 
-- la lista de ciudades, para eso tenemos el predicado tour/2, la voy a llamar LCiud. - la ciudad, a la que voy a llamar C. ¿Qué le tiene que pasar a C? Estar en LCiud (member/2) y ser del país (pais/2)
+-   la lista de ciudades, para eso tenemos el predicado tour/2, la voy a llamar LCiud.
+-   la ciudad, a la que voy a llamar C. ¿Qué le tiene que pasar a C? Estar en LCiud (member/2) y ser del país (pais/2)
 
   
 Queda
