@@ -2,6 +2,10 @@
 
 Predicado
 
+Relación
+
+Propiedad
+
 Cláusula
 
 Hecho
