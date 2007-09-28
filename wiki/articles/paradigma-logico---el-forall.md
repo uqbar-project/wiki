@@ -1,0 +1,3 @@
+... falta ...
+
+Contar el tema de las variables, es bastante loco y un poquito en contra de lo que decimos
