@@ -1,3 +1,5 @@
+... falta armar ... acá poner las definiciones de
+
 Predicado
 
 Cláusula
