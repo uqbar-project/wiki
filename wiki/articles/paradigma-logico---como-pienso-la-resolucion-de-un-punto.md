@@ -51,7 +51,7 @@ Cuando termino, pongo el punto al final de la última cláusula ... y ya está, 
 
 P.ej. ¿cuándo es cierto que un tour T pasa por un país P? Cuando la lista de ciudades de T incluye alguna del país P.
 
-Hay muchas veces en que necesito un individuo que no es un argumento del predicado. En ese caso, pienso qué predicado me lo puede "traer", a partir de los individuos que ya tengo (argumentos + los que traje en condiciones anteriores en la misma cláusula). Típicamente, voy a designar estos nuevos individuos con variables, o con cosas más complejas si me conviene aplicar pattern matching.
+Hay muchas veces en que necesito un individuo que no es un argumento del predicado. En ese caso, pienso qué condiciones la relacionan con los individuos que ya tengo (argumentos + los que traje en condiciones anteriores en la misma cláusula). Típicamente, voy a designar estos nuevos individuos con variables, o con cosas más complejas si me conviene aplicar pattern matching.
 
 Veamos algunos ejemplos:
 
@@ -60,7 +60,12 @@ Tenemos que hacer el predicado paisInteresante/1, un país es interesante si tie
 
 En este caso necesito dos ciudades del país, las voy a llamar C1 y C2.
 
-¿cuál es el predicado que me las "trae"? Es el predicado pais, que relaciona ciudad con país (¡¡en ese orden!!). El país lo tengo, es el argumento de paisInteresante; las ciudades van a ser las C1 y C2 que quiero. Queda
+¿Qué condiciones tienen que cumplir C1 y C2?
+
+-   Ser del país, predicado pais/2 que relaciona ciudad con país (¡¡en ese orden!!). El país lo tengo, es el argumento de paisInteresante
+-   Ser grosas, predicado ciudadGrosa/1
+
+Queda
 
 `   paisInteresante(P):- ciudad(C1,P), ciudad(C2,P), ciudadGrosa(C1), ciudadGrosa(C2).`
 
