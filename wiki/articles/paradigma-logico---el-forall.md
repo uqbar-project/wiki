@@ -1,14 +1,15 @@
 1.
 
-El forall es un predicado, o sea, no conviene pensar qué "hace", sino qué relaciona, y/o cuándo se verifica. El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.
+El forall es un predicado, o sea, no conviene pensar qué "hace", sino qué relaciona, y/o cuándo se verifica.
+El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.
 
 2.
 
 El forall recibe dos parámetros, los dos pueden verse como consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de orden superior, porque puede manejar predicados entro de sus parámetros.
 
 Hagámosnos la pregunta ... ¿cuándo se verifica?
-
-Cuando todas las respuestas de la primer consulta son respuestas de la segunda. Dicho "en sencillo", cuando a todos los que les pasa lo primero, les pasa lo segundo.
+Cuando a todos los que les pasa lo primero, les pasa lo segundo.
+Dicho un poco más "en técnico", cuando todas las respuestas de la primer consulta son respuestas de la segunda.
 
 Entonces, en las situaciones donde decimos "a todos los que ...blah... les pasa ...bleh..." es probable que el forall nos venga bien.
 
@@ -23,12 +24,72 @@ Un ejemplo: partimos de estos hechos
     amargo(cebada).
 
     leGusta(roque,chocolate).
+    leGusta(roque,radicheta).
+    leGusta(pepe,cebada).
     % ... y muchos hechos más que describen los gustos de un grupo de personas
+
+    colorDePelo(roque,colorado).
+    colorDePelo(pepe,castanio).
+    % ... etc. con los colores de pelo
+
+    vive(roque,buenosAires).
+    vive(pepe,mendoza).
+    % ... y donde vive cada persona de la que queremos hablar
 
 y queremos definir esTierno/1, donde decimos que una persona es tierna si todas las cosas que le gustan son dulces.
 
 Estamos en un caso candidato a forall: "a todas las cosas que le gustan les tiene que pasar ser dulces". En Prolog:
 
-`   esTierno(P):- forall(leGusta(P,Cosa), dulce(Cosa)).`
+`   esTierno(P):- forall(leGusta(P,Alim), dulce(Alim)).`
 
-Contar el tema de las variables, es bastante loco y un poquito en contra de lo que decimos
+... P es tierno si ... todas las cosas que le gustan son dulces, exactamente lo que dijimos en castellano.
+
+Ahora quiero definir el predicado alimentoCurioso/1, un alimento es curioso si solamente le gusta a gente de pelo colorado.
+Para darme cuenta que el forall me puede servir, lo pienso en términos de "a todos los que ... les tiene que pasar ...". A veeer
+
+-   a todas **las personas** que ... les gusta el alimento
+-   les tiene que pasar ... ser coloradas
+
+Queda
+
+`   alimentoCurioso(A):- forall(leGusta(P,A), esColorado(P)).`
+
+4.
+
+Supongamos que hacemos esta consulta:
+
+`   ?- esTierno(roque).`
+
+La P de esTierno se liga con roque ... entonces el forall se va a verificar (ver la defi técnica) cuando
+
+-   todas las respuestas a la consulta
+        leGusta(roque,Alim)
+
+-   verifiquen la consulta
+        dulce(Alim)
+
+Para cada respuesta a la consulta leGusta(roque,Alim), la variable Alim se va a ligar, en el ejemplo hay dos respuestas, una con chocolate y otra con cebada.
+La consulta correspondiente ya viene con esa variable ligada, o sea que las consultas que se tienen que verificar para que se verifique el forall son
+
+`   esDulce(chocolate).`
+`   esDulce(cebada).`
+
+Volvamos a la definición: el forall se verifica si todas las respuestas a la primer consulta son respuestas de la segunda. Mirando el ejemplo de recién debería cerrar el esquema.
+
+5.
+
+Veamos qué pasa con las variables y la inversibilidad.
+¿Será inversible el predicado esTierno/1? Hagamos la consulta con una variable en el argumento
+
+`   ?- esTierno(X).`
+
+En este caso la P llega sin ligar al forall. Entonces la primer consulta es
+
+`   ?- leGusta(P,Alim).`
+
+Para cada una de las respuestas a esta consulta, se tiene que verificar esDulce(Alim) donde Alim es lo que ligó la primer consulta.
+
+¿Cuáles son las respuestas a la primer consulta? **Todos** los pares (persona,alimento) relacionados por leGusta.
+Entonces, el forall sólo se va a verificar si cualquier cosa que le guste **a alguien**, no importa a quién, es dulce.
+
+Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall
