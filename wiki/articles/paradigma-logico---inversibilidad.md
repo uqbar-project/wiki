@@ -21,7 +21,10 @@ Cuando un predicado es inversible, también podés hacer otro tipo de consultas,
 
 Esta característica es exclusiva del paradigma lógico, ya que está basado en el concepto de relación matemática (y no en el de función).
 
-== ¿Cómo hacés que un predicado sea inversible? Con lo que tenés que tener cuidado es con las submetas de un predicado que requieren variables unificadas. Por ejemplo: cuando una de las componentes de un predicado es un not/1 , necesitás que el predicado que le mandás tenga sus parámetros unificados. Cuando usás una evaluación matemática (ej: X is N \* 2), necesitás que lo de la derecha (la N) esté unificado.
+¿Cómo hacés que un predicado sea inversible?
+--------------------------------------------
+
+Con lo que tenés que tener cuidado es con las submetas de un predicado que requieren variables unificadas. Por ejemplo: cuando una de las componentes de un predicado es un not/1 , necesitás que el predicado que le mandás tenga sus parámetros unificados. Cuando usás una evaluación matemática (ej: X is N \* 2), necesitás que lo de la derecha (la N) esté unificado.
 
 ¿Cuál sería el uso?
 -------------------
