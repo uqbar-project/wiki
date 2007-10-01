@@ -34,7 +34,12 @@ Un ejemplo: partimos de estos hechos
 
     vive(roque,buenosAires).
     vive(pepe,mendoza).
+    vive(lucas,salliquelo).
     % ... y donde vive cada persona de la que queremos hablar
+
+    ciudadGrande(buenosAires).
+    ciudadGrande(mendoza).
+    % ... y así todas las ciudades grandes
 
 y queremos definir esTierno/1, donde decimos que una persona es tierna si todas las cosas que le gustan son dulces.
 
@@ -143,3 +148,17 @@ está mal, porque el forall lleva dos parámetros, no tres. Necesito agrupar col
 `  esPeculiar(A):- forall(leGusta(P,A), (colorDePelo(P,colorado), vive(P,buenosAires))).`
 
 Pregunto: ¿está bien
+
+`  esPeculiar(A):- forall((leGusta(P,A), colorDePelo(P,colorado)), vive(P,buenosAires)).`
+
+? No, porque estaría pidiendo que todos los colorados a los que les gusta el alimento vivan en Buenos Aires.
+
+8.
+
+Una que les queda para pensar: ahora tengo que decir que un alimento es marketinable si todas las personas a las que les gusta viven en ciudades grandes. No me interesa que el predicado sea inversible.
+
+Tiro tres opciones: elijan la correcta y piensen por qué eligieron esa.
+
+`   esMarketinable(A):- forall(leGusta(P,A), vive(P,C), ciudadGrande(C)).  % opción 1`
+`   esMarketinable(A):- forall((leGusta(P,A), vive(P,C)), ciudadGrande(C)).  % opción 2`
+`   esMarketinable(A):- forall(leGusta(P,A), (vive(P,C), ciudadGrande(C))).  % opción 3`
