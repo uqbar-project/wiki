@@ -56,6 +56,24 @@ Queda
 
 4.
 
+¿Está bien si defino esTierno así?
+
+`   esTierno(P):- forall(dulce(Alim), leGusta(P,Alim)).`
+
+Claramente no, porque estaría pidiendo que le gusten todos los alimentos dulces.
+
+Si programar va a consistir en definir condiciones, es relevante entender la diferencia entre
+
+  
+todos los alimentos que le gustan son dulces
+
+y
+
+  
+le gustan todos los alimentos dulces.
+
+5.
+
 Supongamos que hacemos esta consulta:
 
 `   ?- esTierno(roque).`
@@ -76,7 +94,7 @@ La consulta correspondiente ya viene con esa variable ligada, o sea que las cons
 
 Volvamos a la definición: el forall se verifica si todas las respuestas a la primer consulta son respuestas de la segunda. Mirando el ejemplo de recién debería cerrar el esquema.
 
-5.
+6.
 
 Veamos qué pasa con las variables y la inversibilidad.
 ¿Será inversible el predicado esTierno/1? Hagamos la consulta con una variable en el argumento
@@ -85,11 +103,43 @@ Veamos qué pasa con las variables y la inversibilidad.
 
 En este caso la P llega sin ligar al forall. Entonces la primer consulta es
 
-`   ?- leGusta(P,Alim).`
+`   leGusta(P,Alim).`
 
-Para cada una de las respuestas a esta consulta, se tiene que verificar esDulce(Alim) donde Alim es lo que ligó la primer consulta.
+Para cada una de las respuestas a esta consulta, se tiene que verificar
+
+`   esDulce(Alim) `
+
+donde Alim es lo que ligó la primer consulta.
 
 ¿Cuáles son las respuestas a la primer consulta? **Todos** los pares (persona,alimento) relacionados por leGusta.
 Entonces, el forall sólo se va a verificar si cualquier cosa que le guste **a alguien**, no importa a quién, es dulce.
 
-Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall
+Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall:
+
+`   esTierno(P):- persona(P), forall(leGusta(P,Alim),esDulce(Alim)).`
+
+Una que no falla:
+
+  
+fíjense que siempre decimos "a todos los blah que les pasa la consulta 1, les tiene que pasar la consulta 2".
+
+Bueno, para ese "blah" va a haber una variable, que es Alim en el caso de esTierno (si todos **los alimentos** que le gustan ...) y P para alimentoCurioso (si todas **las personas** a quienes les gusta ...). Esa variable tiene que llegar al forall sin ligar.
+
+7.
+
+Qué pasa si se tienen que cumplir varias condiciones: digamos que un alimento es peculiar si todas las personas a las que le gusta son colorados y porteños ... nos queda
+
+-   a todas **las personas** que ... les gusta el alimento
+-   les tiene que pasar ... ser coloradas y ser porteñas
+
+entonces la segunda consulta es un "y" entre dos condiciones.
+
+Si pongo
+
+`  esPeculiar(A):- forall(leGusta(P,A), colorDePelo(P,colorado), vive(P,buenosAires)).`
+
+está mal, porque el forall lleva dos parámetros, no tres. Necesito agrupar colorDePelo(...) y vive(...), para eso los encierro entre paréntesis, queda
+
+`  esPeculiar(A):- forall(leGusta(P,A), (colorDePelo(P,colorado), vive(P,buenosAires))).`
+
+Pregunto: ¿está bien
