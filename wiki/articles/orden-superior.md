@@ -1,17 +1,16 @@
 ### Paradigma Funcional
 
-In mathematics and computer science, higher-order functions or functionals are functions which do at least one of the following:
+Tanto en matemática como en informática, se definen las funciones de orden superior como funciones que reciben funciones por parámetro o bien devuelven una función como resultado.
 
-`   * take one or more functions as an input`
-`   * output a function`
+La función filter (en haskell y otros lenguajes funcionales) es un ejemplo común de este tipo de funciones ya que recibe por parámetro una función f y una lista y retorna una nueva lista que contiene aquellos elementos que al ser aplicados como parámetros a f devuelven verdadero. La función f debe tener entonces aridad 1 y devolver un valor booleano.
 
-In mathematics these are also known as operators or functionals. The derivative in calculus is a common example, since it maps a function to another function.
+Otras funciones comunes son map, fold, funciones de ordenamiento o búsqueda, composición de funciones, flip, etc. Ejemplos comunes del análisis matemático que es más difícil de ver en los lenguajes de programación son la derivada y la integral (Vemos al "proceso de derivar" como una función que recibe otra función cualquiera y devuelve su derivada).
+
+Other examples of higher-order functions include fold, function composition, integration, and the constant-function function λx.λy.x.
 
 In the untyped lambda calculus, all functions are higher-order; in a typed lambda calculus, from which most functional programming languages are derived, higher-order functions are generally those with types containing more than one arrow. In functional programming, higher-order functions that return other functions are said to be curried.
 
-The map function found in many functional programming languages is one example of a higher-order function. It takes as arguments a function f and a list of elements, and as result, returns a new list with f applied to each element from the list. Another very common kind of higher-order function in those languages which support them are sorting functions which take a comparison function as a parameter, allowing the programmer to separate the sorting algorithm from the comparisons of the items being sorted. The C standard function, qsort, is an example of this.
-
-Other examples of higher-order functions include fold, function composition, integration, and the constant-function function λx.λy.x.
+In mathematics these are also known as operators or functionals. The derivative in calculus is a common example, since it maps a function to another function.
 
 #### ¿La aplicación parcial es también orden superior?
 
