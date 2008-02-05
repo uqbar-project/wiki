@@ -33,6 +33,8 @@ Macros can also be used to achieve some of the effects of higher order functions
 
 Objects in the object-oriented programming paradigm can be used as higher order functions – a method of an object acts in many ways like a function, and a method may take objects (containing methods) as arguments or return objects with methods. Objects often carry additional run-time overhead compared to pure functions, however. Language syntax can introduce additional difficulties; an object must be created to hold any parameters that are functions, and any resulting function must also have an associated object.
 
+The C standard function, qsort, is an example of this.
+
 ### ¿Y los objetos?
 
 Esta me gustó más, ahi vamos, en objetos no tiene sentido reconocer ordenes, porque lo natural es que si la operacion es el mensaje (recordar valores y operaciones), entonces tanto el receptor del mensaje como los parametros son siempre objetos.
