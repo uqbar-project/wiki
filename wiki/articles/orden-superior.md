@@ -19,9 +19,22 @@ Con la aplicacion parcial podes obtener nuevas funciones, y siempre a patir de l
 
 Por ejemplo, + , recibe dos numeros y devuelve otro; yo puedo aplicar parcialmente asi (5+); y obtuve una nueva funcion; pero + no es de orden superior.
 
+<http://www.cs.aau.dk/~normark/prog3-03/html/notes/higher-order-fu_themes-intr-section.html> <http://en.wikipedia.org/wiki/Higher-order_function> <http://weblog.raganwald.com/2007/01/closures-and-higher-order-functions.html>
+
 ### Paradigma Lógico
 
 Decimos que orden superior es porque para el p. logico: un predicado es de Orden Superior si este recibe como argumento otro predicado.
+
+### Paradigma Estructurado
+
+In the imperative programming paradigm, software can achieve some of the same algorithmic results as are obtained through use of higher-order functions by dynamically executing code (sometimes called "Eval" or "Execute" operations) in the scope of evaluation. Unfortunately there are significant drawbacks to this approach:
+
+`   * The argument code to be executed is usually not statically typed; these languages generally rely on dynamic typing to determine the well-formedness and safety of the code to be executed.`
+`   * The argument is usually provided as a string, the value of which may not be known until run-time. This string must either be compiled during program execution (using just-in-time compilation) or evaluated by interpretation, causing some additional overhead at run-time, and usually generating less efficient code.`
+
+Macros can also be used to achieve some of the effects of higher order functions. However, macros cannot easily avoid the problem of variable capture; they may also result in large amounts of duplicated code, which can be more difficult for a compiler to optimize. Macros are generally not strongly typed, although they may produce strongly typed code.
+
+Objects in the object-oriented programming paradigm can be used as higher order functions – a method of an object acts in many ways like a function, and a method may take objects (containing methods) as arguments or return objects with methods. Objects often carry additional run-time overhead compared to pure functions, however. Language syntax can introduce additional difficulties; an object must be created to hold any parameters that are functions, and any resulting function must also have an associated object.
 
 ### ¿Y los objetos?
 
