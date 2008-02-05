@@ -19,14 +19,6 @@ Con la aplicacion parcial podes obtener nuevas funciones, y siempre a patir de l
 
 Por ejemplo, + , recibe dos numeros y devuelve otro; yo puedo aplicar parcialmente asi (5+); y obtuve una nueva funcion; pero + no es de orden superior.
 
-#### Links Relacionados
-
--   [Introduction to higher-order functions](http://www.cs.aau.dk/~normark/prog3-03/html/notes/higher-order-fu_themes-intr-section.html)
--   [Higher-order function](http://en.wikipedia.org/wiki/Higher-order_function)
--   [Closures and Higher-Order Functions](http://weblog.raganwald.com/2007/01/closures-and-higher-order-functions.html)
--   [Higher-order functions and variational calculus](http://ergodicity.iamganesh.com/2006/08/07/higher-order-functions/)
--   [Boost Lambda Library for C++](http://boost.org/doc/html/lambda.html)
-
 ### Paradigma Lógico
 
 Decimos que orden superior es porque para el p. logico: un predicado es de Orden Superior si este recibe como argumento otro predicado.
