@@ -8,15 +8,15 @@ Otras funciones comunes son map, fold, funciones de ordenamiento o búsqueda, co
 
 Other examples of higher-order functions include fold, function composition, integration, and the constant-function function λx.λy.x.
 
-In the untyped lambda calculus, all functions are higher-order; in a typed lambda calculus, from which most functional programming languages are derived, higher-order functions are generally those with types containing more than one arrow. In functional programming, higher-order functions that return other functions are said to be curried.
-
-In mathematics these are also known as operators or functionals. The derivative in calculus is a common example, since it maps a function to another function.
-
 #### ¿La aplicación parcial es también orden superior?
 
 Con la aplicacion parcial podes obtener nuevas funciones, y siempre a patir de la misma, pero no es orden superior. Lo importante es que recibe y que devuelve, eso se ve cuando se analiza el tipo de la funcion.
 
 Por ejemplo, + , recibe dos numeros y devuelve otro; yo puedo aplicar parcialmente asi (5+); y obtuve una nueva funcion; pero + no es de orden superior.
+
+In the untyped lambda calculus, all functions are higher-order; in a typed lambda calculus, from which most functional programming languages are derived, higher-order functions are generally those with types containing more than one arrow. In functional programming, higher-order functions that return other functions are said to be curried.
+
+In mathematics these are also known as operators or functionals. The derivative in calculus is a common example, since it maps a function to another function.
 
 ### Paradigma Lógico
 
