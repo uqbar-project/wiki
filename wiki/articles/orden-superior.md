@@ -51,3 +51,12 @@ Por otro lado me gustaría disentir con la idea de relacionar muy fuertemente a 
 Volviendo al tema principal, el chiste del orden superior es que yo paso algo más complejo que un número, una lista o una estructura (functor, tupla, etc) por parámetro. Al pasar un predicado o función yo paso "comportamiento" por parámetro, el conocimiento de cómo resolver el problema ahora no se divide en datos y algoritmo, sino que la función de orden superior tiene parte del "algoritmo" y la otra parte viene por parámetro. (Nótense las comillas al usar las palabras "algoritmo" y "comportamiento" en los paradigmas declarativos.) Eso le da un poder muy piola a lo que construimos. En fin, ¿cómo llevamos eso de nuevo a objetos? Yo creo que se aprovechan beneficios similares a los del orden superior en el momento en que los objetos que interactúan (el receptor del mensaje y el parámetro) tienen dividido el comportamiento en esa forma, es decir, que el objeto receptor le pide al otro cosas que no sean solamente devolver un dato sino que tengan otra complejidad. Claro, cuando uso un bloque eso pasa siempre, y por eso es tentador establecer la relación. Pero si abrimos un poco la cancha, creo que es fácil ver que ocurre casi siempre que tengamos delegación y responsabilidades bien repartidas.
 
 ### En resumen
+
+### Links Relacionados
+
+-   [Introduction to higher-order functions](http://www.cs.aau.dk/~normark/prog3-03/html/notes/higher-order-fu_themes-intr-section.html)
+-   [Higher-order function](http://en.wikipedia.org/wiki/Higher-order_function)
+-   [Closures and Higher-Order Functions](http://weblog.raganwald.com/2007/01/closures-and-higher-order-functions.html)
+-   [Higher-order functions and variational calculus](http://ergodicity.iamganesh.com/2006/08/07/higher-order-functions/)
+-   [Boost Lambda Library for C++](http://boost.org/doc/html/lambda.html)
+
