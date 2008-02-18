@@ -8,7 +8,8 @@ Paradigmas
 
 -   [Orden Superior](orden-superior.html)
 
-### Arquitecturas
+Arquitecturas
+-------------
 
 -   [Arquitecturas](arquitecturas.html)
 
