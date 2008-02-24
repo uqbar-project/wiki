@@ -9,6 +9,13 @@ Paradigmas
 
 -   [Orden Superior](orden-superior.html)
 
+Técnicas Avanzadas de Programación
+----------------------------------
+
+Apuntes para revisar
+
+-   <http://www.programacion.net/java/articulo/jap_injection/>
+
 Arquitecturas
 -------------
 
