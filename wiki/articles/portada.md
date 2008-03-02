@@ -15,7 +15,7 @@ Técnicas Avanzadas de Programación
 Apuntes para revisar
 
 -   <http://www.programacion.net/java/articulo/jap_injection/>
--   <http://www.cs.utexas.edu/~aibrahim/publications/autofetch.pdf%7CPaper> about Autofetch presented at ECOOP 2006
+-   <http://www.cs.utexas.edu/~aibrahim/publications/autofetch.pdf> Paper about Autofetch presented at ECOOP 2006
 
 Arquitecturas
 -------------
