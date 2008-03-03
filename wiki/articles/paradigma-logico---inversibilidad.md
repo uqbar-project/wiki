@@ -21,6 +21,8 @@ Cuando un predicado es inversible, también podés hacer otro tipo de consultas,
 
 Esta característica es exclusiva del paradigma lógico, ya que está basado en el concepto de relación matemática (y no en el de función).
 
+La inversibilidad no tiene que ver solamente con que "dé error", muchas veces lo que pasa es -que sin dar error- se comporta incorrectamente o de forma distinta a la que uno espera, en ese caso también decimos que no es inversible.
+
 ¿Cómo hacés que un predicado sea inversible?
 --------------------------------------------
 
