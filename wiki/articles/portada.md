@@ -1,4 +1,4 @@
-"Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento" es nuestra idea, la frase salió de [acá](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)
+\[<http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm> Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento
 
 Paradigmas
 ----------
