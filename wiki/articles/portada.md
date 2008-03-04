@@ -1,3 +1,5 @@
+[Ciencia en la argentina](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)
+
 Paradigmas
 ----------
 
