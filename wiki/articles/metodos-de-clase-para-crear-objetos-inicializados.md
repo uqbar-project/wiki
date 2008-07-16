@@ -40,4 +40,4 @@ Vemos que el método
 -   lo configura
 -   **lo devuelve** (muuuuy importante)
 
-*f**r**a**c*12
+$\\frac{1}{2}$
