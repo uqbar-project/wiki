@@ -11,11 +11,10 @@ Para esto hacemos un método al que por convención se lo llama initialize, y le
 `     chofer := unFercho`
 
 `  "... en el workspace ..."`
-`  cacho := Chofer new.`
-`  "..."`
 `  elReyDelAcceso := Camion new.`
 `  elReyDelAcceso initialize.`
 `  elReyDelAcceso conductor: cacho.`
+`  "cacho lo tenía creado más arriba en el workspace"`
 
 Ahora bien, serían muy felices dos cosas
 
@@ -24,7 +23,9 @@ Ahora bien, serían muy felices dos cosas
 
 Con la [lazy inicialization](lazy-inicialization.html), puedo lograr lo primero pero no lo segundo.
 
-Una forma de lograr las dos cosas es definir un método de clase que tiene como objetivo crear un objeto ya configurado y listo para usar. ¿Cómo hacemos? Fácil
+Una forma de lograr las dos cosas es definir un método de clase que tiene como objetivo crear un objeto ya configurado y listo para usar.
+
+¿Cómo hacemos? Fácil
 
 `  #Camion class`
 `  nuevoConducidoPor: unFercho`
@@ -40,4 +41,13 @@ Vemos que el método
 -   lo configura
 -   **lo devuelve** (muuuuy importante)
 
-$\\frac{1}{2}$
+En el workspace nos queda
+
+`  elReyDelAcceso := Camion nuevoConducidoPor: cacho.`
+
+¿qué ganamos?
+
+-   que no nos olvidamos de inicializar ningún camión
+-   que el workspace queda más compacto, importante para los workspace de TP que pueden implicar la creación de muchos objetos.
+-   que si le digo a la gente que va a usar los camiones que los cree siempre diciéndole a la clase lo que yo les indico, todos los camiones van a nacer ya con chofer asignado, lo que tal vez es necesario para que los camiones no den errores después.
+
