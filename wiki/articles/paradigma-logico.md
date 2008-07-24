@@ -5,7 +5,9 @@ Paradigmas
 
 (Ver apunte) Capítulo 1 – De qué se trata esto de “paradigma lógico” 2 ¿Por qué lo de “lógico”? 2 Nuestro primer programa lógico – lenguaje Prolog 2 Entonces, ¿qué es un programa lógico? 2 Condiciones: “y” vs “o” 2
 
-Capítulo 2 – Algunas características relevantes 3 Hipótesis de universo cerrado 3 Consultas existenciales e inversibilidad de predicados 3 Negación 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3
+### Algunas características relevantes
+
+Hipótesis de universo cerrado 3 Consultas existenciales e inversibilidad de predicados 3 Negación 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3
 
 Capítulo 3 – Manejo de conjuntos 3 forall – “a todos los que les pasa A, les pasa B” 3 listas – conjuntos explícitos 3
 
