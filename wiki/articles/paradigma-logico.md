@@ -8,8 +8,6 @@
 
 El paradigma lógico trabaja con el principio de [Universo Cerrado](universo-cerrado.html) Hipótesis de universo cerrado 3 Consultas existenciales e inversibilidad de predicados 3 Negación 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3 Consultas existenciales e inversibilidad de predicados Contar que • una consulta puede tener múltiples respuestas • la inversibilidad se puede dar para predicados monádicos también • la inversibilidad de un predicado se puede analizar argumento x argumento, decimos que es “inversible” a secas cuando es inversible para todos sus argumentos. • No todos los predicados son inversibles, veremos casos de predicados que no resultan inversibles, y también una forma de solucionarlos para que los predicados sí queden inversibles. Negación Variables ligadas y no ligadas – problemas con la inversibilidad Generadores Contar cómo arreglan el problema de la inversibilidad
 
--   [Paradigma Lógico - un poco de nomenclatura](paradigma-logico---un-poco-de-nomenclatura.html)
-
 ### Manejo de conjuntos
 
 forall – “a todos los que les pasa A, les pasa B” • Tener claro si uno quiere poner “uno” o “todos”, si es “todos” va forall, sino va simplemente la condición. Relacionar con cómo se ligan las variables. • Acá también hay problemas con la inversibilidad si ciertas variables no llegan ligadas. Solución con generadores. listas – conjuntos explícitos • Definición de lista: lista vacía o (cabeza y cola) • Pattern matching • Definiciones recursivas • findall o usarlo sólo si lo necesito todo esto con ejemplos de uso
