@@ -26,7 +26,7 @@ La [inversibilidad](paradigma-logico---inversibilidad.html) es la característic
 
 ### Predicados de Orden Superior
 
--   [Orden Superior](orden-superior.html)\* [Paradigma Lógico - introducción](paradigma-logico---introduccion.html)
+-   [Orden Superior](orden-superior.html)
 -   [Paradigma Lógico - el forall](paradigma-logico---el-forall.html)
 
 ### Otros para ordenar
