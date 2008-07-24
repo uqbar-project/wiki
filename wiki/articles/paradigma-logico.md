@@ -4,7 +4,7 @@
 
 ### Algunas características relevantes
 
-Hipótesis de universo cerrado 3 Consultas existenciales e inversibilidad de predicados 3 Negación 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3
+El paradigma lógico trabaja con el principio de [Universo Cerrado](universo-cerrado.html) Hipótesis de universo cerrado 3 Consultas existenciales e inversibilidad de predicados 3 Negación 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3
 
 Capítulo 3 – Manejo de conjuntos 3 forall – “a todos los que les pasa A, les pasa B” 3 listas – conjuntos explícitos 3
 
