@@ -1,11 +1,6 @@
-Paradigmas
-----------
-
 ### Introducción
 
 (Ver apunte) Capítulo 1 – De qué se trata esto de “paradigma lógico” 2 ¿Por qué lo de “lógico”? 2 Nuestro primer programa lógico – lenguaje Prolog 2 Entonces, ¿qué es un programa lógico? 2 Condiciones: “y” vs “o” 2
-
--   [Paradigma Lógico - introducción](paradigma-logico---introduccion.html)
 
 ### Algunas características relevantes
 
