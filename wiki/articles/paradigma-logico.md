@@ -11,7 +11,7 @@ Hipótesis de universo cerrado 3 Consultas existenciales e inversibilidad de pre
 
 Capítulo 3 – Manejo de conjuntos 3 forall – “a todos los que les pasa A, les pasa B” 3 listas – conjuntos explícitos 3
 
-Capítulo 4 – functores 4
+### Algunas características relevantes
 
 Capítulo 5 – manejo de la información 4
 
@@ -30,7 +30,6 @@ Capítulo 6 – más características 4 Polimorfismo en el paradigma lógico 4
 -   [Paradigma Lógico - individuos compuestos](paradigma-logico---individuos-compuestos.html)
 -   [Paradigma Lógico - inversibilidad](paradigma-logico---inversibilidad.html)
 -   [Paradigma Lógico - casos de no inversibilidad](paradigma-logico---casos-de-no-inversibilidad.html)
--   [Paradigma Lógico - functores](paradigma-logico---functores.html)
 -   [Paradigma Lógico - generación](paradigma-logico---generacion.html)
 
 <!-- -->
