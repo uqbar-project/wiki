@@ -28,10 +28,7 @@ Capítulo 6 – más características 4 Polimorfismo en el paradigma lógico 4
 
 ### Inversibilidad
 
-La [inversibilidad](paradigma-logico---inversibilidad.html) es la característica que blah
-
--   [Paradigma Lógico - casos de no inversibilidad](paradigma-logico---casos-de-no-inversibilidad.html)
--   [Paradigma Lógico - generación](paradigma-logico---generacion.html)
+La [inversibilidad](paradigma-logico---inversibilidad.html) es la característica que blah, pero [no siempre](paradigma-logico---casos-de-no-inversibilidad.html) funca y en esos casos lo resolvemos con [generación](paradigma-logico---generacion.html)
 
 ### Predicados de Orden Superior
 
