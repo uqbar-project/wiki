@@ -1,10 +1,18 @@
-### Introducción
+### ¿Por qué lo de “lógico”?
 
-(Ver apunte) Capítulo 1 – De qué se trata esto de “paradigma lógico” 2 ¿Por qué lo de “lógico”? 2 Nuestro primer programa lógico – lenguaje Prolog 2 Entonces, ¿qué es un programa lógico? 2 Condiciones: “y” vs “o” 2
+Porque está relacionado con conceptos de lógica matemática, en particular:
+
+-   predicado
+-   sintaxis
+-   fórmula
+-   razonamiento
+-   deducción
+
+Es un paradigma [declarativo](declaratividad.html)
 
 -   [Paradigma Lógico - un poco de nomenclatura](paradigma-logico---un-poco-de-nomenclatura.html)
 
-¿Por qué lo de “lógico”? Porque está relacionado con conceptos de lógica matemática, en particular: • predicado • sintaxis • fórmula • razonamiento • deducción Veámoslo con el ejemplo más viejo del mundo. Poner acá el ejemplo de Sócrates. Nuestro primer programa lógico – lenguaje Prolog Un programa lógico es un conjunto de definiciones de predicados. En este apunte vamos a usar el lenguaje Prolog, que es (en una primera visión) una restricción del lenguaje de la lógica de predicados con una sintaxis distinta. Para dar una introducción intuitiva a la sintaxis de Prolog, traduzcamos el ejemplo de Sócrates. mortal(X):- hombre(X). hombre(socrates). introducir el concepto de cláusula, y contar lo de cabeza y cuerpo. distinguir hechos de reglas. contar que en el cuerpo pueden ir varias condiciones, separadas por comas que representan un “y”. contar que se le pueden hacer consultas (quedarnos con las individuales) … Entonces, ¿qué es un programa lógico? Un programa lógico es un conjunto de definiciones de predicados. Cada definición puede tener varias cláusulas. Meter otro ejemplo y comentarlo un poco Condiciones: “y” vs “o” Esta sección es para que detecten cuándo es “y” y cuándo es “o”, separando en cláusulas cuando es “o” y poniendo todo en la misma cuando es “y”.
+Veámoslo con el ejemplo más viejo del mundo. Poner acá el ejemplo de Sócrates. Nuestro primer programa lógico – lenguaje Prolog Un programa lógico es un conjunto de definiciones de predicados. En este apunte vamos a usar el lenguaje Prolog, que es (en una primera visión) una restricción del lenguaje de la lógica de predicados con una sintaxis distinta. Para dar una introducción intuitiva a la sintaxis de Prolog, traduzcamos el ejemplo de Sócrates. mortal(X):- hombre(X). hombre(socrates). introducir el concepto de cláusula, y contar lo de cabeza y cuerpo. distinguir hechos de reglas. contar que en el cuerpo pueden ir varias condiciones, separadas por comas que representan un “y”. contar que se le pueden hacer consultas (quedarnos con las individuales) … Entonces, ¿qué es un programa lógico? Un programa lógico es un conjunto de definiciones de predicados. Cada definición puede tener varias cláusulas. Meter otro ejemplo y comentarlo un poco Condiciones: “y” vs “o” Esta sección es para que detecten cuándo es “y” y cuándo es “o”, separando en cláusulas cuando es “o” y poniendo todo en la misma cuando es “y”.
 
 #### Negación
 
