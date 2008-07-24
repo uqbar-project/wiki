@@ -8,7 +8,7 @@ El paradigma lógico trabaja con el principio de [Universo Cerrado](universo-cer
 
 Capítulo 3 – Manejo de conjuntos 3 forall – “a todos los que les pasa A, les pasa B” 3 listas – conjuntos explícitos 3
 
-### Algunas características relevantes
+### Tipos de datos en Prolog
 
 Capítulo 5 – manejo de la información 4
 
