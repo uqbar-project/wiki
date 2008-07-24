@@ -66,31 +66,4 @@ Al predicado mortal se lo suele nombrar `mortal/1` porque tiene un parámetro. L
 [Predicado Monádico](predicado-monadico.html) (un único parámetro) : Expresan características de los individuos.
 [Predicado Poliádico](predicado-poliadico.html) (dos o más parámetros) : Expresan relaciones entre los individuos.  
 
-Universo Cerrado
-----------------
 
-*¿Qué pasa si ahora quiero preguntar si Aristóteles es mortal?* <code>
-
-    ?- mortal(aristoteles).
-
-</code>
-
-Al ejecutar esa consulta, la secuencia de pasos del motor (simplificada) es la siguiente:
-
-1.  El motor buscará en la base de conocimientos las diferentes cláusulas del predicado `mortal/1`, en particular las que matcheen con `mortal(aristoteles)`.
-2.  Al hacer esto encontrará una única regla: `mortal(X):-hombre(X)`. Ergo, para probar que Aristóteles es mortal, deberá probar que es hombre.
-3.  Al intentar verificar si aristoteles es un hombre, es decir la consulta `hombre(aristoteles)`.
-4.  Pero la única definición del predicado hombre es `hombre(socrates)`, que no matchea con `hombre(aristoteles)`.
-5.  La base de conocimientos no dice nada acerca de aristóteles, por lo tanto no se puede verificar que Aristóteles sea mortal.
-
-En este momento aparece un concepto que llamamos [principio de universo cerrado](principio-de-universo-cerrado.html), que dice que el motor asume como falso todo lo que no pueda probar como verdadero, es decir que si al preguntarle si aristoteles es mortal, me va a contestar que no!
-
-Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares) trabajan con este principio. Aunque no es la única forma de trabajar, es algo bastante frecuente dado que lo contrario es en general más complicado de implementar y de utilizar.
-
-*¿Cómo solucionar el problema?*
-
-Agregando el hecho que indica que Aristóteles es un hombre: <code>
-
-    hombre(aristoteles).
-
-</code> Si volvemos a hacer la misma consulta ahora vamos a tener el resultado esperado.
