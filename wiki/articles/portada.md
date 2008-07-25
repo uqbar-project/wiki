@@ -16,7 +16,7 @@ Paradigmas
 ### Conceptos Transversales
 
 -   [Orden Superior](orden-superior.html)
--   [Transparencia Referencial](transparencia-referencial.html)
+-   [Transparencia Referencial, Efecto de Lado y Asignación Destructiva](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html)
 
 Técnicas Avanzadas de Programación
 ----------------------------------
