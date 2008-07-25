@@ -53,10 +53,6 @@ Meter acá lo de cómo hacer jugar el estado en el dominó. Sería ideal contar 
 
 Polimorfismo en el paradigma lógico Meter acá lo del polimorfismo en lógico, puede ser con el ejemplo del max.
 
-### Inversibilidad
-
-La [inversibilidad](paradigma-logico---inversibilidad.html) es la característica que blah, pero [no siempre](paradigma-logico---casos-de-no-inversibilidad.html) funca y en esos casos lo resolvemos con [generación](paradigma-logico---generacion.html)
-
 ### Predicados de Orden Superior
 
 -   [Orden Superior](orden-superior.html)
