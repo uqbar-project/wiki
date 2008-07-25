@@ -18,9 +18,16 @@ introducir el concepto de cláusula, y contar lo de cabeza y cuerpo. distinguir 
 
 #### Negación
 
-### Algunas características relevantes
+### Algunas Características Relevantes
 
-El paradigma lógico trabaja con el principio de [Universo Cerrado](universo-cerrado.html) Hipótesis de universo cerrado 3 Consultas existenciales e inversibilidad de predicados 3 Negación 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3 Consultas existenciales e inversibilidad de predicados Contar que
+El paradigma lógico trabaja con el principio de [Universo Cerrado](universo-cerrado.html).
+
+Existen dos tipos de consulta:
+
+Individuales:Se hacen sobre un individuo específico.
+Existenciales:Se busca algún individuo que satisfaga la relación. También llamadas variables.  
+
+Consultas existenciales e inversibilidad de predicados 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3 Consultas existenciales e inversibilidad de predicados Contar que
 
 -   una consulta puede tener [múltiples respuestas](multiples-respuestas.html)
 -   la [inversibilidad](paradigma-logico---inversibilidad.html) se puede dar para predicados monádicos también
@@ -31,7 +38,9 @@ Negación
 
 Variables ligadas y no ligadas – problemas con la inversibilidad
 
-Generadores
+La [inversibilidad](paradigma-logico---inversibilidad.html) es la característica que blah, pero [no siempre](paradigma-logico---casos-de-no-inversibilidad.html) funca y en esos casos lo resolvemos con [generación](paradigma-logico---generacion.html)
+
+#### Generación
 
 Contar cómo arreglan el problema de la inversibilidad
 
