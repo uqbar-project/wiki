@@ -26,8 +26,7 @@ Existen dos tipos de consulta:
 
 ;Individuales:Se hacen sobre un individuo específico.<code>
 
-    hombre(socrates).
-    mortal(X):-hombre(X).
+    ?- mortal(socrates).
 
 </code>
 
