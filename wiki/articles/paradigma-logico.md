@@ -85,7 +85,8 @@ forall – “a todos los que les pasa A, les pasa B” • Tener claro si uno q
 
 Para qué sirven (los 2 casos) Pattern matching con functores – cómo acortan los programas
 
-### Manejo de la información
+Manejo de la información
+------------------------
 
 Meter acá lo de cómo hacer jugar el estado en el dominó. Sería ideal contar un poco de cómo representar info, p.ej. no ser “listeros”, después si necesito “a todos juntos” tengo el findall. También se puede meter un ejemplo en el que sí convenga modelar con listas, porque los elementos deben estar ordenados. P.ej. el del subte.
 
