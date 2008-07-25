@@ -8,15 +8,15 @@ Porque está relacionado con conceptos de lógica matemática, en particular:
 -   razonamiento
 -   deducción
 
-Es un paradigma [declarativo](declaratividad.html)
+Es un paradigma [declarativo](declaratividad.html) No hay [asignaciones destructivas](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html), se trabaja con el concepto de [Unificación](unificacion.html)
 
 -   [Paradigma Lógico - un poco de nomenclatura](paradigma-logico---un-poco-de-nomenclatura.html)
 
-En este apunte vamos a usar el lenguaje Prolog, que es (en una primera visión) una restricción del lenguaje de la lógica de predicados con una sintaxis distinta. Para dar una introducción intuitiva a la sintaxis de Prolog, traduzcamos el ejemplo de Sócrates. mortal(X):- hombre(X). hombre(socrates). introducir el concepto de cláusula, y contar lo de cabeza y cuerpo. distinguir hechos de reglas. contar que en el cuerpo pueden ir varias condiciones, separadas por comas que representan un “y”. contar que se le pueden hacer consultas (quedarnos con las individuales) … Entonces, ¿qué es un programa lógico? Un programa lógico es un conjunto de definiciones de predicados. Cada definición puede tener varias cláusulas. Meter otro ejemplo y comentarlo un poco Condiciones: “y” vs “o” Esta sección es para que detecten cuándo es “y” y cuándo es “o”, separando en cláusulas cuando es “o” y poniendo todo en la misma cuando es “y”.
+En este apunte vamos a usar el lenguaje Prolog, que es (en una primera visión) una restricción del lenguaje de la lógica de predicados con una sintaxis distinta. Para dar una introducción intuitiva a la sintaxis de Prolog, traduzcamos el ejemplo de Sócrates. mortal(X):- hombre(X). hombre(socrates).
+
+introducir el concepto de cláusula, y contar lo de cabeza y cuerpo. distinguir hechos de reglas. contar que en el cuerpo pueden ir varias condiciones, separadas por comas que representan un “y”. contar que se le pueden hacer consultas (quedarnos con las individuales) … Entonces, ¿qué es un programa lógico? Un programa lógico es un conjunto de definiciones de predicados. Cada definición puede tener varias cláusulas. Meter otro ejemplo y comentarlo un poco Condiciones: “y” vs “o” Esta sección es para que detecten cuándo es “y” y cuándo es “o”, separando en cláusulas cuando es “o” y poniendo todo en la misma cuando es “y”.
 
 #### Negación
-
-#### Unificación
 
 ### Algunas características relevantes
 
