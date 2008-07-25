@@ -24,7 +24,13 @@ El paradigma lógico trabaja con el principio de [Universo Cerrado](universo-cer
 
 Existen dos tipos de consulta:
 
-Individuales:Se hacen sobre un individuo específico.
+;Individuales:Se hacen sobre un individuo específico.<code>
+
+    hombre(socrates).
+    mortal(X):-hombre(X).
+
+</code>
+
 Existenciales:Se busca algún individuo que satisfaga la relación. También llamadas variables.  
 
 Consultas existenciales e inversibilidad de predicados 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3 Consultas existenciales e inversibilidad de predicados Contar que
