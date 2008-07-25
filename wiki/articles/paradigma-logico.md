@@ -34,22 +34,23 @@ Existen dos tipos de consulta:
 
     ?- mortal(X).
 
-</code> Nótese en el segundo tipo de consulta la presencia de [variables o incógnitas](variables-o-incognitas.html). Por ese motivo este tipo de consultas también son llamadas consultas variables. Consultas existenciales e inversibilidad de predicados 3 Variables ligadas y no ligadas – problemas con la inversibilidad 3 Generadores 3 Consultas existenciales e inversibilidad de predicados Contar que
+</code> Nótese en el segundo tipo de consulta la presencia de [variables o incógnitas](variables-o-incognitas.html). Por ese motivo este tipo de consultas también son llamadas consultas variables.
+
+Esta característica de permitir realizar diferentes tipos de consulta sobre un predicado se denomina [inversibilidad](paradigma-logico---inversibilidad.html).
+
+Sin embargo no todos los predicados admiten todas las formas de consulta la inversibilidad de un predicado se puede analizar argumento x argumento, decimos que es “inversible” a secas cuando es inversible para cada uno de sus argumentos.
+
+Los motivos para que un predicado [no sea inversible](paradigma-logico---casos-de-no-inversibilidad.html) pueden ser, entre otros, por la utilización en su definición de:
+
+-   comparación (/=, &lt;, &gt;, etc)
+-   operaciones aritméticas
+-   negación
+-   predicados de orden superior,
+
+Más específicamente la no-inversibilidad se da cuando en la definición de ese predicado se evalúa alguna de las expresiones arriba mencionadas utilizando variables sin ligar. Por eso la forma de solucionar este problema es utilizando predicados auxiliares para ligar las variables antes de llegar al punto problemático, a esta técnica se la denomina [Generación](generacion.html)
 
 -   una consulta puede tener [múltiples respuestas](multiples-respuestas.html)
--   la [inversibilidad](paradigma-logico---inversibilidad.html) se puede dar para predicados monádicos también
--   la inversibilidad de un predicado se puede analizar argumento x argumento, decimos que es “inversible” a secas cuando es inversible para todos sus argumentos.
--   No todos los predicados son inversibles, veremos casos de predicados que no resultan inversibles, y también una forma de solucionarlos para que los predicados sí queden inversibles.
-
-Negación
-
-Variables ligadas y no ligadas – problemas con la inversibilidad
-
-La [inversibilidad](paradigma-logico---inversibilidad.html) es la característica que blah, pero [no siempre](paradigma-logico---casos-de-no-inversibilidad.html) funca y en esos casos lo resolvemos con [generación](paradigma-logico---generacion.html)
-
-#### Generación
-
-Contar cómo arreglan el problema de la inversibilidad
+-   la [generación](paradigma-logico---generacion.html) se puede dar para predicados monádicos también
 
 ### Manejo de conjuntos
 
