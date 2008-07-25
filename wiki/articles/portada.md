@@ -16,6 +16,7 @@ Paradigmas
 ### Conceptos Transversales
 
 -   [Orden Superior](orden-superior.html)
+-   [Transparencia Referencial](transparencia-referencial.html)
 
 Técnicas Avanzadas de Programación
 ----------------------------------
