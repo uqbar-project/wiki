@@ -92,7 +92,13 @@ Resumen ejecutivo: ojo al piojo, inversibilidad es una cosa muy distinta a simet
 ¿Cómo hacés que un predicado sea inversible?
 --------------------------------------------
 
-Con lo que tenés que tener cuidado es con las submetas de un predicado que requieren variables unificadas. Por ejemplo: cuando una de las componentes de un predicado es un not/1 , necesitás que el predicado que le mandás tenga sus parámetros unificados. Cuando usás una evaluación matemática (ej: X is N \* 2), necesitás que lo de la derecha (la N) esté unificado.
+En principio, todo predicado es inversible salvo que caiga en un caso de no-inversibilidad.
+
+Estos casos tienen que ver con las submetas de un predicado que requieren variables unificadas, en estas cosas es que hay que fijarse.
+
+Por ejemplo: cuando una de las componentes de un predicado es un not/1 , necesitás que el predicado que le mandás tenga sus parámetros unificados. Cuando usás una evaluación matemática (ej: X is N \* 2), necesitás que lo de la derecha (la N) esté unificado.
+
+Vamos a ver más casos de no inversibilidad, y cómo manejarlos, al introducir varias herramientas y conceptos.
 
 ¿Cuál sería el uso?
 -------------------
