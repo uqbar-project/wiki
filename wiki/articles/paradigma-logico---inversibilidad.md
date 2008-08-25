@@ -23,7 +23,9 @@ Esta característica es exclusiva del paradigma lógico, ya que está basado en 
 
 La inversibilidad no tiene que ver solamente con que "dé error", muchas veces lo que pasa es -que sin dar error- se comporta incorrectamente o de forma distinta a la que uno espera, en ese caso también decimos que no es inversible.
 
-Vayamos a este programa
+### Ejemplos
+
+Veamos este programa
 
 `  vive(ruben,lanus).`
 `  vive(ana,lanus).`
