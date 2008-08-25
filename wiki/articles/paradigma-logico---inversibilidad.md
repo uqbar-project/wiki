@@ -87,7 +87,7 @@ Entonces el predicado vive no es simétrico. Pero ya vimos que sí es inversible
 
 Observar que la noción de simetría sólo se aplica a predicados de 2 argumentos (para esDelSur ¿cómo sería "ser simétrico"? No tiene sentido), mientras que la de inversibilidad se aplica a cualquier predicado.
 
-Resumen ejecutivo: ojo al piojo, inversibilidad es una cosa muy distinta a simetría, no confundirse. Si no queda claro, consulte con su docente amigo.
+Resumen ejecutivo: ojo al piojo, inversibilidad es una cosa muy distinta a simetría, no confundirse. Si no queda claro, consulte con su docente amigo. Lo que nos va a interesar en la materia es el concepto de **inversibilidad**.
 
 ¿Cómo hacés que un predicado sea inversible?
 --------------------------------------------
