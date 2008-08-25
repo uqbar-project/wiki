@@ -1,7 +1,7 @@
 Definición
 ----------
 
-La inversibilidad es una característica qué podés encontrar únicamente en el paradigma lógico (por lo menos hasta donde sé). Que un predicado sea inversible significa que los argumentos del mismo no tienen una "dirección". Es decir, no necesitás "pasar" el parámetro resuelto (o sea, pasás un valor), sino que podés pasarlo sin unificar (o sea, pasás una incógnita).
+La inversibilidad es una de las características distintivas del paradigma lógico, que no aparece en los paradigmas funcional ni objetos. Que un predicado sea inversible significa que los argumentos del mismo no tienen una "dirección". Es decir, no necesitás "pasar" el parámetro resuelto (o sea, pasás un valor), sino que podés pasarlo sin unificar (o sea, pasás una incógnita).
 
 Imaginate un predicado `esNatural/1` que te dice si un número es natural:
 
