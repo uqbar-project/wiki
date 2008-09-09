@@ -1,1 +1,1 @@
-[Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
+[Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html) [Polimorfismo en el Paradigma Lógico](polimorfismo-en-el-paradigma-logico.html)
