@@ -1,6 +1,6 @@
 Esto me lleva a recordar un error que aparece a menudo, no es exactamente el caso pero me viene bien para explicarlo. Fíjense una cosa: siempre que yo hago....
 
-a := cualquier cosa
+` a := cualquier cosa`
 
 Eso es una asignación "destructiva"... sí ya sé, lo dije mil veces, pero lo que parece hasta acá fácil después igual genera confusiones.
 
@@ -8,7 +8,8 @@ Eso es una asignación "destructiva"... sí ya sé, lo dije mil veces, pero lo q
 
 ¿Por qué saco a colación esto ahora? Bueno el error que yo veo frecuentemente es este:
 
-a := Set new. a := otroSet collect: \[... etc\]
+` a := Set new.`
+` a := otroSet collect: [... etc]`
 
 ¿Tiene sentido inicializar la variable a antes del collect:? Y no... si yo en la siguiente línea voy a hacer una asignación destructiva... justamente lo que sea que tiene la variable a se va a perder.
 
