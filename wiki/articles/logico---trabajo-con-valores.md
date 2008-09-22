@@ -53,6 +53,16 @@ Para la tercera, del que me están hablando específicamente es del depto, de la
 `  gusta(Pers,corrientes3804):- vive(Pers,boedo).`
 
 2.  
-En el mismo programa, quiero decir que un departamento es alternativa para otro si sale exactamente 5000 pesos menos. En este caso tengo que hacer una cuenta (is), perolo que ya sé es la difere
+En el mismo programa, quiero decir que un departamento es alternativa para otro si sale exactamente 5000 pesos menos. En este caso tengo que hacer una cuenta que es la diferencia entre los precios; sé que el resultado de esa cuenta tiene que ser exactamente 5000.
 
+Entonces, ¿pongo
 
+`   esAlternativa(Depto1,Depto2):- precio(Depto1,Pr1), precio(Depto2,Pr2), Dif is Pr2 - Pr1, Dif = 5000.`
+
+o
+
+`   esAlternativa(Depto1,Depto2):- precio(Depto1,Pr1), precio(Depto2,Pr2), Dif is Pr2 - Pr1, Dif is 5000.`
+
+? Noooooo, el 5000 ya lo sé, no necesito pasarlo por la variable Dif. O sea
+
+`   esAlternativa(Depto1,Depto2):- precio(Depto1,Pr1), precio(Depto2,Pr2), `**`5000`**` is Pr2 - Pr1.`
