@@ -7,6 +7,8 @@ El que representa el valor de verdad, el "sí", es el **true** con minúscula.
 
 True es la clase de la cual true es instancia. Lo que empieza en mayúscula es casi-casi siempre nombre de clase (o de variable de clase, eso lo vemos cerca del final de la parte de objetos).
 
+Si uno se confunde y usa True, claro, el ifTrue: no anda bien, porque el mensaje ifTrue: lo entiende el objeto true, no su clase.
+
 ifTrue: \[^true\], ¿está bien?
 ------------------------------
 
