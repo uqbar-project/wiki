@@ -1,9 +1,9 @@
 true vs True
 ------------
 
-En el ambiente hay un objeto llamado true y otro llamado True.
+En el ambiente hay un objeto llamado **true** y otro llamado **True**.
 
-El que representa el valor de verdad, el "sí", es el true con minúscula.
+El que representa el valor de verdad, el "sí", es el **true** con minúscula.
 
 True es la clase de la cual true es instancia. Lo que empieza en mayúscula es casi-casi siempre nombre de clase (o de variable de clase, eso lo vemos cerca del final de la parte de objetos).
 
