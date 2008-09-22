@@ -41,7 +41,7 @@ ahora las respuestas van a ser true o false.
 ahora sí, el misterio de "a Golondrina"
 ---------------------------------------
 
-Todo bien, pero lo que quiero es que no me ponga "a Golondrina".
+Ponele que estás pensando "todo bien, pero lo que quiero es que no me ponga 'a Golondrina'". Adelante.
 
 Empecemos por entender por qué pone "a Golondrina".
 
