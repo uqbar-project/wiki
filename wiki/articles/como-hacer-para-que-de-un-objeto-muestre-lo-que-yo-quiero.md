@@ -1,3 +1,6 @@
+antes que nada, otra forma de saber si lo que me devuelve es lo que quiero
+--------------------------------------------------------------------------
+
 Supongamos que tengo las clases Golondrina y Lugar, que entienden estos mensajes
 
 -   Golondrina: energia (un número), dondeEsta (un lugar), jefaDeBandada (otra golondrina)
@@ -29,7 +32,18 @@ y le doy display it, no me va a mostrar "luciana" que es tal vez lo que esperaba
 
 me va a decir "a Lugar".
 
-¿Por qué? Pensemos un toque.
+Si tengo 5 golondrinas en mi workspace, ¿cómo sé que la que me devuelve cuando le pido la jefa de bandada a pepita es luciana y no otra? "luciana" es el nombre de la variable que apunta a luciana dentro del workspace, entonces dentro del workspace puedo usar ese nombre. Sabiendo esto, una fácil es preguntar si lo que me devuelve `pepita` `jefaDeBandada` es luciana, o sea
+
+`   pepita jefaDeBandada = luciana`
+
+ahora las respuestas van a ser true o false.
+
+ahora sí, el misterio de "a Golondrina"
+---------------------------------------
+
+Todo bien, pero lo que quiero es que no me ponga "a Golondrina".
+
+Empecemos por entender por qué pone "a Golondrina".
 
 Ya vimos que los objetos no tienen "nombre propio", los que tienen nombre son las variables que hacen referencia al objeto. luciana es la variable del workspace que apunta a una golondrina, la golondrina no tiene nombre propio.
 
