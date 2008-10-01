@@ -162,3 +162,5 @@ Tiro tres opciones: elijan la correcta y piensen por qué eligieron esa.
 `   esMarketinable(A):- forall(leGusta(P,A), vive(P,C), ciudadGrande(C)).  % opción 1`
 `   esMarketinable(A):- forall((leGusta(P,A), vive(P,C)), ciudadGrande(C)).  % opción 2`
 `   esMarketinable(A):- forall(leGusta(P,A), (vive(P,C), ciudadGrande(C))).  % opción 3`
+
+9. Léanse [Paradigma Lógico - forall - no siempre con member](paradigma-logico---forall---no-siempre-con-member.html)
