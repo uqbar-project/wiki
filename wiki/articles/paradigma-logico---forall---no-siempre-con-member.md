@@ -20,4 +20,18 @@ es más directo, claro y correcto, usar el forall poniendo directamente "a E le 
 
 `   forall(...condiciones A sobre X..., ...condiciones B sobre E...)`
 
-Veamos un ejemplo
+Veamos un ejemplo: quiero decir que un tipo es feliz si todos sus amigos son buena onda, tenemos los predicados amigos/2 y esBuenaOnda/1. Si quiero definir
+
+`  esFeliz(Pers)`
+
+hay una condición "para todos los A pasa B" en donde calza justo un forall, "A" es "ser amigo de Pers" y "B" es "ser buena onda".
+
+Si pienso que forall me sirve solamente para recorrer listas, entonces tengo que armar la lista de los amigos de Pers, y después fijarme para cada elemento que sea buena onda. En Prolog:
+
+`   esFeliz(Pers):- `
+`       findall(Amigo,amigos(Pers,Amigo),AmigosDePers), `
+`       forall(member(Chabon,AmigosDePers), esBuenaOnda(Chabon)).`
+
+si entiendo que el primer argumento de forall puede ser cualquier consulta, pongo lo que entiendo de la definición, que es "ser amigo de Pers". En Prolog
+
+`   esFeliz(Pers):- forall(amigo(Pers,Amigo), esBuenaOnda(Amigo)).`
