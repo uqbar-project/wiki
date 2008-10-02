@@ -39,26 +39,25 @@ y listo.
 `   puedeUsarse`
 `       ^(self estaLibre = true) & (self estaAndando = true)`
 
-La expresión
+Analicemos la parte
+
+`   (self estaLibre = true)`
+
+La expresión `self` `estaLibre` hace lo único que puede hacer una expresión en Smalltalk: devolver un objeto. ¿Qué objeto puede ser ese?
+
+**1.**
+Si la condición es cierta, entonces el objeto que devuelve es el objeto true, el único objeto en un ambiente Smalltalk que representa el valor de verdad "cierto". Si a ese objeto le pregunto `=` `true`, ¿qué objeto va a ser el resultado?
+
+Si pregunto si dos objetos son iguales, o me va a responder true, o me va responder false, no hay otra. En este caso, true es el mismo objeto que true, o sea el = da cierto, o sea ... devuelve ¡true!, que es el mismo objeto que obtenía con
 
 `   (self estaLibre)`
 
-hace lo único que puede hacer una expresión en Smalltalk: devolver un objeto. Si la condición es cierta, entonces el objeto que devuelve es el objeto true, el único objeto en un ambiente Smalltalk que representa el valor de verdad "cierto". Si a ese objeto le pregunto
-
-`   = true`
-
-¿qué objeto va a ser el resultado? Si pregunto si dos objetos son iguales, o me va a responder true, o me va responder false, no hay otra. En este caso, true es el mismo objeto que true, o sea el = da cierto, o sea ... devuelve ¡true!, que es el mismo objeto que obtenía con
+**2.**
+Ahora supongamos que la condición no es cierta, en ese caso me devuelve el objeto false, si a false le digo `=` `true` el resultado de eso es el objeto false, que otra vez es lo mismo que obtengo poniendo solamente
 
 `   (self estaLibre)`
 
-Ahora supongamos que la condición no es cierta, en ese caso me devuelve el objeto false, si a false le digo
-
-`   = true`
-
-el resultado de eso es el objeto false, que otra vez es lo mismo que obtengo poniendo solamente
-
-`   (self estaLibre)`
-
+**Consecuencia**
 El mismo análisis lo puedo hacer con
 
 `   (self estaAndando = true)`
@@ -68,7 +67,9 @@ y la conclusión es que el método puede escribirse así
 `   puedeUsarse`
 `       ^(self estaLibre) & (self estaAndando)`
 
-con la diferencia de que acá estás demostrando que entendés cómo trabajar con booleanos.
+En esta versión estamos manejando mejor los booleanos, porque aceptamos que el resultado de `self` `estaLibre` es un booleano, que va a ser true o false, y que va a entender `&` con el otro booleano como parámetro.
+
+### Un caso parecido
 
 ¿Y si en lugar de estaLibre tengo estaOcupado, qué hago, pongo
 
