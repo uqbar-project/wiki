@@ -1,4 +1,4 @@
-Un artículo interesante de fowler: [1](http://martinfowler.com/bliki/DatabaseThaw.html)
+Un artículo interesante de fowler: <http://martinfowler.com/bliki/DatabaseThaw.html>
 
 ### Clasificación general de las partes de una aplicación
 
