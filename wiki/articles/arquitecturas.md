@@ -1,3 +1,5 @@
+Un artículo interesante de fowler: <http://martinfowler.com/bliki/DatabaseThaw.html>
+
 ### Clasificación general de las partes de una aplicación
 
 Normalmente uno habla de tres capas, pero hay distintas formas de dividir y las divisiones principales son 4 que las gente agrupa de una u otra manera según distintas escuelas:
