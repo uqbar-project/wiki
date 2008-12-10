@@ -26,7 +26,7 @@ Ejemplos
 
 Cuando hablamos de que "algo" tiene transparencia referencial, efecto de lado o asignación destructiva, ese "algo" puede ser la realización de una operación, de un lenguaje en particular o de un paradigma (es natural hablar de existencia de efecto de lado en objetos y estructurado y no en lógico y funcional, al igual que de asignación destructiva). Sin embargo, este texto está orientado a las operaciones concretas.
 
-Algo que hay que tener en cuenta es que, si bien estos tres conceptos van de la mano, son independientes el uno de los otros, por lo tanto no tiene mucho sentido buscar las n combinaciones posibles, sino saber detectar la aparición de estos conceptos en el código.
+Estos tres conceptos suelen ir de la mano y si bien pueden darse relaciones entre ellas está bueno saber detectar la aparición de estos conceptos individualmente. Una relación que surge de la segunda definición de transparencia referencial es que para ésta se de, no puede haber efecto de lado, ya que si el sistema se modifica, no es lo mismo ejecutar esa operación que reemplazar por el resultado.
 
 A continuación mostramos algunos ejemplos en smalltalk, ya que permite la aparición de todas estas características, para dejar más en claro de qué manera podemos identificarlas.
 
