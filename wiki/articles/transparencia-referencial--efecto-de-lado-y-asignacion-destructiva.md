@@ -91,3 +91,18 @@ Supongo que con este ejemplo no hace falta explicar el por qué.
 Bueno más que nada es eso, espero sus opiniones al respecto
 
 Saludos
+
+*Otros Ejemplos*
+
+**El efecto de lado, dependiendo del contexto**
+
+1.  Collection
+
+select: aBlock
+
+`   | newCollection |`
+`   newCollection := self species new.`
+`   self do: [:each | (aBlock value: each) ifTrue: [newCollection add: each]].`
+`   ^newCollection`
+
+select: no tiene efecto de lado en sí mismo, porque no modifica la colección original (self), sino que crea una nueva de su mismo tipo. Sin embargo podemos ver dentro de select: efectos colaterales en la asignación de newCollection y en el add:. Ambos pueden ser considerados como efectos colaterales dentro de la ejecución del método, pero quien usa select: no se da cuenta de eso y para él no tiene efecto de lado. Por otra parte, aunque el select: garantiza que no genera efectos de lado, no nos garantiza que el bloque que viene como parámetro no pueda tenerlo, por lo que uno debe tener cuidado con eso.
