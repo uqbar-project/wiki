@@ -34,7 +34,11 @@ A continuación mostramos algunos ejemplos en smalltalk, ya que permite la apari
 
 *Date today*
 
-Transparencia Referencial: NO (Con las 2 definiciones de transparencia referencial) Efecto de Lado: NO Asignación Destructiva: NO
+Transparencia Referencial: NO (Con las 2 definiciones de transparencia referencial)
+
+Efecto de Lado: NO
+
+Asignación Destructiva: NO
 
 Evaluarlo con los mismos parámetros (o sea ninguno) en días distintos va a dar resultados distintos. Reemplazar la operación por el resultado una vez que cambia el día se rompe todo. Asignación destructiva y efecto de lado hay, pero en la CPU que actualiza la variable que indica el tiempo, no en el mensaje today que consulta ese valor (no se si es tan así, pero es a modo ilustrativo).
 
@@ -50,7 +54,11 @@ El efecto de lado de otra operación afecta a esta operación y le hace perder l
 `     unElemento teAgregaronEn: self.`
 `     ^super add: unElemento.`
 
-Transparencia Referencial: SI con la definición 1, pero NO con la definición 2. En un final, si se da un caso como este y están en duda, justifiquen por qué sí o no. Efecto de Lado: SI, porque la colección, luego de recibir el mensaje add: se modifica. Asignación destructiva: no se la ve directamente en éste método, si bien puede estar presente en teAgregaronEn: o en add:
+Transparencia Referencial: SI con la definición 1, pero NO con la definición 2. En un final, si se da un caso como este y están en duda, justifiquen por qué sí o no.
+
+Efecto de Lado: SI, porque la colección, luego de recibir el mensaje add: se modifica.
+
+Asignación destructiva: no se la ve directamente en éste método, si bien puede estar presente en teAgregaronEn: o en add: No sé si tiene mucho sentido hablar de asignación destructiva en este ejemplo.
 
 Asumiendo que los parámetros siempre entienden el mensaje \#teAgregaronEn: no importa cuantas veces se realicen estás operaciones siempre devuelven el parámetro
 
@@ -72,7 +80,11 @@ Mi propuesta es que tomemos como definición (o como idea) la definición 2 de t
 `    1 to: self do: [ :indice | resultado := resultado * indice ].`
 `    ^resultado`
 
-Transparencia Referencial: SI (con las 2 definiciones) Efecto de Lado: NO Asignaciones Destructivas: SI
+Transparencia Referencial: SI (con las 2 definiciones)
+
+Efecto de Lado: NO
+
+Asignaciones Destructivas: SI
 
 Supongo que con este ejemplo no hace falta explicar el por qué.
 
