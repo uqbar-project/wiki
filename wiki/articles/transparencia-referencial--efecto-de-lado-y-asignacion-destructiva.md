@@ -72,7 +72,9 @@ Mi propuesta es que tomemos como definición (o como idea) la definición 2 de t
 `    1 to: self do: [ :indice | resultado := resultado * indice ].`
 `    ^resultado`
 
-"Supongo que con este ejemplo no habrá quejas :P" Transparencia Referencial: SI (con las 2 definiciones) Efecto de Lado: NO Asignaciones Destructivas: SI
+Transparencia Referencial: SI (con las 2 definiciones) Efecto de Lado: NO Asignaciones Destructivas: SI
+
+Supongo que con este ejemplo no hace falta explicar el por qué.
 
 Bueno más que nada es eso, espero sus opiniones al respecto
 
