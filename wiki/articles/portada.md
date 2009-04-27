@@ -21,6 +21,8 @@ Paradigmas
 Técnicas Avanzadas de Programación
 ----------------------------------
 
+-   Manejo de Errores \*
+
 Apuntes para revisar
 
 -   <http://www.programacion.net/java/articulo/jap_injection/>
