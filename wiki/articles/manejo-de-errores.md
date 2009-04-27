@@ -1,4 +1,5 @@
-== ¿Dónde poner el return?
+¿Dónde poner el return?
+-----------------------
 
 Esta pregunta esta en el límite de lo que es una buena práctica y el gusto personal. Lo que no hay que perder de vista es que ayude la legibilidad del código respetando las premisas del buen manejo de excepciones (que explote cuando tiene que explotar!!)
 
