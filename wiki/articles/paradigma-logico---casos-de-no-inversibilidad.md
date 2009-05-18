@@ -112,4 +112,30 @@ Ahora fijate tirando en prolog la siguiente consulta:
 Forall
 ------
 
-esEspecieComestible(Especie):- esEspecie(Especie), forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).
+Esta definición del predicado esEspecieComestible
+
+` esEspecieComestible(Especie):- `
+`     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).`
+
+no es inversible, porque Especie debe llegar ligado al forall. Si no llega ligada, para que el forall se verifique deben ser comestibles **todas** las plantas que sean de alguna especie. Esto está explicado en detalle en [el artículo sobre forall](paradigma-logico---el-forall-forall-e-inversibilidad.html).
+
+Para que sea inversible debemos generar el dominio para la variable Especie
+
+` esEspecieComestible(Especie):- `
+`     esEspecie(Especie),`
+`     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).`
+
+En resumen
+----------
+
+Resumimos los cinco casos de inversibilidad con un ejemplo de cada uno
+
+|                |                                                                                   |
+|----------------|-----------------------------------------------------------------------------------|
+| **Negación**   | `esPlantaComestible(Planta):-` `not(esVenenosa(Planta)).`                         |
+| **Aritmética** | <code>precioPorCantidad(Planta,Cantidad,PrecioTotal):-                            
+                                                                                                     
+                  `          precioPlanta(Planta,Precio), PrecioTotal is Cantidad * Precio.`</code>  |
+||
+
+
