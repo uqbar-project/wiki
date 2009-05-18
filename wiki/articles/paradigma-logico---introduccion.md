@@ -48,12 +48,30 @@ Los hechos me permiten definir **por extensión** el conjunto de individuos que 
 
 Para más información, ver la [Sintaxis de Prolog](sintaxis-de-prolog.html)
 
-Un poco más de teoría
----------------------
+Un poco de teoría
+-----------------
 
-Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada, la base de conocimientos se compone de predicados e individuos.
+Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada, la base de conocimientos se compone de predicados e individuos. Agreguemos para esto un poco más de conocimiento en la base
 
-[individuos](individuo.html) : Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En este ejemplo el único individuo que aparece es **socrates**. Cabe aclarar que al decir que Sócrates es un individuo eso no tiene que ver con que sea una persona, individuo es cualquier entidad acerca de la cual nos interese estudiar sus características o sus relaciones con otros individuos. Si hicieramos por ejemplo un sistema para controlar correlatividades entre las materias de la facultad, las materias serían individuos.
+` ciudad(atenas).`
+` vive(socrates,atenas).`
+` vive(solon,atenas).`
+` vive(arquimedes,siracusa).`
+` nacio(solon,-634).`
+` nacio(arquimedes,-287).`
+` sonConciudadanos(P1,P2):- vive(P1,C), vive(P2,C).`
+
+Ahora sí, las definiciones
+
+|                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [individuos](individuo.html)   | Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En el ejemplo aparecen varios individuos: socrates, atenas, solon, arquimedes, siracusa, -634, -287. Individuo es cualquier entidad acerca de la cual nos interese estudiar sus características o sus relaciones con otros individuos. P.ej. si hiciéramos un sistema para controlar correlatividades entre las materias de la facultad, tendríamos un individuo para representar cada materia. |
+| Columna 1, fila 2                    | Columna 2, fila 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+
+`:  `
+
+alfa
+
 [predicados](predicado.html) : Los predicados son las cosas que queremos decir (o predicar, je) acerca de los invividuos. En este ejemplo los predicados son **mortal** y **hombre**. Volviendo al ejemplo del sistema de correlatividades, seguramente tendría un predicado que indiquen qué materias cursó un alumno y otro que indique la correlatividad entre dos materias.  
 
 Los predicados se componen de [cláusulas](clausula.html), que tienen dos formas:
