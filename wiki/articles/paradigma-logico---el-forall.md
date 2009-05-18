@@ -1,9 +1,11 @@
-1.
+Antes que nada
+--------------
 
 El forall es un predicado, o sea, no conviene pensar qué "hace", sino qué relaciona, y/o cuándo se verifica.
 El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.
 
-2.
+Definición
+----------
 
 El forall recibe dos parámetros, los dos pueden verse como consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de orden superior, porque puede manejar predicados entro de sus parámetros.
 
@@ -13,9 +15,10 @@ Dicho un poco más "en técnico", cuando todas las respuestas de la primer consu
 
 Entonces, en las situaciones donde decimos "a todos los que ...blah... les pasa ...bleh..." es probable que el forall nos venga bien.
 
-3.
+Un ejemplo
+----------
 
-Un ejemplo: partimos de estos hechos
+partimos de estos hechos
 
     dulce(chocolate).
     dulce(caramelo).
@@ -59,7 +62,8 @@ Queda
 
 `   alimentoCurioso(A):- forall(leGusta(P,A), esColorado(P)).`
 
-4.
+Tener claro lo que se quiere decir
+----------------------------------
 
 ¿Está bien si defino esTierno así?
 
@@ -77,7 +81,8 @@ y
   
 le gustan todos los alimentos dulces.
 
-5.
+El forall en acción
+-------------------
 
 Supongamos que hacemos esta consulta:
 
@@ -99,7 +104,8 @@ La consulta correspondiente ya viene con esa variable ligada, o sea que las cons
 
 Volvamos a la definición: el forall se verifica si todas las respuestas a la primer consulta son respuestas de la segunda. Mirando el ejemplo de recién debería cerrar el esquema.
 
-6.
+Forall e inversibilidad
+-----------------------
 
 Veamos qué pasa con las variables y la inversibilidad.
 ¿Será inversible el predicado esTierno/1? Hagamos la consulta con una variable en el argumento
@@ -130,7 +136,8 @@ fíjense que siempre decimos "a todos los blah que les pasa la consulta 1, les t
 
 Bueno, para ese "blah" va a haber una variable, que es Alim en el caso de esTierno (si todos **los alimentos** que le gustan ...) y P para alimentoCurioso (si todas **las personas** a quienes les gusta ...). Esa variable tiene que llegar al forall sin ligar.
 
-7.
+Varias condiciones
+------------------
 
 Qué pasa si se tienen que cumplir varias condiciones: digamos que un alimento es peculiar si todas las personas a las que le gusta son colorados y porteños ... nos queda
 
@@ -153,7 +160,8 @@ Pregunto: ¿está bien
 
 ? No, porque estaría pidiendo que todos los colorados a los que les gusta el alimento vivan en Buenos Aires.
 
-8.
+Para pensar
+-----------
 
 Una que les queda para pensar: ahora tengo que decir que un alimento es marketinable si todas las personas a las que les gusta viven en ciudades grandes. No me interesa que el predicado sea inversible.
 
@@ -163,4 +171,7 @@ Tiro tres opciones: elijan la correcta y piensen por qué eligieron esa.
 `   esMarketinable(A):- forall((leGusta(P,A), vive(P,C)), ciudadGrande(C)).  % opción 2`
 `   esMarketinable(A):- forall(leGusta(P,A), (vive(P,C), ciudadGrande(C))).  % opción 3`
 
-9. Léanse [Paradigma Lógico - forall - no siempre con member](paradigma-logico---forall---no-siempre-con-member.html)
+Más sobre forall
+----------------
+
+Léanse [Paradigma Lógico - forall - no siempre con member](paradigma-logico---forall---no-siempre-con-member.html)
