@@ -52,3 +52,28 @@ la condición es que un cierto X sea mortal, y lo que definimos es que si se cum
 
 Consultas
 ---------
+
+Son la forma de usar un programa en lógico, se hace una consulta, y se obtiene una o varias respuestas.
+
+Existen dos tipos de consulta:
+
+<table>
+<tbody>
+<tr class="odd">
+<td><p><strong>Individuales</strong></p></td>
+<td><p>se hacen sobre individuos específicos. Por ejemplo:</p>
+<p><code> ?- mortal(socrates).</code><br />
+<code> ?- sonConciudadanos(socrates,solon).</code></p></td>
+</tr>
+<tr class="even">
+<td><p><strong>Existenciales</strong></p></td>
+<td><p>se buscan individuos que satisfagan la relación. En este caso una consulta puede tener muchas respuestas. Por ejemplo:</p>
+<p><code> ?- mortal(X).</code><br />
+<code> ?- sonConciudadanos(X,Y).</code><br />
+<code> ?- sonConciudadanos(solon,Y).</code></p>
+<p>En el segundo caso cada respuesta es un par de conciudadanos (o sea, de individuos relacionados por el predicado <code>sonConciudadanos</code>, mientras que en el tercero cada respuesta es un conciudadano de Solón. En este tipo de consultas aparecen <a href="Paradigma_lógico_-_variables" title="wikilink">variables o incógnitas</a>. Por ese motivo este tipo de consultas también son llamadas <em>consultas variables</em>.</p></td>
+</tr>
+</tbody>
+</table>
+
+El paradigma lógico trabaja con el principio de [Universo Cerrado](paradigma-logico---introduccion-universo-cerrado.html).
