@@ -22,7 +22,7 @@ Individuos
 Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En el ejemplo aparecen varios individuos: socrates, atenas, solon, arquimedes, siracusa, -634, -287. Individuo es cualquier entidad acerca de la cual nos interese estudiar sus características o sus relaciones con otros individuos. P.ej. si hiciéramos un sistema para controlar correlatividades entre las materias de la facultad, tendríamos un individuo para representar cada materia. Los individuos se dividen en
 
 -   **Individuos simples**: los átomos (como solon, atenas, siracusa) y los números son individuos simples.
--   **Individuos compuestos**: tienen otros individuos adentro, los componentes, y se pueden ver o bien como una unidad o bien acceder a cada componente. Ver [Paradigma Lógico - individuos compuestos](paradigma-logico---individuos-compuestos.html)
+-   **Individuos compuestos**: tienen otros individuos adentro, los componentes, y se pueden ver o bien como una unidad o bien acceder a cada componente. Ver [Paradigma Lógico - individuos compuestos](paradigma-logico---individuos-compuestos.html).
 
 Predicados
 ----------
@@ -74,7 +74,8 @@ Existen dos tipos de consulta:
 <p><code> ?- mortal(X).</code><br />
 <code> ?- sonConciudadanos(X,Y).</code><br />
 <code> ?- sonConciudadanos(solon,Y).</code></p>
-<p>En el segundo caso cada respuesta es un par de conciudadanos (o sea, de individuos relacionados por el predicado <code>sonConciudadanos</code>, mientras que en el tercero cada respuesta es un conciudadano de Solón. En este tipo de consultas aparecen <a href="Paradigma_lógico_-_variables" title="wikilink">variables o incógnitas</a>. Por ese motivo este tipo de consultas también son llamadas <em>consultas variables</em>.</p></td>
+<p>En el segundo caso cada respuesta es un par de conciudadanos (o sea, de individuos relacionados por el predicado <code>sonConciudadanos</code>, mientras que en el tercero cada respuesta es un conciudadano de Solón.<br />
+En este tipo de consultas aparecen <a href="Paradigma_lógico_-_variables" title="wikilink">variables o incógnitas</a>. Por ese motivo este tipo de consultas también son llamadas <em>consultas variables</em>.</p></td>
 </tr>
 </tbody>
 </table>
