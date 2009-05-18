@@ -12,8 +12,8 @@ Negación: las variables que aparecen en la parte de la cláusula deben llegar l
 
 ` esPlantaComestible(Planta):- not(esVenenosa(Planta)).`
 
-no es inversible, porque Planta debe estar ligada antes de llegar al `not`.
-¿Por qué? Ver [Paradigma Lógico - negación](paradigma-logico---negacion.html) Para hacer al predicado inversible, generamos el dominio de la variable Planta
+no es inversible, porque Planta debe estar ligada antes de llegar al `not`. ¿Por qué? Ver [Paradigma Lógico - negación](paradigma-logico---negacion.html)
+Para hacer al predicado inversible, generamos el dominio de la variable Planta
 
 ` esPlantaComestible(Planta):- esPlanta(Planta), not(esVenenosa(Planta)).`
 
