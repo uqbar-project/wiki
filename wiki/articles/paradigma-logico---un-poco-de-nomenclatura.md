@@ -1,3 +1,26 @@
+Resumen
+-------
+
+1.  Individuo
+    -   Individuo simple
+        -   Átomo
+        -   Número
+    -   Individuo compuesto
+        -   Lista
+        -   Functor
+
+2.  Predicado
+    -   Propiedad
+    -   Relación
+
+3.  Cláusula
+    -   Hecho
+    -   Regla
+
+4.  Consulta
+    -   Individual
+    -   Existencial
+
 == Base de conocimiento = programa de ejemplo ==
 
 ` hombre(socrates).`
@@ -31,8 +54,8 @@ Los predicados son las cosas que queremos decir (o predicar, je) acerca de los i
 
 A la cantidad de parámetros que lleva cada predicado la llamamos su **aridad**. En el ejemplo, los predicados hombre, mortal y ciudad tienen aridad 1, mientras que vive y sonConciudadanos tienen aridad 2. A partir de su aridad podemos separar los predicados en:
 
--   Propiedades : Son los predicados de aridad 1, que expresan características de individuos.
--   Relaciones : Son los predicados de aridad mayor a 1, que expresan relaciones entre individuos.
+-   **Propiedades** : Son los predicados de aridad 1, que expresan características de individuos.
+-   **Relaciones** : Son los predicados de aridad mayor a 1, que expresan relaciones entre individuos.
 
 Cláusulas
 ---------
