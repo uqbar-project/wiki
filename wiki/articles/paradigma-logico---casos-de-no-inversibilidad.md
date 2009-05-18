@@ -1,3 +1,6 @@
+Intrroducción
+-------------
+
 Los casos de no inversibilidad, y algunos de no funcionamiento o respuestas incorrectas, están relacionados con variables que no están ligadas en cierto punto (recordando que el análisis debe hacerse "de izquierda a derecha") y deben estarlo, o (menos probable) al revés, variables que deben llegar a cierto punto sin ligar y están ligadas.
 
 Veamos varios casos, que incluyen todos los casos de no-inversibilidad que vemos en la materia.
@@ -58,13 +61,23 @@ Miremos esta definición de plantasMismaEspecieDe
 
 y supongamos esta consulta
 
-` ?- plantasMismaEspecieDe(Planta, Plantas).`
+` ?- plantasMismaEspecieDe(Pl, Plantas).`
 
-Observemos
+Miremos fijos el findall, recordando que unifica el 3er argumento con la lista de la parte indicada en el 1er argumento de todas las respuestas a la consulta del 2do argumento.
+En este caso: va a ligar `ListaPlantasFamiliares` con la lista de los `P2` para cada respuesta a la consulta `mismaEspecie(Planta,P2)`.
+Como en la consulta no se liga `Planta`, entonces las respuestas a `mismaEspecie(Planta,P2)` van a ser **todos** los pares de plantas de la misma especie, y por lo tanto los `P2` van a ser **todas** las plantas que compartan su especie con alguna otra planta.
+P.ej. si tenemos
 
-plantasMismaEspecieDe(Planta, ListaPlantasFamiliares):-
+` mismaEspecie(p1,p3).`
+` mismaEspecie(p2,p4).`
+` mismaEspecie(p2,p5).`
 
-`  esPlanta(Planta), findall(P2, mismaEspecie(Planta,P2), ListaPlantasFamiliares).`
+`ListaPlantasFamiliares` va a ser `[p2,p4,p5]`. Esto nos muestra que con esta definición el predicado no es inversible.
+
+Para que sí lo sea debemos asegurar que la variable `Planta` *entra ligada al findall*.
+
+` plantasMismaEspecieDe(Planta, ListaPlantasFamiliares):- `
+`    esPlanta(Planta), findall(P2, mismaEspecie(Planta,P2), ListaPlantasFamiliares).`
 
 **Un ejemplo futbolero**
 
