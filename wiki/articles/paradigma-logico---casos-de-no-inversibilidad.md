@@ -130,12 +130,13 @@ En resumen
 
 Resumimos los cinco casos de inversibilidad con un ejemplo de cada uno
 
-|                |                                                                                   |
-|----------------|-----------------------------------------------------------------------------------|
-| **Negación**   | `esPlantaComestible(Planta):-` `not(esVenenosa(Planta)).`                         |
-| **Aritmética** | <code>precioPorCantidad(Planta,Cantidad,PrecioTotal):-                            
-                                                                                                     
-                  `          precioPlanta(Planta,Precio), PrecioTotal is Cantidad * Precio.`</code>  |
-||
+**Negación**  
 
+` esPlantaComestible(Planta):- not(esVenenosa(Planta)).`
+` % Planta debe llegar ligada al not`
 
+**Aritmética**  
+
+` precioPorCantidad(Planta,Cantidad,PrecioTotal):- `
+`     precioPlanta(Planta,Precio), PrecioTotal is Cantidad * Precio.`
+` % Cantidad debe llegar ligada al is`
