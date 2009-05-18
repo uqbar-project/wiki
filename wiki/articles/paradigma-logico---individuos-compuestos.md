@@ -28,3 +28,23 @@ donde, como la cola también es una lista, puedo hacer
 Probar p.ej. con esta consulta
 
 `  ?- [Elem1 | [ Elem2 | Resto ] ] = [a,e,i,o,u].`
+
+Se pueden combinar estas dos formas de armar individuos compuestos, p.ej. con esta lista de functores.
+
+`  recorrido(linea19, [estacionTren(once), avenida(rivadavia), calle(salguero), `
+`                      calle(guardiaVieja), facultad(utnMedrano), calle(forest), estacionTren(chacarita)]).`
+
+si quiero saber por qué estaciones de tren pasa una línea de colectivos, puedo definirlo así
+
+`  pasaPorEstacion(Linea,Estacion):-`
+`     recorrido(Linea, Recorrido), member(estacionTren(Estacion),Recorrido).`
+
+si consulto
+
+`  ?- pasaPorEstacion(linea19,Est).`
+
+voy a obtener como respuestas
+
+`  Est = once;`
+`  Est = chacarita;`
+`  No`
