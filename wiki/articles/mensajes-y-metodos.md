@@ -1,0 +1,27 @@
+Definiciones
+------------
+
+Un **mensaje** es algo que yo le puedo decir a un objeto.
+
+Un **método** es una secuencia de líneas de código que tiene un nombre.
+
+Cuando se le envía un mensaje a un objeto, se activa un método cuyo nombre coincide con el mensaje enviado. La palabra *método* puede entenderse como "forma", describe la forma en que algunos objetos responden a un determinado mensaje cuando alguien se los envía.
+
+P.ej. si tengo un objeto referenciado por la variable pepe, y pongo
+
+` pepe direccion`
+
+entonces
+
+-   estoy enviando el mensaje *direccion*
+-   se va a activar un método llamado *direccion*. ¿Qué método? El que decida el [method lookup](paradigma-de-objetos---method-lookup.html)
+
+Si trabajamos con clases (como todo el cuatrimestre excepto al principio), entonces los métodos están en las clases.
+
+Importante no olvidar
+---------------------
+
+-   Los mensajes los entienden los objetos
+-   Los métodos están en las clases
+-   Cuando en un método dice `self`, es una referencia al objeto que recibió el mensaje por el cual se activó el método.
+
