@@ -54,18 +54,18 @@ sí es correcta.
 Findall
 -------
 
-Miremos esta definición de plantasMismaEspecieDe
+Miremos esta definición de plantasDerivadasDe
 
 ` plantasDerivadasDe(Planta, ListaPlantasFamiliares):- `
 `    findall(P2, derivadaDe(Planta,P2), ListaPlantasFamiliares).`
 
 y supongamos esta consulta
 
-` ?- plantasMismaEspecieDe(Pl, Plantas).`
+` ?- plantasDerivadasDe(Pl, Plantas).`
 
 Miremos fijos el findall, recordando que unifica el 3er argumento con la lista de la parte indicada en el 1er argumento de todas las respuestas a la consulta del 2do argumento.
 En este caso: va a ligar `ListaPlantasFamiliares` con la lista de los `P2` para cada respuesta a la consulta `derivaDe(Planta,P2)`.
-Como en la consulta no se liga `Planta`, entonces las respuestas a `mismaEspecie(Planta,P2)` van a ser **todos** los pares de plantas (planta,derivada), y por lo tanto los `P2` van a ser **todas** las plantas derivadas de alguna planta.
+Como en la consulta no se liga `Planta`, entonces las respuestas a `derivaDe(Planta,P2)` van a ser **todos** los pares de plantas (planta,derivada), y por lo tanto los `P2` van a ser **todas** las plantas derivadas de alguna planta.
 P.ej. si tenemos
 
 ` derivaDe(p1,p3).`
