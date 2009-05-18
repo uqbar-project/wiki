@@ -29,7 +29,8 @@ Probar p.ej. con esta consulta
 
 `  ?- [Elem1 | [ Elem2 | Resto ] ] = [a,e,i,o,u].`
 
-------------------------------------------------------------------------
+Combinando constructores de individuos compuestos
+-------------------------------------------------
 
 Se pueden combinar estas dos formas de armar individuos compuestos, p.ej. con esta lista de functores.
 
