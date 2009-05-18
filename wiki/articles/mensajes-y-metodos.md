@@ -24,4 +24,5 @@ Importante no olvidar
 -   Los mensajes los entienden los objetos
 -   Los métodos están en las clases
 -   Cuando en un método dice `self`, es una referencia al objeto que recibió el mensaje por el cual se activó el método.
+    En el ejemplo, si en el método *direccion* dice `self`, entonces al hacer `pepe` `direccion` este `self` va a ser una referencia al objeto referenciado por `pepe`.
 
