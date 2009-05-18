@@ -1,5 +1,10 @@
 De este paradigma tenemos notas sueltas, las tratamos de organizar en secciones.
 
+Teoría
+------
+
+-   [Mensajes y métodos](mensajes-y-metodos.html)
+
 Objetos básicos
 ---------------
 
