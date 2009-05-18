@@ -104,7 +104,7 @@ Ahora sí, las definiciones
 <p><br />
 Cada cláusula puede ser:</p>
 <ul>
-<li>un <strong>hecho</strong>: hace una afirmación incondicional = sin condiciones, generalmente sobre un individuo particular.</li>
+<li>un <strong>hecho</strong>: hace una afirmación incondicional = sin condiciones, generalmente sobre un individuo particular. En el ejemplo todas las cláusulas son hechos salvo las que definen mortal y sonConciudadanos. Sintácticamente, los hechos son las claúsulas que no incluyen el símbolo <code>:-</code> .</li>
 <li>una <strong>regla</strong>: define una implicación, es decir que define que si se cumplen ciertas condiciones, entonces un predicado se verifica para ciertos individuos. En la cláusula</li>
 </ul>
 <p><code> mortal(X):- hombre(X).</code></p>
