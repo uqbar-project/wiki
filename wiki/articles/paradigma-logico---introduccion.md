@@ -51,10 +51,17 @@ Para más información, ver la [Sintaxis de Prolog](sintaxis-de-prolog.html)
 Un poco de teoría
 -----------------
 
-Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada, la base de conocimientos se compone de predicados e individuos. Agreguemos para esto un poco más de conocimiento en la base
+Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada,
 
+-   la base de conocimiento se compone de **cláusulas** que definen **predicados** partiendo de los **individuos** de los que queremos hablar.
+-   un programa Prolog es una base de conocimiento
+
+Armemos una base de conocimiento = programa un poco más grande
+
+` hombre(socrates).`
 ` hombre(solon).`
 ` hombre(arquimedes).`
+` mortal(X):-hombre(X).`
 ` ciudad(atenas).`
 ` ciudad(siracusa).`
 ` vive(socrates,atenas).`
@@ -66,25 +73,45 @@ Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca d
 
 Ahora sí, las definiciones
 
-|                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [individuos](individuo.html) | Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En el ejemplo aparecen varios individuos: socrates, atenas, solon, arquimedes, siracusa, -634, -287. Individuo es cualquier entidad acerca de la cual nos interese estudiar sus características o sus relaciones con otros individuos. P.ej. si hiciéramos un sistema para controlar correlatividades entre las materias de la facultad, tendríamos un individuo para representar cada materia. Los individuos se dividen en 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-                                      -   **Individuos simples**: los átomos (como solon, atenas, siracusa) y los números son individuos simples.                                                                                                                                                                                                                                                                                                                                                                                                                
-                                      -   **Individuos compuestos**: tienen otros individuos adentro, los componentes, y se pueden ver o bien como una unidad o bien acceder a cada componente. Ver [Paradigma Lógico - individuos compuestos](paradigma-logico---individuos-compuestos.html)                                                                                                                                                                                                                                                              |
-| [predicados](predicado.html) | Los predicados son las cosas que queremos decir (o predicar, je) acerca de los invividuos. En este ejemplo los predicados que aparecen son: mortal, hombre, vive, nacio, sonConciudadanos. Volviendo al ejemplo del sistema de correlatividades, seguramente tendría un predicado que relacione cada alumno con cada materia que cursó, y otro que indique la correlatividad entre dos materias relacionando una materia con cada requisito.                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-                                      Cada predicado tiene una **aridad**, que es la cantidad de argumentos que relaciona. En el ejemplo, los predicados hombre, mortal y ciudad tienen aridad 1, mientras que vive y sonConciudadanos tienen aridad 2. La clasificación de los predicados según su aridad es interesante para comprender el signifidado de un programa:                                                                                                                                                                                         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-                                      -   [Predicado Monádico](predicado-monadico.html) (un único parámetro) : Expresan características de los individuos.                                                                                                                                                                                                                                                                                                                                                                                                 
-                                      -   [Predicado Poliádico](predicado-poliadico.html) (dos o más parámetros) : Expresan relaciones entre los individuos.                                                                                                                                                                                                                                                                                                                                                                                               |
-
-`:  `
-
-Los predicados se componen de [cláusulas](clausula.html), que tienen dos formas:
-
-[hechos](hecho.html) : Que hacen una afirmación incondicional, generalmente sobre un individuo particular.
-[reglas](regla.html) : Que definen una implicación, es decir que se puede saber si se cumple un predicado a partir de la definición de otros predicados. Una regla se compone de una **cabeza** (`mortal(X)`) y un **cuerpo** (`hombre(X)`), unidos por el símbolo :- que denominamos **cuello**. La implicación tiene el orden de antecedente invertido a lo usual: cabeza ⇐ cuerpo.  
+<table>
+<tbody>
+<tr class="odd">
+<td><p><a href="individuo" title="wikilink">individuos</a></p></td>
+<td><p>Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En el ejemplo aparecen varios individuos: socrates, atenas, solon, arquimedes, siracusa, -634, -287. Individuo es cualquier entidad acerca de la cual nos interese estudiar sus características o sus relaciones con otros individuos. P.ej. si hiciéramos un sistema para controlar correlatividades entre las materias de la facultad, tendríamos un individuo para representar cada materia. Los individuos se dividen en</p>
+<ul>
+<li><strong>Individuos simples</strong>: los átomos (como solon, atenas, siracusa) y los números son individuos simples.</li>
+<li><strong>Individuos compuestos</strong>: tienen otros individuos adentro, los componentes, y se pueden ver o bien como una unidad o bien acceder a cada componente. Ver <a href="Paradigma_Lógico_-_individuos_compuestos" title="wikilink">Paradigma Lógico - individuos compuestos</a></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><p><a href="predicado" title="wikilink">predicados</a></p></td>
+<td><p>Los predicados son las cosas que queremos decir (o predicar, je) acerca de los invividuos. En este ejemplo los predicados que aparecen son: mortal, hombre, vive, nacio, sonConciudadanos. Volviendo al ejemplo del sistema de correlatividades, seguramente tendría un predicado que relacione cada alumno con cada materia que cursó, y otro que indique la correlatividad entre dos materias relacionando una materia con cada requisito.</p>
+<p>Cada predicado tiene una <strong>aridad</strong>, que es la cantidad de argumentos que relaciona. En el ejemplo, los predicados hombre, mortal y ciudad tienen aridad 1, mientras que vive y sonConciudadanos tienen aridad 2. La clasificación de los predicados según su aridad es interesante para comprender el signifidado de un programa:</p>
+<ul>
+<li><a href="Predicado_Monádico" title="wikilink">Predicado Monádico</a> (un único parámetro) : Expresan características de los individuos.</li>
+<li><a href="Predicado_Poliádico" title="wikilink">Predicado Poliádico</a> (dos o más parámetros) : Expresan relaciones entre los individuos.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td><p><a href="cláusula" title="wikilink">cláusulas</a></p></td>
+<td><p>Cada una de las sentencias = unidades de información de una base de conocimiento. Las cláusulas deben terminar con un punto <code>.</code> El ejemplo tiene 12 cláusulas. Cada cláusula participa en la definición de un predicado, define ciertos casos para los que un predicado se verifica. En el ejemplo:</p>
+<ul>
+<li>las cláusulas 1 a 3 definen por extensión el predicado hombre.</li>
+<li>la cláusula 4 define el predicado mortal, indicando que cualquier individuo que sea hombre, es mortal.</li>
+<li>las cláusulas 5 y 6 definen por extensión el predicado ciudad</li>
+<li>etc..</li>
+</ul>
+<p><br />
+Cada cláusula puede ser:</p>
+<ul>
+<li>un <strong>hecho</strong>: hace una afirmación incondicional = sin condiciones, generalmente sobre un individuo particular.</li>
+<li>una <strong>regla</strong>: define una implicación, es decir que define que si se cumplen ciertas condiciones, entonces un predicado se verifica para ciertos individuos. En la cláusula</li>
+</ul>
+<p><code> mortal(X):- hombre(X).</code></p>
+<p>la condición es que un cierto X sea mortal, y lo que definimos es que si se cumple la condición entonces el predicado mortal se cumple para el mismo X. Una regla se compone de una <strong>cabeza</strong> (<code>mortal(X)</code>) y un <strong>cuerpo</strong> (<code>hombre(X)</code>), unidos por el símbolo :- que denominamos <strong>cuello</strong>. Si vemos una regla como una implicación con antecedente y consecuente, está invertida respecto a lo que se vio al estudiar lógica: la cabeza es el consecuente, el cuerpo es el antecedente.</p></td>
+</tr>
+</tbody>
+</table>
 
 Universo Cerrado
 ----------------
