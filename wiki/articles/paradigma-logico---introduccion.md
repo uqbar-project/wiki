@@ -113,6 +113,8 @@ Cada cláusula puede ser:</p>
 </tbody>
 </table>
 
+a
+
 Universo Cerrado
 ----------------
 
