@@ -56,28 +56,42 @@ Findall
 
 Miremos esta definición de plantasMismaEspecieDe
 
-` plantasMismaEspecieDe(Planta, ListaPlantasFamiliares):- `
-`    findall(P2, mismaEspecie(Planta,P2), ListaPlantasFamiliares).`
+` plantasDerivadasDe(Planta, ListaPlantasFamiliares):- `
+`    findall(P2, derivadaDe(Planta,P2), ListaPlantasFamiliares).`
 
 y supongamos esta consulta
 
 ` ?- plantasMismaEspecieDe(Pl, Plantas).`
 
 Miremos fijos el findall, recordando que unifica el 3er argumento con la lista de la parte indicada en el 1er argumento de todas las respuestas a la consulta del 2do argumento.
-En este caso: va a ligar `ListaPlantasFamiliares` con la lista de los `P2` para cada respuesta a la consulta `mismaEspecie(Planta,P2)`.
-Como en la consulta no se liga `Planta`, entonces las respuestas a `mismaEspecie(Planta,P2)` van a ser **todos** los pares de plantas de la misma especie, y por lo tanto los `P2` van a ser **todas** las plantas que compartan su especie con alguna otra planta.
+En este caso: va a ligar `ListaPlantasFamiliares` con la lista de los `P2` para cada respuesta a la consulta `derivaDe(Planta,P2)`.
+Como en la consulta no se liga `Planta`, entonces las respuestas a `mismaEspecie(Planta,P2)` van a ser **todos** los pares de plantas (planta,derivada), y por lo tanto los `P2` van a ser **todas** las plantas derivadas de alguna planta.
 P.ej. si tenemos
 
-` mismaEspecie(p1,p3).`
-` mismaEspecie(p2,p4).`
-` mismaEspecie(p2,p5).`
+` derivaDe(p1,p3).`
+` derivaDe(p2,p4).`
+` derivaDe(p2,p5).`
 
-`ListaPlantasFamiliares` va a ser `[p2,p4,p5]`. Esto nos muestra que con esta definición el predicado no es inversible.
+`ListaPlantasFamiliares` va a ser `[p2,p4,p5]`. Esto nos muestra que con esta definición el predicado no es inversible para el primer argumento, porque las listas de "derivadas de la misma planta" son \[p3\] por un lado, y \[p4,p5\] por otro; \[p2,p4,p5\] no puede ser un 2do argumento correcto para este predicado.
 
-Para que sí lo sea debemos asegurar que la variable `Planta` *entra ligada al findall*.
+Para que que el predicado sea totalmente inversible debemos asegurar que la variable `Planta` *entra ligada al findall*.
 
-` plantasMismaEspecieDe(Planta, ListaPlantasFamiliares):- `
-`    esPlanta(Planta), findall(P2, mismaEspecie(Planta,P2), ListaPlantasFamiliares).`
+` plantasDerivadasDe(Planta, ListaPlantasFamiliares):- `
+`    esPlanta(Planta), `
+`    findall(P2, derivaDe(Planta,P2), ListaPlantasFamiliares).`
+
+Miremos ahora qué pasa si definimos el predicado así
+
+` plantasDerivadasDe(Planta, ListaPlantasFamiliares):- `
+`    esPlanta(Planta), derivaDe(Planta,P2), `
+`    findall(P2, derivaDe(Planta,P2), ListaPlantasFamiliares).`
+
+En este caso, al llegar al findall tanto Planta como P2 ya están ligadas, entonces la consulta `derivaDe(Planta,P2)` puede tener a lo sumo una respuesta (positiva, la respuesta "no" no se cuenta), entonces ListaPlantasFamiliares va a tener a lo sumo un elemento. Vamos a obtener respuestas incorrectas, p.ej.
+
+` ?- plantasDerivadasDe(p2, Lista).`
+` Lista = [p4]`
+
+porque la variable P2, que debe llegar sin ligar al findall, llega ligada.
 
 **Un ejemplo futbolero**
 
