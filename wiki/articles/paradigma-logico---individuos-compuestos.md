@@ -29,6 +29,8 @@ Probar p.ej. con esta consulta
 
 `  ?- [Elem1 | [ Elem2 | Resto ] ] = [a,e,i,o,u].`
 
+------------------------------------------------------------------------
+
 Se pueden combinar estas dos formas de armar individuos compuestos, p.ej. con esta lista de functores.
 
 `  recorrido(linea19, [estacionTren(once), avenida(rivadavia), calle(salguero), `
