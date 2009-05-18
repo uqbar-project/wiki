@@ -113,7 +113,7 @@ Cada cláusula puede ser:</p>
 </tbody>
 </table>
 
-a
+Estos son los conceptos principales de los que se compone un programa Prolog. Para obtener resultados a partir de un programa, hacemos [consultas](paradigma-logico-tipos-de-consulta.html).
 
 Universo Cerrado
 ----------------
