@@ -2,14 +2,17 @@
 
 ` hombre(socrates).`
 ` hombre(solon).`
+` hombre(pericles).`
 ` hombre(arquimedes).`
 ` mortal(X):-hombre(X).`
 ` ciudad(atenas).`
 ` ciudad(siracusa).`
 ` vive(socrates,atenas).`
 ` vive(solon,atenas).`
+` vive(pericles,atenas).`
 ` vive(arquimedes,siracusa).`
 ` nacio(solon,-634).`
+` nacio(pericles,-495).`
 ` nacio(arquimedes,-287).`
 ` sonConciudadanos(P1,P2):- vive(P1,C), vive(P2,C).`
 
@@ -34,11 +37,11 @@ A la cantidad de parámetros que lleva cada predicado la llamamos su **aridad**.
 Cláusulas
 ---------
 
-Cada una de las sentencias = unidades de información de una base de conocimiento. Las cláusulas deben terminar con un punto `.` El ejemplo tiene 12 cláusulas. Cada cláusula participa en la definición de un predicado, define ciertos casos para los que un predicado se verifica. En el ejemplo:
+Cada una de las sentencias = unidades de información de una base de conocimiento. Las cláusulas deben terminar con un punto `.` El ejemplo tiene 15 cláusulas. Cada cláusula participa en la definición de un predicado, define ciertos casos para los que un predicado se verifica. En el ejemplo:
 
--   las cláusulas 1 a 3 definen por extensión el predicado hombre.
--   la cláusula 4 define el predicado mortal, indicando que cualquier individuo que sea hombre, es mortal.
--   las cláusulas 5 y 6 definen por extensión el predicado ciudad
+-   las cláusulas 1 a 4 definen por extensión el predicado hombre.
+-   la cláusula 5 define el predicado mortal, indicando que cualquier individuo que sea hombre, es mortal.
+-   las cláusulas 6 y 7 definen por extensión el predicado ciudad
 -   etc..
 
 Cada cláusula puede ser:
