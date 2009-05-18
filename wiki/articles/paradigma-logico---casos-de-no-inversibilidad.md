@@ -140,3 +140,20 @@ Resumimos los cinco casos de inversibilidad con un ejemplo de cada uno
 ` precioPorCantidad(Planta,Cantidad,PrecioTotal):- `
 `     precioPlanta(Planta,Precio), PrecioTotal is Cantidad * Precio.`
 ` % Cantidad debe llegar ligada al is`
+
+**Comparación**  
+
+` plantaHeavy(Planta):- Nivel > 5, nivelVeneno(Planta,Nivel).`
+` % Nivel debe llegar ligada a la comparación`
+
+**findall**  
+
+` plantasDerivadasDe(Planta, ListaPlantasFamiliares):- `
+`     findall(P2, derivadaDe(Planta,P2), ListaPlantasFamiliares).`
+` % Planta debe llegar ligada al findall`
+
+**forall**  
+
+` esEspecieComestible(Especie):- `
+`     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).`
+` % Especie debe llegar ligada al forall`
