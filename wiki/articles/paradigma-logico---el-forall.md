@@ -134,7 +134,7 @@ Una que no falla:
   
 fíjense que siempre decimos "a todos los blah que les pasa la consulta 1, les tiene que pasar la consulta 2".
 
-Bueno, para ese "blah" va a haber una variable, que es Alim en el caso de esTierno (si todos **los alimentos** que le gustan ...) y P para alimentoCurioso (si todas **las personas** a quienes les gusta ...). Esa variable tiene que llegar al forall sin ligar.
+Bueno, para ese "blah" va a haber una variable, que es Alim en el caso de esTierno (si todos **los alimentos** que le gustan ...) y P para alimentoCurioso (si todas **las personas** a quienes les gusta ...). Esa variable tiene que llegar al forall sin ligar. El resto de las variables por lo general deben llegar ligadas.
 
 Varias condiciones
 ------------------
