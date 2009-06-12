@@ -24,5 +24,6 @@ Cosas que pueden servir para pensar en cómo modelar un enunciado
 Cosas que pueden servir para el TP
 ----------------------------------
 
+-   [Preguntas Frecuentes](preguntas-frecuentes.html)
 -   [Métodos de clase para crear objetos inicializados](metodos-de-clase-para-crear-objetos-inicializados.html)
 
