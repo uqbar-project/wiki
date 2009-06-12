@@ -28,8 +28,6 @@ Apuntes para revisar
 -   <http://www.programacion.net/java/articulo/jap_injection/>
 -   [Paper about Autofetch presented at ECOOP 2006](http://www.cs.utexas.edu/~aibrahim/publications/autofetch.pdf)
 
-[Título del enlace](http://www.ejemplo.com)
-
 Arquitecturas
 -------------
 
