@@ -15,6 +15,8 @@ pasan **dos** cosas, en el orden que se indica
 1.  se crea un objeto instancia de la clase UnaClase.
 2.  se hace que la variable unaVar haga referencia al objeto recién creado.
 
+### Un ejemplito
+
 Miremos esta secuencia de sentencias, se numeran para hablar de ellas abajo.
 
 `  1. col1 := OrderedCollection new.`
