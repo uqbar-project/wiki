@@ -5,6 +5,11 @@ Teoría
 
 -   [Mensajes y métodos](mensajes-y-metodos.html)
 
+Sintaxis
+--------
+
+-   [Variables locales en métodos](variables-locales-en-metodos.html)
+
 Objetos básicos
 ---------------
 
