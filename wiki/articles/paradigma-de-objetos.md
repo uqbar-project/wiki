@@ -4,6 +4,7 @@ Teoría
 ------
 
 -   [Mensajes y métodos](mensajes-y-metodos.html)
+-   [Variables](variables.html)
 
 Sintaxis
 --------
