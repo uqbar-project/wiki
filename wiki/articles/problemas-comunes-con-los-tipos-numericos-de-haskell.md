@@ -77,7 +77,7 @@ La idea de la sección anterior también puede servir en este caso (aunque no es
 `div2  xs = fromIntegral (suma xs) / fromIntegral (length xs)`
 `floca xs = fromIntegral (prod xs) / fromIntegral (length xs)`
 
-### Aprovechando mejor el polimorfismo paramétrico
+### Aprovechando mejor el polimorfismo
 
 En realidad hay una forma mejor de solucionar el problema planteado en la sección. La desventaja de la solución descripta consiste en que, al resolverlo de esa manera, la función suma sólo funciona para valores de tipo `Integer`; lo que puede resultar muy restrictivo en un futuro.
 
