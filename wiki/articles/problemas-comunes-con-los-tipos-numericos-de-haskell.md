@@ -30,6 +30,4 @@ Y de hecho no es necesario poner (x:xs) en todos lados, más simple sería:
 Notas
 -----
 
-<references />
-
 [1] saras
