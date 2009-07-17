@@ -2,7 +2,7 @@ Un problema que aparece *muy* frecuentemente al programar en Haskell es el sigui
 
 `Instance of Fractional Int required for definition of ...`
 
-Eso puede ocurrir por ejemplo en el siguiente programa, en la función division
+Eso puede ocurrir por ejemplo en el siguiente programa, en la función `division`
 
 ``` haskell
  suma []=0
