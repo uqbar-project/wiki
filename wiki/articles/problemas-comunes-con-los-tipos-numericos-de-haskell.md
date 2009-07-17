@@ -4,7 +4,7 @@ Un problema que aparece *muy* frecuentemente al programar en Haskell es el sigui
 
 Eso puede ocurrir por ejemplo en el siguiente programa, en la función `division`
 
-``` haskell
+``` cpp
  suma []=0
  suma (x:xs)= x + suma xs
 
