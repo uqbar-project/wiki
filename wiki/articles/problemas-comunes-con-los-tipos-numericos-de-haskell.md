@@ -4,12 +4,10 @@ Un problema que aparece *muy* frecuentemente al programar en Haskell es el sigui
 
 Eso puede ocurrir por ejemplo en el siguiente programa, en la función `division`
 
-``` cpp
- suma []=0
- suma (x:xs)= x + suma xs
-
- division xs = suma xs / length xs
-```
+> `suma []=0`
+> `suma (x:xs)= x + suma xs`
+>
+> `division xs = suma xs / length xs`
 
 Al intene y cuando lo ejecuto me dice:
 
