@@ -2,13 +2,11 @@ Un problema que aparece *muy* frecuentemente al programar en `Haskell` es el sig
 
 `Instance of Fractional Int required for definition of ...`
 
-Eso puede ocurrir por ejemplo en el siguiente programa, en la función `division`<ref> Si la versión anterior de la función te resulta complicada, tal vez puedas entender mejor esta:
+Eso puede ocurrir por ejemplo en el siguiente programa, en la función `division`[1] Si la versión anterior de la función te resulta complicada, tal vez puedas entender mejor esta:
 
 `suma []=0`
 `suma (x:xs)= x + suma xs`
 `division xs = suma xs / length xs`
-
-</ref>
 
 `suma = foldl (+) 0 `
 `division xs = suma xs / length xs`
@@ -28,3 +26,5 @@ Además deberías corregir el parámetro de length (¿por qué xs?) Deberías po
 Y de hecho no es necesario poner (x:xs) en todos lados, más simple sería:
 
 `  division l = suma l / fromInt (length l)`
+
+[1] saras
