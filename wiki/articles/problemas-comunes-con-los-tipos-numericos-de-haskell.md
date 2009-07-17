@@ -27,4 +27,9 @@ Y de hecho no es necesario poner (x:xs) en todos lados, más simple sería:
 
 `  division l = suma l / fromInt (length l)`
 
+Notas
+-----
+
+<references />
+
 [1] saras
