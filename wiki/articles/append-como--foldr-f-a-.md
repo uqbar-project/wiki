@@ -1,3 +1,23 @@
+El desafío
+----------
+
+Se trata de escribir la función append en Haskell a partir de la función foldr. Hay tres versiones:
+
+1.  append = ... expresion ...
+      
+    donde en la expresión dice foldr en algún lado, y realmente se usa. Se puede hacer usando únicamente tres funciones, foldr y dos más.
+
+2.  append = foldr f a
+      
+    donde f puede ser una expresión lambda
+
+3.  append = foldr f a
+      
+    donde f no puede ser una expresión lambda
+
+Soluciones
+----------
+
 by Nicolás Perez Santoro.
 
 `append:: [a] -> [a] -> [a]`
