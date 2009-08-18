@@ -94,7 +94,7 @@ entonces
 
 entonces
 
-`append`**`'`**`'''' = foldr ((.) . (:)) id`
+`append3 = foldr ((.) . (:)) id`
 
 MORALEJA:LOS TIPOS SON MIS AMIGOS.
 COROLARIO:LOS PROGRAMADORES FUNCIONALES NOS DIVERTIMOS BARATO EH  
