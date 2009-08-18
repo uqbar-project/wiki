@@ -57,7 +57,7 @@ Pero yo quiero que foldr f a :: \[a\] -&gt; \[a\] -&gt; \[a\], que es el tipo de
 
 Uh que quilombo juajauj. quiero que foldr, a partir del valor inicial, que va a ser una funcion, y la primer lista me devuelva una función que dada la segunda lista del append, me de la concatenacion de las listas. rebuscado eh. Pero pienso, si la lista de la izquierda está vacía, entonces foldr me tiene que devolver la función id. entonces digo
 
-`append3 = foldr f id`
+`append2 = foldr f id`
 
 Pero que es f? tiene que ser una función que dado un elemento y una funcion que dada una lista devuelve otra lista, devuelva otra funcion que dada una lista devuelva la lista que devolvería la función esta, pero con el elemento al principio.
 
