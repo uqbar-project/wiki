@@ -20,6 +20,8 @@ Soluciones
 
 by Nicolás Perez Santoro.
 
+### Primero
+
 `append:: [a] -> [a] -> [a]`
 `foldr :: (a -> b -> b) -> b -> [a] -> b`
 
@@ -34,6 +36,8 @@ Pero si pudiera hacer un flip de los argumentos, sería
 Entonces la primer versión del append es
 
 `append = flip (foldr (:))`
+
+### Segundo
 
 La segunda versión tiene la forma
 
@@ -61,6 +65,8 @@ Pero que es f? tiene que ser una función que dado un elemento y una funcion que
 `f e g = \ l -> e : g l`
 
 Y esta es la segunda versión. PUFFFF, QUE QUILOMBO.
+
+### Tercero
 
 La tercer versión claramente tiene que ser como la segunda, pero sin lambda expresions ....!!! Si reduzco un poco, llego a esto
 
