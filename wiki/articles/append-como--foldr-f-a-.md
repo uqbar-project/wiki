@@ -79,7 +79,8 @@ Donde
 
 pero
 
-`(:) :: (a -> [a] -> [a]) y f' :: ([a] -> [a]) -> ([a] -> [a])`
+`(:) :: (a -> [a] -> [a])`
+`f' :: ([a] -> [a]) -> ([a] -> [a])`
 
 Los tipos me dicen que componga! pero como compongo?
 
