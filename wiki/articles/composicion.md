@@ -14,7 +14,7 @@ pongo
 `find f = head (filter f)`
 
 </dl>
-*Sí, es necesario.* En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
+**Sí, es necesario.** En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
 
 `head:: [a] -> a`
 
