@@ -9,10 +9,9 @@ pongo
 
 `find f = head (filter f)`
 
-asdfñ:adsfasd  
-
 <dl>
-<di> Sí, es necesario. En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
+<dt>
+Sí, es necesario. En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
 
 `head:: [a] -> a`
 
