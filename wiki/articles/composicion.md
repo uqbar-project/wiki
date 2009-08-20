@@ -1,7 +1,7 @@
 Machaco un poquito más
 ----------------------
 
-= Cuando componés dos funciones, por ejemplo f y g, lo haces así
+Cuando componés dos funciones, por ejemplo f y g, lo haces así
 
 `f . g`
 
