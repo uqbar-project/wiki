@@ -2,6 +2,7 @@ Notas sobre el paradigma funcional
 ----------------------------------
 
 -   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
+-   [Composición](composicion.html)
 
 Notas sobre el lenguaje Haskell
 -------------------------------
