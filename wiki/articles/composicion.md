@@ -3,7 +3,9 @@ Preguntas Frecuentes
 
 ### ¿Es necesesario que esten los puntos para que sea composicion?
 
-<quote>Porque para mí está implícito que hay composición, si por ejemplo en lugar de:
+<dl>
+<dd>
+Porque para mí está implícito que hay composición, si por ejemplo en lugar de:
 
 `find f = head . filter f`
 
@@ -11,7 +13,8 @@ pongo
 
 `find f = head (filter f)`
 
-</quote> Sí, es necesario. En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
+</dl>
+Sí, es necesario. En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
 
 `head:: [a] -> a`
 
