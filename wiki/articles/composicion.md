@@ -9,7 +9,8 @@ pongo
 
 `find f = head (filter f)`
 
-Sí, es necesario. En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
+<dl>
+<di> Sí, es necesario. En el segundo ejemplo estas aplicando (filter f) a head, y head espera una lista, no una función y por ende, no anda:
 
 `head:: [a] -> a`
 
@@ -22,3 +23,6 @@ estás armando una nueva función que recibe una lista, la filtra y después dev
 `head (filter even [1 .. 20])`
 
 Y en el segundo se aplicaría así: (head . filter even) \[1..20\]
+
+</dl>
+
