@@ -137,9 +137,11 @@ Pero para mí no es así, ya que no va a haber transparencia referencial, porque
 
 ¿Es correcto afirmar entonces que si no hay Efecto de Lado entonces tengo garantizada la Transparencia referencial y viceversa?
 
-Varias respuestas:
+Varias respuestas  
+Las definiciones no son intercambiables. Seguramente hay sistemas con efecto de lado y que además logran transparencia referencial (cualquier sistema donde no se usen variables globales o estáticas, y no tenga funciones de entrada salida). En smalltalk no es dificil de conseguir. En c++ tampoco (siempre que uses const para marcar las cosas que querés que sean inmutables). Sin embargo, **ausencia de efecto de lado implica transparencia referencial**, simplemente por el hecho de que el sistema no te permite cambiar el estado de las variables en un contexto dado.
 
-1.  Las definiciones no son intercambiables. Seguramente hay sistemas con efecto de lado y que además logran transparencia referencial (cualquier sistema donde no se usen variables globales o estáticas, y no tenga funciones de entrada salida). En smalltalk no es dificil de conseguir. En c++ tampoco (siempre que uses const para marcar las cosas que querés que sean inmutables). Sin embargo, **ausencia de efecto de lado implica transparencia referencial**, simplemente por el hecho de que el sistema no te permite cambiar el estado de las variables en un contexto dado.
-2.  En el ejemplo que vos diste no hay transparencia referencial, es correcta la interpretación. La expresión a++ tiene el efecto colateral de modificar el valor de a, por lo tanto no puede tener transparencia referencial.
-3.  Tal vez la duda viene por la idea de efecto. El efecto no es solamente el resultado. El efecto incluye todas las posibles consecuencias de evaluar una expresión, en particular lo que llamamos efecto de lado (o mejor dicho colateral). Entonces si hay efecto colateral, hay efecto (y no puede haber transparencia referencial).
+En el ejemplo que vos diste no hay transparencia referencial, es correcta la interpretación. La expresión a++ tiene el efecto colateral de modificar el valor de a, por lo tanto no puede tener transparencia referencial.
+
+Tal vez la duda viene por la idea de efecto. El efecto no es solamente el resultado. El efecto incluye todas las posibles consecuencias de evaluar una expresión, en particular lo que llamamos efecto de lado (o mejor dicho colateral). Entonces si hay efecto colateral, hay efecto (y no puede haber transparencia referencial).
+
 
