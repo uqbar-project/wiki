@@ -140,7 +140,9 @@ Pero para mí no es así, ya que no va a haber transparencia referencial, porque
 ### Varias respuestas
 
 Relación entre efecto colateral y transparencia referencial:  
-Las definiciones no son intercambiables. Seguramente hay sistemas con efecto de lado y que además logran transparencia referencial (cualquier sistema donde no se usen variables globales o estáticas, y no tenga funciones de entrada salida). En smalltalk no es dificil de conseguir. En c++ tampoco (siempre que uses const para marcar las cosas que querés que sean inmutables). Sin embargo, **ausencia de efecto de lado implica transparencia referencial**, simplemente por el hecho de que el sistema no te permite cambiar el estado de las variables en un contexto dado.
+Ojo, las definiciones no son intercambiables. Seguramente hay sistemas con efecto de lado y que además logran transparencia referencial (cualquier sistema donde no se usen variables globales o estáticas, y no tenga funciones de entrada salida). En smalltalk no es dificil de conseguir. En c++ tampoco (siempre que uses const para marcar las cosas que querés que sean inmutables).
+
+Sin embargo, **ausencia de efecto de lado implica transparencia referencial**, simplemente por el hecho de que el sistema no te permite cambiar el estado de las variables en un contexto dado.
 
 En el ejemplo dado no hay transparencia referencial, es correcta la interpretación. La expresión a++ tiene el efecto colateral de modificar el valor de a, por lo tanto no puede tener transparencia referencial.
 
