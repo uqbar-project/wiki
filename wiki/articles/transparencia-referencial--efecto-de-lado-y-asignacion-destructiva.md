@@ -62,27 +62,29 @@ Ejemplos como este hacen que transparencia referencial y efecto colateral no sea
 
 `#LaColeccionConEfectoDeLado`
 `>>add: unElemento`
-`  "El add: siempre devuelve lo que se agrega. Acá se redefine para avisarle al elemento que fue agregado (no se me ocurrió nada mejor)"`
+`  "El add: siempre devuelve lo que se agrega. Acá se redefine para avisarle `
+`   al elemento que fue agregado (no se me ocurrió nada mejor)"`
 `  unElemento teAgregaronEn: self.`
 `  ^super add: unElemento.`
 
-Transparencia Referencial: SI con la definición 1, pero NO con la definición 2. En un final, si se da un caso como este y están en duda, justifiquen por qué sí o no.
+-   Transparencia Referencial: SI con la definición 1, pero NO con la definición 2. En un final, si se da un caso como este y están en duda, justifiquen por qué sí o no.
+-   Efecto colateral: SI, porque la colección, luego de recibir el mensaje add: se modifica.
+-   Asignación destructiva: no se la ve directamente en éste método, si bien puede estar presente en `teAgregaronEn:` o en `add:`. Probablemente no tenga mucho sentido hablar de asignación destructiva en este ejemplo.
 
-Efecto de Lado: SI, porque la colección, luego de recibir el mensaje add: se modifica.
+Asumiendo que los parámetros siempre entienden el mensaje `#teAgregaronEn:` no importa cuantas veces se realicen estás operaciones siempre devuelven el parámetro.
 
-Asignación destructiva: no se la ve directamente en éste método, si bien puede estar presente en teAgregaronEn: o en add: No sé si tiene mucho sentido hablar de asignación destructiva en este ejemplo.
-
-Asumiendo que los parámetros siempre entienden el mensaje \#teAgregaronEn: no importa cuantas veces se realicen estás operaciones siempre devuelven el parámetro
-
-LaColeccionConEfectoDeLado new add: 4. "Devuelve 4" LaColeccionConEfectoDeLado new add: pepita. "Devuelve pepita"
+`LaColeccionConEfectoDeLado new add: 4. "Devuelve 4"`
+`LaColeccionConEfectoDeLado new add: pepita. "Devuelve pepita"`
 
 Pero obviamente no es lo mismo escribir
 
-(LaColeccionConEfectoDeLado new add: 4) que esto (4)
+`(LaColeccionConEfectoDeLado new add: 4) que esto (4)`
 
-Mi propuesta es que tomemos como definición (o como idea) la definición 2 de transparencia referencial.
+Acá se puede ver la importancia de utilizar la definición correcta de transparencia referencial.
 
-**Ejemplo 3)**
+### Ejemplo 3)
+
+=
 
 `#Number`
 ` >>factorial`
