@@ -13,13 +13,27 @@ En los finales, muchas veces, hay algunas diferencias y si llegamos a una "defin
 Definiciones
 ------------
 
-**Operación = aplicar una función, evaluar un predicado, enviar un mensaje, etc.**
+Operación:aplicar una función, evaluar un predicado, enviar un mensaje, etc.
+Transparencia Referencial  
+Hay transparencia referencial si al reemplazar una operación por su resultado se logra el mismo efecto.
 
-**1) Transparencia Referencial** *Definición 1:* Hay transparencia referencial cuando al realizar una operación con los mismos valores siempre da el mismo resultado *Definición 2:* Hay transparencia referencial si al reemplazar una operación por su resultado se logra el mismo efecto
+Una definición alternativa dice: Hay transparencia referencial cuando al realizar una operación con los mismos valores siempre da el mismo resultado. Si bien esta parece más fácil de entender, no es tan precisa como la primera; puede ser útil para dar los primeros pasos, pero para el final hay que terminar de entender la otra.
 
-**2) Efecto de Lado** *Definición:* Hay efecto de lado cuando un cambio de estado sobrevive a la realización de una operación. Por ejemplo, una operación puede modificar una variable global, modificar uno de sus argumentos, escribir datos a la pantalla o a un archivo, o hacer uso de otras operaciones que tienen efecto de lado.
+<!-- -->
 
-**3) Asignación Destructiva** *Definición:* Asignar destructivamente es reemplazar el valor de una variable por otro valor *Nota1:* La unificación no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?) *Nota2:* Unificar es encontrar una sustitución capaz de igualar 2 términos *Nota3:* Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable)
+Efecto de Lado  
+Hay efecto de lado cuando un cambio de estado sobrevive a la realización de una operación. Por ejemplo, una operación puede modificar una variable global, modificar uno de sus argumentos, escribir datos a la pantalla o a un archivo, o hacer uso de otras operaciones que tienen efecto de lado.
+
+<!-- -->
+
+Asignación Destructiva  
+Asignar destructivamente es reemplazar el valor de una variable por otro valor.
+
+*Nota1:* La unificación no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?)
+
+*Nota2:* Unificar es encontrar una sustitución capaz de igualar 2 términos
+
+*Nota3:* Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable)
 
 Ejemplos
 --------
