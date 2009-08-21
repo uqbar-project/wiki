@@ -84,9 +84,6 @@ Acá se puede ver la importancia de utilizar la definición correcta de transpar
 -   Efecto colateral: NO
 -   Asignaciones Destructivas: SI
 
-Otros Ejemplos
---------------
-
 ### El efecto colateral dependiendo del contexto
 
 `#Collection`
