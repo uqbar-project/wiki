@@ -1,15 +1,3 @@
-Holas,
-
-Tal vez no es la mejor fecha para mandar un mail así pero bueno ...
-
-Últimamente leí muchas preguntas sobre estos conceptos y la idea de esto es saber su interpretación (más que nada de los primeros 2) y las relaciones entre los tres.
-
-La motivación no es llegar a una definición formal de cada uno sino saber qué entendemos por cada concepto y qué es lo que nos interesa.
-
-En los finales, muchas veces, hay algunas diferencias y si llegamos a una "definición" en común (o al menos logramos la desaparición de algunas ambigüedades) supongo que estaría bueno.
-
-------------------------------------------------------------------------
-
 Definiciones
 ------------
 
