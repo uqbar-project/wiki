@@ -108,7 +108,11 @@ Otros Ejemplos
 `   self do: [:each | (aBlock value: each) ifTrue: [newCollection add: each]].`
 `   ^newCollection`
 
-`select:` no tiene efecto de lado en sí mismo, porque no modifica la colección original (`self`), sino que crea una nueva de su mismo tipo. Sin embargo podemos ver dentro de `select:` efectos colaterales en la asignación de `newCollection` y en el `add:`. Ambos pueden ser considerados como efectos colaterales dentro de la ejecución del método, pero quien usa `select:` no se da cuenta de eso y para él no tiene efecto de lado. Por otra parte, aunque el `select:` no genera efectos de lado, no nos garantiza que el bloque que viene como parámetro no pueda tenerlo, por lo que uno debe tener cuidado con eso.
+Sabemos que el método `select:` no tiene efecto colateral en sí mismo, porque no modifica la colección original (`self`), sino que devuelve una nueva de su mismo tipo.
+
+Sin embargo podemos ver dentro de `select:` efectos colaterales en la asignación de `newCollection` y en el `add:`. Ambos pueden ser considerados como efectos colaterales dentro de la ejecución del método, pero quien usa `select:` no se da cuenta de eso y para él no tiene efecto de lado. Es decir, las asignaciones destructivas de variables locales *no presuponen* un efecto colateral para el sistema visto como un todo, ya que esos cambios de estado no perduran más allá de la ejecución del método. Sí podría analizarse como efecto *colateral* dentro del método. Probablemente en un método tan pequeño como este no tenga importancia ese tipo de análisis, pero en el caso de algoritmos más complejos podría cobrar valor (y asumiendo que no sea posible partir un algoritmo complejo en operaciones más pequeñas que simplifiquen justamente el análisis, pero eso ya es otra cuestión).
+
+Por otra parte, aunque el `select:` no genera efectos de lado, no nos garantiza que el bloque que viene como parámetro no pueda tenerlo, por lo que uno debe tener cuidado con eso.
 
 Preguntas frecuentes
 --------------------
