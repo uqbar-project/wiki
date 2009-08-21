@@ -38,35 +38,33 @@ Asignar destructivamente es reemplazar el valor de una variable por otro valor.
 Ejemplos
 --------
 
-Cuando hablamos de que "algo" tiene transparencia referencial, efecto de lado o asignación destructiva, ese "algo" puede ser la realización de una operación, de un lenguaje en particular o de un paradigma (es natural hablar de existencia de efecto de lado en objetos y estructurado y no en lógico y funcional, al igual que de asignación destructiva). Sin embargo, este texto está orientado a las operaciones concretas.
+Cuando hablamos de que "algo" tiene transparencia referencial, efecto de lado o asignación destructiva, ese "algo" es la realización de una operación, de un lenguaje en particular o de un paradigma.
 
-Estos tres conceptos suelen ir de la mano y si bien pueden darse relaciones entre ellas está bueno saber detectar la aparición de estos conceptos individualmente. Una relación que surge de la segunda definición de transparencia referencial es que para ésta se de, no puede haber efecto de lado, ya que si el sistema se modifica, no es lo mismo ejecutar esa operación que reemplazar por el resultado.
+Estos tres conceptos suelen ir de la mano y si bien pueden darse relaciones entre ellas es saludable poder detectar la aparición de cada uno de ellos individualmente. Una relación que surge de la definición de transparencia referencial es que para ésta se dé, no puede haber efecto colateral, ya que si el estado del sistema se modifica, no es lo mismo ejecutar esa operación que reemplazar por el resultado.
 
-A continuación mostramos algunos ejemplos en smalltalk, ya que permite la aparición de todas estas características, para dejar más en claro de qué manera podemos identificarlas.
+A continuación mostramos algunos ejemplos en Smalltalk, ya que permite la aparición de todas estas características, para dejar más en claro de qué manera podemos identificarlas.
 
-**Ejemplo 1)**
+### Ejemplo 1
 
-*Date today*
+`Date today`
 
-Transparencia Referencial: NO (Con las 2 definiciones de transparencia referencial)
+-   Transparencia Referencial: NO (Con cualquiera de las 2 definiciones de transparencia referencial)
+-   Efecto de Lado: NO
+-   Asignación Destructiva: NO
 
-Efecto de Lado: NO
+Evaluarlo con los mismos parámetros (o sea ninguno) en días distintos va a dar resultados distintos. Reemplazar la operación por el resultado una vez que cambia el día se rompe todo. Asignación destructiva y efecto de lado hay, pero en la CPU que actualiza la variable que indica el tiempo, no en el mensaje `today` que consulta ese valor (no se si es tan así, pero es a modo ilustrativo).
 
-Asignación Destructiva: NO
+El efecto colateral de otra operación afecta a esta operación y le hace perder la transparencia referencial, a pesar de que esta operación por si misma NO tiene efecto de lado.
 
-Evaluarlo con los mismos parámetros (o sea ninguno) en días distintos va a dar resultados distintos. Reemplazar la operación por el resultado una vez que cambia el día se rompe todo. Asignación destructiva y efecto de lado hay, pero en la CPU que actualiza la variable que indica el tiempo, no en el mensaje today que consulta ese valor (no se si es tan así, pero es a modo ilustrativo).
+Ejemplos como este hacen que transparencia referencial y efecto colateral no sean conceptos opuestos.
 
-El efecto de lado de otra operación afecta a esta operación y le hace perder la transparencia referencial, a pesar de que esta operacion por si misma NO tiene efecto de lado.
-
-¿Ejemplos como este hacen que transparencia referencial y efecto de lado no sean conceptos opuestos?
-
-**Ejemplo 2)**
+### Ejemplo 2
 
 `#LaColeccionConEfectoDeLado`
-` >>add: unElemento`
-`    "El add: siempre devuelve lo que se agrega. Acá se redefine para avisarle al elemento que fue agregado (no se me ocurrió nada mejor)"`
-`     unElemento teAgregaronEn: self.`
-`     ^super add: unElemento.`
+`>>add: unElemento`
+`  "El add: siempre devuelve lo que se agrega. Acá se redefine para avisarle al elemento que fue agregado (no se me ocurrió nada mejor)"`
+`  unElemento teAgregaronEn: self.`
+`  ^super add: unElemento.`
 
 Transparencia Referencial: SI con la definición 1, pero NO con la definición 2. En un final, si se da un caso como este y están en duda, justifiquen por qué sí o no.
 
