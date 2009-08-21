@@ -29,11 +29,11 @@ Hay efecto de lado cuando un cambio de estado sobrevive a la realización de una
 Asignación Destructiva  
 Asignar destructivamente es reemplazar el valor de una variable por otro valor.
 
-*Nota1:* La unificación no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?)
+**Nota1:** La unificación no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?)
 
-*Nota2:* Unificar es encontrar una sustitución capaz de igualar 2 términos
+**Nota2:** Unificar es encontrar una sustitución capaz de igualar 2 términos
 
-*Nota3:* Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable)
+**Nota3:** Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable)
 
 Ejemplos
 --------
