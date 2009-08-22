@@ -5,6 +5,7 @@ Teoría
 
 -   [Mensajes y métodos](mensajes-y-metodos.html)
 -   [Variables](variables.html)
+-   [Redefinición](redefinicion.html)
 
 Sintaxis
 --------
