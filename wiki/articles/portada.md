@@ -6,7 +6,6 @@ Paradigmas
 ### Antes de empezar
 
 -   [Paradigmas - aclaraciones previas](paradigmas---aclaraciones-previas.html)
--   [Append como "foldr f a"](Append_como_"foldr_f_a" "wikilink")
 
 ### Los paradigmas
 
