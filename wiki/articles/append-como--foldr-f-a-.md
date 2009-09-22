@@ -18,7 +18,7 @@ Se trata de escribir la función append en Haskell a partir de la función foldr
 Soluciones
 ----------
 
-by Nicolás Perez Santoro.
+by Nicolás Perez Santoro (lo que sigue a continuación es una transcripción del proceso mental en base al cual llegué a las soluciones).
 
 ### Primero
 
@@ -55,7 +55,7 @@ Pero yo quiero que foldr f a :: \[a\] -&gt; \[a\] -&gt; \[a\], que es el tipo de
 
 `foldr :: (a -> ([a] -> [a]) -> ([a] -> [a])) -> ([a] -> [a]) -> [a] -> ([a] -> [a])`
 
-Uh que quilombo juajauj. quiero que foldr, a partir del valor inicial, que va a ser una funcion, y la primer lista me devuelva una función que dada la segunda lista del append, me de la concatenacion de las listas. rebuscado eh. Pero pienso, si la lista de la izquierda está vacía, entonces foldr me tiene que devolver la función id. entonces digo
+Es bastante largo eso.... En fin, quiero que foldr, a partir del valor inicial, que va a ser una funcion, y la primer lista me devuelva una función que dada la segunda lista del append, me de la concatenacion de las listas. complicado. Pero pienso, si la lista de la izquierda está vacía, entonces foldr me tiene que devolver la función id. entonces digo
 
 `append2 = foldr f id`
 
@@ -64,7 +64,7 @@ Pero que es f? tiene que ser una función que dado un elemento y una funcion que
 `f :: a -> ([a] -> [a]) -> ([a] -> [a])`
 `f e g = \ l -> e : g l`
 
-Y esta es la segunda versión. PUFFFF, QUE QUILOMBO.
+Y esta es la segunda versión. Un tanto complicadito...
 
 ### Tercero
 
@@ -91,13 +91,10 @@ entonces
 
 `(.) . (:)  :: a -> ([a] -> [a]) -> ([a] -> [a])`
 
-(uy que quilombo)
-
 entonces
 
 `append3 = foldr ((.) . (:)) id`
 
-MORALEJA:LOS TIPOS SON MIS AMIGOS.
-COROLARIO:LOS PROGRAMADORES FUNCIONALES NOS DIVERTIMOS BARATO EH  
+MORALEJA:LOS TIPOS SON MIS AMIGOS. Guían todo el razonamiento...  
 
 
