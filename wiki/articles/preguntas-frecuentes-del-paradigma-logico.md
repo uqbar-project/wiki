@@ -1,7 +1,7 @@
 "Agregar" elementos a una lista
 -------------------------------
 
-<div>
+<div style="background-color: lightgrey; border: solid thin grey;">
 Según la "guia de lenguajes" para agregar un elemento al inicio de una lista es
 
 `[unElem|unaLista].`
