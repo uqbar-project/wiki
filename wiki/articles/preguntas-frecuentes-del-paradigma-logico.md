@@ -1,6 +1,10 @@
 "Agregar" elementos a una lista
 -------------------------------
 
+### Pregunta
+
+### Respuesta
+
 Acordate de que el paradigma lógico no tiene efectos colaterales, por lo tanto "agregar" un elemento a una lista no es algo que se pueda hacer...
 
 Sí puedo relacionar una lista con otra que tenga un elemento más:
