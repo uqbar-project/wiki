@@ -1,20 +1,6 @@
 "Agregar" elementos a una lista
 -------------------------------
 
-> Según la "guia de lenguajes" para agregar un elemento al inicio de una lista es
->
-> `[unElem|unaLista].`
->
-> pero con el ejemplo del tp , yo hago por ej.
->
-> `panqueque(madonna,Ing,_),[sal|Ing].`
->
-> y me responde:
->
-> `` ERROR: source_sink `sal' does not exist ``
->
-> quisiera saber qué estoy haciendo mal. Gracias
-
 Acordate de que el paradigma lógico no tiene efectos colaterales, por lo tanto "agregar" un elemento a una lista no es algo que se pueda hacer...
 
 Sí puedo relacionar una lista con otra que tenga un elemento más:
