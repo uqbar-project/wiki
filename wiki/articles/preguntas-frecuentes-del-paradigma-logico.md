@@ -1,7 +1,9 @@
 "Agregar" elementos a una lista
 -------------------------------
 
-> Según la "guia de lenguajes" para agregar un elemento al inicio de una lista es "\[unElem|unaLista\]".
+> Según la "guia de lenguajes" para agregar un elemento al inicio de una lista es
+>
+> `[unElem|unaLista].`
 >
 > pero con el ejemplo del tp , yo hago por ej.
 >
