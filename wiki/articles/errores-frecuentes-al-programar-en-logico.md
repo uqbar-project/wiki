@@ -22,7 +22,8 @@
 -   Mal uso del pattern matching, en dos versiones:
     -   No aprovecharlo para quedarse con una parte de una estructura más grande (functor o lista).
     -   Usar patrones demasiado específicos, perdiendo la oportunidad de construir predicados polimórficos.
--   
+-   Usar igualdad (**=**) en lugar de **is**.
+-   Usar el símbolo **=** en lugar de la misma variable.
 
 ### Errores de estilo
 
