@@ -3,7 +3,7 @@
 -   Estilos de programación no *lógicos*, por ejemplo:
     -   Utilización innecesaria de listas.
     -   Estrategias algorítmicas.
--   Programación 'con efectos colaterales', por ejemplo intentos de 'asignar' más de una vez un valor una misma variable.
+-   Programación "con efectos colaterales", por ejemplo intentos de "asignar" más de una vez un valor una misma variable.
 -   Falta de abstracción, que puede verse reflejada en:
     -   Uso de trucos programáticos de bajo nivel, en lugar de representaciones abstractas de alto nivel.
     -   Ausencia de predicados auxiliares que abstraigan conceptos reutilizables en diferentes predicados de alto nivel (lo que normalmente lleva a la repetición de código).
