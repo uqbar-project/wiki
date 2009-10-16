@@ -10,6 +10,7 @@
     -   Malas deciciones a la hora de separar un predicado en subtareas, que llevan a tener predicados auxiliares que no representan abstracciones o conceptos útiles.
 -   Problemas de inversibilidad; ya sea por falta de generación o por hacerlo incorrecta-/innecesariamente.
 -   Confundir predicados con funciones.
+-   No diferenciar bien variables de átomos.
 
 ### Problemas generales de programación
 
