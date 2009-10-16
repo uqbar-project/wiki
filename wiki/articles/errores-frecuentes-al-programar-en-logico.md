@@ -13,7 +13,9 @@
 
 -   Incumplimiento de las consignas.
 -   Código que no se entiende, desprolijo, desordenado.
--   Inconsistencia en general.
+-   Inconsistencias en general, por ejemplo:
+    -   Las diferentes reglas de un predicado esperan parámetros con significados distintos.
+    -   Una misma variable utilizada con diferentes objetivos inconsistentemente.
 
 ### Errores más técnicos
 
