@@ -12,7 +12,7 @@
 -   Confundir predicados con funciones.
 -   No diferenciar bien variables de átomos.
 -   Errores lógicos propiamente dichos:
-    -   Confundir **AND** y **OR**.
+    -   Confundir **Y** con **O**.
     -   Mezclar antecedente y consecuente en un **forall**
 
 ### Problemas generales de programación
