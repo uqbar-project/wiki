@@ -1,4 +1,4 @@
-### Errores conceptuales mas importantes
+### Errores conceptuales más importantes
 
 -   Estilos de programación no *lógicos*, por ejemplo:
     -   Utilización innecesaria de listas.
