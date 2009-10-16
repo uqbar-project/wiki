@@ -11,6 +11,9 @@
 -   Problemas de inversibilidad; ya sea por falta de generación o por hacerlo incorrecta-/innecesariamente.
 -   Confundir predicados con funciones.
 -   No diferenciar bien variables de átomos.
+-   Errores lógicos propiamente dichos:
+    -   Confundir **AND** y **OR**.
+    -   Mezclar antecedente y consecuente en un **forall**
 
 ### Problemas generales de programación
 
