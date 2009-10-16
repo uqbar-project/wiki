@@ -26,7 +26,7 @@
 -   Usar igualdad (**=**) en lugar de **is**.
 -   Usar el símbolo **=** en lugar de la misma variable.
 
-### Errores de estilo
+### Cuestiones de estilo
 
 -   No elegir buenos nombres para variables y/o predicados.
 -   Utilizar pasos intermedios innecesarios que no aportan a la claridad del código.
