@@ -8,8 +8,19 @@
     -   Ausencia de predicados auxiliares que abstraigan conceptos reutilizables en diferentes predicados de alto nivel (lo que normalmente lleva a la repetición de código).
     -   Malas deciciones a la hora de separar un predicado en subtareas, que llevan a tener predicados auxiliares que no representan abstracciones o conceptos útiles.
 -   Problemas de inversibilidad; ya sea por falta de generación o por hacerlo incorrecta-/innecesariamente.
--   No aprovechamiento del pattern matching y del polimorfismo.
--   Inconsistencia en general al programar.
+
+### Problemas generales de programación
+
+-   Incumplimiento de las consignas.
+-   Código que no se entiende, desprolijo, desordenado.
+-   Inconsistencia en general.
+
+### Errores más técnicos
+
+-   Mal uso del pattern matching, en dos versiones:
+    -   No aprovecharlo para quedarse con una parte de una estructura más grande (functor o lista).
+    -   Usar patrones demasiado específicos, perdiendo la oportunidad de construir predicados polimórficos.
+-   
 
 ### Errores de estilo
 
