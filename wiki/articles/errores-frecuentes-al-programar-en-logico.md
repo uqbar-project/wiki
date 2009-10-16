@@ -14,6 +14,7 @@
 -   Errores lógicos propiamente dichos:
     -   Confundir **Y** con **O**.
     -   Mezclar antecedente y consecuente en un **forall**
+    -   Confundir *existe* con *para todo* (forall).
 
 ### Problemas generales de programación
 
