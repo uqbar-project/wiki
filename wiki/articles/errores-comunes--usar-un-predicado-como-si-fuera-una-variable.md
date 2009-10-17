@@ -28,8 +28,8 @@ Se ve que en la nueva versión, hoy se utiliza como predicado y no como individu
 
 Si quiero saber los extremos de la lista que representa el estado del juego, es incorrecto hacer cosas como:
 
-`extremo(E):-estado = [E|_].`
-`extremo(E):-ultimoLista(E, estado).`
+`extremo(E):-estado = [E|_].         %INCORRECTO!!`
+`extremo(E):-ultimoLista(E, estado). %INCORRECTO!!`
 
 La forma correcta de hacerlo sería:
 
