@@ -12,7 +12,7 @@ El error consiste en utilizar `hoy` o `estado` como si *fueran* constantes, y no
 
 #### Ejemplo 1 - Fecha de hoy
 
-Suponiendo que tengo en la base de conocimientos información sobre los downloads que se hicieron el día de hoy, en el predicado `download/3` que relaciona un usuario, con un archivo bajado y una fecha; una forma incorrecta de utilizarlo sería:
+Suponiendo que tengo en la base de conocimientos información sobre los downloads que se hicieron el día de hoy, en el predicado que relaciona un usuario, con un archivo bajado y una fecha; una forma incorrecta de utilizarlo sería:
 
 `bajoAlgunArchivoHoy(Usuario):-`
 `  download(Usuario, _Archivo, Fecha), Fecha = hoy. %INCORRECTO!`
