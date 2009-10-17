@@ -36,4 +36,4 @@ La forma correcta de hacerlo sería:
 `extremo(E):-estado([E|_]).`
 `extremo(E):-estado(Estado), ultimoLista(E, estado).`
 
-Asumiendo que el predicado `ultimoLista/2` relaciona a una lista con su último elemento.
+Asumiendo que el predicado relaciona a una lista con su último elemento.
