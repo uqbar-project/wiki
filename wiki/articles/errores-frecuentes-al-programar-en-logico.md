@@ -3,7 +3,7 @@
 -   Confundir los conceptos del paradigma, por ejemplo:
     -   predicados con funciones.
     -   variables con individuos (en particular átomos).
-    -   [Errores comunes: Usar un predicado como si fuera una variable](predicados-con-individuos.html)
+    -   [predicados con individuos](errores-comunes--usar-un-predicado-como-si-fuera-una-variable.html)
 -   Errores lógicos propiamente dichos:
     -   Confundir **Y** con **O**.
     -   Mezclar antecedente y consecuente en un **forall**
