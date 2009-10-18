@@ -34,6 +34,6 @@ Si quiero saber los extremos de la lista que representa el estado del juego, es 
 La forma correcta de hacerlo sería:
 
 `extremo(E):-estado([E|_]).`
-`extremo(E):-estado(Estado), ultimoLista(E, estado).`
+`extremo(E):-estado(Estado), ultimoLista(E, Estado).`
 
 Asumiendo que el predicado relaciona a una lista con su último elemento.
