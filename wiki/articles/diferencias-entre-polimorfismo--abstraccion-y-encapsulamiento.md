@@ -1,7 +1,8 @@
-En particular, la resolución que había propuesto Javier es perfectamente correcta:
+La pregunta se dispara en el ejercicio 2 de este final: <http://archivos-pdep.googlegroups.com/web/Final-Paradigmas-2009-02-21.pdf>
 
-`   - Que la V.I. tipo referencie a un objeto que puede ser de las clases MateriaPrima, ProductoSemiElaborado y ProductoTerminado, y estas clases sean clases independientes, es decir que no sean subclases de ninguna ya que según el diagrama no comparten características.`
-`   Entonces ahora Material deja de ser clase abstracta,  para crear un material creamos un objeto de la clase Material, y a la variable tipo le asignamos un objeto de la clase de material que corresponda(MateriaPrima, ProductoSemiElaborado o ProductoTerminado). `
+Al que se propone la siguiente solución:
+
+> Que la V.I. tipo referencie a un objeto que puede ser de las clases MateriaPrima, ProductoSemiElaborado y ProductoTerminado, y estas clases sean clases independientes, es decir que no sean subclases de ninguna ya que según el diagrama no comparten características. Entonces ahora Material deja de ser clase abstracta, para crear un material creamos un objeto de la clase Material, y a la variable tipo le asignamos un objeto de la clase de material que corresponda(MateriaPrima, ProductoSemiElaborado o ProductoTerminado).
 
 El único detalle que yo marcaría es con respecto a los conceptos que vos mencionás. Yo creo por la forma en que usás la palabra "abstracción", lo que estás queriendo decir es "encapsulamiento".
 
