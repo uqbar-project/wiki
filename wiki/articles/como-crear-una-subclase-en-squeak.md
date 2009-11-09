@@ -21,3 +21,5 @@ Forma B
 Una forma que puede resultar más sencilla es directamente copiar el texto que está arriba en la sección de código del Class Browser (eso reemplaza los puntos 1 y 2) y luego modificarlo y salvarlo (igual a los pasos 3-6).
 
 (Asegúrense de borrar todo lo que haya en la sección de código antes, es decir, tiene que ser el único texto en ese lugar, lo modifican y lo graban, voilá).
+
+Una cosa que puede resultar difícil del squeak es que hay que usar siempre ctrl-click en lugar de lo que los usuarios windows están acostumbrados como "click derecho"... para configurar eso: Menú Ppal -&gt; system preferences -&gt; preferences -&gt; escriben en el campito de texto "swap" y le tildan la opcion "swap mouse buttons" -&gt; save.
