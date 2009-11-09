@@ -22,4 +22,4 @@ Una forma que puede resultar más sencilla es directamente copiar el texto que e
 
 (Asegúrense de borrar todo lo que haya en la sección de código antes, es decir, tiene que ser el único texto en ese lugar, lo modifican y lo graban, voilá).
 
-Una cosa que puede resultar difícil del squeak es que hay que usar siempre ctrl-click en lugar de lo que los usuarios windows están acostumbrados como "click derecho"... para configurar eso: Menú Ppal -&gt; system preferences -&gt; preferences -&gt; escriben en el campito de texto "swap" y le tildan la opcion "swap mouse buttons" -&gt; save.
+1. Una cosa que puede resultar difícil del squeak es que hay que usar siempre ctrl-click en lugar de lo que los usuarios windows están acostumbrados como "click derecho"... para configurar eso: Menú Ppal -&gt; system preferences -&gt; preferences -&gt; escriben en el campito de texto "swap" y le tildan la opcion "swap mouse buttons" -&gt; save.
