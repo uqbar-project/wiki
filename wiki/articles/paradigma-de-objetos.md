@@ -33,4 +33,5 @@ Cosas que pueden servir para el TP
 
 -   [Preguntas Frecuentes](preguntas-frecuentes.html)
 -   [Métodos de clase para crear objetos inicializados](metodos-de-clase-para-crear-objetos-inicializados.html)
+-   [Tutorial de Squeak](tutorial-de-squeak.html)
 
