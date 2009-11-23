@@ -14,6 +14,9 @@ Idem
 Conceptos básicos
 -----------------
 
+¡No devolver Strings para informar un error!  
+Los errores se informan con self error.
+
 ... tal vez alguno de los de abajo podría venir a parar a esta sección.
 
 Cosas básicas de Smalltalk
