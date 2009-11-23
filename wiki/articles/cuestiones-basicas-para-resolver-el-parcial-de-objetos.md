@@ -3,6 +3,16 @@ Esta es una recopilación de errores comunes a la hora de resolver un parcial de
 El diagrama de clases
 ---------------------
 
--   Debe ser conexo!
--   Especificar bien las relaciones, diferenciar la herencia de la asociación o conocimiento.
+Debe ser conexo!  
+Blah, faltaría una explicación más detallada.
+
+Especificar bien las relaciones, diferenciar la herencia de la asociación o conocimiento.  
+Idem
+
+Cosas básicas de Smalltalk
+--------------------------
+
+Tienen la guía de lenguajes, ¡úsenla!  
+Por ejemplo deberían aprovecharla para saber qué mensajes entiende una colección, no hace falta acordárselos de memoria para usarlos correctamente.
+
 
