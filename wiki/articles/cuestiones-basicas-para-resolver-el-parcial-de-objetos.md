@@ -6,6 +6,8 @@ El diagrama de clases
 Debe ser conexo!  
 Blah, faltaría una explicación más detallada.
 
+<!-- -->
+
 Especificar bien las relaciones, diferenciar la herencia de la asociación o conocimiento.  
 Idem
 
