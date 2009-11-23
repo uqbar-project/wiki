@@ -1,9 +1,9 @@
 Esta es una recopilación de errores comunes a la hora de resolver un parcial de objetos. Son conceptos muy básicos, es decir, esto debe considerarse como "condiciones necesarias" para aprobar el parcial; nunca como "condiciones suficientes".
 
-A demás del código...
+El diagrama de clases
 ---------------------
 
-¡El diagrama de clases debe ser conexo!  
+¡Debe ser conexo!  
 Blah, faltaría una explicación más detallada.
 
 <!-- -->
@@ -11,10 +11,18 @@ Blah, faltaría una explicación más detallada.
 Especificar bien las relaciones, diferenciar la herencia de la asociación o conocimiento.  
 Idem
 
-<!-- -->
+Otras cuestiones importantes
+----------------------------
 
 Indicar cómo se usa lo que hicieron  
 Para cada punto del parcial, indicar qué mensaje hay que mandarle a qué objeto
+
+<!-- -->
+
+El orden  
+Está bueno ordenarlo "punto por punto" (en contraposición a juntar todos los métodos de una misma clase). No solo facilita la corrección sino además los ayuda a no olvidarse de nada
+
+También está bueno ir "de lo general a lo particular", es decir, comenzar por el mensaje que se llamaría desde el workspace y luego los que se llaman desde ahí, así sucesivamente hasta los mensajes más específicos.
 
 Conceptos básicos
 -----------------
