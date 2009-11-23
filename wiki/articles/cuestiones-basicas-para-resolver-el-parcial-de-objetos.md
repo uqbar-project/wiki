@@ -35,6 +35,11 @@ Idem
 Otras cuestiones importantes
 ----------------------------
 
+¡No devolver Strings para informar un error!  
+Los errores se informan con self error.
+
+<!-- -->
+
 Indicar cómo se usa lo que hicieron  
 Para cada punto del parcial, indicar qué mensaje hay que mandarle a qué objeto
 
