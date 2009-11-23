@@ -3,7 +3,7 @@ Esta es una recopilación de errores comunes a la hora de resolver un parcial de
 El diagrama de clases
 ---------------------
 
-Debe ser conexo!  
+¡Debe ser conexo!  
 Blah, faltaría una explicación más detallada.
 
 <!-- -->
