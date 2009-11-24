@@ -3,6 +3,16 @@ Esta es una recopilación de errores comunes a la hora de resolver un parcial de
 Conceptos básicos
 -----------------
 
+Ser consistente  
+
+<!-- -->
+
+Utilizar los conceptos del paradigma  
+
+<!-- -->
+
+Repartir las responsabilidades  
+
 ... tal vez alguno de los de abajo podría venir a parar a esta sección.
 
 Cosas básicas de Smalltalk
