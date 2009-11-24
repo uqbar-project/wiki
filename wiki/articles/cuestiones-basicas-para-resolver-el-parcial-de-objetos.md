@@ -32,6 +32,8 @@ Indicar las relaciones de conocimiento en el diagrama de objetos.
 
 También los atributos que tiene cada objeto.
 
+También tiene que quedar claro de qué tipo es cada parámetro que espera un método, y qué devuelve.
+
 Cosas básicas de Smalltalk
 --------------------------
 
