@@ -1,5 +1,6 @@
-A diferencia de matemática y muchos lenguajes (como C o Java) en Haskell no es necesario utilizar paréntesis al pasarle los parámetros a una función. Es decir, si tenemos una función f en matemática escribimos:
+A diferencia de matemática y muchos lenguajes (como C o Java) en Haskell no es necesario utilizar paréntesis al pasarle los parámetros a una función. Es decir, si tenemos una función de un parámetro en matemática lo escribimos con paréntesis:
 
+`en matemática escribimos:`
 `f(5)`
 `g(3,4)`
 
