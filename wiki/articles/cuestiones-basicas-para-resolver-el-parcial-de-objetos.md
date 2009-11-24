@@ -3,15 +3,19 @@ Esta es una recopilación de errores comunes a la hora de resolver un parcial de
 Conceptos básicos
 -----------------
 
-Ser consistente  
-
-<!-- -->
-
 Utilizar los conceptos del paradigma  
 
 <!-- -->
 
 Repartir las responsabilidades  
+
+<!-- -->
+
+Ser consistente  
+Por ejemplo:
+
+-   Si en algún lugar mando un mensaje y trato el resultado como una colección debo asegurarme de que la implementación del método devuelva una colección (lo mismo vale para colecciones como para cualquier otro objeto).
+-   Si tengo muchos métodos polimórficos todos deben recibir los mismos parámetros y devolver objetos del mismo tipo.
 
 ... tal vez alguno de los de abajo podría venir a parar a esta sección.
 
