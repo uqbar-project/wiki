@@ -28,3 +28,13 @@ Para poder utilizar esto eficientemente, hay que tener algún conocimiento de la
 ### Ejemplos
 
 ... TBC ...
+
+Tuplas
+------
+
+... TBC ...
+
+Aplicación parcial de operadores
+--------------------------------
+
+... TBC ...
