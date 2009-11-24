@@ -32,13 +32,8 @@ Blah, faltaría una explicación más detallada.
 Especificar bien las relaciones, diferenciar la herencia de la asociación o conocimiento.  
 Idem
 
-Otras cuestiones importantes
-----------------------------
-
-¡No devolver Strings para informar un error!  
-Los errores se informan con self error.
-
-<!-- -->
+La presentación del parcial
+---------------------------
 
 Indicar cómo se usa lo que hicieron  
 Para cada punto del parcial, indicar qué mensaje hay que mandarle a qué objeto
@@ -49,6 +44,29 @@ El orden del código es importante a la hora de entender la solución propuesta
 Está bueno ordenarlo "punto por punto" (en contraposición a juntar todos los métodos de una misma clase). No solo facilita la corrección sino además los ayuda a no olvidarse de nada
 
 También está bueno ir "de lo general a lo particular", es decir, comenzar por el mensaje que se llamaría desde el workspace y luego los que se llaman desde ahí, así sucesivamente hasta los mensajes más específicos.
+
+<!-- -->
+
+Prolijidad  
+Hagan buena letra, no amontonen todo, etc.
+
+<!-- -->
+
+No escribir muy apretado  
+Así hay lugar para hacer anotaciones y correcciones.
+
+<!-- -->
+
+Ortografía  
+Los docentes tenemos indicación explícita del departamento de desaprobar a quienes tengan muchos errores de ortografía, así que pilas con eso.
+
+De paso no estaría mal practicar un poquito de redacción, aunque eso va más que nada para el final.
+
+Otras cuestiones importantes
+----------------------------
+
+¡No devolver Strings para informar un error!  
+Los errores se informan con self error.
 
 <!-- -->
 
