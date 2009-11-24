@@ -37,6 +37,8 @@ También tiene que quedar claro de qué tipo es cada parámetro que espera un m�
 Cosas básicas de Smalltalk
 --------------------------
 
+Si bien no es nuestro objetivo saber bocha de Smalltalk, hay cositas que impactan directamente en la posibilidad o no de comprender lo que están programando; entonces conviene darles bola:
+
 Tienen la guía de lenguajes, ¡úsenla!  
 Por ejemplo deberían aprovecharla para saber qué mensajes entiende una colección, no hace falta acordárselos de memoria para usarlos correctamente.
 
@@ -49,6 +51,15 @@ Y además ser bien explícito en el diagrama y en el código, cuándo están env
 
 La sintaxis es objeto-mensaje-parámetro...  
 ¡No da confundirse con eso!
+
+<!-- -->
+
+Identificar bien mayúsculas y minúsculas.  
+Los nombres de clase van con mayúscula, al igual que las variables de clase.
+
+Todo lo demás va en minúscula.
+
+Romper estas reglas obliga a que el corrector tenga dudas de lo que están haciendo.
 
 El diagrama de clases
 ---------------------
