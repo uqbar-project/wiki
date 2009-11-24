@@ -4,10 +4,18 @@ Conceptos básicos
 -----------------
 
 Utilizar los conceptos del paradigma  
+Encontrar abstracciones, aprovechar el polimorfismo, delegar responsabilidades, etc.
+
+Hay que programar con objetos, no vale programar como si fuera Algoritmos... para aprender eso ya está Algoritmos.
 
 <!-- -->
 
 Repartir las responsabilidades  
+Que no me quede todo el código en un mismo objeto. Es fácil verlo (por ejemplo) cuando una caja del diagrama de clases ocupa la mitad de la página.
+
+Que no todos los mensajes del workspace vayan al mismo objeto.
+
+Que no haya un objeto "Sistema".
 
 <!-- -->
 
