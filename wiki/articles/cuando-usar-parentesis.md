@@ -23,4 +23,8 @@ obtendremos como resultado 14, ya que la multiplicación tiene mayor precedencia
 
 podemos lograr que la operación de suma se ejecute "antes" que la multiplicación y obtener 20 como resultado.
 
-[Precedencia de los operadores más comunes en Haskell](precedencia-de-los-operadores-mas-comunes-en-haskell.html)
+Para poder utilizar esto eficientemente, hay que tener algún conocimiento de la [Precedencia de los operadores más comunes en Haskell](precedencia-de-los-operadores-mas-comunes-en-haskell.html).
+
+### Ejemplos
+
+... TBC ...
