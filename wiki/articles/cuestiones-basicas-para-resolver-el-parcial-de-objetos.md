@@ -34,6 +34,18 @@ También los atributos que tiene cada objeto.
 
 También tiene que quedar claro de qué tipo es cada parámetro que espera un método, y qué devuelve.
 
+<!-- -->
+
+Elegir buenos nombres para clases, métodos y variables  
+Por ejemplo diferenciar desde el nombre los métodos que son órdenes de los que son consultas. Para los primeros conviene usar oraciones en infinitivo o en imperativo. Para las consultas en general usamos el indicativo:
+
+-   "caminá" o "caminar" podrían indicar la orden de realizar una caminata (en el parcial vale poner el acento para que se note la intención).
+-   "caminaste" podría ser una consulta que devuelve un booleano indicando si caminó
+-   "cuantoCaminaste" podría ser una consulta que devuelve una cantidad.
+-   Por otro lado, un nombre como "caminata" dificulta comprender la intención.
+
+Esto es aún más importante si el método en cuestión no está 100% correcto, ya que al menos permite entender lo que quisieron hacer.
+
 Cosas básicas de Smalltalk
 --------------------------
 
