@@ -25,13 +25,15 @@ podemos lograr que la operación de suma se ejecute "antes" que la multiplicaci�
 
 ### Precedencia de los operadores más comunes en Haskell
 
-La siguiente tabla (simplificada) muestra la precedencia de los operadores que más utilizamos en Haskell. A mayor número mayor precedencia. Por ejemplo, el operador tiene mayor precedencia que por lo tanto si escribimos:
+La siguiente tabla muestra la precedencia de los operadores que más utilizamos en Haskell. A mayor número mayor precedencia. Por ejemplo, el operador tiene mayor precedencia que por lo tanto si escribimos:
 
 `3 < 4 + 5`
 
 se entiende como:
 
 `3 < (4+5)`
+
+La tabla (simplificada) es la siguiente:
 
 `infixr 9  .`
 `infixl 9  !!`
