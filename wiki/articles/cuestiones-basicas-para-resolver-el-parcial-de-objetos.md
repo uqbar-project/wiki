@@ -24,6 +24,7 @@ Por ejemplo:
 
 -   Si en algún lugar mando un mensaje y trato el resultado como una colección debo asegurarme de que la implementación del método devuelva una colección (lo mismo vale para colecciones como para cualquier otro objeto).
 -   Si tengo muchos métodos polimórficos todos deben recibir los mismos parámetros y devolver objetos del mismo tipo.
+-   En un método puedo usar las variables de instancia del objeto o los parámetros, cualquier otra variable "mágica" que aparezca constituye un error.
 
 <!-- -->
 
