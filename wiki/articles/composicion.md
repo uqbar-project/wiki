@@ -109,6 +109,8 @@ Si bien en general intentamos concentrarnos en los conceptos y no prestar tanta 
 
     Una alternativa posible es alterar la precedencia explícitamente usando paréntesis, por ejemplo ; donde "primero" se componen las funciones, eso produce una nueva función y a esa nueva función le aplico la lista como parámetro.
 
+    Para más información puede leer: [Precedencia de los operadores más comunes en Haskell](precedencia-de-los-operadores-mas-comunes-en-haskell.html) y [Cuándo usar paréntesis](cuando-usar-parentesis.html)
+
 Preguntas Frecuentes
 --------------------
 
