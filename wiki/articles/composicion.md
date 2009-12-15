@@ -78,6 +78,8 @@ Y en el segundo se aplicaría así:
 Errores comunes
 ---------------
 
+### Ejemplo
+
 Supongamos una lista de alumnos representados con tuplas de tipo (nombre::String, nota::Int). Queremos obtener los nombres de los alumnos aprobados (nota &gt;= 4).
 
 Podemos suponer además la existencia de las funciones:
@@ -105,7 +107,7 @@ Diciéndolo "en fácil": le tiene que faltar un parámetro, si yo a una función
 
 Sólo puede ser usado en una composición (para ser estricto la [composición de funciones de dos o más parámetros](composicion-de-funciones-de-dos-o-mas-parametros.html) es posible, pero excede a lo que hacemos en la materia así que a los efectos de PDEP podemos olvidarnos de esa posibilidad).
 
-### Formas correctas de hacerlo:
+### Correcciones posibles
 
 Sin composición  
 
