@@ -55,7 +55,7 @@ Ejemplos como este hacen que transparencia referencial y efecto colateral no sea
 `  unElemento teAgregaronEn: self.`
 `  ^super add: unElemento.`
 
--   Transparencia Referencial: NO (si te toma la definición alternativa SI por eso dicha definición no es correcta). En un final, si se da un caso como este y están en duda, justifiquen por qué sí o no.
+-   Transparencia Referencial: NO (si te toma la definición alternativa SI, por eso dicha definición no es correcta). En un final, si se da un caso como este y están en duda, justifiquen por qué sí o no.
 -   Efecto colateral: SI, porque la colección, luego de recibir el mensaje add: se modifica.
 -   Asignación destructiva: no se la ve directamente en éste método, si bien puede estar presente en `teAgregaronEn:` o en `add:`. Probablemente no tenga mucho sentido hablar de asignación destructiva en este ejemplo.
 
