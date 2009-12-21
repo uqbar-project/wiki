@@ -23,6 +23,7 @@ Técnicas Avanzadas de Programación
 ----------------------------------
 
 -   [Manejo de Errores](manejo-de-errores.html)
+-   [Tips para la resolución de un parcial de TADP](tips-para-la-resolucion-de-un-parcial-de-tadp.html)
 
 Apuntes para revisar
 
