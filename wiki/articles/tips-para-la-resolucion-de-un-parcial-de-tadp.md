@@ -11,9 +11,10 @@ Herramientas a utilizar (o cosas que no pueden faltar)
     -   Si en alguna funcionalidad intervienen muchos objetos u ocurre una cadena larga de delegaciones, es interesante mostrar una visión global de la misma en un diagrama de secuencia o de colaboración.
     -   Si un objeto o una parte del sistema pasa por varios estados diferentes puede ser interesante hacer un diagrama de estados.
 
-      
-    Es importante destacar que el diagrama no reemplaza al código. El diagrama provee una visión de alto nivel de la solución, para que quien tiene que leerlo tenga un primer pantallazo de la estrategia utilizada; luego es necesario bajar a los detalles y para eso es necesario verlos en el código.
+: Es importante destacar que el diagrama no reemplaza al código. El diagrama provee una visión de alto nivel de la solución, para que quien tiene que leerlo tenga un primer pantallazo de la estrategia utilizada; luego es necesario bajar a los detalles y para eso es necesario verlos en el código.
 
--   Aclaraciones adicionales:
-    -   En texto plano se pueden justificar decisiones
+-   Aclaraciones adicionales que puede ser útil incluir
+    -   Justificar las decisiones, contando las alternativas que se tuvieron en cuenta y la motivación para elección realizada.
+    -   Potenciales puntos débiles detectados en la solución propuesta; junto con la justificación de por qué se propone esta solución a pesar de esas dificultades señaladas.
+    -   Cualquier otro comentario que ayude a comprender la solución propuesta.
 
