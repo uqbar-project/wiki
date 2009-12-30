@@ -31,6 +31,10 @@ Apuntes para revisar
 -   <http://www.programacion.net/java/articulo/jap_injection/>
 -   [Paper about Autofetch presented at ECOOP 2006](http://www.cs.utexas.edu/~aibrahim/publications/autofetch.pdf)
 
+Una lectura interesante
+
+-   <http://cacm.acm.org/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/fulltext>
+
 Arquitecturas
 -------------
 
