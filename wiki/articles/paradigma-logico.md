@@ -108,4 +108,5 @@ Más características
 
 -   [Paradigma Lógico - detalles del SWI Prolog](paradigma-logico---detalles-del-swi-prolog.html)
 -   [Polimorfismo en el Paradigma Lógico](polimorfismo-en-el-paradigma-logico.html)
+-   Aquí pueden ver otros [Lenguajes del Paradigma lógico](lenguajes-del-paradigma-logico.html), además del Prolog.
 
