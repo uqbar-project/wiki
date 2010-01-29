@@ -23,26 +23,18 @@ Condiciones: “y” vs “o” Esta sección es para que detecten cuándo es �
 
 ### Negación
 
+(más adelante)
+
+### Valores y variables
+
+Ver [Lógico - trabajo con valores](logico---trabajo-con-valores.html)
+
 Algunas Características Relevantes
 ----------------------------------
 
-### Tipos de consulta
+### Múltiples respuestas
 
-Existen dos tipos de consulta:
-
-;Individuales:Se hacen sobre un individuo específico. Por ejemplo:<code>
-
-    ?- mortal(socrates).
-
-</code>
-
-;Existenciales:Se busca algún individuo que satisfaga la relación. Por ejemplo:<code>
-
-    ?- mortal(X).
-
-</code> Nótese en el segundo tipo de consulta la presencia de [variables o incógnitas](variables-o-incognitas.html). Por ese motivo este tipo de consultas también son llamadas consultas variables.
-
-El paradigma lógico trabaja con el principio de [Universo Cerrado](universo-cerrado.html).
+Al hacer una [consulta](paradigma-logico---un-poco-de-nomenclatura-consultas.html) se puede obtener más de una respuesta. Esto está relacionado con que estamos trabajando con relaciones, no con funciones. P.ej. si Pedro tiene como primos a Lucía, Alan y Guido; entonces la relación "ser primos" relaciona a Pedro con tres personas, entonces si consulto sobre los primos de Pedro, lo que debe pasar es que se obtengan tres respuestas, una para cada primo.
 
 ### Inversibilidad
 
@@ -71,15 +63,28 @@ Manejo de conjuntos
 
 -   [Paradigma Lógico - individuos compuestos](paradigma-logico---individuos-compuestos.html)
 
-### Listas
+### Listas - en construcción
 
-listas – conjuntos explícitos • Definición de lista: lista vacía o (cabeza y cola) • Pattern matching • Definiciones recursivas • findall o usarlo sólo si lo necesito todo esto con ejemplos de uso
+listas – conjuntos explícitos
+
+-   Definición de lista: lista vacía o (cabeza y cola)
+-   Pattern matching
+-   Definiciones recursivas
+-   findall
+    -   usarlo sólo si lo necesito
 
 ### Forall
 
-forall – “a todos los que les pasa A, les pasa B” • Tener claro si uno quiere poner “uno” o “todos”, si es “todos” va forall, sino va simplemente la condición. Relacionar con cómo se ligan las variables. • Acá también hay problemas con la inversibilidad si ciertas variables no llegan ligadas. Solución con generadores.
+forall – “a todos los que les pasa A, les pasa B”
 
--   [Paradigma Lógico - el forall](paradigma-logico---el-forall.html)
+Descripción: [Paradigma Lógico - el forall](paradigma-logico---el-forall.html)
+Un mal uso típico: [Paradigma Lógico - forall - no siempre con member](paradigma-logico---forall---no-siempre-con-member.html)
+
+Algunos tips rápidos
+
+-   Tener claro si uno quiere poner “uno” o “todos”, si es “todos” va forall, sino va simplemente la condición. Relacionar con cómo se ligan las variables.
+-   Acá también hay problemas con la inversibilidad si ciertas variables no llegan ligadas. Solución con generadores.
+-   No es necesario que el primer argumento del forall sea `member(...)`, en particular desconfíen de los findall seguidos de forall.
 
 ### Estructuras de datos
 
@@ -92,8 +97,15 @@ Meter acá lo de cómo hacer jugar el estado en el dominó. Sería ideal contar 
 
 -   [Paradigma Lógico - cómo pienso la resolución de un punto](paradigma-logico---como-pienso-la-resolucion-de-un-punto.html)
 
+Errores y preguntas frecuentes
+------------------------------
+
+-   [Errores frecuentes al programar en lógico](errores-frecuentes-al-programar-en-logico.html)
+-   [Preguntas Frecuentes del Paradigma Lógico](preguntas-frecuentes-del-paradigma-logico.html)
+
 Más características
 -------------------
 
+-   [Paradigma Lógico - detalles del SWI Prolog](paradigma-logico---detalles-del-swi-prolog.html)
 -   [Polimorfismo en el Paradigma Lógico](polimorfismo-en-el-paradigma-logico.html)
 
