@@ -25,7 +25,7 @@ Técnicas Avanzadas de Programación
 -   [Manejo de Errores](manejo-de-errores.html)
 -   [Tips para la resolución de un parcial de TADP](tips-para-la-resolucion-de-un-parcial-de-tadp.html)
 -   [Frases teadepeanas](frases-teadepeanas.html)
--   [Bibliografía sobre programación avanzada orientada a objetos](bibliografia.html)
+-   [Bibliografía](bibliografia-sobre-programacion-avanzada-orientada-a-objetos.html)
 
 Apuntes para revisar
 
