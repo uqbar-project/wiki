@@ -2,24 +2,7 @@ Herramientas de programación y diseño
 -------------------------------------
 
 -   Carlos Lombardi y Nicolás Passerini, Introducción a la Orientación a Objetos, disponible en: <http://groups.google.com/group/archivos-pdep/web/apunte-objetos-1-4.doc>.
--   {{ Citation
-
-`| last1=Lincoln`
-`| first1=A.`
-`| last2=Washington`
-`| first2=G.`
-`| last3=Adams`
-`| first3=J.`
-`| lastauthoramp=yes`
-`| title=All the Presidents' Names`
-`| publisher=The Pentagon`
-`| place=Home Base, New York`
-`| volume=XII`
-`| edition=2nd`
-`| year=2007`
-
-}}
-
+-   Erich Gamma, Richard Helm, Ralph Johnson y John M. Vlissides, Design Patterns: Elements of Reusable Object-Oriented Software, Addison-Wesley Professional Computing Series, 1994
 -   Andrew Hunt y David Thomas, The Pragmatic Programmer: From Journeyman to Master, Addison-Wesley Professional, 1999.
 -   Alfred Aho, John Hopcroft y Jeffrey Ullman, Data Structures and Algorithms, Addison-Wesley, 1983
 -   Steven John Metsker, William C.Wake, Design Patterns in Java, Software Patterns Series, 2006.
