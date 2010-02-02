@@ -8,6 +8,7 @@ Herramientas de programación y diseño
 -   Steven John Metsker, William C.Wake, Design Patterns in Java, Software Patterns Series, 2006.
 -   Rebecca Wirfs-Brock, Alan McKean, Object Design: Roles, Responsibilities, and Collaborations, Addison-Wesley, 2002.
 -   Michael C. Feathers, Working Effectively with Legacy Code - Robert C.Martin Series, 2004.
+-   Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship, Prentice Hall, 2008
 
 Herramientas metodológicas
 --------------------------
