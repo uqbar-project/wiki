@@ -4,6 +4,7 @@ Notas sobre el paradigma funcional
 -   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
 -   [Composición](composicion.html)
 -   [Inferencia de tipos](inferencia-de-tipos.html)
+-   [Currificación](currificacion.html)
 
 Notas sobre el lenguaje Haskell
 -------------------------------
