@@ -27,16 +27,7 @@ A continuación se describen paso a paso los ejemplos que permiten comprender el
 Antes de empezar: cómo leer el tipo de una función en Haskell
 -------------------------------------------------------------
 
-Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos posibles de Haskell. Tal vez convenga aclarar que esta no es una categorización teórica, simplemente una enumeración que va introduciendo los conceptos, de lo más simple a lo más complejo:
-
-Tipos Básicos  
-
-Los tipos más básicos que tenemos en Haskell son los booleanos y los caracteres, que tiene los tipos y respectivamente:
-
-`Prelude> :t True`
-`True :: Bool`
-`Prelude> :t 'a'`
-`'a' :: Char`
+Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos posibles de Haskell, eso está explicado en el artículo sobre [Tipos de Haskell](tipos-de-haskell.html)
 
 Aplicación
 ----------
