@@ -3,6 +3,7 @@ Notas sobre el paradigma funcional
 
 -   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
 -   [Composición](composicion.html)
+-   [Inferencia de tipos](inferencia-de-tipos.html)
 
 Notas sobre el lenguaje Haskell
 -------------------------------
@@ -11,7 +12,6 @@ Notas sobre el lenguaje Haskell
 -   [Problemas comunes con los tipos numéricos de Haskell](problemas-comunes-con-los-tipos-numericos-de-haskell.html)
 -   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
--   [Inferencia de tipos](inferencia-de-tipos.html)
 
 Cuestiones más avanzadas
 ------------------------
