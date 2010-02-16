@@ -29,7 +29,7 @@ Más aún, para cualquier lista el tipo se escribe poniendo entre corchetes el t
 También una lista de Strings (o lista de listas de caracteres):
 
 `Prelude> :t ["Hola", "Chau"]`
-`["Hola", "Chau"] :: `[`Char`](char.html)
+`["Hola", "Chau"] :: [ [Char] ]`
 
 ### Tuplas
 
