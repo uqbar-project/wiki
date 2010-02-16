@@ -64,6 +64,10 @@ El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros
 `Prelude> :t (&&)`
 `(&&) :: Bool -> Bool -> Bool`
 
+### Aplicación
+
+TBC
+
 Polimorfismo
 ------------
 
