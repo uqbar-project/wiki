@@ -41,9 +41,11 @@ Al intentar calcular el tipo de una función, lo primero que tenemos que hacer e
 
 Para determinar el tipo de la función none podemos seguir los siguientes pasos:
 
--   Sabemos que tiene dos parámetros (x e y), entonces podemos decir que su tipo tiene que tener la forma , luego deberemos calcular cuáles son a, b y c.
--   Si x es utilizado como parámetro de la función , entonces su tipo deberá ser compatible con el de not. El tipo de not es: ; es decir: recibe un booleano y devuelve otro booleano. Por lo tanto x deberá ser un booleano.
--   Un razonamiento análogo nos lleva a deducir que y también debe ser un valor booleano. Entonces sabemos que el tipo de la función tiene la forma , es decir: recibe dos Booleanos y nos falta saber qué devuelve.
--   Finalmente, para saber el tipo de retorno podemos mirar que si x es Bool, entonces también es de tipo Bool, al igual que . Por otro lado la función tiene el tipo (recibe dos booleanos y devuelve también un booleano), entonces el valor de retorno también es un booleano.
-    En este punto podemos ver que en realidad para saber el tipo de no sería necesario mirar los parámetros de , con saber su valor de retorno es suficiente. Sin embargo el análisis es útil para asegurarnos de que la función es correcta (por otro lado, en la presencia de polimorfismo, analizar los parámetros será obligatorio para poder saber el tipo de retorno).
+1.  Sabemos que tiene dos parámetros (x e y), entonces podemos decir que su tipo tiene que tener la forma , luego deberemos calcular cuáles son a, b y c.
+2.  Si x es utilizado como parámetro de la función , entonces su tipo deberá ser compatible con el de not. El tipo de not es: ; es decir: recibe un booleano y devuelve otro booleano. Por lo tanto x deberá ser un booleano.
+3.  Un razonamiento análogo nos lleva a deducir que y también debe ser un valor booleano. Entonces sabemos que el tipo de la función tiene la forma , es decir: recibe dos Booleanos y nos falta saber qué devuelve.
+4.  Finalmente, para saber el tipo de retorno podemos mirar que si x es Bool, entonces también es de tipo Bool, al igual que . Por otro lado la función tiene el tipo (recibe dos booleanos y devuelve también un booleano), entonces el valor de retorno también es un booleano.
 
+En el último paso podemos ver que en realidad para saber el tipo de no sería necesario mirar los parámetros de , con saber su tipo de retorno sería suficiente. Sin embargo el análisis es útil para asegurarnos de que la función es correcta.
+
+Por otro lado, en ejemplos más complejos analizar los parámetros será indispensable para poder saber el tipo de retorno (por ejemplo en la presencia de polimorfismo).
