@@ -9,6 +9,7 @@ Notas sobre el lenguaje Haskell
 -------------------------------
 
 -   <http://en.wikibooks.org/wiki/Haskell>
+-   [Tipos en Haskell](tipos-en-haskell.html)
 -   [Problemas comunes con los tipos numéricos de Haskell](problemas-comunes-con-los-tipos-numericos-de-haskell.html)
 -   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
