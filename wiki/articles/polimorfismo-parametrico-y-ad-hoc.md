@@ -1,6 +1,6 @@
 Antes que nada quiero decir que no es taaan importante esta clasificación, pero surgió la pregunta y contesto.
 
-Una idea rápida para darte cuenta es que cuando hablamos de polimorfismo paramétrico tenemos una sola definición de la función, en cambio cuando tenemos polimorfismo ad-hoc tenemos muchas definiciones... en clase sólo aprendimos a hacer funciones con polimorfismo paramétrico. (Sí usamos funciones con polimorfismo ad-hoc, pero en principio no sabemos como progrmar una propia.)
+Una idea rápida para darte cuenta es que cuando hablamos de polimorfismo paramétrico tenemos una sola definición de la función, en cambio cuando tenemos polimorfismo ad-hoc tenemos muchas definiciones... en clase sólo aprendimos a hacer funciones con polimorfismo paramétrico. (Sí usamos funciones con polimorfismo ad-hoc, pero en principio no sabemos como programar una propia.)
 
 Típicas funciones con polimorfismo paramétrico son las que operan sobre listas: filter, map, all, any, length, foldl, etc. No necesariamente pueden recibir "cualquier valor", depende de lo que hagas. Por ejemplo el tipo de length es
 
