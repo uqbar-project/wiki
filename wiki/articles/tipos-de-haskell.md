@@ -64,6 +64,7 @@ El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros
 `Prelude> :t (&&)`
 `(&&) :: Bool -> Bool -> Bool`
 
-### Funciones polimórficas
+Polimorfismo
+------------
 
 TBC: head, fst, length
