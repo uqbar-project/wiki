@@ -79,10 +79,12 @@ El tipo de una función que tiene un parámetro se indica relacionando mediante 
 `Prelude> :t not`
 `not :: Bool -> Bool`
 
-La función recibe un caracter y devuelve un booleano. (Nótese que la función isLower está en el módulo Char, dependiendo de su versión de Haskell tal vez deban escribir para poder probar el ejemplo, o bien importar el módulo correspondiente.)
+La función recibe un caracter y devuelve un booleano.
 
 `Prelude> :t isLower `
 `isLower :: Char -> Bool`
+
+(Nótese que la función isLower está en el módulo Char, dependiendo de su versión de Haskell tal vez deban escribir para poder probar el ejemplo, o bien importar el módulo correspondiente.)
 
 Y la función recibe una lista de booleanos y devuelve un booleano (*and*ea todos los booleanos de la lista)
 
