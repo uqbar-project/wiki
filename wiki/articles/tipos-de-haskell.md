@@ -107,7 +107,27 @@ La aplicación es uno de los temas que tal vez más confunden cuando se habla de
 
 Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parámetros:
 
-### Aplicación Parcial
+`Prelude> :t not`
+`not :: Bool -> Bool`
+`Prelude> :t Char.isLower`
+`Char.isLower :: Char -> Bool`
+`Prelude> :t and`
+`and :: [Bool] -> Bool`
+`Prelude> :t (&&)`
+`(&&) :: Bool -> Bool -> Bool`
+
+en este punto es importante entender que ninguno de estos ejemplos es un *valor booleano*. Cuando veo el tipo eso se entiende como el tipo *de las funciones a las que si les aplico un parámetro de tipo Char producen un valor de tipo Bool*, que claramente no es lo mismo que el tipo Bool. Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos obtener valores booleanos:
+
+`*Main> :t not True`
+`not True :: Bool`
+`*Main> :t Char.isLower 'a'`
+`Char.isLower 'a' :: Bool`
+`*Main> :t and [True, False, True]`
+`and [True, False, True] :: Bool`
+`*Main> :t True && False`
+`True && False :: Bool`
+
+En síntesis es un valor booleano, en cambio no es un valor booleano, es una función que devuelve booleanos. Ambas cosas no se pueden mezclar.
 
 Polimorfismo
 ------------
