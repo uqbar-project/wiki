@@ -3,9 +3,9 @@ Tuplas y listas en Haskell
 
 Una cosa que suele confundir a la hora de diferenciar listas y tuplas es la idea de que "el número de componentes de una tupla es fijo", ¿qué quiere decir que es fijo si yo puedo tener 2-uplas, 3-uplas... n-uplas?
 
-Lo que quiere decir es que las tuplas de distinta [aridad](aridad.html) son de *distinto tipo*, es decir no son comparables entre sí. Es decir la tupla (True, True) y la tupla (True, True, True) son de tipos distintos y yo no puedo hacer una función que acepte ambas tuplas (bah, debería ser polimórfica, ya es otra cuestión.
+Lo que quiere decir es que las tuplas de distinta [aridad](aridad.html) son de *distinto tipo*, es decir no son comparables entre sí. Es decir la tupla y la tupla son de tipos distintos y yo no puedo hacer una función que acepte ambas tuplas (bah, debería ser polimórfica, ya es otra cuestión.
 
-En cambio, las listas \[True,True\] y \[True,True,True\] son ambas del mismo tipo (\[Bool\]) y entonces sí puedo hacer una función que funcione en ambos casos.
+En cambio, las listas y son ambas del mismo tipo () y entonces sí puedo hacer una función que funcione en ambos casos.
 
 ### Ejemplos básicos
 
