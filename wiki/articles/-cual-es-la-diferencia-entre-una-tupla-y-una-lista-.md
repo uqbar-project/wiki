@@ -108,3 +108,5 @@ Finalmente, podemos ver que si se intenta intercambiar las funciones se produce 
 
 Functores y listas en prolog
 ----------------------------
+
+TBC
