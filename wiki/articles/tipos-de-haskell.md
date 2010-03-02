@@ -133,6 +133,8 @@ En síntesis es un valor booleano, en cambio no es un valor booleano, es una fun
 
 ### Aplicacion Parcial
 
+La idea de Currificación
+
 Polimorfismo
 ------------
 
