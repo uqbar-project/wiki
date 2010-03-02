@@ -94,7 +94,7 @@ Pero vemos que me obliga a usar las funciones separadamente:
 `*Main> todosVerdaderosT3 (True,True,True)`
 `True`
 
-Si yo intentara intercambiar las funciones obtendría un error:
+Finalmente, podemos ver que si se intenta intercambiar las funciones se produce un error:
 
 `*Main> todosVerdaderosT2 (True,True,True)`
 <interactive>`:1:18:`
