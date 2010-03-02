@@ -153,7 +153,7 @@ Similarmente:
 
 ### Aplicacion Parcial
 
-La idea de Currificación
+La idea de Currificación... TBC
 
 Polimorfismo
 ------------
