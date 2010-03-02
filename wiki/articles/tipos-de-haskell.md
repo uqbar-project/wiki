@@ -131,6 +131,8 @@ Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos ob
 
 En síntesis es un valor booleano, en cambio no es un valor booleano, es una función que devuelve booleanos. Ambas cosas no se pueden mezclar.
 
+### Aplicacion Parcial
+
 Polimorfismo
 ------------
 
