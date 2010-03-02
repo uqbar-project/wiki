@@ -139,7 +139,9 @@ Si intentamos utilizar un valor función en un lugar donde se espera un valor bo
 ``            against inferred type `Char -> Bool' ``
 ``     In the first argument of `not' ... ``
 
-Es decir, el primer argumento de debe ser y en cambio se recibió un argumento de tipo . Similarmente:
+Es decir, el primer argumento de debe ser y en cambio se recibió un argumento de tipo .
+
+Similarmente:
 
 `*Main> True && not`
 <interactive>`:1:8:`
