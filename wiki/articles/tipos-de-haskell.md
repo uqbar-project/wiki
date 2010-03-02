@@ -38,29 +38,28 @@ Una tupla es también un valor compuesto. A diferencia de las listas el número 
 Una de las tuplas más simples que se puede imaginar es:
 
 `Prelude> :t (True, 'H')`
-`(True, 'H') :: (Bool, Char)`
+`(True, 'H') :: `**`(Bool,` `Char)`**
 
 es decir, una tupla compuesta por un booleano y un caracter. Sin embargo, los elementos de las tuplas también pueden ser compuestos, como un String:
 
 `Prelude> :t (True, "Hola")`
-`(True, "Hola") :: (Bool, [Char])`
+`(True, "Hola") :: (Bool, `**`[Char]`**`)`
 
 o inclusive el componente de una tupla puede ser otra tupla:
 
 `Prelude> :t (False, ('H', "ola"))`
-`(False, ('H', "ola")) :: `**`(Bool,` `(Char,` `[Char]))`**
+`(False, ('H', "ola")) :: `**`(Bool,` `(Char,` `[Char]))`**` `
 
-La t Tupla de dos componentes: un booleano y un String.
+También podemos tener tuplas de más de dos componentes
 
-Otra tupla de dos componentes, un booleano y un char.
-
-`Prelude> :t ([True, False, True], "Chau", (True, [True]))`
-`([True, False, True], "Chau", (True, [True])) :: ([Bool], [Char], (Bool, [Bool]))`
-`Prelude> :t ([True], 'H')`
-`([True], 'H') :: ([Bool], Char)`
 `Prelude> :t (True, 'H', [False])`
 `(True, 'H', [False]) :: (Bool, Char, [Bool])`
+`Prelude> :t ([True, False, True], "Chau", (True, [True]))`
+`([True, False, True], "Chau", (True, [True])) :: ([Bool], [Char], (Bool, [Bool]))`
 `Prelude> :t (False, 'H')`
+
+Ahora, qué significa que
+
 `(False, 'H') :: (Bool, Char)`
 `Prelude> (True,True) == (True,True,True)`
 
