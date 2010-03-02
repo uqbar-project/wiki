@@ -66,10 +66,8 @@ Podríamos intentar hacer lo mismo con tuplas, para ello agrego las dos definici
 
 Pero lamentablemente eso no es posible en Haskell:
 
--   Main&gt; :r
-
-\[1 of 1\] Compiling Main ( todosVerdaderos.hs, interpreted )
-
+`*Main> :r`
+`[1 of 1] Compiling Main             ( todosVerdaderos.hs, interpreted )`
 `todosVerdaderos.hs:5:17:`
 ``     Couldn't match expected type `(Bool, Bool)' ``
 ``            against inferred type `(a, b, c)' ``
