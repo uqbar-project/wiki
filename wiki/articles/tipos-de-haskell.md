@@ -81,7 +81,7 @@ El tipo de una función que tiene un parámetro se indica relacionando mediante 
 
 La función recibe un caracter y devuelve un booleano:
 
-`Prelude> :t Char.isLower`
+`Prelude> :t isLower`
 `Char.isLower :: Char -> Bool`
 
 Y la función recibe una lista de booleanos y devuelve un booleano (*and*ea todos los booleanos de la lista)
