@@ -129,7 +129,25 @@ Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos ob
 `*Main> :t True && False`
 `True && False :: Bool`
 
-En síntesis es un valor booleano, en cambio no es un valor booleano, es una función que devuelve booleanos. Ambas cosas no se pueden mezclar.
+En síntesis es un valor booleano, en cambio no es un valor booleano, es una función que devuelve booleanos. También es *un valor*, pero es un valor de otro tipo y no se pueden mezclar.
+
+Si intentamos utilizar un valor función en un lugar donde se espera un valor booleano, obtendremos un error:
+
+`*Main> not Char.isLower`
+<interactive>`:1:4:`
+``     Couldn't match expected type `Bool' ``
+``            against inferred type `Char -> Bool' ``
+``     In the first argument of `not' ... ``
+
+Es decir, el primer argumento de debe ser y en cambio se recibió un argumento de tipo . Similarmente:
+
+`*Main> True && not`
+<interactive>`:1:8:`
+``     Couldn't match expected type `Bool' ``
+``            against inferred type `Bool -> Bool' ``
+``     In the second argument of `(&&)', namely `not' ``
+`    In the expression: True && not`
+`    ....`
 
 ### Aplicacion Parcial
 
