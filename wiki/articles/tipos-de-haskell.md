@@ -120,10 +120,13 @@ en este punto es importante entender que ninguno de estos ejemplos es un *valor 
 
 `*Main> :t not True`
 `not True :: Bool`
+
 `*Main> :t Char.isLower 'a'`
 `Char.isLower 'a' :: Bool`
+
 `*Main> :t and [True, False, True]`
 `and [True, False, True] :: Bool`
+
 `*Main> :t True && False`
 `True && False :: Bool`
 
