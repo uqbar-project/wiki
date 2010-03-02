@@ -35,7 +35,6 @@ pero si intentamos comparar las dos tuplas ocurre un error:
 
 `(False, 'H') :: (Bool, Char)`
 `Prelude> (True,True) == (True,True,True)`
-
 <interactive>`:1:15:`
 ``     Couldn't match expected type `(Bool, Bool)' ``
 ``            against inferred type `(Bool, Bool, Bool)' ``
