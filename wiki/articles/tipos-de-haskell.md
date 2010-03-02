@@ -116,7 +116,9 @@ Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parám
 `Prelude> :t (&&)`
 `(&&) :: Bool -> Bool -> Bool`
 
-En este punto es importante entender que ninguno de estos ejemplos es un *valor booleano*. Cuando veo el tipo eso se entiende como el tipo *de las funciones a las que si les aplico un parámetro de tipo Char producen un valor de tipo Bool*, que claramente no es lo mismo que el tipo Bool. Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos obtener valores booleanos:
+En este punto es importante entender que ninguno de estos ejemplos es un *valor booleano*. Cuando veo el tipo eso se entiende como el tipo *de las funciones a las que si les aplico un parámetro de tipo Char producen un valor de tipo Bool*, que claramente no es lo mismo que el tipo Bool.
+
+Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos obtener valores booleanos:
 
 `*Main> :t not True`
 `not True :: Bool`
