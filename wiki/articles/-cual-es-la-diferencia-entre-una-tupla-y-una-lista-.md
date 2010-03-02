@@ -20,7 +20,7 @@ Comencemos por ver qué tipos me dice el Haskell que tiene cada uno de los valor
 `Prelude> :t [True, True, True]`
 `[True, True, True] :: [Bool]`
 
-Lo que hay que mirar en el ejemplo anterior es que las dos tuplas tienen tipos distintos (**(Bool,Bool)** y **(Bool,Bool,Bool)**), mientras que las dos listas tienen el mismo tipo (**\[Bool\]**).
+Lo que hay que mirar en el ejemplo anterior es que las dos tuplas tienen tipos distintos ( y ), mientras que las dos listas tienen el mismo tipo ().
 
 Además podemos ver que el tipo de una tupla indica la cantidad de componentes, mientras que el tipo de una lista no... eso quiere decir que todas las listas de booleanos son del mismo tipo, independientemente de la cantidad de componentes.
 
