@@ -15,7 +15,7 @@ La construcción de funciones a partir de funciones
 El paradigma funcional tiene como uno de sus pilares la posibilidad de construir funciones complejas a partir de combinar funciones más simples (utilizando composición, aplicación parcial, orden superior, etc); para poder utilizar cualquiera de esas herramientas es necesario tener presente el tipo de las funciones que quiero combinar, por ejemplo:
 
 -   Si quiero componer dos funciones: es necesario que la imagen de f esté incluida en el dominio de g (tal como aprendimos en matemática).
--   Al aplicar una función de orden superior es necesario que matcheen los tipos de ambas funciones.
+-   Al aplicar una función de orden superior es necesario que *matcheen* los tipos de ambas funciones.
 
 <!-- -->
 
