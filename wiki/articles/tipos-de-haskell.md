@@ -33,7 +33,7 @@ También una lista de Strings (o lista de listas de caracteres):
 
 ### Tuplas
 
-Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto, esto está más detallado en [¿Cuál es la diferencia entre una tupla y una lista?](-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html). Veamos algunos ejemplos.
+Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto. (Esto está más detallado en [¿Cuál es la diferencia entre una tupla y una lista?](-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html), pero antes te recomiendo mirar los ejemplos que siguen.)
 
 Una de las tuplas más simples que se puede imaginar es:
 
