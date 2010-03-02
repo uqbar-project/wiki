@@ -89,6 +89,9 @@ Y la función recibe una lista de booleanos y devuelve un booleano (*and*ea todo
 `Prelude> :t and`
 `and :: [Bool] -> Bool`
 
+  
+1.Body of the footnote.
+
 ### Funciones con más de un parámetro
 
 Las funciones de más de un parámetro tienen alguna sutileza porque en Haskell se trabaja con el concepto de [Currificación](currificacion.html), entonces una función que nosotros en matemática estaríamos acostumbrados a verla como en Haskell la vamos a escribir . Las funciones de dos parámetros cuyo tipo tiene esa forma se denominan *currificadas*.
