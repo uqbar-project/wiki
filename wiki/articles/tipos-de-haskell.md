@@ -33,7 +33,7 @@ También una lista de Strings (o lista de listas de caracteres):
 
 ### Tuplas
 
-Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto. Veamos algunos ejemplos.
+Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto, esto está más detallado en [¿Cuál es la diferencia entre una tupla y una lista?](-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html). Veamos algunos ejemplos.
 
 Una de las tuplas más simples que se puede imaginar es:
 
@@ -54,23 +54,20 @@ También podemos tener tuplas de más de dos componentes
 
 `Prelude> :t (True, 'H', [False])`
 `(True, 'H', [False]) :: (Bool, Char, [Bool])`
-`Prelude> :t ([True, False, True], "Chau", (True, [True]))`
-`([True, False, True], "Chau", (True, [True])) :: ([Bool], [Char], (Bool, [Bool]))`
-`Prelude> :t (False, 'H')`
 
-Ahora, qué significa que
+es decir, un booleano, un caracter y una lista de booleanos.
 
-`(False, 'H') :: (Bool, Char)`
-`Prelude> (True,True) == (True,True,True)`
+Para finalizar podemos ver un ejemplo en el que combianmos todo lo anterior (no es trivial, tomate tu tiempo para leerlo!):
 
-<interactive>`:1:15:`
-``     Couldn't match expected type `(Bool, Bool)' ``
-``            against inferred type `(Bool, Bool, Bool)' ``
-``     In the second argument of `(==)', namely `(True, True, True)' ``
-`    In the expression: (True, True) == (True, True, True)`
-``     In the definition of `it': it = (True, True) == (True, True, True) ``
-`Prelude> [True,True] == [True,True,True]`
-`False`
+`Prelude> :t ([True, False, True], "Chau", [(True, "True"), (False, "False")])`
+`([True, False, True], "Chau", [(True, "True"), (False, "False")])`
+`  :: ([Bool], [Char], [(Bool, [Char])])`
+
+Es decir, una tupla de tres componentes, a saber:
+
+-   Una lista de booleanos
+-   Un string o lista de caracteres
+-   Una lista de tuplas cuyo primer componente es un booleano y su segundo componente es un string.
 
 Funciones
 ---------
