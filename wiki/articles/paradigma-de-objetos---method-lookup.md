@@ -38,7 +38,7 @@ Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
 
 **m** es **\#asUppercase**
 
-**-** se busca en **String** un método con el nombre **\#isNil**
+**-** se busca en **String** un método con el nombre **\#asUppercase**
 
 **-** se encuentra el método **\#asUppercase** en la clase **String**
 
