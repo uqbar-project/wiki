@@ -25,6 +25,6 @@ Importante no olvidar
 
 -   Los mensajes los entienden los objetos
 -   Si a un objeto que entiende el mensaje **m** le envio el mensaje **m** entonces se va a activar el método **m** para ese objeto
--   Cuando en un método dice `self`, es una referencia al objeto que recibió el mensaje por el cual se activó el método.
+-   Cuando en un método dice [&lt;code&gt;self&lt;/code&gt;](-code-self--code-.html), es una referencia al objeto que recibió el mensaje por el cual se activó el método.
     En el ejemplo, si en el método *direccion* dice `self`, entonces al hacer `pepe` `direccion` este `self` va a ser una referencia al objeto referenciado por `pepe`.
 
