@@ -1,1 +1,3 @@
-[self - pseudovariable](self---pseudovariable.html) Self - Lenguaje de programación
+[self - pseudovariable](self---pseudovariable.html)
+
+Self - Lenguaje de programación
