@@ -1,4 +1,4 @@
-La herencia es un mecanismo que tiene por objetivo principal el compartir código similar. Esto lleva a evitar la duplicación de lógica/código.
+La herencia es un mecanismo que tiene por objetivo principal el compartir lógica/código similar. Esto lleva a evitar la duplicación de lógica/código.
 
 Herencia Simple
 ---------------
