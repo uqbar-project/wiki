@@ -12,7 +12,7 @@ El algoritmo es el siguiente:
 
 **1.** se búsca en la *clase actual* un método con el nombre **m**
 
-**1a.** si se encuentra se ejecuta el método encontrado; se ejecuta el método en el objeto **i** y se terminó el [method lookup](method-lookup.html)
+**1a.** si se encuentra se ejecuta el método encontrado; se ejecuta el método en el objeto **i** y se terminó el method lookup
 
 **1b.** si no se encuentra y la *clase actual* no es **Object** la *clase actual* pasa a ser la superclase de la *clase actual* y se vuelve a **1.**
 
