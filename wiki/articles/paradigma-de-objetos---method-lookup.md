@@ -12,7 +12,7 @@ Al principio la *clase actual* es **C** y el objeto receptor del mensaje ([self]
 
 El algoritmo es el siguiente:
 
-**1.** se búsca en la *clase actual* un método con el nombre **m**
+**1.** se busca en la *clase actual* un método con el nombre **m**
 
 **1a.** si se encuentra se ejecuta el método encontrado; se ejecuta el método en el objeto **i** y se terminó el method lookup
 
