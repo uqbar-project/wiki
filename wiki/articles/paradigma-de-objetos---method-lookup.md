@@ -54,14 +54,10 @@ Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
 
 Conclusión: `'hola'` entiende el mensaje **\#isNil**
 
-Ejemplo 1
+Ejemplo 2
 ---------
 
-Si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
-
-Asumamos (porque no es así) que `'hola'` es instancia de **String**, que **String** es subclase de **Collection** y que **Collection** es subclase de **Object**.
-
-Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
+Basandonos en el ejemplo 1, si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
 
 **i** es `'hola'`
 
