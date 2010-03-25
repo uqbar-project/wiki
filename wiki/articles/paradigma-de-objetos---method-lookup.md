@@ -42,7 +42,7 @@ Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
 
 **-** se encuentra el método **\#asUppercase** en la clase **String**
 
-**-** se ejecuta el método **\#asUppercase** de la clase **String** en el objeto receptor del mensaje **i** (o sea `hola`)
+**-** se ejecuta el método **\#asUppercase** de la clase **String** sobre **i** el objeto receptor del mensaje (o sea `hola`)
 
 Conclusión: `'hola'` entiende el mensaje **\#asUppercase**
 
