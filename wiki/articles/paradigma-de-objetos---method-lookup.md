@@ -85,7 +85,7 @@ Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
 
 Conclusión: `'hola'` entiende el mensaje **\#isNil**
 
-Ejemplo 2
+Ejemplo 3
 ---------
 
 Basandonos en el ejemplo 1, si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
