@@ -10,7 +10,9 @@ Tenemos un objeto **i** instancia de la clase **C** y le enviamos un mensaje de 
 
 En este ejemplo self empieza apuntando a **i** y super también apunta a **i**
 
-Tenemos que mantener una referencia a la clase donde estamos buscando en un momento determinado. Al principio la *clase actual* es **C**
+Tenemos que mantener una referencia a la clase donde estamos buscando en un momento determinado.
+
+Al principio la *clase actual* es **C**
 
 **1.**
 
