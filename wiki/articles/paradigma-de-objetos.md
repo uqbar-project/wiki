@@ -5,6 +5,8 @@ Teoría
 
 -   [Mensajes y métodos](mensajes-y-metodos.html)
 -   [Variables](variables.html)
+-   [Herencia](herencia.html)
+-   [Paradigma de objetos - method lookiup](paradigma-de-objetos---method-lookiup.html)
 -   [Redefinición](redefinicion.html)
 
 Sintaxis
