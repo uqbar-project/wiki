@@ -26,7 +26,7 @@ El comportamiento por defecto en Smalltalk cuando un objeto no entiende un mensa
 Ejemplo 1
 ---------
 
-Si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
+Si le enviamos el mensaje **isNil** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
 
 Asumamos (porque no es así) que `'hola'` es instancia de **String**, que **String** es subclase de **Collection** y que **Collection** es subclase de **Object**.
 
@@ -36,21 +36,23 @@ Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
 
 *clase actual* es **String**
 
-**m** es **\#factorial**
+**m** es **\#isNil**
 
-**-** se busca en **String** un método con el nombre **\#factorial**
+**-** se busca en **String** un método con el nombre **\#isNil**
 
-**-** no se encuentra el método **\#factorial** en **String** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Collection** (la superclase de la *clase actual*) y se vuelve a **1.**
+**-** no se encuentra el método **\#isNil** en **String** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Collection** (la superclase de la *clase actual*) y se vuelve a **1.**
 
-**-** se busca en **Collection** un método con el nombre **\#factorial**
+**-** se busca en **Collection** un método con el nombre **\#isNil**
 
-**-** no se encuentra el método **\#factorial** en **Collection** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Object** (la superclase de la *clase actual*) y se vuelve a **1.**
+**-** no se encuentra el método **\#isNil** en **Collection** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Object** (la superclase de la *clase actual*) y se vuelve a **1.**
 
-**-** se busca en **Object** un método con el nombre **\#factorial**
+**-** se busca en **Object** un método con el nombre **\#isNil**
 
-**-** no se encuentra y la clase actual es **Object** entonces el objeto **i** no entiende el mensaje **m**
+**-** se encuentra el método **\#isNil** en la clase **Object**
 
-O dicho de otra forma, `'hola'` no entiende el mensaje **\#factorial**
+**-** se ejecuta el método **\#isNil** de la clase **Object** en el objeto receptor del mensaje **i** (o seam `hola`)
+
+Conclusión: `'hola'` entiende el mensaje **\#isNil**
 
 Ejemplo 1
 ---------
