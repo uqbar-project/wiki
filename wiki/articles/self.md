@@ -1,1 +1,3 @@
-Self - Lenguaje de programación self - pseudovariable
+Self - Lenguaje de programación
+
+self - pseudovariable
