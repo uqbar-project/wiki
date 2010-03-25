@@ -57,7 +57,7 @@ Basandonos en el ejemplo 1, si le enviamos el mensaje **isNil** al objeto `'hola
 
 **m** es **\#isNil**
 
-**-** se busca en **String** un método con el nombre **\#isNil**
+**-** se busca en **String** un método con el nombre **\#asUppercase**
 
 **-** no se encuentra el método **\#isNil** en **String** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Collection** (la superclase de la *clase actual*) y se vuelve a **1.**
 
