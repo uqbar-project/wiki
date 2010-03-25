@@ -21,7 +21,7 @@ Miremos esta secuencia de sentencias, se numeran para hablar de ellas abajo.
 
 `  1. col1 := OrderedCollection new.`
 `  2. col1 add: Jugador new.`
-`  3. col1 add: Carta palo: 'espada' numero: 3.`
+`  3. col1 add: (Carta palo: 'espada' numero: 3).`
 `  4. col1 add: 'hola'.`
 `  5. jug := col1 first.`
 `  6. tacar := col1 second.`
@@ -35,6 +35,6 @@ Comentarios
 -   en las líneas 2 y 3 se crean dos objetos (un jugador y una carta) sin que se asignen a ninguna variable.
 -   en las líneas 5, 6 y 7 se asignan variables con referencias a objetos que no se crean en la misma línea, que "vienen desde antes".
 -   en la línea 8, otra vez se crea un objeto sin asignarlo a una variable.
--   en la línea 9, las variables col2 y col1 pasan a apuntar al **mismo** objeto.
+-   en la línea 9, las variable col2 pasa a apuntar al **mismo** objeto que es apuntado por la variable col1
 -   por lo tanto si después de la línea 10 pido `col1` `size` me va a decir 4.
 
