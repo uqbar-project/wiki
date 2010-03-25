@@ -69,7 +69,7 @@ Basandonos en el ejemplo 1, si le enviamos el mensaje **isNil** al objeto `'hola
 
 **-** se encuentra el método **\#isNil** en la clase **Object**
 
-**-** se ejecuta el método **\#isNil** de la clase **Object** sobre i el objeto receptor del mensaje (o sea `hola`)
+**-** se ejecuta el método **\#isNil** de la clase **Object** sobre **i** el objeto receptor del mensaje (o sea `hola`)
 
 Conclusión: `'hola'` entiende el mensaje **\#isNil**
 
