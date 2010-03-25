@@ -26,7 +26,7 @@ El comportamiento por defecto en Smalltalk cuando un objeto no entiende un mensa
 Ejemplo 1
 ---------
 
-Si le enviamos el mensaje **isNil** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
+Si le enviamos el mensaje **asUppercase** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
 
 Asumamos (porque no es así) que `'hola'` es instancia de **String**, que **String** es subclase de **Collection** y que **Collection** es subclase de **Object**.
 
@@ -36,23 +36,15 @@ Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
 
 *clase actual* es **String**
 
-**m** es **\#isNil**
+**m** es **\#asUppercase**
 
 **-** se busca en **String** un método con el nombre **\#isNil**
 
-**-** no se encuentra el método **\#isNil** en **String** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Collection** (la superclase de la *clase actual*) y se vuelve a **1.**
+**-** se encuentra el método **\#asUppercase** en la clase **String**
 
-**-** se busca en **Collection** un método con el nombre **\#isNil**
+**-** se ejecuta el método **\#asUppercase** de la clase **String** en el objeto receptor del mensaje **i** (o sea `hola`)
 
-**-** no se encuentra el método **\#isNil** en **Collection** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Object** (la superclase de la *clase actual*) y se vuelve a **1.**
-
-**-** se busca en **Object** un método con el nombre **\#isNil**
-
-**-** se encuentra el método **\#isNil** en la clase **Object**
-
-**-** se ejecuta el método **\#isNil** de la clase **Object** en el objeto receptor del mensaje **i** (o seam `hola`)
-
-Conclusión: `'hola'` entiende el mensaje **\#isNil**
+Conclusión: `'hola'` entiende el mensaje **\#asUppercase**
 
 Ejemplo 2
 ---------
