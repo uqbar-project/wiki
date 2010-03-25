@@ -16,7 +16,7 @@ Al principio la *clase actual* es **C**
 
 **1.**
 
-si el receptor del mensaje **NO** es **super** se búsca en la *clase actual* un método con el nombre **m**
+si el receptor del mensaje **NO** es **super** se busca en la *clase actual* un método con el nombre **m**
 
 si el receptor del mensaje ES **super** entonces *clase actual* pasa a ser la superclase de la clase en donde está el método que contiene a la pseudovariable **super**
 
