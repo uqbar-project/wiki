@@ -8,7 +8,7 @@ Cuando super está presente el algoritmo se ve modificado
 
 Tenemos un objeto **i** instancia de la clase **C** y le enviamos un mensaje de nombre **m**.
 
-En este ejemplo self empieza apuntando a **i** y super también apunta a **i**
+**self** apunta a **i** y **super** también apunta a **i**, o sea, ambos apuntan al objeto receptor del mensaje.
 
 Tenemos que mantener una referencia a la clase donde estamos buscando en un momento determinado.
 
