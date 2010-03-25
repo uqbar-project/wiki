@@ -3,6 +3,7 @@
 Es el mecanismo por el cual se relaciona el envío de un mensaje con la ejecución de un método determinado.
 
 En Smalltalk usando clases
+--------------------------
 
 ¿Qué pasa cuando a un objeto **i** instancia de la clase **C** se le envía un mensaje de nombre **m**?
 
@@ -21,3 +22,61 @@ El algoritmo es el siguiente:
 **1c.** si no se encuentra y la clase actual es **Object** entonces el objeto **i** no entiende el mensaje **m**
 
 El comportamiento por defecto en Smalltalk cuando un objeto no entiende un mensaje es lanzar un error. Esto se logra a través del envío de un mensaje llamado **\#doesNotUnderstand:** al objeto **i** (el método **\#doesNotUnderstand:** está definido en la clase **Object**)
+
+Ejemplo 1
+---------
+
+Si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
+
+Asumamos (porque no es así) que `'hola'` es instancia de **String**, que **String** es subclase de **Collection** y que **Collection** es subclase de **Object**.
+
+Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
+
+**i** es `'hola'`
+
+*clase actual* es **String**
+
+**m** es **\#factorial**
+
+**-** se busca en **String** un método con el nombre **\#factorial**
+
+**-** no se encuentra el método **\#factorial** en **String** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Collection** (la superclase de la *clase actual*) y se vuelve a **1.**
+
+**-** se busca en **Collection** un método con el nombre **\#factorial**
+
+**-** no se encuentra el método **\#factorial** en **Collection** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Object** (la superclase de la *clase actual*) y se vuelve a **1.**
+
+**-** se busca en **Object** un método con el nombre **\#factorial**
+
+**-** no se encuentra y la clase actual es **Object** entonces el objeto **i** no entiende el mensaje **m**
+
+O dicho de otra forma, `'hola'` no entiende el mensaje **\#factorial**
+
+Ejemplo 1
+---------
+
+Si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
+
+Asumamos (porque no es así) que `'hola'` es instancia de **String**, que **String** es subclase de **Collection** y que **Collection** es subclase de **Object**.
+
+Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
+
+**i** es `'hola'`
+
+*clase actual* es **String**
+
+**m** es **\#factorial**
+
+**-** se busca en **String** un método con el nombre **\#factorial**
+
+**-** no se encuentra el método **\#factorial** en **String** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Collection** (la superclase de la *clase actual*) y se vuelve a **1.**
+
+**-** se busca en **Collection** un método con el nombre **\#factorial**
+
+**-** no se encuentra el método **\#factorial** en **Collection** y la *clase actual* no es **Object** entonces la *clase actual* pasa a ser **Object** (la superclase de la *clase actual*) y se vuelve a **1.**
+
+**-** se busca en **Object** un método con el nombre **\#factorial**
+
+**-** no se encuentra y la clase actual es **Object** entonces el objeto **i** no entiende el mensaje **m**
+
+O dicho de otra forma, `'hola'` no entiende el mensaje **\#factorial**
