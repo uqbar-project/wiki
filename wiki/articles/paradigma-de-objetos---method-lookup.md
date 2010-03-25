@@ -7,7 +7,7 @@ En Smalltalk usando clases
 
 ¿Qué pasa cuando a un objeto **i** instancia de la clase **C** se le envía un mensaje de nombre **m**?
 
-Tenemos que mantener una referencia a la clase donde estamos buscando en un momento determinado.
+Tenemos (a efectos de entender el mecanismo porque esto lo hace internamente el ambiente) que mantener una referencia a la clase donde estamos buscando en un momento determinado.
 
 Al principio la *clase actual* es **C** y el objeto receptor del mensaje ([self](self---pseudovariable.html)) es **i**.
 
