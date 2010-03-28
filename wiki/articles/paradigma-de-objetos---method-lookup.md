@@ -73,10 +73,10 @@ Basándonos en el ejemplo 1, si le enviamos el mensaje **isNil** al objeto `'hol
 
 Conclusión: `'hola'` entiende el mensaje **\#isNil**
 
-Ejemplo 3
----------
+Ejemplo (no entiende el mensaje)
+--------------------------------
 
-Basandonos en el ejemplo 1, si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
+Basándonos en el ejemplo 1, si le enviamos el mensaje **factorial** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
 
 **i** es `'hola'`
 
