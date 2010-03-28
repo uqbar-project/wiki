@@ -46,10 +46,10 @@ Siguiendo el algorítmo de arriba a través de los pasos indicados con **-**
 
 Conclusión: `'hola'` entiende el mensaje **\#asUppercase**
 
-Ejemplo 2
----------
+Ejemplo (heredando un método)
+-----------------------------
 
-Basandonos en el ejemplo 1, si le enviamos el mensaje **isNil** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
+Basándonos en el ejemplo 1, si le enviamos el mensaje **isNil** al objeto `'hola'` (o sea, al string `'hola'`) ¿qué debería pasar?
 
 **i** es `'hola'`
 
