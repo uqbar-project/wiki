@@ -17,7 +17,7 @@ Lenguajes que implementan este tipo de herencia: C++, Eiffel
 Generalización
 --------------
 
-Empezamos con dos clases Golondrina (con una variable de instancia energia) y Picaflor (con una variable de instancia energia) , definimos métodos para ambos
+Empezamos con dos clases, Golondrina (con una variable de instancia energia) y Picaflor (con una variable de instancia energia) , definimos métodos para ambos
 
 <code>
 
@@ -90,3 +90,35 @@ Si todas las aves tienen que tener una variable de instancia es algo que me gust
 Tengo que explicitar que las golondrinas tienen todo el comportamiento que esta en la clase Golondrina y también tienen el comportamiento que está en la clase Ave. Además tengo que explicitar que los picaflores tienen todo el comportamiento que esta en la clase Picaflor y también tienen el comportamiento que está en la clase Ave.
 
 Esto se hace diciendo que Ave es superclase de Golondrina y Ave es superclase de Picaflor; además tenemos que eliminar el código repetido de las clases Golondrina y Picaflor.
+
+En Smalltalk la forma de crear una clase es enviándole el mensaje \#subclass:instanceVariableNames:classVariableNames: (o uno similar, depende del dialecto de Smalltalk utilizado) a la superclase de la clase que queremos crear.
+
+<code>
+
+`    Superclass`
+`         subclass: #NameOfSubclass`
+`         instanceVariableNames: 'variableInstancia1 variableInstancia2 variableInstanciaN'`
+`         classVariableNames: 'variableClase1 variableClase2 variableClaseN'`
+
+<code>
+
+En nuestro ejemplo
+
+<code>
+
+`    Object`
+`         subclass: #Ave`
+`         instanceVariableNames: 'energia'`
+`         classVariableNames: ''.`
+
+`    Ave `
+`         subclass: #Golondrina`
+`         instanceVariableNames: ''`
+`         classVariableNames: ''.`
+
+`    Ave `
+`         subclass: #Picaflor`
+`         instanceVariableNames: ''`
+`         classVariableNames: ''.`
+
+</code>
