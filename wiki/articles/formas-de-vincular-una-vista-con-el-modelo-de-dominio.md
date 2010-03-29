@@ -6,8 +6,8 @@ Desde esa premisa básica podemos imaginar que cada vez que haya un control edit
 
 Los mecanismos para trasladar o impactar una modificación hecha por el usuario sobre cualquier control editable se pueden dividir en dos grandes grupos:
 
-Vinculación indirecta o manual
-Vinculación directa o automática (*binding*).  
+-   Vinculación indirecta o manual
+-   Vinculación directa o automática (*binding*).
 
 Vinculación indirecta
 ---------------------
