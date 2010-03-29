@@ -45,7 +45,7 @@ A esta descripción de la vinculación entre ambos la solemos llamar binding y p
 
 -   Un mapeo entre un componente visual y un elemento del dominio, típicamente cada control de la vista estará asociado a un atributo de un objeto de domino.
 -   Conversiones a realizar (por ejemplo si el valor a ingresar es una fecha y se ingresa desde la UI como texto, deberá proveerse el formato esperado y la lógica para convertir de ese formato a la representación interna de fechas que use el modelo de dominio).
--   Validaciones a realizar.
+-   Validaciones a realizar (dado que uno de los objetivos es aprovechar la lógica del modelo de dominio, normalmente las validaciones -salvo las propias de la conversión- serán delegadas en el modelo de dominio y por lo tanto la descripción de la validación consistirá en algún mecanismo para indicar qué consulta realizar sobre el dominio para poder efectuar la validación en cuestión).
 
 Esta estrategia busca fundamentalmente dos objetivos:
 
@@ -54,6 +54,23 @@ Esta estrategia busca fundamentalmente dos objetivos:
 
 El segundo de estos objetivos es el que suele proponer a veces algunas dificultades, ya que para aprovechar la lógica se necesita impactar las modificaciones realizadas sobre la UI directamente sobre el objeto de dominio. En los casos de aplicaciones que tienen un comportamiento transaccional desde el punto de vista del usuario, esta acción directa sobre el dominio implica algún mecanismo para garantizar que en caso de cancelar la operación el objeto queda sin cambios, en su estado original antes de comenzar.
 
-Para solucionar
+Adicionalmente esta fuerte vinculación entre la vista y el dominio nos puede presentar dificultades si la vista tiene requerimientos que no son fácilmente atribuibles a un objeto del dominio, es decir, comportamiento específico de la vista. Ejemplos de comportamiento propios de la vista podrían ser paginar una grilla o dividir la información del objeto entre múltiples viñetas o *tabs*.
 
-### Comparación de ambas soluciones
+Se necesitan entonces herramientas para manejar el nivel de acoplamiento entre la vista y el modelo de dominio, tanto por cuestiones de transaccionalidad como para poder asociar comportamiento no dependiente del dominio.
+
+### Binding transaccional
+
+Citamos a continuación algunos de los mecanismos utilizados para desvincular el dominio de la vista para proveer a nuestra aplicación de un comportamiento transaccional:
+
+Aprovechamiento de la transaccionalidad de la persistencia
+Postergación del binding mediante copias o wrappers
+Transaccionalidad a nivel de dominio  
+
+### Comportamiento a nivel de vista
+
+A veces es necesario tener comportamiento en la vista que no es atribuible a ningún objeto de dominio. En ese caso algunas de las estrategias posibles son:
+
+Value Models
+Modelo de aplicación  
+
+En los casos en que la relación entre la vista y el modelo de dominio es muy lejana, una solución posible es descartar el binding y pasar a una estrategia de interacción manual entre vista y dominio.
