@@ -39,5 +39,12 @@ Naturalmente todas estas restricciones hacen al código más complejo y más pro
 Binding
 -------
 
+Esta segunda forma se basa en las siguientes premisas:
+
+Automatización del pasaje de información entre la vista y el dominio  
+Es decir, describir [Declaratividad](declarativamente.html) En lugar de escribir código que tome los valores contenidos en la vista *a mano* se intentará describir esa vinculación y permitir que se produzca de forma automática, ante cada acción del usuario.
+
+Aprovechamiento de la lógica contenida en el modelo de dominio  
+
 Comparación de ambas soluciones
 -------------------------------
