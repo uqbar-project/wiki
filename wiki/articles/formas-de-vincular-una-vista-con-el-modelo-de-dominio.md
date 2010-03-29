@@ -39,12 +39,20 @@ Naturalmente todas estas restricciones hacen al código más complejo y más pro
 Binding
 -------
 
-Esta segunda forma se basa en las siguientes premisas:
+En este esquema, lo que se buscará es automatizar el pasaje de información entre la vista y el dominio. Es decir, se proveerá una descripción ([declarativa](declaratividad.html)) de la vinculación entre los componentes visuales y el modelo de dominio para que un componente genérico se ocupe de mantenerlos mutuamente sincronizados.
 
-Automatización del pasaje de información entre la vista y el dominio  
-Es decir, describir [Declaratividad](declarativamente.html) En lugar de escribir código que tome los valores contenidos en la vista *a mano* se intentará describir esa vinculación y permitir que se produzca de forma automática, ante cada acción del usuario.
+A esta descripción de la vinculación entre ambos la solemos llamar binding y puede incluir entre otras cosas:
 
-Aprovechamiento de la lógica contenida en el modelo de dominio  
+-   Un mapeo entre un componente visual y un elemento del dominio, típicamente cada control de la vista estará asociado a un atributo de un objeto de domino.
+-   Conversiones a realizar (por ejemplo si el valor a ingresar es una fecha y se ingresa desde la UI como texto, deberá proveerse el formato esperado y la lógica para convertir de ese formato a la representación interna de fechas que use el modelo de dominio).
+-   Validaciones a realizar.
+
+Esta estrategia busca fundamentalmente dos objetivos:
+
+-   Simplificar la sincronización entre ambas partes de la aplicación, basándose en componentes reutilizables.
+-   Aprovechar la lógica contenida en el modelo del dominio para tomar acciones durante su propia edición.
+
+El segundo de estos objetivos es el que suele proponer a veces algunas dificultades, ya que para aprovechar la lógica se necesita impactar las modificaciones realizadas sobre la UI directamente sobre el objeto de dominio. En los casos de aplicaciones que tienen un comportamiento transaccional desde el punto de vista del usuario, esta acción directa sobre el dominio implica algún mecanismo para garantizar que en caso de cancelar la operación el objeto queda sin cambios, en su estado original antes de comenzar.
 
 Comparación de ambas soluciones
 -------------------------------
