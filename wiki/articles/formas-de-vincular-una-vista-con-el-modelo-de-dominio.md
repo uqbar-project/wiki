@@ -54,5 +54,6 @@ Esta estrategia busca fundamentalmente dos objetivos:
 
 El segundo de estos objetivos es el que suele proponer a veces algunas dificultades, ya que para aprovechar la lógica se necesita impactar las modificaciones realizadas sobre la UI directamente sobre el objeto de dominio. En los casos de aplicaciones que tienen un comportamiento transaccional desde el punto de vista del usuario, esta acción directa sobre el dominio implica algún mecanismo para garantizar que en caso de cancelar la operación el objeto queda sin cambios, en su estado original antes de comenzar.
 
-Comparación de ambas soluciones
--------------------------------
+Para solucionar
+
+### Comparación de ambas soluciones
