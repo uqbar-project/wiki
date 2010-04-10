@@ -10,7 +10,7 @@ Entonces, podemos decir que un objeto trata polimórficamente a otros cuando les
 
 *3 -&gt; El objeto que "usa" y los (como mínimo) 2 que son "usados".*
 
-¿Cuáles son las condiciónes necesarias para que dos objetos sean polmórficos?
+¿Cuáles son las condiciónes necesarias para que dos objetos sean polimórficos?
 
 *primero) que un tercero quiera usarlos indistintamente*
 
