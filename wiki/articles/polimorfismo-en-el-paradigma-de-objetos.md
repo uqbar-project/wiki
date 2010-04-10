@@ -10,10 +10,10 @@ Entonces, podemos decir que un objeto trata polimórficamente a otros cuando les
 
 ¿Cuántos objetos son necesarios como mínimo para que exista el polimorfismo?
 
-*3 -&gt; El objeto que "usa" y los (como mínimo) 2 que son "usados".*
+*Tres: El objeto que "usa" y los (como mínimo) 2 que son "usados".*
 
 ¿Cuáles son las condiciónes necesarias para que dos objetos sean polimórficos?
 
-*primero) que un tercero quiera usarlos indistintamente*
+'' - que un tercero quiera usarlos indistintamente''
 
-*segundo) que entiendan los mensajes que ese tercero quiere enviarles*
+'' - que entiendan los mensajes que ese tercero quiere enviarles''
