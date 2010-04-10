@@ -5,6 +5,7 @@ Teoría
 
 -   [Mensajes y métodos](mensajes-y-metodos.html)
 -   [Variables](variables.html)
+-   [self](self.html)
 -   [Polimorfismo](polimorfismo.html)
 -   [Herencia](herencia.html)
 -   [Paradigma de objetos - method lookup](paradigma-de-objetos---method-lookup.html)
