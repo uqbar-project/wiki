@@ -12,6 +12,6 @@ Entonces, podemos decir que un objeto trata polimórficamente a otros cuando les
 
 ¿Cuáles son las condiciónes necesarias para que dos objetos sean polmórficos?
 
-''primero) que un tercero quiera usarlos indistintamente
+*primero) que un tercero quiera usarlos indistintamente*
 
-segundo) que entiendan los mensajes que ese tercero quiere enviarles''
+*segundo) que entiendan los mensajes que ese tercero quiere enviarles*
