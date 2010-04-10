@@ -6,6 +6,8 @@ El polimorfismo en el paradigma de objetos se define como **la capacidad que tie
 
 Entonces, podemos decir que un objeto trata polimórficamente a otros cuando les envía a ambos exactamente los mismos mensajes, sin importarle cual es cual.
 
+------------------------------------------------------------------------
+
 ¿Cuántos objetos son necesarios como mínimo para que exista el polimorfismo?
 
 *3 -&gt; El objeto que "usa" y los (como mínimo) 2 que son "usados".*
