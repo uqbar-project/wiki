@@ -11,6 +11,8 @@ Se asume la presencia de un entorno con todas esas herramientas configuradas ade
 Creación del proyecto
 ---------------------
 
+Paso 1  
+
 `mvn archetype:create `
 `    -DgroupId=basic-example.jsp `
 `    -DartifactId=com.uqbar-project.edu.progui `
@@ -21,20 +23,39 @@ Veremos que nos creó un directorio con el nombre indicado por , si miramos dent
 src/main/java:Es el lugar para ubicar nuestras clases Java.
 src/main/webapp:Es el lugar donde se ubicarán nuestras páginas web, y dendro de ella en la carpeta  se encuentra la configuración del tomcat.  
 
+<!-- -->
+
+Paso 2  
+
 Luego, ejecutando:
 
 `mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true`
+
+Paso 3  
 
 Eso deja preparado el proyecto para importarlo al eclipse, y el último paso será generar la información necesaria para el plugin de sysdeo.
 
 `mvn sysdeo-tomcat:generate`
 
+Paso 4  
+
 Luego, desde el eclipse se deberá:
 
--   Importarlo al eclipse, utilizando la opción "Import" -&gt; "Existing projects into workspace".
--   Agregar el proyecto al contexto del tomcat. Para ello: botón derecho sobre el proyecto -&gt; "Tomcat project" -&gt; "Update context definition"
--   Levantar el tomcat utilizando el plugin de sysdeo.
+1.  Importarlo al eclipse, utilizando la opción "Import" -&gt; "Existing projects into workspace".
+2.  Agregar el proyecto al contexto del tomcat. Para ello: botón derecho sobre el proyecto -&gt; "Tomcat project" -&gt; "Update context definition"
+3.  Levantar el tomcat utilizando el plugin de sysdeo.
 
 Una vez finalizado todo esto se puede ingresar desde su explorador favorito y ver que todo funciona, en mi caso la URL de prueba es:
 
 [`http://localhost:8080/example.jsp/`](http://localhost:8080/example.jsp/)
+
+Publicarlo en svn
+-----------------
+
+Al publicarlo es importante agregar al <svn:ignore> los siguientes archivos y directorios:
+
+-   Directorio work y subdirectorios
+-   Directorio target y subdirectorios.
+-   Archivos .project, .classpath y .tomcatplugin
+
+Luego quien se lo baje deberá ejecutar los pasos 2, 3, 4.2 y 4.3
