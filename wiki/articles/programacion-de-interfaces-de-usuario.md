@@ -4,3 +4,7 @@ Los apuntes de estas materias están en construcción así que por ahora tenemos
 
 -   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
 
+También hay tutoriales sobre distintas tecnologías para la construcción de interfaces de usuario:
+
+-   [Creación de un proyecto web basado en JSP y Servlets](creacion-de-un-proyecto-web-basado-en-jsp-y-servlets.html)
+
