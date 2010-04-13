@@ -14,8 +14,8 @@ Creación del proyecto
 Paso 1  
 
 `mvn archetype:create `
-`    -DgroupId=basic-example.jsp `
-`    -DartifactId=com.uqbar-project.edu.progui `
+`    -DgroupId=com.uqbar-project.edu.progui  `
+`    -DartifactId=basic-example.jsp`
 `    -DarchetypeArtifactId=maven-archetype-webapp`
 
 Veremos que nos creó un directorio con el nombre indicado por , si miramos dentro de ese directorio encontraremos el del proyecto y dos carpetas de fuentes:
