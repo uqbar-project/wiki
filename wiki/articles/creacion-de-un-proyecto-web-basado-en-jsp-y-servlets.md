@@ -13,9 +13,11 @@ Creación del proyecto
 
 Paso 1  
 
+Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente comando maven (previo asignar valores adecuados para groupId y artifactId)
+
 `mvn archetype:create `
-`    -DgroupId=com.uqbar-project.edu.progui  `
 `    -DartifactId=basic-example.jsp`
+`    -DgroupId=com.uqbar-project.edu.progui  `
 `    -DarchetypeArtifactId=maven-archetype-webapp`
 
 Veremos que nos creó un directorio con el nombre indicado por , si miramos dentro de ese directorio encontraremos el del proyecto y dos carpetas de fuentes:
