@@ -59,3 +59,24 @@ Al publicarlo es importante agregar al <svn:ignore> los siguientes archivos y di
 -   Archivos .project, .classpath y .tomcatplugin
 
 Luego quien se lo baje deberá ejecutar los pasos 2, 3, 4.2 y 4.3
+
+Bibliotecas adicionales
+-----------------------
+
+Para poder usar Expresssion Language dentro de las páginas JSP, se debe
+
+1.  Incluir esta dependencia en el pom.
+
+<dependency>
+`   `<groupId>`org.glassfish.web`</groupId>
+`   `<artifactId>`jstl-impl`</artifactId>
+`   `<version>`1.2`</version>
+</dependency>
+
+1.  Actualizar los archivos de configuración de eclipse y sysdeo:
+
+`mvn eclipse:eclipse sysdeo-tomcat:generate -DdownloadSources=true -DdownloadJavadocs=true`
+
+1.  Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
+2.  Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
+
