@@ -65,7 +65,7 @@ Bibliotecas adicionales
 
 Para poder usar Expresssion Language dentro de las páginas JSP, se debe
 
-1.  Incluir esta dependencia en el pom.
+-   Incluir esta dependencia en el pom.
 
 <dependency>
 `   `<groupId>`org.glassfish.web`</groupId>
@@ -73,10 +73,10 @@ Para poder usar Expresssion Language dentro de las páginas JSP, se debe
 `   `<version>`1.2`</version>
 </dependency>
 
-1.  Actualizar los archivos de configuración de eclipse y sysdeo:
+-   Actualizar los archivos de configuración de eclipse y sysdeo:
 
 `mvn eclipse:eclipse sysdeo-tomcat:generate -DdownloadSources=true -DdownloadJavadocs=true`
 
-1.  Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
-2.  Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
+-   Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
+-   Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
 
