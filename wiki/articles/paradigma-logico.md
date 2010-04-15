@@ -65,7 +65,7 @@ Manejo de conjuntos
 
 ### Listas
 
-{main|Paradigma Lógico - Listas} listas – conjuntos explícitos
+listas – conjuntos explícitos
 
 -   Definición de lista: lista vacía o (cabeza y cola)
 -   Pattern matching
