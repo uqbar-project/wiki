@@ -159,3 +159,46 @@ Lo que logramos al hacer que P llegue ligada al findall es que el predicado cant
 
 Dos formas de generación
 ------------------------
+
+Dijimos que en realidad hay dos formas de determinar cuáles son todos los P que me interesan:
+
+1.  Una forma es decir que P es una persona, entonces podríamos poner:
+2.  Por el otro podemos pensar que P tiene que ser padre, entonces surge la opción: . (Me interesa que sea padre y no me importa en principio cuáles son sus hijos.
+
+¿Qué pasaría si usamos en lugar de como generador?
+
+`cantidadDeHijos(P,Cantidad) :-`
+`    padre(P,_), %Generacion, asi la variable P llega ligada al findall`
+`    findall(H,padre(P,H),Hijos),`
+`    length(Hijos,Cantidad).`
+
+La diferencia la vamos a encontrar si hacemos la consulta:
+
+`?- cantidadDeHijos(bart,C).`
+
+Con la solución propuesta en el apartado anterior nos dice que bart tiene cero hijos:
+
+`?- cantidadDeHijos(bart,C).`
+`C = 0`
+
+Con la segunda posibilidad, bart no es una posible respuesta para (porque no es padre de nadie). Entonces lo que voy a obtener es:
+
+`?- cantidadDeHijos(bart,C).`
+`No`
+
+En este caso consideramos que es más saludable un 0 que un No. Independientemente de eso, lo que debe quedar de todo esto es que las distintas formas de generar nos pueden dar diferentes resultados como respuesta y hay que elegir qué queremos.
+
+Una pregunta adicional que podría surgir es: ¿qué pasa si no tenemos el predicado persona? Bueno, habrá que agregarlo a la base de conocimientos, y para ello tenemos dos posibilidades:
+
+Por extensión:uno por uno enumerando cada persona (un hecho para cada persona:  
+
+`persona(bart).`
+`persona(lisa).`
+`... etc.`
+
+Por comprensión:con una regla descubrir quiénes podemos considerar persona a partir de la información que ya tenemos. Una forma de hacer eso sería:  
+
+`persona(Papa) :- padre(Papa,_).`
+`persona(Hijo) :- padre(_,Hijo).`
+
+Es decir, el que es padre de alguien es una persona, y el que es hijo también.
