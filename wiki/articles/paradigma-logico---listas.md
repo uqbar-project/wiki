@@ -156,8 +156,7 @@ cantidadDeHijos(P,Cantidad) :-
 
 Lo que logramos al hacer que P llegue ligada al findall es que el predicado cantidadDeHijos/2 sea totalmente inversible. A esta técnica la denominamos [generación](generacion.html).
 
-Dos formas de generación
-------------------------
+### Dos formas distintas de generación
 
 Dijimos que en realidad hay dos formas de determinar cuáles son todos los P que me interesan:
 
