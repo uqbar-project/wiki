@@ -139,7 +139,7 @@ Debemos mirar la consulta que se está realizando en el findall (el 2do parámet
 
 En el findall/3 como primer parámetro dijimos que nos interesa solamente la variable H de cada respuesta, e Hijos será un conjunto de esos H. Por lo tanto Hijos es la lista \[bart,maggie,lisa,homero,herbert\] que tiene 5 elementos (la respuesta a nuestra consulta).
 
-Un findall 'totalmente inversible': Generación
+Un findall *totalmente inversible*: Generación
 ----------------------------------------------
 
 El problema está en la consulta de adentro del findall, no queremos preguntar "¿Quienes son padre e hijo?" sino "¿Quienes son hijos de P?" (risas) y para preguntar eso P debe llegar ligada al findall, para poder preguntar por los hijos de una persona en particular.
