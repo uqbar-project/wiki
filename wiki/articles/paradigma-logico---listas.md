@@ -137,6 +137,11 @@ Debemos mirar la consulta que se está realizando en el findall (el 2do parámet
 `P = abraham,`
 `H = herbert.`
 
+En el findall/3 como primer parámetro dijimos que nos interesa solamente la variable H de cada respuesta, e Hijos será un conjunto de esos H. Por lo tanto Hijos es la lista \[bart,maggie,lisa,homero,herbert\] que tiene 5 elementos (la respuesta a nuestra consulta).
+
+Un findall 'totalmente inversible': Generación
+----------------------------------------------
+
 El problema está en la consulta de adentro del findall, no queremos preguntar "¿Quienes son padre e hijo?" sino "¿Quienes son hijos de P?" (risas) y para preguntar eso P debe llegar ligada al findall, para poder preguntar por los hijos de una persona en particular.
 
 Ahora tenemos que averiguar cómo ligar a P, y para eso hay que pensar cuáles serían los posibles P que nos interesan. Una respuesta sencilla es pensar que queremos que P sea una persona, entonces podríamos agregar al antecedente la restricción: .
@@ -144,41 +149,13 @@ Ahora tenemos que averiguar cómo ligar a P, y para eso hay que pensar cuáles s
   
 (También se podría usar el predicado padre/2 en lugar de persona/1, analizamos la diferencia entre ambos en el próximo apartado.)
 
-Rápidamente se nos ocurren dos opciones.
-
-1.  Por un lado sabemos que P es una persona, entonces podríamos poner:
-2.  Por el otro podemos pensar que P tiene que ser padre, entonces surge la opción: . (Me interesa que sea padre y no me importa en principio cuáles son sus hijos.
-
-En principio cualquiera de las dos sirve
-
-y esto se debe al findall/3. En este caso, como la P no llega ligada al findall, la consulta que está adentro (el 2do parámetro del findall) queda padre(P,H) y dicha consulta arroja las siguientes respuestas
-
-En el findall/3 como primer parámetro dijimos que nos interesa solamente la variable H de cada respuesta, e Hijos será un conjunto de esos H. Por lo tanto Hijos es la lista \[bart,maggie,lisa,homero,herbert\] que tiene 5 elementos (la respuesta a nuestra consulta).
-
-?- cantidadDeHijos(bart,C). C = 0
-
-En este momento nos dice que bart tiene cero hijos, está bien esto o esperábamos un No como respuesta? Yo opino que está bueno que me diga cero
-
-Entonces con todo esto intentemos arreglar la definición de cantidadDeHijos/2
-
 cantidadDeHijos(P,Cantidad) :-
 
-`    padre(P,_), %Generacion, asi la variable P llega ligada al findall`
+`    persona(P), % Generacion, asi la variable P llega ligada al findall`
 `    findall(H,padre(P,H),Hijos),`
 `    length(Hijos,Cantidad).`
 
-Es una solución posible pero ahora, como bart no es padre entonces al preguntar cuántos hijos tiene bart me va a decir No
+Lo que logramos al hacer que P llegue ligada al findall es que el predicado cantidadDeHijos/2 sea totalmente inversible. A esta técnica la denominamos [generación](generacion.html).
 
-?- cantidadDeHijos(bart,C). No
-
-Ahora tenemos que arreglar esto, porque dijimos que queremos como respuesta C = 0, P se debería ligar a un individuo que sea una persona (en nuestro ejemplo una persona es alguien que es o bien padre o bien hijo).
-
-esPersona(Papa) :- padre(Papa,\_). esPersona(Hijo) :- padre(\_,Hijo).
-
-cantidadDeHijos(P,Cantidad) :-
-
-`    esPersona(P), %Generacion, asi la variable P llega ligada al findall`
-`    findall(H,padre(P,H),Hijos),`
-`    length(Hijos,Cantidad).`
-
-Lo que logramos al hacer que P llegue ligada al findall es que el predicado cantidadDeHijos/2 sea totalmente inversible.
+Dos formas de generación
+------------------------
