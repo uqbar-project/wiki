@@ -141,6 +141,9 @@ El problema está en la consulta de adentro del findall, no queremos preguntar "
 
 Ahora tenemos que averiguar cómo ligar a P, y para eso hay que pensar cuáles serían los posibles P que nos interesan. Una respuesta sencilla es pensar que queremos que P sea una persona, entonces podríamos agregar al antecedente la restricción: .
 
+  
+(También se podría usar el predicado padre/2 en lugar de persona/1, analizamos la diferencia entre ambos en el próximo apartado.)
+
 Rápidamente se nos ocurren dos opciones.
 
 1.  Por un lado sabemos que P es una persona, entonces podríamos poner:
