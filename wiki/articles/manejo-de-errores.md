@@ -1,3 +1,16 @@
+Consistencia
+------------
+
+Al producirse una excepción, es importante garantizar la consistencia del modelo (el estado de mi programa) antes de continuar. Esto significa que la operación debe realizarse o no, no puede quedar en un estado intermedio.
+
+Algunas estrategias para resolver eso pueden ser:
+
+-   Lo más simple parece ser rollbackear, es decir: si en una secuencia de operaciones falla la enésima, hay que volver atrás el efecto de las n-1 anteriores. Esto es lo más simple de pensar, pero no siempre es lo más simple de programar.
+    En un caso donde diferentes cosas pueden fallar, puede ser complejo determinar cuál es la que falló para luego rollbackear las anteriores. Esa indefinición puede producir una cadena interminable de ifs dentro del catch, por lo tanto es algo que será preferible evitar.
+-   Si en un conjunto de operaciones que deben realizarse atómicamente hay una sola que puede fallar, ponerla en primer lugar. Eso nos evita los rollbacks.
+-   Una variante de lo anterior es poner primero las que son más fáciles (o más baratas en algún sentido) de rollbackear.
+-   Como última alternativa, en caso de ser imposible rollbackear, suele ser preferible informar el problema y cerrar la aplicación que dejarla corriendo en un estado potencialmente inconsistente. En este caso se estaría apelando a una solución manual.
+
 ¿Dónde poner el return?
 -----------------------
 
