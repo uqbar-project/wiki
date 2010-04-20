@@ -6,6 +6,7 @@ Teoría
 -   [Mensajes y métodos](mensajes-y-metodos.html)
 -   [Variables](variables.html)
 -   [Polimorfismo](polimorfismo.html)
+-   [Modelando objetos - Responsabilidades y delegación](modelando-objetos---responsabilidades-y-delegacion.html)
 -   [Herencia](herencia.html)
 -   [Paradigma de objetos - method lookup](paradigma-de-objetos---method-lookup.html)
 -   [Redefinición](redefinicion.html)
