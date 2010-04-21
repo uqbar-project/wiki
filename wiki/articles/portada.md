@@ -12,4 +12,6 @@ Si sos un estudiante en busca del material de una materia, tal vez te convenga i
 -   [Técnicas Avanzadas de Programación](tecnicas-avanzadas-de-programacion.html)
 -   [Programación de Interfaces de Usuario](programacion-de-interfaces-de-usuario.html)
 
+Otra forma de navegar este sitio es browseando nuestra colección de propuestas de [Herramientas Útiles](herramientas-utiles.html).
+
 "Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento" [1](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)
