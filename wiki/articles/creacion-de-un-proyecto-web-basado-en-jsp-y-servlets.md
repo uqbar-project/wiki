@@ -110,9 +110,12 @@ Una vez hecho esto deben:
 
 `-Dmaven.eclipse.workspace=`<path a su workspace de eclipse>
 
--   -   Ojo: Eso funciona para el eclipse pero no para el sysdeo así que en caso de utilizar esta idea deberán modificar el path del devloader a mano (no todavía, eso se puede hacer después del siguiente paso)
+:\* Ojo: Eso funciona para el eclipse pero no para el sysdeo así que en caso de utilizar esta idea deberán modificar el path del devloader a mano (no todavía, eso se puede hacer después del siguiente paso)
+
 -   Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
-    -   Ahora sí estaríamos en condiciones de modificar el path del devloader a mano. Para eso ir a propiedades del proyecto -&gt; Tomcat -&gt; DevLoader classpath. Ahí deberían ver que las referencias a sus proyectos no están selecionadas, deben agregarlas antes de ir al siguiente paso.
-        Esto es manual y feo, estamos trabajando en una propuesta más prolija que no implique una enorme cantidad adicional de burocracia, mientras tanto es lo mejor que tenemos.
+
+:\* Ahora sí estaríamos en condiciones de modificar el path del devloader a mano. Para eso ir a propiedades del proyecto -&gt; Tomcat -&gt; DevLoader classpath. Ahí deberían ver que las referencias a sus proyectos no están selecionadas, deben agregarlas antes de ir al siguiente paso.
+Esto es manual y feo, estamos trabajando en una propuesta más prolija que no implique una enorme cantidad adicional de burocracia, mientras tanto es lo mejor que tenemos.
+
 -   Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
 
