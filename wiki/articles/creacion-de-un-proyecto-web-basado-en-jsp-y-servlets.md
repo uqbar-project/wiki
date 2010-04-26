@@ -102,16 +102,17 @@ Estas bibliotecas no se encuentran en el repositorio default del maven (repo1.ma
 
 Una vez hecho esto deben:
 
-1.  Actualizar los archivos de configuración de eclipse y sysdeo:
+-   Actualizar los archivos de configuración de eclipse y sysdeo:
 
 `mvn eclipse:eclipse sysdeo-tomcat:generate -DdownloadSources=true -DdownloadJavadocs=true`
 
-1.  Si tienen dependencias con otros proyectos que estén en su workspace de eclipse, una idea útil es hacer que el maven genere referencias contra esos proyectos en lugar de contra jars en su repositorio local. Para eso deben agregar a la línea anterior:
+-   Si tienen dependencias con otros proyectos que estén en su workspace de eclipse, una idea útil es hacer que el maven genere referencias contra esos proyectos en lugar de contra jars en su repositorio local. Para eso deben agregar a la línea anterior:
 
 `-Dmaven.eclipse.workspace=`<path a su workspace de eclipse>
 
-\#\* Eso funciona para el eclipse pero no para el sysdeo así que en caso de utilizar esta idea deberán modificar el path del devloader a mano (no todavía: después del paso 4)
-
-1.  Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
-2.  Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
+-   -   Ojo: Eso funciona para el eclipse pero no para el sysdeo así que en caso de utilizar esta idea deberán modificar el path del devloader a mano (no todavía, eso se puede hacer después del siguiente paso)
+-   Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
+    -   Ahora sí estaríamos en condiciones de modificar el path del devloader a mano. Para eso ir a propiedades del proyecto -&gt; Tomcat -&gt; DevLoader classpath. Ahí deberían ver que las referencias a sus proyectos no están selecionadas, deben agregarlas antes de ir al siguiente paso.
+        Esto es manual y feo, estamos trabajando en una propuesta más prolija que no implique una enorme cantidad adicional de burocracia, mientras tanto es lo mejor que tenemos.
+-   Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
 
