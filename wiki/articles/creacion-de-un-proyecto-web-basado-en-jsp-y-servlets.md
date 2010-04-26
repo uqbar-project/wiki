@@ -65,15 +65,36 @@ Luego quien se lo baje deberá ejecutar los pasos 2, 3, 4.2 y 4.3
 Bibliotecas adicionales
 -----------------------
 
-Para poder usar Expresssion Language dentro de las páginas JSP, se debe
+Para poder tener soporte para EL y JSTL en el proyecto eclipse, se deben agregar las siguientes dependencias en el pom
 
--   Incluir esta dependencia en el pom.
+Expression Languaje  
 
 <dependency>
-`   `<groupId>`org.glassfish.web`</groupId>
-`   `<artifactId>`jstl-impl`</artifactId>
-`   `<version>`1.2`</version>
+`   `<groupId>`javax.el`</groupId>
+`   `<artifactId>`el-api`</artifactId>
+`   `<version>`2.2`</version>
+`   `<optional>`true`</optional>
 </dependency>
+
+JSTL  
+
+<dependency>
+`   `<groupId>`javax.servlet`</groupId>
+`   `<artifactId>`jstl`</artifactId>
+`   `<version>`1.2`</version>
+`   `<scope>`runtime`</scope>
+</dependency>
+
+Estas bibliotecas no se encuentran en el repositorio default del maven (repo1.maven.com), por lo tanto debemos agregar un repositorio adicional. Hay muchas formas de hacer esto, una sencilla es agregarlo en el pom, antes de las dependencias. Un repositorio posible para esta tarea es el de JBoss, para agregarlo pueden hacer:
+
+<repositories>
+`   `<repository>
+`       `<id>`jboss`</id>
+`       `<url>[`http://repository.jboss.org/maven2`](http://repository.jboss.org/maven2)</url>
+`   `</repository>
+</repositories>
+
+Una vez hecho esto deben:
 
 -   Actualizar los archivos de configuración de eclipse y sysdeo:
 
