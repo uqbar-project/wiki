@@ -62,10 +62,12 @@ Al publicarlo es importante agregar al <svn:ignore> los siguientes archivos y di
 
 Luego quien se lo baje deberá ejecutar los pasos 2, 3, 4.2 y 4.3
 
-Bibliotecas adicionales
------------------------
+Cómo agregar bibliotecas adicionales
+------------------------------------
 
-Para poder tener soporte para EL y JSTL en el proyecto eclipse, se deben agregar las siguientes dependencias en el pom
+Para poder tener soporte para EL y JSTL en el proyecto eclipse, se deben agregar las siguientes dependencias en el pom y actualizar el proyecto
+
+### Agregar la dependencia en el pom
 
 Expression Languaje  
 
@@ -85,6 +87,8 @@ JSTL
 `   `<scope>`runtime`</scope>
 </dependency>
 
+### Definir repositorios adicionales
+
 Estas bibliotecas no se encuentran en el repositorio default del maven (repo1.maven.com), por lo tanto debemos agregar un repositorio adicional. Hay muchas formas de hacer esto, una sencilla es agregarlo en el pom, antes de las dependencias. Un repositorio posible para esta tarea es el de JBoss, para agregarlo pueden hacer:
 
 <repositories>
@@ -94,12 +98,20 @@ Estas bibliotecas no se encuentran en el repositorio default del maven (repo1.ma
 `   `</repository>
 </repositories>
 
+### Actualizar el proyecto eclipse
+
 Una vez hecho esto deben:
 
--   Actualizar los archivos de configuración de eclipse y sysdeo:
+1.  Actualizar los archivos de configuración de eclipse y sysdeo:
 
 `mvn eclipse:eclipse sysdeo-tomcat:generate -DdownloadSources=true -DdownloadJavadocs=true`
 
--   Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
--   Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
+1.  Si tienen dependencias con otros proyectos que estén en su workspace de eclipse, una idea útil es hacer que el maven genere referencias contra esos proyectos en lugar de contra jars en su repositorio local. Para eso deben agregar a la línea anterior:
+
+`-Dmaven.eclipse.workspace=`<path a su workspace de eclipse>
+
+\#\* Eso funciona para el eclipse pero no para el sysdeo así que en caso de utilizar esta idea deberán modificar el path del devloader a mano (no todavía: después del paso 4)
+
+1.  Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
+2.  Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
 
