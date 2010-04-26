@@ -70,7 +70,7 @@ Para poder tener soporte para EL y JSTL en el proyecto eclipse, se deben agregar
 Expression Languaje  
 
 <dependency>
-`   `<groupId>`javax.el`</groupId>
+`   `<groupId>`javax.el`</groupId>` `
 `   `<artifactId>`el-api`</artifactId>
 `   `<version>`2.2`</version>
 `   `<optional>`true`</optional>
