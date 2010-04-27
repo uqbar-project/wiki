@@ -3,7 +3,7 @@ El objetivo de este tutorial es crear una aplicación base utilizando las siguie
 -   Java
 -   Eclipse
 -   Tomcat
--   Sysdeo + DevLoader +
+-   Sysdeo + DevLoader + Tomcat-XT
 -   Maven
 
 Se asume la presencia de un entorno con todas esas herramientas configuradas adecuadamente.
