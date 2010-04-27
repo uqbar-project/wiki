@@ -11,7 +11,7 @@ Se asume la presencia de un entorno con todas esas herramientas configuradas ade
 Creación del proyecto
 ---------------------
 
-Paso 1  
+### Paso 1: Creación en base a un arquetype de maven
 
 Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente comando maven (previo asignar valores adecuados para groupId y artifactId)
 
@@ -20,7 +20,7 @@ Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente
 `    -DgroupId=com.uqbar-project.edu.progui       \`
 `    -DarchetypeArtifactId=maven-archetype-webapp `
 
-Paso 2  
+### Paso 2: Agregar bibliotecas necesarias al pom
 
 Luego de ejecutar eso tendremos el código generado en el directorio con el nombre indicado en el (en mi caso ). En ese directorio encontrarán el , si vamos a utilizar servlets (que es lo más probable) hay que editarlo para agregar las bibliotecas correspondientes:
 
@@ -37,7 +37,7 @@ Luego de ejecutar eso tendremos el código generado en el directorio con el nomb
 `           `<scope>`provided`</scope>
 `       `</dependency>
 
-Paso 3  
+### Paso 3: Crear una carpeta adicional para las clases java
 
 Dentro del mismo directorio veremos una carpeta y dentro dos carpetas con fuentes
 
@@ -48,9 +48,7 @@ Es necesario crear una carpeta más:
 
 src/main/java:Es el lugar para ubicar nuestras clases Java.  
 
-<!-- -->
-
-Paso 4  
+### Paso 4: Generación de la información para eclipse
 
 Luego, parados en la carpeta en donde está el debemos ejecutar:
 
@@ -58,7 +56,7 @@ Luego, parados en la carpeta en donde está el debemos ejecutar:
 
 Esto nos creará los archivos de configuración del eclipse: y . También habrá bajado todas las bibliotecas que le indicamos. En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
-Paso 5  
+### Paso 5: Generación de la información para sysdeo
 
 El último paso será generar la información necesaria para el plugin de sysdeo.
 
@@ -66,7 +64,7 @@ El último paso será generar la información necesaria para el plugin de sysdeo
 
 La información generada se encuentra en el archivo . Normalmente no es necesario hacer nada directamente con ese archivo, pero si tenemos dudas sobre que se haya ejecutado todo correctamente ese es el lugar donde mirar.
 
-Paso 6  
+### Paso 6: Importación de la información al eclipse y al tomcat
 
 Luego, desde el eclipse se deberá:
 
