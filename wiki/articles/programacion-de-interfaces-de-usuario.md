@@ -7,4 +7,5 @@ Los apuntes de estas materias están en construcción así que por ahora tenemos
 También hay tutoriales sobre distintas tecnologías para la construcción de interfaces de usuario:
 
 -   [Creación de un proyecto web basado en JSP y Servlets](creacion-de-un-proyecto-web-basado-en-jsp-y-servlets.html)
+-   [Errores comunes](errores-comunes.html)
 
