@@ -165,6 +165,8 @@ Adicionalmente es necesario indicar en el qué tag libraries queremos utilizar, 
 `   `<taglib-location>`c.tld`</taglib-location>
 </taglib>
 
+Esto hay que ponerlo dentro del tag , al final de todo.
+
 Indicaciones en la página   
 
 Para usar EL:
