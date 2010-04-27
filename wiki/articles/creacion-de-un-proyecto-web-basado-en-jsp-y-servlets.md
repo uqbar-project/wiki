@@ -15,10 +15,10 @@ Paso 1
 
 Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente comando maven (previo asignar valores adecuados para groupId y artifactId)
 
-`mvn archetype:create `
-`    -DartifactId=basic-jsp-example`
-`    -DgroupId=com.uqbar-project.edu.progui  `
-`    -DarchetypeArtifactId=maven-archetype-webapp`
+`mvn archetype:create                             \`
+`    -DartifactId=basic-jsp-example               \`
+`    -DgroupId=com.uqbar-project.edu.progui       \`
+`    -DarchetypeArtifactId=maven-archetype-webapp `
 
 Paso 2  
 
@@ -37,10 +37,16 @@ Luego de ejecutar eso tendremos el código generado en el directorio con el nomb
 `           `<scope>`provided`</scope>
 `       `</dependency>
 
-Veremos que nos creó un directorio con el nombre indicado por , si miramos dentro de ese directorio encontraremos el del proyecto y dos carpetas de fuentes:
+Paso 3  
 
-src/main/java:Es el lugar para ubicar nuestras clases Java.
-src/main/webapp:Es el lugar donde se ubicarán nuestras páginas web, y dendro de ella en la carpeta  se encuentra la configuración del tomcat.  
+Dentro del mismo directorio veremos una carpeta y dentro dos carpetas con fuentes
+
+src/main/webapp:Es el lugar donde se ubicarán nuestras páginas web, y dendro de ella en la carpeta  se encuentra la configuración del tomcat.
+src/main/resources:Que estará vacía y es el lugar donde poner archivos de configuración y otros recursos *no web*  
+
+Es necesario crear una carpeta más:
+
+src/main/java:Es el lugar para ubicar nuestras clases Java.  
 
 <!-- -->
 
