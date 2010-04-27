@@ -8,5 +8,6 @@ También hay tutoriales sobre distintas tecnologías para la construcción de in
 
 -   [Creación de un proyecto web basado en JSP y Servlets](creacion-de-un-proyecto-web-basado-en-jsp-y-servlets.html)
 -   [Referencia de Expression Language](referencia-de-expression-language.html)
+-   [Referencia de JSTL](referencia-de-jstl.html)
 -   [Errores comunes](errores-comunes.html)
 
