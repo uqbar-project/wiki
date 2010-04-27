@@ -16,9 +16,26 @@ Paso 1
 Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente comando maven (previo asignar valores adecuados para groupId y artifactId)
 
 `mvn archetype:create `
-`    -DartifactId=basic-example.jsp`
+`    -DartifactId=basic-jsp-example`
 `    -DgroupId=com.uqbar-project.edu.progui  `
 `    -DarchetypeArtifactId=maven-archetype-webapp`
+
+Paso 2  
+
+Luego de ejecutar eso tendremos el código generado en el directorio con el nombre indicado en el (en mi caso ). En ese directorio encontrarán el , si vamos a utilizar servlets (que es lo más probable) hay que editarlo para agregar las bibliotecas correspondientes:
+
+`       `<dependency>
+`           `<groupId>`javax.servlet`</groupId>
+`           `<artifactId>`servlet-api`</artifactId>
+`           `<version>`2.5`</version>
+`           `<scope>`provided`</scope>
+`       `</dependency>
+`       `<dependency>
+`           `<groupId>`javax.servlet.jsp`</groupId>
+`           `<artifactId>`jsp-api`</artifactId>
+`           `<version>`2.1`</version>
+`           `<scope>`provided`</scope>
+`       `</dependency>
 
 Veremos que nos creó un directorio con el nombre indicado por , si miramos dentro de ese directorio encontraremos el del proyecto y dos carpetas de fuentes:
 
