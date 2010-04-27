@@ -42,7 +42,7 @@ Paso 3
 Dentro del mismo directorio veremos una carpeta y dentro dos carpetas con fuentes
 
 src/main/webapp:Es el lugar donde se ubicarán nuestras páginas web, y dendro de ella en la carpeta  se encuentra la configuración del tomcat.
-src/main/resources:Que estará vacía y es el lugar donde poner archivos de configuración y otros recursos *no web*  
+src/main/resources:Que estará vacía y es el lugar donde poner archivos de configuración y otros recursos *no web* (toda la información web va en webapp).  
 
 Es necesario crear una carpeta más:
 
@@ -50,19 +50,23 @@ src/main/java:Es el lugar para ubicar nuestras clases Java.
 
 <!-- -->
 
-Paso 2  
+Paso 4  
 
-Luego, ejecutando:
+Luego, parados en la carpeta en donde está el debemos ejecutar:
 
 `mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true`
 
-Paso 3  
+Esto nos creará los archivos de configuración del eclipse: y . También habrá bajado todas las bibliotecas que le indicamos. En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
-Eso deja preparado el proyecto para importarlo al eclipse, y el último paso será generar la información necesaria para el plugin de sysdeo.
+Paso 5  
+
+El último paso será generar la información necesaria para el plugin de sysdeo.
 
 `mvn sysdeo-tomcat:generate`
 
-Paso 4  
+La información generada se encuentra en el archivo . Normalmente no es necesario hacer nada directamente con ese archivo, pero si tenemos dudas sobre que se haya ejecutado todo correctamente ese es el lugar donde mirar.
+
+Paso 6  
 
 Luego, desde el eclipse se deberá:
 
