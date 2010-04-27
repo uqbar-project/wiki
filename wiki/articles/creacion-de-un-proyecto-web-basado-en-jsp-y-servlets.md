@@ -141,11 +141,11 @@ Adicionalmente es necesario indicar en el qué tag libraries queremos utilizar, 
 </taglib>
 
 Indicaciones en la página   
-Para usar EL
+
+Para usar EL:
 
 `<%@ page isELIgnored ="false" %> `
 
-  
 Para usar JSTL:
 
 `<%@ page pageEncoding="UTF-8" %> `
