@@ -119,3 +119,34 @@ Esto es manual y feo, estamos trabajando en una propuesta más prolija que no im
 
 -   Actualizar el proyecto en el sysdeo (botón derecho sobre el proyecto -&gt; Tomcat Project -&gt; Update Context Definition
 
+### Otras configuraciones necesarias
+
+Para poder usar JSTL además del jar (que bajó el maven en el apartado anterior), se necesitan un par de cosas más:
+
+Descripción del tag library  
+En un archivo , por ejemplo el . Todos los archivos tld estándar ya los bajó el maven, pero hay que copiarlos a la carpeta WEB-INF, es decir:
+
+-   Buscar el jar de jstl que debería estar en
+-   Dentro del jar hay una carpeta META-INF y están todos los tlds que necesitamos.
+-   Copiar el a la carpeta de nuestro proyecto web (es decir
+
+<!-- -->
+
+Configuración en   
+Adicionalmente es necesario indicar en el qué tag libraries queremos utilizar, por ejemplo para agregar el debemos indicar:
+
+<taglib>
+`   `<taglib-uri>[`http://java.sun.com/jstl/core`](http://java.sun.com/jstl/core)</taglib-uri>
+`   `<taglib-location>`c.tld`</taglib-location>
+</taglib>
+
+Indicaciones en la página   
+Para usar EL
+
+`<%@ page isELIgnored ="false" %> `
+
+  
+Para usar JSTL:
+
+`<%@ page pageEncoding="UTF-8" %> `
+`<%@ taglib uri="`[`http://java.sun.com/jstl/core`](http://java.sun.com/jstl/core)`" prefix="c" %>`
