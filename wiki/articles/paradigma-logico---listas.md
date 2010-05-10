@@ -200,3 +200,50 @@ Por comprensión:con una regla descubrir quiénes podemos considerar persona a p
 `persona(Hijo) :- padre(_,Hijo).`
 
 Es decir, el que es padre de alguien es una persona, y el que es hijo también.
+
+Haciendo consultas más heavies
+------------------------------
+
+En el segundo parámetro del findall se pueden poner cualquier tipo de consulta, no es necesario que solo 1 predicado esté involucrado.
+
+findall(X,(p(X),q(X),r(X),...,s(X)), Xs)
+
+Hay que encerrarla entre paréntesis para no cambiar la aridad de findall que es tres (3).
+
+### Ejemplo
+
+Si queremos hacer un predicado que me diga cuantos hijos pibes tiene una persona podemos hacer esto
+
+Los X que me interesan son los que cumplen la consulta (padre(P,H),esPibe(H))  
+
+`cuantosPibes(Persona,Cant) :- `
+`     findall(X,(padre(P,H),esPibe(H)),Pibes),`
+`     length(Pibes,Cant).`
+
+Otro ejemplo usando listas
+
+`interseccion(Xs,Ys,Zs) :-`
+`    findall(E,(member(E,Xs),member(E,Ys)),Zs).`
+
+Usando individuos compuestos en el primer parámetro del findall
+---------------------------------------------------------------
+
+En ciertas situaciones nos interesa tener una lista de individuos que hasta el momento no existían en nuestro programa o que no están presentes explícitamente en la consulta (o sea, en el 2do parámetro del findall).
+
+### Ejemplo:
+
+Imagínense que tenemos un programa en donde se define el predicado puntaje/2 que relaciona a un equipo con la cantidad de puntos que tiene. Un requerimiento bastante usual en un programa de este estilo, es conocer la tabla de posiciones que se puede ver como un conjunto de individuos o sea una lista en donde cada individuo que la compone es un equipo con su cantidad de puntos.
+
+`?- findall( ???? , puntaje(Equipo,Cant), Tabla ).`
+
+La pregunta a responder es qué ponemos en ????. Necesitamos definir un individuo que está compuesto por otros 2 individuos (Equipo y Cant). Para hacer esto nada mejor que un functor (un indivudo compuesto de tamaño fijo), le inventamos un nombre por ejemplo ptos
+
+`?- findall( ptos(Equipo,Cant) , puntaje(Equipo,Cant) , Tabla )`
+
+Recuerden:
+
+- ptos es un functor no un predicado
+- puntaje es un predicado no un functor
+- Tabla es una lista de functores ptos que verifican la consulta que está como segundo parámetro del findall  
+
+
