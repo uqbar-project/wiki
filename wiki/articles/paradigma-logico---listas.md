@@ -61,7 +61,7 @@ Sin importar como obtenemos esas respuestas las queremos tener identificadas en 
 
 En el caso de homero ese conjunto va a ser .
 
-A este tipo de individuo que representa conjuntos lo vamos a llamar y se encierra entre corchetes () donde cada elemento del conjunto se separa por coma ().
+A este tipo de individuo que representa conjuntos lo vamos a llamar **lista** y se encierra entre corchetes () donde cada elemento del conjunto se separa por coma ().
 
 En nuestra definición del predicado vamos a definir una variable Hijos que va representar a dicho conjunto, pero a nosotros no nos interesa el conjunto de hijos sino la cantidad de elementos que tiene ese conjunto ...
 
