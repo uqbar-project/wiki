@@ -70,7 +70,8 @@ Nos alcanza pensar que un término es un individuo (simple o compuesto - estos �
 
 `%No` `existen` `reemplazos` `de` `variables` `que` `hagan` `los` `términos` `iguales` `por` `lo` `tanto` `no` `unifican` `?-` `fecha(D,1,2010)` `=` `fecha(1,M,1901).` `No` `?-` `[1,2,X]` `=` `[2,2,3].` `No`
 
-</code> ?- \[1,2,3\] = \[X,X,3\]. No </code>
+`?-` `[1,2,3]` `=` `[X,X,3].`
+`No`
 
 Y pattern-matching?
 -------------------
