@@ -46,31 +46,31 @@ Entonces, se dice que 2 términos unifican si existe algún reemplazo de todas l
 
 Nos alcanza pensar que un término es un individuo (simple o compuesto - estos últimos pueden tener variables) o una consulta (como en el primer ejemplo).
 
-<code> %Dos individuos iguales unifican ?- 1 = 1. Yes
+`%Dos` `individuos` `iguales` `unifican` `?-` `1` `=` `1.` `Yes`
 
-?- homero = homero. Yes
+`?-` `homero` `=` `homero.` `Yes`
 
-?- fecha(1,1,1901) = fecha(1,1,1901). Yes
+`?-` `fecha(1,1,1901)` `=` `fecha(1,1,1901).` `Yes`
 
-?- \[a,b,c\] = \[a,b,c\]. Yes
+`?-` `[a,b,c]` `=` `[a,b,c].` `Yes`
 
-%Existen reemplazos de variables que hagan los términos iguales por lo tanto unifican ?- X = homero. X = homero.
+`%Existen` `reemplazos` `de` `variables` `que` `hagan` `los` `términos` `iguales` `por` `lo` `tanto` `unifican` `?-` `X` `=` `homero.` `X` `=` `homero.`
 
-?- F = fecha(1,1,1901). F = fecha(1,1,1901).
+`?-` `F` `=` `fecha(1,1,1901).` `F` `=` `fecha(1,1,1901).`
 
-?- fecha(D,1,A) = fecha(1,M,1901). D= 1 M= 1 A = 1901
+`?-` `fecha(D,1,A)` `=` `fecha(1,M,1901).` `D=` `1` `M=` `1` `A` `=` `1901`
 
-%Dos individuos distintos no unifican ?- 1 = 2. No
+`%Dos` `individuos` `distintos` `no` `unifican` `?-` `1` `=` `2.` `No`
 
-?- homero = marge. No
+`?-` `homero` `=` `marge.` `No`
 
-?- fecha(1,1,1901) = fecha(1,1,2010). No
+`?-` `fecha(1,1,1901)` `=` `fecha(1,1,2010).` `No`
 
-?- \[a,b,c\] = \[c,b,a\]. No
+`?-` `[a,b,c]` `=` `[c,b,a].` `No`
 
-%No existen reemplazos de variables que hagan los términos iguales por lo tanto no unifican ?- fecha(D,1,2010) = fecha(1,M,1901). No ?- \[1,2,X\] = \[2,2,3\]. No
+`%No` `existen` `reemplazos` `de` `variables` `que` `hagan` `los` `términos` `iguales` `por` `lo` `tanto` `no` `unifican` `?-` `fecha(D,1,2010)` `=` `fecha(1,M,1901).` `No` `?-` `[1,2,X]` `=` `[2,2,3].` `No`
 
-?- \[1,2,3\] = \[X,X,3\]. No </code>
+</code> ?- \[1,2,3\] = \[X,X,3\]. No </code>
 
 Y pattern-matching?
 -------------------
