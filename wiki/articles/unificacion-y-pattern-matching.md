@@ -1,4 +1,5 @@
 Unificación y Pattern-Matching
+------------------------------
 
 En las clases pasadas dijimos que dentro de los conceptos del paradigma lógico no estaba incluido el concepto de **asignación**. Para dejar en claro esto vamos a llamar a esta idea **Asignación Destructiva**, esto se debe a que una asignación me permite "destruir" el valor que tiene una variable en un momento dado y reemplazarlo por otro. Esta idea de asignación no tiene sentido cuando pensamos en variables matemáticas (si en un momento dado decimos que una variable X vale 1 su valor será 1 y ningún otro hasta que se empiece a buscar otra soluciòn al mismo sistema, en ese momento se desligan todas las variables y se empieza de nuevo). Las variables en el paradigma lógico se asemejan a la idea de variable matemática, y el mecanismo por el cual se le dan valores a las variables se llama **unificación**. Cuando una variable que no tiene ningún valor pasa a tenerlo vamos a decir que dicha variable a sido **ligada**, en caso contrario la variable se encuentra **sin ligar o no ligada**.
 
@@ -15,6 +16,7 @@ Y hago la consulta
 `?-` `padre(X,lisa).` `X` `=` `homero`
 
 Cómo obtuvo ese resultado Prolog?
+---------------------------------
 
 Básicamente lo que hace Prolog es buscar un **consecuente** (revisar al principio de todo qué era eso de consecuente) dentro de todas las cláusulas de nuestra base de conocimiento que unifique con la consulta. Podemos ver un poco la unificación o falta de unificación entre dos hechos (que serían la consulta y el consecuente) haciendo consultas en SWI que jueguen con el = (igual), para la consulta de recién tenemos:
 
@@ -69,3 +71,8 @@ Nos alcanza pensar que un término es un individuo (simple o compuesto - estos �
 %No existen reemplazos de variables que hagan los términos iguales por lo tanto no unifican ?- fecha(D,1,2010) = fecha(1,M,1901). No ?- \[1,2,X\] = \[2,2,3\]. No
 
 ?- \[1,2,3\] = \[X,X,3\]. No </code>
+
+Y pattern-matching?
+-------------------
+
+Bueno, la diferencia entre decir pattern-matching y unificación es bastante gris (algunos autores lo consideran sinónimos). Es muy común decir "unifica" o "matchea" indistintamente. Mayormente vamos a hablar de pattern-matching en la unificación de individuos compuestos (functores y listas - ya que estos individuos tienen un patrón definido) y vamos a hablar de unificación entre consulta y consecuente.
