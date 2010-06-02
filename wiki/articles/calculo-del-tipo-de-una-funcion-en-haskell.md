@@ -55,9 +55,13 @@ Por otro lado, en ejemplos más complejos analizar los parámetros será indispe
 Ejemplo un poco mas heavy
 -------------------------
 
+Siendo
+
 **f x y z = (head y) &gt; (map (\\n -&gt; n x) z)**
 
-Vamos a intentar hacer la inferencia de tipos =)
+Vamos a intentar hacer la inferencia de tipos
+
+**Por donde empezamos?**
 
 Primero tenemos que ver qué es **f** ?
 
