@@ -75,7 +75,9 @@ f :: esto es el tipo de **x** -&gt; \[???\] -&gt; esto es el tipo de **z** -&gt;
 
 f :: esto es el tipo de **x** -&gt; \[???\] -&gt; \[???\] -&gt; esto es el tipo de lo que devuelve **f**
 
--- La función que es primer parámetro del map **(\\n -&gt; n x)** recibe como parámetro cada elemento de la lista **z**, cada uno de esos elementos va a ser **n** -- Como **n** se está aplicando a **x** podemos inferir que **n** es una función, por lo que **z** es una lista de funciones
+-- La función que es primer parámetro del map **(\\n -&gt; n x)** recibe como parámetro cada elemento de la lista **z**, cada uno de esos elementos va a ser **n**
+
+-- Como **n** se está aplicando a **x** podemos inferir que **n** es una función, por lo que **z** es una lista de funciones
 
 f :: esto es el tipo de **x** -&gt; \[???\] -&gt; **\[Dominio -&gt; Imagen\]** -&gt; esto es el tipo de lo que devuelve **f**
 
@@ -87,9 +89,17 @@ f :: **a** -&gt; \[???\] -&gt; \[**a** -&gt; Imagen\] -&gt; esto es el tipo de l
 
 f :: a -&gt; \[???\] -&gt; \[a -&gt; **b**\] -&gt; esto es el tipo de lo que devuelve **f**
 
--- Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)** -- Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo -- El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]** -- Por ende **(head y)** también es de tipo **\[b\]** -- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[**\[ b \]**\]
+-- Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)**
 
-{code|f :: a -&gt; \[**\[ b \]**\] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**}
+-- Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo
+
+-- El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]**
+
+-- Por ende **(head y)** también es de tipo **\[b\]**
+
+-- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[**\[ b \]**\]
+
+f :: a -&gt; \[**\[ b \]**\] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**
 
 -- La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool**
 
