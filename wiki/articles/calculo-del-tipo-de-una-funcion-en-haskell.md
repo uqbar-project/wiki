@@ -77,7 +77,7 @@ f :: esto es el tipo de **x** -&gt; esto es el tipo de **y** -&gt; esto es el ti
 
 -- Respiremos profundo -- Asumimos que Imagen es de tipo **b** f :: a -&gt; \[???\] -&gt; \[a -&gt; **b**\] -&gt; esto es el tipo de lo que devuelve **f**
 
--- Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)** -- Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo -- El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]** -- Por ende **(head y)** también es de tipo **\[b\]** -- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[**\[b\]**\] f :: a -&gt; \[**\[b\]**\] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**
+-- Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)** -- Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo -- El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]** -- Por ende **(head y)** también es de tipo **\[b\]** -- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[**\[ b \]**\] f :: a -&gt; \[**\[ b \]**\] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**
 
 -- La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool** f :: a -&gt; [b](b.html) -&gt; \[a -&gt; b\] -&gt; **Bool**
 
