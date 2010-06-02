@@ -89,12 +89,12 @@ f :: a -&gt; \[???\] -&gt; \[a -&gt; **b**\] -&gt; esto es el tipo de lo que dev
 
 -- Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)** -- Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo -- El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]** -- Por ende **(head y)** también es de tipo **\[b\]** -- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[**\[ b \]**\]
 
-f :: a -&gt; \[**\[ b \]**\] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**
+{code|f :: a -&gt; \[**\[ b \]**\] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**}
 
 -- La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool**
 
-f :: a -&gt; [b](b.html) -&gt; \[a -&gt; b\] -&gt; **Bool**
+f :: a -&gt; \[ \[ b \] \] -&gt; \[a -&gt; b\] -&gt; **Bool**
 
 --Nos queda un pequeño detalle, el **(&gt;)** solo puede laburar con listas ordenables entonces **\[b\]** no puede ser cualquier lista, sus elementos tienen que tener la restricción **Ord**
 
-f :: **Ord b** =&gt; a -&gt; [b](b.html) -&gt; \[a -&gt; b\] -&gt; Bool
+f :: **Ord b** =&gt; a -&gt; \[ \[ b \] \] -&gt; \[a -&gt; b\] -&gt; Bool
