@@ -71,11 +71,11 @@ f es una función que tiene 3 parámetros
 
 f :: esto es el tipo de **x** -&gt; esto es el tipo de **y** -&gt; esto es el tipo de **z** -&gt; esto es el tipo de lo que devuelve **f**
 
--- Como head se aplica a una lista y tiene que ser una lista
+-- Como head se aplica a una lista **y** tiene que ser una lista
 
 f :: esto es el tipo de **x** -&gt; \[???\] -&gt; esto es el tipo de **z** -&gt; esto es el tipo de lo que devuelve **f**
 
--- Como map recibe como segundo parámetro una lista, z tiene q ser una lista
+-- Como map recibe como segundo parámetro una lista, **z** tiene q ser una lista
 
 f :: esto es el tipo de **x** -&gt; \[???\] -&gt; \[???\] -&gt; esto es el tipo de lo que devuelve **f**
 
