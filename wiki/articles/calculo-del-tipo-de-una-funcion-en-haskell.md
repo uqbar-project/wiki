@@ -97,9 +97,9 @@ f :: a -&gt; \[???\] -&gt; \[a -&gt; **b**\] -&gt; esto es el tipo de lo que dev
 
 -- Por ende **(head y)** también es de tipo **\[b\]**
 
--- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[**\[ b \]**\]
+-- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[ **\[ b \]** \]
 
-f :: a -&gt; \[**\[ b \]**\] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**
+f :: a -&gt; \[ **\[ b \]** \] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**
 
 -- La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool**
 
