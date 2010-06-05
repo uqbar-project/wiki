@@ -105,6 +105,8 @@ Si col es una colección donde cada uno de sus elementos son colecciones y quier
 
 `  col inject: Bag new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos addAll: unaColeccion. unaColeccionConTodosLosElementos ]`
 
+`  col inject: Bag new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos addAll: unaColeccion ; yourself ]`
+
 Si no nos interesan los elementos repetidos podemos escribir
 
 `  col inject: Bag new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos union: unaColeccion ]`
@@ -114,3 +116,10 @@ Al menos en Pharo recordar que:
 - \#union: retonarna una instancia de Set
 
 - \#add, \#addAll:, \#remove:, \#removeAll: retornan el objeto que recibieron como parámetro **NO** retornan al objeto receptor del mensaje
+
+- El punto y coma se usa para mandar [mensajes en cascada](mensajes-en-cascada.html)
+
+- La implementación de yourself es la siguiente
+
+`    Object >> yourself`
+`        ^self`
