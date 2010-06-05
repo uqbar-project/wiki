@@ -41,3 +41,5 @@ Si col es una colección de personas y queremos obtener la persona más alta
 valorInicialAcumulador = col anyOne (alguna persona de la colección) acumulador = personaMasAlta elementoDeLaColeccion = persona operación que retorna el nuevo valor del acumulador = personaMasAlta altura &gt; persona altura ifTrue: \[persona\] ifFalse: \[personaMasAlta\]
 
 Nota: si asumimos que persona es instancia de la clase Persona podemos hacer lo siguiente
+
+`  `
