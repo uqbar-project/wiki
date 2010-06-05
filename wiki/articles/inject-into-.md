@@ -16,7 +16,7 @@ El **inject:into:** retorna el valor final del acumulador
 
 Si col es una colección de números y queremos obtener su sumatoria podemos hacer
 
-`  `
+`  col inject: 0 into: [ :sumatoria :numero | sumatoria + numero ]`
 
 valorInicialAcumulador = 0
 
@@ -30,7 +30,7 @@ operación que retorna el nuevo valor del acumulador = sumatoria + numero
 
 Si col es una colección de números y queremos obtener su productoria podemos hacer
 
-`  `
+`  col inject: 1 into: [ :productoria :numero | productoria * numero ]`
 
 valorInicialAcumulador = 1
 
@@ -44,7 +44,7 @@ operación que retorna el nuevo valor del acumulador = productoria \* numero
 
 Si col es una colección de números y queremos obtener el máximo podemos hacer
 
-`  `
+`  col inject: col anyOne into: [ :maximo :numero | maximo max: numero ]`
 
 valorInicialAcumulador = col anyOne (algún elemento de la colección)
 
@@ -58,7 +58,7 @@ operación que retorna el nuevo valor del acumulador = maximo max: numero
 
 Si col es una colección de personas y queremos obtener la altura más alta
 
-`  `
+`  col inject: col anyOne altura into: [ :maximaAltura :persona | maximaAltura max: persona altura ]`
 
 valorInicialAcumulador = col anyOne altura (alguna altura de alguna persona de la colección)
 
@@ -72,7 +72,7 @@ operación que retorna el nuevo valor del acumulador = maximaAltura max: persona
 
 Si col es una colección de personas y queremos obtener la persona más alta
 
-`  `
+`  col inject: col anyOne into: [ :personaMasAlta :persona | personaMasAlta altura > persona altura ifTrue: [persona] ifFalse: [personaMasAlta] ]`
 
 valorInicialAcumulador = col anyOne (alguna persona de la colección)
 
@@ -84,4 +84,8 @@ operación que retorna el nuevo valor del acumulador = personaMasAlta altura &gt
 
 Nota: si asumimos que persona es instancia de la clase Persona podemos hacer lo siguiente
 
-`  `
+`  col inject: col anyOne into: [ :personaMasAlta :persona | personaMasAlta personaMasAlta: persona ]`
+
+`  Persona >> personaMasAlta: otraPersona`
+`    ^self altura > otraPersona altura`
+`         ifTrue: [ self ] ifFalse: [ otraPersona ]`
