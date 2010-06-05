@@ -105,11 +105,11 @@ Si col es una colección donde cada uno de sus elementos son colecciones y quier
 
 `  col inject: Bag new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos addAll: unaColeccion. unaColeccionConTodosLosElementos ]`
 
-`  col inject: Bag new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos addAll: unaColeccion ; yourself ]`
+`  col inject: Bag class new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos addAll: unaColeccion ; yourself ]`
 
 Si no nos interesan los elementos repetidos podemos escribir
 
-`  col inject: Bag new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos union: unaColeccion ]`
+`  col inject: Set new into: [ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos union: unaColeccion ]`
 
 Al menos en Pharo recordar que:
 
