@@ -103,6 +103,10 @@ Nota: si asumimos que persona es instancia de la clase Persona podemos hacer lo 
 
 Si col es una colección donde cada uno de sus elementos son colecciones y quiero obtener una colección con todos los elementos de sus subcolecciones puedo hacer
 
+col inject: Bag new into: \[ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos addAll: unaColeccion. unaColeccionConTodosLosElementos \]
+
+Si no nos interesan los elementos repetidos podemos escribir
+
 col inject: Bag new into: \[ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos union: unaColeccion \]
 
-Si col es \#(\#(1 2 3) \#() \#(4 5 6) \#(7 8 9 10)), el código anterior retornaría \#(1 2 3 4 5 6 7 8 9 10)
+Al menos en Pharo recordar que - \#union: retonarna una instancia de Set - \#add, \#addAll:, \#remove:, \#removeAll: retornan el objeto que recibieron como parámetro **NO** retornan al objeto receptor del mensaje
