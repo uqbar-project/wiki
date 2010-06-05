@@ -12,6 +12,9 @@ bloqueConDosParametros = \[ :acumuladorActual :elementoDeLaColeccion | <acá esc
 
 El **inject:into:** retorna el valor final del acumulador
 
+Ejemplos
+--------
+
 ### Sumatoria de una colección de números
 
 Si col es una colección de números y queremos obtener su sumatoria podemos hacer
