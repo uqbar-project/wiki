@@ -2,7 +2,13 @@ El **inject:into:** es un solo mensaje que entienden todas las colecciones, reci
 
 `  `
 
-### Parámetros del **inject:into:**
+Utilidad
+--------
+
+La idea de este mensaje es realizar una operación de acumulación sobre todos los elementos de una colección.
+
+Parámetros del **inject:into:**
+-------------------------------
 
 El primero parámetro del **inject:into:** (valorInicialAcumulador) representa el objeto al cual va a apuntar el acumulador antes de empezar a evaluar el bloque (el 2do parámetro del **inject:into:**) sobre cada elemento de la colección.
 
@@ -92,3 +98,11 @@ Nota: si asumimos que persona es instancia de la clase Persona podemos hacer lo 
 `  Persona >> personaMasAlta: otraPersona`
 `    ^self altura > otraPersona altura`
 `         ifTrue: [ self ] ifFalse: [ otraPersona ]`
+
+### Aplanando colecciones
+
+Si col es una colección donde cada uno de sus elementos son colecciones y quiero obtener una colección con todos los elementos de sus subcolecciones puedo hacer
+
+col inject: Bag new into: \[ :unaColeccionConTodosLosElementos :unaColeccion | unaColeccionConTodosLosElementos union: unaColeccion \]
+
+Si col es \#(\#(1 2 3) \#() \#(4 5 6) \#(7 8 9 10)), el código anterior retornaría \#(1 2 3 4 5 6 7 8 9 10)
