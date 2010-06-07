@@ -10,4 +10,5 @@ También hay tutoriales sobre distintas tecnologías para la construcción de in
 -   [Referencia de Expression Language](referencia-de-expression-language.html)
 -   [Referencia de JSTL](referencia-de-jstl.html)
 -   [Errores comunes](errores-comunes.html)
+-   [Elementos teóricos para comparar tecnologías de presentación](elementos-teoricos-para-comparar-tecnologias-de-presentacion.html)
 
