@@ -9,7 +9,7 @@ Una aplicación puede pensarse desde la óptica del
 La separación puede ser:
 
 -   lógica: ambos componentes residen en la misma máquina
--   lógica y física: además de pensarse como componentes separados el usuario utiliza un cliente en su máquina. El servidor suele ser una máquina conectada en red a todos los clientes, que concentra esos pedidos y se encarga de responderlos.
+-   lógica y física: además de pensarse como componentes separados el usuario utiliza un cliente en su máquina y accede al servidor que concentra esos pedidos y se encarga de responderlos.
 
 ¿Qué tipo de pedidos hace el cliente? Esto depende de la arquitectura sobre la cual trabajemos:
 
