@@ -28,3 +28,6 @@ Por supuesto que ande, pero además vamos a priorizar ciertas cualidades de dise
 
 [Conceptos básicos del diseño](conceptos-basicos-del-diseno.html)
 -----------------------------------------------------------------------
+
+-   [Cohesión](-conceptos-basicos-del-diseno.html)
+
