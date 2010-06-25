@@ -38,10 +38,9 @@ Por supuesto que ande, pero además vamos a priorizar ciertas cualidades de dise
 
 Una buena UI va llevando al usuario a través de la secuencia que tiene un caso de uso, guiándolo y ayudándolo en el proceso.
 
-**Ejemplo:** la inscripción a un examen de una materia de la facultad. *Usuario:* un alumno
+Diseño gráfico vs. diseño de sistemas
+-------------------------------------
 
-1.  El usuario seleccionará la materia a inscribirse y la fecha de inscripción.
-2.  El sistema validará que la materia tenga las correlativas aprobadas y que el alumno no esté anotado en otra materia en esa fecha de inscripción
-3.  El sistema registrará la inscripción
-4.  ... etc ...
+También es importante distinguir el diseño gráfico de una aplicación: la iconografía, los logos, imágenes de fondo, etc. que realizan los diseñadores gráficos o bien personas que no necesariamente tengan conocimientos de sistemas y que trabajan en interrelación con las personas que desarrollan un producto de software. Este diseño se preocupa por la orientación de la interfaz de manera que sea cómoda e intuitiva para el usuario y ofrezca un mínimo de resistencia o de adaptación.
 
+Por otra parte, el diseño de sistemas se preocupa por distribuir correctamente las responsabilidades de los componentes que forman una aplicación.
