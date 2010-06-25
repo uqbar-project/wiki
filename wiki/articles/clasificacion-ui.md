@@ -13,6 +13,9 @@ La separación puede ser:
 
 ¿Qué tipo de pedidos hace el cliente? Esto depende de la arquitectura sobre la cual trabajemos:
 
+Arquitectura de las UI
+----------------------
+
 1.  Aplicación centralizada
 2.  Aplicación distribuida (Cliente/Servidor)
 
