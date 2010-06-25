@@ -1,8 +1,8 @@
 Unidad 1
 --------
 
--   [Definiciones\_Iniciales\_de\_UI](definiciones-iniciales-de-ui.html)
--   [Clasificacion\_UI](clasificacion-ui.html)
+-   [Definiciones Iniciales de UI](definiciones-iniciales-de-ui.html)
+-   [Clasificacion UI](clasificacion-ui.html)
 
 Unidad 2
 --------
