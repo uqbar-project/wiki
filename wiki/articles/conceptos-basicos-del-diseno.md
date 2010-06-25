@@ -15,9 +15,8 @@ Es el grado en que los componentes de un sistema se conocen.
 
 Un cliente conoce sus facturas para calcular el total, y está bien que las conozca. Lo que es nocivo para el cliente es conocer de más o de menos. De más porque si el cliente le pide las líneas (los renglones) a cada factura y luego a cada línea le pide el precio unitario de cada producto, cualquier modificación en el cálculo del precio de un producto (por ejemplo, descuento por cantidad dependiente del producto), el que se ve directamente afectado es el cliente.
 
-<code>
+<code>public BigDecimal getMontoTotal() {
 
-`   public BigDecimal getMontoTotal() {`
 `   BigDecimal total = new BigDecimal(0);`
 `   for (Factura factura : this.facturas) {`
 `       for (Renglon renglon : this.renglones) { `
@@ -26,6 +25,6 @@ Un cliente conoce sus facturas para calcular el total, y está bien que las cono
 `   }`
 `   return total;`
 
-} </code> De menos porque no tengo forma de saber el total de facturación si no se que cada factura tiene como interfaz un método que me permite saber el total (public BigDecimal getTotal())
+}</code> De menos porque no tengo forma de saber el total de facturación si no se que cada factura tiene como interfaz un método que me permite saber el total (public BigDecimal getTotal())
 
 ¿Y respecto a UI? El componente de UI va a tener que conocer con el componente que maneja la lógica de dominio, de otra manera la aplicación no va a funcionar. Pero tampoco es bueno que la interfaz conozca cómo está implementado internamente un cliente, o una factura, o un empleado o un alumno. Es cierto que agregar un atributo que el usuario deba visualizar o modificar a través de la interfaz fuerza inevitablemente a un cambio en la UI, pero cambios en la lógica de negocio no deberían necesariamente impactar la UI. Así que otro de nuestros objetivos será minimizar el acoplamiento, no por ser puristas, sino porque nos traerá como beneficio no vernos impactados por cualquier tipo de cambio.
