@@ -27,6 +27,4 @@ Un cliente conoce sus facturas para calcular el total, y está bien que las cono
 `    return total;`
 `}`
 
-</code> De menos porque no tengo forma de saber el total de facturación si no se que cada factura tiene como interfaz un método que me permite saber el total (public BigDecimal getTotal())
-
-¿Y respecto a UI? El componente de UI va a tener que conocer con el componente que maneja la lógica de dominio, de otra manera la aplicación no va a funcionar. Pero tampoco es bueno que la interfaz conozca cómo está implementado internamente un cliente, o una factura, o un empleado o un alumno. Es cierto que agregar un atributo que el usuario deba visualizar o modificar a través de la interfaz fuerza inevitablemente a un cambio en la UI, pero cambios en la lógica de negocio no deberían necesariamente impactar la UI. Así que otro de nuestros objetivos será minimizar el acoplamiento, no por ser puristas, sino porque nos traerá como beneficio no vernos impactados por cualquier tipo de cambio.
+</code> De menos porque no tengo forma de saber el total de facturación si no se que cada factura tiene como interfaz un método que me permite saber el total (`public` `BigDecimal` `getTotal()`)
