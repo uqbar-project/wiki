@@ -30,4 +30,6 @@ Por supuesto que ande, pero además vamos a priorizar ciertas cualidades de dise
 -----------------------------------------------------------------------
 
 -   [Cohesión](conceptos-basicos-del-diseno.html)
+-   [Acoplamiento](conceptos-basicos-del-diseno.html)
 
+¿Qué pasa con el acoplamiento respecto a la UI? El componente de UI va a tener que conocer al componente que maneja la lógica de dominio, de otra manera la aplicación no va a funcionar. Pero tampoco es bueno que la interfaz conozca cómo está implementado internamente un cliente, o una factura, o un empleado o un alumno. Es cierto que agregar un atributo que el usuario deba visualizar o modificar a través de la interfaz fuerza inevitablemente a un cambio en la UI, pero cambios en la lógica de negocio no deberían necesariamente impactar la UI. Así que otro de nuestros objetivos será minimizar el acoplamiento, no por ser puristas, sino porque nos traerá como beneficio no vernos impactados por cualquier tipo de cambio.
