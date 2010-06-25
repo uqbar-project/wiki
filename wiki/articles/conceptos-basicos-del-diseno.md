@@ -28,3 +28,8 @@ Un cliente conoce sus facturas para calcular el total, y está bien que las cono
 `}`
 
 </code> De menos porque no tengo forma de saber el total de facturación si no se que cada factura tiene como interfaz un método que me permite saber el total (`public` `BigDecimal` `getTotal()`)
+
+Requerimientos y casos de uso
+-----------------------------
+
+Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un usuario. Cuando hacemos especificaciones de los casos de uso definimos la interacción entre usuario y sistema, dejando claro el límite entre lo que debe proporcionar el usuario y lo que el sistema debe responder.
