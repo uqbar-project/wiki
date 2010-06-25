@@ -36,3 +36,12 @@ Por supuesto que ande, pero además vamos a priorizar ciertas cualidades de dise
 
 -   [Requerimientos y casos de uso](conceptos-basicos-del-diseno.html)
 
+Una buena UI va llevando al usuario a través de la secuencia que tiene un caso de uso, guiándolo y ayudándolo en el proceso.
+
+**Ejemplo:** la inscripción a un examen de una materia de la facultad. *Usuario:* un alumno
+
+1.  El usuario seleccionará la materia a inscribirse y la fecha de inscripción.
+2.  El sistema validará que la materia tenga las correlativas aprobadas y que el alumno no esté anotado en otra materia en esa fecha de inscripción
+3.  El sistema registrará la inscripción
+4.  ... etc ...
+
