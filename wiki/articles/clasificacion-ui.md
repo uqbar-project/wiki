@@ -6,7 +6,10 @@ Una aplicación puede pensarse desde la óptica del
 -   cliente: el que realiza pedidos
 -   servidor: el que responde a esos pedidos
 
-Por lo general, el cliente es un componente local, es decir, una máquina a la cual accede cada usuario. El servidor suele ser una máquina conectada en red a todos los clientes, que concentra esos pedidos y se encarga de responderlos.
+La separación puede ser:
+
+-   lógica: ambos componentes residen en la misma máquina
+-   lógica y física: además de pensarse como componentes separados el usuario utiliza un cliente en su máquina. El servidor suele ser una máquina conectada en red a todos los clientes, que concentra esos pedidos y se encarga de responderlos.
 
 ¿Qué tipo de pedidos hace el cliente? Esto depende de la arquitectura sobre la cual trabajemos:
 
