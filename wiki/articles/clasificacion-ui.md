@@ -31,3 +31,21 @@ El cliente tiene poca o nula inteligencia. El servidor tiene muchas responsabili
 Del lado del cliente casi no hay lógica, ni de presentación ni de negocio.
 
 Estos sistemas eran los preponderantes hasta mediados de los '80, la configuración tradicional era tener como clientes "terminales bobas" o programas que emulaban este comportamiento y un mainframe con grandes capacidades que actuaba como servidor.
+
+### Aplicaciones distribuidas
+
+Conforme mejoraron las capacidades de procesamiento y bajaron los costos, los clientes comenzaron a tener más funcionalidades en el armado de una aplicación. Surgieron entonces:
+
+-   las aplicaciones de dos niveles: cliente / servidor, donde el cliente generalmente tenía la responsabilidad de procesar consultas desde el servidor y manejar una interfaz de usuario "rica" (orientada a componentes visuales)
+-   las aplicaciones de 3 y hasta n niveles: cliente / middleware / servidor
+
+Las dificultades de tener aplicaciones distribuidas es el alto costo de mantenimiento del software que corre en los clientes cuando estos son muchos o están diseminados geográficamente en distintos puntos. La comunicación con el servidor suele ser por lo general un cuello de botella difícil de soslayar. Por otra parte, las capacidades gráficas y visuales de aplicaciones con clientes "ricos" son insuperables si la comparamos con las prestaciones que ofrece un browser genérico (sin agregados ni plug-ins).
+
+Tipos de cliente
+----------------
+
+La aplicación que corre en un cliente puede ser entonces:
+
+-   un browser, o navegador, que tiene capacidades limitadas por la tecnología: sabe "renderizar" -mostrar- controles HTML, ejecutar código en el cliente a través de javascript o algún lenguaje propietario del browser y enviar peticiones al servidor (generalmente redirigir el control a otra página con ciertos parámetros). El límite está demarcado por el lenguaje de hipertexto pensado para trabajar con información documental, no para aplicaciones de negocio.
+-   un programa específicamente designado para tal fin, construido como parte de un sistema integral (un ejecutable hecho para un sistema operativo, o un programa pre-compilado)
+
