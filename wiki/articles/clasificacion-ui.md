@@ -57,5 +57,6 @@ Como hemos visto, los clientes pueden tener más o menos capacidades de procesam
 En los últimos tiempos los clientes livianos fueron incorporando tecnologías y herramientas para tratar de aumentar las funcionalidades del lado del cliente:
 
 -   recarga selectiva de una página (ej: si hago una consulta anidada de combos, refrescar sólo el combo "hijo" que depende del "padre")
--   manejo de estado conversacional entre cliente y servidor que permita recolectar y actualizar sobre el repositorio remoto. Entonces el cliente hace más que "mostrar en forma amistosa" el formulario
+-   manejo de estado conversacional entre cliente y servidor que permita recolectar y actualizar la info sobre el repositorio remoto.
 
+Entonces el cliente hace más que "mostrar en forma amistosa" el formulario...
