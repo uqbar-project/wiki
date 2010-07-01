@@ -50,4 +50,4 @@ Por otra parte, el diseño de sistemas se preocupa por distribuir correctamente 
 Links relacionados
 ------------------
 
-[Algo3\_Temario](algo3-temario.html)
+[Algo3 Temario](algo3-temario.html)
