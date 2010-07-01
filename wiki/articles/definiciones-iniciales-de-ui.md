@@ -46,3 +46,8 @@ Diseño gráfico vs. diseño de sistemas
 También es importante distinguir el diseño gráfico de una aplicación: la iconografía, los logos, imágenes de fondo, etc. que realizan los diseñadores gráficos o bien personas que no necesariamente tengan conocimientos de sistemas y que trabajan en interrelación con las personas que desarrollan un producto de software. Este diseño se preocupa por la orientación de la interfaz de manera que sea cómoda e intuitiva para el usuario y ofrezca un mínimo de resistencia o de adaptación.
 
 Por otra parte, el diseño de sistemas se preocupa por distribuir correctamente las responsabilidades de los componentes que forman una aplicación.
+
+Links relacionados
+------------------
+
+[Algo3\_Temario](algo3-temario.html)
