@@ -1,6 +1,10 @@
 Arquitectura usual de una aplicación de software
 ------------------------------------------------
 
+Una aplicación de software se divide lógicamente en:
+
+-   Presentación:
+
 descripción de las partes usuales de una aplicación, focalizando en dominio, presentación, persistencia.  
 
 Formas de división de responsabilidades entre cada una de esas partes
