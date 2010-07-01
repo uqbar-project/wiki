@@ -47,7 +47,7 @@ También es importante distinguir el diseño gráfico de una aplicación: la ico
 
 Por otra parte, el diseño de sistemas se preocupa por distribuir correctamente las responsabilidades de los componentes que forman una aplicación.
 
-Links relacionados
-------------------
+Otros links relacionados
+------------------------
 
 [Algo3 Temario](algo3-temario.html)
