@@ -30,7 +30,7 @@ En forma transversal a este circuito básico se presenta un segundo conjunto de 
 Criterios de calidad
 --------------------
 
-### Con respecto a la construcción:
+### Con respecto a la construcción
 
 -   Consistencia, robustez.
 -   Simplicidad, claridad.
