@@ -59,4 +59,4 @@ En los últimos tiempos los clientes livianos fueron incorporando tecnologías y
 -   recarga selectiva de una página (ej: si hago una consulta anidada de combos, refrescar sólo el combo "hijo" que depende del "padre")
 -   manejo de estado conversacional entre cliente y servidor que permita recolectar y actualizar la info sobre el repositorio remoto.
 
-Entonces el cliente hace más que "mostrar en forma amistosa" el formulario...
+Entonces el cliente hace más que "mostrar en forma amistosa" el formulario... de hecho se acerca al formato cliente-servidor que hablábamos antes.
