@@ -25,8 +25,9 @@ En forma transversal a este circuito básico se presenta un segundo conjunto de 
 -   Distintas formas de verificación.
 
 Criterios de calidad
+--------------------
 
-Con respecto a la construcción:
+### Con respecto a la construcción:
 
 -   Consistencia, robustez.
 -   Simplicidad, claridad.
@@ -34,7 +35,7 @@ Con respecto a la construcción:
 -   Desacoplamiento entre lógica y tecnología
 -   Testeabilidad o verificabilidad.
 
-Con respecto a la usabilidad
+### Con respecto a la usabilidad
 
 -   Claridad
 -   Consistencia.
