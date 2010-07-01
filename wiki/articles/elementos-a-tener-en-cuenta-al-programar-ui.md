@@ -44,3 +44,7 @@ Criterios de calidad
 -   Perfomance y percepción de performance.
 -   Intuitividad, autoaprendizaje.
 
+Otros links relacionados
+------------------------
+
+[Algo3 Temario](algo3-temario.html)
