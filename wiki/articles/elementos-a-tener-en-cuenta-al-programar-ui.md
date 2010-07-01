@@ -1,3 +1,6 @@
+Secuencia de pasos que intervienen en una UI
+--------------------------------------------
+
 Al trabajar con interfaces de usuario, aparecen muchos problemas nuevos que no suelen estar presentes en otro tipo de programas. En este módulo introductorio es hacer una enumeración (y definición) de algunos de esos problemas, con el objetivo de establecer una visión global de la problemática asociada a una interfaz de usuario, para ayudar a visualizar todas las cosas que deben tenerse en cuenta para producir una interfaz de usuario de calidad.
 
 Dividiremos las actividades de una interfaz de usuario en dos grandes grupos. El primero de ellos plantea un modelo de ciclo de interacción, es decir, el conjunto de actividades que suelen ocurrir en cada interacción con el usuario, en secuencia:
