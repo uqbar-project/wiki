@@ -3,7 +3,7 @@ Arquitectura usual de una aplicación de software
 
 Para generar una aplicación, podemos dividir lógicamente los componentes según el rol que juegan dentro del sistema en sí mismo:
 
--   **Presentación**: son elementos que trabajan con la [Definiciones\_Iniciales\_de\_UI](--que-es-una-interfaz-de-usuario-.html) interfaz de usuario, dependientes de la tecnología
+-   **Presentación**: son elementos que trabajan con la [interfaz de usuario](-definiciones-iniciales-de-ui--que-es-una-interfaz-de-usuario-.html), dependientes de la tecnología
 
 <!-- -->
 
