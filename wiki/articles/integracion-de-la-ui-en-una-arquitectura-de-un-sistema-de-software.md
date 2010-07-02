@@ -7,7 +7,7 @@ Para generar una aplicación, podemos dividir lógicamente los componentes segú
 
 <!-- -->
 
--   **Dominio**: son las abstracciones que tienen significado para el que conoce el [negocio](definiciones-iniciales-de-ui--que-es-el-modelo-de-dominio-.html) (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
+-   **[Dominio](definiciones-iniciales-de-ui--que-es-el-modelo-de-dominio-.html)**: son las abstracciones que tienen significado para el que conoce el negocio (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
 
 <!-- -->
 
