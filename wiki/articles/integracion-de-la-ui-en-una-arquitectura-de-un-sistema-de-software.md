@@ -21,6 +21,14 @@ Esta división de responsabilidades se suele denotar como **capas** de una aplic
 Interacción entre la UI y el dominio del sistema
 ------------------------------------------------
 
+Una idea bastante instalada en el mercado es abstraer la presentación del dominio tanto como sea posible. De hecho algunos piensan que lo mejor es que no se conozcan/ni se hablen.
+
+Entonces la presentación habla con un objeto intermedio que no tiene comportamiento (se los llama Value Object o Data Transfer Object), sólo alguno de los atributos a los que se accede mediante getters y setters.
+
+Esta técnica puede ser útil cuando estamos trabajando en ambientes distribuidos, es decir, en muchas VM que necesito sincronizar. Entonces modelar un objeto especial para la transferencia es algo útil, porque en cada VM tengo comportamiento de negocio, algo inherente a la redundancia de las aplicaciones distribuidas.
+
+**Pero al separar la presentación y el negocio de esta manera poco feliz estoy metiendo una solución que para comunicar dos ambientes OO descarta las principales ideas del paradigma** (el objeto como un ente que agrupa atributos y comportamiento). Nuestra idea es que la presentación no sólo hable con el dominio sino que le pida todo lo que le tenga que pedir.
+
 Otros links relacionados
 ------------------------
 
