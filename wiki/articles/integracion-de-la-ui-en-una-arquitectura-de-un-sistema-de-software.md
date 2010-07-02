@@ -21,9 +21,7 @@ Esta división de responsabilidades se suele denotar como **capas** de una aplic
 Interacción entre la UI y el dominio del sistema
 ------------------------------------------------
 
-Una idea bastante instalada en el mercado es abstraer la presentación del dominio tanto como sea posible. De hecho algunos piensan que lo mejor es que no se conozcan/ni se hablen.
-
-<Imagen:http://commons.wikimedia.org/wiki/File:RelacionUIDominio.jpg>
+Una idea bastante instalada en el mercado es abstraer la presentación del dominio tanto como sea posible. De hecho algunos piensan que lo mejor es que no se conozcan/ni se hablen. } ![](http://commons.wikimedia.org/wiki/File:RelacionUIDominio.jpg "fig:http://commons.wikimedia.org/wiki/File:RelacionUIDominio.jpg")
 
 Entonces la presentación habla con un objeto intermedio que no tiene comportamiento (se los llama Value Object o Data Transfer Object), sólo alguno de los atributos a los que se accede mediante getters y setters.
 
