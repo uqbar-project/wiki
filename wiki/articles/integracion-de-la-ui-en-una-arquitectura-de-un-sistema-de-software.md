@@ -16,7 +16,7 @@ Para generar una aplicación, podemos dividir lógicamente los componentes segú
 Formas de división de responsabilidades entre cada una de esas partes
 ---------------------------------------------------------------------
 
-Esta división de responsabilidades se suele denotar como capas de una aplicación. Aquí preferimos utilizar el término "concern" o al menos aclarar que la división no implica separación física de los componentes. La clasificación en presentación, dominio y persistencia tiene que ver con el objetivo que cumple cada componente dentro de la aplicación.
+Esta división de responsabilidades se suele denotar como **capas** de una aplicación. Aquí preferimos utilizar el término **concern** o al menos aclarar que la división no implica separación física de los componentes. La clasificación en presentación, dominio y persistencia tiene que ver con el objetivo que cumple cada componente dentro de la aplicación.
 
 Interacción entre la UI y el dominio del sistema
 ------------------------------------------------
