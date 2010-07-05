@@ -84,12 +84,6 @@ Otra dimensión del análisis a realizar pasa por los bloques de construcción d
 
 #### Mecanismos programáticos
 
-Programática: Se basa en la manipulación directa en el programa de los componentes visuales que conforman la vista.
-Declarativa: En la que se utiliza un lenguaje de más alto nivel que describe características de la vista pero sin indicar el algoritmo para su construcción o sin manipular los componentes visuales directametne
-Visual: Mediante una herramienta específica se eligen visualmente los controles y se  
-
--   Model driven
-
 ### Herramientas disponibles
 
 Al analizar las posibilidades de una herramienta también es importante considerar qué tipos de componentes permite utilizar. Inicialmente es interesante considerar si la tecnología contempla únicamente los componentes más básicos (campos de texto, botones, combos, *check buttons*, etc) o incluye algunos elementos como podrían ser:
