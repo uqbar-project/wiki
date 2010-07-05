@@ -97,12 +97,6 @@ También se deben analizar las posibilidades de interacción con esos elementos 
 -   Drag & drop.
 -   
 
-Programática: Se basa en la manipulación directa en el programa de los componentes visuales que conforman la vista.
-Declarativa: En la que se utiliza un lenguaje de más alto nivel que describe características de la vista pero sin indicar el algoritmo para su construcción o sin manipular los componentes visuales directametne
-Visual: Mediante una herramienta específica se eligen visualmente los controles y se  
-
--   Model driven
-
 ### Descripción de vistas
 
 La forma más
