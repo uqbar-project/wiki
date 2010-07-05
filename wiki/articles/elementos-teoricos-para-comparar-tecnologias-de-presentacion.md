@@ -110,15 +110,10 @@ También se deben analizar las posibilidades de interacción con esos elementos 
 -   Qué eventos se pueden obtener de cada control, es decir, clickear sobre el control, modificar su valor, apretar una tecla, movimiento del mouse, etc.
 -   Drag & drop.
 
-Al analizar las posibilidades de una herramienta también es importante considerar qué tipos de componentes permite utilizar. Inicialmente es interesante considerar si la tecnología contempla únicamente los componentes más básicos (campos de texto, botones, combos, *check buttons*, etc) o incluye algunos elementos como podrían ser:
+==== Layouts ===
 
--   editores para tipos de datos específicos como *date pickers*, o editores con máscaras
--   editores de texto con formato,
--   selectores múltiples con más formas de visualización que el clásico combo (por ejemplo como grillas o sliders).
-
-<!-- -->
-
--   
+-   Fijo xy.
+-   *tabs*
 
 ### Componentes
 
