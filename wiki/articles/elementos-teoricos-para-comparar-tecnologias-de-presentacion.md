@@ -30,7 +30,7 @@ La ejecución dentro de un application client tiene gran impacto sobre las aplic
 -   El application client se ocupa de obtener dinámicamente el código de la aplicación, eliminando la necesidad de instalación y de actualización de versiones.
 -   La aplicación ya no es independiente y sólo puede ejecutarse en una máquina que contenga el application client correspondiente, esto nos lleva con frecuencia a no utilizar el application client que podría ser más útil a nuestros propósito sino a amoldarnos al que es más probable de encontrar instalado en las máquinas en las que querremos ejecutar nuestro programa.
 -   Permite que la misma aplicación se ejecute en máquinas totalmente distintas, en tanto tengan el mismo application client.
--   Restringe las posibilidades de uso de la máquina a lo provisto por el application client.
+-   Restringe las posibilidades de uso de la máquina a lo provisto por el application client. Por ejemplo en el caso de una aplicación web, tradicionalmente las aplicaciones estuvieron limitadas a la utilización del lenguaje HTML, lo que limitaba en gran medida las posibilidades de interacción con el usuario.
 
 ### Evolución de los tipos de cliente
 
