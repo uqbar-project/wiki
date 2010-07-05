@@ -1,3 +1,10 @@
+Clientes livianos y pesados
+---------------------------
+
+-   Características de los clientes "livianos" y "pesados"
+    -   Capacidad de distribuir o centralizar la lógica.
+    -   Actualización de versiones
+
 Descripción de la vista
 -----------------------
 
@@ -11,13 +18,6 @@ Navegación
 -   Formas de navegación: pantallas y formularios, ventanas y diálogos (o SPI), manipulación directa.
     -   Control de la iniciativa: usuario o aplicación.
     -   Integración con el dominio de la aplicación: stateless (basada en servicios) o statefull (basada en objetos y en eventos).
-
-Clientes livianos y pesados
----------------------------
-
--   Características de los clientes "livianos" y "pesados"
-    -   Capacidad de distribuir o centralizar la lógica.
-    -   Actualización de versiones
 
 Modelado
 --------
