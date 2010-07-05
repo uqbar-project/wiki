@@ -65,14 +65,37 @@ Descripción de la vista
 
 Otro de los elementos importantes a analizar al comparar tecnologías de presentación son las herramientas que cada tecnología propone al tiempo de definir una [vista](vista.html).
 
-Un concepto
+Los conceptos fundamentales al describir una vista son los de **componente** y **layout**. Los componentes constituyen los elementos activos de la vista, es decir, aquellos con los que el usuario puede interactuar. El layout es la estrategia que indica cómo organizar los componentes espacialmente para poder visualizarlos.
 
-Una de las características diferenciales es el mecanismo o lenguaje utilizado para describir la vista. Los mecanismos más usuales se pueden clasificar entre:
+Si bien algunos frameworks modernos se denominan a sí mismos *orientados a componentes* se puede considerar que en realidad la amplia mayoría de las tecnologías de interfaz de usuario están constituidas por componentes. La diferencia está entonces en la forma de describir esos componentes y su disposición espacial, que se puede clasificar entre:
 
 -   Programática
 -   Declarativa
 -   Visual
--   Model Driven
+-   *Model Driven*
+
+Otra dimensión del análisis a realizar pasa por los bloques de construcción de que disponemos, por ejemplo:
+
+-   De qué componentes disponemos y si es posible agregar nuevos componentes.
+-   Qué formas de layout están contempladas.
+-   Qué mecanismos de interacción tiene el usuario predefinidos con esos componentes.
+
+### Mecanismos de descripción
+
+#### Mecanismos programáticos
+
+### Herramientas disponibles
+
+Al analizar las posibilidades de una herramienta también es importante considerar qué tipos de componentes permite utilizar. Inicialmente es interesante considerar si la tecnología contempla únicamente los componentes más básicos (campos de texto, botones, combos, *check buttons*, etc) o incluye algunos elementos como podrían ser:
+
+-   editores para tipos de datos específicos como *date pickers*, o editores con máscaras
+-   editores de texto con formato,
+-   selectores múltiples con más formas de visualización que el clásico combo (por ejemplo como grillas o sliders).
+
+También se deben analizar las posibilidades de interacción con esos elementos como por ejemplo:
+
+-   Drag & drop.
+-   
 
 Programática: Se basa en la manipulación directa en el programa de los componentes visuales que conforman la vista.
 Declarativa: En la que se utiliza un lenguaje de más alto nivel que describe características de la vista pero sin indicar el algoritmo para su construcción o sin manipular los componentes visuales directametne
