@@ -40,7 +40,7 @@ Con el tiempo la clasificación taxativa entre clientes pesados y livianos se fu
 
 En un primer lugar la universalización del concepto de Virtual Machine o la popularización de diferentes lenguajes interpretados hace que sea difuso cuándo una aplicación es *stand alone* o está utilizando un application client. Por ejemplo, una aplicación Java puede verse como un cliente liviano que se ejecuta sobre un application cliente preinstalado (la JVM) o bien ver a ambos como un programa instalable único. En definitiva es una cuestión de como se distribuye el programa, ya que hoy en día no existen practicamente lenguajes que no requieran de un intérprete, máquina virtual o determinadas bibliotecas instaladas previamente para poder ejecutar programas.
 
-El cuadro se completa cuando se incorporan herramientas actualizar código dinámicamente en lenguajes tradicionalmente pensados para aplicaciones pesadas como Java (*Java WebStar*).
+El cuadro se completa cuando se incorporan herramientas para actualizar código dinámicamente en lenguajes tradicionalmente pensados para aplicaciones pesadas como Java (*Java WebStar*).
 
 Inclusive la utilización de application clients se ha extendido a nuevos entornos, entre ellos podemos mencionar dos: Firefox y Eclipse, en ambos casos encontramos un entorno base o microkernel que provee de un entorno para la ejecución de aplicaciones y una arquitectura basada en *plugins* o *add-ons*, que son los que en última instancia dan forma a la aplicación.
 
