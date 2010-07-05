@@ -32,7 +32,9 @@ La ejecución dentro de un application client tiene gran impacto sobre las aplic
 -   Permite que la misma aplicación se ejecute en máquinas totalmente distintas, en tanto tengan el mismo application client.
 -   Restringe las posibilidades de uso de la máquina a lo provisto por el application client.
 
-### Modernización
+### Evolución de los tipos de cliente
+
+La línea divisoria tan firme.
 
 -   Los clientes livianos van incorporando chiches de presentación.
 -   Los clientes pesados también pueden actualizar versiones dinámicamente.
