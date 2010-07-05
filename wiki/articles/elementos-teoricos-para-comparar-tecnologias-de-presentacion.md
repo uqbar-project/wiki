@@ -34,12 +34,23 @@ La ejecución dentro de un application client tiene gran impacto sobre las aplic
 
 ### Evolución de los tipos de cliente
 
-La línea divisoria tan firme.
+Con el tiempo la clasificación taxativa entre clientes pesados y livianos se fue diluyendo y fueron apareciendo opciones intermedias. Desde ambos lados fueron apareciendo herramientas que intentaban incorporar en uno de los mundos algunas de las ventajas del otro.
 
--   Los clientes livianos van incorporando chiches de presentación.
--   Los clientes pesados también pueden actualizar versiones dinámicamente.
--   Ya no es tan cierto que los "livianos" consumen tantos recursos menos.
--   RIA
+En un primer lugar la universalización del concepto de Virtual Machine o la popularización de diferentes lenguajes interpretados hace que sea difuso cuándo una aplicación es *stand alone* o está utilizando un application client. Por ejemplo, una aplicación Java puede verse como un cliente liviano que se ejecuta sobre un application cliente preinstalado (la JVM) o bien ver a ambos como un programa instalable único. En definitiva es una cuestión de como se distribuye el programa, ya que hoy en día no existen practicamente lenguajes que no requieran de un intérprete, máquina virtual o determinadas bibliotecas instaladas previamente para poder ejecutar programas.
+
+El cuadro se completa cuando se incorporan herramientas actualizar código dinámicamente en lenguajes tradicionalmente pensados para aplicaciones pesadas como Java (*Java WebStar*).
+
+Inclusive la utilización de application clients se ha extendido a nuevos entornos, entre ellos podemos mencionar dos: Firefox y Eclipse, en ambos casos encontramos un entorno base o microkernel que provee de un entorno para la ejecución de aplicaciones y una arquitectura basada en *plugins* o *add-ons*, que son los que en última instancia dan forma a la aplicación.
+
+Por otro lado la popularización de las aplicaciones en Internet se contrapone con la gran cantidad de limitaciones que impone el HTML como lenguaje base para modelar las interfaces de usuario de dichas aplicaciones. Eso fue dando lugar a la aparición de múltiples tecnologías que intentan sobre ponerse a dichas limitaciones, algunos ejemplos son:
+
+-   La posibilidad de ejecutar JavaScript dentro del web browser permite tener comportamiento en el cliente que ya no se delega en el servidor.
+-   Manipular los componentes visuales desde ese código JavaScript en el cliente, para salir de las limitaciones impuestas por el HTML.
+-   La incorporación de tecnologías como AJAX permiten romper la metafora navegacional definida originalmente por el browser.
+
+Adicionalmente, la aparición de herramientas como Flash, Applets, SVGs y HTML5 incorporan nuevos application clients que rompen la visión original del browser-intérprete-de-HTML.
+
+A las aplicaciones que salen de las limitaciones de navegación, interacción y visuales que tenían las aplicaciones web tradicionales se las denomina **Rich Internet Applications (RIA)** y por extensión también a las tecnologías que permiten desarrollar ese tipo de aplicaciones (se podría sumar también JavaScript a esta lista). Si bien se podría decir que este tipo de ideas están aún en evolución, se observa una tendencia a tener application clients cada vez más poderosos.
 
 Descripción de la vista
 -----------------------
