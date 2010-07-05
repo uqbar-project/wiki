@@ -63,6 +63,29 @@ Tanto la aparición de applications clients cada vez más poderosos y complejos 
 Descripción de la vista
 -----------------------
 
+Otro de los elementos importantes a analizar al comparar tecnologías de presentación son las herramientas que cada tecnología propone al tiempo de definir una [vista](vista.html).
+
+Un concepto
+
+Una de las características diferenciales es el mecanismo o lenguaje utilizado para describir la vista. Los mecanismos más usuales se pueden clasificar entre:
+
+-   Programática
+-   Declarativa
+-   Visual
+-   Model Driven
+
+Programática: Se basa en la manipulación directa en el programa de los componentes visuales que conforman la vista.
+Declarativa: En la que se utiliza un lenguaje de más alto nivel que describe características de la vista pero sin indicar el algoritmo para su construcción o sin manipular los componentes visuales directametne
+Visual: Mediante una herramienta específica se eligen visualmente los controles y se  
+
+-   Model driven
+
+### Descripción de vistas
+
+La forma más
+
+### Componentes
+
 -   Diferentes formas de describir una vista: programática, declarativa, visual, model driven.
     -   Diferencias entre diferentes variantes de declaratividad, scriptlets, etc.
     -   Manipulación de componentes vs. manipulación de texto.
