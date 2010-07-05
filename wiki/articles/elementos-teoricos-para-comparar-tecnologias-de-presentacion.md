@@ -36,11 +36,15 @@ La ejecución dentro de un application client tiene gran impacto sobre las aplic
 
 Con el tiempo la clasificación taxativa entre clientes pesados y livianos se fue diluyendo y fueron apareciendo opciones intermedias. Desde ambos lados fueron apareciendo herramientas que intentaban incorporar en uno de los mundos algunas de las ventajas del otro.
 
+#### Application Clients
+
 En un primer lugar la universalización del concepto de Virtual Machine o la popularización de diferentes lenguajes interpretados hace que sea difuso cuándo una aplicación es *stand alone* o está utilizando un application client. Por ejemplo, una aplicación Java puede verse como un cliente liviano que se ejecuta sobre un application cliente preinstalado (la JVM) o bien ver a ambos como un programa instalable único. En definitiva es una cuestión de como se distribuye el programa, ya que hoy en día no existen practicamente lenguajes que no requieran de un intérprete, máquina virtual o determinadas bibliotecas instaladas previamente para poder ejecutar programas.
 
 El cuadro se completa cuando se incorporan herramientas actualizar código dinámicamente en lenguajes tradicionalmente pensados para aplicaciones pesadas como Java (*Java WebStar*).
 
 Inclusive la utilización de application clients se ha extendido a nuevos entornos, entre ellos podemos mencionar dos: Firefox y Eclipse, en ambos casos encontramos un entorno base o microkernel que provee de un entorno para la ejecución de aplicaciones y una arquitectura basada en *plugins* o *add-ons*, que son los que en última instancia dan forma a la aplicación.
+
+#### Rich Internet Applications
 
 Por otro lado la popularización de las aplicaciones en Internet se contrapone con la gran cantidad de limitaciones que impone el HTML como lenguaje base para modelar las interfaces de usuario de dichas aplicaciones. Eso fue dando lugar a la aparición de múltiples tecnologías que intentan sobre ponerse a dichas limitaciones, algunos ejemplos son:
 
@@ -51,6 +55,10 @@ Por otro lado la popularización de las aplicaciones en Internet se contrapone c
 Adicionalmente, la aparición de herramientas como Flash, Applets, SVGs y HTML5 incorporan nuevos application clients que rompen la visión original del browser-intérprete-de-HTML.
 
 A las aplicaciones que salen de las limitaciones de navegación, interacción y visuales que tenían las aplicaciones web tradicionales se las denomina **Rich Internet Applications (RIA)** y por extensión también a las tecnologías que permiten desarrollar ese tipo de aplicaciones (se podría sumar también JavaScript a esta lista). Si bien se podría decir que este tipo de ideas están aún en evolución, se observa una tendencia a tener application clients cada vez más poderosos.
+
+#### Uso de Recursos
+
+Tanto la aparición de applications clients cada vez más poderosos y complejos como la intención de agregar dinamismo y comportamiento a los clientes han producido un incremento considerable en la cantidad de recursos que requiere una aplicación web, habiendo en muchos casos prácticamente ninguna diferencia entre un cliente pesado y un cliente liviano.
 
 Descripción de la vista
 -----------------------
