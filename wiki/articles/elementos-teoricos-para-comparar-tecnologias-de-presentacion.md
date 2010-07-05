@@ -83,9 +83,9 @@ En la que la interfaz de usuario está guiada por el modelo de dominio y no se n
 
 Otra dimensión del análisis a realizar pasa por los bloques de construcción de que disponemos, por ejemplo:
 
--   De qué *componentes* disponemos y si es posible agregar nuevos componentes.
--   Qué formas de *layout* están contempladas.
--   Qué *mecanismos de interacción* tiene el usuario predefinidos con esos componentes.
+-   De qué **componentes** disponemos y si es posible agregar nuevos componentes.
+-   Qué formas de **layout** están contempladas.
+-   Qué **mecanismos de interacción** tiene el usuario predefinidos con esos componentes.
 
 ### Mecanismos de descripción
 
