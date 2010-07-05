@@ -103,10 +103,6 @@ También se deben analizar las posibilidades de interacción con esos elementos 
 -   Drag & drop.
 -   
 
-### Descripción de vistas
-
-La forma más
-
 ### Componentes
 
 -   Diferentes formas de describir una vista: programática, declarativa, visual, model driven.
