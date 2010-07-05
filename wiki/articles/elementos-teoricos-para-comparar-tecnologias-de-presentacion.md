@@ -1,6 +1,8 @@
 Clientes livianos y pesados
 ---------------------------
 
+Si una aplicación es accedida por múltiples usuarios simultáneamente, probablemente cada uno de ellos lo haga desde su propia computadora en forma remota. Al programa que se ejecuta en la máquina del usuario se lo denomina *cliente*
+
 -   Características de los clientes "livianos" y "pesados"
     -   Capacidad de distribuir o centralizar la lógica.
     -   Actualización de versiones
