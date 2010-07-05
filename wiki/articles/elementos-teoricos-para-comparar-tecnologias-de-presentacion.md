@@ -69,10 +69,17 @@ Los conceptos fundamentales al describir una vista son los de **componente** y *
 
 Si bien algunos frameworks modernos se denominan a sí mismos *orientados a componentes* se puede considerar que en realidad la amplia mayoría de las tecnologías de interfaz de usuario están constituidas por componentes. La diferencia está entonces en la forma de describir esos componentes y su disposición espacial, que se puede clasificar entre:
 
--   Programática
--   Declarativa
--   Visual
--   *Model Driven*
+Programática  
+Se basa en la manipulación directa en el programa de los componentes visuales que conforman la vista.
+
+Declarativa  
+En la que se utiliza un lenguaje de más alto nivel que describe características de la vista pero sin indicar el algoritmo para su construcción o sin manipular los componentes visuales directametne
+
+Visual  
+Que permite escojer los componentes de una paleta y visualmente organizarlos en la pantalla sin necesidad de programar o escribir prácticamente nada de código.
+
+*Model driven*  
+En la que la interfaz de usuario está guiada por el modelo de dominio y no se necesita programar específicamente (o se reduce notablemente la necesidad de programarla).
 
 Otra dimensión del análisis a realizar pasa por los bloques de construcción de que disponemos, por ejemplo:
 
