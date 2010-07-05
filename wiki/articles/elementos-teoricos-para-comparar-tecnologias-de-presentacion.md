@@ -93,15 +93,31 @@ Otra dimensión del análisis a realizar pasa por los bloques de construcción d
 
 ### Herramientas disponibles
 
+#### Componentes
+
+Hay un conjunto de componentes básicos que suelen estar disponibles en todas las tecnologías, que incluyen:
+
+-   Campos para ingresar texto, pueden ser de una línea o multilínea.
+-   Selectores entre varias opciones (combos, option buttons, etc). Ṕueden ser de selección simple o múltiple.
+-   *Check boxes* (para seleccionar o no una opción, combinando varios se puede formar un selector múltiple).
+-   Diferentes variantes de botones.
+-   Y otros controles *informativos* como ser labels o imágenes.
+
+#### Posibilidades de interacción
+
+También se deben analizar las posibilidades de interacción con esos elementos como por ejemplo:
+
+-   Qué eventos se pueden obtener de cada control, es decir, clickear sobre el control, modificar su valor, apretar una tecla, movimiento del mouse, etc.
+-   Drag & drop.
+
 Al analizar las posibilidades de una herramienta también es importante considerar qué tipos de componentes permite utilizar. Inicialmente es interesante considerar si la tecnología contempla únicamente los componentes más básicos (campos de texto, botones, combos, *check buttons*, etc) o incluye algunos elementos como podrían ser:
 
 -   editores para tipos de datos específicos como *date pickers*, o editores con máscaras
 -   editores de texto con formato,
 -   selectores múltiples con más formas de visualización que el clásico combo (por ejemplo como grillas o sliders).
 
-También se deben analizar las posibilidades de interacción con esos elementos como por ejemplo:
+<!-- -->
 
--   Drag & drop.
 -   
 
 ### Componentes
