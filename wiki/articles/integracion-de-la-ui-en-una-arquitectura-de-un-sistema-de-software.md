@@ -38,7 +38,7 @@ Esta técnica puede ser útil cuando estamos trabajando en ambientes distribuido
 En definitiva pareciera que la vista no se mezcla con el negocio pero el acoplamiento es claro: si necesito saber cuándo fue la última vez que le pagué el sueldo, necesito:
 
 1.  generar un nuevo método de negocio si no lo tengo, pero también
-2.  agregar un atributo al EmpleadoConsultaDTO
+2.  agregar un atributo al EmpleadoConsultaDTO para que la vista lo pueda mostrar
 
 Nuestra idea es que la presentación no sólo hable con el dominio sino que le pida todo lo que le tenga que pedir: en el ejemplo anterior sería muy bueno que la vista le pregunte directamente al empleado getUltimoPeriodoPago().
 
