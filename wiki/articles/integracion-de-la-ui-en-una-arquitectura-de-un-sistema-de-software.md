@@ -25,9 +25,16 @@ Una idea bastante instalada en el mercado es abstraer la presentación del domin
 
 Entonces la presentación habla con un objeto intermedio que no tiene comportamiento (se los llama Value Object o Data Transfer Object), sólo alguno de los atributos a los que se accede mediante getters y setters.
 
-Esta técnica puede ser útil cuando estamos trabajando en ambientes distribuidos, es decir, en muchas VM que necesito sincronizar. Entonces modelar un objeto especial para la transferencia es algo útil, porque en cada VM tengo comportamiento de negocio, algo inherente a la redundancia de las aplicaciones distribuidas.
+Un ejemplo podría ser: en la actualización de un empleado se ingresan nombre, apellido y dni. En lugar de que la vista conozca a un objeto Empleado que tenga métodos de negocio (por ejemplo que calcule la antigüedad, que sepa cuánto cobra, que conteste cuántas horas trabajó un mes, etc.) generamos un EmpleadoDTO, que tiene solamente nombre, apellido y dni y no sabe calcular su antigüedad, ni tiene relación con otros objetos. Sólo publica getters y setters de los atributos nombre, apellido y dni.
 
-**Pero al separar la presentación y el negocio de esta manera poco feliz estoy metiendo una solución que para comunicar dos ambientes OO descarta las principales ideas del paradigma** (el objeto como un ente que agrupa atributos y comportamiento). Nuestra idea es que la presentación no sólo hable con el dominio sino que le pida todo lo que le tenga que pedir.
+Esta técnica puede ser útil cuando estamos trabajando en ambientes distribuidos, es decir, en muchas VM que necesito sincronizar.
+
+**Pero al separar la presentación y el negocio de esta manera poco feliz estoy metiendo una solución que para comunicar dos ambientes OO descarta las principales ideas del paradigma** (el objeto como un ente que agrupa atributos y comportamiento). Incluso es un problema porque tenemos varios objetos que están representando a un empleado: - el Empleado - el EmpleadoDTO y además al desarrollar la interfaz de consulta de un empleado, donde necesitamos ver para cada empleado la antigüedad, el sueldo promedio mensual, etc. la vista va a tener que necesitar un EmpleadoConsultaDTO, que tenga nombre, apellido, dni, saldo y antigüedad (los últimos dos presuntos atributos pero que en realidad se cargan con una llamada a métodos de negocio). En definitiva pareciera que la vista no se mezcla con el negocio pero el acoplamiento es claro: si necesito saber cuándo fue la última vez que le pagué el sueldo, necesito:
+
+1.  generar un nuevo método de negocio si no lo tengo, pero también
+2.  agregar un atributo al EmpleadoConsultaDTO
+
+Nuestra idea es que la presentación no sólo hable con el dominio sino que le pida todo lo que le tenga que pedir: en el ejemplo anterior sería muy bueno que la vista le pregunte directamente al empleado getUltimoPeriodoPago().
 
 Otros links relacionados
 ------------------------
