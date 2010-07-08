@@ -15,7 +15,7 @@ Es el grado en que los componentes de un sistema se conocen.
 
 Un cliente conoce sus facturas para calcular el total, y está bien que las conozca. Lo que es nocivo para el cliente es conocer de más o de menos. De más porque si el cliente le pide las líneas (los renglones) a cada factura y luego a cada línea le pide el precio unitario de cada producto, cualquier modificación en el cálculo del precio de un producto (por ejemplo, descuento por cantidad dependiente del producto), el que se ve directamente afectado es el cliente.
 
-<font color="#8B0000">**Ejemplo de código que produce alto acoplamiento**</font> <code>
+<font color="#8B0000">**Ejemplo de código con alto nivel de acoplamiento**</font> <code>
 
 `public BigDecimal getMontoTotal() {`
 `    BigDecimal total = new BigDecimal(0);`
@@ -27,7 +27,21 @@ Un cliente conoce sus facturas para calcular el total, y está bien que las cono
 `    return total;`
 `}`
 
-</code> De menos porque no tengo forma de saber el total de facturación si no se que cada factura tiene como interfaz un método que me permite saber el total (`public` `BigDecimal` `getTotal()`)
+</code> Si el cliente conoce de menos no tiene forma de saber el total de facturación si no sabe que cada factura tiene como interfaz un método que me permite saber el total (`public` `BigDecimal` `getTotal()`)
+
+<font color="#0047AB">**El mismo ejemplo con nivel aceptable de acoplamiento**</font> <code>
+
+`public BigDecimal getMontoTotal() {`
+`    BigDecimal total = new BigDecimal(0);`
+`    for (Factura factura : this.facturas) {`
+`        for (Renglon renglon : this.renglones) { `
+`            total = total.add(renglon.getProducto().getPrecioUnitario() * renglon.getCantidad());`
+`        }`
+`    }`
+`    return total;`
+`}`
+
+</code>
 
 Requerimientos y casos de uso
 -----------------------------
