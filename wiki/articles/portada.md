@@ -14,4 +14,4 @@ Si sos un estudiante en busca del material de una materia, tal vez te convenga i
 
 Para el que busca algo que vaya más allá de lo visto en las clases aquí hay una lista con algunos artículos sobre [Otros Temas Interesantes de Programación](otros-temas-interesantes-de-programacion.html). Finalmente, otra posibilidad es browsear nuestra colección de propuestas de [Herramientas Útiles](herramientas-utiles.html).
 
-{{blockquote} "Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento" [1](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)}
+> "Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento" [1](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)
