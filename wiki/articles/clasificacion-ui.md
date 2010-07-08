@@ -3,8 +3,8 @@ Concepto de cliente y servidor
 
 Una aplicación puede pensarse desde la óptica del
 
--   cliente: el que realiza pedidos
--   servidor: el que responde a esos pedidos
+-   **cliente**: el que realiza pedidos
+-   **servidor**: el que responde a esos pedidos
 
 La separación puede ser:
 
