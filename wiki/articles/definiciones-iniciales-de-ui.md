@@ -36,7 +36,7 @@ Por supuesto que ande, pero además vamos a priorizar ciertas cualidades de dise
 
 ¿Dónde interviene el acoplamiento al programar la UI? El componente de UI va a tener que conocer al componente que maneja la lógica de dominio, de otra manera la aplicación no va a funcionar. Pero tampoco es bueno que la interfaz defina lógica que es propia del cliente, o de la factura, o de un empleado o de un alumno (para más información ver [Interacción entre la UI y el dominio del sistema](integracion-de-la-ui-en-una-arquitectura-de-un-sistema-de-software-interaccion-entre-la-ui-y-el-dominio-del-sistema.html)). Es cierto que agregar un atributo que el usuario deba visualizar o modificar a través de la interfaz fuerza inevitablemente a un cambio en la UI, pero cambios en la lógica de negocio no deberían necesariamente afectar la UI. Así que otro de nuestros objetivos será minimizar el acoplamiento, no por ser puristas, sino porque nos traerá como beneficio no vernos impactados por cualquier tipo de cambio.
 
--   [Requerimientos y casos de uso](conceptos-basicos-del-diseno.html)
+-   [Requerimientos y casos de uso](conceptos-basicos-del-diseno-requerimientos-y-casos-de-uso.html)
 
 Una buena UI va llevando al usuario a través de la secuencia que tiene un caso de uso, guiándolo y ayudándolo en el proceso.
 
