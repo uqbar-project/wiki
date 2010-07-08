@@ -29,7 +29,7 @@ Un cliente conoce sus facturas para calcular el total, y está bien que las cono
 
 </code> Si el cliente conoce de menos no tiene forma de saber el total de facturación si no sabe que cada factura tiene como interfaz un método que me permite saber el total (`public` `BigDecimal` `getTotal()`)
 
-<font color="#0047AB">**El mismo ejemplo con nivel aceptable de acoplamiento**</font> <code>
+<font color="#0047AB">**El mismo ejemplo con nivel adecuado de acoplamiento entre cliente y factura**</font> <code>
 
 `public BigDecimal getMontoTotal() {`
 `    BigDecimal total = new BigDecimal(0);`
