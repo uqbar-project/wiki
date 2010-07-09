@@ -10,7 +10,7 @@ Interfaz de Usuario también se puede abreviar por sus siglas en inglés: UI (Us
 
 Cuando le pedimos al sistema que haga algo, hay reglas que rigen el negocio que manejamos. Si no puedo pagar con cheque a 60 días, hay una regla de negocio que lo dice. Si un alumno no puede anotarse en un final porque debe una correlativa, hay otra regla de negocio que lo dice. Si un empleado cobra un 10% del sueldo básico por presentismo, hay otra regla de negocio que lo dice. Lo que forma parte del dominio de mi aplicación es encontrar
 
--   un cliente que tenga un método `public` `void` `pagar(TipoPago` `tipoPago)` donde se resuelva esa responsabilidad
+-   un cliente que tenga un método `public` `void` `pagar(TipoPago` `tipoPago,` `BigDecimal` `monto)` donde se resuelva esa responsabilidad
 -   un alumno que tenga un método `public` `void` `inscribirseAFinal(Materia` `materia)` donde se resuelva esa responsabilidad
 -   etc.
 
