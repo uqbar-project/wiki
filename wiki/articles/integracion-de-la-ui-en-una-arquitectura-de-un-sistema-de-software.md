@@ -35,12 +35,12 @@ Esta técnica puede ser útil cuando estamos trabajando en ambientes distribuido
 -   el EmpleadoDTO
 -   y además al desarrollar la interfaz de consulta de un empleado, donde necesitamos ver para cada empleado la antigüedad, el sueldo promedio mensual, etc. la vista va a precisar un EmpleadoConsultaDTO, que tenga nombre, apellido, dni, saldo y antigüedad (los últimos dos presuntos atributos pero que en realidad se asignan con una llamada a métodos de negocio).
 
-En definitiva pareciera que la vista no se mezcla con el negocio pero el acoplamiento es claro: si necesito saber cuándo fue la última vez que le pagué el sueldo, necesito:
+En definitiva pareciera que la vista no se mezcla con el negocio pero el [acoplamiento](conceptos-basicos-del-diseno-acoplamiento.html) es claro: si necesito saber cuándo fue la última vez que le pagué el sueldo, necesito:
 
 1.  generar un nuevo método de negocio si no lo tengo, pero también
 2.  agregar un atributo al EmpleadoConsultaDTO para que la vista lo pueda mostrar
 
-Nuestra idea es que la presentación no sólo hable con el dominio sino que le pida todo lo que le tenga que pedir: en el ejemplo anterior sería muy bueno que la vista le pregunte directamente al empleado getUltimoPeriodoPago().
+Nuestra idea es que la presentación no sólo hable con el dominio sino que le pida todo lo que le tenga que pedir: en el ejemplo anterior sería muy bueno que la vista le pregunte directamente al empleado cuál fue la última vez que le pagué.
 
 Otros links relacionados
 ------------------------
