@@ -1,4 +1,4 @@
-Esta página está sirve como punto de entrada al material de las materias [Algoritmos III](temario-algo3.html) de la Universidad Nacional de San Martín y Laboratorio de Sistemas Operativos de la Universidad Nacional de Quilmes. Ambas materias trabajan sobre técnicas de programación de interfaces de usuario. (Sí, los nombres no son muy representativos.)
+Esta página está sirve como punto de entrada al material de las materias [Algoritmos III](algo3-temario.html) de la Universidad Nacional de San Martín y Laboratorio de Sistemas Operativos de la Universidad Nacional de Quilmes. Ambas materias trabajan sobre técnicas de programación de interfaces de usuario. (Sí, los nombres no son muy representativos.)
 
 Los apuntes de estas materias están en construcción así que por ahora tenemos solamente algunos temas sueltos:
 
