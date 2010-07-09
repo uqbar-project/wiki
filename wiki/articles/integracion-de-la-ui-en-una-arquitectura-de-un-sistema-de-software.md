@@ -33,7 +33,7 @@ Esta técnica puede ser útil cuando estamos trabajando en ambientes distribuido
 
 -   el Empleado
 -   el EmpleadoDTO
--   y además al desarrollar la interfaz de consulta de un empleado, donde necesitamos ver para cada empleado la antigüedad, el sueldo promedio mensual, etc. la vista va a tener que necesitar un EmpleadoConsultaDTO, que tenga nombre, apellido, dni, saldo y antigüedad (los últimos dos presuntos atributos pero que en realidad se cargan con una llamada a métodos de negocio).
+-   y además al desarrollar la interfaz de consulta de un empleado, donde necesitamos ver para cada empleado la antigüedad, el sueldo promedio mensual, etc. la vista va a precisar un EmpleadoConsultaDTO, que tenga nombre, apellido, dni, saldo y antigüedad (los últimos dos presuntos atributos pero que en realidad se asignan con una llamada a métodos de negocio).
 
 En definitiva pareciera que la vista no se mezcla con el negocio pero el acoplamiento es claro: si necesito saber cuándo fue la última vez que le pagué el sueldo, necesito:
 
