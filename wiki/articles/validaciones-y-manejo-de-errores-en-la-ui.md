@@ -1,0 +1,29 @@
+Introducción
+------------
+
+Una cuestión en la que hay que pensar es dónde poner las validaciones. Tenemos validaciones en la interfaz de usuario (o en el binding) y en el domino. Recalcamos la importancia de poner en el dominio las validaciones de negocio, en los demás lugares deberían ir únicamente las validaciones propias de la interfaz se usuario, por ejemplo las conversiones de datos que require la interfaz.
+
+Los casos que vimos son:
+
+`   * Convertir una fecha de String a Date es una cuestión de la interfaz, así que validar que el formato sea válido no le corresponde al dominio, el dominio recibe un Date y no sabe nada de los Strings.`
+`   * Que la fecha sea anterior a hoy es una regla de negocio y sería bueno poder poner esa validación al dominio.`
+`   * Que la fecha es obligatoria también es una regla de negocio.`
+
+Interacción entre dominio y vista para manejar validaciones de negocio
+----------------------------------------------------------------------
+
+Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pensar en qué forma el dominio informa los problemas a la interfaz de usuario, siendo que debe hacerlo en términos del dominio.
+
+`   * Una opción es usar booleanos (true = el valor es válido, false = es inválido), es simple pero no permite que el dominio indique el por qué el valor es inválido y nos obligará a colocar esa lógica en la UI.`
+`   * Una extensión natural es usar un Enum, pero trae problemas similares.`
+`   * De las opciones que surgieron la que más nos gustó es marcar los errores con excepciones. Eso me permite tener distintos tipos de error y también asociar un mensaje para el usuario.`
+
+Para manejar las excepciones suele ser útil tener una excepción que sea base de todas las excepciones que contienen información para el usuario (en nuestro ejemplo la llamamos UserException). De esta forma la UI siempre que reciba una excepción de este tipo sabe que debe mostrar el mensaje de error al usuario y cualquier objeto de dominio que necesite informar un error lo puede hacer tirando una excepción de este tipo o alguna subclase.
+
+Errores de sistema
+------------------
+
+Otras variantes
+---------------
+
+Un agregado que se podría hacer es evitar poner los mensajes de error en el código de dominio y poner códigos, que se traduzcan mediante un "bundle". Más adelante veremos eso.
