@@ -1,7 +1,7 @@
 Introducción
 ------------
 
-Una cuestión en la que hay que pensar es dónde poner las validaciones. Tenemos validaciones en la interfaz de usuario (o en el binding) y en el domino. Recalcamos la importancia de poner en el dominio las validaciones de negocio, en los demás lugares deberían ir únicamente las validaciones propias de la interfaz se usuario, por ejemplo las conversiones de datos que require la interfaz.
+Una cuestión en la que hay que pensar es dónde poner las validaciones. Tenemos validaciones en la interfaz de usuario (o en el binding) y en el dominio. Recalcamos la importancia de poner en el dominio las validaciones de negocio, en los demás lugares deberían ir únicamente las validaciones propias de la interfaz se usuario, por ejemplo las conversiones de datos que require la interfaz.
 
 Los casos que vimos son:
 
@@ -27,3 +27,8 @@ Otras variantes
 ---------------
 
 Un agregado que se podría hacer es evitar poner los mensajes de error en el código de dominio y poner códigos, que se traduzcan mediante un "bundle". Más adelante veremos eso.
+
+Otros links relacionados
+------------------------
+
+[Algo3 Temario](algo3-temario.html)
