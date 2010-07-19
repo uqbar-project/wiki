@@ -36,6 +36,8 @@ Para manejar las excepciones suele ser útil tener una excepción que sea base d
 Errores de sistema
 ------------------
 
+En caso
+
 Otras variantes
 ---------------
 
