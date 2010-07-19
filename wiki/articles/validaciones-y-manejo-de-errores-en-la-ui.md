@@ -36,7 +36,10 @@ Para manejar las excepciones suele ser útil tener una excepción que sea base d
 Errores de sistema
 ------------------
 
-En caso
+¿Qué sucede si hay un error de programa?
+
+-   Del lado del dominio, no hay mucho por hacer: o bien "envolvemos" la excepción de bajo nivel en una de mayor nivel, o bien dejamos que la excepción salte... después de todo: ¿qué podemos hacer con una NullPointerException? ¿o con un error en la construcción del programa? Lo mejor, es que el programa explote, pero de una forma elegante.
+-   Entonces del lado de la UI, deberíamos atrapar esa excepción que se genere de manera de evitar que el Stack Trace se propague hasta el usuario.
 
 Otras variantes
 ---------------
