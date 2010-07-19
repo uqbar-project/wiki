@@ -24,7 +24,7 @@ Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pens
 `   public void validar() {`
 `      ...`
 `      if (!new Date().before(this.fechaNacimiento)) {`
-`          throw new UserException("La fecha de nacimiento tiene que ser anterior a hoy");`
+`          throw new UserException("La fecha de nacimiento tiene que ser anterior al día de hoy");`
 `      }`
 `      ...`
 `   }`
