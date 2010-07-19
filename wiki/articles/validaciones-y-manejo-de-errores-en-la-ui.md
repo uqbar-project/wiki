@@ -18,7 +18,7 @@ Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pens
 -   Una extensión natural es usar un Enum, pero trae problemas similares.
 -   Lo que más nos gusta es marcar los errores con excepciones. Eso permite tener distintos tipos de error y también asociar un mensaje para el usuario:
 
-<code> &gt;&gt;Empleado public void validar() {
+<code> Empleado public void validar() {
 
 `   ...`
 `   if (!new Date().before(this.fechaNacimiento)) {`
