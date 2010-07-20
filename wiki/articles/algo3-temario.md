@@ -9,7 +9,8 @@ Unidad 1
 Unidad 2
 --------
 
--   [Binding entre vista y modelo](binding-entre-vista-y-modelo.html)
+-   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
+-   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
 -   [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
 
 Unidad 3
