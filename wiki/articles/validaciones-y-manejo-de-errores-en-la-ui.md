@@ -53,7 +53,7 @@ Pero ¿dónde hay que atrapar esta excepción? Una buena regla es utilizar try/c
 `      }`
 `   }`
 
-</code> Esto justamente "esconde" el error. El usuario no va a reportar que la búsqueda tira error: pero la sensación de robustez de la aplicación va a bajar sensiblemente. "Ciertas" búsquedas no funcionan. A veces trae datos y a veces no.
+</code> El usuario no va a reportar que la búsqueda tira error: pero la sensación de robustez de la aplicación va a bajar sensiblemente. "Ciertas" búsquedas no funcionan. A veces trae datos y a veces no.
 
 Otras variantes
 ---------------
