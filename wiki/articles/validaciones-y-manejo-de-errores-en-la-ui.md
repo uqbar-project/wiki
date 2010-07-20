@@ -42,15 +42,18 @@ Errores de sistema
 -   Del lado del dominio, no hay mucho por hacer: o bien "envolvemos" la excepción de bajo nivel en una de mayor nivel, o bien dejamos que la excepción salte... después de todo: ¿qué podemos hacer con una NullPointerException? ¿o con un error en la codificación del programa? Lo mejor es que el programa explote, pero de una forma elegante.
 -   Entonces del lado de la UI, deberíamos atrapar esa excepción que se genere de manera de evitar que el Stack Trace se propague hasta el usuario.
 
-Pero ¿dónde hay que atrapar esta excepción? Una buena regla es utilizar try/catch en los lugares en los que, de saltar una excepción, la aplicación mostraría el stack trace al usuario. Nosotros no queremos que eso suceda, pero es bueno recalcar que es preferible que el usuario llame por una pantalla rota a que el error quede escondido, como en estos típicos casos: <code> &gt;&gt;Código de pantalla public void buscarSocios() {
+Pero ¿dónde hay que atrapar esta excepción? Una buena regla es utilizar try/catch en los lugares en los que, de saltar una excepción, la aplicación mostraría el stack trace al usuario. Nosotros no queremos que eso suceda, pero es bueno recalcar que es preferible que el usuario llame por una pantalla rota a que el error quede escondido, como en estos típicos casos: <code>
 
-`   try {`
-`       ... hacemos la búsqueda ...`
-`   } catch (Exception e) {`
-`       e.printStackTrace();`
+`   >>Código de pantalla`
+`   public void buscarSocios() {`
+`      try {`
+`          ... hacemos la búsqueda ...`
+`      } catch (Exception e) {`
+`          e.printStackTrace();`
+`      }`
 `   }`
 
-} </code> Esto justamente "esconde" el error. El usuario no va a reportar que la búsqueda tira error: pero la sensación de robustez de la aplicación va a bajar sensiblemente. "Ciertas" búsquedas no funcionan. A veces trae datos y a veces no.
+</code> Esto justamente "esconde" el error. El usuario no va a reportar que la búsqueda tira error: pero la sensación de robustez de la aplicación va a bajar sensiblemente. "Ciertas" búsquedas no funcionan. A veces trae datos y a veces no.
 
 Otras variantes
 ---------------
