@@ -32,15 +32,25 @@ Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pens
 
 </code>
 
-Para manejar las excepciones suele ser útil tener una excepción que sea base de todas las excepciones que contienen información para el usuario (en nuestro ejemplo la llamamos UserException). De esta forma la UI siempre que reciba una excepción de este tipo sabe que debe mostrar el mensaje de error al usuario y cualquier objeto de dominio que necesite informar un error lo puede hacer tirando una excepción de este tipo o alguna subclase.
+Para manejar las excepciones suele ser útil tener una excepción que sea base de todas las excepciones que contienen información para el usuario (en nuestro ejemplo la llamamos UserException). De esta forma siempre que la UI reciba una excepción de este tipo sabe que debe mostrar el mensaje de error al usuario y cualquier objeto de dominio que necesite informar un error lo puede hacer tirando una excepción de este tipo o alguna subclase. De esa manera la UI no conoce nada de la lógica que maneja el dominio y mantenemos bajo el acoplamiento entre ambos componentes.
 
 Errores de sistema
 ------------------
 
 ¿Qué sucede si hay un error de programa?
 
--   Del lado del dominio, no hay mucho por hacer: o bien "envolvemos" la excepción de bajo nivel en una de mayor nivel, o bien dejamos que la excepción salte... después de todo: ¿qué podemos hacer con una NullPointerException? ¿o con un error en la construcción del programa? Lo mejor, es que el programa explote, pero de una forma elegante.
+-   Del lado del dominio, no hay mucho por hacer: o bien "envolvemos" la excepción de bajo nivel en una de mayor nivel, o bien dejamos que la excepción salte... después de todo: ¿qué podemos hacer con una NullPointerException? ¿o con un error en la codificación del programa? Lo mejor es que el programa explote, pero de una forma elegante.
 -   Entonces del lado de la UI, deberíamos atrapar esa excepción que se genere de manera de evitar que el Stack Trace se propague hasta el usuario.
+
+Pero ¿dónde hay que atrapar esta excepción? Una buena regla es utilizar try/catch en los lugares en los que, de saltar una excepción, la aplicación mostraría el stack trace al usuario. Nosotros no queremos que eso suceda, pero es bueno recalcar que es preferible que el usuario llame por una pantalla rota a que el error quede escondido, como en estos típicos casos: <code> &gt;&gt;Código de pantalla public void buscarSocios() {
+
+`   try {`
+`       ... hacemos la búsqueda ...`
+`   } catch (Exception e) {`
+`       e.printStackTrace();`
+`   }`
+
+} </code> Esto justamente "esconde" el error. El usuario no va a reportar que la búsqueda tira error: pero la sensación de robustez de la aplicación va a bajar sensiblemente. "Ciertas" búsquedas no funcionan. A veces trae datos y a veces no.
 
 Otras variantes
 ---------------
