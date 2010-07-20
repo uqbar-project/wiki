@@ -92,3 +92,8 @@ Un ValueModel provee de la posibilidad de definir trasnformaciones y validacione
 Por otro lado, la atomización de estos objetos dificulta la posibilidad de establecer lógica sobre este modelo que dependa de más de uno de los controles de la vista.
 
 En los casos en que la relación entre la vista y el modelo de dominio es muy lejana, una solución posible es descartar el binding y pasar a una estrategia de interacción manual entre vista y dominio, aunque, claro, eso implica perder parte de las ventajas de automatizar este comportamiento.
+
+Otros links relacionados
+------------------------
+
+[Algo3 Temario](algo3-temario.html)
