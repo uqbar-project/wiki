@@ -14,8 +14,9 @@ Interacción entre dominio y vista para manejar validaciones de negocio
 
 Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pensar en qué forma el dominio informa los problemas a la interfaz de usuario, siendo que debe hacerlo en términos del dominio.
 
--   Una opción es usar booleanos (true = el valor es válido, false = es inválido), es simple pero no permite que el dominio indique el por qué el valor es inválido y nos obligará a colocar esa lógica en la UI.
+-   Una opción es usar booleanos (true = el valor es válido, false = es inválido), es simple pero no permite que el dominio indique por qué el valor es inválido y nos obligará a colocar esa lógica en la UI.
 -   Una extensión natural es usar un Enum, pero trae problemas similares: hay un alto [acoplamiento](conceptos-basicos-del-diseno-acoplamiento.html) entre la UI y el dominio.
+-   Otra opción es usar códigos de retorno del lado del dominio: -2 significa que la fecha de nacimiento es mayor a la fecha de hoy, -3 es que la fecha de nacimiento es anterior a 1900, etc. Sigue habiendo un alto acoplamiento entre los errores que el negocio dispara y el mensaje que la UI debe mostrar.
 -   Lo que más nos gusta es marcar los errores con excepciones. Eso permite tener distintos tipos de error y también asociar un mensaje para el usuario:
 
 <code>
