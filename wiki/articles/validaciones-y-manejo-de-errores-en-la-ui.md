@@ -42,7 +42,7 @@ Errores de sistema
 -   Del lado del dominio, no hay mucho por hacer: o bien "envolvemos" la excepción de bajo nivel en una de mayor nivel, o bien dejamos que la excepción salte... después de todo: ¿qué podemos hacer con una NullPointerException? ¿o con un error en la codificación del programa? Lo mejor es que el programa explote, pero de una forma elegante.
 -   Entonces del lado de la UI, deberíamos atrapar esa excepción que se genere de manera de evitar que el Stack Trace se propague hasta el usuario.
 
-Pero ¿dónde? Una buena regla es utilizar try/catch en los lugares en los que, de otra manera, la aplicación mostraría el stack trace al usuario. Nosotros no queremos que eso suceda, pero es bueno recalcar que es preferible que el usuario llame por una pantalla rota a que el error quede escondido, como en estos típicos casos: <code>
+Pero ¿dónde? Una buena regla es poner try/catch en los lugares en los que, de otra manera, la aplicación mostraría el stack trace al usuario. Nosotros no queremos que eso suceda, pero es preferible que el usuario llame por una pantalla rota a que el error quede escondido, como en estos típicos casos: <code>
 
 `   >>Código de pantalla`
 `   public void buscarSocios() {`
