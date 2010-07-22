@@ -55,6 +55,8 @@ Pero ¿dónde? Una buena regla es poner try/catch en los lugares en los que, de 
 
 </code> El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" búsquedas no funcionan. A veces trae datos y a veces no. De esa manera la aplicación pierde robustez.
 
+TODO: Otro error: catchear sòlo una parte del código y dejar el resto libre.
+
 ### ¿Qué va en el catch del lado de la pantalla?
 
 Por un lado, hay que guardar el error en un archivo de log dentro del servidor donde corre la aplicación en algún formato amigable que nos permita encontrarlo rápidamente. Para ello existen algunas librerías como Log4J y loggers alternativos que ayudan a
