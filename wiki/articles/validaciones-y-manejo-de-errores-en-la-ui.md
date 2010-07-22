@@ -95,7 +95,7 @@ El logger es un objeto que sabe guardar el stack trace en un formato configurabl
 Otras variantes
 ---------------
 
-Un agregado que se podría hacer es evitar poner los mensajes de error en el código de dominio y poner códigos, que se traduzcan mediante un "bundle". Más adelante veremos eso.
+Un agregado que se podría hacer es evitar poner los mensajes de error en el código de dominio y poner códigos, que se traduzcan mediante un "bundle".
 
 Otros links relacionados
 ------------------------
