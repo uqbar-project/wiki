@@ -67,6 +67,29 @@ Por otra parte, necesitamos informar al usuario que cuando estábamos buscando l
 -   Si la tecnología de UI se programa en Java tengo posibilidad de enviar un message box modal al usuario
 -   Si la tecnología de UI corre sobre un browser, a veces tengo que redirigir el error a una página especial y a veces puedo mostrar en un área de mensajes el error dentro de la misma página
 
+Un ejemplo genérico de manejo de errores en UI
+----------------------------------------------
+
+<code>
+
+`   >>Código de pantalla`
+`   public void agregarSocio() {`
+`      try {`
+`          Socio socio = ... recolectamos la información de la UI ...`
+`          socio.validar();`
+`          ... pedimos que generen el socio, esto depende de nuestra estrategia ...`
+`      } catch (UserException e) {`
+`          this.messageWarning(e.getMessage());`
+`      } catch (Exception e) {`
+`          this.logger.fatal("AppSocios", e.getMessage());`
+`          this.messageError("Ocurrió un error al agregar el socio. Por favor consulte al administrador del sistema");`
+`      }`
+`   }`
+
+</code> Los métodos messageWarning y messageError, como dijimos antes, dependen de la tecnología a implementar, en nuestro caso asumimos que está en una superclase de Form de la cual hereda la pantalla de Alta de un Socio.
+
+El logger es un objeto que sabe guardar el stack trace en un formato configurable y en un archivo x que depende del primer parámetro que le paso (por ejemplo, el AppSocios guarda el archivo Videoclub.log en el directorio de log default).
+
 Otras variantes
 ---------------
 
