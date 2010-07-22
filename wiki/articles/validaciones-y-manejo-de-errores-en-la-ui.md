@@ -55,6 +55,18 @@ Pero ¿dónde hay que atrapar esta excepción? Una buena regla es utilizar try/c
 
 </code> El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" búsquedas no funcionan. A veces trae datos y a veces no. De esa manera la aplicación pierde robustez.
 
+### ¿Qué va en el catch del lado de la pantalla?
+
+Por un lado, hay que guardar el error en un archivo de log dentro del servidor donde corre la aplicación en algún formato amigable que nos permita encontrarlo rápidamente. Para ello existen algunas librerías como Log4J y loggers alternativos que ayudan a
+
+-   activar y desactivar distintos niveles de criticidad de los mensajes (debug/info/warn/error)
+-   enviar los mensajes de error a distintos archivos de log en base a la aplicación/package de la clase donde se originó el error
+
+Por otra parte, necesitamos informar al usuario que cuando estábamos buscando los socios, cuando queríamos agregar el socio, cuando estábamos inicializando la pantalla, etc. ocurrió un error y la aplicación no va a poder responder correctamente el pedido. Y eso depende mucho de la tecnología en la que nos encontramos.
+
+-   Si la tecnología de UI se programa en Java tengo posibilidad de enviar un message box modal al usuario
+-   Si la tecnología de UI corre sobre un browser, a veces tengo que redirigir el error a una página especial y a veces puedo mostrar en un área de mensajes el error dentro de la misma página
+
 Otras variantes
 ---------------
 
