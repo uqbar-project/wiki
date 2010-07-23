@@ -55,7 +55,7 @@ Pero ¿dónde? Una buena regla es poner try/catch en los lugares en los que, de 
 
 </code> El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" búsquedas no funcionan. A veces trae datos y a veces no. De esa manera la aplicación pierde robustez.
 
-Otro error común en el manejo de errores es encerrar solamente parte del código en un bloque try/catch, loguear el error (o incluso no manejarlo) y permitir que el método siga ejecutándose, como lo muestra el siguiente ejemplo: <code>
+Otro error común en el manejo de errores es encerrar sólo *parte* del código en un bloque try/catch (la instrucción que sabemos que puede fallar), loguear el error o incluso no manejarlo y permitir que el método siga ejecutándose, como lo muestra el siguiente ejemplo: <code>
 
 `   >>Código de pantalla`
 `   public void buscarSocios() {`
@@ -73,12 +73,12 @@ Otro error común en el manejo de errores es encerrar solamente parte del códig
 `      ...`
 `   }`
 
-</code> Este caso plantea dos problemas que hay que resolver:
+</code> Tenemos dos problemas que resolver:
 
-1.  La búsqueda no está funcionando para algunos casos (tira ProgramException)
-2.  Pero el error que vamos a recibir es un NullPointerException cuando se envíe el mensaje getAntiguedad() al socio
+1.  La búsqueda tira una ProgramException
+2.  Pero el error que vamos a recibir es NullPointerException cuando se envíe el mensaje getAntiguedad() al socio
 
-Vamos a empezar buscando un problema donde no lo hay, es un tiempo nada despreciable por cierto.
+Vamos a buscar el problema en getAntiguedad() para luego darnos cuenta de que en realidad lo que falló fue la búsqueda. Si el sistema está bien construido, sabe decir dónde falló a tiempo: es consistente.
 
 ### ¿Qué va en el catch del lado de la pantalla?
 
