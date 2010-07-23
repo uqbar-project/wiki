@@ -7,7 +7,7 @@ Algunos ejemplos:
 
 -   Convertir una fecha de String a Date es una cuestión de la interfaz, así que validar que el formato sea válido no le corresponde al dominio, el dominio recibe un Date y no sabe nada de los Strings.
 -   Si la fecha de nacimiento de un empleado debe ser anterior a la fecha de hoy es una regla de negocio y sería bueno poder poner esa validación como código dentro del dominio.
--   Que la fecha es obligatoria también es una regla de negocio.
+-   Que esa fecha sea obligatoria también es una regla de negocio.
 
 Interacción entre dominio y vista para manejar validaciones de negocio
 ----------------------------------------------------------------------
@@ -55,7 +55,30 @@ Pero ¿dónde? Una buena regla es poner try/catch en los lugares en los que, de 
 
 </code> El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" búsquedas no funcionan. A veces trae datos y a veces no. De esa manera la aplicación pierde robustez.
 
-TODO: Otro error: catchear sòlo una parte del código y dejar el resto libre.
+Otro error común en el manejo de errores es encerrar solamente parte del código en un bloque try/catch, loguear el error (o incluso no manejarlo) y permitir que el método siga ejecutándose, como lo muestra el siguiente ejemplo: <code>
+
+`   >>Código de pantalla`
+`   public void buscarSocios() {`
+`      Socio socio = null;`
+`      try {`
+`          ... hacemos la búsqueda ...`
+`      } catch (ProgramException e) {`
+`          e.printStackTrace();`
+`      }`
+`      // envío mensajes al socio que puede no estar correctamente inicializado`
+`      if (socio.getAntiguedad() > 2) {`
+`         ...`
+`      }`
+`      ...`
+`      ...`
+`   }`
+
+</code> Este caso plantea dos problemas que hay que resolver:
+
+1.  La búsqueda no está funcionando para algunos casos (tira ProgramException)
+2.  Pero el error que vamos a recibir es un NullPointerException cuando se envíe el mensaje getAntiguedad() al socio
+
+Vamos a empezar buscando un problema donde no lo hay, es un tiempo nada despreciable por cierto.
 
 ### ¿Qué va en el catch del lado de la pantalla?
 
