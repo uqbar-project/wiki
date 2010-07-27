@@ -1,9 +1,7 @@
+En una primera visión podemos ver el binding como una caja negra que vincula al modelo de dominio con los controles que conforman la interfaz de usuario. A continuación vamos a ver ejemplos de bindings posibles entre vista y modelo.
+
 El binding bajo la lupa
 -----------------------
-
-En la primera parte de la clase bajamos un poco a detalle la idea que teníamos sobre los objetos que intervienen en el binding.
-
-Hasta aquí lo habíamos pensado como una caja negra que vinculaba al modelo de dominio con los controles que conforman la interfaz de usuario. Ahora podemos ver que se compone de diferentes partes:
 
 -   Dos observers, que están asociados a un característica específica del modelo o del control. En el caso del modelo serán sus atributos, en el caso del control hasta ahora trabajamos con su valor, pero más adelante veremos que se pueden observar otras propiedades de un control.
 
