@@ -29,10 +29,9 @@ Queremos observar el valor de ese textbox para bindearlo contra un atributo del 
 
 En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox cuyo value admita un Date/Number/etc. De otro modo vamos a necesitar un **conversor**, que permite transformar el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo, y viceversa.
 
-Propiedades generales de los controles
---------------------------------------
+### Otras propiedades para curiosear
 
-Además de la propiedad value, tenemos otras propiedades que pueden ser de interés:
+Además del *value*, tenemos otras propiedades que pueden ser de interés:
 
 -   read only (locked/enabled): un valor booleano que permite/inhabilita las modificaciones sobre el control
 -   visible: el control aparece como visible/invisible en el formulario
