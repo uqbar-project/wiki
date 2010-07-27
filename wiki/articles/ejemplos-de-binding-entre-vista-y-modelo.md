@@ -1,3 +1,6 @@
+Introducción
+------------
+
 Recordemos nuestro objetivo:
 
 -   cuando el usuario carga un dato en la pantalla queremos que se actualice el modelo automáticamente
