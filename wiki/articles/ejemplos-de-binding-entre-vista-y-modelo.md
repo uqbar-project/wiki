@@ -1,28 +1,59 @@
-Control Text box
-----------------
+Recordemos nuestro objetivo:
 
-Queremos observar el valor de ese textbox para bindearlo contra un atributo del modelo. Algunos ejemplos, bindeando contra la propiedad value del textbox:
+-   cuando el usuario carga un dato en la pantalla queremos que se actualice el modelo automáticamente
 
-1.  nombre del cliente (variable de instancia nombre de la clase cliente)
-2.  fecha de nacimiento de un cliente (variable fechaNacimiento de la clase cliente)
-3.  la nota de un examen (variable nota de la clase examen)
+pero también
 
-Nosotros queremos que:
+-   cuando alguien actualiza el modelo (no necesariamente desde la UI) queremos que se dispare la notificación a la pantalla para que "refresque" el valor del control.
 
--   cuando el usuario cargue el nombre del cliente en la pantalla se actualice el modelo automáticamente
--   cuando alguien actualiza el modelo se dispare la notificación a la pantalla para que "refresque" el valor del control.
+Esta relación se determina a través de dos observers, que están asociados a un característica específica del modelo o del control. En el caso del modelo serán sus atributos, en el caso del control hasta ahora trabajamos con su valor, pero más adelante veremos que se pueden observar otras propiedades de un control. En el caso de JFace, estos observers tienen la capacidad tanto de actualizar la propiedad correspondiente como de obtener su valor. En otras tecnologías podrían tener una sola de las dos capacidades o bien estar repartidas en objetos distintos.
 
-En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox cuyo value admita un Date/Number/etc. De otro modo vamos a necesitar un **conversor**, que permite transformar el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo, y viceversa.
-
--   Dos observers, que están asociados a un característica específica del modelo o del control. En el caso del modelo serán sus atributos, en el caso del control hasta ahora trabajamos con su valor, pero más adelante veremos que se pueden observar otras propiedades de un control.
-
-En el caso de JFace, estos observers tienen la capacidad tanto de actualizar la propiedad correspondiente como de obtener su valor. En otras tecnologías podrían tener una sola de las dos capacidades o bien estar repartidas en objetos distintos.
+Dónde poner la responsabilidad
+------------------------------
 
 -   Un contexto de binding, objeto responsable de recordar las diferentes parejas de modelo-control que están vinculados entre sí y de repartir los eventos teniendo en cuenta todas las complejidades que eso implica (evitar los ciclos, manejar la concurrencia, etc).
 
 Esta responsabilidad bien podría ser de los observers, pero dada la complejidad del manejo de eventos en UI es común que esté separado en un objeto que se ocupe exclusivamente de esto.
 
-Casos sencillos de conversiones pueden ser de String a Date o a un valor numérico. Más interesante es la conversión que realiza un combo, que asocia los elementos visuales del combo con los objetos que representan esas opciones, y puede pasar de uno a otro en ambas direcciones.
+Control Text box
+----------------
+
+Queremos observar el valor de ese textbox para bindearlo contra un atributo del modelo. Algunos ejemplos de binding contra la propiedad value del textbox:
+
+1.  un *String*: nombre del cliente (variable de instancia nombre de la clase cliente)
+2.  un *Date*: fecha de nacimiento de un cliente (variable fechaNacimiento de la clase cliente)
+3.  un *Number*: la nota de un examen (variable nota de la clase examen)
+
+En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox cuyo value admita un Date/Number/etc. De otro modo vamos a necesitar un **conversor**, que permite transformar el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo, y viceversa.
+
+Propiedades generales de los controles
+--------------------------------------
+
+Además de la propiedad value, tenemos otras propiedades que pueden ser de interés:
+
+-   read only (locked/enabled): un valor booleano que permite/inhabilita las modificaciones sobre el control
+-   visible: el control aparece como visible/invisible en el formulario
+-   width: el tamaño que tiene, que a veces está ligado a
+-   size: la cantidad de caracteres que permite cargar
+
+Control Check box
+-----------------
+
+La propiedad value del check box sirve para bindearse directamente contra alguna propiedad boolean del modelo. Los checkboxes admiten en general los atributos read only y visible.
+
+Control Combo
+-------------
+
+El combo necesita bindear:
+
+-   una lista de elementos "seleccionables"
+-   el elemento seleccionado que se puede manejar con un índice int, o bien es un objeto de esa lista. Ahora ¿de qué tipo es esa lista?
+
+Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el modelo subyacente sea un Collection<T> y el elemento seleccionado es un T. Otra alternativa menos elegante es trabajar con strings que mapeen identificadores o claves contra elementos seleccionados.
+
+Independientemente de la manera en que trabajen, vamos a necesitar trabajar con un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones, y pasar de uno a otro en ambas direcciones.
+
+Revisar:
 
 -   Validadores, que proveen diferentes puntos de chequeo del valor recibido.
 
