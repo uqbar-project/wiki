@@ -54,7 +54,7 @@ El combo necesita bindear:
 
 Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el modelo subyacente sea un Collection<T> y el elemento seleccionado es un T. Otra alternativa menos elegante es trabajar con strings que mapeen identificadores o claves contra elementos seleccionados.
 
-Independientemente de la manera en que trabajen, vamos a necesitar trabajar con un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones, y pasar de uno a otro en ambas direcciones.
+Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones.
 
 Revisar:
 
