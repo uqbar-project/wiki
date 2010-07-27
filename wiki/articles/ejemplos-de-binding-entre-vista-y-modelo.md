@@ -1,5 +1,3 @@
-En una primera visión podemos ver el binding como una caja negra que vincula al modelo de dominio con los controles que conforman la interfaz de usuario. A continuación vamos a ver ejemplos de bindings posibles entre vista y modelo.
-
 El binding bajo la lupa
 -----------------------
 
@@ -18,8 +16,8 @@ Casos sencillos de conversiones pueden ser de String a Date o a un valor numéri
 -   Validadores, que proveen diferentes puntos de chequeo del valor recibido.
 
 ` En principio se deben contemplar al menos dos puntos de validación:`
-` o Antes de la conversión`
-` o Después de la conversión.`
+
+o Antes de la conversión o Después de la conversión.
 
 A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor.
 
