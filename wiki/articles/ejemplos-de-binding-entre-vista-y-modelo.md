@@ -15,9 +15,10 @@ Casos sencillos de conversiones pueden ser de String a Date o a un valor numéri
 
 -   Validadores, que proveen diferentes puntos de chequeo del valor recibido.
 
-` En principio se deben contemplar al menos dos puntos de validación:`
+En principio se deben contemplar al menos dos puntos de validación:
 
-o Antes de la conversión o Después de la conversión.
+-   Antes de la conversión
+-   Después de la conversión.
 
 A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor.
 
