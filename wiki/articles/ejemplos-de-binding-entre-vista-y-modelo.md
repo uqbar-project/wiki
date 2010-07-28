@@ -18,6 +18,8 @@ Dónde manejar el binding bidireccional
 
 Esta responsabilidad bien podría ser de los observers, pero dada la complejidad del manejo de eventos en UI es común que esté separado en un objeto que se ocupe exclusivamente de esto.
 
+TODO: Revisar el objeto que maneja el mapa de propiedades observadas en JFace.
+
 Control Text box
 ----------------
 
