@@ -23,7 +23,7 @@ TODO: Revisar el objeto que maneja el mapa de propiedades observadas en JFace.
 Control Textbox
 ---------------
 
-Dependiendo del framework el textbox puede llamarse text, input (type text), input field, etc. A partir de aquí nos referiremos al textbox como un elemento gráfico en forma rectangular que permite ingresar caracteres (por default, alfanuméricos).
+Dependiendo del framework el textbox puede llamarse text, input (type text), input field, etc. A partir de aquí nos referiremos genéricamente al textbox como al elemento gráfico de forma rectangular que permite ingresar caracteres (por default, alfanuméricos).
 
 Queremos observar el valor de ese textbox para bindearlo contra un atributo del modelo. Algunos ejemplos de binding contra la propiedad value del textbox:
 
