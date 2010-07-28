@@ -31,7 +31,10 @@ Queremos observar el valor de ese textbox para bindearlo contra un atributo del 
 2.  un *Date*: fecha de nacimiento de un cliente (variable fechaNacimiento de la clase cliente)
 3.  un *Number*: la nota de un examen (variable nota de la clase examen)
 
-En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox particular cuyo value sea de tipo Date/Number/etc. De otro modo vamos a necesitar un **conversor**, que transforme el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo y viceversa.
+En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox particular cuyo value sea de tipo Date/Number/etc. De otro modo vamos a necesitar
+
+-   un **conversor**, que transforme el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo y viceversa.
+-   **validadores**, que proveen diferentes puntos de chequeo del valor recibido. En principio se deben contemplar al menos dos puntos de validación: antes y después de la conversión.
 
 ### Otras propiedades para curiosear
 
@@ -61,16 +64,15 @@ Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el mo
 
 Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones.
 
-Ejemplo: para desarrollar la pantalla de carga de un
+*Ejemplo:* para ingresar la dirección de un socio necesitamos referenciar a una provincia. Entonces la pantalla que carga la dirección tiene:
+
+-   un TextBox calle
+-   un TextBox altura de la calle (por genericidad vamos a pensar que pueden ingresarse caracteres alfabéticos también)
+-   un ComboBox que seleccione una provincia
+
+asumiendo que el socio vive en este país.
 
 Revisar:
-
--   Validadores, que proveen diferentes puntos de chequeo del valor recibido.
-
-En principio se deben contemplar al menos dos puntos de validación:
-
--   Antes de la conversión
--   Después de la conversión.
 
 A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor.
 
