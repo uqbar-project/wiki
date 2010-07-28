@@ -42,10 +42,12 @@ Además del *value*, tenemos otras propiedades que pueden ser de interés:
 -   width: el tamaño que tiene, que a veces está ligado a
 -   size: la cantidad de caracteres que permite cargar
 
-Control Check box
------------------
+Control Checkbox
+----------------
 
-La propiedad value del check box sirve para bindearse directamente contra alguna propiedad boolean del modelo. Los checkboxes admiten en general los atributos read only y visible.
+Dependiendo del framework se los denomina checkbox, input (type check), etc.
+
+Es un control pensado para modelar atributos booleanos del modelo (a través de la propiedad value), de forma cuadrada con un tilde marcado o desmarcado según la propiedad sea true/false respectivamente. A los checkboxes se les puede setear por lo general los atributos read only y visible.
 
 Control Combo
 -------------
