@@ -55,14 +55,7 @@ Es un control pensado para modelar atributos booleanos del modelo (a través de 
 Control Combo
 -------------
 
-El combo necesita tener asociado:
-
--   una lista de elementos "seleccionables"
--   el elemento seleccionado que se puede manejar con un índice int, o bien es un objeto de esa lista. Ahora ¿de qué tipo es esa lista?
-
-Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el modelo subyacente sea un Collection<T> y el elemento seleccionado un T. Otra alternativa menos elegante es trabajar con strings que mapeen identificadores o claves contra elementos seleccionados.
-
-Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones.
+Dependiendo del framework se los llama combobox, dropDown, input (type select), etc.
 
 *Ejemplo:* si modelamos una aplicación para un Videoclub, cada película se relaciona con un género. Entonces la pantalla de carga de una película tiene:
 
@@ -72,11 +65,32 @@ Independientemente de la manera en que trabajemos, vamos a necesitar tener un **
 
 Cuando el usuario cambia la selección del combo tenemos que enviar el mensaje `pelicula.setGenero(genero);`
 
+El combo necesita tener asociado:
+
+-   un conjunto de elementos "seleccionables"
+-   el elemento seleccionado que se puede manejar con un índice int, o bien es un objeto de esa lista. Ahora ¿de qué tipo es esa lista?
+
+Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el modelo subyacente sea un Collection/Set/List<T> y el elemento seleccionado un T. En el ejemplo planteado T = Genero.
+
+Otra alternativa menos elegante es que el combo tenga el índice que es el elemento seleccionado (un int). Por otra parte la lista de elementos del combo podría restringirse a ser solamente una lista de strings que son los que se van a mostrar en pantalla.
+
+Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones, esto es capturar el evento de cambio para mapear el elemento/índice seleccionado con un objeto Genero que es lo que el modelo necesita.
+
+Control Grilla
+--------------
+
+Dependiendo del framework se los llama table, grid, etc.
+
+Control Botón
+-------------
+
+Dependiendo del framework se los llama button, action, actionButton, command, etc.
+
+Se utilizan para disparar eventos de la UI o mapear acciones del negocio.
+
 Revisar:
 
-A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor.
-
-Todos estos objetos en conjunto intervienen cada vez que se produce un evento en uno de los dos extremos de la cadena de binding, para hacer llegar el evento (y probablemente el valor asociado) hasta el otro extremo.
+A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor. Todos estos objetos en conjunto intervienen cada vez que se produce un evento en uno de los dos extremos de la cadena de binding, para hacer llegar el evento (y probablemente el valor asociado) hasta el otro extremo.
 
 Otros usos del binding
 ----------------------
