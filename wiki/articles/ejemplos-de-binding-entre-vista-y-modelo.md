@@ -79,14 +79,25 @@ Independientemente de la manera en que trabajemos, vamos a necesitar tener un **
 Control Grilla
 --------------
 
-Dependiendo del framework se los llama table, grid, etc.
+Dependiendo del framework se los llama table, grid, etc. Los combos, textboxes, checkboxes se bindean con un atributo, la grilla es un control compuesto en forma de matriz que tiene:
+
+-   como filas un conjunto de elementos
+-   como columnas el conjunto de atributos a visualizar de cada elemento
 
 Control Botón
 -------------
 
-Dependiendo del framework se los llama button, action, actionButton, command, etc.
+Dependiendo del framework se los llama button, action, actionButton, command, etc. Se utilizan para disparar eventos de la UI o mapear acciones del negocio.
 
-Se utilizan para disparar eventos de la UI o mapear acciones del negocio.
+Otros controles
+---------------
+
+-   Radio buttons: alternativa visual al combo box para seleccionar un conjunto acotado de opciones
+-   Label (TextView): puede mapearse el valor para mostrar información o estar fijo
+-   List Boxes
+-   Trees/Treeviews
+-   MessageArea: un área para ubicar mensajes de error (o bien se puede manejar con un label)
+-   Containers (Frame/Group/Tab/Panel/Form): son controles contenedores de otros controles
 
 Revisar:
 
