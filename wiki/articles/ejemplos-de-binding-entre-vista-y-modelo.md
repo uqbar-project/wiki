@@ -52,7 +52,7 @@ Es un control pensado para modelar atributos booleanos del modelo (a través de 
 Control Combo
 -------------
 
-El combo necesita bindear:
+El combo necesita tener asociado:
 
 -   una lista de elementos "seleccionables"
 -   el elemento seleccionado que se puede manejar con un índice int, o bien es un objeto de esa lista. Ahora ¿de qué tipo es esa lista?
@@ -60,6 +60,8 @@ El combo necesita bindear:
 Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el modelo subyacente sea un Collection<T> y el elemento seleccionado es un T. Otra alternativa menos elegante es trabajar con strings que mapeen identificadores o claves contra elementos seleccionados.
 
 Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones.
+
+Ejemplo: para desarrollar la pantalla de carga de un
 
 Revisar:
 
