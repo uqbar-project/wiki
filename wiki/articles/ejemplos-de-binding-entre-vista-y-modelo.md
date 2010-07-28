@@ -70,7 +70,7 @@ Independientemente de la manera en que trabajemos, vamos a necesitar tener un **
 -   un TextBox año de filmación (numérico)
 -   un ComboBox que selecciona un género
 
-Cuando el usuario cambia la selección del combo
+Cuando el usuario cambia la selección del combo tenemos que enviar el mensaje `pelicula.setGenero(genero);`
 
 Revisar:
 
