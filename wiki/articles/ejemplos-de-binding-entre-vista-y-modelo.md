@@ -64,13 +64,13 @@ Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el mo
 
 Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones.
 
-*Ejemplo:* para ingresar la dirección de un socio necesitamos referenciar a una provincia. Entonces la pantalla que carga la dirección tiene:
+*Ejemplo:* si modelamos una aplicación para un Videoclub, cada película se relaciona con un género. Entonces la pantalla de carga de una película tiene:
 
--   un TextBox calle
--   un TextBox altura de la calle (por genericidad vamos a pensar que pueden ingresarse caracteres alfabéticos también)
--   un ComboBox que seleccione una provincia
+-   un TextBox título
+-   un TextBox año de filmación (numérico)
+-   un ComboBox que selecciona un género
 
-asumiendo que el socio vive en este país.
+Cuando el usuario cambia la selección del combo
 
 Revisar:
 
