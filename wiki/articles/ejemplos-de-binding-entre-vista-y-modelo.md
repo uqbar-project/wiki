@@ -20,8 +20,10 @@ Esta responsabilidad bien podría ser de los observers, pero dada la complejidad
 
 TODO: Revisar el objeto que maneja el mapa de propiedades observadas en JFace.
 
-Control Text box
-----------------
+Control Textbox
+---------------
+
+Dependiendo del framework el textbox puede llamarse text, input (type text), input field, etc. A partir de aquí nos referiremos al textbox como un elemento gráfico en forma rectangular que permite ingresar caracteres (por default, alfanuméricos).
 
 Queremos observar el valor de ese textbox para bindearlo contra un atributo del modelo. Algunos ejemplos de binding contra la propiedad value del textbox:
 
@@ -29,13 +31,13 @@ Queremos observar el valor de ese textbox para bindearlo contra un atributo del 
 2.  un *Date*: fecha de nacimiento de un cliente (variable fechaNacimiento de la clase cliente)
 3.  un *Number*: la nota de un examen (variable nota de la clase examen)
 
-En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox cuyo value admita un Date/Number/etc. De otro modo vamos a necesitar un **conversor**, que permite transformar el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo, y viceversa.
+En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox particular cuyo value sea de tipo Date/Number/etc. De otro modo vamos a necesitar un **conversor**, que transforme el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo y viceversa.
 
 ### Otras propiedades para curiosear
 
 Además del *value*, tenemos otras propiedades que pueden ser de interés:
 
--   read only (locked/enabled): un valor booleano que permite/inhabilita las modificaciones sobre el control
+-   read only (locked/enabled): un valor booleano que habilite/inhabilite el input desde el teclado
 -   visible: el control aparece como visible/invisible en el formulario
 -   width: el tamaño que tiene, que a veces está ligado a
 -   size: la cantidad de caracteres que permite cargar
