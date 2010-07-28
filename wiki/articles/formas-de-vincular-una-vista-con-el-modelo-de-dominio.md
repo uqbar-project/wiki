@@ -96,4 +96,4 @@ En los casos en que la relación entre la vista y el modelo de dominio es muy le
 Otros links relacionados
 ------------------------
 
-[Algo3 Temario](algo3-temario.html)
+[Algo3 Temario](algo3-temario.html) [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
