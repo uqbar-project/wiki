@@ -115,12 +115,13 @@ Dependiendo del framework se los llama button, action, actionButton, command, et
 Otros controles
 ---------------
 
--   Radio buttons: alternativa visual al combo box para seleccionar un conjunto acotado de opciones
--   Label (TextView): puede mapearse el valor para mostrar información o estar fijo
--   List Boxes
--   Trees/Treeviews
--   MessageArea: un área para ubicar mensajes de error (o bien se puede manejar con un label)
--   Containers (Frame/Group/Tab/Panel/Form): son controles contenedores de otros controles
+-   **TextArea (TextEdit)**: un Text box para ingresar una gran cantidad de palabras (Ej: campos observaciones o aclaraciones)
+-   **Radio buttons**: alternativa visual al combo box para seleccionar un conjunto acotado de opciones.
+-   **Label (TextView)**: se puede bindear el valor para mostrar información (como la fecha de último alquiler de un socio, la antigüedad en años de un empleado o el monto pendiente de una factura) o estar fijo (acompañando los controles de carga de datos: "Fecha de nacimiento", "Nombre", o como observaciones y ayuda para la carga: "Recuerde que debe ingresar nombre o apellido para buscar un socio").
+-   **List Boxes**: Es una alternativa al combo box ya que permiten visualizar más de un elemento a la vez. También admiten seleccionar múltiple, aunque respecto a la grilla tienen la desventaja de tener una sola columna.
+-   **Trees/Treeviews**: Es un control que permite visualizar nodos en forma jerárquica, suelen trabajarse con algoritmos recursivos.
+-   **MessageArea (StatusBar)**: un área para ubicar mensajes de error (o bien se puede manejar con un label)
+-   **Containers (Frame/Group/Tab/Panel/Form)**: son controles contenedores de otros controles
 
 Revisar:
 
