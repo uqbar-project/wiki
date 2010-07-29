@@ -14,11 +14,28 @@ Esta relación se determina a través de dos observers, que están asociados a u
 Dónde manejar el binding bidireccional
 --------------------------------------
 
--   Un contexto de binding, objeto responsable de recordar las diferentes parejas de modelo-control que están vinculados entre sí y de repartir los eventos teniendo en cuenta todas las complejidades que eso implica (evitar los ciclos, manejar la concurrencia, etc).
+Para que esta lógica de notificación bidireccional entre modelo y vista funcione, recordemos la técnica que se usa con los observers, también llamados listeners:
 
-Esta responsabilidad bien podría ser de los observers, pero dada la complejidad del manejo de eventos en UI es común que esté separado en un objeto que se ocupe exclusivamente de esto.
+-   en un primer momento se registran los interesados (addObserver)
+-   cuando se produce un evento de interés para los interesados, se dispara la notificación (en método update del dominio, se envía mensaje notify a cada observer)
 
-TODO: Revisar el objeto que maneja el mapa de propiedades observadas en JFace.
+Volviendo al ejemplo modelo-vista,
+
+-   al crear la UI debemos enlazar cada propiedad de un objeto de dominio con un control específico (addObserver, se registra el binding)
+-   cuando la propiedad del objeto de dominio cambia, se dispara la notificación a todos los controles que observan esa propiedad (no necesariamente uno solo, podrían ser varios)
+-   a su vez, cuando el usuario escribe información en el control, se debe actualizar la propiedad del objeto de dominio, *cuidando de no entrar en un loop de notificaciones infinitas hacia la vista y viceversa*.
+
+Toda esta responsabilidad que marcamos anteriormente bien podría ser de los observers, pero dada la complejidad del manejo de eventos en UI es común que esté separado en un objeto que se ocupe exclusivamente de esto: un contexto de binding, objeto responsable de recordar las diferentes parejas de modelo-control que están vinculados entre sí y de repartir los eventos teniendo en cuenta todas las complejidades que eso implica (evitar los ciclos, manejar la concurrencia, etc).
+
+### Cómo se implementa en JFace
+
+En JFace esto se implementa a través de la clase PropertyChangeListener, que maneja un mapa cuyas claves son las propiedades observadas del objeto de dominio y cuyos valores son los listeners (observers) interesados en ser notificados cuando esa propiedad cambie.
+
+Si queremos tener binding bidireccional entre el atributo nombre de un Socio y el control textbox de la pantalla de actualización de un socio
+
+-   Al generarse la pantalla debemos bindear la propiedad "nombre" del objeto socio que es modelo de la pantalla de actualización con el control textbox en cuestión
+-   Cuando alguien modifique el valor de nombre, debemos disparar la notificación. Esto se hace en el setter de nombre, enviando el mensaje firePropertyChange
+-   A su vez,
 
 Control Textbox
 ---------------
