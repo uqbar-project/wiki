@@ -29,13 +29,17 @@ Toda esta responsabilidad que marcamos anteriormente bien podría ser de los obs
 
 ### Cómo se implementa en JFace
 
-En JFace esto se implementa a través de la clase PropertyChangeListener, que maneja un mapa cuyas claves son las propiedades observadas del objeto de dominio y cuyos valores son los listeners (observers) interesados en ser notificados cuando esa propiedad cambie.
+En JFace esto se implementa a través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo pero también el modelo que es interesado de los cambios que hace el usuario a través de la vista.
+
+TODO: Falta explicar el PropertyChangeListener
+
+// A su vez, PropertyChangeListener , que maneja un mapa cuyas claves son las propiedades observadas del objeto de dominio y cuyos valores son los listeners (observers) interesados en ser notificados cuando esa propiedad cambie. //
 
 Si queremos tener binding bidireccional entre el atributo nombre de un Socio y el control textbox de la pantalla de actualización de un socio
 
 -   Al generarse la pantalla debemos bindear la propiedad "nombre" del objeto socio que es modelo de la pantalla de actualización con el control textbox en cuestión
--   Cuando alguien modifique el valor de nombre, debemos disparar la notificación. Esto se hace en el setter de nombre, enviando el mensaje firePropertyChange
--   A su vez,
+-   Si se modifica el valor del atributo nombre de un socio (por afuera de la UI), debemos disparar la notificación al textbox. Esto se hace en el setter de nombre, enviando el mensaje firePropertyChange.
+-   Si el usuario escribe algo en el textbox, eso dispara automáticamente la actualización del modelo. Ejemplo: en el textbox del nombre escribimos "TARCISO", entonces se disparará el mensaje setNombre("TARCISO") al objeto Socio. El setNombre a su vez disparará un firePropertyChange, pero la lógica de notificación es inteligente y sabe cortar aquí el flujo de avisos para no entrar en loop.
 
 Control Textbox
 ---------------
