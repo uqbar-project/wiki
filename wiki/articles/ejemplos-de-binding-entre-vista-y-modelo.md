@@ -31,10 +31,6 @@ Toda esta responsabilidad que marcamos anteriormente bien podría ser de los obs
 
 En JFace esto se implementa a través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo pero también el modelo que es interesado de los cambios que hace el usuario a través de la vista.
 
-TODO: Falta explicar el PropertyChangeListener
-
-// A su vez, PropertyChangeListener , que maneja un mapa cuyas claves son las propiedades observadas del objeto de dominio y cuyos valores son los listeners (observers) interesados en ser notificados cuando esa propiedad cambie. //
-
 Si queremos tener binding bidireccional entre el atributo nombre de un Socio y el control textbox de la pantalla de actualización de un socio
 
 -   Al generarse la pantalla debemos bindear la propiedad "nombre" del objeto socio que es modelo de la pantalla de actualización con el control textbox en cuestión
