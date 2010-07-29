@@ -69,7 +69,7 @@ Dependiendo del framework se los denomina checkbox, input (type check), etc.
 
 Es un control pensado para modelar atributos booleanos del modelo (a través de la propiedad value), de forma cuadrada con un tilde marcado o desmarcado según la propiedad sea true/false respectivamente. A los checkboxes se les puede setear por lo general los atributos read only y visible.
 
-Ejemplos que pueden modelarse con este control: cualquier propiedad que se maneje con un booleano
+Ejemplos que pueden modelarse con este control:
 
 -   un usuario puede estar activo/inactivo
 -   una persona puede ser mayor de edad o no
