@@ -69,9 +69,9 @@ En el primer caso el binding se da naturalmente; en los otros dependemos de que 
 
 Otras propiedades que admiten binding bidireccional:
 
--   Editable: un valor booleano que permite habilitar/deshabilitar el input desde el teclado
--   Visible: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
--   Font/Foreground/Background: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
+-   **Editable**: un valor booleano que permite habilitar/deshabilitar el input desde el teclado
+-   **Visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
+-   **Font/Foreground/Background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
 
 Estas propiedades no pueden "observarse", es decir, no tenemos binding bidireccional con un atributo del modelo. No obstante, podemos modificar sus valores al generar el control o bien en algún otro momento:
 
