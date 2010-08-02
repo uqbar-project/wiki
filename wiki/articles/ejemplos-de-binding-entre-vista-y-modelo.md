@@ -53,7 +53,7 @@ En el primer caso el binding se da naturalmente; en los otros dependemos de que 
 -   un **conversor**, que transforme el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo y viceversa.
 -   **validadores**, que proveen diferentes puntos de chequeo del valor recibido. En principio se deben contemplar al menos dos puntos de validación: antes y después de la conversión.
 
-### El textbox en JFace
+### Binding del textbox en JFace
 
 -   Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo de la siguiente manera
 
