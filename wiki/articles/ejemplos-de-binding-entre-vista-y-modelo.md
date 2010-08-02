@@ -55,7 +55,7 @@ En el primer caso el binding se da naturalmente; en los otros dependemos de que 
 
 ### El textbox en JFace
 
--   Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo
+-   Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo de la siguiente manera
 
 Otras propiedades que admiten binding bidireccional:
 
