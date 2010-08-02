@@ -57,7 +57,14 @@ En el primer caso el binding se da naturalmente; en los otros dependemos de que 
 
 -   Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo de la siguiente manera
 
-`new` `DataBindingContext().bindValue(` `SWTObservables.observeText(controlTextBoxEnCuestion,` `SWT.FocusOut),` `BeansObservables.observeValue(objetoModelo,` `propiedadDelModeloContraElQueSeBindea),` `null,` `null);`
+<code> new DataBindingContext().bindValue(
+
+`SWTObservables.observeText(controlTextBoxEnCuestion, SWT.FocusOut), `
+`BeansObservables.observeValue(objetoModelo, propiedadDelModeloContraElQueSeBindea), `
+`null, `
+`null);`
+
+</code>
 
 Otras propiedades que admiten binding bidireccional:
 
