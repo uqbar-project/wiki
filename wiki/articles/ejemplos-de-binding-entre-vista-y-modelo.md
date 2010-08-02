@@ -78,7 +78,7 @@ Ejemplos que pueden modelarse con este control:
 Control Combo
 -------------
 
-Dependiendo del framework se los llama comboBox, dropDown, input (type select), etc.
+Dependiendo del framework se los llama combo box, drop down, input (type select), etc.
 
 *Ejemplo:* si modelamos una aplicación para un Videoclub, cada película se relaciona con un género. Entonces la pantalla de carga de una película tiene:
 
