@@ -29,7 +29,7 @@ Toda esta responsabilidad que marcamos anteriormente bien podría ser de los obs
 
 ### Cómo se implementa en JFace
 
-En JFace esto se implementa a través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo pero también el modelo que es interesado de los cambios que hace el usuario a través de la vista.
+En JFace esto se implementa a través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo (BeansObservables) pero también el modelo que es interesado de los cambios que hace el usuario a través de la vista (SWTObservables).
 
 Si queremos tener binding bidireccional entre el atributo nombre de un Socio y el control textbox de la pantalla de actualización de un socio
 
