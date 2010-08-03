@@ -100,6 +100,11 @@ Dependiendo del framework se los llama table, grid, etc. La grilla es un control
 -   como filas un conjunto de elementos
 -   como columnas el conjunto de atributos a visualizar de cada elemento
 
+Al igual que el combo la grilla conoce a
+
+-   un conjunto de elementos
+-   y al elemento seleccionado. En muchas tecnologías la grilla admite selección múltiple de elementos.
+
 *Ejemplo:* en una pantalla que busca socios de un videoclub, la grilla tiene como modelo asociado el resultado de la búsqueda (un Collection/Set/List<Socio>), separados en columnas:
 
 -   nombre
@@ -109,6 +114,12 @@ Dependiendo del framework se los llama table, grid, etc. La grilla es un control
 etc.
 
 En algunas tecnologías las columnas pueden contener controles de ingreso de datos (textboxes, checkboxes, botones, etc.), en otras sólo se puede visualizar la información.
+
+Es común utilizar paginadores para segmentar la cantidad de registros que deben mostrarse. Ejemplo: la grilla se parte en segmentos de 10 socios, entonces si la búsqueda trae 1.200 socios, se guardan 12 páginas de 10 socios cada una, y se avanzan de a 10 socios. Esto se hace por varios motivos:
+
+-   evita que el usuario haga scrolling de la grilla o bien de la página
+-   llenar una grilla con 10 socios tarda menos que llenar el mismo control con 1.200 elementos (performance)
+-   
 
 Control Botón
 -------------
