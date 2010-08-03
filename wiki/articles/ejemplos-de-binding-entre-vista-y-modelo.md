@@ -157,18 +157,6 @@ Revisar:
 
 A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor. Todos estos objetos en conjunto intervienen cada vez que se produce un evento en uno de los dos extremos de la cadena de binding, para hacer llegar el evento (y probablemente el valor asociado) hasta el otro extremo.
 
-Otros usos del binding
-----------------------
-
-Vimos dos casos en los que usamos el binding contra propiedades del control que no sean su valor seleccionado:
-
--   El label que muestra los errores se hace invisible si no hay errores
--   El botón de aceptar se inhabilita si hay errores.
-
-Mirando la clase SWTObservables podemos ver todas las propiedades que el framework en cuestión nos permite vincular, se puede hacer que un control no se pueda modificar, cambiar su color, etc.
-
-También vimos que usando la interfaz ComputedValue podemos vincular cualquier expresión que deseemos.
-
 Otros links relacionados
 ------------------------
 
