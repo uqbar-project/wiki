@@ -108,7 +108,7 @@ Dependiendo del framework se los llama table, grid, etc. La grilla es un control
 
 etc.
 
-En algunas tecnologías las columnas pueden contener controles de ingreso de datos, en otros sólo se puede visualizar las columnas.
+En algunas tecnologías las columnas pueden contener controles de ingreso de datos (textboxes, checkboxes, botones, etc.), en otras sólo se puede visualizar la información.
 
 Control Botón
 -------------
