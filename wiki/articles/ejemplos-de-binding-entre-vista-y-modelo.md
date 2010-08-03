@@ -137,12 +137,12 @@ Otros controles
 ### Visualización
 
 -   **Label (TextView)**: se puede bindear el valor para mostrar información (como la fecha de último alquiler de un socio, la antigüedad en años de un empleado o el monto pendiente de una factura) o estar fijo (acompañando los controles de carga de datos: "Fecha de nacimiento", "Nombre", o como observaciones y ayuda para la carga: "Recuerde que debe ingresar nombre o apellido para buscar un socio").
--   **MessageArea (StatusBar)**: un área para ubicar mensajes de error (o bien se puede manejar con un label)
+-   **MessageArea (StatusBar)**: un área para ubicar mensajes de error (o bien se puede manejar con un label). En ese caso podemos bindear el message de una excepción con el texto a visualizar.
 
 ### Selección
 
--   **List Boxes (Lists)**: Es una alternativa al combo box ya que permiten visualizar más de un elemento a la vez. También admiten seleccionar múltiple, aunque respecto a la grilla tienen la desventaja de tener una sola columna.
--   **Trees/Treeviews**: Es un control que permite visualizar nodos en forma jerárquica, suelen trabajarse con algoritmos recursivos. Ej: si queremos mostrar las cuentas contables anidadas en forma jerárquica, o bien el organigrama de los empleados de una compañía.
+-   **List Boxes (Lists)**: Es una alternativa al combo box ya que permiten visualizar más de un elemento a la vez. También admiten selección múltiple, aunque respecto a la grilla tienen la desventaja de tener una sola columna. *Ejemplo:* si queremos seleccionar las sucursales de una librería, o las provincias donde presta servicio un empleado, etc.
+-   **Trees/Treeviews**: Es un control que permite visualizar nodos en forma jerárquica, suelen trabajarse con algoritmos recursivos. *Ejemplo:* si queremos mostrar las cuentas contables anidadas en forma jerárquica, o bien el organigrama de los empleados de una compañía.
 
 ### Controles contenedores
 
@@ -152,10 +152,6 @@ Otros controles
 
 -   **Toolbars**: barra de herramientas
 -   **Menu**: permite generar menú de opciones con jerarquías
-
-Revisar:
-
-A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor. Todos estos objetos en conjunto intervienen cada vez que se produce un evento en uno de los dos extremos de la cadena de binding, para hacer llegar el evento (y probablemente el valor asociado) hasta el otro extremo.
 
 Otros links relacionados
 ------------------------
