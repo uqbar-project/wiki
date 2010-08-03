@@ -84,7 +84,10 @@ El combo necesita tener asociado:
 
 ¿De qué tipo es esa lista de elementos seleccionables? Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el modelo subyacente sea un Collection/Set/List<T> y el elemento seleccionado un T. En el ejemplo planteado T = Genero.
 
-Otra alternativa menos elegante es que el combo tenga el índice del elemento seleccionado (un int). Por otra parte la lista de elementos del combo podría restringirse a ser solamente una lista de strings que son los que se van a mostrar en pantalla.
+Otra alternativa menos elegante es
+
+-   los elementos seleccionables del combo se restringen a una lista de strings que son los que se van a mostrar en pantalla. Entonces ya no selecciono un género, ni un socio, ni una película, lo que estoy eligiendo es el string "Comedia", o el string "Romero Federico"
+-   el elemento seleccionado es en realidad un int que contiene el índice del elemento seleccionado
 
 Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones, esto es capturar el evento de cambio para mapear el elemento/índice seleccionado con un objeto Genero que es lo que el modelo necesita.
 
