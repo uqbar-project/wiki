@@ -119,7 +119,7 @@ Es común utilizar paginadores para segmentar la cantidad de registros que deben
 
 -   evita que el usuario haga scrolling de la grilla o bien de la página
 -   llenar una grilla con 10 socios tarda menos que llenar el mismo control con 1.200 elementos (performance)
--   
+-   permite que el usuario no tenga toda la información de golpe, lo ordena visualmente
 
 Control Botón
 -------------
