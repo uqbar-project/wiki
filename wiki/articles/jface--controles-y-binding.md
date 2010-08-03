@@ -32,12 +32,12 @@ Otras propiedades que admiten binding bidireccional:
 -   **Visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
 -   **Font/Foreground/Background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
 
-La librería jface.util.contrib permite
-
 Estas propiedades no pueden "observarse", es decir, no tenemos binding bidireccional con un atributo del modelo. No obstante, podemos modificar sus valores al generar el control o bien en algún otro momento:
 
 -   width: el tamaño del control
 -   size: la cantidad de caracteres que permite cargar
+
+La librería jface.util.contrib permite
 
 Control Checkbox
 ----------------
