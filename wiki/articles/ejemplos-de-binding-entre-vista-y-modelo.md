@@ -48,6 +48,7 @@ En el primer caso el binding se da naturalmente; en los otros dependemos de que 
 -   **editable**: si se habilita/deshabilita el input desde el teclado
 -   **visible**: si el control es visible o no en la pantalla
 -   **font/foreground/background**: la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo
+-   **tooltip**: una pequeña explicación de la información que carga el control
 -   **width**: el tamaño del control, que generalmente va asociado al
 -   **size**: la cantidad de caracteres que permite cargar
 
