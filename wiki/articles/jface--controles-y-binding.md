@@ -1,4 +1,5 @@
-### Cómo se implementa el binding en JFace
+Cómo se implementa el binding en JFace
+--------------------------------------
 
 A través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo (BeansObservables) pero también al modelo le interesa los cambios que hace el usuario a través de la vista (SWTObservables).
 
@@ -11,16 +12,9 @@ A través de la clase DataBindingContext que conoce a ambos observers: los inter
 Control Textbox
 ---------------
 
-En JFace el textbox está representado por la clase `Text`
+En JFace el textbox está representado por la clase `org.eclipse.swt.widgets.Text`
 
-En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox particular cuyo value sea de tipo Date/Number/etc. De otro modo vamos a necesitar
-
--   un **conversor**, que transforme el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo y viceversa.
--   **validadores**, que proveen diferentes puntos de chequeo del valor recibido. En principio se deben contemplar al menos dos puntos de validación: antes y después de la conversión.
-
-### Binding del textbox en JFace
-
--   Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo de la siguiente manera
+Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo de la siguiente manera
 
 <code>
 
@@ -37,6 +31,8 @@ Otras propiedades que admiten binding bidireccional:
 -   **Editable**: un valor booleano que permite habilitar/deshabilitar el input desde el teclado
 -   **Visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
 -   **Font/Foreground/Background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
+
+La librería jface.util.contrib permite
 
 Estas propiedades no pueden "observarse", es decir, no tenemos binding bidireccional con un atributo del modelo. No obstante, podemos modificar sus valores al generar el control o bien en algún otro momento:
 
