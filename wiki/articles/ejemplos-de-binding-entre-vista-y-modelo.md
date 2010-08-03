@@ -27,16 +27,6 @@ Volviendo al ejemplo modelo-vista,
 
 Toda esta responsabilidad que marcamos anteriormente bien podría ser de los observers, pero dada la complejidad del manejo de eventos en UI es común que esté separado en un objeto que se ocupe exclusivamente de esto: un contexto de binding, objeto responsable de recordar las diferentes parejas de modelo-control que están vinculados entre sí y de repartir los eventos teniendo en cuenta todas las complejidades que eso implica (evitar los ciclos, manejar la concurrencia, etc).
 
-### Cómo se implementa en JFace
-
-En JFace esto se implementa a través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo (BeansObservables) pero también el modelo que es interesado de los cambios que hace el usuario a través de la vista (SWTObservables).
-
-Si queremos tener binding bidireccional entre el atributo nombre de un Socio y el control textbox de la pantalla de actualización de un socio
-
--   Al generarse la pantalla debemos bindear la propiedad "nombre" del objeto socio con el control textbox de la pantalla de actualización
--   Si se modifica el valor del atributo nombre de un socio (por afuera de la UI), debemos disparar la notificación al textbox. Esto se hace en el setter de nombre, enviando el mensaje firePropertyChange.
--   Si el usuario escribe algo en el textbox, eso dispara automáticamente la actualización del modelo. Ejemplo: en el textbox del nombre escribimos "TARCISO", entonces se disparará el mensaje setNombre("TARCISO") al objeto Socio. El setNombre a su vez disparará un firePropertyChange, pero la lógica de notificación es inteligente y sabe cortar aquí el flujo de avisos para no entrar en loop.
-
 Control Textbox
 ---------------
 
@@ -53,28 +43,11 @@ En el primer caso el binding se da naturalmente; en los otros dependemos de que 
 -   un **conversor**, que transforme el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo y viceversa.
 -   **validadores**, que proveen diferentes puntos de chequeo del valor recibido. En principio se deben contemplar al menos dos puntos de validación: antes y después de la conversión.
 
-### Binding del textbox en JFace
-
--   Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo de la siguiente manera
-
-<code>
-
-`new DataBindingContext().bindValue(`
-`    SWTObservables.observeText(controlTextBoxEnCuestion, SWT.FocusOut), `
-`    BeansObservables.observeValue(objetoModelo, propiedadDelModeloContraElQueSeBindea), `
-`    null, `
-`    null);`
-
-</code>
-
-Otras propiedades que admiten binding bidireccional:
+Otras propiedades de interés:
 
 -   **Editable**: un valor booleano que permite habilitar/deshabilitar el input desde el teclado
 -   **Visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
 -   **Font/Foreground/Background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
-
-Estas propiedades no pueden "observarse", es decir, no tenemos binding bidireccional con un atributo del modelo. No obstante, podemos modificar sus valores al generar el control o bien en algún otro momento:
-
 -   width: el tamaño del control
 -   size: la cantidad de caracteres que permite cargar
 
