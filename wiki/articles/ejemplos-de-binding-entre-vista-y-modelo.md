@@ -128,7 +128,7 @@ Control Botón
 
 Dependiendo del framework se los llama button, action, actionButton, command, etc. Se utilizan para disparar eventos de la UI o mapear acciones del negocio.
 
-*Ejemplos:* en un caso de uso que actualiza Socios de una biblioteca podemos mencionar
+*Ejemplos:* en un caso de uso que actualiza los socios de una biblioteca podemos mencionar los siguientes botones
 
 -   Crear Socio
 -   Eliminar
