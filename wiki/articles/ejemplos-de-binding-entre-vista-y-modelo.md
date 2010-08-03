@@ -126,7 +126,7 @@ Es común utilizar paginadores para segmentar la cantidad de registros que deben
 Control Botón
 -------------
 
-Dependiendo del framework se los llama button, action, actionButton, command, etc. Se utilizan para disparar eventos de la UI o mapear acciones del negocio.
+Dependiendo del framework se los llama button, action, actionButton, command, etc. Se utilizan para disparar eventos de la UI o mapear acciones del negocio. *Ejemplos:* botones para Crear, Eliminar, Modificar, Buscar, disparar procesos (Generar Facturación), etc.
 
 Otros controles
 ---------------
