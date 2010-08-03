@@ -43,12 +43,11 @@ En el primer caso el binding se da naturalmente; en los otros dependemos de que 
 -   un **conversor**, que transforme el valor recibido desde la interfaz de usuario (generalmente un String) al tipo requerido por el modelo y viceversa.
 -   **validadores**, que proveen diferentes puntos de chequeo del valor recibido. En principio se deben contemplar al menos dos puntos de validación: antes y después de la conversión.
 
-Otras propiedades de interés
-----------------------------
+### Otras propiedades de interés
 
--   **editable**: un valor booleano que permite habilitar/deshabilitar el input desde el teclado
--   **visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
--   **font/foreground/background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
+-   **editable**: si se habilita/deshabilita el input desde el teclado
+-   **visible**: si el control es visible o no en la pantalla
+-   **font/foreground/background**: la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo
 -   **width**: el tamaño del control
 -   **size**: la cantidad de caracteres que permite cargar
 
