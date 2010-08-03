@@ -94,10 +94,20 @@ Independientemente de la manera en que trabajemos, vamos a necesitar tener un **
 Control Grilla
 --------------
 
-Dependiendo del framework se los llama table, grid, etc. Los combos, textboxes, checkboxes se bindean con un atributo, la grilla es un control compuesto en forma de matriz que tiene:
+Dependiendo del framework se los llama table, grid, etc. La grilla es un control compuesto en forma de matriz que tiene:
 
 -   como filas un conjunto de elementos
 -   como columnas el conjunto de atributos a visualizar de cada elemento
+
+*Ejemplo:* en una pantalla que busca socios de un videoclub, la grilla tiene como modelo asociado el resultado de la búsqueda (un Collection/Set/List<Socio>), separados en columnas:
+
+-   nombre
+-   dirección
+-   si está activo
+
+etc.
+
+En algunas tecnologías las columnas pueden contener controles de ingreso de datos, en otros sólo se puede visualizar las columnas.
 
 Control Botón
 -------------
