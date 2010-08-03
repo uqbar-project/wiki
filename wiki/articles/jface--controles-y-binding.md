@@ -1,37 +1,8 @@
-Introducción
-------------
+### Cómo se implementa el binding en JFace
 
-Recordemos nuestro objetivo:
+A través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo (BeansObservables) pero también al modelo le interesa los cambios que hace el usuario a través de la vista (SWTObservables).
 
--   cuando el usuario carga un dato en la pantalla queremos que se actualice el modelo automáticamente
-
-pero también
-
--   cuando alguien actualiza el modelo (no necesariamente desde la UI) queremos que se dispare la notificación a la pantalla para que "refresque" el valor del control.
-
-Esta relación se determina a través de dos observers, que están asociados a un característica específica del modelo o del control. En el caso del modelo serán sus atributos, en el caso del control puede ser su valor u otra propiedad. Para JFace, estos observers tienen la capacidad tanto de actualizar la propiedad correspondiente como de obtener su valor. En otras tecnologías podrían tener una sola de las dos capacidades o bien estar repartidas en objetos distintos.
-
-Dónde manejar el binding bidireccional
---------------------------------------
-
-Para que esta lógica de notificación bidireccional entre modelo y vista funcione, recordemos la técnica que se usa con los observers, también llamados listeners:
-
--   en un primer momento se registran los interesados (addObserver)
--   cuando se produce un evento de interés para los interesados, se dispara la notificación (en método update del dominio, se envía mensaje notify a cada observer)
-
-Volviendo al ejemplo modelo-vista,
-
--   al crear la UI debemos enlazar cada propiedad de un objeto de dominio con un control específico (addObserver, se registra el binding)
--   cuando la propiedad del objeto de dominio cambia, se dispara la notificación a todos los controles que observan esa propiedad (no necesariamente uno solo, podrían ser varios)
--   a su vez, cuando el usuario escribe información en el control, se debe actualizar la propiedad del objeto de dominio, *cuidando de no entrar en un loop de notificaciones infinitas hacia la vista y viceversa*.
-
-Toda esta responsabilidad que marcamos anteriormente bien podría ser de los observers, pero dada la complejidad del manejo de eventos en UI es común que esté separado en un objeto que se ocupe exclusivamente de esto: un contexto de binding, objeto responsable de recordar las diferentes parejas de modelo-control que están vinculados entre sí y de repartir los eventos teniendo en cuenta todas las complejidades que eso implica (evitar los ciclos, manejar la concurrencia, etc).
-
-### Cómo se implementa en JFace
-
-En JFace esto se implementa a través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo (BeansObservables) pero también el modelo que es interesado de los cambios que hace el usuario a través de la vista (SWTObservables).
-
-Si queremos tener binding bidireccional entre el atributo nombre de un Socio y el control textbox de la pantalla de actualización de un socio
+*Ejemplo:* si queremos tener binding bidireccional entre el atributo nombre de un Socio y el control textbox de la pantalla de actualización de un socio
 
 -   Al generarse la pantalla debemos bindear la propiedad "nombre" del objeto socio con el control textbox de la pantalla de actualización
 -   Si se modifica el valor del atributo nombre de un socio (por afuera de la UI), debemos disparar la notificación al textbox. Esto se hace en el setter de nombre, enviando el mensaje firePropertyChange.
@@ -40,13 +11,7 @@ Si queremos tener binding bidireccional entre el atributo nombre de un Socio y e
 Control Textbox
 ---------------
 
-Dependiendo del framework el textbox puede llamarse text, input (type text), input field, etc. A partir de aquí utilizaremos en forma genérica al textbox para referirnos al elemento gráfico de forma rectangular que permite ingresar caracteres (por default, alfanuméricos).
-
-Queremos observar el valor de ese textbox para bindearlo contra un atributo del modelo. Algunos ejemplos de binding contra la propiedad value del textbox:
-
-1.  un *String*: nombre del cliente (variable de instancia nombre de la clase cliente)
-2.  un *Date*: fecha de nacimiento de un cliente (variable fechaNacimiento de la clase cliente)
-3.  un *Number*: la nota de un examen (variable nota de la clase examen)
+En JFace el textbox está representado por la clase `Text`
 
 En el primer caso el binding se da naturalmente; en los otros dependemos de que la tecnología de UI tenga un control textbox particular cuyo value sea de tipo Date/Number/etc. De otro modo vamos a necesitar
 
