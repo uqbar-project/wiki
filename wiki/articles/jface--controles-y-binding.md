@@ -34,7 +34,9 @@ Otras propiedades que admiten binding bidireccional:
 -   **Visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
 -   **Font/Foreground/Background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
 
-Estas propiedades no pueden "observarse", es decir, no tenemos binding bidireccional con un atributo del modelo. No obstante, podemos modificar sus valores al generar el control o bien en algún otro momento:
+Mirando la clase SWTObservables podemos ver todas las propiedades que el framework en cuestión nos permite vincular.
+
+Las siguientes propiedades no tienen binding bidireccional con un atributo del modelo. No obstante, podemos modificar sus valores al cargar el formulario o ante cualquier otro evento que el usuario o la pantalla dispare:
 
 -   width: el tamaño del control
 -   size: la cantidad de caracteres que permite cargar
@@ -92,32 +94,7 @@ Control Botón
 
 Dependiendo del framework se los llama button, action, actionButton, command, etc. Se utilizan para disparar eventos de la UI o mapear acciones del negocio.
 
-Otros controles
----------------
-
--   **TextArea (TextEdit)**: un Text box de varias líneas que permite ingresar una gran cantidad de palabras (Ej: campo "Observaciones" al registrar un Reclamo o un Pedido)
--   **Radio buttons**: alternativa visual al combo box para seleccionar un conjunto acotado de opciones (Ej: FALTA).
--   **Label (TextView)**: se puede bindear el valor para mostrar información (como la fecha de último alquiler de un socio, la antigüedad en años de un empleado o el monto pendiente de una factura) o estar fijo (acompañando los controles de carga de datos: "Fecha de nacimiento", "Nombre", o como observaciones y ayuda para la carga: "Recuerde que debe ingresar nombre o apellido para buscar un socio").
--   **List Boxes**: Es una alternativa al combo box ya que permiten visualizar más de un elemento a la vez. También admiten seleccionar múltiple, aunque respecto a la grilla tienen la desventaja de tener una sola columna.
--   **Trees/Treeviews**: Es un control que permite visualizar nodos en forma jerárquica, suelen trabajarse con algoritmos recursivos. Ej: FALTA.
--   **MessageArea (StatusBar)**: un área para ubicar mensajes de error (o bien se puede manejar con un label)
--   **Containers (Frame/Group/Tab/Panel/Form)**: son controles contenedores de otros controles
-
-Revisar:
-
-A estas validaciones pueden sumarse otras realizadas por el modelo de dominio, por ejemplo en el momento de setearle el valor. Todos estos objetos en conjunto intervienen cada vez que se produce un evento en uno de los dos extremos de la cadena de binding, para hacer llegar el evento (y probablemente el valor asociado) hasta el otro extremo.
-
-Otros usos del binding
-----------------------
-
-Vimos dos casos en los que usamos el binding contra propiedades del control que no sean su valor seleccionado:
-
--   El label que muestra los errores se hace invisible si no hay errores
--   El botón de aceptar se inhabilita si hay errores.
-
-Mirando la clase SWTObservables podemos ver todas las propiedades que el framework en cuestión nos permite vincular, se puede hacer que un control no se pueda modificar, cambiar su color, etc.
-
-También vimos que usando la interfaz ComputedValue podemos vincular cualquier expresión que deseemos.
+VER También vimos que usando la interfaz ComputedValue podemos vincular cualquier expresión que deseemos.
 
 Links relacionados
 ------------------
