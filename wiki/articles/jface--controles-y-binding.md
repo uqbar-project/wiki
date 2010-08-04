@@ -34,6 +34,8 @@ Otras propiedades que admiten binding bidireccional:
 -   **Visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
 -   **Font/Foreground/Background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
 
+FALTA: EJEMPLO DE EDITABLE con TextBox
+
 Mirando la clase SWTObservables podemos ver todas las propiedades que el framework en cuestión nos permite vincular.
 
 Las siguientes propiedades no tienen binding bidireccional con un atributo del modelo. No obstante, podemos modificar sus valores al cargar el formulario o ante cualquier otro evento que el usuario o la pantalla dispare:
