@@ -77,7 +77,7 @@ Para conocer cuál es el elemento seleccionado del combo enviamos el mensaje get
 
 public int **getSelectionIndex()**
 
-`    Returns the zero-relative index of the item which is currently selected in the receiver's list, or -1 if no item is selected.`
+`  `*`Returns` `the` `zero-relative` `index` `of` `the` `item` `which` `is` `currently` `selected` `in` `the` `receiver's` `list,` `or` `-1` `if` `no` `item` `is` `selected.`*
 
 Tener el selectionIndex como un entero refuerza la idea de que el orden en el combo es importante, si tengo los elementos en un Set no me serviría el selectionIndex.
 
