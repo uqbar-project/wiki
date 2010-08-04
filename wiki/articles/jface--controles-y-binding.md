@@ -116,8 +116,8 @@ Mirando la clase SWTObservables podemos ver todas las propiedades que el framewo
 
 También vimos que usando la interfaz ComputedValue podemos vincular cualquier expresión que deseemos.
 
-Otros links relacionados
-------------------------
+Links relacionados
+------------------
 
 -   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
 -   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
