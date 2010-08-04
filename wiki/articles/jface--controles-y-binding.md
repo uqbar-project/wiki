@@ -81,6 +81,8 @@ public int **getSelectionIndex()** *Returns the zero-relative index of the item 
 
 Tener el selectionIndex como un entero refuerza la idea de que el orden en el combo es importante, si tengo los elementos en un Set no me serviría el selectionIndex.
 
+FALTA: Revisar binding
+
 Control Grilla
 --------------
 
