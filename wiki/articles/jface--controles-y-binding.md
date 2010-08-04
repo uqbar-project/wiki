@@ -119,4 +119,7 @@ También vimos que usando la interfaz ComputedValue podemos vincular cualquier e
 Otros links relacionados
 ------------------------
 
-[Binding: Vinculación entre la vista y el modelo](binding--vinculacion-entre-la-vista-y-el-modelo.html) [Algo3 Temario](algo3-temario.html)
+-   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
+-   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
+-   [Algo3 Temario](algo3-temario.html)
+
