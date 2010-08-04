@@ -14,7 +14,7 @@ A través de la clase DataBindingContext que conoce a ambos observers: los inter
 Control Textbox
 ---------------
 
-En JFace el textbox está representado por la clase `org.eclipse.swt.widgets.Text`
+En SWT el textbox está representado por la clase `org.eclipse.swt.widgets.Text`
 
 Podemos bindear la propiedad text de un control textbox contra un atributo String de un modelo de la siguiente manera
 
@@ -39,25 +39,29 @@ Estas propiedades no pueden "observarse", es decir, no tenemos binding bidirecci
 -   width: el tamaño del control
 -   size: la cantidad de caracteres que permite cargar
 
-La librería jface.util.contrib permite
-
 Control Checkbox
 ----------------
 
-Dependiendo del framework se los denomina checkbox, button(de tipo check), input (type check), etc.
+En SWT el checkbox está representado por la clase `org.eclipse.swt.widgets.Button`(SWT.CHECK)
 
-Es un control pensado para modelar atributos booleanos del modelo (a través de la propiedad value), de forma cuadrada con un tilde marcado o desmarcado según la propiedad sea true/false respectivamente. A los checkboxes se les puede setear por lo general los atributos read only y visible.
+Se puede bindear la propiedad SELECTION contra un atributo boolean de un modelo:
 
-Ejemplos que pueden modelarse con este control:
+<code>
 
--   un usuario puede estar activo/inactivo
--   una persona puede ser mayor de edad o no
--   un pedido entregado/pendiente (siempre que no existan más estados)
+`new DataBindingContext().bindValue(`
+`    SWTObservables.observeSelection(controlCheckBoxEnCuestion), `
+`    BeansObservables.observeValue(objetoModelo, atributoBooleanDelModeloContraElQueSeBindea), `
+`    null, `
+`    null);`
+
+</code>
+
+También se puede bindear las propiedades visible, font, foreground y background, entre otras. No tiene sentido bindear la propiedad text, hacerlo resulta en error.
 
 Control Combo
 -------------
 
-Dependiendo del framework se los llama combo box, drop down, input (type select), etc.
+En JFace el checkbox está representado por la clase `org.eclipse.swt.widgets.Button`(SWT.CHECK)
 
 *Ejemplo:* si modelamos una aplicación para un Videoclub, cada película se relaciona con un género. Entonces la pantalla de carga de una película tiene:
 
