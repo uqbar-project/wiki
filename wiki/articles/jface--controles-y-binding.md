@@ -65,22 +65,19 @@ En SWT el combo está representado por la clase `org.eclipse.swt.widgets.Combo`
 
 Se agregan elementos al combo:
 
--   enviando el mensaje add(String string) o add(String string, int index) o setItem(int index, String string)
--   enviando el mensaje setItems(String\[\] items)
+-   enviando el mensaje `add(String` `string)` o `add(String` `string,` `int` `index)` o `setItem(int` `index,` `String` `string)`
+-   enviando el mensaje `setItems(String[]` `items)`
 
 Como se desprende de la interfaz de cada uno de los métodos
 
--   no podemos agregar cualquier elemento, tienen que ser strings, esto nos fuerza a 1) tener en paralelo una lista de elementos "posta" relacionados o 2) recuperar con ese string el elemento (el string debe identificar de manera unívoca a ese elemento). *Ejemplo:* si el combo muestra socios de un videoclub, debemos mostrar por un lado el nombre del socio pero por otra parte tenemos que encontrar el objeto socio "posta" en base al nombre. De la misma manera ocurriría con los géneros de una película, o con los libros de una biblioteca, etc.
+-   no podemos agregar cualquier objeto, tienen que ser strings, esto nos fuerza a 1) tener en paralelo una lista de elementos "posta" relacionados o 2) recuperar con ese string el elemento (el string debe identificar de manera unívoca a ese elemento). *Ejemplo:* si el combo muestra socios de un videoclub, debemos mostrar por un lado el nombre del socio pero por otra parte tenemos que encontrar el objeto socio "posta" en base al nombre. De la misma manera ocurriría con los géneros de una película, o con los libros de una biblioteca, etc.
 -   los elementos se guardan en un orden, por eso existen métodos que agregan a partir de una posición
 
 Para conocer cuál es el elemento seleccionado del combo enviamos el mensaje getSelectionIndex(), que devuelve un int. Vemos el javadoc:
 
-<code>
+public int **getSelectionIndex()**
 
-`public int getSelectionIndex()`
 `    Returns the zero-relative index of the item which is currently selected in the receiver's list, or -1 if no item is selected.`
-
-</code>
 
 Tener el selectionIndex como un entero refuerza la idea de que el orden en el combo es importante, si tengo los elementos en un Set no me serviría el selectionIndex.
 
