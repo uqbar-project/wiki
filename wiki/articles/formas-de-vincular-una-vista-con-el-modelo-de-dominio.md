@@ -93,7 +93,9 @@ Por otro lado, la atomización de estos objetos dificulta la posibilidad de esta
 
 En los casos en que la relación entre la vista y el modelo de dominio es muy lejana, una solución posible es descartar el binding y pasar a una estrategia de interacción manual entre vista y dominio, aunque, claro, eso implica perder parte de las ventajas de automatizar este comportamiento.
 
-Otros links relacionados
-------------------------
+Links relacionados
+------------------
 
-[Algo3 Temario](algo3-temario.html) [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
+-   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
+-   [Algo3 Temario](algo3-temario.html)
+
