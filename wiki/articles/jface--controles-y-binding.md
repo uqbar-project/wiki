@@ -42,7 +42,7 @@ Estas propiedades no pueden "observarse", es decir, no tenemos binding bidirecci
 Control Checkbox
 ----------------
 
-En SWT el checkbox está representado por la clase `org.eclipse.swt.widgets.Button`(SWT.CHECK)
+En SWT el checkbox está representado por la clase `org.eclipse.swt.widgets.Button` pasándole el parámetro SWT.CHECK al constructor.
 
 Se puede bindear la propiedad SELECTION contra un atributo boolean de un modelo:
 
