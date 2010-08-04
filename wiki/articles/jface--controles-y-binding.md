@@ -61,26 +61,28 @@ También se puede bindear las propiedades visible, font, foreground y background
 Control Combo
 -------------
 
-En JFace el checkbox está representado por la clase `org.eclipse.swt.widgets.Button`(SWT.CHECK)
+En SWT el combo está representado por la clase `org.eclipse.swt.widgets.Combo`
 
-*Ejemplo:* si modelamos una aplicación para un Videoclub, cada película se relaciona con un género. Entonces la pantalla de carga de una película tiene:
+Se agregan elementos al combo:
 
--   un TextBox título
--   un TextBox año de filmación (numérico)
--   un ComboBox que selecciona un género
+-   enviando el mensaje add(String string) o add(String string, int index) o setItem(int index, String string)
+-   enviando el mensaje setItems(String\[\] items)
 
-Cuando el usuario cambia la selección del combo tenemos que enviar el mensaje `pelicula.setGenero(genero);`
+Como se desprende de la interfaz de cada uno de los métodos
 
-El combo necesita tener asociado:
+-   no podemos agregar cualquier elemento, tienen que ser strings, esto nos fuerza a 1) tener en paralelo una lista de elementos "posta" relacionados o 2) recuperar con ese string el elemento (el string debe identificar de manera unívoca a ese elemento). *Ejemplo:* si el combo muestra socios de un videoclub, debemos mostrar por un lado el nombre del socio pero por otra parte tenemos que encontrar el objeto socio "posta" en base al nombre. De la misma manera ocurriría con los géneros de una película, o con los libros de una biblioteca, etc.
+-   los elementos se guardan en un orden, por eso existen métodos que agregan a partir de una posición
 
--   un conjunto de elementos "seleccionables"
--   el elemento seleccionado
+Para conocer cuál es el elemento seleccionado del combo enviamos el mensaje getSelectionIndex(), que devuelve un int. Vemos el javadoc:
 
-¿De qué tipo es esa lista de elementos seleccionables? Si trabajamos con generics, podríamos pensar en un Combo<T> de manera que el modelo subyacente sea un Collection/Set/List<T> y el elemento seleccionado un T. En el ejemplo planteado T = Genero.
+<code>
 
-Otra alternativa menos elegante es que el combo tenga el índice del elemento seleccionado (un int). Por otra parte la lista de elementos del combo podría restringirse a ser solamente una lista de strings que son los que se van a mostrar en pantalla.
+`public int getSelectionIndex()`
+`    Returns the zero-relative index of the item which is currently selected in the receiver's list, or -1 if no item is selected.`
 
-Independientemente de la manera en que trabajemos, vamos a necesitar tener un **conversor** para asociar los elementos visuales del combo con los objetos que representan esas opciones y pasar de uno a otro en ambas direcciones, esto es capturar el evento de cambio para mapear el elemento/índice seleccionado con un objeto Genero que es lo que el modelo necesita.
+</code>
+
+Tener el selectionIndex como un entero refuerza la idea de que el orden en el combo es importante, si tengo los elementos en un Set no me serviría el selectionIndex.
 
 Control Grilla
 --------------
