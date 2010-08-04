@@ -167,7 +167,7 @@ Otros controles
 Links relacionados
 ------------------
 
--   [Binding: Vinculación entre la vista y el modelo](binding--vinculacion-entre-la-vista-y-el-modelo.html)
+-   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
 -   [JFace: Controles y binding](jface--controles-y-binding.html)
 -   [Algo3 Temario](algo3-temario.html)
 
