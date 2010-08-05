@@ -120,7 +120,7 @@ Otras variantes
 
 Un agregado que se podría hacer es evitar poner los mensajes de error en el código de dominio y poner códigos, que se traduzcan mediante un "bundle".
 
-Otros links relacionados
-------------------------
+Links relacionados
+------------------
 
 [Algo3 Temario](algo3-temario.html)
