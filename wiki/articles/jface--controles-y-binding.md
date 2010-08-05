@@ -131,7 +131,11 @@ En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Table`
 Control Botón
 -------------
 
-Dependiendo del framework se los llama button, action, actionButton, command, etc. Se utilizan para disparar eventos de la UI o mapear acciones del negocio.
+En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Button`
+
+El botón tiene listeners, cuando el usuario presiona el botón se dispara la notificación del botón apretado a cada listener. Nosotros escribimos el código no en el botón, sino en el listener.
+
+*Ejemplo:*
 
 VER También vimos que usando la interfaz ComputedValue podemos vincular cualquier expresión que deseemos.
 
