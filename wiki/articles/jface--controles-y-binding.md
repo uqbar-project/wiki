@@ -126,10 +126,7 @@ El binding no lo podemos hacer contra un socio en particular, necesitamos trabaj
 Control Grilla
 --------------
 
-Dependiendo del framework se los llama table, grid, etc. Los combos, textboxes, checkboxes se bindean con un atributo, la grilla es un control compuesto en forma de matriz que tiene:
-
--   como filas un conjunto de elementos
--   como columnas el conjunto de atributos a visualizar de cada elemento
+En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Table`
 
 Control Botón
 -------------
