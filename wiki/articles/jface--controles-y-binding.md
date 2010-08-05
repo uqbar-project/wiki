@@ -131,7 +131,7 @@ En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Table`
 Control Botón
 -------------
 
-En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Button`
+En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Button` pasándole el parámetro SWT.PUSH al constructor.
 
 El botón tiene listeners, cuando el usuario presiona el botón se dispara la notificación del botón apretado a cada listener. Nosotros escribimos el código no en el botón, sino en el listener.
 
