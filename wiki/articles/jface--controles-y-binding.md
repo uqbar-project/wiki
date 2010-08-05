@@ -34,7 +34,19 @@ Otras propiedades que admiten binding bidireccional:
 -   **Visible**: el control puede hacerse visible o invisible en base al binding con un atributo de tipo boolean del modelo
 -   **Font/Foreground/Background**: se puede modificar la letra con la que se visualizan los datos cargados en el control, el color de la letra o bien el de fondo, en base a un atributo de un modelo.
 
-FALTA: EJEMPLO DE EDITABLE con TextBox
+*Ejemplo:* queremos permitir cambiar el nombre a un socio solamente si está activo. El socio define como interfaz setNombre/getNombre y un isActivo(), no importa cómo se implementa. Entonces para bindear la propiedad Editable del textbox que ingresa el nombre (llamado textNombre) debemos escribir lo siguiente:
+
+<code>
+
+`new DataBindingContext().bindValue(`
+`    SWTObservables.observeEditable(textNombre), `
+`    BeansObservables.observeValue(socio, activo), `
+`    null, `
+`    null);`
+
+</code>
+
+Nótese que no necesariamente la "propiedad" del modelo tiene que ser un atributo (variable de instancia) del objeto modelo. En nuestro caso el estar activo podría no ser un getter booleano sino un atributo calculado dinámicamente.
 
 Mirando la clase SWTObservables podemos ver todas las propiedades que el framework en cuestión nos permite vincular.
 
@@ -83,7 +95,7 @@ public int **getSelectionIndex()** *Returns the zero-relative index of the item 
 
 Tener el selectionIndex como un entero refuerza la idea de que el orden en el combo es importante, si tengo los elementos en un Set no me serviría el selectionIndex.
 
-FALTA: Revisar binding
+*Ejemplo:* queremos definir un combo cuyos elementos son la lista de socios de un videoclub. El código es el siguiente
 
 Control Grilla
 --------------
