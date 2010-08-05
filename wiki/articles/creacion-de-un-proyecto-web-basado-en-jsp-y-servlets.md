@@ -177,3 +177,8 @@ Para usar JSTL:
 
 `<%@ page pageEncoding="UTF-8" %> `
 `<%@ taglib uri="`[`http://java.sun.com/jstl/core`](http://java.sun.com/jstl/core)`" prefix="c" %>`
+
+Links relacionados
+------------------
+
+[Algo3 Temario](algo3-temario.html)
