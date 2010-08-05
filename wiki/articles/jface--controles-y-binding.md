@@ -26,7 +26,7 @@ Podemos bindear la propiedad text de un control textbox contra un atributo Strin
 `    null, `
 `    null);`
 
-</code>
+</code> donde controlTextBoxEnCuestion es de tipo Text, objetoModelo es cualquier Object y propiedadDelModeloContraElQueSeBindea es un String.
 
 Otras propiedades que admiten binding bidireccional:
 
@@ -40,13 +40,13 @@ Otras propiedades que admiten binding bidireccional:
 
 `new DataBindingContext().bindValue(`
 `    SWTObservables.observeEditable(textNombre), `
-`    BeansObservables.observeValue(socio, activo), `
+`    BeansObservables.observeValue(socio, "activo"), `
 `    null, `
 `    null);`
 
 </code>
 
-Nótese que no necesariamente la "propiedad" del modelo tiene que ser un atributo (variable de instancia) del objeto modelo. En nuestro caso el estar activo podría no ser un getter booleano sino un atributo calculado dinámicamente.
+Nótese que no necesariamente la "propiedad" del modelo tiene que ser un atributo (variable de instancia) del objeto modelo. En nuestro caso el estar activo podría no ser un getter booleano sino un atributo calculado dinámicamente. Lo que hace JFace es recuperar el valor del método getActivo() o isActivo() para el objeto socio (a través de Reflection) y asociarlo a la propiedad editable del control (lo que devuelva el método getActivo() debe ser un booleano).
 
 Mirando la clase SWTObservables podemos ver todas las propiedades que el framework en cuestión nos permite vincular.
 
