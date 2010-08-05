@@ -12,3 +12,7 @@ Características de la arquitectura web tradicional
 -   La respuesta para cada pedido es una página nueva, la mínima unidad de comunicación entre el cliente y el servidor es una página. Esto tiene consecuencias tanto de performance como de usabilidad y también de diseño. Existen muchos tipos de pedido pero los más usuales son GET y POST. Los dos puntos anteriores limitan gravemente la posibilidad de utilizar mecanismos de binding.
 -   Cada pedido es independiente de los anteriores, es decir, la tecnología no provee de un soporte directo para manejar el estado de la conversación entre ambos procesos (stateless). Para modelar procesos que requieran de una comunicación más poderosa que esa deberán proveerse herramientas adicionales, frecuentemente manipuladas ad-hoc.
 
+Links relacionados
+------------------
+
+[Algo3 Temario](algo3-temario.html)
