@@ -142,17 +142,17 @@ El botón tiene listeners, cuando el usuario presiona el botón se dispara la no
 `Button botonAceptar = new Button(formulario, SWT.PUSH);`
 `botonAceptar.setText("Aceptar");`
 `botonAceptar.addSelectionListener(`
-`               new SelectionListener() {`
-`                   @Override`
-`                   public void widgetSelected(SelectionEvent e) {`
-`                       ... <-- ACA ESCRIBIMOS EL CODIGO DEL BOTON -->`
-`                   }`
-`               @Override`
-`               public void widgetDefaultSelected(SelectionEvent e) {`
-`                   this.widgetSelected(e);`
-`               }`
-`         `
-`           );`
+`    new SelectionListener() {`
+`        @Override`
+`        public void widgetSelected(SelectionEvent e) {`
+`            ... <-- ACA ESCRIBIMOS EL CODIGO DEL BOTON -->`
+`        }`
+`        @Override`
+`        public void widgetDefaultSelected(SelectionEvent e) {`
+`            this.widgetSelected(e);`
+`        }`
+`       `
+`    );`
 
 </code>
 
