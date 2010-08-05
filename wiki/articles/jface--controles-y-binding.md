@@ -145,7 +145,7 @@ El botón tiene listeners, cuando el usuario presiona el botón se dispara la no
 `               new SelectionListener() {`
 `                   @Override`
 `                   public void widgetSelected(SelectionEvent e) {`
-`                       ...`
+`                       ... <-- ACA ESCRIBIMOS EL CODIGO DEL BOTON -->`
 `                   }`
 `               @Override`
 `               public void widgetDefaultSelected(SelectionEvent e) {`
