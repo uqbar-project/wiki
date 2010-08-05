@@ -137,6 +137,26 @@ El botón tiene listeners, cuando el usuario presiona el botón se dispara la no
 
 *Ejemplo:*
 
+<code>
+
+`Button botonAceptar = new Button(formulario, SWT.PUSH);`
+`botonAceptar.setText("Aceptar");`
+`botonAceptar.addSelectionListener(`
+`          new SelectionListener() {`
+`           @Override`
+`       public void widgetSelected(SelectionEvent e) {`
+`                   ...`
+`               }`
+
+`               @Override`
+`               public void widgetDefaultSelected(SelectionEvent e) {`
+`                   this.widgetSelected(e);`
+`               }`
+
+`           );`
+
+</code>
+
 VER También vimos que usando la interfaz ComputedValue podemos vincular cualquier expresión que deseemos.
 
 Links relacionados
