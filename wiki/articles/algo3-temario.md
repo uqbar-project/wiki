@@ -17,6 +17,8 @@ Unidad 2
 Unidad 3
 --------
 
+-   \[Descripción global de la arquitectura web\]
+
 Unidad 4
 --------
 
