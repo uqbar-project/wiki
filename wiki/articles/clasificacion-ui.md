@@ -61,7 +61,8 @@ En los últimos tiempos los clientes livianos fueron incorporando tecnologías y
 
 Entonces el cliente hace más que "mostrar en forma amistosa" el formulario... de hecho se acerca al formato cliente-servidor que hablábamos antes. Este híbrido de cliente liviano que incorpora funcionalidades propias de los clientes pesados generan las Rich Internet Applications, o RIA.
 
-Otros links relacionados
-------------------------
+Links relacionados
+------------------
 
-[Algo3 Temario](algo3-temario.html)
+-   [Algo3 Temario](algo3-temario.html)
+
