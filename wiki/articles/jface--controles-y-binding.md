@@ -156,7 +156,10 @@ El botón tiene listeners, cuando el usuario presiona el botón se dispara la no
 
 </code>
 
-VER También vimos que usando la interfaz ComputedValue podemos vincular cualquier expresión que deseemos.
+Campos calculados
+-----------------
+
+Podemos subclasificar la clase **ComputedValue** podemos vincular cualquier expresión que deseemos: sólo tenemos que redefinir el método `protected` `Object` `calculate`. FALTA: Decir quién y cómo invocan a ese calculado.
 
 Links relacionados
 ------------------
