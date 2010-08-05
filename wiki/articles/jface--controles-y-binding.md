@@ -165,7 +165,7 @@ Campos calculados
 
 Podemos subclasificar la clase **ComputedValue** para vincular cualquier expresión que deseemos: sólo tenemos que redefinir el método `protected` `Object` `calculate`.
 
-Pueden verse los siguientes ejemplos [1](http://wiki.eclipse.org/JFace_Data_Binding/Snippets) &gt; ComputedValue
+Pueden verse los siguientes ejemplos [&gt; ver ComputedValue](http://wiki.eclipse.org/JFace_Data_Binding/Snippets)
 
 Links relacionados
 ------------------
