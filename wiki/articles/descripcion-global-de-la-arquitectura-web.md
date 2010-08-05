@@ -15,4 +15,5 @@ Características de la arquitectura web tradicional
 Links relacionados
 ------------------
 
-[Algo3 Temario](algo3-temario.html)
+-   [Algo3 Temario](algo3-temario.html)
+
