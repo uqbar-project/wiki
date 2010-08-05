@@ -1,6 +1,6 @@
 **Nota:** el objetivo de esta página es comentar cómo se produce el binding entre controles de SWT/JFace y atributos de dominio. Si desea documentación para programar interfaces de usuario puede consultar [la página oficial de SWT](http://www.eclipse.org/swt/) y [el wiki de JFace](http://wiki.eclipse.org/index.php/JFace)
 
-**Nota 2:** si ud. está cursando alguna materia de programación de interfaces de usuario, la clase ar.com.tadp.examples.jface.base.AbstractPanel<T> provista por la cátedra le facilitará todas estas tareas.
+**Nota 2:** si ud. está cursando alguna materia de programación de interfaces de usuario, la clase `ar.com.tadp.examples.jface.base.AbstractPanel`<T> provista por la cátedra le facilitará todas estas tareas.
 
 Cómo se implementa el binding en JFace
 --------------------------------------
@@ -97,7 +97,29 @@ public int **getSelectionIndex()** *Returns the zero-relative index of the item 
 
 Tener el selectionIndex como un entero refuerza la idea de que el orden en el combo es importante, si tengo los elementos en un Set no me serviría el selectionIndex.
 
-*Ejemplo:* queremos definir un combo cuyos elementos son la lista de socios de un videoclub. El código es el siguiente
+El binding relaciona un String con la propiedad selection del combo cuando el usuario modifica el elemento elegido.
+
+*Ejemplo:* queremos definir un combo cuyos elementos son la lista de socios de un videoclub. El código es el siguiente <code>
+
+`Combo comboSocios = new Combo(formulario, SWT.LEFT | SWT.BORDER | SWT.SINGLE);`
+`comboSocios.setLayoutData(new GridData(150, SWT.DEFAULT));`
+`for (Socio socio : this.getSocios()) {`
+`    comboSocios.add(socio.getNombreCompleto());`
+`}`
+`new DataBindingContext().bindValue(SWTObservables.observeSelection(comboSocios), `
+`                                   BeansObservables.observeValue(EditarSocioModel, socioSeleccionado), `
+`                                   null, `
+`                                   null);`
+
+</code>
+
+El binding no lo podemos hacer contra un socio en particular, necesitamos trabajar con un model que tenga comportamiento adicional. El EditarSocioModel define el método setSocioSeleccionado de la siguiente manera:
+
+<code> public void setSocioSeleccionado(String nombreCompletoSocio) {
+
+`   ...`
+
+} </code> Aquí entonces hay que convertir el nombre del socio (un String) al objeto Socio en cuestión si queremos enviarle algún mensaje.
 
 Control Grilla
 --------------
