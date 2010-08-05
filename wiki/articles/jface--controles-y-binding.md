@@ -163,7 +163,18 @@ Las propiedades más interesantes de bindear son enabled (si el botón está hab
 Campos calculados
 -----------------
 
-Podemos subclasificar la clase **ComputedValue** podemos vincular cualquier expresión que deseemos: sólo tenemos que redefinir el método `protected` `Object` `calculate`. FALTA: Decir quién y cómo invocan a ese calculado.
+Podemos subclasificar la clase **ComputedValue** para vincular cualquier expresión que deseemos: sólo tenemos que redefinir el método `protected` `Object` `calculate`.
+
+*Ejemplo:* si cada vez que seleccionemos un socio de un videoclub queremos que aparezca la última película que alquiló, generamos un computed value y asociamos como tercer parámetro del binding un update value strategy.
+
+<code>
+
+`new DataBindingContext().bindValue(SWTObservables.observeText(ui.formattedName, SWT.None), `
+`                                   new ComputedValue(), `
+`                                   new UpdateValueStrategy(false, UpdateValueStrategy.POLICY_NEVER), `
+`                                   null);`
+
+</code>
 
 Links relacionados
 ------------------
