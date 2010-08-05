@@ -156,6 +156,8 @@ El botón tiene listeners, cuando el usuario presiona el botón se dispara la no
 
 </code>
 
+Las propiedades más interesantes de bindear son enabled (si el botón está habilitado) y visible (si está visible).
+
 Campos calculados
 -----------------
 
