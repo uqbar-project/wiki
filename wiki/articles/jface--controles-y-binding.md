@@ -147,12 +147,10 @@ El botón tiene listeners, cuando el usuario presiona el botón se dispara la no
 `       public void widgetSelected(SelectionEvent e) {`
 `                   ...`
 `               }`
-
 `               @Override`
 `               public void widgetDefaultSelected(SelectionEvent e) {`
 `                   this.widgetSelected(e);`
 `               }`
-
 `           );`
 
 </code>
