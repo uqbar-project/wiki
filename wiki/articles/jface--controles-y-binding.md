@@ -115,11 +115,13 @@ El binding relaciona un String con la propiedad selection del combo cuando el us
 
 El binding no lo podemos hacer contra un socio en particular, necesitamos trabajar con un model que tenga comportamiento adicional. El EditarSocioModel define el método setSocioSeleccionado de la siguiente manera:
 
-<code> public void setSocioSeleccionado(String nombreCompletoSocio) {
+<code>
 
-`   ...`
+`public void setSocioSeleccionado(String nombreCompletoSocio) {`
+`    ...`
+`}`
 
-} </code> Aquí entonces hay que convertir el nombre del socio (un String) al objeto Socio en cuestión si queremos enviarle algún mensaje.
+</code> Aquí entonces hay que convertir el nombre del socio (un String) al objeto Socio en cuestión si queremos enviarle algún mensaje.
 
 Control Grilla
 --------------
