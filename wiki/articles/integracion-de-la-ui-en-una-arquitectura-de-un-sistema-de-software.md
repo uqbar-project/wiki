@@ -42,7 +42,8 @@ En definitiva pareciera que la vista no se mezcla con el negocio pero el [acopla
 
 Nuestra idea es que la presentación no sólo hable con el dominio sino que le pida todo lo que le tenga que pedir: en el ejemplo anterior sería muy bueno que la vista le pregunte directamente al empleado cuál fue la última vez que le pagué.
 
-Otros links relacionados
-------------------------
+Links relacionados
+------------------
 
-[Algo3 Temario](algo3-temario.html)
+-   [Algo3 Temario](algo3-temario.html)
+
