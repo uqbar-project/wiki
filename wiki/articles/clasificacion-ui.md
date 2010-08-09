@@ -46,7 +46,7 @@ Tipos de cliente
 
 La aplicación que corre en un cliente puede ser entonces:
 
--   un browser, o navegador, que tiene capacidades limitadas por la tecnología: sabe "renderizar" -mostrar- controles HTML, ejecutar código en el cliente a través de javascript o algún lenguaje propietario del browser y enviar peticiones al servidor (generalmente redirigir el control a otra página con ciertos parámetros). El límite está demarcado por el lenguaje de hipertexto pensado para trabajar con información documental, no para aplicaciones de negocio.
+-   un browser, o navegador, que tiene capacidades limitadas por la tecnología: sabe "renderizar" -mostrar- controles HTML, ejecutar código en el cliente (javascript o algún lenguaje propietario del browser) y enviar peticiones al servidor, por ejemplo redirigir el control a otra página. El límite está demarcado por el lenguaje de hipertexto pensado para trabajar con información documental, no para aplicaciones de negocio.
 -   un programa específicamente designado para tal fin, construido como parte de un sistema integral (un ejecutable hecho para un sistema operativo, o un programa pre-compilado)
 
 RIA
