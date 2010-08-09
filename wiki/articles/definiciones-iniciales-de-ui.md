@@ -29,7 +29,7 @@ O sea,
 Por supuesto que ande, pero además vamos a priorizar ciertas cualidades de diseño. En particular tratar de no mezclar ideas de presentación con negocio. O sea, separar la lógica para definir la interacción con el usuario y la lógica propia del dominio. ¿Por qué?
 
 -   porque no quiero que mi dominio se vea afectado por cuestiones tecnológicas.
--   porque eso me lleva a perder cohesión en los objetos de presentación, que además de encargarse de mostrar la información tienen que atacar cuestiones de negocio
+-   porque eso me lleva a perder cohesión en los objetos de presentación, que además de encargarse de mostrar la información tienen que atacar cuestiones de negocio. Entonces en dos pantallas distintas tengo que repetir la misma validación o el mismo comportamiento.
 -   porque tengo más restricciones a nivel usuario y tecnológicos del lado de la UI (es la parte más compleja y la menos madura, cuesta encontrar buenas abstracciones)
 
 [Conceptos básicos del diseño](conceptos-basicos-del-diseno.html)
