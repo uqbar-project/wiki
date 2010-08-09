@@ -34,12 +34,12 @@ Estos sistemas eran los preponderantes hasta mediados de los '80, la configuraci
 
 ### Aplicaciones distribuidas
 
-Conforme mejoraron las capacidades de procesamiento y bajaron los costos, los clientes comenzaron a tener más funcionalidades en el armado de una aplicación. Surgieron entonces:
+En este tipo de aplicaciones, se asume que
 
--   las aplicaciones de dos niveles: cliente / servidor, donde el cliente generalmente tenía la responsabilidad de procesar consultas desde el servidor y manejar una interfaz de usuario "rica" (orientada a componentes visuales)
--   las aplicaciones de 3 y hasta n niveles: cliente / middleware / servidor
-
-Las dificultades de tener aplicaciones distribuidas es el alto costo de mantenimiento del software que corre en los clientes cuando estos son muchos o están diseminados geográficamente en distintos puntos. La comunicación con el servidor suele ser por lo general un cuello de botella difícil de soslayar. Por otra parte, las capacidades gráficas y visuales de aplicaciones con clientes "ricos" son insuperables si la comparamos con las prestaciones que ofrece un browser genérico (sin agregados ni plug-ins).
+-   los clientes tienen más capacidad de procesamiento, por lo tanto suelen presentar una interfaz de usuario más "rica" que las aplicaciones centralizadas (superiores también a la de los browsers sin plugins ni elementos adicionales)
+-   la comunicación hacia el servidor suele ser un cuello de botella, así que se trata de minimizar la cantidad de información a pasar entre cliente y servidor. Por lo general el cliente hace un pedido, la consulta se procesa en el servidor y vuelve la información procesada para que el cliente la presente en un formato amigable.
+-   las aplicaciones distribuidas son más complejas arquitecturalmente: se dividen en 2, 3 hasta n niveles
+-   como los clientes suelen estar en distintos puntos geográficos las actualizaciones de software suelen ser un dolor de cabeza
 
 Tipos de cliente
 ----------------
