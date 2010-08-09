@@ -10,11 +10,7 @@ Interfaz de Usuario también se puede abreviar por sus siglas en inglés: UI (Us
 
 Cuando le pedimos al sistema que haga algo, hay reglas que rigen el negocio que manejamos.
 
-Si el cliente sólo puede pagar con cheque a 30/60/90 días, hay una regla de negocio que lo dice.
-
-Si un alumno no puede anotarse en un final porque debe una correlativa, hay otra regla de negocio que lo dice.
-
-Si un empleado cobra un 10% del sueldo básico por presentismo, hay otra regla de negocio que lo dice.
+Si el cliente sólo puede pagar con cheque a 30/60/90 días, hay una regla de negocio que lo dice. Si un alumno no puede anotarse en un final porque debe una correlativa, hay otra regla de negocio que lo dice. Si un empleado cobra un 10% del sueldo básico por presentismo, hay otra regla de negocio que lo dice.
 
 Lo que forma parte del dominio de mi aplicación es encontrar
 
