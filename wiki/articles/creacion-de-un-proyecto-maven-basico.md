@@ -55,11 +55,10 @@ Publicarlo en svn
 
 Al publicarlo es importante agregar al <svn:ignore> los siguientes archivos y directorios:
 
--   Directorio work y subdirectorios
 -   Directorio target y subdirectorios.
--   Archivos .project, .classpath y .tomcatplugin
+-   Archivos {{code|.project}, {{code|.classpath}.
 
-Luego quien se lo baje deberá ejecutar los pasos 2, 3, 4.2 y 4.3
+Luego quien se lo baje deberá ejecutar únicamente los pasos 3 y 4.
 
 Agregar más referencias posteriormente
 --------------------------------------
