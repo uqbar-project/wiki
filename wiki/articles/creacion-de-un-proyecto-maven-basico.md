@@ -36,13 +36,15 @@ Luego de ejecutar eso tendremos el código generado en el directorio con el nomb
 `           `<version>`3.1`</version>
 `       `</dependency>
 
-### Paso 4: Generación de la información para eclipse
+### Paso 3: Generación de la información para eclipse
 
 Luego, parados en la carpeta en donde está el debemos ejecutar:
 
 `mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true`
 
-Esto nos creará los archivos de configuración del eclipse: y . También habrá bajado todas las bibliotecas que le indicamos. En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
+Esto nos creará los archivos de configuración del eclipse: y . También se ocupará de bajar de Internet todas las bibliotecas que le indicamos (por eso hay que tener conexión a Internet para ejecutar estas cosas).
+
+*Ojo:* En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
 ### Paso 5: Generación de la información para sysdeo
 
