@@ -46,17 +46,9 @@ Esto nos creará los archivos de configuración del eclipse: y . También se ocu
 
 **Ojo:** En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
-### Paso 6: Importación de la información al eclipse y al tomcat
+### Paso 4: Importación de la información al eclipse y al tomcat
 
-Luego, desde el eclipse se deberá:
-
-1.  Importarlo al eclipse, utilizando la opción "Import" -&gt; "Existing projects into workspace".
-2.  Agregar el proyecto al contexto del tomcat. Para ello: botón derecho sobre el proyecto -&gt; "Tomcat project" -&gt; "Update context definition"
-3.  Levantar el tomcat utilizando el plugin de sysdeo.
-
-Una vez finalizado todo esto se puede ingresar desde su explorador favorito y ver que todo funciona, en mi caso la URL de prueba es:
-
-[`http://localhost:8080/example.jsp/`](http://localhost:8080/example.jsp/)
+Luego, desde el eclipse se deberá importar el proyecto, utilizando la opción "Import" -&gt; "Existing projects into workspace".
 
 Publicarlo en svn
 -----------------
