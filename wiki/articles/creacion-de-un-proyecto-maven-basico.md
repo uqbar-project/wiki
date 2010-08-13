@@ -46,14 +46,6 @@ Esto nos creará los archivos de configuración del eclipse: y . También se ocu
 
 **Ojo:** En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
-### Paso 5: Generación de la información para sysdeo
-
-El último paso será generar la información necesaria para el plugin de sysdeo.
-
-`mvn sysdeo-tomcat:generate`
-
-La información generada se encuentra en el archivo . Normalmente no es necesario hacer nada directamente con ese archivo, pero si tenemos dudas sobre que se haya ejecutado todo correctamente ese es el lugar donde mirar.
-
 ### Paso 6: Importación de la información al eclipse y al tomcat
 
 Luego, desde el eclipse se deberá:
