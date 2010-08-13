@@ -2,8 +2,7 @@ El objetivo de este tutorial es crear una aplicación base utilizando las siguie
 
 -   Java
 -   Eclipse
--   Tomcat
--   Sysdeo + DevLoader + Tomcat-XT
+-   Svn
 -   Maven
 
 Se asume la presencia de un entorno con todas esas herramientas configuradas adecuadamente.
@@ -15,26 +14,26 @@ Creación del proyecto
 
 Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente comando maven (previo asignar valores adecuados para groupId y artifactId)
 
-`mvn archetype:create                             \`
-`    -DartifactId=basic-jsp-example               \`
-`    -DgroupId=com.uqbar-project.edu.progui       \`
-`    -DarchetypeArtifactId=maven-archetype-webapp `
+`mvn archetype:create                      \`
+`    -DartifactId=basic-maven-example      \`
+`    -DgroupId=com.uqbar-project.edu       \`
+`    -DarchetypeArtifactId=???`
+
+Lo importante acá es saber qué archetype quiero usar, por ejemplo: maven-archetype-webapp
 
 ### Paso 2: Agregar bibliotecas necesarias al pom
 
-Luego de ejecutar eso tendremos el código generado en el directorio con el nombre indicado en el (en mi caso ). En ese directorio encontrarán el , si vamos a utilizar servlets (que es lo más probable) hay que editarlo para agregar las bibliotecas correspondientes:
+Luego de ejecutar eso tendremos el código generado en el directorio con el nombre indicado en el (en mi caso ). En ese directorio encontrarán el , si vamos a utilizar otras bibliotecas podemos agregarlas ya mismo, por ejemplo:
 
 `       `<dependency>
-`           `<groupId>`javax.servlet`</groupId>
-`           `<artifactId>`servlet-api`</artifactId>
-`           `<version>`2.5`</version>
-`           `<scope>`provided`</scope>
+`           `<groupId>`log4j`</groupId>
+`           `<artifactId>`log4j`</artifactId>
+`           `<version>`1.2.13`</version>
 `       `</dependency>
 `       `<dependency>
-`           `<groupId>`javax.servlet.jsp`</groupId>
-`           `<artifactId>`jsp-api`</artifactId>
-`           `<version>`2.1`</version>
-`           `<scope>`provided`</scope>
+`           `<groupId>`commons-collections`</groupId>
+`           `<artifactId>`commons-collections`</artifactId>
+`           `<version>`3.1`</version>
 `       `</dependency>
 
 ### Paso 3: Crear una carpeta adicional para las clases java
