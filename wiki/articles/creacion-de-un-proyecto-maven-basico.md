@@ -36,17 +36,6 @@ Luego de ejecutar eso tendremos el código generado en el directorio con el nomb
 `           `<version>`3.1`</version>
 `       `</dependency>
 
-### Paso 3: Crear una carpeta adicional para las clases java
-
-Dentro del mismo directorio veremos una carpeta y dentro dos carpetas con fuentes
-
-src/main/webapp:Es el lugar donde se ubicarán nuestras páginas web, y dendro de ella en la carpeta  se encuentra la configuración del tomcat.
-src/main/resources:Que estará vacía y es el lugar donde poner archivos de configuración y otros recursos *no web* (toda la información web va en webapp).  
-
-Es necesario crear una carpeta más:
-
-src/main/java:Es el lugar para ubicar nuestras clases Java.  
-
 ### Paso 4: Generación de la información para eclipse
 
 Luego, parados en la carpeta en donde está el debemos ejecutar:
