@@ -53,6 +53,8 @@ Luego, desde el eclipse se deberá importar el proyecto, utilizando la opción "
 Publicarlo en svn
 -----------------
 
+[Publicar un proyecto en svn](publicar-un-proyecto-en-svn.html)
+
 Al publicarlo es importante agregar al <svn:ignore> los siguientes archivos y directorios:
 
 -   Directorio target y subdirectorios.
