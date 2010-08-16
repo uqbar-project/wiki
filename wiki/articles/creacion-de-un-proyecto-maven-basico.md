@@ -55,13 +55,6 @@ Publicarlo en svn
 
 [Publicar un proyecto en svn](publicar-un-proyecto-en-svn.html)
 
-Al publicarlo es importante agregar al <svn:ignore> los siguientes archivos y directorios:
-
--   Directorio target y subdirectorios.
--   Archivos {{code|.project}, {{code|.classpath}.
-
-Luego quien se lo baje deberá ejecutar únicamente los pasos 3 y 4.
-
 Agregar más referencias posteriormente
 --------------------------------------
 
