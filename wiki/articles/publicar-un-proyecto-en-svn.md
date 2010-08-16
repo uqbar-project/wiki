@@ -19,8 +19,5 @@ Recordemos que siempre ponemos en el <svn:ignore> todo aquello que se genera aut
 
 Después hay que crear las carpetas branches y tags.
 
-Desde consola:
---------------
-
 Desde la consola:
 -----------------
