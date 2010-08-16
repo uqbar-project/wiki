@@ -17,6 +17,8 @@ Lo que tenemos que agregar al <svn:ignore> en un proyecto simple es:
 
 **Recordemos que siempre ponemos en el <svn:ignore> todo aquello que se genera automáticamente, en este caso, todos estos archivos los genera el maven.**
 
+Entonces ahora que ya le dijimos al svn que es lo que no queremos versionar, estamos en condiciones de comitear. Botón derecho sobre el proyecto -&gt; Commit.
+
 Después hay que crear las carpetas branches y tags.
 
 Desde la consola:
