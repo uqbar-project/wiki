@@ -15,7 +15,7 @@ Lo que tenemos que agregar al <svn:ignore> en un proyecto simple es:
 -   la carpeta que es donde estan los compilados
 -   el y el
 
-Recordemos que siempre ponemos en el <svn:ignore> todo aquello que se genera automáticamente, en este caso, todos estos archivos los genera el maven.
+`Recordemos que siempre ponemos en el `[`svn:ignore`](svn:ignore)` todo aquello que se genera automáticamente, en este caso, todos estos archivos los genera el maven.`
 
 Después hay que crear las carpetas branches y tags.
 
