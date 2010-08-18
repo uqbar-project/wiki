@@ -29,8 +29,8 @@ Conjunto de predicados definidos a través de cláusulas (hechos y reglas) que d
 
 <!-- -->
 
-[Paradigma Funcional](paradigma-funcional.html)
-Conjunto de funciones (relaciones que cumplen las propiedades de unicidad y existencia), que pueden ser evaluadas para obtener un resultado.  
+[Paradigma Funcional](paradigma-funcional.html)  
+Conjunto de funciones (relaciones que cumplen las propiedades de unicidad y existencia), que pueden ser evaluadas para obtener un resultado.
 
 Otras Ideas
 -----------
