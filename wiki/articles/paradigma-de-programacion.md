@@ -10,21 +10,31 @@ Dado que un paradigma es un conjunto de ideas, su influencia se ve principalment
 ¿Qué es un programa?
 --------------------
 
-`         o Todos tiran ideas de programación estructurada (o no).`
-`         o Visto desde afuera: Un programa es aquel ingenio que logra que una computadora haga lo que uno tiene en mente`
-`         o Separación entre HW y SW.`
-`               + Al principio la gente no diferenciaba y compraba una máquina "procesador de texto" como si fuera un 'lavarropas'. — La computadora tiene la particularidad de que puede servir para muchas cosas.`
-`               + Para hacer cada una de esas cosas necesita un programa. `
-`         o Visto desde adentro: No admite una única respuesta.`
-`               + Eso es lo que queremos que se lleven.`
-`               + Hasta ahora vieron sólo una de esas respuestas.`
-`               + Acá vamos a ver tres variantes más. `
-`   * Son distintas desde lo más básico, los conceptos principales son distintos.`
-`         o Tirar algo sobre el concepto de variable como para romper un poco. Preguntar en qué consiste para ellos el concepto de variable.`
-`         o Preguntar qué es un programa.`
-`         o Preguntar qué es un tipo . `
-`   * Un paradigma un conjunto de ideas (herramientas conceptuales) que configura una respuesta a esa pregunta.`
-`         o El paradigma define los bloques de construcción y la criterios de utilización.`
-`         o si da, pasar x el marco conceptual de imperativo que está acá abajo. `
+Para definir programa es necesario analizarlo desde dos diferentes perspectivas. Uno de esos puntos de vista es análogo al del usuario del programa, interesado en la tarea que realizar el programa. Desde esa perspectiva un programa es aquello que permite que una computadora realice una tarea determinada.
 
-Usar un paradigma me sirve para: - Modelar la realidad, o mejor dicho que el programa se acerque a la realidad (vs. tener un diseño y luego un programa lejano a eso) - Proveerme bloques de construcción, distintas formas de partir el problema en partes, distintas herramientas para abstraer.
+El otro punto de vista es el de aquel que tenga que construir o modificar ese programa (programador), a quien interesará también la forma en que está construido. Desde esta perspectiva no hay una única definición al concepto de programa ya que cada paradigma ofrece una respuesta distinta a esta pregunta.
+
+[Paradigma Imperativo](paradigma-imperativo.html)  
+Secuencia ordenada de instrucciones que manipulan un espacio de memoria.
+
+<!-- -->
+
+[Paradigma de Objetos](paradigma-de-objetos.html)  
+Conjunto de objetos que se conocen entre sí a través de referencias y se envían mensajes en un ambiente.
+
+<!-- -->
+
+[Paradigma Lógico](paradigma-logico.html)  
+Conjunto de predicados definidos a través de cláusulas (hechos y reglas) que describen propiedades y relaciones de un conjunto de individuos, sobre los cuales podemos realizar consultas.
+
+<!-- -->
+
+[Paradigma Funcional](paradigma-funcional.html)
+Conjunto de funciones (relaciones que cumplen las propiedades de unicidad y existencia), que pueden ser evaluadas para obtener un resultado.  
+
+Otras Ideas
+-----------
+
+-   Un paradigma un conjunto de ideas (herramientas conceptuales) que configura una respuesta a esa pregunta.
+-   Modelar la realidad, o mejor dicho que el programa se acerque a la realidad (vs. tener un diseño y luego un programa lejano a eso)
+
