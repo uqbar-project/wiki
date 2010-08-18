@@ -1,4 +1,4 @@
--   [Qué es un paradigma de programación](que-es-un-paradigma-de-programacion.html)
+-   Qué es un [Paradigma de Programación](paradigma-de-programacion.html)
 
 ### Los paradigmas
 
