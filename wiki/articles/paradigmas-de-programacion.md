@@ -1,6 +1,4 @@
-### Antes de empezar
-
--   [Paradigmas - aclaraciones previas](paradigmas---aclaraciones-previas.html)
+-   [Qué es un paradigma de programación](que-es-un-paradigma-de-programacion.html)
 
 ### Los paradigmas
 
