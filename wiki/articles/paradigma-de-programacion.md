@@ -35,6 +35,5 @@ Conjunto de funciones (relaciones que cumplen las propiedades de unicidad y exis
 Otras Ideas
 -----------
 
--   Un paradigma un conjunto de ideas (herramientas conceptuales) que configura una respuesta a esa pregunta.
 -   Modelar la realidad, o mejor dicho que el programa se acerque a la realidad (vs. tener un diseño y luego un programa lejano a eso)
 
