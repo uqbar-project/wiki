@@ -86,5 +86,6 @@ Estas bibliotecas no se encuentran en el repositorio default del maven (repo1.ma
 Links relacionados
 ------------------
 
+-   Una vez creado el proyecto, en el caso (probable) que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [Checkoutear un proyecto maven de un repositorio svn](checkoutear-un-proyecto-maven-de-un-repositorio-svn.html).
 -   [Algo3 Temario](algo3-temario.html)
 
