@@ -22,4 +22,6 @@ En la página resultante se mostrará la URL del repositorio que se acaba de cre
 
 Es importante registrar esa URL para poder publicar sus proyectos ahí.
 
-=== Configuraciones Adicionales == Eligiendo la solapa "Settings" y desde esa página la opción "Permissions" se pueden realizar invitaciones a otros usuarios, clickeando sobre "Assign Permission To New User".
+### Configuraciones Adicionales
+
+Eligiendo la solapa "Settings" y desde esa página la opción "Permissions" se pueden realizar invitaciones a otros usuarios, clickeando sobre "Assign Permission To New User".
