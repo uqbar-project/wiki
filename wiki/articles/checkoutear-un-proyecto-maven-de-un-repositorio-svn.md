@@ -39,4 +39,4 @@ Una vez hecho todo esto se debe importar el proyecto en el eclipse (import -&gt;
 Adaptar un proyecto maven para ser usado desde el Eclipse
 ---------------------------------------------------------
 
-En caso de contar con el plugin esto debería realizarse automáticamente. Si no ocurre la forma de obligarlo a refrescar eso sería deshabilitar el manejo de dependencias y volver a habilitarlo (botón derecho sobre el proyecto, submenú "maven").
+En caso de contar con el plugin esto debería realizarse automáticamente al hacer "checkout as maven project". Si no ocurre esto la forma de obligarlo a refrescar sería deshabilitar el manejo de dependencias y volver a habilitarlo (botón derecho sobre el proyecto, submenú "maven").
