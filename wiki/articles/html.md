@@ -11,8 +11,8 @@ Un ejemplo básico:
 
 <html>
 <head>
-`       `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-`       `
+`    `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+`    `
 
 <title>
 Hola Mundo!
@@ -20,8 +20,8 @@ Hola Mundo!
 </title>
 </head>
 <body>
-`       Hola Mundo`
-`   `
+`    Hola Mundo`
+`  `
 
 </body>
 </html>
