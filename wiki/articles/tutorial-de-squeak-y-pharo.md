@@ -57,8 +57,6 @@ Mucho más que eso no hay para lo que es definir las clases. Lo que quedaría es
 
 ### Modificando un Método
 
-()
-
 Escribir Un Workspace
 ---------------------
 
@@ -169,3 +167,5 @@ No se preocupen si ven muchos !!!! en el archivo, es lo que tienen que pasar. De
 8) Guardar el Workspace: obviamente el fileOut sólo les guarda el código de las clases que estén en la categoría, el ws hay que guardarlo aparte. Pueden hacer simplemente copy/paste y pegarlo a un txt normal o pueden usar la opción de guardado que trae el Squeak. Para eso: click derecho sobre el workspace -&gt; more... -&gt; save contents to file
 
 Le ponen el nombre que quieran y la extensión la pueden dejar como txt o cambiarla a st, que es como se guarda en la otra versión de Smalltalk. Se los va a guardar en la misma carpeta por default en la que se hizo el fileOut.
+
+### Importar un archivo .st
