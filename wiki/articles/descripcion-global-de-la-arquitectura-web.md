@@ -3,7 +3,8 @@ La programación web fue evolucionando a lo largo del tiempo
 Características de la arquitectura web tradicional
 --------------------------------------------------
 
--   Muchos clientes se conectan a un único servidor a través del protocolo HTTP.
+-   Muchos clientes se conectan a un único servidor a través del protocolo HTTP
+    -   En el cliente corre un programa llamado browser o navegador que es el encargado de establecer la comunicación con el web server
 -   Se utiliza el concepto de thin client, es decir que se minimiza la lógica en los clientes, tendiendo a concentrarla en el servidor. **Consecuencias:**
     -   se simplifica la utilización de la aplicación desde múltiples clientes sin costo de instalación ni mantenimiento.
     -   se simplifica la lógica al mantener toda la aplicación centralizada.
