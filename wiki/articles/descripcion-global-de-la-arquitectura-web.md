@@ -18,7 +18,7 @@ Problemas de la programación web
 --------------------------------
 
 -   El estado conversacional se encuentra en el servidor.
--   Pedido -&gt; respuesta / servidor pasivo.
+-   Pedido -&gt; respuesta obliga a que el servidor quede pasivo esperando peticiones del cliente.
 -   El HTML es texto.
 
 Links relacionados
