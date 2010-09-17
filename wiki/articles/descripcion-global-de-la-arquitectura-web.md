@@ -4,11 +4,8 @@ Características de la arquitectura web tradicional
 --------------------------------------------------
 
 -   Muchos clientes se conectan a un único servidor a través del protocolo HTTP
--   En el cliente corre un programa llamado browser o navegador que es el encargado de establecer la comunicación con el web server. Se utiliza el concepto de thin client, es decir que se minimiza la lógica en los clientes, tendiendo a concentrarla en el servidor.
-
-**Consecuencias:**
-
--   -   se simplifica la utilización de la aplicación desde múltiples clientes sin costo de instalación ni mantenimiento.
+-   En el cliente corre un programa llamado browser o navegador que es el encargado de establecer la comunicación con el web server. Se utiliza el concepto de thin client, es decir que se minimiza la lógica en los clientes, tendiendo a concentrarla en el servidor. **Consecuencias:**
+    -   se simplifica la utilización de la aplicación desde múltiples clientes sin costo de instalación ni mantenimiento.
     -   se simplifica la lógica al mantener toda la aplicación centralizada.
 -   La descripción de las pantallas se basa en [HTML](html.html). Es decir, una página dinámica es un programa que genera un String conteniendo código HTML.
 -   Progresivamente se ha incrementado la tendencia a describir las cuestiones estéticas utilizando [CSS](css.html), por lo tanto la descripción de una vista estará dada por una combinación de HTML y CSS.
