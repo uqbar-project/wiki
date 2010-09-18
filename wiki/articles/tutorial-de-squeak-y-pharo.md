@@ -57,6 +57,13 @@ Mucho más que eso no hay para lo que es definir las clases. Lo que quedaría es
 
 ### Modificando un Método
 
+Para modificar un método, si se equivocaron, pueden hacerlo seleccionando el método, haciendo los cambios y apretando aceptar. Pero ¡Ojo! ''' No se puede modificar así nomás el nombre de un método. ''' Si se quiere cambiar su **selector** (cualquier cosa del nombre ó los parámetros) deberán hacerlo así:
+
+-   Clck en la lista de métodos sobre el que quieren modificar
+-   Botón derecho en el método -&gt; **refactor method**
+
+Y ahí les ofrece varias cosas, eligen lo que quieren hacer.
+
 Escribir Un Workspace
 ---------------------
 
@@ -169,3 +176,5 @@ No se preocupen si ven muchos !!!! en el archivo, es lo que tienen que pasar. De
 Le ponen el nombre que quieran y la extensión la pueden dejar como txt o cambiarla a st, que es como se guarda en la otra versión de Smalltalk. Se los va a guardar en la misma carpeta por default en la que se hizo el fileOut.
 
 ### Importar un archivo .st
+
+Botón derecho sobre el fondo (World Menú) -&gt; Tools -&gt; File Browser. Eligen el archivo y le dan **Install**
