@@ -44,8 +44,8 @@ Tampoco son necesarios los tipos ni el return, pero eso es otro tema, lo que nos
 
 En resumen, si vos indentás mal es análogo a olvidarse una llave o un o un ';' en otro lenguaje.
 
-¿Por qué entonces dice *unexpected ';*', si yo no puse ningún **';**'?
-----------------------------------------------------------------------
+¿Por qué entonces dice *unexpected ';*', si yo no puse ningún ';'?
+------------------------------------------------------------------
 
 Se puede entender como que el haskell a partir de la sintaxis bidimensional "completa" los demarcadores de comando y de bloque, de una forma similar al C, quedando algo parecido a:
 
