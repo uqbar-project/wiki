@@ -26,7 +26,7 @@ Podemos ver que el programador dejó algunos espacios antes de las palabras if y
 Sintaxis "bidimensional"
 ------------------------
 
-Como dijimos, el haskell utiliza una sintaxis bidimensional, es decir, en pascal o c la indentación son opcionales, no tienen significado, es decir, uno los pone sólo para entender mejor el programa; en cambio en haskell no hacen falta los begin/end de pascal ni las llaves de C para demarcar un bloque de código. En haskell un bloque es demarcado directamente con la indentación.
+Como dijimos, el haskell utiliza una sintaxis bidimensional, es decir, en pascal o c la indentación son opcionales, no tienen significado, es decir, uno los pone sólo para entender mejor el programa; en cambio en haskell no hacen falta los / de pascal ni las llaves de C para demarcar un bloque de código. En haskell un bloque es demarcado directamente con la indentación.
 
 Entonces la función que en C se escribiría:
 
@@ -42,7 +42,12 @@ En haskell no necesita de las llaves, porque se da cuenta a partir de la indenta
 
 Tampoco son necesarios los tipos ni el return, pero eso es otro tema, lo que nos interesa acá es que no son necesarias las llaves ni el punto y coma, porque con la indentación y el fin de línea es suficiente para que el compilador entienda dónde empieza y termina la función. (En este caso sería aún más simple poner todo en una sola línea, pero algunas funciones complejas tienen más de una línea.)
 
-¿Por qué entonces dice unexpected \`;', si yo no puse ningún ";"? Se puede entender como que el haskell a partir de la sintaxis bidimensional "completa" los demarcadores de comando y de bloque, de una forma similar al C, quedando algo parecido a:
+En resumen, si vos indentás mal es análogo a olvidarse una llave o un o un ';' en otro lenguaje.
+
+¿Por qué entonces dice unexpected \`;', si yo no puse ningún ";"?
+-----------------------------------------------------------------
+
+Se puede entender como que el haskell a partir de la sintaxis bidimensional "completa" los demarcadores de comando y de bloque, de una forma similar al C, quedando algo parecido a:
 
 `suma a b = {`
 `   a + b;`
