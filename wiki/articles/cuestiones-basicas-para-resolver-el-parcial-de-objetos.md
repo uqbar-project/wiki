@@ -78,12 +78,12 @@ El diagrama de clases
 ---------------------
 
 ¡Debe ser conexo!  
-Blah, faltaría una explicación más detallada.
+No vale sólo dibujar las cajitas con los métodos y atributos, las relaciones entre los objetos son igual de importantes. Una clase que no se relaciona con nadie no aporta a la solución porque nadie puede mandarle mensajes a sus instancias. Si sólo se comunican con otros objetos por parámetros se dibuja una flecha con línea punteada con la palabrita <usa> que parte del receptor del mensaje en cuestión y llega al objeto que se envía por parámetro.
 
 <!-- -->
 
 Especificar bien las relaciones, diferenciar la herencia de la asociación o conocimiento.  
-Idem
+Si la flecha que se usa para los atributos tiene un triángulo en la punta o si la de herencia es una flecha simple está mal!
 
 La presentación del parcial
 ---------------------------
