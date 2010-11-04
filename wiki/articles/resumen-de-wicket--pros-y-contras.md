@@ -9,7 +9,7 @@ Highligths
 -   Transparencia en la comunicación con el server
     -   Al igual que en cliente pesado, los métodos "onClick()" son invocados automáticamente por el framework
 -   Html markup muy poco intrusivo
-    -   Sólo hay que anotar el tag con el id del componente. **Ej:** <a wicket:id="aceptar" href="#">`Aceptar`</a>
+    -   Sólo hay que anotar el tag con el id del componente. Ej: <a wicket:id="aceptar" href="#">`Aceptar`</a>
     -   Al trabajar con un html de prueba, eso permite la separación de tareas entre el diseñador y el programador (el diseñador no sufre si hay problemas de performance o cambio en los datos porque el html contiene un prototipo de ejemplo en sí mismo)
 
 Problemas
