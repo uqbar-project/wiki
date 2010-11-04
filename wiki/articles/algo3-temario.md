@@ -27,7 +27,7 @@ Unidad 3
 Unidad 4
 --------
 
--   \[Resumen de Wicket: pros y contras\]
+-   [Resumen de Wicket: pros y contras](resumen-de-wicket--pros-y-contras.html)
 
 Unidad 5
 --------
