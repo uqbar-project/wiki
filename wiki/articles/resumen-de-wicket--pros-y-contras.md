@@ -4,12 +4,11 @@ Highligths
 -   Stateful Model
     -   Manejo automático en sesión
     -   no requiere conocer scopes: session, request, etc.
--   Modelo de componentes "a la swing".
+-   Modelo de componentes al estilo SWT (Arena) que soporta extensiones utilizando las técnicas OO conocidas
 -   Transparencia en la comunicación con el server
-    -   Al igual que en cliente pesado, los métodos "onClick()" son invocados automaticamente por el
--   Html markup muy poco intrusivo:
-    -   Solo hay que anotar el tag con el id del componente.
-    -   Ej: <a wicket:id="aceptar" href="#">`Aceptar`</a>
+    -   Al igual que en cliente pesado, los métodos "onClick()" son invocados automáticamente por el framework
+-   Html markup muy poco intrusivo
+    -   Solo hay que anotar el tag con el id del componente. **Ej:** <a wicket:id="aceptar" href="#">`Aceptar`</a>
 
 Problemas
 ---------
