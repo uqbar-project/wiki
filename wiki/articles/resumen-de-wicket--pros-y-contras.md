@@ -4,7 +4,7 @@ Highligths
 -   Stateful Model
     -   manejo automático de estado en sesión
     -   no requiere conocer scopes: session, request, etc.
--   Modelo de componentes al estilo [JFace: Controles y binding](swt.html)
+-   Modelo de componentes al estilo [SWT](jface--controles-y-binding.html)
     -   soporta extensiones trabajando con técnicas OO conocidas
 -   Transparencia en la comunicación con el server
     -   Al igual que en cliente pesado, los métodos "onClick()" son invocados automáticamente por el framework
