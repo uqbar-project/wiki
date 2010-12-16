@@ -14,9 +14,9 @@ Con la aplicacion parcial podes obtener nuevas funciones, y siempre a patir de l
 
 Por ejemplo, + , recibe dos numeros y devuelve otro; yo puedo aplicar parcialmente asi (5+); y obtuve una nueva funcion; pero + no es de orden superior.
 
-In the untyped lambda calculus, all functions are higher-order; in a typed lambda calculus, from which most functional programming languages are derived, higher-order functions are generally those with types containing more than one arrow. In functional programming, higher-order functions that return other functions are said to be curried.
+En el Cálculo lambda[1](http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda) no tipado todas las funciones son de orden superior. En el cálculo lambda con tipado, desde el cual la mayoría de los lenguajes funcionales se derivan, las funciones de orden superior son generalmente aquellas cuyos tipos de parámetros "contienen una o más flechitas"
 
-In mathematics these are also known as operators or functionals. The derivative in calculus is a common example, since it maps a function to another function.
+En programación funcional, las funciones de orden superior que devuelven otras funciones se denominan currificadas [2](http://es.wikipedia.org/wiki/Currificaci%C3%B3n). En matemática éstas también se conocen como operadores o *functionals*. Un ejemplo común es el cálculo derivativo, ya que mapea una función a otra función.
 
 ### Paradigma Lógico
 
