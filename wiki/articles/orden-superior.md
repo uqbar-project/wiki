@@ -24,16 +24,15 @@ Decimos que orden superior es porque para el p. logico: un predicado es de Orden
 
 ### Paradigma Estructurado
 
-In the imperative programming paradigm, software can achieve some of the same algorithmic results as are obtained through use of higher-order functions by dynamically executing code (sometimes called "Eval" or "Execute" operations) in the scope of evaluation. Unfortunately there are significant drawbacks to this approach:
+En el paradigma estructurado, una porción de código puede alcanzar resultados algorítmicos como si fuesen obtenidos a través de funciones de orden superior, ejecutando código dinámicamente (a veces denominadas operaciones *"Eval"* o *"Execute"*) durante la evaluación. Desafortunadamente hay limitaciones al alcance del mismo:
 
-`   * The argument code to be executed is usually not statically typed; these languages generally rely on dynamic typing to determine the well-formedness and safety of the code to be executed.`
-`   * The argument is usually provided as a string, the value of which may not be known until run-time. This string must either be compiled during program execution (using just-in-time compilation) or evaluated by interpretation, causing some additional overhead at run-time, and usually generating less efficient code.`
+-   El código en el argumento a ser ejecutado usualmente no posee tipado estático; estos lenguajes generalmente dejan relegado al tipado dinámico la determinación de la seguridad y la buena disposición del código a ser ejecutado.
 
-Macros can also be used to achieve some of the effects of higher order functions. However, macros cannot easily avoid the problem of variable capture; they may also result in large amounts of duplicated code, which can be more difficult for a compiler to optimize. Macros are generally not strongly typed, although they may produce strongly typed code.
+<!-- -->
 
-Objects in the object-oriented programming paradigm can be used as higher order functions – a method of an object acts in many ways like a function, and a method may take objects (containing methods) as arguments or return objects with methods. Objects often carry additional run-time overhead compared to pure functions, however. Language syntax can introduce additional difficulties; an object must be created to hold any parameters that are functions, and any resulting function must also have an associated object.
+-   El parámetro es usualmente provisto como un *String*, cuyo valor no puede ser conocido hasta el momento de ejecución. Este string debe ser o bien compilado durante la ejecución del programa (usando compilación *just-in-time*) o bien evaluado durante la interpretación, causando un *overhead* adicional y usualmente generando código menos eficiciente.
 
-The C standard function, qsort, is an example of this.
+También pueden ser utilizadas *Macros* para lograr algunos de los efectos del orden superior. No obstante ello, estas macros no pueden evitar fácilmente el problema de la captura de variables; también resultan en grandes cantidades de código duplicado, el cual puede ser más difícil de optimizar para un compilador. Generalmente las Macros no son fuertemente tipadas, aunque pueden producir código fuertemente tipado.
 
 ### ¿Y los objetos?
 
