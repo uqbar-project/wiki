@@ -177,4 +177,7 @@ Le ponen el nombre que quieran y la extensión la pueden dejar como txt o cambia
 
 ### Importar un archivo .st
 
-Botón derecho sobre el fondo (World Menú) -&gt; Tools -&gt; File Browser. Eligen el archivo y le dan **Install**
+-   Arrastrar el archivo .st y soltarlo sobre la imagen de Pharo. Le dan **FileIn Entire File** y ¡Listo!
+-   Otra forma: Botón derecho sobre el fondo (World Menú) -&gt; Tools -&gt; File Browser.
+
+Eligen el archivo y le dan **Install**
