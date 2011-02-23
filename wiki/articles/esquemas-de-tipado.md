@@ -1,4 +1,5 @@
-En resumen planteamos tres clasificaciones:
+Clasificaciones
+---------------
 
 -   En cuanto a la forma de chequeo puede ser estático/compile time, dinámico/runtime o nada.
 -   En cuanto a la forma de constituir un tipo puede ser nominal o estructural (no sé si agregar dependientes, también hay más variantes).
