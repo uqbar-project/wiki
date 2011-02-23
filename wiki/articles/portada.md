@@ -12,6 +12,7 @@ Si sos un estudiante en busca del material de una materia, tal vez te convenga i
 -   [Técnicas Avanzadas de Programación](tecnicas-avanzadas-de-programacion.html)
 -   [Programación de Interfaces de Usuario](programacion-de-interfaces-de-usuario.html)
 -   [Algoritmos III](algo3-temario.html)
+-   [Programación con Herramientas Modernas](programacion-con-herramientas-modernas.html)
 
 Para el que busca algo que vaya más allá de lo visto en las clases aquí hay una lista con algunos artículos sobre [Otros Temas Interesantes de Programación](otros-temas-interesantes-de-programacion.html). Finalmente, otra posibilidad es browsear nuestra colección de propuestas de [Herramientas Útiles](herramientas-utiles.html).
 
