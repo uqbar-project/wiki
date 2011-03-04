@@ -12,6 +12,11 @@ Una definición alternativa dice: Hay transparencia referencial cuando al realiz
 Efecto de Lado  
 Hay efecto de lado cuando un cambio de estado sobrevive a la realización de una operación. Por ejemplo, una operación puede modificar una variable global, modificar uno de sus argumentos, escribir datos a la pantalla o a un archivo, o hacer uso de otras operaciones que tienen efecto de lado.
 
+Otra definición válida es:
+
+  
+Si le sacás una foto al sistema (llamémosla F1), después realizas la operación de tu interés, y le volvés a sacar una foto al sistema (F2). Si F1 y F2 son distintas =&gt; la operación que hiciste tiene efecto de lado.
+
 <!-- -->
 
 Asignación Destructiva  
