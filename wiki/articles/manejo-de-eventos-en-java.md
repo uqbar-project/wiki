@@ -4,5 +4,5 @@ Pueden encontrar más documentación al respecto en:
 
 -   Tutorial de Java sobre [Bound Properties](http://download.oracle.com/javase/tutorial/javabeans/properties/bound.html)
 -   Aquí hay [otro tutorial sobre Bound Properties](http://enos.itcollege.ee/~jpoial/docs/tutorial/javabeans/properties/bound.html)
--   Documentación sobre \[[1](http://www.vogella.de/articles/EclipseDataBinding/article.html) databinding de eclipse\]
+-   Documentación sobre [databinding de eclipse](http://www.vogella.de/articles/EclipseDataBinding/article.html)
 
