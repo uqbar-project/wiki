@@ -1,4 +1,7 @@
-== ¿Qué entendemos por Binding? El binding es la relación que se establece entre la invocación a un procedimiento-función-método y el código que se ejecuta. Otro nombre que le damos es *dispatch*.
+¿Qué entendemos por Binding?
+----------------------------
+
+El binding es la relación que se establece entre la invocación a un procedimiento-función-método y el código que se ejecuta. Otro nombre que le damos es *dispatch*.
 
 Es algo central al paradigma de objetos, porque es lo que da pie al polimorfismo. Si se acuerdan de que cuando comenzamos con objetos diferenciamos el concepto de objeto y el de mensaje: bueno el binding es en definitiva el mecanismo que define qué método se ejecuta al enviar un mensaje. El method lookup es una de los mecanismos que llevan a cabo el binding pero no es la única.
 
