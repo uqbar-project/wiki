@@ -45,6 +45,9 @@ Las interfaces cumplen dos funciones:
 
 En Smalltalk no necesito hacer una indicación explícita de que dos objetos sean polimórficos, basta con que entiendan algún(os) mensaje(s) en común. Vemos el ejemplo de los bloques y los símbolos.
 
+Tipos nominales y estructurales
+-------------------------------
+
 Eso nos lleva a una clasificación más: tipos estructurales vs. tipos nominales. Llamamos nominales a los tipos que tienen un nombre. En Java los tipos son nominales están dados por las clases (concretas o abstractas) y por las interfaces. En Smalltalk los tipos son estructurales, por ejemplo todos los objetos que entienden \#value son un tipo. La nominalidad del Java se ve en que si hago dos interfaces con los mismos mensajes, los objetos que implementan la primera no son polimórficos con los objetos que implementan la segunda.
 
 Algunas combinaciones posibles
