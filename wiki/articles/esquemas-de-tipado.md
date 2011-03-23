@@ -1,7 +1,12 @@
-¿Qué es un tipo?
+Introducción
+------------
+
+### ¿Qué es un tipo?
 
 -   conjunto de valores o "elementos de ese conjunto"
 -   conjunto de operaciones que puedo realizar sobre ellos
+
+### Objetivos
 
 Los objetivos de un sistema de tipos son:
 
@@ -78,3 +83,4 @@ Algunos ejemplos
 -   ObjectiveC puede ser estático o dinámico si usas los ids.
 -   C aparenta ser estático, pero ante casteos yo veo que el tipado es nulo.
 
+*E**s**c**r**i**b**e**a**q**u**í**u**n**a**f**ó**r**m**u**l**a*
