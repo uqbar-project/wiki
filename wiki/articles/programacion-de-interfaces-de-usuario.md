@@ -6,6 +6,7 @@ Teoría de la materia
 Los apuntes de estas materias están en construcción así que por ahora tenemos solamente algunos temas sueltos:
 
 -   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
+-   [Patrones de diseño de interfaces de usuario](patrones-de-diseno-de-interfaces-de-usuario.html)
 
 Recursos sobre tecnología
 -------------------------
