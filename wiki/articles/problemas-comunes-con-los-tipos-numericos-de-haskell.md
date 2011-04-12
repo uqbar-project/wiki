@@ -21,6 +21,10 @@ Esto funciona siempre que yo quiera hacer una división no-entera y uno de los p
 
 `division xs = sum xs / fromIntegral (length xs)`
 
+Ó bien:
+
+`division xs = fromIntegral (sum xs) / fromIntegral (length xs)`
+
 La historia completa
 --------------------
 
