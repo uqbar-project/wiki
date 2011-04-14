@@ -2,19 +2,31 @@ La posibilidad de definir funciones utilizando aplicación parcial en la propia 
 
 Por ejemplo la función es múltiplo así definida tiene dos parámetros:
 
-esMultiploDe a
-==============
+`` esMultiploDe a = (==0).( `mod` a) ``
 
-(==0).( \`mod\` 5)
+La regla básica
+---------------
 
-Una regla más o menos intuitiva es que una función así definida tiene tantos parámetros como la suma entre: - Los parámetros que aparecen a la izquierda del igual (en este caso 1 parámetro: a). - Los parámetros que "le faltan" a la expresión a la derecha del igual (en este caso eso es una composición, por lo tanto una función que recibe un parámetro, es decir "le falta" un parámetro. = 2 parámetros.
+La regla es que una función como esa tiene tantos parámetros como la suma entre:
 
-Fíjense que en la forma más tradicional de escribir funciones, a la expresión a la derecha del igual no le falta ningún parámetro:
+-   Los parámetros que aparecen a la izquierda del igual.
+-   Los parámetros que "le faltan" a la expresión a la derecha del igual.
 
-siguiente x = x + 1
+Analizando el caso anterior vemos:
 
-Se ve claramente que x+1 es una expresión que denota un valor y no una función, no le faltan parámetros, como sí le faltarían si yo pongo (+1) o algo así.
+-   Un parámetro a la izquierda del igual: a. (Esta parte es la más directa.)
+-   La expresión de la derecha es una composición y por lo tanto una función a-&gt;b entonces le falta un parámetro.
+-   En total la función recibe dos parámetros.
 
-Por eso esa expresión es equivalente a:
+Un detalle adicional
+--------------------
 
-siguiente = (+1)
+Para no confundirse, en la forma más tradicional de escribir funciones a la expresión a la derecha del igual no le falta ningún parámetro:
+
+`siguiente x = x + 1`
+
+Se ve claramente que x+1 es una expresión que denota un valor numérico y no una función, o dicho de otra manera "no le faltan parámetros". En cambio sí le faltarían si uno pusiera por ejemplo (+1).
+
+La definición anterior es totalmente equivalente a:
+
+`siguiente = (+1)`
