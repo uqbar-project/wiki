@@ -15,6 +15,7 @@ Notas sobre el lenguaje Haskell
 -   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
 -   [¿Unexpected ';'?](-unexpected-----.html)
+-   [Cantidad de parámetros de una función en Haskell](cantidad-de-parametros-de-una-funcion-en-haskell.html)
 
 Cuestiones más avanzadas
 ------------------------
