@@ -1,5 +1,5 @@
-Funciones de orden superior
----------------------------
+Funciones y valores
+-------------------
 
 Es importante diferenciar:
 
@@ -11,3 +11,10 @@ Por ejemplo
 `sonTodasPasables pelicula = all (puntajePromedio pelicula > 6) (snd pelicula)`
 
 tiene un error porque la función espera como parámetro una función, mientras que **no es una función** (denota un valor booleano).
+
+\_ Otro ejemplo:
+
+`puntajes pelicula = snd pelicula`
+`esRiesgosa = elem 1 puntajes`
+
+¿Cuál es el problema? La función espera como segundo parámetro **una lista**, sin embargo la expresión no es una lista, sino *una función que devuelve una lista*.
