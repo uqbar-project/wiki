@@ -19,4 +19,4 @@ tiene un error porque la función espera como parámetro una función, mientras 
 
 ¿Cuál es el problema? La función espera como segundo parámetro **una lista**, sin embargo la expresión no es una lista, sino *una función que devuelve una lista*.
 
-> No es lo mismo un booleano/entero/string/etc que una función que devuelve un booleano/entero/string/etc
+> **'No es lo mismo un booleano/entero/string/etc que una función que devuelve un booleano/entero/string/etc**'
