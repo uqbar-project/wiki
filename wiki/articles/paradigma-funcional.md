@@ -16,6 +16,7 @@ Notas sobre el lenguaje Haskell
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
 -   [¿Unexpected ';'?](-unexpected-----.html)
 -   [Cantidad de parámetros de una función en Haskell](cantidad-de-parametros-de-una-funcion-en-haskell.html)
+-   [Errores comunes al comenzar a trabajar con Haskell](errores-comunes-al-comenzar-a-trabajar-con-haskell.html)
 
 Cuestiones más avanzadas
 ------------------------
