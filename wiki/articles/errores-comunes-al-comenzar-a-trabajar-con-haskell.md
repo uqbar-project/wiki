@@ -10,4 +10,4 @@ Por ejemplo
 
 `sonTodasPasables pelicula = all (puntajePromedio pelicula > 6) (snd pelicula)`
 
-tiene un error porque la función espera como parámetro una función, mientras que no lo es (denota un valor booleano).
+tiene un error porque la función espera como parámetro una función, mientras que **no es una función** (denota un valor booleano).
