@@ -75,6 +75,34 @@ Y en el segundo se aplicaría así:
 
 `(head . filter even) [1..20]`
 
+Cuándo usar composición
+-----------------------
+
+¿Cuál es la diferencia entre estas dos definiciones?
+
+`odd1 n = not (even n)`
+`odd2 = not ◦ even`
+
+En un primer nivel de análisis, ambas definiciones son **equivalentes**.
+
+Sin embargo, si analizamos solamente las expresiones a la derecha del igual encontramos que
+
+`not (even n) `
+
+y
+
+`not . even`
+
+**son distintas**: la primera denota un *valor booleano* (True o False) mientras que la segunda denota *una función*.
+
+Esta segunda expresión es más poderosa que la primera, porque me permite que yo la use en funciones de orden superior, por ejemplo
+
+`filter (not.even) [1,2,3,4,5,6,7,8,9]`
+
+En cuanto a la definición de función , no tiene grandes ventajas sobre salvo que nos ayuda a entrenarnos en el uso de la composición, que después podemos utilizar para otras cosas.
+
+Aunque en funciones más complejas puede tener su utilidad, para un ejemplo de esto vean: [Append como "foldr f a"](Append_como_"foldr_f_a" "wikilink").
+
 Errores comunes
 ---------------
 
