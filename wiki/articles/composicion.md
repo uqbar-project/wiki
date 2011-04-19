@@ -22,7 +22,7 @@ Es decir que lo que devuelve g, hay que aplicárselo a f. A tener en cuenta, tan
 
 Esta formada por la composición de (2+) que recibe un numero y devuelve ese numero sumado con 2 y (3\*) que recibe un numero y devuelve ese numero multiplicado por 3. Esa composición te devuelve una nueva función que recibe un número y te devuelve el resultado de primero multiplicar ese numero por 3 y despues sumarle 2
 
-`(2+) . (3*) 2       (espero se entiendan mis flechitas xD)`
+`((2+) . (3*)) 2       (espero se entiendan mis flechitas xD)`
 `  ^  |   ^  |`
 `  |__|   |__|`
 ` `
