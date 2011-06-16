@@ -6,6 +6,7 @@ Técnicas Avanzadas de Programación
 -   [Manejo de Errores](manejo-de-errores.html)
 -   [Ciclo de vida de un objeto](ciclo-de-vida-de-un-objeto.html)
 -   [Bibliografía](bibliografia-sobre-programacion-avanzada-orientada-a-objetos.html)
+-   [Double dispatch](double-dispatch.html)
 
 ### Consejos prácticos
 
