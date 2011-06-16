@@ -1,0 +1,1 @@
+[http://www.cincomsmalltalk.com/userblogs/ralph/blogView?showComments=true&printTitle=Double\_dispatch&entry=3485318158 Artículo de Ralph Johnson](http---www-cincomsmalltalk-com-userblogs-ralph-blogview-showcomments-true-printtitle-double-dispatch-entry-3485318158-articulo-de-ralph-johnson.html)
