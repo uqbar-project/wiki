@@ -20,7 +20,9 @@ En caso de hacerlo desde el eclipse, la forma de hacerlo es:
 
 -   Ir a la perspectiva "SVN Repository Exploring"
 -   En la vista "SVN Repositories" hacer click derecho sobre algún espacio en blanco y ahí elegir la opción "New" -&gt; "Repository Location"
--   Ingresar la URL del repositorio svn y aceptar.
+-   Ingresar la URL del repositorio svn y aceptar
+
+Si varios proyectos comparten el mismo repositorio, una opción válida es definir el Repositorio de SVN desde una carpeta padre. *Ejemplo:* <http://svn2.xp-dev.com/svn/mi_repositorio/>
 
 ### Checkout desde la consola en Linux
 
@@ -39,4 +41,4 @@ Una vez hecho todo esto se debe importar el proyecto en el eclipse (import -&gt;
 Adaptar un proyecto maven para ser usado desde el Eclipse
 ---------------------------------------------------------
 
-En caso de contar con el plugin esto debería realizarse automáticamente al hacer "checkout as maven project". Si no ocurre esto la forma de obligarlo a refrescar sería deshabilitar el manejo de dependencias y volver a habilitarlo (botón derecho sobre el proyecto, submenú "maven").
+En caso de contar con el plugin esto debería realizarse automáticamente al hacer "checkout as maven project" (o "checkout" a secas dependiendo del IDE / Plugin que tengan instalados). Si no ocurre esto la forma de obligarlo a refrescar sería deshabilitar el manejo de dependencias y volver a habilitarlo (botón derecho sobre el proyecto, submenú "maven &gt; enable dependency management").
