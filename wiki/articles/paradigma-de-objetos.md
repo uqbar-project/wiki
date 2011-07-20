@@ -23,10 +23,6 @@ Objetos básicos
 
 -   [Manejo de booleanos](manejo-de-booleanos.html)
 -   [min: y max:](min--y-max-.html)
--   [Errores comunes con select: y collect:](errores-comunes-con-select--y-collect-.html)
--   [Cómo hacer para que de un objeto muestre lo que yo quiero](como-hacer-para-que-de-un-objeto-muestre-lo-que-yo-quiero.html)
--   [Creación de objetos, con parámetros](creacion-de-objetos--con-parametros.html)
--   <inject:into:>
 
 Cosas que pueden servir para pensar en cómo modelar un enunciado
 ----------------------------------------------------------------
