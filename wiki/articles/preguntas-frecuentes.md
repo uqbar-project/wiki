@@ -29,7 +29,7 @@ Evalué mi código, me tiró un error y no sé lo que significa
 
 ***MessageNotUnderstood***
 
-**Problema:** Se mandó un mensaje el receptor no entiende.
+**Problema:** Se mandó un mensaje que el receptor no entiende.
 
 **Posibles soluciones:**
 
