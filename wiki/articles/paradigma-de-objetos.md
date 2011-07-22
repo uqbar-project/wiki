@@ -29,6 +29,7 @@ Colecciones
 
 -   [Errores comunes con select: y collect:](errores-comunes-con-select--y-collect-.html)
 -   <inject:into:>
+-   [Algunas cosas sobre Arrays](algunas-cosas-sobre-arrays.html)
 
 Cosas que pueden servir para pensar en cómo modelar un enunciado
 ----------------------------------------------------------------
