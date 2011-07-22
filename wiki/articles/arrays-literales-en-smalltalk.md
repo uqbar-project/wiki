@@ -23,7 +23,7 @@ Uno ingenuamente se pensaría que eso da un array de un elemento (el objeto 7), 
 
 Para crear arrays con objetos que no son literales, se deben utilizar arrays dinámicos (en vez de escribir \#() se escribe { }, en vez de separarse los elementos con espacio se separan con punto)
 
-`  {4 + 3} "Esto es un array con un solo elemento, el número 7}`
+`  {4 + 3} "Esto es un array con un solo elemento, el número 7"`
 
 `  {4 + 3 . 'hola' size . Date today year} "Esto es un array con tres elementos: 7, 4 y 2011"`
 
