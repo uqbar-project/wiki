@@ -13,6 +13,16 @@ Las variables de instancia son propias de cada objeto, si cambio una referencia 
 
 Las variables de clase empiezan con mayuscula, y si queremos jugar con los objetos que referencian tenemos que usar accesors (no esta bueno usar directamente la variable desde la instancia porque no es algo que conoce la instancia, sino que la conoce la clase).
 
+Por ejemplo:
+
+` #Saqueo`
+`   >>esUtil: unPirata`
+`     ^(unPirata dineroDisponible < Saqueo dinero) and: [ unPirata teAnimasASaquear: objetivo].`
+` (MC)>> dinero`
+`      ^Dinero`
+` (MC)>> dinero: unaCantidad`
+`      Dinero:= unaCantidad`
+
 Métodos de clase
 ----------------
 
