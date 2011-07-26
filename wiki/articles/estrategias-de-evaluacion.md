@@ -9,39 +9,39 @@ La operación que realizamos en funcional es aplicar funciones, la idea del tema
 Primer ejemplo
 ==============
 
-masUno x = x + 1
+`  masUno x = x + 1`
 
 La expresión masUno (2\*3) puede ser evaluada de la siguiente forma
 
-masUno (2\*3)
+`  masUno (2*3)`
 
-{ aplicamos \* }
+-   aplicamos \*
 
-masUno 6
+`  masUno 6`
 
-{aplicamos masUno }
+-   aplicamos masUno
 
-6 + 1
+`  6 + 1`
 
-{ aplicamos + }
+-   aplicamos +
 
-7
+`  7`
 
 Alternativamente podemos evaluar la misma expresión pero aplicando las funciones en el orden inverso
 
-masUno (2\*3)
+`  masUno (2*3)`
 
-{ aplicamos masUno }
+-   aplicamos masUno
 
-(2\*3) + 1
+`  (2*3) + 1`
 
-{ aplicamos \* }
+-   aplicamos \*
 
-6 + 1
+`  6 + 1`
 
-{ aplicamos + }
+-   aplicamos +
 
-7
+`  7`
 
 No importa el orden en que apliquemos las funciones vamos a llegar al mismo resultado final. Esto no solo vale para ejemplos sencillos sino que se cumple siempre en Haskell.
 
@@ -51,50 +51,52 @@ Si tenemos la expresión n + (n := 1) y n empieza apuntando a 0.
 
 Si empezamos a evaluar de izquierda a derecha
 
-n + (n := 1)
+` n + (n := 1)`
 
-{aplicamos n }
+-   aplicamos n
 
-0 + (n := 1)
+` 0 + (n := 1)`
 
-{aplicamos := }
+-   aplicamos :=
 
-0 + 1
+` 0 + 1`
 
-{aplicamos + }
+-   aplicamos +
 
-1
+` 1`
 
 Si empezamos a evaluar de derecha a izquierda
 
-n + (n:= 1)
+` n + (n:= 1)`
 
-{aplicamos := }
+-   aplicamos :=
 
-n + 1
+` n + 1`
 
-{aplicamos n }
+-   aplicamos n
 
-1 + 1
+` 1 + 1`
 
-{aplicamos + }
+-   aplicamos +
 
-2
+` 2`
 
-Como se puede observar, si evaluamos las expresiones con distintas estrategias obtenemos resultados distintos; esto sucede por que las operaciones involucradas no tienen transparencia referencial en este caso particular debido a la introducción de una asignación destructiva (más sobre esto en la próxima clase teórica).
+Como se puede observar, si evaluamos las expresiones con distintas estrategias obtenemos resultados distintos; esto sucede porque las operaciones involucradas no tienen transparencia referencial en este caso particular debido a la introducción de una asignación destructiva (más sobre esto en la próxima clase teórica).
 
 Estrategias básicas
 -------------------
 
 A una expresión que consta de una función aplicada a uno o más parámetros y que puede ser "reducida" aplicando dicha función la vamos a llamar Redex (Reducible Expression). Se le dice reducción al hecho de aplicar la función no necesariamente vamos a obtener una expresión "más corta" como veremos más adelante. Consideremos la función mult que tiene como dominio una tupla de 2 números
 
-mult (x,y) = x \* y
+` mult (x,y) = x * y`
 
 Si queremos reducir la expresión mult (1+2,2+3) está expresión contiene 3 redexs
 
-1. 1+2 (la función + aplicada a 2 parámetros) 2. 2+3 (la función + aplicada a 2 parámetros) 3. mult (1+2,2+3) (la función mult aplicada a 1 parámetro que es una tupla)
+-   1. 1+2 (la función + aplicada a 2 parámetros)
+-   2. 2+3 (la función + aplicada a 2 parámetros)
+-   3. mult (1+2,2+3) (la función mult aplicada a 1 parámetro que es una tupla)
 
-Si queremos evaluar la expresión qué estrategia usamos?
+Si queremos evaluar la expresión ¿qué estrategia usamos?
 
 De adentro hacia afuera
 =======================
