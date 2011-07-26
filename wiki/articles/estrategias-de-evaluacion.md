@@ -299,9 +299,9 @@ Visión operativa
 
 A efectos de resumir lo que vimos hasta ahora vamos a entender lo siguiente ...
 
-Lazy Evaluation: con esta estrategia los parámetros solo se resuelven cuando son necesarios (y son evaluados solo lo necesario). También conocida como evaluación perezosa o diferida.
+**Lazy Evaluation**: con esta estrategia los parámetros solo se resuelven cuando son necesarios (y son evaluados solo lo necesario). También conocida como **evaluación perezosa** o **diferida**.
 
-A la estrategia call-by-value (y sus variantes) también se las conoce como Eager Evaluation. Eager Evaluation: con esta estrategia los parámetros tienen que resolverse antes de aplicar la función. También conocida como evaluación ansiosa.
+A la estrategia call-by-value (y sus variantes) también se las conoce como Eager Evaluation. **Eager Evaluation**: con esta estrategia los parámetros tienen que resolverse antes de aplicar la función. También conocida como **evaluación ansiosa**.
 
 Estructuras infinitas
 =====================
