@@ -371,26 +371,96 @@ Ejemplos
 
 Dada la siguiente definición de take
 
-take 0 \_ = \[\] take \_ \[\] = \[\] take (n+1) (x:xs) = x : (take n xs)
+` take 0 _ = []`
+` take _ [] = []`
+` take (n+1) (x:xs) = x : (take n xs)`
 
-take 3 \[1..\] { aplicamos .. } take 3 (1:\[2..\]) { aplicamos take - 3ra línea } 1 : (take 2 \[2..\]) { aplicamos .. } 1 : (take 2 (2:\[3..\])) { aplicamos take - 3ra línea } 1 : ( 2 : (take 1 \[3..\])) { aplicamos .. } 1 : ( 2 : (take 1 (3:\[4..\]))) { aplicamos take - 3ra línea } 1 : ( 2 : ( 3 : (take 0 \[ 4.. \])))) { aplicamos take - 1ra lína } 1 : ( 2 : ( 3 : \[\] ))) = \[1,2,3\]
+` take 3 [1..]`
+
+-   aplicamos ..
+
+` take 3 (1:[2..])`
+
+-   aplicamos take - 3ra línea
+
+` 1 : (take 2 [2..])`
+
+-   aplicamos ..
+
+` 1 : (take 2 (2:[3..]))`
+
+-   aplicamos take - 3ra línea
+
+` 1 : ( 2 : (take 1 [3..]))`
+
+-   aplicamos ..
+
+` 1 : ( 2 : (take 1 (3:[4..])))`
+
+-   aplicamos take - 3ra línea
+
+` 1 : ( 2 : ( 3 : (take 0 [ 4.. ]))))`
+
+-   aplicamos take - 1ra línea
+
+` 1 : ( 2 : ( 3 : [] ))) = [1,2,3]`
 
 Vamos a otro ejemplo
 
-take 3 \[4+5,2/0,3\*2\] { aplicamos el + (porque dice x: en take 3ra línea) } take 3 \[9,2/0,3\*2\] { aplicamos take - 3ra línea } 9 : take 2 \[2/0,3\*2\] { aplicamos / } 9 : ERROR DIVISON BY ZERO !!!
+` take 3 [4+5,2/0,3*2]`
+
+-   aplicamos el + (porque dice x: en take 3ra línea)
+
+` take 3 [9,2/0,3*2]`
+
+-   aplicamos take - 3ra línea
+
+` 9 : take 2 [2/0,3*2]`
+
+-   aplicamos /
+
+` 9 : ERROR DIVISON BY ZERO !!!`
 
 Dada la definición de (!!)
 
-(!!) 0 (x:\_) = x (!!) (n+1) (\_:xs) = (!!) n xs
+`(!!) 0 (x:_) = x`
+`(!!) (n+1) (_:xs) = (!!) n xs`
 
-(!!) 2 { \_:xs ) (!!) 1 { (!!) 0 { (!!) 0 { \[4+5,2/0,3\*2\] aplicamos el !! no es necesario aplicar el + porque en (!!) dice \[2/0,3\*2\] aplicamos el !! no es necesario aplicar la / por lo anterior } \[3\*2\] aplicamos \* porque la primer línea de !! lo pide } \[6\] aplicamos !! }
+`(!!) 2 [4+5,2/0,3*2]`
 
-&gt; head (filter (3&lt;) \[1..\]) 4
+-   aplicamos el !! (no es necesario aplicar el + porque en (!!) dice (\_:xs) )
+
+`(!!) 1 [2/0,3*2]`
+
+-   aplicamos el !! (no es necesario aplicar la / por lo anterior)
+
+`(!!) 0 [3*2]`
+
+-   aplicamos \* (porque la primer línea de !! lo pide)
+
+`(!!) 0 [6]`
+
+-   aplicamos !!
+
+`6`
+
+` > head (filter (3<) [1..])`
+`   4`
 
 Más ejemplos heavies
 
-primos = achurar \[2..\] achurar (x:xs) = x : achurar \[e | e &lt;- xs , e \`mod\` x \\= 0\] &gt; primos \[1,3,5,7,11,13...........
+` primos = achurar [2..]`
+``  achurar (x:xs) = x : achurar [e | e <- xs , e `mod` x \= 0] ``
 
---Si queremos obtener los primeros 19 múltiplos de 13 &gt; \[13,26..24\*13\] \[13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247\]
+` > primos`
+`  [1,3,5,7,11,13...........`
 
--- O bien &gt; take 24 \[13,26..\] \[13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247\]
+--Si queremos obtener los primeros 19 múltiplos de 13
+
+` > [13,26..24*13]`
+`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
+
+-- O bien
+
+` > take 24 [13,26..]`
+`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
