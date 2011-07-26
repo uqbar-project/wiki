@@ -352,15 +352,19 @@ Listas infinitas
 
 Ya vimos la lista de unos que es "infinita", ahora veamos como hacer una lista que tenga todos los números naturales
 
-naturalesDesde x = x : naturalesDesde (x+1)
+` naturalesDesde x = x : naturalesDesde (x+1)`
 
-&gt; naturalesDesde 1 \[1,2,3,4,5,6,7,8,9,...........
+` > naturalesDesde 1`
+`   [1,2,3,4,5,6,7,8,9,...........`
 
-Haskell trae un atajo para esto naturalesDesde x = \[x..\]
+Haskell trae un atajo para esto
+
+` naturalesDesde x = [x..]`
 
 También sirve para hacer listas con alguna condición entre dos de sus elementos consecutivos
 
-&gt; \[1,3..\] \[1,3,5,7,9,11,.........
+` > [1,3..]`
+`   [1,3,5,7,9,11,.........`
 
 Ejemplos
 ========
