@@ -105,9 +105,23 @@ También conocida como call-by-value
 
 Una de las estrategias más comunes es comenzar desde adentro hacia afuera (innermost evaluation), esta estrategia elige el redex que está "más adentro" entendiendo por esto al redex que no contiene otro redex. Si existe más de un redex que cumple dicha condición se elige el que está más a la izquierda. Vamos al ejemplo
 
-mult (1+2,2+3) { aplicamos mult (3,2+3) { aplicamos mult (3,5) { aplicamos 3 \* 5 { aplicamos 15 el primer + } el + } mult }
+` mult (1+2,2+3)`
 
--   }
+-   aplicamos el primer +
+
+` mult (3,2+3)`
+
+-   aplicamos el +
+
+` mult (3,5)`
+
+-   aplicamos mult
+
+` 3 * 5`
+
+-   aplicamos \*
+
+` 15`
 
 Esta estrategia me asegura que los parámetros de una función están completamente evaluados antes de que la función sea aplicada. Por eso se dice que los parámetros se pasan por valor.
 
