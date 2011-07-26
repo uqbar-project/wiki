@@ -308,19 +308,42 @@ Estructuras infinitas
 
 Pensemos en la siguiente definición
 
-unos = 1 : unos
+`  unos = 1 : unos`
 
 (A partir de ahora vamos a pensar que evaluamos todo en Haskell así que la estrategia que usamos es Lazy Evaluation)
 
-unos { aplicamos unos } 1 : unos { aplicamos unos } 1 : ( 1 : unos ) { aplicamos unos } ...
+` unos`
 
-En Haskell &gt; unos \[1,1,1,1,1,1,1........
+-   aplicamos unos
+
+` 1 : unos`
+
+-   aplicamos unos
+
+` 1 : ( 1 : unos )`
+
+-   aplicamos unos
+
+...
+
+En Haskell
+
+`  > unos`
+`   [1,1,1,1,1,1,1........`
 
 Como se puede ver la evaluación de unos no termina. A pesar de esto podemos usar la expresión unos dentro de nuestro programa y aplicarla a otras funciones. Por ejemplo
 
 Siendo head (x:\_) = x y la expresión head unos
 
-head unos { deberíamos aplicar head pero como head me fuerza a tener la lista separa en cabeza:cola tenemos que evaluar unos por el pattern-matching } head (1:unos) { aplicamos head } 1
+` head unos`
+
+-   deberíamos aplicar head pero como head me fuerza a tener la lista separada en cabeza:cola tenemos que evaluar unos por el pattern-matching
+
+` head (1:unos)`
+
+-   aplicamos head
+
+` 1`
 
 Con este ejemplo podemos ver que unos no es una lista infinita sino potencialmente infinita, si aplicamos sobre ella funciones que no la fuerzan a evaluarse por completo la computación termina (eso sonó apocalíptico). La potencia de Lazy Evaluation está en que la expresión unos se evalúa solo lo necesario para que pueda usarla la función que la recibe como parámetro.
 
