@@ -132,9 +132,28 @@ También conocida como call-by-name
 
 Otra de las estrategias más comunes es comenzar desde afuera hacia adentro (outtermost evaluation), esta estrategia elige el redex que está "más afuera" entendiendo por esto al redex que no esta contenido en otro redex. Si existe más de un redex que cumple dicha condición se elige el que está más a la izquierda. Vamos al ejemplo
 
-mult (1+2,2+3) { aplicamos mult } (1+2) \* (2+3) { aplicamos el primer + } Si seguimos lo que dijimos arriba deberíamos aplicar primero el \* pero vamos a explicar porque no lo hacemos más abajo 3 \* (2+3) { aplicamos + } 3 \* 5 { aplicamos \* } 15
+mult (1+2,2+3)
 
-Usando esta estrategia las funciones se aplican antes que los parámetros sean evaluados. Por esto se dice que los parámetros se pasan por nombre. Nota: Hay que tener en cuenta que muchas funciones que ya vienen con Haskell requieren que sus parámetros estén evaluados antes de que la función sea aplicada, incluso cuando usamos la estrategia "de afuera hacia adentro". Por ejemplo, el operador \* y el + no pueden ser aplicados hasta que sus dos parámetros hayan sido evaluados a números. A las funciones que cumplen con esta propiedad las vamos a llamar funciones estrictas. Funciones estrictas que nos van a interesar a nosotros • Operaciones aritméticas (+,\*,/,etc.) • Pattern-Matching (sobre listas, tuplas, etc.)
+-   aplicamos mult
+
+` (1+2) * (2+3)`
+
+-   aplicamos el primer + (Si seguimos lo que dijimos arriba deberíamos aplicar primero el \* pero vamos a explicar porque no lo hacemos más abajo)
+
+`  3 * (2+3)`
+
+-   aplicamos +
+
+`  3 * 5`
+
+-   aplicamos \*
+
+`  15`
+
+Usando esta estrategia las funciones se aplican antes que los parámetros sean evaluados. Por esto se dice que los parámetros se pasan por nombre. Nota: Hay que tener en cuenta que muchas funciones que ya vienen con Haskell requieren que sus parámetros estén evaluados antes de que la función sea aplicada, incluso cuando usamos la estrategia "de afuera hacia adentro". Por ejemplo, el operador \* y el + no pueden ser aplicados hasta que sus dos parámetros hayan sido evaluados a números. A las funciones que cumplen con esta propiedad las vamos a llamar funciones estrictas. Funciones estrictas que nos van a interesar a nosotros:
+
+-   Operaciones aritméticas (+,\*,/,etc.)
+-   Pattern-Matching (sobre listas, tuplas, etc.)
 
 Evaluaciones que no terminan
 ----------------------------
