@@ -232,15 +232,43 @@ Visión técnica
 
 Si tenemos la siguiente definición
 
-alCuadrado x = x \* x
+` alCuadrado x = x * x`
 
 Vamos a evaluar la expresión alCuadrado (2\*3) usando call-by-value
 
-alCuadrado (1+2) { aplicamos + } alCuadrado 3 { aplicamos alCuadrado } 3 \* 3 { aplicamos \* } 9
+` alCuadrado (1+2)`
+
+-   aplicamos +
+
+` alCuadrado 3`
+
+-   aplicamos alCuadrado
+
+` 3 * 3`
+
+-   aplicamos \*
+
+` 9`
 
 Ahora vamos a evaluar la misma expresión usando call-by-name
 
-alCuadrado (1+2) { aplicamos (1+2) \* (1+2) { aplicamos 3 \* (1+2) { aplicamos 3 \* 3 { aplicamos 9 alCuadrado } el primer + } el + } el \* }
+` alCuadrado (1+2)`
+
+-   aplicamos alCuadrado el primer +
+
+` (1+2) * (1+2)`
+
+-   aplicamos el +
+
+` 3 * (1+2)`
+
+-   aplicamos el \*
+
+` 3 * 3`
+
+-   aplicamos el \*
+
+` 9`
 
 Llegamos la mismo resultado pero en el segundo ejemplo realizamos una reducción más (4 reducciones vs 3 reducciones).
 
@@ -250,9 +278,19 @@ Corolario: cuando usamos call-by-value los parámetros son evaluados una y solo 
 
 Para evitar este quilombo en vez de tener la expresión (1+2) vamos a tener un "puntero a la expresión" llamémoslo p.
 
-alCuadrado (1+2) { aplicamos let p = (1+2) in { aplicamos let p = 3 in p \* { aplicamos 9 alCuadrado } p \* p + } p
+`alCuadrado (1+2)`
 
--   }
+-   aplicamos alCuadrado
+
+`let p = (1+2) in p * p`
+
+-   aplicamos +
+
+`let p = 3 in p * p`
+
+-   aplicamos \*
+
+` 9`
 
 Cualquier reducción que se haga en una expresión se va a conocer automáticamente por los punteros a dicha expresión. Al uso de punteros para compartir expresiones que representan la mismo parámetro lo vamos a llamar Sharing. Al uso de la estrategia call-by-name más el Sharing lo vamos a llamar Lazy Evaluation (esta es la estrategia que usa Haskell). El Sharing nos asegura que usar Lazy Evaluation nunca requiera más pasos que la estrategia call-by-value.
 
