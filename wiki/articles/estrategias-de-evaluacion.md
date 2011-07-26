@@ -160,27 +160,63 @@ Evaluaciones que no terminan
 
 Tengan en cuenta la siguiente definición
 
-inf = 1 + inf
+` inf = 1 + inf`
 
 Intentar reducir la expresión inf siempre nos va a dar como resultado una expresión más y más grande (independientemente de la estrategia de evaluación que usemos)
 
-inf { aplicamos inf } 1 + inf { aplicamos inf - porque + es estricta } 1 + (1 + inf) { aplicamos inf - porque + es estricta } .... 1 + (1 + (1 + (1 + (1 + (1 + .... + inf )))))
+` inf`
+
+-   aplicamos inf
+
+` 1 + inf`
+
+-   aplicamos inf (porque + es estricta)
+
+` 1 + (1 + inf)`
+
+-   aplicamos inf (porque + es estricta)
+
+....
+
+` 1 + (1 + (1 + (1 + (1 + (1 + .... + inf )))))`
 
 Por ende, está evaluación nunca terminaría.
 
 Sabiendo que
 
-fst (x,\_) = x
+` fst (x,_) = x`
 
 Consideremos la expresión fst (0,inf)
 
 Usando la estrategia call-by-value
 
-fst (0,inf) { aplicamos inf } fst (0, 1 + inf ) { aplicamos inf } fst (0, 1 + (1 + inf) ) { aplicamos inf } fst (0, 1 + (1 + (1 + inf) ) ) { aplicamos inf } ...
+` fst (0,inf)`
+
+-   aplicamos inf
+
+` fst (0, 1 + inf )`
+
+-   aplicamos inf
+
+` fst (0, 1 + (1 + inf) )`
+
+-   aplicamos inf
+
+` fst (0, 1 + (1 + (1 + inf) ) )`
+
+-   aplicamos inf
+
+...
 
 Usando call-by-value la evaluación de la expresión no termina.
 
-Usemos call-by-name: fst (0,inf) { aplicamos fst } 0
+Usemos call-by-name:
+
+` fst (0,inf)`
+
+-   aplicamos fst
+
+` 0`
 
 Usando call-by-name la expresión se evalúa por completo con solo una reducción. En este ejemplo se puede ver que ciertas expresiones que pueden no terminar cuando se evalúan con la estrategia call-by-value pueden terminar cuando se usa la estrategia call-by-name.
 
