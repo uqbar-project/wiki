@@ -220,7 +220,9 @@ Usemos call-by-name:
 
 Usando call-by-name la expresión se evalúa por completo con solo una reducción. En este ejemplo se puede ver que ciertas expresiones que pueden no terminar cuando se evalúan con la estrategia call-by-value pueden terminar cuando se usa la estrategia call-by-name.
 
-De forma más general: Si existe alguna secuencia de evaluación que haga terminar la evaluación de la expresión entonces con la estrategia call-by-name también se termina la evaluación y se produce el mismo resultado final. Corolario: si te es mucho muy importante que una expresión termine la estrategia que querés usar es call-by-name
+De forma más general: Si existe alguna secuencia de evaluación que haga terminar la evaluación de la expresión entonces con la estrategia call-by-name también se termina la evaluación y se produce el mismo resultado final.
+
+Corolario: si te es mucho muy importante que una expresión termine la estrategia que querés usar es call-by-name
 
 Lazy Evaluation
 ---------------
