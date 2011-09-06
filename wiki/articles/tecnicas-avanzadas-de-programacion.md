@@ -8,6 +8,10 @@ Técnicas Avanzadas de Programación
 -   [Bibliografía](bibliografia-sobre-programacion-avanzada-orientada-a-objetos.html)
 -   [Double dispatch](double-dispatch.html)
 
+### Tutoriales
+
+-   [Resolver problemas de dependencias maven dentro de Eclipse](resolver-problemas-de-dependencias-maven-dentro-de-eclipse.html)
+
 ### Consejos prácticos
 
 -   [Tips para la resolución de un parcial de TADP](tips-para-la-resolucion-de-un-parcial-de-tadp.html)
