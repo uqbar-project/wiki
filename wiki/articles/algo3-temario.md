@@ -13,6 +13,7 @@ Unidad 2
 -   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
 -   [JFace: Controles y binding](jface--controles-y-binding.html)
 -   [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
+-   Documentación de [Arena MVC](arena-mvc.html)
 
 Unidad 3
 --------
