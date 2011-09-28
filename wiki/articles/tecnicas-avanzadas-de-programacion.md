@@ -35,4 +35,5 @@ Arquitecturas
 -------------
 
 -   [Arquitecturas](arquitecturas.html)
+-   [Home](home.html)
 
