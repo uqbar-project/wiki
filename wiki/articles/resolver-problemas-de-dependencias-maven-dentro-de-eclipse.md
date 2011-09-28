@@ -5,6 +5,8 @@ Está mal el settings.xml
 
 Normalmente si estuviera mal el settings entonces debería quejarse por no encontrar el parent project y no esos, pero si no le pusiste parent a tu pom entonces podría mostrar ese error. Por otro lado si tenés algún otro ejemplo de la cátedra que te anda, eso querría decir que el settings está bien.
 
+Dentro del eclipse se configura donde está el settings.xml en Windows / Preferences -&gt; Maven / User Settings. En principio ese debería ser el settings.xml que hay que modificar para agregarle el repo maven de uqbar.
+
 Está mal el pom.xml
 -------------------
 
@@ -33,3 +35,10 @@ El eclipse también tiene sus cachés y no es raro que se mambeen... acá no hay
 En algún caso yo lo resolví haciendo un touch del archivo .classpath
 
 Borrar parte del repo local también obliga al eclipse a refrescar sus cachés.
+
+Mi proyecto no es de tipo maven / No tengo el menú maven en mi proyecto
+-----------------------------------------------------------------------
+
+Visualmente se puede ver si un proyecto es de tipo maven en el ícono del proyecto. Este debería tener una "m" en el mismo.
+
+Para convertirlo a proyecto maven hay que apretar click derecho sobre el proyecto y luego Configure / Convert to Maven Project
