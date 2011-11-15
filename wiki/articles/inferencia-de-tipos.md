@@ -14,3 +14,32 @@ Ejemplos
 
 -   [Cálculo del tipo de una función en Haskell](calculo-del-tipo-de-una-funcion-en-haskell.html)
 
+Un problema de inferencia en Haskell
+------------------------------------
+
+Estos días varios estuvieron experimentando un error como este:
+
+``    Ambiguous type variable `a' in the constraint: ``
+``      `Eq a' ``
+``        arising from a use of `sinDuplicados' at integrador.hs:38:14-26 ``
+`   Possible cause: the monomorphism restriction applied to the following:`
+`     repetidos :: [a] -> [a] (bound at integrador.hs:38:0)`
+
+no?
+
+Bueno, ese error se debe a que Haskell no puede, en esa función en particular por la que estalla, inferir el tipo.
+
+Soluciones posibles:
+
+1) En vez de escribir nuestra función como
+
+`  f = g.h`
+
+hacer
+
+`  f x = (g.h) x`
+
+2) explicitar el tipo de nuestra función, como por ejemplo:
+
+`   sarasa :: (Eq a) => [a] -> [a]`
+`   sarasa = algo . otroAlgo`
