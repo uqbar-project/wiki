@@ -5,4 +5,5 @@
 -   [Masa de pizza](masa-de-pizza.html)
 -   [Fideos](fideos.html)
 -   [Brownies](brownies.html)
+-   [Panqueques](panqueques.html)
 
