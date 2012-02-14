@@ -1,28 +1,15 @@
-Concepto de Función
-===================
+Como su nombre lo indica, la función es el concepto fundamental del paradigma funcional: mientras que, por ejemplo, en el paradigma de objetos, los problemas se resuelven en términos de envío de mensajes entre objetos, en funcional los programas se estructurarán en torno a aplicación de funciones sobre valores. La función, es así, pues, la [computación](computacion.html) característica del paradigma.
 
-Como su nombre lo indica, la función es el concepto fundamental del paradigma funcional: mientras que, por ejemplo, en el paradigma de objetos, los problemas se resuelven en términos de envío de mensajes entre objetos, en funcional, nuestros programas, se estructurarán en torno a aplicación de funciones sobre valores. La función, es así, pues, la [computación](computacion.html) característica del paradigma.
+Función como caja negra
+-----------------------
 
--   Separación entre código y dato
-
-Enfoques
---------
-
-Si bien el concepto de función parece trivial, existen muchas áreas del saber en las que se utiliza este concepto. En general, en todas preserva un significado similar: una unidad con una salida y al menos una entrada, capaz de producir un resultado.
+Una forma simple de pensar una función es como una máquina con una salida y al menos una entrada, capaz de producir un resultado. Decimos que se trata de una caja negra, porque para aquel que la use no tiene acceso al interior de la misma, sino tan solo a sus entradas y salida. Esto nos lleva a que las funciones pueden ser combinadas fácilmente, de diversas formas, tan solo conociendo el tipo de entradas y salidas que posee.
 
 ### Función como transformación matemática
 
--   Unicidad
--   Existencia
+Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemplo, tener memoria de sus entradas anteriores, sino que son transformaciones, en el sentido matemático: para cada entrada aceptable (su dominio), existe un único resultado (imagen), lo cual se conoce como unicidad. Además, para toda entrada del dominio, existe una un sólo resultado, lo que se conoce como existencia.
 
-### Función como caja negra
-
--   Entrada
--   Salida
-
-### Función en teoría de categorías
-
-(heavy)
+Por otro lado, las transformaciones matemáticas presentan [transparencia referencial](transparencia-referencial.html)
 
 ### Función desde el cálculo lambda
 
@@ -64,6 +51,10 @@ En el caso particular del cálculo lambda no tipado, no solo la función es la u
 ##### Definición de recursividad
 
 ##### Definición de los enteros
+
+### Función en teoría de categorías
+
+(heavy)
 
 ### Función como un TAD
 
