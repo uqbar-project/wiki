@@ -6,6 +6,7 @@ Notas sobre el paradigma funcional
 -   [Inferencia de tipos](inferencia-de-tipos.html)
 -   [Currificación](currificacion.html)
 -   [Aplicación Parcial](aplicacion-parcial.html)
+-   [Concepto de función](concepto-de-funcion.html)
 
 Notas sobre el lenguaje Haskell
 -------------------------------
