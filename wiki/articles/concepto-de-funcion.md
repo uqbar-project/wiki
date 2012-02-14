@@ -8,7 +8,7 @@ Como su nombre lo indica, la función es el concepto fundamental del paradigma f
 Enfoques
 --------
 
-`Si bien el concepto de función parece trivial, existen muchas áreas del saber en las que se utiliza este concepto. En general, en todas preserva un significado similar: una unidad con una salida y al menos una entrada, capaz de producir un resultado.`
+Si bien el concepto de función parece trivial, existen muchas áreas del saber en las que se utiliza este concepto. En general, en todas preserva un significado similar: una unidad con una salida y al menos una entrada, capaz de producir un resultado.
 
 ### Función como transformación matemática
 
@@ -37,6 +37,29 @@ Enfoques
 En el caso particular del cálculo lambda no tipado, no solo la función es la unidad fundamental, sino que es la única, y es el único tipo de dato existente, mientras que la aplicación de las mismas es la única estructura de control. Así, por ejemplo, elementos que en los lenguajes tradicionales son primitivas, como los números, el valor true y la estructura de control if y la recursividad, en el cálculo lambda no tipado son derivados de definición y aplicación de funciones. Ejemplos:
 
 ===== Definición de if ====
+
+`True := λt. λf. t`
+`False := λt. λf. f`
+`If l m n := λl. λm. λn. l m n`
+
+`En Haskell:`
+
+`true = \ifTrue ifFalse -> ifTrue`
+`false = \ifTrue ifFalse -> ifFalse `
+`iff = \condition ifTrue ifFalse -> condition ifTrue ifFalse`
+
+`o, lo que es (casi) lo mismo:`
+
+`true = const`
+`false = flip const`
+`iff = id`
+
+`Luego, las siguientes consultas son validas:`
+
+`> iff true 4 5`
+`4`
+`> iff false 'a' 'b'`
+`'b'`
 
 ##### Definición de recursividad
 
