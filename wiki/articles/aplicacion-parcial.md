@@ -1,6 +1,3 @@
-Apicación Parcial
-=================
-
 Por aplicació parcial se entiende a la [aplicación de una función](aplicacion.html), pero suministrando menos parámetros que los que esta requiere. Por ejemplo, en las siguientes expresiones presentan aplicación parcial:
 
 -   map fst
