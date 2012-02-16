@@ -34,8 +34,6 @@ Desde el punto de vista del [cálculo lambda](calculo-lambda.html), la función 
 
 ### Funciones en Haskell
 
-=
-
 Las funciones en Haskell presentan todas las carecterísticas mencionadas anteriormente. A modo de resumen, decimos que:
 
 -   Las funciones son transformaciones matemáticas, que presentan transparencia referencial
