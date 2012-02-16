@@ -7,86 +7,43 @@ Una forma simple de pensar una función es como una máquina con una salida y al
 
 ### Función como transformación matemática
 
-Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemplo, tener memoria de sus entradas anteriores, sino que son transformaciones, en el sentido matemático: para cada entrada aceptable (su dominio), existe un único resultado (imagen), lo cual se conoce como unicidad. Además, para toda entrada del dominio, existe una un sólo resultado, lo que se conoce como existencia.
+Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemplo, tener memoria de sus entradas anteriores, sino que son transformaciones matemáticas que presentan [transparencia referencial](transparencia-referencial.html).
 
-Por otro lado, las transformaciones matemáticas presentan [transparencia referencial](transparencia-referencial.html)
+En particular, las funciones son relaciones que presentan las siguientes características:
+
+-   para toda entrada aceptable (su dominio), existe un único resultado (imagen), lo cual se conoce como unicidad.
+-   para toda entrada del dominio, existe una un sólo resultado, lo que se conoce como existencia.
+
+### Función desde un punto de vista imperativo
+
+Al llevar los conceptos de función matemática al mundo computacional, la transparencia referencial implica que las funciones, comparadas contra los procedimientos imperativos, no tienen [efecto](efecto.html), su aplicación no afecta al contexto, o, cuando menos, no es visible para el observador que evalua la expresión.
+
+Si bien no tiene sentido hablar de mutabilidad en el contexto matemático, dado que solo se manejan valores y no referencias (al menos, en un enfoque simplista), la transparencia referencial en los programas construidos en el paradigma funcional tiene dos consecuencias mas o menos evidentes:
+
+-   Las funciones no pueden mutar sus argumentos ni otras variables, locales o globales, ni directa ni indirectamente. Esto se garantiza al eliminar la [asignación destructiva](asignacion-destructiva.html) del lenguaje. (podemos decir que las variables no varían)
+-   Las funciones no pueden realizar operaciones de entrada/salida
 
 ### Función desde el cálculo lambda
+
+Desde el punto de vista del [cálculo lambda](calculo-lambda.html), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son expresiones lambda. En el
 
 -   Currificada
 -   Primitiva del lenguaje
 -   Notación en tipado y no tipado
-
-#### Función como valor
-
-#### Valores como funciones
-
-En el caso particular del cálculo lambda no tipado, no solo la función es la unidad fundamental, sino que es la única, y es el único tipo de dato existente, mientras que la aplicación de las mismas es la única estructura de control. Así, por ejemplo, elementos que en los lenguajes tradicionales son primitivas, como los números, el valor true y la estructura de control if y la recursividad, en el cálculo lambda no tipado son derivados de definición y aplicación de funciones. Ejemplos:
-
-===== Definición de if ====
-
-`True := λt. λf. t`
-`False := λt. λf. f`
-`If l m n := λl. λm. λn. l m n`
-
-`En Haskell:`
-
-`true = \ifTrue ifFalse -> ifTrue`
-`false = \ifTrue ifFalse -> ifFalse `
-`iff = \condition ifTrue ifFalse -> condition ifTrue ifFalse`
-
-`o, lo que es (casi) lo mismo:`
-
-`true = const`
-`false = flip const`
-`iff = id`
-
-`Luego, las siguientes consultas son validas:`
-
-`> iff true 4 5`
-`4`
-`> iff false 'a' 'b'`
-`'b'`
-
-##### Definición de recursividad
-
-##### Definición de los enteros
-
-### Función en teoría de categorías
-
-(heavy)
-
-### Función como un TAD
-
-Las funciones currificadas, en tanto valores, pueden ser también pensandas como un [TAD](tipo-abstracto-de-dato.html), para el cual:
-
--   su única operación primitiva es la aplicación, definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell)
--   sus valores son cada una de las funciones posibles. Así, por ejemplo, even, odd, (+) son todos valores del tipo función
+-   reducción
 
 ### Funciones en Haskell
 
-`Haskell es un lenguaje que implementa las nociones del paradigma funcional, y en particular, toma las gran mayoría de las nociones `
-`* Las funciones`
+=
 
-Programa como combinación de funciones
---------------------------------------
+Las funciones en Haskell presentan todas las carecterísticas mencionadas anteriormente. A modo de resumen, decimos que:
 
-c. Concepto de función en \*Haskell\*. Toda función es un valor, pero todo valor, es una función? Las alternativas son:
+-   Las funciones son transformaciones matemáticas, que presentan transparencia referencial
+-   Las funciones son valores
+-   Las funciones tienen tipo función ((-&gt;) a b), que está determinado por su dominio e imagen. Una función de enteros en booleanos tiene tipo `Int` `->` `Bool`
+-   Las propiedades presentan unicidad y existencia para todo su dominio.
+-   Las funciones están currificadas, por lo que no existen funciones de más de un argumento realmente, sino que se emulan a partir de funciones de un argumento que devuelven otra función que toma los parámetros restantes.
+-   La operación primitiva de la función es la aplicación, por la cual se evalúa una función pasandole sus argumentos y obteniendo un resultado
+-   El mecanismo de la evaluación de las funciones es la reducción (reducción 𝛃)
+-   Dado que la única operación primitiva del tipo función es la aplicación, sólo es función aquello todo y sólo lo que pueda ser aplicado. Moraleja: no tiene sentido hablar de funciones de cero argumentos, ya que no pueden ser aplicadas
 
--   Sí. Todo es una función. De allí la evaluación diferida. Aun sí
-
-tiene cero argumentos.
-
--   No. Función es solo aquello que tiene tipo (-&gt;) a b. La
-
-evaluación diferida es propia de las expresiones, sean o no funciones. Función es aquello que es aplicable, es decir, que representa una transformación con dominio e imagen.
-
-En ambos casos, valdría la pena revisar la consistencia de estas definiciones con el cálculo lambda. Y también, si damos a Haskell por implementación pura o no del mismo.
-
-La función es un tad
-
-`  2. Las funciones que no reciben parámetros ... ehhh quiero decir .... no existe tal cosa, una función es algo sensible de ser aplicado con parámetros`
-`  3. Aquello que no es función es valor (no se si usaría el término constante, porque los valores en funcional son constantes no pueden cambiar)`
-`  4. Aquello que puedo usar como argumento de una función o como valor de retorno de una función es un valor`
-`  5. Existen funciones que pueden recibir funciones por parámetro o retornar una función`
-`  6. Las funciones son valores`
