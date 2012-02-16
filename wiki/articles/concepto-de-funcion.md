@@ -44,5 +44,5 @@ Las funciones en Haskell presentan todas las carecterísticas mencionadas anteri
 -   La operación primitiva de la función es la aplicación, por la cual se evalúa una función pasandole sus argumentos y obteniendo un resultado
 -   El mecanismo de la evaluación de las funciones es la reducción (reducción 𝛃)
 -   Dado que la única operación primitiva del tipo función es la aplicación, sólo es función aquello todo y sólo lo que pueda ser aplicado. Moraleja: no tiene sentido hablar de funciones de cero argumentos, ya que no pueden ser aplicadas
--   La [estrategia de reducción](estrategia-de-evaluacion.html) empleada por Haskell es no estricta (≅ call-by-name), lo cual no es lo mismo que evaluación diferida, que significa que las expresiones son evaluadas a medida que son necesarias. Sin embargo, en la práctica, una lleva normalmente a la otra, por lo que podremos decir sin excesivo rigor que Haskell presenta evaluación diferida.
+-   La [estrategia de reducción](estrategias-de-evaluacion.html) empleada por Haskell es no estricta (≅ call-by-name), lo cual no es lo mismo que evaluación diferida, que significa que las expresiones son evaluadas a medida que son necesarias. Sin embargo, en la práctica, una lleva normalmente a la otra, por lo que podremos decir sin excesivo rigor que Haskell presenta evaluación diferida.
 
