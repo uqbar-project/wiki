@@ -23,6 +23,13 @@ Si bien no tiene sentido hablar de mutabilidad en el contexto matemático, dado 
 -   Las funciones no pueden mutar sus argumentos ni otras variables, locales o globales, ni directa ni indirectamente. Esto se garantiza al eliminar la [asignación destructiva](asignacion-destructiva.html) del lenguaje. (podemos decir que las variables no varían)
 -   Las funciones no pueden realizar operaciones de entrada/salida
 
+### Función como un TAD
+
+Las funciones currificadas, en tanto valores, pueden ser también pensandas como un [TAD](tipo-abstracto-de-dato.html), para el cual:
+
+-   su única operación primitiva es la aplicación, definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell). Las demás operaciones complementarias, como la composición, se construyen a partir de la aplicación.
+-   sus valores son cada una de las funciones posibles. Así, por ejemplo, even, odd, (+) son todos valores del tipo función
+
 ### Función desde el cálculo lambda
 
 Desde el punto de vista del [cálculo lambda](calculo-lambda.html), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son expresiones lambda. En el
