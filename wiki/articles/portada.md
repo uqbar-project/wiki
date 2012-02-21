@@ -9,6 +9,7 @@ También nos permite publicar material asociado con las asignaturas pero que muc
 Si sos un estudiante en busca del material de una materia, tal vez te convenga ingresar por uno de estos links:
 
 -   [Paradigmas de Programación](paradigmas-de-programacion.html)
+-   [Diseño de Sistemas](design-temario.html)
 -   [Técnicas Avanzadas de Programación](tecnicas-avanzadas-de-programacion.html)
 -   [Programación de Interfaces de Usuario](programacion-de-interfaces-de-usuario.html)
 -   [Algoritmos III](algo3-temario.html)
