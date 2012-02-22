@@ -11,6 +11,7 @@ Diseño de Sistemas
 
 -   [Conceptos básicos del diseño](conceptos-basicos-del-diseno.html)
 -   [Impacto de los requerimientos en el diseño](impacto-de-los-requerimientos-en-el-diseno.html)
+-   [Validación del diseño](validacion-del-diseno.html)
 
 ### Unidad 3: Diseño estructurado y funcional
 
