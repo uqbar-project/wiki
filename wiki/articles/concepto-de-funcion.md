@@ -32,7 +32,19 @@ Las funciones currificadas, en tanto valores, pueden ser también pensandas como
 
 ### Función desde el cálculo lambda
 
-Desde el punto de vista del [cálculo lambda](calculo-lambda.html), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son expresiones lambda. En el
+Desde el punto de vista del [cálculo lambda](calculo-lambda.html), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son expresiones lambda. Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
+
+`siguiente` `x` `=` `x` `+` `1`
+
+En cálculo lambda no tipado la escribiríamos:
+
+`siguiente` `=` `𝛌x.sum` `x` `one`
+
+Equivalent a la siguiente definición Haskell:
+
+`siguiente` `=` `\x` `->` `x` `+` `1`
+
+En el
 
 -   Currificada
 -   Primitiva del lenguaje
