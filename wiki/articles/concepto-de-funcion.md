@@ -44,13 +44,6 @@ Equivalent a la siguiente definición Haskell:
 
 `siguiente` `=` `\x` `->` `x` `+` `1`
 
-En el
-
--   Currificada
--   Primitiva del lenguaje
--   Notación en tipado y no tipado
--   reducción
-
 ### Funciones en Haskell
 
 Las funciones en Haskell presentan todas las carecterísticas mencionadas anteriormente. A modo de resumen, decimos que:
