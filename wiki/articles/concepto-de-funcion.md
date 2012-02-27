@@ -21,7 +21,7 @@ Al llevar los conceptos de función matemática al mundo computacional, la trans
 Si bien no tiene sentido hablar de mutabilidad en el contexto matemático, dado que solo se manejan valores y no referencias (al menos, en un enfoque simplista), la transparencia referencial en los programas construidos en el paradigma funcional tiene dos consecuencias mas o menos evidentes:
 
 -   Las funciones no pueden mutar sus argumentos ni otras variables, locales o globales, ni directa ni indirectamente. Esto se garantiza al eliminar la [asignación destructiva](asignacion-destructiva.html) del lenguaje. (podemos decir que las variables no varían)
--   Las funciones no pueden realizar operaciones de entrada/salida
+-   Las funciones no pueden realizar de forma directa operaciones de entrada/salida (aunque existen estrategias para realizarlas indirectamente preservando a la función pura)
 
 ### Función como un TAD
 
