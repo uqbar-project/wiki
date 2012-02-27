@@ -1,4 +1,4 @@
-La posibilidad de definir funciones utilizando aplicación parcial en la propia definición trae aparejado a veces la dificultad para entender cuántos parámetros espera esa función que se está definiendo.
+La posibilidad de definir funciones utilizando aplicación parcial en la propia definición (lo cual se conoce como notación point-free) trae aparejado a veces la dificultad para entender cuántos parámetros espera esa función que se está definiendo.
 
 Por ejemplo la función es múltiplo así definida tiene dos parámetros:
 
