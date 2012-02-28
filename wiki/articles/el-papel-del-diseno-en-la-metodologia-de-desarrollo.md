@@ -32,7 +32,13 @@ Para eso tenemos que tomar decisiones, y aquí es donde empezamos a depender de 
 
 Si la metodología de trabajo es secuencial, cada fase del proyecto tiene un comienzo y un fin específico. El diseño debe respetar el orden que le corresponde: después del análisis y antes de la programación / construcción. Si la metodología de trabajo es iterativa, esto implica diseñar en diferentes momentos, sin acotarlo a un período determinado.
 
-En definitiva, si
+De la misma manera,
+
+-   cuando la metodología es orientada al proceso, se genera una gran cantidad de documentación respaldatoria del diseño. El proceso es el eje central del proyecto, es el que guía a las personas a cada objetivo que quiere alcanzar (en el diseño esto se concreta con un documento entregable que es la especificación). Si el proceso está bien definido sólo hay que controlar el avance de las tareas.
+
+<!-- -->
+
+-   cuando la metodología es orientada al producto final, nos interesa más dejar en claro las decisiones importantes que respalden el software que está corriendo. La interacción entre las personas es fundamental y termina definiendo el proceso de diseño, de la misma manera que el éxito o el fracaso del mismo.
 
 ### Diseño anticipado y diseño iterativo
 
