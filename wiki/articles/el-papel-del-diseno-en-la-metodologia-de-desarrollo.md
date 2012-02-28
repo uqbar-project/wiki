@@ -28,15 +28,11 @@ Para eso tenemos que tomar decisiones, y aquí es donde empezamos a depender de 
 -   sus limitantes
 -   sus beneficios
 
-### El diseño en la metodología
+### El diseño y la metodología
 
-Existen dos grandes corrientes metodológicas:
+Si la metodología de trabajo es secuencial, cada fase del proyecto tiene un comienzo y un fin específico. El diseño debe respetar el orden que le corresponde: después del análisis y antes de la programación / construcción. Si la metodología de trabajo es iterativa, esto implica diseñar en diferentes momentos, sin acotarlo a un período determinado.
 
--   las metodologías formales sugieren que cada fase del proyecto tiene un comienzo y un fin específico y que hay una secuencia que el proyecto debe respetar. Repasando ese orden, el Diseño se ubica después del Análisis y justo antes de la Construcción o Desarrollo. Algunas variantes incluyen separar el Análisis y el Diseño en "Global" y "Detallado", pero eso no cambia la perspectiva:
-
-`Reconocimiento` `>` `Relevamiento` `>` `Estudio` `de` `factibilidad` `>` `Análisis` `>` `DISEÑO` `>` `Desarrollo` `>` `Testing` `>` `Puesta` `en` `producción` `>` `Mantenimiento`
-
--   las metodologías ágiles proponen no acotar la fase de Diseño a un momento específico, dado que en varios momentos del proyecto se volverá sobre el Diseño para modificarlo.
+En definitiva, si
 
 ### Diseño anticipado y diseño iterativo
 
