@@ -1,4 +1,5 @@
-== ¿Para qué sirve una metodología?
+¿Para qué sirve una metodología?
+--------------------------------
 
 Metodologías secuenciales / iterativas
 --------------------------------------
