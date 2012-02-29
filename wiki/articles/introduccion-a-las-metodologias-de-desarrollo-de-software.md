@@ -18,3 +18,9 @@ Metodologías predictivas / adaptativas
 
 Algunos ejemplos
 ----------------
+
+Links relacionados
+------------------
+
+-   [Volver a Diseño de Sistemas](design-temario.html)
+
