@@ -82,4 +82,8 @@ Los defensores del diseño iterativo creen en que todos los proyectos se constru
 
 Mientras que las metodologías secuenciales ven que el análisis condiciona el diseño y éste a su vez define las decisiones de implementación, es interesante notar que en los casos que mencionamos arriba es al revés: la arquitectura (o más general, las cuestiones técnicas) impactan sobre el diseño y el diseño puede hacer variar lo relevado en el análisis. De hecho, este es el valor agregado de un buen diseñador: hacer las preguntas que disparen mejoras en lo que el usuario pide.
 
-[Volver al temario](-diseno-de-sistemas.html)\]
+Links relacionados
+------------------
+
+-   [Volver a Diseño de Sistemas](design-temario.html)
+
