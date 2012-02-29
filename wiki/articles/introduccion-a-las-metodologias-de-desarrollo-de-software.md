@@ -6,6 +6,10 @@ Una metodología nos ordena, nos contiene, nos permite definir límites. Constru
 Metodologías secuenciales / iterativas
 --------------------------------------
 
+En las metodologías secuenciales, el proceso de desarrollo de software se divide en varios pasos o fases. Cada fase tiene un conjunto de metas a cumplir. El fin de cada fase delimita el comienzo de la fase siguiente.
+
+En las metodologías iterativas se divide el proyecto en entregas o iteraciones. Si cada iteración define un conjunto de metas a cumplir, podríamos pensar que no hay una gran diferencia con la metodología secuencial, pero cada iteración define un entregable que es un software testeable por el usuario. Entonces hay etapas de análisis de requerimientos, diseño, construcción y prueba en cada iteración.
+
 Metodologías orientadas al proceso / al producto
 ------------------------------------------------
 
