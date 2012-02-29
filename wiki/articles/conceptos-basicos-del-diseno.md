@@ -20,7 +20,7 @@ Un cliente conoce sus facturas para calcular el total, y está bien que las cono
 `public BigDecimal getMontoTotal() {`
 `    BigDecimal total = new BigDecimal(0);`
 `    for (Factura factura : this.facturas) {`
-`        for (Renglon renglon : this.renglones) { `
+`        for (Renglon renglon : factura.renglones) { `
 `            total = total.add(renglon.getProducto().getPrecioUnitario() * renglon.getCantidad());`
 `        }`
 `    }`
