@@ -81,3 +81,5 @@ Los defensores del diseño iterativo creen en que todos los proyectos se constru
     -   dificultades técnicas de implementación: esto suele ser más frecuente de lo que imaginamos, ya sea porque subestimamos la dificultad de un requerimiento, porque no tuvimos en cuenta algún factor tecnológico o porque los imprevistos suceden en todo proyecto.
 
 Mientras que las metodologías secuenciales ven que el análisis condiciona el diseño y éste a su vez define las decisiones de implementación, es interesante notar que en los casos que mencionamos arriba es al revés: la arquitectura (o más general, las cuestiones técnicas) impactan sobre el diseño y el diseño puede hacer variar lo relevado en el análisis. De hecho, este es el valor agregado de un buen diseñador: hacer las preguntas que disparen mejoras en lo que el usuario pide.
+
+[Volver al temario](-diseno-de-sistemas.html)\]
