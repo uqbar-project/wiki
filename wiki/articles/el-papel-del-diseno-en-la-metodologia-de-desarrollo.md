@@ -39,7 +39,7 @@ Si la metodología de trabajo es secuencial, cada fase del proyecto tiene un com
 
 De la misma manera,
 
--   cuando la metodología es orientada al proceso, se genera una gran cantidad de documentación respaldatoria del diseño. El proceso es el eje central del proyecto, es el que guía a las personas a cada objetivo que quiere alcanzar (en el diseño esto se concreta con un documento entregable que es la especificación). Si el proceso está bien definido sólo hay que controlar el avance de las tareas.
+-   cuando la metodología es orientada al proceso, se genera una gran cantidad de documentación respaldatoria del diseño. El proceso es parte del eje central del proyecto, que guía al objetivo que se quiere alcanzar (en el diseño esto se concreta con un documento entregable que es la especificación). Si el proceso está bien definido sólo hay que controlar el avance de las tareas.
 
 <!-- -->
 
