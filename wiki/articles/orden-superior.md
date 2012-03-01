@@ -52,6 +52,16 @@ Volviendo al tema principal, el chiste del orden superior es que yo paso algo m�
 
 ### En resumen
 
+Con Orden Superior:
+
+-   Puedo aislar y **reutilizar comportamiento común**.
+-   Puedo partir mi problema, **separando responsabilidades**, entre el código que tiene orden superior, y el comportamiento parametrizado.
+-   Puedo tener un código con partes **incompletas**, esperando rellenarlos **pasando comportamiento por parámetro**, y no sólo datos.
+-   ¡Puedo generar **abstracciones más jugosas**! Más allá de las abstracciones de orden superior que ya me proveen los lenguajes, la mayoría de los mismos me dan la posibilidad de armar mi propio comportamiento de orden superior (En la materia lo vemos en Haskell más directamente, aunque se puede también en SWI-Prolog).
+-   Con abstracciones más adecuadas, con responsabilidades repartidas, y sin repetición de lógica, genero un código más **expresivo** (porque en general es más fácil de leer), y más **declarativo** (porque en general al usar orden superior oculto detalles algorítmicos)
+
+Próximamente agregaremos ejemplos, para bajar a tierra éstos conceptos.
+
 ### Links Relacionados
 
 -   [Introduction to higher-order functions](http://www.cs.aau.dk/~normark/prog3-03/html/notes/higher-order-fu_themes-intr-section.html)
