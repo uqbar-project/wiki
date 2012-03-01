@@ -27,7 +27,7 @@ Diseñar es encontrar:
 Para eso tenemos que tomar decisiones, y aquí es donde empezamos a depender de la tecnología, porque ella nos define:
 
 -   sus abstracciones
-    -   ¿cómo modelo cada componente o entidad? ¿tengo tipos de dato propios?
+    -   ¿cómo modelo cada componente o entidad?
     -   ¿cómo defino comportamiento? ¿puedo abstraer ese comportamiento?
     -   ¿cómo relaciono las entidades? ¿debo distinguir el medio en donde esas entidades están relacionadas?
 -   sus limitantes
