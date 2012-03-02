@@ -19,7 +19,7 @@ Metodologías predictivas / adaptativas
 Ejemplos concretos
 ------------------
 
--   **Modelo de Cascada**: originado en el [paper de Winston Royce](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf) ordena por fases el desarrollo de software. Si bien las fases pueden llegar a solaparse, el proceso está concebido como secuencial ("el diseño debe ocurrir antes que el desarrollo"), orientado al proceso ("Begin the design process with program designers, not analysts or programmers") y a la documentación y definitivamente predictivo.
+-   **Modelo de Cascada**: originado en el [paper de Winston Royce](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf) ordena por fases el desarrollo de software. Si bien las fases pueden llegar a solaparse, el proceso está concebido como secuencial ("el diseño debe ocurrir antes que el desarrollo: STEP 1 - PROGRAM DESIGN COMES FIRST"), orientado al proceso ("Begin the design process with program designers, not analysts or programmers") y a la documentación y definitivamente predictivo.
 
 Links relacionados
 ------------------
