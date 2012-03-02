@@ -16,8 +16,10 @@ Metodologías orientadas al proceso / al producto
 Metodologías predictivas / adaptativas
 --------------------------------------
 
-Algunos ejemplos
-----------------
+Ejemplos concretos
+------------------
+
+-   **Cascada**: el tradicional modelo en cascada corresponde a un \[paper de Winston Royce|<http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf>\] donde ordena por fases
 
 Links relacionados
 ------------------
