@@ -10,8 +10,11 @@ En las metodologías secuenciales, el proceso de desarrollo de software se divid
 
 En las metodologías iterativas se divide el proyecto en entregas o iteraciones. Si cada iteración define un conjunto de metas a cumplir, podríamos pensar que no hay una gran diferencia con la metodología secuencial. No obstante, cada iteración define como entregable un software testeable por el usuario. Entonces hay etapas de análisis de requerimientos, diseño, construcción y prueba en cada iteración. Además, cada iteración permite revisar y cambiar los requerimientos a resolverse.
 
-Metodologías orientadas al proceso / al producto
-------------------------------------------------
+Metodologías orientadas al proceso / a las personas
+---------------------------------------------------
+
+Metodologías orientadas a la documentación / al producto
+--------------------------------------------------------
 
 Metodologías predictivas / adaptativas
 --------------------------------------
