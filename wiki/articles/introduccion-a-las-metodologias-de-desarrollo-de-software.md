@@ -19,7 +19,7 @@ Metodologías predictivas / adaptativas
 Ejemplos concretos
 ------------------
 
--   **Cascada**: el tradicional [paper de Winston Royce](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf) ordena por fases el desarrollo de software. Si bien las fases pueden llegar a solaparse, el proceso está concebido como secuencial ("el diseño debe ocurrir antes que el desarrollo"), orientado al proceso y a la documentación y naturalmente predictivo.
+-   **Modelo de Cascada**: el tradicional [paper de Winston Royce](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf) ordena por fases el desarrollo de software. Si bien las fases pueden llegar a solaparse, el proceso está concebido como secuencial ("el diseño debe ocurrir antes que el desarrollo"), orientado al proceso y a la documentación y naturalmente predictivo.
 
 Links relacionados
 ------------------
