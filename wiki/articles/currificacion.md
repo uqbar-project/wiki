@@ -2,7 +2,9 @@ Cuando hablamos de currificación nos referimos a que todas las funciones recibe
 
 Por eso, cuando escribimos el tipo de una función no hay una distinción entre lo que son los parámetros y el valor de retorno, se desdibuja un poco la diferencia. Por ejemplo, el tipo de max puede escribirse de dos formas:
 
-max :: (Ord a) =&gt; a -&gt; a -&gt; a &lt;--- Forma tradicional max :: (Ord a) =&gt; a -&gt; (a -&gt; a) &lt;--- Forma currificada
+max :: (Ord a) =&gt; a -&gt; a -&gt; a &lt;--- Forma tradicional
+
+max :: (Ord a) =&gt; a -&gt; (a -&gt; a) &lt;--- Forma currificada
 
 La segunda denota que max es una función de 1 parámetro que retorna una función que espera y retorna algo del mismo tipo que lo que ella espera.
 
