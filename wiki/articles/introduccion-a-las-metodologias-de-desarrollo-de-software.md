@@ -24,7 +24,7 @@ Ejemplos concretos
 
 -   **Modelo de Cascada**: originado en el [paper de Winston Royce: "Managing the development of large software systems"](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf) ordena por fases el desarrollo de software. Si bien las fases pueden llegar a solaparse, el proceso está concebido como secuencial ("el diseño debe ocurrir antes que el desarrollo: STEP 1 - PROGRAM DESIGN COMES FIRST"), orientado al proceso ("Begin the design process with program designers, not analysts or programmers"), orientado a la documentación ("how much documentation? My own view is 'quite a lot'; certainly more than most programmers, analysts, or program designers are willing to do if left to their own devices", "If the documentation is in serious default my first recommendation is simple: replace project management. \[...\] Stop all activities not related to documentation") y definitivamente predictivo.
 -   **Modelo por prototipos**: desechables o iterativos, a veces también llamado RAD(Rapid Application Development).
--   **Espiral de Boehm**
+-   **Espiral de Boehm**: originado en el [paper de Barry Boehm: "A Spiral Model of Software Development and Enhancement"](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/spiral.pdf), surge como primer contracara del modelo de cascada.
 -   **Proceso unificado**
 -   **Metodologías ágiles**: algunas implementaciones conocidas son Scrum, XP, ASD.
 
