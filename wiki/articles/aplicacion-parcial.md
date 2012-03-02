@@ -13,4 +13,4 @@ Mientras que las siguientes, no:
 
 Una consecuencia de esto es que solo pueden aplicarse parcialmente funciones de 2 o más argumentos.
 
-Para que la aplicación parcial exista, es necesario que las funciones estén currificadas.
+Para que la aplicación parcial exista, es necesario que las funciones estén currificadas (ver [Currificación](currificacion.html)).
