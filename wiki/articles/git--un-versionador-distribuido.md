@@ -54,8 +54,8 @@ Bueno... primero lo tendrías que tener instaldo. Eso se explica \[\[instalando\
 En la consola (git bash si estás en windows)
 
 `$ mkdir ~/prueba`
-
-$ cd ~/prueba $ git init
+`$ cd ~/prueba`
+`$ git init`
 
 Lo que estamos haciendo es comenzar un proyecto cuya carpeta raíz será ~/prueba, y en esa carpeta inicializamos un repositorio git para mantener las versiones de nuestro proyecto de prueba. El repositorio está en una carpeta llamada .git adentro de la carpeta raíz del proyecto. La carpeta ~/prueba con todo su contenido menos la carpeta .git es lo que git llama working tree, algo similar a la working copy de svn.
 
@@ -66,8 +66,9 @@ El repositorio no tiene todavía ningún objeto almacenado (círculos del dibujo
 Vamos a crear nuestro primer commit
 
 `$ cd ~/prueba #carpeta raíz del proyecto`
-
-$ touch unTexto.txt \#creo un archivo $ git add unTexto.txt \#agrego el archivo al index de git $ git commit -m "primer commit" \#ejecuto la operación commit pasándole el comentario "primer commit"
+`$ touch unTexto.txt #creo un archivo`
+`$ git add unTexto.txt #agrego el archivo al index de git`
+`$ git commit -m "primer commit" #ejecuto la operación commit pasándole el comentario "primer commit"`
 
 Basicamente la forma de trabajo es:
 
