@@ -49,7 +49,7 @@ Referencias: Las referencias son los rectángulos en el dibujo, son simplemente 
 Todo muy lindo... ¿pero cómo lo uso?
 ------------------------------------
 
-Bueno... primero lo tendrías que tener instaldo. Eso se explica \[\[instalando\_git\]| acá\]. Ahora que git ya está git intalado y configurado podemos ver un ejemplo partiendo de un proyecto nuevo.
+Bueno... primero lo tendrías que tener instaldo. Eso se explica [ acá](instalando-git.html). Ahora que git ya está git intalado y configurado podemos ver un ejemplo partiendo de un proyecto nuevo.
 
 En la consola (git bash si estás en windows)
 
