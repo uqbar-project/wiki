@@ -31,19 +31,23 @@ Los distintos colores de los circulos representan cada uno de los 4 tipos de obj
 
 -   blob
 
-representa un archivo en el proyecto.
+`representa un archivo en el proyecto.`
 
 -   tree
 
-representa una carpeta en el proyecto, el primero corresponde al directorio raiz del proyecto o el mismísimo proyecto.
+`representa una carpeta en el proyecto, el primero corresponde al directorio raiz del proyecto o el mismísimo proyecto.`
 
 -   commit
 
-la forma de agregar objetos al repositorio es con la operción commit. Esto agrega un objeto commit que tiene un vértice hacia un tree que representa al directorio raíz del proyecto. El sub-grafo que comienza en este tree representa el estado de todo el proyecto tras la ejecución del commit. En el dibujo se ve que los subgrafos que parten de cada commit comparten un objeto blob, esto significa que el commit B no modificó el archivo que agregó el commit A. El commit también conoce a su padre que es el commit que lo antecede, entonces los cambios que aplica un commit al proyecto son las diferencias entre el árbol al que apunta y el árbol al que apunta su padre. Cuando se ejecuta la operación merge se qenera un commit que tiene al menos dos padres entonces los cambios que aporta este commit depende de contra cual de sus padres se lo compare.
+`la forma de agregar objetos al repositorio es con la operción commit. Esto agrega un objeto commit que tiene un vértice hacia un tree que representa al directorio raíz del proyecto. El sub-grafo que comienza en este tree representa el estado de todo el proyecto tras la ejecución del commit. En el dibujo se ve que los subgrafos que parten de cada commit comparten un objeto blob, esto significa que el commit B no modificó el archivo que agregó el commit A.`
+
+El commit también conoce a su padre que es el commit que lo antecede, entonces los cambios que aplica un commit al proyecto son las diferencias entre el árbol al que apunta y el árbol al que apunta su padre. Cuando se ejecuta la operación merge se qenera un commit que tiene al menos dos padres entonces los cambios que aporta este commit depende de contra cual de sus padres se lo compare.
 
 -   tag
 
-la operación tag genera un objeto tag en el repositorio y una referencia de tipo tag para accederlo. Un tag conoce un commit y a partir de este el estado del proyecto para ese commit. En su cuerpo también uncluye un título un comentario y opcionalmente se le puede agregar una firma gpg. Todos los objetos (círculos en el dibujo) tiene un nombre bastante feo para identificarlos (algo así como 8357799df0b47164c9726be6610ea1b7ed41ff32), este nombre es el resultado de aplicar un función de hash (SHA1) al objeto.
+`la operación tag genera un objeto tag en el repositorio y una referencia de tipo tag para accederlo.`
+
+Un tag conoce un commit y a partir de este el estado del proyecto para ese commit. En su cuerpo también uncluye un título un comentario y opcionalmente se le puede agregar una firma gpg. Todos los objetos (círculos en el dibujo) tiene un nombre bastante feo para identificarlos (algo así como 8357799df0b47164c9726be6610ea1b7ed41ff32), este nombre es el resultado de aplicar un función de hash (SHA1) al objeto.
 
 Referencias: Las referencias son los rectángulos en el dibujo, son simplemente puntos de entrada a los objetos del repositorio.
 
