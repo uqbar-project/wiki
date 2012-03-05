@@ -1,7 +1,7 @@
 Distribuido...
 --------------
 
-Se dice de git que es un sistema de control de versiones distribuido. Que sea distribuido implica que van a existir al menos tantos repositorios como personas trabajando en el proyecto, a lo que se le pueden sumar uno o más repositorios que se usen como intermediarios para compartir cambios entre las distintas personas. Un lugar práctico para hostear repositorios públicos puede ser [1](https://github.com/)
+Se dice de git que es un sistema de control de versiones distribuido. Que sea distribuido implica que van a existir al menos tantos repositorios como personas trabajando en el proyecto, a lo que se le pueden sumar uno o más repositorios que se usen como intermediarios para compartir cambios entre las distintas personas. Un lugar práctico para hostear repositorios públicos puede ser \[<https://github.com/>| gtihub\]
 
 Repositorio
 -----------
