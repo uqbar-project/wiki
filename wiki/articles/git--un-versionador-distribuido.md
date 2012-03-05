@@ -1,3 +1,3 @@
 under construction
 
-![](git-figura1.jpg "git-figura1.jpg")
+![](Figura1.jpg "Figura1.jpg")
