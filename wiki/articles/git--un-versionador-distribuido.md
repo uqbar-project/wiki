@@ -53,13 +53,7 @@ Bueno... primero lo tendrías que tener instaldo. Eso se explica [ acá](instala
 
 En la consola (git bash si estás en windows)
 
-<code>
-
-`$ mkdir ~/prueba`
-`$ cd ~/prueba`
-`$ git init`
-
-</code> Lo que estamos haciendo es comenzar un proyecto cuya carpeta raíz será ~/prueba, y en esa carpeta inicializamos un repositorio git para mantener las versiones de nuestro proyecto de prueba. El repositorio está en una carpeta llamada .git adentro de la carpeta raíz del proyecto. La carpeta ~/prueba con todo su contenido menos la carpeta .git es lo que git llama working tree, algo similar a la working copy de svn.
+`$` `mkdir` `~/prueba` `$` `cd` `~/prueba` `$` `git` `init` Lo que estamos haciendo es comenzar un proyecto cuya carpeta raíz será ~/prueba, y en esa carpeta inicializamos un repositorio git para mantener las versiones de nuestro proyecto de prueba. El repositorio está en una carpeta llamada .git adentro de la carpeta raíz del proyecto. La carpeta ~/prueba con todo su contenido menos la carpeta .git es lo que git llama working tree, algo similar a la working copy de svn.
 
 Git lo llama working tree porque un directorio en el file system que estemos usando es también un árbol y como git entiende los proyectos como árboles dice que la carpeta donde editamos los archivos del proyecto no es otra cosa que el árbol de trabajo.
 
