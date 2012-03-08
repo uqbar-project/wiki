@@ -13,6 +13,15 @@ En las metodologías iterativas se divide el proyecto en entregas o iteraciones.
 Metodologías orientadas al proceso / a las personas
 ---------------------------------------------------
 
+Otra taxonomía que divide las metodologías es el grado de importancia que le dan
+
+-   al proceso de desarrollo
+-   y a las personas que ejecutan ese plan
+
+Si bien la mayoría de las metodologías contemplan tanto la serie de pasos que conforman el proceso como qué tipo de tareas deben desarrollar las personas (en base a sus perfiles), hay metodologías en las que el proceso está por encima de las personas. Dicho de otra manera, "respetar el proceso garantiza el éxito del proyecto". El margen de discrecionalidad (cuánto puedo salirme del libreto) es mínimo, sólo en lo operacional (en el día a día). Por eso es importante para estas metodologías poder medir cada tarea del proyecto, sea un ejecutable o documentación.
+
+Por el contrario, las metodologías orientadas a las personas consideran que éstas definen el éxito o fracaso de un proyecto. Les asignan un grado mayor de decisión en cada tarea y confían en su capacidad de resolución de un problema antes que en las métricas que dan los indicadores. Esto no quiere decir que el proceso no importe, sino que ocupa un puesto de menor relevancia en la consecución de un logro.
+
 Metodologías orientadas a la documentación / al producto
 --------------------------------------------------------
 
