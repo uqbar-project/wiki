@@ -38,6 +38,11 @@ con la ventaja de tener la certeza de que lo que hace el sistema es eso.
 Metodologías predictivas / adaptativas
 --------------------------------------
 
+¿Qué ocurre con los cambios que piden los usuarios mientras se va construyendo el software? ¿Cómo se manejan?
+
+-   algunas metodologías creen que es posible anticipar los cambios a través de un buen análisis y un buen diseño que contemple diferentes alternativas. Este enfoque no es inocente, sabe perfectamente que el usuario puede cambiar de opinión, que las disposiciones legales e impositivas sufren modificaciones y que los proyectos están siempre sujetos a vaivenes políticos. Pero justamente por eso busca minimizar los cambios para conservar lo más estable posible el entorno: resistirse al cambio es su naturaleza.
+-   otras metodologías consideran que el cambio es inevitable, que no tiene sentido resistirse a él. De manera que el proceso mismo contempla momentos en los que el usuario puede modificar los requerimientos: esto implica agregar nuevos, descartar otros o modificarlos (no importa si ya fueron construidos o no). "El usuario tiene derecho a cambiar de opinión", sostienen.
+
 Ejemplos concretos
 ------------------
 
@@ -50,4 +55,5 @@ Links relacionados
 ------------------
 
 -   [Volver a Diseño de Sistemas](design-temario.html)
+-   ["The New Methodology", artículo de Martin Fowler](http---martinfowler-com-articles-newmethodology-html.html)
 
