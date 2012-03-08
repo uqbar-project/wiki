@@ -55,5 +55,5 @@ Links relacionados
 ------------------
 
 -   [Volver a Diseño de Sistemas](design-temario.html)
--   ["The New Methodology", artículo de Martin Fowler](http---martinfowler-com-articles-newmethodology-html.html)
+-   \[<http://martinfowler.com/articles/newMethodology.html>|"The New Methodology", artículo de Martin Fowler\]
 
