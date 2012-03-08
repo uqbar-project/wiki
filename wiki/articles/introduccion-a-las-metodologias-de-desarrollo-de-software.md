@@ -25,6 +25,16 @@ Por el contrario, las metodologías orientadas a las personas consideran que és
 Metodologías orientadas a la documentación / al producto
 --------------------------------------------------------
 
+Hay metodologías que sostienen que un producto de software bien elaborado nace de una documentación extensa y que contemple todas las decisiones que surgieron del análisis y del diseño. De esa manera el desarrollador no tendrá dudas ni excusas a la hora de escribir cada línea de código.
+
+Por el contrario, hay metodologías que privilegian tener un software testeable para el usuario antes que tener el documento que respalde ese software que está corriendo. Esto no significa que haya que programar sin tener una especificación, sino que:
+
+-   tomamos una documentación que puede tener definiciones pendientes, estar incompleta en su diseño o que sepamos que esté sujeta a cambios
+-   construimos el software
+-   y luego actualizamos las decisiones principales en el documento
+
+con la ventaja de tener la certeza de que lo que hace el sistema es eso.
+
 Metodologías predictivas / adaptativas
 --------------------------------------
 
