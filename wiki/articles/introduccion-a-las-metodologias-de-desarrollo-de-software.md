@@ -53,7 +53,8 @@ Algunos ejemplos de metodologías
     -   y definitivamente predictivo.
 -   **Espiral de Boehm**: originado en el [paper de Barry Boehm: "A Spiral Model of Software Development and Enhancement"](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/spiral.pdf), surge como primer contracara del modelo de cascada. Sigue un modelo de planificación de objetivos, identificación de riesgos y desarrollo y verificación del producto en *n iteraciones*,
     -   esto lo convierte en adaptativo (contempla cambios más allá del análisis previo)
-    -   . Las primeras iteraciones pueden consistir en prototipos. No dice nada de Orientado a proceso / orientado a doc.
+    -   -   . Las primeras iteraciones pueden consistir en prototipos. No dice nada de Orientado a proceso / orientado a doc.
+
 -   **Proceso unificado**: comercializado por varias empresas, el [proceso unificado](http://en.wikipedia.org/wiki/Unified_Process) es el primero que permite adaptarse según el tamaño del proyecto y su complejidad. Se autodefine como un proceso "iterativo e incremental, dirigido por los casos de uso, orientado a la arquitectura y que busca anticipar los riesgos del proyecto". Las fases del proyecto se dividen en: Inception, Elaboration, Construction y Transition. Cada una es susceptible de dividirse en iteraciones y lo que diferencia una fase de otra es la madurez del producto que se está construyendo.
     -   Desde la fase de Elaboración hay construcción, test y deploy de un ejecutable, por eso su naturaleza es *iterativa*.
     -   De la misma manera, se evita tomar decisiones en forma prematura y se contempla la posibilidad de modificar los requerimientos hasta la última iteración, por lo que también encaja perfectamente en las metodologías adaptativas.
