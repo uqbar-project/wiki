@@ -60,7 +60,15 @@ Algunos ejemplos de metodologías
     -   De la misma manera, se evita tomar decisiones en forma prematura y se contempla la posibilidad de modificar los requerimientos hasta la última iteración, por lo que también encaja perfectamente en las metodologías adaptativas.
     -   UP sugiere una gran cantidad de artefactos de documentación, aunque podemos minimizarlos para concentrarnos en el código funcionando para el usuario. En la discusión filosófica documentación vs. producto podemos decir que UP está a mitad de camino de ambas, como lo confirma esta frase: "El producto no es sólo el ejecutable, también es la documentación que acompaña al sistema: manual de usuario, casos de uso, diagramas de clase, diagrama de arquitectura, etc."
     -   Respecto a la orientación persona o proceso podemos decir que UP se mantiene en una zona gris. Por un lado define que "las personas son importantes y tienen que saber qué hacer", mientras que al mismo tiempo cada persona cumple un rol que sugiere que esas personas están supeditadas a un proceso en el cual confiar.
--   **Metodologías ágiles**: como [extreme Programming](http://www.extremeprogramming.org/), Scrum (según el artículo de [Jeff Sutherland y Ken Schwaber](http://www.scrum.org/storage/scrumguides/Scrum_Guide.pdf), y la referencia al artículo original de \[<http://hbr.org/product/new-new-product-development-game/an/86116-PDF-ENG> Takeuchi, Hirotaka; Nonaka, Ikujiro), ASD, etc. Todas se basan a partir del famoso [manifiesto ágil](http://agilemanifesto.org/)
+-   **Metodologías ágiles**: como [extreme Programming](http://www.extremeprogramming.org/), Scrum (según el artículo de [Jeff Sutherland y Ken Schwaber](http://www.scrum.org/storage/scrumguides/Scrum_Guide.pdf), y la referencia al artículo original de [Takeuchi, Hirotaka; Nonaka, Ikujiro](http://hbr.org/product/new-new-product-development-game/an/86116-PDF-ENG)), ASD, etc. Todas se basan en el [manifiesto ágil](http://agilemanifesto.org/) que establece sus principios metodológicos para desarrollar software:
+    -   Las personas y cómo se relacionan entre sí son más importantes que los procesos y las herramientas tecnológicas (es orientado a las personas, por definición)
+    -   Un producto funcionando es más importante que la documentación exhaustiva (orientado al producto)
+    -   La colaboración del cliente es más importante que la negociación del contrato (que discrimina al cliente como parte externa del producto)
+    -   Responder al cambio es más importante que seguir el plan (adaptativo/iterativo)
+
+<!-- -->
+
+-   -   
 
 Links relacionados
 ------------------
