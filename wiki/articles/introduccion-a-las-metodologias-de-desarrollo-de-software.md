@@ -66,10 +66,6 @@ Algunos ejemplos de metodologías
     -   La colaboración del cliente es más importante que la negociación del contrato (que discrimina al cliente como parte externa del producto)
     -   Responder al cambio es más importante que seguir el plan (adaptativo/iterativo)
 
-<!-- -->
-
--   -   
-
 Links relacionados
 ------------------
 
