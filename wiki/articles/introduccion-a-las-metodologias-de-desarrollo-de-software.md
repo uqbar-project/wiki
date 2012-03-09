@@ -43,8 +43,8 @@ Metodologías predictivas / adaptativas
 -   algunas metodologías creen que es posible anticipar los cambios a través de un buen análisis y un buen diseño que contemple diferentes alternativas. Este enfoque no es inocente, sabe perfectamente que el usuario puede cambiar de opinión, que las disposiciones legales e impositivas sufren modificaciones y que los proyectos están siempre sujetos a vaivenes políticos. Pero justamente por eso busca minimizar los cambios para conservar lo más estable posible el entorno: resistirse al cambio es su naturaleza.
 -   otras metodologías consideran que el cambio es inevitable, que no tiene sentido resistirse a él. De manera que el proceso mismo contempla momentos en los que el usuario puede modificar los requerimientos: esto implica agregar nuevos, descartar otros o modificarlos (no importa si ya fueron construidos o no). "El usuario tiene derecho a cambiar de opinión", sostienen.
 
-Algunos ejemplos de metodologías
---------------------------------
+Algunos ejemplos
+----------------
 
 -   **Modelo de Cascada**: originado en el [paper de Winston Royce: "Managing the development of large software systems"](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf) ordena el desarrollo de software en las conocidas fases de Relevamiento (de requerimientos de sistema y de software), Análisis, Diseño, Codificación, Prueba y Mantenimiento. Si bien las fases pueden llegar a solaparse, el proceso está concebido como
     -   secuencial ("el diseño debe ocurrir antes que el desarrollo: STEP 1 - PROGRAM DESIGN COMES FIRST"),
