@@ -6,7 +6,7 @@ Un modelo es una simplificación. Es una interpretación de la realidad que abst
 Dominio
 -------
 
-Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas "actividades" o "intereses" y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifique, seleccione y estructure el conocimiento de manera de enfocarla en lo que necesitamos para solucionar el problema.
+Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas "actividades" o "intereses" y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifique, seleccione y estructure el conocimiento de manera de enfocarlo en lo que necesitamos para solucionar el problema.
 
 Cohesión
 --------
