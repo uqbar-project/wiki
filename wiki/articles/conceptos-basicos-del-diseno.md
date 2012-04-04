@@ -1,3 +1,8 @@
+Dominio
+-------
+
+El dominio de un problema es el conjunto de objetivos a cumplir, las reglas de negocio que les dan forma y todo elemento que las mismas afecten y se vea involucrado en la solución.
+
 Cohesión
 --------
 
