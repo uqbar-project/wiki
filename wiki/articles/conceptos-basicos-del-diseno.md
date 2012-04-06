@@ -57,3 +57,9 @@ Requerimientos y casos de uso
 -----------------------------
 
 Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un usuario. Cuando hacemos especificaciones de los casos de uso definimos la interacción entre usuario y sistema, dejando claro el límite entre lo que debe proporcionar el usuario y lo que el sistema debe responder.
+
+Links relacionados
+------------------
+
+-   [Volver a Diseño de Sistemas](design-temario.html)
+
