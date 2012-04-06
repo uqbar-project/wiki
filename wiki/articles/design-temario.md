@@ -37,9 +37,3 @@ Unidad 7: Reingeniería y manejo del cambio
 
 Unidad 8: Diseño de interfaces de usuario
 -----------------------------------------
-
-Links relacionados
-------------------
-
--   [Volver a Diseño de Sistemas](design-temario.html)
-
