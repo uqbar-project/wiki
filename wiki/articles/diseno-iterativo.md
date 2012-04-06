@@ -21,3 +21,19 @@ Por el contrario, las metodologías adaptativas proponen el **diseño iterativo*
 -   si queremos reflejar la realidad, tenemos que permitir que haya alternancia entre diseño y programación. No paralelizamos las actividades, sino que una se va solapando a la otra, como en una pila.
 -   el diseño iterativo considera que los errores son parte del desarrollo mismo y necesitamos poder modificar el diseño en cualquier momento, sin que eso paralice el proyecto (iterativo tiene mucho de "prueba y error").
 
+<!-- -->
+
+-   big design up front vs the simplest think that could possible work
+-   la curva del costo del costo de cambio, aplanar la curva, el diseño anticipado propone resolver los cambios antes, en la parte donde la curva no es alta.
+-   darme cuenta cuales cambios, cuales decisiones pueden tener una curva aplanada y cuales no
+
+El costo del cambio
+-------------------
+
+Tradicionalmente las metodologías secuenciales interpretan que le costo de corregir un error o de introducir un cambio en un desarrollo de software se incrementa exponencialmente a medida que se avanza con el desarrollo. Según esta visión, un error en el análisis que podría corregirse en un par de horas de trabajo, tardará días en solucionarse si se lo detecta durante la etapa de diseño e incluso podría requerir de varias semanas si se lo encuentra recién durante la etapa de construcción.
+
+Varios autores, entre ellos Kent Beck han propuesto otra interpretación. Según esta nueva perspectiva la curva del cambio es radicalmente distinta para los proyectos de software en la actualidad. La valoración incorrecta del costo del cambio proviene en parte por la asociación con otras ingenierías; en las ingenierías que trabajan con entidades físicas hacer una modificación sobre algo construido suele ser muy costoso, incluso en algunos casos imposible. Esto no es válido para una ingeniería que trabaja con productos tan abstractos y maleables como el software. Adicionalmente la ingeniería del software se diferencia radicalmente de las otras en cuanto a que el costo de reproducción de un producto una vez construido es insignificante (compárese el costo de construir una nueva unidad de un automóvil determinado en una línea de producción con el costo de producir una nueva unidad de un programa que se vende en forma masiva).
+
+Por otro lado, las herramientas para el desarrollo de software han evolucionado notablemente en los últimos años, apareciendo entornos integrados de desarrollo, lenguajes de muy alto nivel, herramientas de versionado, refactorings automáticos, herramientas de integración contínua, entre otros. A modo de ejemplo, podemos considerar el costo de cambiar el nombre de una variable en un entorno de desarrollo que no tenga la capacidad de hacerlo automáticamente en un programa grande con la simplicidad de hacerlo en un entorno de los que se usan hoy en día. El tiempo se reduce a penas a segundos.
+
+Según la interpretación de Beck, cualquier cambio es realizable con un costo relativamente bajo aún en etapas avanzadas del desarrollo. Otros autores sugieren que hay algunos cambios para los cuales se puede aplanar la curva del costo y otros cambios para los que no. Por ejemplo, se ha sugerido que los errores arquitecturales tienden a tener curvas empinadas. Si bien es imaginable que en la medida que las herramientas (tanto tecnológicas como conceptuales) evolucionen, más y más decisiones puedan tomarse considerando la posibilidad de modidicarlas mas adelante sin que esto implique un costo alto, todavía hoy en día es importante detectar para cada decisión que tomamos en una etapa temprana del desarrollo si el costo potencial de un error es elevado o no.
