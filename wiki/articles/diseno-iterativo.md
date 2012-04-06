@@ -11,7 +11,7 @@ Las metodologías predictivas proponen el **diseño anticipado**, donde se asume
     -   para ello hay que documentar el sistema en su completitud para que los programadores no tengan que tomar decisiones de diseño en la codificación.
 -   en la fase de diseño no se debe programar, dado que se estaría solapando la actividad (de la misma manera que en la fase de codificación no se debe diseñar)
 
-Esta forma de diseñar también se conoce como "Big Design Up Front". [Este artículo](http://www.joelonsoftware.com/articles/AardvarkSpec.html) es de
+Esta forma de diseñar también se conoce como "Big Design Up Front". [En este artículo](http://www.joelonsoftware.com/articles/AardvarkSpec.html) el autor expone algunos argumentos en favor de esta metodología.
 
 Por el contrario, las metodologías adaptativas proponen el **diseño iterativo**, donde se asume que
 
@@ -22,10 +22,8 @@ Por el contrario, las metodologías adaptativas proponen el **diseño iterativo*
 -   si el diseño no es adecuado, debemos cambiarlo lo más pronto posible. Esto incluye la fase de codificación.
 -   si queremos reflejar la realidad, tenemos que permitir que haya alternancia entre diseño y programación. No paralelizamos las actividades, sino que una se va solapando a la otra, como en una pila.
 -   el diseño iterativo considera que los errores son parte del desarrollo mismo y necesitamos poder modificar el diseño en cualquier momento, sin que eso paralice el proyecto (iterativo tiene mucho de "prueba y error").
-
-<!-- -->
-
--   big design up front vs the simplest think that could possible work
+-   simplest thing that could possible work
+-   [| En este artículo](http://martinfowler.com/articles/designDead.html) Martin Fowler explica el diseño desde el punto de vista de las metodologías ágiles.
 
 El costo del cambio
 -------------------
