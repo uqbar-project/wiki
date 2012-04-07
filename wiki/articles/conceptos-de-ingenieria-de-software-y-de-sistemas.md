@@ -35,11 +35,6 @@ Requerimientos no funcionales
 
 Los requerimientos no funcionales son aspectos que debe tener el sistema, estos no afectan directamente a la funcionalidad necesitada, sino que definen la calidad y las características que el sistema debe soportar. También conocidos como "atributos de calidad": - Performance - Availability (Disponibilidad) - Security (Seguridad) - Testability (Testeabilidad) -Modifiability (Modificabilidad) - Usability (Usabilidad)
 
-Requerimientos no funcionales
------------------------------
-
-Los requerimientos no funcionales son aspectos que debe tener el sistema, estos no afectan directamente a la funcionalidad necesitada, sino que definen la calidad y las características que el sistema debe soportar. También conocidos como "atributos de calidad": - Performance - Availability (Disponibilidad) - Security (Seguridad) - Testability (Testeabilidad) -Modifiability (Modificabilidad) - Usability (Usabilidad)
-
 Links relacionados
 ------------------
 
