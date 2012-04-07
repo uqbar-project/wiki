@@ -20,8 +20,9 @@ Los requerimientos funcionales son las capacidades o funcionalidades de un siste
 Procesos de Negocio  
 Los procesos de negocios permiten especificar como un proceso se lleva a cabo a través de la organización, ya que requiere intervención de diferentes actores y áreas, en diferentes lugares y tiempos.
 
--   Casos de Uso
+<!-- -->
 
+Casos de Uso  
 Los caso de uso definen una interacción entre un actor y el sistema, para lograr un objetivo de negocio especifico en un lugar y momento especifico.
 
 ### Requerimientos no funcionales
