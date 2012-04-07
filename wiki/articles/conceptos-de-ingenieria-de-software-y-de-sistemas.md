@@ -13,7 +13,10 @@ Proceso de software
 Requerimientos
 --------------
 
-Requerimientos funcionales Los requerimientos funcionales son las capacidades o funcionalidades de un sistema de software. Detallan el comportamiento del sistema. En otras palabras, lo que el sistema debe proveer. Hay distintos tipos de requerimientos no funcionales:
+Requerimientos funcionales
+==========================
+
+Los requerimientos funcionales son las capacidades o funcionalidades de un sistema de software. Detallan el comportamiento del sistema. En otras palabras, lo que el sistema debe proveer. Hay distintos tipos de requerimientos no funcionales:
 
 - Procesos de Negocio Los procesos de negocios permiten especificar como un proceso se lleva a cabo a través de la organización, ya que requiere intervención de diferentes actores y áreas, en diferentes lugares y tiempos.
 
