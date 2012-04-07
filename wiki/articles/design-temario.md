@@ -10,6 +10,7 @@ Unidad 2: El Proceso de Diseño y las especificaciones
 
 -   [Conceptos básicos del diseño](conceptos-basicos-del-diseno.html)
 -   [Impacto de los requerimientos en el diseño](impacto-de-los-requerimientos-en-el-diseno.html)
+-   [Comunicación](comunicacion.html)
 -   [Validación del diseño](validacion-del-diseno.html)
 -   [Calidad de las pruebas unitarias](calidad-de-las-pruebas-unitarias.html)
 -   [Cobertura](cobertura.html)
