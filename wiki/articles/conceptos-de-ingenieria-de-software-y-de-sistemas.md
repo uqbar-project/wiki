@@ -10,9 +10,6 @@ Sistemas legacy, desarrollos a medida y enlatados
 Proceso de software
 -------------------
 
-Requerimientos
---------------
-
 Requerimientos funcionales
 --------------------------
 
