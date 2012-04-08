@@ -3,13 +3,6 @@ Cuando construimos modelos mentales sobre los problema que queremos resolver, ya
 -   Queremos compartirlo con otros: para explicar nuestro modelo construido e intercambiar opiniones sobre el mismo
 -   Queremos construir documentación: una referencia *persistente* sobre lo que hemos pensado, la cual será una fuente de consulta para otros o nosotros mismos en un futuro mas o menos lejano, cuando ya hayamos olvidado la información que recopilamos y las decisiones que tomamos.
 
-Documentar: qué, cuanto, cuando, cómo
--------------------------------------
-
-La documentación no es un fin en sí mismo, sino que la construimos para transmitir nuestras ideas. Es decir, documentar no significa diseñar.
-
-Normalmente no queremos documentar en cada momento todos los aspectos de un problema y su solución, al máximo nivel de detalle y alcance, sino que queremos concentrarnos en algún aspecto particular, quizás porque esos detalles son triviales, o porque quizás aún no los conocemos.
-
 Formas de comunicación
 ----------------------
 
