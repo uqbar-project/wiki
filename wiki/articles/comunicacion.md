@@ -17,6 +17,10 @@ Tenemos varias formas de comunicar estas ideas, por ejemplo, un texto en prosa, 
 
 Los diagramas empleados para comunicar varían en función de su objetivo; probablemente necesite diagramas diferentes para comunicar ideas diferentes. No es lo mismo mostrar la disposición de los servidores en un sistema distribuido que la disposición de los componentes visuales en una interfaz gráfica.
 
+Por otro lado, el tipo de diagrama que construyamos depende del paradigma en el que estoy modelando: la naturaleza de los componentes y su responsabilidades es diferente, por ejemplo, en el paradigma procedural y en el orientado a objetos.
+
+Finalmente, muchas veces emplearemos distintos diagramas que modelan de forma complementaria aspectos diferentes de la misma cosa.
+
 UML
 ---
 
