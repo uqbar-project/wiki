@@ -23,7 +23,7 @@ Por el contrario, las metodologías adaptativas proponen el **diseño iterativo*
 -   si queremos reflejar la realidad, tenemos que permitir que haya alternancia entre diseño y programación. No paralelizamos las actividades, sino que una se va solapando a la otra, como en una pila.
 -   el diseño iterativo considera que los errores son parte del desarrollo mismo y necesitamos poder modificar el diseño en cualquier momento, sin que eso paralice el proyecto (iterativo tiene mucho de "prueba y error").
 -   simplest thing that could possible work
--   [| En este artículo](http://martinfowler.com/articles/designDead.html) Martin Fowler explica el diseño desde el punto de vista de las metodologías ágiles.
+-   [En este artículo](http://martinfowler.com/articles/designDead.html) Martin Fowler explica el diseño desde el punto de vista de las metodologías ágiles.
 
 El costo del cambio
 -------------------
