@@ -60,7 +60,9 @@ Un caso de uso es una secuencia de interacciones que se desarrollarán entre un 
 
 Los casos de uso pueden ser útiles para establecer requisitos de comportamiento, pero no establecen completamente los requisitos funcionales ni permiten determinar los requisitos no funcionales. Los casos de uso deben complementarse con información adicional como reglas de negocio, requisitos no funcionales, diccionario de datos que complementen los requerimientos del sistema. Sin embargo la ingeniería del funcionamiento especifica que cada caso crítico del uso debe tener un requisito no funcional centrado en el funcionamiento asociado.
 
-Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un usuario. [| Mas sobre requerimientos](http://uqbar-wiki.org/index.php?title=Conceptos_de_Ingenier%C3%ADa_de_software_y_de_sistemas#Requerimientos)
+Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un usuario.
+
+[Mas sobre requerimientos](http://uqbar-wiki.org/index.php?title=Conceptos_de_Ingenier%C3%ADa_de_software_y_de_sistemas#Requerimientos)
 
 Links relacionados
 ------------------
