@@ -8,7 +8,7 @@ Documentar: qué, cuanto, cuando
 
 La documentación no es un fin en sí mismo, sino que la construimos para transmitir nuestras ideas
 
-Hay detalles
+Normalmente no queremos documentar en cada momento todos los aspectos de un problema y su solución, al máximo nivel de detalle y alcance, sino que queremos concentrarnos en algún aspecto particular, quizás porque esos detalles son triviales, o porque quizás aún no los conocemos.
 
 Formas de comunicación
 ----------------------
