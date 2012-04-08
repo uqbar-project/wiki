@@ -28,4 +28,4 @@ UML significa Unified Modeling Language (Lenguaje Unificado de Modelado) y basic
 
 [Acá hay alguno de los diagramas de UML](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnx1dG5kZXNpZ258Z3g6MjI2MGVlMjdjODU4M2NkYw)
 
-Una ventaja no menor de UML es su amplia difusión, lo que significa que son conocidos por una gran parte de los perfiles, y que además, existen muchos aplicativos para su construcción.
+Una ventaja no menor de UML frente a otros como por ejemplo [LePUS](http://www.lepus.org.uk/) es su amplia difusión, lo que significa que son conocidos por una gran parte de los perfiles, y que además, existen muchos aplicativos para su construcción.
