@@ -1,3 +1,13 @@
+Cuando construimos modelos mentales sobre los problema que queremos resolver, ya sea como parte del proceso de análisis, diseño, etc, normalmente queremos luego transmitirlos Esto ocurre porque:
+
+-   Queremos compartirlo con otros para intercambiar opiniones sobre el modelo construido
+-   Queremos construir una referencia sobre lo que hemos pensado, la cual será una fuente de consulta para otros o nosotros mismos en un futuro mas o menos lejano, cuando ya hayamos olvidado la información que recopilamos y las decisiones que tomamos.
+
+Formas de comunicación
+----------------------
+
+Tenemos varias formas de comunicar estas ideas, por ejemplo, una especificación de CU en la etapa de análisis o mismo una porción de código o pseudocódigo en la etapa de diseño son formas validas de comunicarlas. Otra forma útil son los diagramas, que normalmente son menos detallados pero transmiten las ideas principales de nuestra realidad modelada más rápidamente.
+
 UML
 ---
 
