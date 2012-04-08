@@ -3,17 +3,24 @@ Cuando construimos modelos mentales sobre los problema que queremos resolver, ya
 -   Queremos compartirlo con otros: para explicar nuestro modelo construido e intercambiar opiniones sobre el mismo
 -   Queremos construir documentación: una referencia *persistente* sobre lo que hemos pensado, la cual será una fuente de consulta para otros o nosotros mismos en un futuro mas o menos lejano, cuando ya hayamos olvidado la información que recopilamos y las decisiones que tomamos.
 
-Documentar: qué, cuanto, cuando
--------------------------------
+Documentar: qué, cuanto, cuando, cómo
+-------------------------------------
 
-La documentación no es un fin en sí mismo, sino que la construimos para transmitir nuestras ideas
+La documentación no es un fin en sí mismo, sino que la construimos para transmitir nuestras ideas. Es decir, documentar no significa diseñar.
 
 Normalmente no queremos documentar en cada momento todos los aspectos de un problema y su solución, al máximo nivel de detalle y alcance, sino que queremos concentrarnos en algún aspecto particular, quizás porque esos detalles son triviales, o porque quizás aún no los conocemos.
 
 Formas de comunicación
 ----------------------
 
-Tenemos varias formas de comunicar estas ideas, por ejemplo, un texto en prosa, una especificación de CU en la etapa de análisis o mismo una porción de código o pseudocódigo en la etapa de diseño son formas validas de comunicarlas. Otra forma útil son los diagramas, que normalmente son menos detallados pero transmiten las ideas principales de nuestra realidad modelada más rápidamente.
+Tenemos varias formas de comunicar estas ideas, por ejemplo
+
+-   un texto en prosa
+-   una especificación de CU en la etapa de análisis
+-   una porción de código o pseudocódigo en la etapa de diseño
+-   un caso de prueba
+
+son formas validas de comunicarlas. Otra forma útil son los diagramas, que normalmente son menos detallados pero transmiten las ideas principales de nuestra realidad modelada más rápidamente.
 
 Los diagramas empleados para comunicar varían en función de su objetivo; probablemente necesite diagramas diferentes para comunicar ideas diferentes. No es lo mismo mostrar la disposición de los servidores en un sistema distribuido que la disposición de los componentes visuales en una interfaz gráfica.
 
