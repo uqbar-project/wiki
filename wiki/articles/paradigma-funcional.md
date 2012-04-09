@@ -12,6 +12,7 @@ Notas sobre el lenguaje Haskell
 -------------------------------
 
 -   <http://en.wikibooks.org/wiki/Haskell>
+-   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
 -   [Tipos de Haskell](tipos-de-haskell.html)
 -   [Problemas comunes con los tipos numéricos de Haskell](problemas-comunes-con-los-tipos-numericos-de-haskell.html)
 -   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
