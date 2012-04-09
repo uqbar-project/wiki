@@ -56,3 +56,5 @@ Se puede entender como que el haskell a partir de la sintaxis bidimensional "com
 De hecho, es posible escribir la función de esa manera si uno prefiere... pasa que obviamente uno prefiere la sintaxis con menos chirimbolos.
 
 Entonces, cuando dice "unexpected ';'" lo más probable es que no está entendiendo el "layout" que ustedes le dieron a al función, es decir, la forma en que la indentaron. Ese "bad layout" hace que en su traducción aparezca un ";" en algún lado que no tiene sentido. Saber dónde está ese ";" no es sencillo, hay que revisar el layout de la función.
+
+[Ejemplo de problemas de indentación en Haskell](http://stackoverflow.com/questions/2223468/haskell-where-indentation-why-must-it-be-indented-past-identifier)
