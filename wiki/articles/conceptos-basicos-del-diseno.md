@@ -60,7 +60,7 @@ Si el cliente conoce de menos no tiene forma de saber el total de facturación s
 
 ### Acoplamiento explícito e implícito
 
-En algunos casos, el acoplamiento entre dos entidades de software no es fácilmente detectable, a estos acoplamientos se los denomina \*implícitos\*. Esto se produce cuando una entidad de software, para su funcionamiento depende de una característica de otra que no está visible en su interfaz pública y en cambio forma parte de su implementación interna. Un concepto relacionado es el que refleja la frase \*\*Program to an interface, not to an implementation\*\*.
+En algunos casos, el acoplamiento entre dos entidades de software no es fácilmente detectable, a estos acoplamientos se los denomina \*implícitos\*. Esto se produce cuando una entidad de software, para su funcionamiento depende de una característica de otra que no está visible en su interfaz pública y en cambio forma parte de su implementación interna. En algunos libros este concepto puede encontrarse mencionado como *Program to an interface, not to an implementation*.
 
 El acoplamiento entre dos entidades de software produce una dependencia: un cambio en una de ellas posiblemente produzca un cambio en la otra. Al modificar una entidad de software es importante poder conocer cuáles son todas las otras entidades que pudieran ser afectadas por este cambio. Por eso, en el caso en que tengamos un acoplamiento, siempre es preferible que lo explicitemos, ya que facilitará la mantenibilidad del sistema y nos dará una herramienta para asegurar la consistencia ante las modificaciones.
 
