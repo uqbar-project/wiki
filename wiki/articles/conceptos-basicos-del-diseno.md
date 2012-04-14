@@ -3,6 +3,11 @@ Modelo
 
 Un modelo es una simplificación. Es una interpretación de la realidad que abstrae los aspectos relevantes para la solución de un problema. \[DDD-Eric Evans\].
 
+Heurística
+----------
+
+Una herurística, es una medida que no es cuantitativa, sino cualitativa. No tengo una regla matemática para hacer la medición, no le puedo asignar un número. La puedo aplicar comparando dos cosas. Como el diseño no es una ciencia dura, nos va a pasar mucho, que necesitamos manejarnos con heurísticas.
+
 Dominio
 -------
 
