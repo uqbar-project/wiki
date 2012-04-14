@@ -58,6 +58,8 @@ Si el cliente conoce de menos no tiene forma de saber el total de facturación s
 
 </code>
 
+### Requerimiento implícito
+
 Requerimientos y casos de uso
 -----------------------------
 
