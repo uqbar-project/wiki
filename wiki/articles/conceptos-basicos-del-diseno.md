@@ -3,15 +3,15 @@ Modelo
 
 Un modelo es una simplificación. Es una interpretación de la realidad que abstrae los aspectos relevantes para la solución de un problema. \[DDD-Eric Evans\].
 
-Heurística
-----------
-
-Una herurística, es una medida que no es cuantitativa, sino cualitativa. No tengo una regla matemática para hacer la medición, no le puedo asignar un número. La puedo aplicar comparando dos cosas. Como el diseño no es una ciencia dura, nos va a pasar mucho, que necesitamos manejarnos con heurísticas.
-
 Dominio
 -------
 
 Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas "actividades" o "intereses" y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifique, seleccione y estructure el conocimiento de manera de enfocarlo en lo que necesitamos para solucionar el problema.
+
+Heurística
+----------
+
+Una herurística, es una medida que no es cuantitativa, sino cualitativa. No tengo una regla matemática para hacer la medición, no le puedo asignar un número. La puedo aplicar comparando dos cosas. Como el diseño no es una ciencia dura, nos va a pasar mucho, que necesitamos manejarnos con heurísticas.
 
 Cohesión
 --------
