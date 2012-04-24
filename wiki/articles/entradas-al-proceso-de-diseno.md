@@ -11,6 +11,18 @@ Otra clasificación posible es en requerimientos funcionales y no funcionales. U
 
 Una última diferenciación de los requerimientos es identificar (dentro de los requerimientos funcionales) a los que representan las formas en que un usuario puede interactuar con el sistema. A estos requerimientos los denominamos casos de uso.
 
+### Requerimientos funcionales
+
+Los requerimientos funcionales son las capacidades o funcionalidades de un sistema de software. Detallan el comportamiento del sistema. En otras palabras, lo que el sistema debe proveer. Hay distintos tipos de requerimientos no funcionales:
+
+Procesos de Negocio  
+Los procesos de negocios permiten especificar como un proceso se lleva a cabo a través de la organización, ya que requiere intervención de diferentes actores y áreas, en diferentes lugares y tiempos.
+
+<!-- -->
+
+Casos de Uso  
+Los caso de uso definen una interacción entre un actor y el sistema, para lograr un objetivo de negocio especifico en un lugar y momento especifico.
+
 Componentes primitivas (*primitive components*)
 -----------------------------------------------
 
