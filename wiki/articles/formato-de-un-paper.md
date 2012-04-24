@@ -57,6 +57,8 @@ La discusión es donde:
 Implementation
 --------------
 
+Aca podemos hablar de nuestra implementación en particular. Es la parte menos de investigación(?).
+
 Evaluation
 ----------
 
