@@ -1,15 +1,18 @@
-Ralph & Wand definen las siguientes entradas al proceso de diseño:
+Ralph & Wand definen que el diseño clasifica las entradas o influencias al proceso de diseño en requerimientos, objetivos, componentes primitivas, restricciones y entorno.
 
-Requerimientos  
+Requerimientos
+--------------
+
 Los requerimientos (requirements) son la entrada más obvia y tal vez la más importante. La fuente de los requerimientos es el proceso de análisis, el análisis también es una especificación: de lo que el sistema debe ser, de sus características externas. El diseño especifica cómo el sistema debe construirse.
 
--   Ralph y Wand diferencian un subconjunto de los requerimientos denominados objetivos (goals). Los objetivos resumen el impacto esperado del sistema en el ambiente.
--   Otra clasificación posible es en requerimientos funcionales y no funcionales. Una buena especificación de requerimientos debe contemplar tanto las cuestiones funcionales como las no funcionales, y el diseño deberá proponer ideas.
--   Una última diferenciación de los requerimientos es identificar (dentro de los requerimientos funcionales) a los que representan las formas en que un usuario puede interactuar con el sistema. A estos requerimientos los denominamos casos de uso.
+Ralph y Wand diferencian un subconjunto de los requerimientos denominados objetivos (goals). Los objetivos resumen el impacto esperado del sistema en el ambiente.
 
-<!-- -->
+Otra clasificación posible es en requerimientos funcionales y no funcionales. Una buena especificación de requerimientos debe contemplar tanto las cuestiones funcionales como las no funcionales, y el diseño deberá proponer ideas.
 
-Componentes primitivas (primitive components);  
+Una última diferenciación de los requerimientos es identificar (dentro de los requerimientos funcionales) a los que representan las formas en que un usuario puede interactuar con el sistema. A estos requerimientos los denominamos casos de uso.
+
+Componentes primitivas (**primitive components**)
+-------------------------------------------------
 
 son los bloques de construcción provistos por la tecnología subyacente. En los niveles más bajos de abstracción del sistema, las abstracciones utilizadas tienden a coincidir con las herramientas provistas por la tecnología, tanto en cuanto a sus bloques primitivos de construcción, como en la forma de combinarlos entre sí.
 
