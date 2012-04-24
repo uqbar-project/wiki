@@ -44,6 +44,8 @@ Luego enumeramos los problemas actuales que vamos a encarar:
 My Solution
 -----------
 
+Contamos la solución. Hice X, Y y Z, que solucionan los problemas A, B y C, así y asá. No comparamos con otra gente ni otras soluciones. Esta sección es toda nuestra.
+
 Discussion
 ----------
 
