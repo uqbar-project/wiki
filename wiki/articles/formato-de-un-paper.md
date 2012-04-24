@@ -6,6 +6,17 @@ Título
 Abstract
 --------
 
+El abstract no es otra cosa que un resumen de todo el paper. La idea es que contenga una oración para cada uno de los siguientes temas:
+
+-   contexto
+-   problema
+-   porque es un problema
+-   solucion que se presenta
+-   como lo que presentamos soluciona el problema
+-   quizas algun ejemplo
+
+La idea es que quien lea el abstract sepa completamente de qué se trata el paper, y pueda decidir si quiere seguir leyéndolo o no.
+
 Introduction
 ------------
 
