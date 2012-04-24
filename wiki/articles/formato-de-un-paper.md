@@ -49,6 +49,11 @@ Contamos la solución. Hice X, Y y Z, que solucionan los problemas A, B y C, as�
 Discussion
 ----------
 
+La discusión es donde:
+
+-   nuestra solución se compara con las existentes
+-   abrimos la puerta a líneas que no se llegaron a explorar aca, que podrían encararse en el futuro.
+
 Implementation
 --------------
 
