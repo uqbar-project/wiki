@@ -11,8 +11,8 @@ Otra clasificación posible es en requerimientos funcionales y no funcionales. U
 
 Una última diferenciación de los requerimientos es identificar (dentro de los requerimientos funcionales) a los que representan las formas en que un usuario puede interactuar con el sistema. A estos requerimientos los denominamos casos de uso.
 
-Componentes primitivas (**primitive components**)
--------------------------------------------------
+Componentes primitivas (*primitive components*)
+-----------------------------------------------
 
 son los bloques de construcción provistos por la tecnología subyacente. En los niveles más bajos de abstracción del sistema, las abstracciones utilizadas tienden a coincidir con las herramientas provistas por la tecnología, tanto en cuanto a sus bloques primitivos de construcción, como en la forma de combinarlos entre sí.
 
