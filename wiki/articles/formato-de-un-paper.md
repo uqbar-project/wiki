@@ -65,7 +65,7 @@ Evaluation
 Related work
 ------------
 
-`comparison`
+Aca normalmente se hablar de gente trabajando en cosas parecidas, no necesariamente sobre el mismo campo, o buscando la misma solución. Es bastante similar a Discussion, y por eso ambas secciones pueden ser una sola.
 
 Conclusion
 ----------
