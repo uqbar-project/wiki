@@ -71,3 +71,5 @@ Aca normalmente se hablar de gente trabajando en cosas parecidas, no necesariame
 
 Conclusion
 ----------
+
+Es un resumen post lectura, o sea, el lector ya tiene nuestro laburo en la cabeza: "Nuestra solución X pareciera ser una buena solución al problema Y, aunque no tanto para el problema Z. Queda por explorar el camino J, que encaró inicialmente el autor Fulanito\[cita\]"
