@@ -20,9 +20,9 @@ La idea es que quien lea el abstract sepa completamente de qué se trata el pape
 Introduction
 ------------
 
-La idea de la introducción es contarle al lector que hicimos la tarea. Sí, que sabemos de qué estamos hablando, conocemos los problemas, conocemos lo que otra gente hizo. La idea es que aca se explique mucho del contexto y brevemente los otros puntos, ya que van a ser mejor explicados en las secciones que siguen.
+La introducción le muestra al lector que hicimos la tarea. Sí, que sabemos de qué estamos hablando, conocemos los problemas, conocemos lo que otra gente hizo. Aca se explica mucho del contexto en el que nos paramos y brevemente los otros puntos, ya que van a ser mejor explicados en las secciones que siguen.
 
--   Context: contar el contexto del problema, qué tecnología, qué ambiente
+-   Context: contar el contexto del problema, qué tecnología, qué ambiente. ¿es relacionado a web apps? ¿A lenguajes con chequeo estático de tipos? ¿Lenguajes con herencia múltiple?
 -   Problems: contar brevemente los problemas que se quieren solucionar
 -   Current Solutions: contar brevemente las soluciones existentes que existen que atacan el problema
 -   Contributions: que agregamos nosotros a la investigación en el tema
