@@ -3,11 +3,9 @@ Ralph & Wand definen que el diseño clasifica las entradas o influencias al proc
 Requerimientos
 --------------
 
-Los requerimientos (requirements) son la entrada más obvia y tal vez la más importante. La fuente de los requerimientos es el proceso de análisis, el análisis también es una especificación: de lo que el sistema debe ser, de sus características externas. El diseño especifica cómo el sistema debe construirse.
+Los requerimientos o *requirements* son la entrada más obvia y tal vez la más importante. La fuente de los requerimientos es el proceso de análisis, el análisis también es una especificación: de lo que el sistema debe ser, de sus características externas. El diseño especifica cómo el sistema debe construirse.
 
-Otra clasificación posible es en requerimientos funcionales y no funcionales. Una buena especificación de requerimientos debe contemplar tanto las cuestiones funcionales como las no funcionales, y el diseño deberá proponer ideas.
-
-Una última diferenciación de los requerimientos es identificar (dentro de los requerimientos funcionales) a los que representan las formas en que un usuario puede interactuar con el sistema. A estos requerimientos los denominamos casos de uso.
+La clasificación más común de los requerimientos es dividirlos entre funcionales y no funcionales. Una buena especificación de requerimientos debe contemplar tanto las cuestiones funcionales como las no funcionales, y el diseño deberá proponer ideas.
 
 ### Requerimientos funcionales
 
@@ -21,7 +19,11 @@ Los procesos de negocios permiten especificar como un proceso se lleva a cabo a 
 Casos de Uso  
 Los caso de uso definen una interacción entre un actor y el sistema, para lograr un objetivo de negocio especifico en un lugar y momento especifico.
 
-### Objetivos (**goals**)
+### Requerimientos no funcionales
+
+Son los que especifican la forma en que el sistema debe llevar a cabo esas capacidades, determinan la calidad con la que el sistema brinda los servicios o bien la calidad con la que está construido.
+
+### Objetivos (*goals*)
 
 Ralph y Wand diferencian un subconjunto de los requerimientos denominados objetivos (goals). Los objetivos resumen el impacto esperado del sistema en el ambiente.
 
