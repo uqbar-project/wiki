@@ -62,6 +62,8 @@ Aca podemos hablar de nuestra implementación en particular. Es la parte menos d
 Evaluation
 ----------
 
+Qué tan buena es nuestra implementación y como soluciona los problemas que enumeramos. Aca podemos poner benchmarks, métricas, etc.
+
 Related work
 ------------
 
