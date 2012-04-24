@@ -5,8 +5,6 @@ Requerimientos
 
 Los requerimientos (requirements) son la entrada más obvia y tal vez la más importante. La fuente de los requerimientos es el proceso de análisis, el análisis también es una especificación: de lo que el sistema debe ser, de sus características externas. El diseño especifica cómo el sistema debe construirse.
 
-Ralph y Wand diferencian un subconjunto de los requerimientos denominados objetivos (goals). Los objetivos resumen el impacto esperado del sistema en el ambiente.
-
 Otra clasificación posible es en requerimientos funcionales y no funcionales. Una buena especificación de requerimientos debe contemplar tanto las cuestiones funcionales como las no funcionales, y el diseño deberá proponer ideas.
 
 Una última diferenciación de los requerimientos es identificar (dentro de los requerimientos funcionales) a los que representan las formas en que un usuario puede interactuar con el sistema. A estos requerimientos los denominamos casos de uso.
@@ -22,6 +20,10 @@ Los procesos de negocios permiten especificar como un proceso se lleva a cabo a 
 
 Casos de Uso  
 Los caso de uso definen una interacción entre un actor y el sistema, para lograr un objetivo de negocio especifico en un lugar y momento especifico.
+
+### Objetivos (**goals**)
+
+Ralph y Wand diferencian un subconjunto de los requerimientos denominados objetivos (goals). Los objetivos resumen el impacto esperado del sistema en el ambiente.
 
 Componentes primitivas (*primitive components*)
 -----------------------------------------------
