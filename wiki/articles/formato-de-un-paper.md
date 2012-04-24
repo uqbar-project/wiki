@@ -33,10 +33,13 @@ La introducción le muestra al lector que hicimos la tarea. Sí, que sabemos de 
 Problems
 --------
 
-`Constraints`
-`Problem1`
-`Problem2`
-`Your solution in a nutshell`
+-   Constraints: ¿Sobre qué limitaciones trabajamos? ¿Ambientes con mucha seguridad? ¿Sin conexión de red? ¿Vms restrictivas?
+
+Luego enumeramos los problemas actuales que vamos a encarar:
+
+-   Problem1
+-   Problem2
+-   Your solution in a nutshell: contamos nuestra solución muy brevemente, contando en muy pocas lineas qué problemas resolvemos. Estamos invitando a que nos sigan a la próxima sección.
 
 My Solution
 -----------
