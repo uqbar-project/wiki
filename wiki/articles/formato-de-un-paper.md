@@ -3,6 +3,8 @@ No todas las secciones son necesarias, pueden haber otras secciones o con otros 
 Título
 ------
 
+Hay que elegir un buen título :)
+
 Abstract
 --------
 
