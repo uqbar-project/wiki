@@ -14,6 +14,8 @@ Unidad 2: El Proceso de Diseño y las especificaciones
 -   [Validación del diseño](validacion-del-diseno.html)
 -   [Calidad de las pruebas unitarias](calidad-de-las-pruebas-unitarias.html)
 -   [Cobertura](cobertura.html)
+-   [Modelo y Metamodelo](modelo-y-metamodelo.html)
+-   [Cosificación](cosificacion.html)
 
 Unidad 3: Diseño estructurado y funcional
 -----------------------------------------
