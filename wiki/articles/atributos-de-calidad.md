@@ -8,7 +8,7 @@ Simplicidad
 Correctitud, consistencia, completitud
 --------------------------------------
 
-<http://www.jwz.org/doc/worse-is-better.html>
+[Worse is better](http://www.jwz.org/doc/worse-is-better.html)
 
 Robustez
 --------
