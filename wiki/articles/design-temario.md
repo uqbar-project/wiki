@@ -25,6 +25,7 @@ Unidad 3: Diseño estructurado y funcional
 Unidad 4: Diseño orientado a objetos
 ------------------------------------
 
+-   [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html)
 -   [Manejo de Errores](manejo-de-errores.html)
 -   [Ciclo de vida de un objeto](ciclo-de-vida-de-un-objeto.html)
 -   [Double dispatch](double-dispatch.html)
