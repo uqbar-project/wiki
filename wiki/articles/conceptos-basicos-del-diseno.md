@@ -11,17 +11,17 @@ Todo programa de software que se va a construir, surge como una idea, o una nece
 Heurística
 ----------
 
-La heurística es una medida. No es una medida cuantitativa como una longitud o un peso, pero es una medida ya que me permite establecer un valor de referencia de de una característica cualitativa.
+La heurística es una medida. No es una medida cuantitativa como una longitud o un peso, sino una medida que me permite establecer un valor de referencia de una característica cualitativa.
 
-Podemos hablar que una heurística es una buena práctica, que permite comparar dos objetos de estudio en una determinada característica. No vamos a poder establecer un valor numérico a esa comparación pero igualmente nos va a poder permitir saber si un objeto es más o menos en ese aspecto.
+Podemos hablar de que una heurística es una buena práctica, que permite comparar dos objetos de estudio en base a una determinada característica. No vamos a poder establecer un valor numérico para compararlos pero igualmente nos va a poder permitir saber si un objeto es "más" o "menos" que el otro en ese aspecto.
 
-Por ejemplo, si hablamos de la simplicidad de un diseño, no podemos decir que un sistema tenga complejidad 3.5 complejidoñios; pero si podemos decir que un diseño es más o menos simple que otro.
+Por ejemplo, si hablamos de la simplicidad de un diseño, no podemos decir que un sistema tenga complejidad 3.5 complejidoñios; pero sí podemos decir que un diseño es más o menos simple que otro.
 
 Las heurísticas son útiles cuando no disponemos de los medios cientificos para usar otras medidas.
 
-Es equivocado, buscar que una heurística se convierta en un número medible, ya que no es lo que se busca por definición. Por lo tanto, en elementos cualitativos, es imposible establecer medidas cuantitativas. Aunque resulte tentador convertir una heurística en una medición debemos evitar esa tentación a todo costo.
+Es equivocado buscar que una heurística se convierta en un número medible, eso resulta contradictorio por su propia definición. Por lo tanto, en elementos cualitativos, es imposible establecer medidas cuantitativas. Aunque resulte tentador convertir una heurística en una medición debemos evitar esa tentación a todo costo.
 
-Por ejemplo un error común es hablar de complejidad en número de clases o número de métodos. Esta medida, es un indició pero nada me dice de la realidad.
+Por ejemplo un error común es hablar de complejidad en número de clases o número de métodos, de la misma manera que no podemos medir la complejidad de una solución por la cantidad de líneas de código involucadras. Estas medidas son apenas indicios pero es necesario analizar las clases, los métodos, el código para poder determinar si efectivamente esa solución resulta compleja.
 
 Cohesión
 --------
