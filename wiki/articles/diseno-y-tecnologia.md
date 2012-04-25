@@ -25,6 +25,6 @@ Entonces dependiendo del nivel de detalle de nuestro diseño tal vez convenga el
 
 En resumen, el diseño es la especificación de lo que quiero construir. Entonces, al elegir la forma en la que quiero diseñar, las herramientas que uso para diseñar tengo que entender la relación que establezco con la tecnología usada para la construcción.
 
--   Si las dos ideas se parecen mucho eso me puede producir restricciones, si planteo actividades distintas es porque quiero ponerles focos distintos, usar herramientas distintas.
+-   Si las dos ideas se parecen mucho eso puede plantear restricciones muy tempranamente, si planteo actividades distintas es porque quiero ponerles focos distintos, usar herramientas distintas.
 -   Pero si las dos ideas van por caminos muy distintos entonces puede que el diseño pierda utilidad, porque para poder construir voy a tener que llenar los huecos (gaps) que el modelo de diseño no cubra. En definitiva, no es posible construir sin llenar esos huecos, y llenar esos huecos es diseñar.
 
