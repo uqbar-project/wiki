@@ -2,7 +2,7 @@ En programación el chequeo estático de tipos permite detectar errores en un pr
 
 -   a menudo resultan limitantes descartando soluciones que podrían ser viables
 -   que agregar la información de tipos a un programa es trabajoso y reduce su legibilidad y finalmente
--   que las garantías que otorga un sistema de tipos pueden lograrse por otros mecanismos (como el testeo unitario, que veremos en las próximas clases).
+-   que las garantías que otorga un sistema de tipos pueden lograrse por otros mecanismos (como el testeo unitario).
 
 ¿Cómo afecta el chequeo de tipos a la actividad de diseño?
 ----------------------------------------------------------
