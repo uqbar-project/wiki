@@ -3,9 +3,9 @@ Empezar a usar el Squeak puede ser un poco complicado porque no es muy intuitivo
 Crear una Clase
 ---------------
 
-1) Abrir el Class Browser (System Browser): Hagan click sobre el fondo del squeak para que se les abrá el menú World -&gt; open... y eligen Class Browser
+1) Abrir el Class Browser (System Browser): Hagan click sobre el fondo del squeak para que se les abrá el menú World -&gt; open... y eligen Class Browser (en Pharo se llama System Browser)
 
-2) En la primer columna del Class Browser tienen las categorías, allí deberían crear una nueva para agrupar las clases que vayan haciendo. Para eso hacen click derecho sobre esa columna y eligen add item... Les va a pedir que ingresen el nombre para la categoría, por ejemplo, TPObjetos-grupoBle (no sé si había algún formato requerido, pero pongan algo que los identifique).
+2) En la primer columna del Class Browser tienen las categorías, allí deberían crear una nueva para agrupar las clases que vayan haciendo. Para eso hacen click derecho sobre esa columna y eligen add item... (en Pharo es Add Category) Les va a pedir que ingresen el nombre para la categoría, por ejemplo, TPObjetos-grupoBle (no sé si había algún formato requerido, pero pongan algo que los identifique).
 
 Al darle OK les va a aparecer el template para crear clases dentro de esa categoría:
 
