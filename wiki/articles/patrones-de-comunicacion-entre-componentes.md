@@ -5,7 +5,6 @@ La memoria compartida es un espacio común de datos en el que múltiples compone
 
 `#define SIZE 50`
 `int  *tos, *p1, stack[SIZE];`
-
 `void init() {`
 `  tos = stack; /* tos points to the top of stack */`
 `  p1 = stack; /* initialize p1 */`
