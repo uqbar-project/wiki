@@ -17,7 +17,6 @@ La memoria compartida es un espacio común de datos en el que múltiples compone
 `  }`
 `  *p1 = i;`
 `}`
-
 `int pop(void)`
 `{`
 `  if(p1 == tos) {`
@@ -27,7 +26,6 @@ La memoria compartida es un espacio común de datos en el que múltiples compone
 `  p1--;`
 `  return *(p1+1);`
 `}`
-
 `int main(void)`
 `{`
 `  int value;`
