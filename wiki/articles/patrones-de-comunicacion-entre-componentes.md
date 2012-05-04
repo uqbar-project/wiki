@@ -50,7 +50,8 @@ A continuación podemos ver un ejemplo de una pila programada en C utilizando es
 
 Algunas consecuencias de esta forma de compartir información son:
 
--   No hay un mecanismo sencillo para saber qué procedimientos incluyen referencias a las variables globales y stack
+-   No hay un mecanismo sencillo para saber qué procedimientos incluyen referencias a las variables globales y
+-   No es posible tener dos pilas simultáneamente, en caso de intentarlo se mezclaría la información de ambas.
 
 Call & Return
 -------------
