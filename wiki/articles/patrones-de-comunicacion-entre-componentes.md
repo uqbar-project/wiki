@@ -4,16 +4,14 @@ Memoria compartida (*shared memory*)
 La memoria compartida es un espacio común de datos en el que múltiples componentes (por ejemplo: procedimientos) pueden leer y escribir información. Implementaciones típicas de memoria compartida son las variables globales o las bases de datos como herramienta de integración entre componentes. A continuación podemos ver un ejemplo de una pila programada en C utilizando esta forma de compartir información:
 
 ` #include <stdio.h>`
-` #include <stdlib.h>`
-
 ` #define SIZE 50`
-
+` `
 ` int  current, stack[SIZE];`
-
+` `
 ` void init() {`
 `   current = 0; /* initialize current */`
 ` }`
-
+` `
 ` void push(int i) {`
 `   current++;`
 `   if(current == (SIZE)) {`
@@ -22,7 +20,7 @@ La memoria compartida es un espacio común de datos en el que múltiples compone
 `   }`
 `   stack[current] = i;`
 ` }`
-
+` `
 ` int pop(void) {`
 `   if(current == 0) {`
 `       printf("Stack Underflow.\n");`
@@ -31,18 +29,18 @@ La memoria compartida es un espacio común de datos en el que múltiples compone
 `   current--;`
 `   return stack[current+1];`
 ` }`
-`  `
+` `
 ` int main(void) {`
 `   int value;`
 `   init();`
-
+`   `
 `   push(1);`
 `   push(2);`
 `   printf("First value on top is %d\n", pop());`
 `   printf("Second value on top is %d\n", pop());`
 `   printf("Third value on top is %d\n", pop());`
 `   printf("end\n");`
-`   `
+`       `
 `   return 0;`
 ` }`
 
