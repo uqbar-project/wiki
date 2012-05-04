@@ -36,7 +36,7 @@ Unidad 5: Diseño lógico de datos
 Unidad 6: Diseño de la arquitectura del sistema
 -----------------------------------------------
 
--   \[Patrones de comunicación entre componentes\]
+-   [Patrones de comunicación entre componentes](patrones-de-comunicacion-entre-componentes.html)
 
 Unidad 7: Reingeniería y manejo del cambio
 ------------------------------------------
