@@ -15,16 +15,16 @@ La memoria compartida es un espacio común de datos en el que múltiples compone
 ` void push(int i) {`
 `   current++;`
 `   if(current == (SIZE)) {`
-`       printf("Stack Overflow.\n");`
-`       exit(1);`
+`     printf("Stack Overflow.\n");`
+`     exit(1);`
 `   }`
 `   stack[current] = i;`
 ` }`
 ` `
 ` int pop(void) {`
 `   if(current == 0) {`
-`       printf("Stack Underflow.\n");`
-`       exit(1);`
+`     printf("Stack Underflow.\n");`
+`     exit(1);`
 `   }`
 `   current--;`
 `   return stack[current+1];`
