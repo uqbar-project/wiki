@@ -143,6 +143,51 @@ Si bien la comunicación puede ser bidireccional, el conocimiento (y por lo tant
 
 La aclaración *a priori* en el párrafo anterior se explica porque en lenguajes con efecto (es decir, la mayoría de los lenguajes que usamos habitualmente en la industria) los parámetros podrían ser modificados dentro del componente. Para estudiar el acoplamiento en estos contextos debemos determinar cuánto debe saber el componente llamado acerca de sus parámetros, por ejemplo si puede o no modificarlos. Esto a su vez depende del tipo de [pasaje de parámetros](pasaje-de-parametros.html) que utilicemos (por ejemplo, pasaje de parámetros por copia o pasaje de parámetros por referencia). En el caso de pasaje por parámetros por referencia, la modificación del parámetro recibido puede ser un mecanismo adicional de comunicación entre los componentes.
 
+### Ejemplo con Call-By-Reference
+
+` #include <stdio.h>`
+` #include <stdlib.h>`
+` #define SIZE 50`
+` `
+` typedef struct stack {`
+`   int  current, stack[SIZE];`
+` } stack;`
+` `
+` stack* empty() {`
+`   stack* s = (stack*) malloc(sizeof(stack));`
+`   return s;`
+` }`
+`   `
+` void push(stack* s, int i) {`
+`   s->current++;`
+`   if(s->current == SIZE) {`
+`       printf("Stack Overflow.\n");`
+`       exit(1);`
+`   }`
+`   s->stack[s->current] = i;`
+` }`
+` `
+` int pop(stack* s) {`
+`   if(s->current == 0) {`
+`       printf("Stack Underflow.\n");`
+`       exit(1);`
+`   }`
+`   return s->stack[s->current--];`
+` }`
+`   `
+` int main(void) {`
+`   stack* s = empty();`
+`   `
+`   push(s, 1);`
+`   push(s, 2);`
+`   printf("First value on top is %d\n", pop(s));`
+`   printf("Second value on top is %d\n", pop(s));`
+`   printf("Third value on top is %d\n", pop(s));`
+`   printf("end\n");`
+`       `
+`   return 0;`
+` }`
+
 Excepciones
 -----------
 
