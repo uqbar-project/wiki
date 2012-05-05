@@ -159,16 +159,16 @@ La aclaración *a priori* en el párrafo anterior se explica porque en lenguajes
 ` void push(stack* s, int i) {`
 `   s->current++;`
 `   if(s->current == SIZE) {`
-`       printf("Stack Overflow.\n");`
-`       exit(1);`
+`     printf("Stack Overflow.\n");`
+`     exit(1);`
 `   }`
 `   s->stack[s->current] = i;`
 ` }`
 ` `
 ` int pop(stack* s) {`
 `   if(s->current == 0) {`
-`       printf("Stack Underflow.\n");`
-`       exit(1);`
+`     printf("Stack Underflow.\n");`
+`     exit(1);`
 `   }`
 `   return s->stack[s->current--];`
 ` }`
