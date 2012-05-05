@@ -58,6 +58,53 @@ Algunas consecuencias de esta forma de compartir información son:
 
 En el caso general la memoria compartida representa un grado alto de acoplamiento ya que a priori no es posible saber qué componentes modifican o leen qué parte de los datos. En sistemas donde la información compartida está sostenida en un motor de bases de datos (por ejemplo RDBMS), estos pueden mitigar parcialmente este problema al implementar esquemas de seguridad que restrinjan en parte el acceso a los datos a sólo la parte necesaria de cada componente.
 
+Por otro lado, existen tecnologías que permiten definir variables con [alcance o ''scopes''](alcance-o---scopes--.html) más limitado que *global*, reduciendo de esta manera el acoplamiento únicamente a los componentes que tienen acceso al *scope* específico. Un caso particular de *scope* son las variables de instancia de un objeto, como se muestra en el ejemplo siguiente.
+
+Ejemplo: Java
+-------------
+
+` public class Stack {`
+`   public static final SIZE = 50;`
+`   private int  current;`
+`   private int[] stack =;`
+`   `
+`   public Stack () {`
+`     current = 0;`
+`     stack = new int[50];`
+`   }`
+`   `
+`   public void push(int i) {`
+`     current++;`
+`     if(current == (SIZE)) {`
+`         System.out.println("Stack Overflow.\n");`
+`         System.exit(1);`
+`     }`
+`     stack[current] = i;`
+`   }`
+`   `
+`   public int pop() {`
+`     if(current == 0) {`
+`         System.out.println("Stack Underflow.\n");`
+`         System.exit(1);`
+`     }`
+`     current--;`
+`     return stack[current+1];`
+`   }`
+`   `
+`   public static void main() {`
+`     Stack s = new Stack();`
+`     `
+`     s.push(1);`
+`     s.push(2);`
+`     System.out.println("First value on top is %d\n", s.pop());`
+`     System.out.println("Second value on top is %d\n", s.pop());`
+`     System.out.println("Third value on top is %d\n", s.pop());`
+`     System.out.println("end\n");`
+`       `
+`     return 0;`
+`   }`
+` }`
+
 Call & Return
 -------------
 
