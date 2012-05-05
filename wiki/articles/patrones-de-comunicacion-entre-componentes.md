@@ -68,9 +68,33 @@ En el mecanismo de call & return la comunicación se da entre un componente invo
 
 El ejemplo más preciso de esta idea se encuentra en los lenguajes funcionales puros, es decir, sin la posibilidad de [ efecto](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html). Podemos ver un ejemplo de implementación de una pila en Haskell:
 
+### Ejemplo puro
+
+El ejemplo más preciso de esta idea se encuentra en los lenguajes funcionales puros, es decir, sin la posibilidad de [ efecto](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html). La ausencia de efecto obliga a que toda la comunicación sea por medio de los parámetros.
+
+` type Stack = [Int]`
+` `
+` empty :: Stack`
+` empty = []`
+` `
+` push :: Int -> Stack -> Stack`
+` push i s = i : s`
+` `
+` pop :: Stack -> (Int, Stack)`
+` pop [] = error "Stack Underflow.\n"`
+` pop (i:s) = (i, s)`
+` `
+` discard = snd . pop`
+` peek = fst . pop`
+` `
+` test1 = peek $ discard $ push 2 $ push 1 $ empty`
+` `
+
 ### Consecuencias
 
--   Si bien la comunicación puede ser bidireccional, el conocimiento (y por lo tanto el acoplamiento) es *a priori* unidireccional, es decir, el componente llamado no tiene ningún conocimiento de el origen del mensaje y aún puede devolver información sin tener conocimiento del destino de la misma.
+Si bien la comunicación puede ser bidireccional, el conocimiento (y por lo tanto el acoplamiento) es *a priori* unidireccional, es decir, el componente llamado no tiene ningún conocimiento de el origen del mensaje y aún puede devolver información sin tener conocimiento del destino de la misma.
+
+La aclaración *a priori* en el párrafo anterior se explica porque en lenguajes con efecto (es decir, la mayoría de los lenguajes que usamos habitualmente en la industria) los parámetros podrían ser modificados dentro del componente. Para estudiar el acoplamiento en estos contextos debemos determinar cuánto debe saber el componente llamado acerca de sus parámetros, por ejemplo si puede o no modificarlos. Esto a su vez depende del tipo de [pasaje de parámetros](pasaje-de-parametros.html) que utilicemos (por ejemplo, pasaje de parámetros por copia o pasaje de parámetros por referencia). En el caso de pasaje por parámetros por referencia, la modificación del parámetro recibido puede ser un mecanismo adicional de comunicación entre los componentes.
 
 Excepciones
 -----------
