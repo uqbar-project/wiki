@@ -113,8 +113,6 @@ En el mecanismo de call & return la comunicación se da entre un componente invo
 -   El componente invocado puede recibir *parámetros*, que le permiten al invocante transferirle información mediante *argumentos*.
 -   En el caso general el componente invocado puede producir un *valor de retorno*, mediante este mecanismo se logra la bidireccionalidad de la comunicación. En algunas tecnologías pueden existir limitaciones que restringen el uso de valores de retorno, en ese caso la comunicación será unidireccional.
 
-El ejemplo más preciso de esta idea se encuentra en los lenguajes funcionales puros, es decir, sin la posibilidad de [ efecto](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html). Podemos ver un ejemplo de implementación de una pila en Haskell:
-
 ### Ejemplo puro
 
 El ejemplo más preciso de esta idea se encuentra en los lenguajes funcionales puros, es decir, sin la posibilidad de [ efecto](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html). La ausencia de efecto obliga a que toda la comunicación sea por medio de los parámetros.
