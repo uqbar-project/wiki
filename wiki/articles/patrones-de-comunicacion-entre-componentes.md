@@ -76,16 +76,16 @@ Ejemplo: Java
 `   public void push(int i) {`
 `     current++;`
 `     if(current == (SIZE)) {`
-`         System.out.println("Stack Overflow.\n");`
-`         System.exit(1);`
+`       System.out.println("Stack Overflow.\n");`
+`       System.exit(1);`
 `     }`
 `     stack[current] = i;`
 `   }`
 `   `
 `   public int pop() {`
 `     if(current == 0) {`
-`         System.out.println("Stack Underflow.\n");`
-`         System.exit(1);`
+`       System.out.println("Stack Underflow.\n");`
+`       System.exit(1);`
 `     }`
 `     current--;`
 `     return stack[current+1];`
