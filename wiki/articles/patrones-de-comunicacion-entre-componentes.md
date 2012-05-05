@@ -3,7 +3,7 @@ Memoria compartida (*shared memory*)
 
 La memoria compartida es un espacio común de datos en el que múltiples componentes (por ejemplo: procedimientos) pueden leer y escribir información. Implementaciones típicas de memoria compartida son las variables globales o las bases de datos como herramienta de integración entre componentes.
 
-En el caso general la memoria compartida representa un grado alto de acoplamiento ya que a priori no es posible saber qué componentes modifican o leen qué parte de los datos. En sistemas donde la información compartida está sostenida en un motor de bases de datos (por ejemplo RDBMS), estos pueden mitigar parcialmente este problema al implementar esquemas de seguridad que restrinjan en parte el acceso a los datos a sólo la parte necesaria de cada componente.
+### Ejemplo
 
 A continuación podemos ver un ejemplo de una pila programada en C utilizando esta forma de compartir información:
 
@@ -48,10 +48,15 @@ A continuación podemos ver un ejemplo de una pila programada en C utilizando es
 `   return 0;`
 ` }`
 
+### Consecuencias
+
 Algunas consecuencias de esta forma de compartir información son:
 
 -   No hay un mecanismo sencillo para saber qué procedimientos incluyen referencias a las variables globales y
 -   No es posible tener dos pilas simultáneamente, en caso de intentarlo se mezclaría la información de ambas.
+-   La modificación de cualquiera de las operaciones que acceden a la estructura de datos implica revisar su buen comportamiento en relación con todas las demás (que, como se dijo antes, puede no ser posible saber exactamente cuáles son). Lo mismo ocurre si se desea modificar la estructura de los datos compartidos.
+
+En el caso general la memoria compartida representa un grado alto de acoplamiento ya que a priori no es posible saber qué componentes modifican o leen qué parte de los datos. En sistemas donde la información compartida está sostenida en un motor de bases de datos (por ejemplo RDBMS), estos pueden mitigar parcialmente este problema al implementar esquemas de seguridad que restrinjan en parte el acceso a los datos a sólo la parte necesaria de cada componente.
 
 Call & Return
 -------------
