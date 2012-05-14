@@ -1,3 +1,64 @@
+Ejemplos de matcheo
+-------------------
+
+### Con tuplas
+
+Si tengo los valores
+
+`v1 = (2,5)`
+`v2 = (3,5)`
+`v3 = (8,5)`
+
+El patrón `(x,5)` matchea con los tres valores.
+
+También el patrón `(x,y)` matchea con los tres valores.
+
+También el patrón `(_,5)` matchea con los tres valores.
+
+También el patrón `(_,_)` matchea con los tres valores.
+
+También el patrón `unaTupla` matchea con los tres valores.
+
+Ahora, si tengo una lista
+
+`lista1 = [(2,5),(5,3),(3,3)]`
+`lista2 = [(2,5)]`
+
+El patrón `(x,5)` no matchea con `lista1` ni con `lista2`. ¡Es una tupla, no una lista! Antes de tratar de matchear, Haskell nos va a tirar un error de tipo.
+
+El patrón `(x:xs)` matchea con `lista1`, siendo `x` `=` `(2,5)` y `xs` `=` `[(5,3),(3,3)]` y matchea con `lista2`, siendo `x` `=` `(2,5)` y `xs` `=` `[]`
+
+El patrón `[x]` no matchea con `lista1` pero si matchea con `lista2`, siendo `x` `=` `(2,5)`
+
+El patrón `(x:_)` matchea con `lista1`, siendo `x` `=` `(2,5)` y matchea con `lista2`, siendo `x` `=` `(2,5)`
+
+El patrón `unaTupla` matchea con `lista1` siendo `unaTupla` `=` `[(2,5),(5,3),(3,3)]` y matchea con `lista2` siendo `unaTupla` `=` `[(2,5)]`
+
+### Con data
+
+(En algunos cursos no se da data, para más información ver acá: [Data: Definiendo nuestros tipos en Haskell](data--definiendo-nuestros-tipos-en-haskell.html)) Suponiendo que tenés
+
+`data Coordenada = Coord Int Int`
+
+(el tipo es Coordenada y el constructor es Coord)
+
+Donde se puede aplicar la misma idea
+
+`lista1 = [Coord 2 5,Coord 5 3,Coord 3 3]`
+`lista2 = [Coord 2 5]`
+
+El patrón `(Coord` `x` `5)` no matchea con `lista1` ni con `lista2`. ¡Es una Coordenada, no una lista! Antes de tratar de matchear, Haskell nos va a tirar un error de tipo.
+
+El patrón `(Coord` `x` `y:restoCoords)` matchea con `lista1`, siendo `x` `=` `2`, `y` `=` `5` y `restoCoords` `=` `[Coord` `5` `3,Coord` `3` `3]` y matchea con `lista2`, siendo `x` `=` `2`, `y` `=` `5` y `restoCoords` `=` `[]`
+
+El patrón `[x]` no matchea con `lista1` pero si matchea con `lista2`, siendo `x` `=` `2` y `y` `=` `5`
+
+El patrón `(x:_)` matchea con `lista1` y matchea con `lista2` siendo `x` `=` `Coord` `2` `5`
+
+El patrón `(x:y:_)` matchea con `lista1` siendo `x` `=` `Coord` `2` `5` y `y` `=` `Coord` `5` `3` pero no matchea con `lista2`
+
+El patrón `unaTupla` matchea con `lista1` y matchea con `lista2`
+
 Patrones con sinónimos
 ----------------------
 
