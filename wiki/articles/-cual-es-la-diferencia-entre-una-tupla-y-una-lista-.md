@@ -106,6 +106,8 @@ Finalmente, podemos ver que si se intenta intercambiar las funciones se produce 
 ``     In the definition of `it': ``
 `        it = todosVerdaderosT2 (True, True, True)`
 
+Para más información, ver acá: [Pattern\_Matching\_en\_Haskell](pattern-matching-en-haskell.html)
+
 Functores y listas en prolog
 ----------------------------
 
