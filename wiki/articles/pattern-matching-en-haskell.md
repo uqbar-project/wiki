@@ -70,7 +70,7 @@ Un sinónimo, o sea necesito por un lado el patrón para tomar algunos de sus co
 Puede mejorarse sutilmente con un sinónimo.
 
 `ordenada [_] = True`
-`ordenada (x1:xs'@(x2:_)) = x1 > x2 && ordenada xs`
+`ordenada (x1:xs@(x2:_)) = x1 > x2 && ordenada xs`
 
 Otro ejemplo, entre dos complejos representados con tuplas, obtener el que tiene mayor parte real:
 
