@@ -192,8 +192,7 @@ Excepciones
 Continuations
 -------------
 
-class MyCPSStack {
-
+` class MyCPSStack {`
 `  def elements = []`
 
 `  static empty(yield) {`
@@ -224,7 +223,7 @@ class MyCPSStack {
 `  }`
 `}`
 
-MyCPSStack.empty({ it.push(1, { it.push(2, { it.discard({ it.peek({ print it }) }) }) }) })
+`MyCPSStack.empty({  it.push(1, {  it.push(2, {  it.discard({  it.peek({  print it })  })  }) }) })`
 
 <http://en.wikipedia.org/wiki/Continuation-passing_style> <http://en.wikipedia.org/wiki/Callback_(computer_science)>
 
