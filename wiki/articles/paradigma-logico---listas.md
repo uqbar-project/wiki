@@ -246,4 +246,9 @@ Recuerden:
 - puntaje es un predicado no un functor
 - Tabla es una lista de functores ptos que verifican la consulta que está como segundo parámetro del findall  
 
+Recursividad Con Listas
+-----------------------
+
+- Ver [Recursividad en Logico](recursividad-en-logico.html)  
+
 
