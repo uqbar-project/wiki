@@ -3,64 +3,36 @@
 
 El binding es la relación que se establece entre la invocación a un procedimiento-función-método y el código que se ejecuta. Otro nombre que le damos es *dispatch*. Los conceptos de binding, polimorfismo y sobrecarga son aplicables a muchos paradigmas, y tienen diferentes formas de ser entendidos en cada uno de ellos. Por el momento, este artículo se concentra fundamentalmente en el paradigma de objetos.
 
-Dynamic dispatch
-----------------
+Dynamic method invocation
+-------------------------
 
 En objetos, cada vez que se envía un mensaje, el método invocado depende del receptor. Por ejemplo, en Smalltalk:
 
 `figuras := {Cuadrado new. Rectangulo new. Circulo new}.`
 `figuras collect: [:f | f superficie ]`
 
-Cada vez que se envíe el mensaje a la referencia .
-
-\\begin{frame}\[fragile\]{Dynamic Method Invocation}
-
-` \begin{itemize}`
-`   \item El método invocado depende del \blue{receptor}.`
-`   \item Ejemplo`
-`     \begin{lstlisting}[language=sool]`
-` c1:CellType := new ClrCellClass`
-` c1 <= bump() // Ejecuta el bump de CellClass`
-
-` class CellClass { ...`
-`   function bump(): Void is { `
-`     self <= set(...) // Depende del receptor`
-`   }`
-` }`
-
-` class ClrCellClass ... `
-`   function set(nuVal: Integer): Void is`
-`     { super <= set(nuVal); self.color := red }`
-` }`
-` \end{lstlisting}`
-`   \item Incluye los mensajes a \code{self}`
-`   \item Dentro de \code{set}, la variable \code{self} tiene tipo \code{ClrCellType}.`
-` \end{itemize}`
-
-\\end{frame}
-
-Es algo central al paradigma de objetos, porque es lo que da pie al polimorfismo. Si se acuerdan de que cuando comenzamos con objetos diferenciamos el concepto de objeto y el de mensaje: bueno el binding es en definitiva el mecanismo que define qué método se ejecuta al enviar un mensaje. El method lookup es una de los mecanismos que llevan a cabo el binding pero no es la única.
-
-Esencialmente, lo que nos interesa es entender en qué momento se produce ese binding, y hay básicamente dos opciones:
-
--   Al compilar = early binding o estático
--   Al ejecutar = late binding o dinámico
+Si las clases Cuadrado, Rectangulo y Circulo tienen cada una su propia implementación de , cada vez que se envía el mensaje a la referencia el método invocado será uno distinto. Esta característica es una de las más importantes para el paradigma de objetos, ya que habilita algunas de sus herramientas más interesantes.
 
 Polimorfismo de subtipos
 ------------------------
 
-\\begin{frame}\[fragile\]{Polimorfismo de subtipos}
+Al extender el concepto de dynamic method invocation a un lenguaje con chequeo estático de tipos, debemos considerar algunas sutilezas más.
 
-` \begin{itemize}`
-`   \item Un objeto tiene muchos tipos.`
-`   \item Por ejemplo las instancias de \code{ClrCellClass} tienen los tipos \code{ClrCellType} y \code{CellType}.`
-`   \item \blue{Subsumption rule}: `
-` \end{itemize}`
-` \begin{center}`
-`   $\begin{array}{c}`
-`   \regla`
-`     {\sequ{\Gamma}{M : S'} \quad S' <: S }`
-`     {\sequ{\Gamma}{M : S}}{}`
+En primer lugar, en estos lenguajes a cada expresión se le asigna un tipo en forma estática. El valor que tome la expresión en tiempo de ejecución puede diferir del valor que es asignado a esa expresión en forma estática. Por ejemplo:
+
+`public interface Figura {`
+`    public double getSuperficie();`
+`}`
+`public class Circulo implements Figura {`
+`    @Override`
+`    public double getSuperficie() { ... }`
+`    `
+`    public double getRadio() { ... }`
+`}`
+`Figura f = new Circulo();`
+
+Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación {}
+
 `   \end{array}$`
 ` \end{center}`
 ` \begin{itemize}`
