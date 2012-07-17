@@ -31,7 +31,7 @@ El valor que tome la expresión en tiempo de ejecución puede diferir del valor 
 `}`
 `Figura f = new Circulo();`
 
-Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación es válida siempre que sea un **subtipo** de . A esta regla se la conoce como **subsumption**.
+Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación new Circulo() }} es válida siempre que sea un **subtipo** de . A esta regla se la conoce como **subsumption**.
 
 como Java, con chequeo estático de tipos y en el que se le asignan tipos a las variables en forma explíciencontramos que el ejemplo anterior a un lenguaje con declaraciones explícitas para los tipos de variables, como Java
 
