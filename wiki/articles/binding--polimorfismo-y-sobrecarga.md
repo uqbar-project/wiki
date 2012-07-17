@@ -56,7 +56,7 @@ Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuá
 
 `Figura f = new Circulo();`
 `C c = new C();`
-`c.m(f);`
+`c.m(f); // => imprime 1!`
 
 `C c1 := new C();`
 `C c2 := new SC();`
