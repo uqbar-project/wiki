@@ -60,58 +60,6 @@ Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuá
 
 La interpretación que debemos hacer es que que en realidad el mensaje enviado no se identifica únicamente por su nombre, sino que incluye los tipos de los parámetros. Desde esta perspectiva los dos métodos de la clase tienen distinto nombre, son totalmente independientes uno del otro. Debemos interpretar que el primero se denomina y el segundo . En presencia de este tipo de sobrecarga el *método a ejecutar* se decidirá en tiempo de ejecución, en función del mensaje enviado, pero el *mensaje a enviar* se decide en tiempo de compilación, a partir de la información de tipos disponible en este momento. En resumen, el mensaje enviado a no es sino . Dado que ambos métodos tienen identificadores distintos, para invocarlos se envían mensajes distintos y la decisión entre ambos será tomada en tiempo de compilación.
 
-Polimorfismo de subtipos
-------------------------
-
-\\begin{frame}\[fragile\]{Polimorfismo de subtipos}
-
-` \begin{itemize}`
-`   \item Un objeto tiene muchos tipos.`
-`   \item Por ejemplo las instancias de \code{ClrCellClass} tienen los tipos \code{ClrCellType} y \code{CellType}.`
-`   \item \blue{Subsumption rule}: `
-` \end{itemize}`
-` \begin{center}`
-`   $\begin{array}{c}`
-`   \regla`
-`     {\sequ{\Gamma}{M : S'} \quad S' <: S }`
-`     {\sequ{\Gamma}{M : S}}{}`
-`   \end{array}$`
-` \end{center}`
-` \begin{itemize}`
-`   \item Eso me permite cosas como:`
-`     \begin{lstlisting}[language=sool]`
-`   c1:CellType := new ClrCellClass`
-`     \end{lstlisting}`
-`   \item La subsumption conlleva una pérdida de información:`
-`     \begin{lstlisting}[language=sool]`
-`   c1 <= setColor(green) // Imposible!!!`
-`     \end{lstlisting}`
-` \end{itemize}`
-
-\\end{frame}
-
-\\begin{frame}\[fragile\]{Problemas con subtipos en objetos}
-
-` \begin{itemize}`
-`   \item Cuadrados vs. rectángulos.`
-```    \item Si entendemos herencia como \textbf{``es un ```*`},` `un` `cuadrado` ``` ``es ``` `un`*` rectángulo`
-`   \item Por lo tanto cuadrado debería ser un subtipo de rectángulo.`
-`   \item Sin embargo, los rectángulos podrían tener métodos que son inadecuados para un cuadrado.`
-`     \begin{lstlisting}[language=sool,mathescape=true]`
-` Rectangle = ObjectType { `
-`   height: Void -> Integer`
-`   width: Void -> Integer`
-`   stretch: (Integer $\times$ Integer) -> Void // Problema`
-` } `
-`     \end{lstlisting}`
-`   \item Este problema se magnifica si colapsamos clases y tipos.`
-`   \item \textbf{Programa: Estudiar la relación entre subclases y subtipos.}`
-` \end{itemize}`
-
-\\end{frame}
-
-\\subsection{Algunos problemas adicionales} \\frame{\\tableofcontents\[sectionstyle=show/shaded,subsectionstyle=show/shaded/shaded\]}
-
 Ejemplos
 --------
 
