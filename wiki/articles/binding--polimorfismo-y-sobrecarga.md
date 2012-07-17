@@ -16,9 +16,9 @@ Si las clases Cuadrado, Rectangulo y Circulo tienen cada una su propia implement
 Polimorfismo de subtipos
 ------------------------
 
-Al extender el concepto de dynamic method invocation a un lenguaje con chequeo estático de tipos, debemos considerar algunas sutilezas más.
+Al extender el concepto de dynamic method invocation a un lenguaje con chequeo estático de tipos, es necesario tener en cuenta la información estática que provee el sistema de tipos. En este tipo de lenguajes, a cada expresión se le asigna un tipo en forma estática. Estos tipos se ejecutan para validar la corrección de los programas antes de su ejecución y eliminar algunos posibles errores.
 
-En primer lugar, en estos lenguajes a cada expresión se le asigna un tipo en forma estática. El valor que tome la expresión en tiempo de ejecución puede diferir del valor que es asignado a esa expresión en forma estática. Por ejemplo:
+El valor que tome la expresión en tiempo de ejecución puede diferir del valor que es asignado a esa expresión en forma estática. Por ejemplo:
 
 `public interface Figura {`
 `    public double getSuperficie();`
