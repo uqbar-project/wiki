@@ -13,8 +13,8 @@ En objetos, cada vez que se envía un mensaje, el método invocado depende del r
 
 Si las clases Cuadrado, Rectangulo y Circulo tienen cada una su propia implementación de , cada vez que se envía el mensaje a la referencia el método invocado será uno distinto. Esta característica es una de las más importantes para el paradigma de objetos, ya que habilita algunas de sus herramientas más interesantes.
 
-Polimorfismo de subtipos
-------------------------
+Tipo estático y tipo dinámico
+-----------------------------
 
 Al extender el concepto de dynamic method invocation a un lenguaje con chequeo estático de tipos, es necesario tener en cuenta la información estática que provee el sistema de tipos. En este tipo de lenguajes, a cada expresión se le asigna un tipo en forma estática. Estos tipos se ejecutan para validar la corrección de los programas antes de su ejecución y eliminar algunos posibles errores.
 
@@ -31,35 +31,12 @@ El valor que tome la expresión en tiempo de ejecución puede diferir del valor 
 `}`
 `Figura f = new Circulo();`
 
-Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación es válida siempre que sea un **subtipo** de . A esta regla se la conoce como **subsumption**.
+Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación `code|Figura` `f` `=` `new` `Circulo()` es válida siempre que sea un **subtipo** de . A esta regla se la conoce como **subsumption**.
 
-como Java, con chequeo estático de tipos y en el que se le asignan tipos a las variables en forma explíciencontramos que el ejemplo anterior a un lenguaje con declaraciones explícitas para los tipos de variables, como Java
+La presencia de tipado estático nos obliga a analizar nuestro código desde las dos perspectivas. Al evaluar se envía el mensaje al objeto *referenciado* por la variable y por lo tanto se ejecutará el método de la clase . Sin embargo, en el momento de chequear tipos se controla que el tipo de , que es contenga el mensaje enviado. Si intentamos evaluar se produciría un error de compilación, porque esa expresión no pasa el chequeo de tipos.
 
-\\begin{frame}\[fragile\]{Dynamic Method Invocation}
-
-` \begin{itemize}`
-`   \item El método invocado depende del \blue{receptor}.`
-`   \item Ejemplo`
-`     \begin{lstlisting}[language=sool]`
-` c1:CellType := new ClrCellClass`
-` c1 <= bump() // Ejecuta el bump de CellClass`
-
-` class CellClass { ...`
-`   function bump(): Void is { `
-`     self <= set(...) // Depende del receptor`
-`   }`
-` }`
-
-` class ClrCellClass ... `
-`   function set(nuVal: Integer): Void is`
-`     { super <= set(nuVal); self.color := red }`
-` }`
-` \end{lstlisting}`
-`   \item Incluye los mensajes a \code{self}`
-`   \item Dentro de \code{set}, la variable \code{self} tiene tipo \code{ClrCellType}.`
-` \end{itemize}`
-
-\\end{frame}
+Sobrecarga
+----------
 
 Es algo central al paradigma de objetos, porque es lo que da pie al polimorfismo. Si se acuerdan de que cuando comenzamos con objetos diferenciamos el concepto de objeto y el de mensaje: bueno el binding es en definitiva el mecanismo que define qué método se ejecuta al enviar un mensaje. El method lookup es una de los mecanismos que llevan a cabo el binding pero no es la única.
 
