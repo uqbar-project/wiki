@@ -33,124 +33,35 @@ El valor que tome la expresión en tiempo de ejecución puede diferir del valor 
 
 Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación `code|Figura` `f` `=` `new` `Circulo()` es válida siempre que sea un **subtipo** de . A esta regla se la conoce como **subsumption**.
 
-La presencia de tipado estático nos obliga a analizar nuestro código desde las dos perspectivas. Al evaluar se envía el mensaje al objeto *referenciado* por la variable y por lo tanto se ejecutará el método de la clase . Sin embargo, en el momento de chequear tipos se controla que el tipo de , que es contenga el mensaje enviado. Si intentamos evaluar se produciría un error de compilación, porque esa expresión no pasa el chequeo de tipos.
+La presencia de tipado estático nos obliga a analizar nuestro código desde las dos perspectivas. Al evaluar se envía el mensaje al objeto *referenciado* por la variable y por lo tanto se ejecutará el método de la clase . Sin embargo, en el momento de chequear tipos se controla que el tipo de , que es contenga el mensaje enviado.
+
+Si intentamos evaluar se produciría un error de compilación, porque esa expresión no pasa el chequeo de tipos. Por eso, decimos que la regla de subsumption conlleva una pérdida de información de tipos. El objeto referenciado por entiende el mensaje , sin embargo el chequeador de tipos no puede verificar eso y rechaza el programa.
 
 Sobrecarga
 ----------
 
-Es algo central al paradigma de objetos, porque es lo que da pie al polimorfismo. Si se acuerdan de que cuando comenzamos con objetos diferenciamos el concepto de objeto y el de mensaje: bueno el binding es en definitiva el mecanismo que define qué método se ejecuta al enviar un mensaje. El method lookup es una de los mecanismos que llevan a cabo el binding pero no es la única.
+Se dice que un *nombre de método* está **sobrecargado** en un contexto cuando es utilizado para representar dos o más métodos *distintos*, que se diferencian por su tipo o *firma*. Por ejemplo
 
-Esencialmente, lo que nos interesa es entender en qué momento se produce ese binding, y hay básicamente dos opciones:
+-   Dos funciones con el mismo nombre y distinto número de parámetros o parámetros de distinto tipo.
+-   Dos métodos definidos para el mismo objeto con distinto número de parámetros o parámetros de distinto tipo.
 
--   Al compilar = early binding o estático
--   Al ejecutar = late binding o dinámico
+Por ejemplo el método está sobrecargado en la clase .
 
-Polimorfismo de subtipos
-------------------------
+`class C {`
+`    void m(Figura f) { println(1); }`
+`    void m(Circulo c) { println(2); }`
+`}`
 
-\\begin{frame}\[fragile\]{Polimorfismo de subtipos}
+Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuál es el método que se debe ejecutar. En la mayoría de los lenguajes orientados a objetos, esta decisión se toma en forma estática. Por ejemplo, en la siguiente porción de código, al evaluar se ejecutará el método que recibe una figura, y no el que recibe un círculo; y por lo tanto imprimirá "1".
 
-` \begin{itemize}`
-`   \item Un objeto tiene muchos tipos.`
-`   \item Por ejemplo las instancias de \code{ClrCellClass} tienen los tipos \code{ClrCellType} y \code{CellType}.`
-`   \item \blue{Subsumption rule}: `
-` \end{itemize}`
-` \begin{center}`
-`   $\begin{array}{c}`
-`   \regla`
-`     {\sequ{\Gamma}{M : S'} \quad S' <: S }`
-`     {\sequ{\Gamma}{M : S}}{}`
-`   \end{array}$`
-` \end{center}`
-` \begin{itemize}`
-`   \item Eso me permite cosas como:`
-`     \begin{lstlisting}[language=sool]`
-`   c1:CellType := new ClrCellClass`
-`     \end{lstlisting}`
-`   \item La subsumption conlleva una pérdida de información:`
-`     \begin{lstlisting}[language=sool]`
-`   c1 <= setColor(green) // Imposible!!!`
-`     \end{lstlisting}`
-` \end{itemize}`
+`Figura f = new Circulo();`
+`C c = new C();`
+`c.m(f);`
 
-\\end{frame}
+`C c1 := new C();`
+`C c2 := new SC();`
+`C sc := new SC();`
 
-\\begin{frame}\[fragile\]{Dynamic Method Invocation}
-
-` \begin{itemize}`
-`   \item El método invocado depende del \blue{receptor}.`
-`   \item Ejemplo`
-`     \begin{lstlisting}[language=sool]`
-` c1:CellType := new ClrCellClass`
-` c1 <= bump() // Ejecuta el bump de CellClass`
-
-` class CellClass { ...`
-`   function bump(): Void is { `
-`     self <= set(...) // Depende del receptor`
-`   }`
-` }`
-
-` class ClrCellClass ... `
-`   function set(nuVal: Integer): Void is`
-`     { super <= set(nuVal); self.color := red }`
-` }`
-` \end{lstlisting}`
-`   \item Incluye los mensajes a \code{self}`
-`   \item Dentro de \code{set}, la variable \code{self} tiene tipo \code{ClrCellType}.`
-` \end{itemize}`
-
-\\end{frame}
-
-\\begin{frame}\[fragile\]{Problemas con subtipos en objetos}
-
-` \begin{itemize}`
-`   \item Cuadrados vs. rectángulos.`
-```    \item Si entendemos herencia como \textbf{``es un ```*`},` `un` `cuadrado` ``` ``es ``` `un`*` rectángulo`
-`   \item Por lo tanto cuadrado debería ser un subtipo de rectángulo.`
-`   \item Sin embargo, los rectángulos podrían tener métodos que son inadecuados para un cuadrado.`
-`     \begin{lstlisting}[language=sool,mathescape=true]`
-` Rectangle = ObjectType { `
-`   height: Void -> Integer`
-`   width: Void -> Integer`
-`   stretch: (Integer $\times$ Integer) -> Void // Problema`
-` } `
-`     \end{lstlisting}`
-`   \item Este problema se magnifica si colapsamos clases y tipos.`
-`   \item \textbf{Programa: Estudiar la relación entre subclases y subtipos.}`
-` \end{itemize}`
-
-\\end{frame}
-
-\\subsection{Algunos problemas adicionales} \\frame{\\tableofcontents\[sectionstyle=show/shaded,subsectionstyle=show/shaded/shaded\]}
-
-\\begin{frame}\[fragile\]{Cast}
-
-` \begin{itemize}`
-`   \item La regla de subsumption conlleva una pérdida de información.`
-`   \item Algunos lenguajes permiten agregar información en forma manual mediante un \blue{cast}`
-`     \begin{lstlisting}[language=sool]`
-`   c2 := (ClrCellClass) c1;`
-`   c2 <= setColor(green) `
-`     \end{lstlisting}`
-`   \item Se posterga el chequeo de tipos al tiempo de ejecución.`
-`   \item Es obviamente algo no deseado.`
-`   \item No se debe confundir con una coerción.`
-`     \begin{itemize}`
-`       \item Java tiene coerciones sólo para los tipos básicos`
-`       \item Utiliza la misma sintaxis para ambas cosas.`
-`     \end{itemize}`
-
-` \end{itemize}`
-
-\\end{frame}
-
-\\begin{frame}\[fragile\]{Sobrecarga}
-
-` Un nombre de método está sobrecargado en un contexto si:`
-`     \begin{itemize}`
-`       \item Es utilizado para representar dos o más métodos \emph{distintos}.`
-`       \item El método representado es determinado por el tipo o \blue{firma} (\emph{signature}) del método.`
-`     \end{itemize}`
 ` \begin{lstlisting}[language=sool]`
 ` class C {`
 `   function equals(other:CType) : Boolean is { writeln (1) }`
@@ -209,6 +120,65 @@ Polimorfismo de subtipos
 \\end{frame}
 
 \\section{Varianza} \\frame{\\tableofcontents\[sectionstyle=show/shaded,subsectionstyle=show/shaded/shaded\]}
+
+Es algo central al paradigma de objetos, porque es lo que da pie al polimorfismo. Si se acuerdan de que cuando comenzamos con objetos diferenciamos el concepto de objeto y el de mensaje: bueno el binding es en definitiva el mecanismo que define qué método se ejecuta al enviar un mensaje. El method lookup es una de los mecanismos que llevan a cabo el binding pero no es la única.
+
+Esencialmente, lo que nos interesa es entender en qué momento se produce ese binding, y hay básicamente dos opciones:
+
+-   Al compilar = early binding o estático
+-   Al ejecutar = late binding o dinámico
+
+Polimorfismo de subtipos
+------------------------
+
+\\begin{frame}\[fragile\]{Polimorfismo de subtipos}
+
+` \begin{itemize}`
+`   \item Un objeto tiene muchos tipos.`
+`   \item Por ejemplo las instancias de \code{ClrCellClass} tienen los tipos \code{ClrCellType} y \code{CellType}.`
+`   \item \blue{Subsumption rule}: `
+` \end{itemize}`
+` \begin{center}`
+`   $\begin{array}{c}`
+`   \regla`
+`     {\sequ{\Gamma}{M : S'} \quad S' <: S }`
+`     {\sequ{\Gamma}{M : S}}{}`
+`   \end{array}$`
+` \end{center}`
+` \begin{itemize}`
+`   \item Eso me permite cosas como:`
+`     \begin{lstlisting}[language=sool]`
+`   c1:CellType := new ClrCellClass`
+`     \end{lstlisting}`
+`   \item La subsumption conlleva una pérdida de información:`
+`     \begin{lstlisting}[language=sool]`
+`   c1 <= setColor(green) // Imposible!!!`
+`     \end{lstlisting}`
+` \end{itemize}`
+
+\\end{frame}
+
+\\begin{frame}\[fragile\]{Problemas con subtipos en objetos}
+
+` \begin{itemize}`
+`   \item Cuadrados vs. rectángulos.`
+```    \item Si entendemos herencia como \textbf{``es un ```*`},` `un` `cuadrado` ``` ``es ``` `un`*` rectángulo`
+`   \item Por lo tanto cuadrado debería ser un subtipo de rectángulo.`
+`   \item Sin embargo, los rectángulos podrían tener métodos que son inadecuados para un cuadrado.`
+`     \begin{lstlisting}[language=sool,mathescape=true]`
+` Rectangle = ObjectType { `
+`   height: Void -> Integer`
+`   width: Void -> Integer`
+`   stretch: (Integer $\times$ Integer) -> Void // Problema`
+` } `
+`     \end{lstlisting}`
+`   \item Este problema se magnifica si colapsamos clases y tipos.`
+`   \item \textbf{Programa: Estudiar la relación entre subclases y subtipos.}`
+` \end{itemize}`
+
+\\end{frame}
+
+\\subsection{Algunos problemas adicionales} \\frame{\\tableofcontents\[sectionstyle=show/shaded,subsectionstyle=show/shaded/shaded\]}
 
 Ejemplos
 --------
