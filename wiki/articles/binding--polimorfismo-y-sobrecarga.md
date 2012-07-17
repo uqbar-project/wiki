@@ -52,7 +52,7 @@ Por ejemplo el método está sobrecargado en la clase .
 `    void m(Circulo c) { println(2); }`
 `}`
 
-Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuál es el método que se debe ejecutar. En la mayoría de los lenguajes orientados a objetos, esta decisión se toma en forma estática. (Cuando la decisión es dinámica, en lugar de sobrecarga hablamos de [\#Multimethods](-multimethods.html). Por ejemplo, en la siguiente porción de código, al evaluar se ejecutará el método que recibe una figura, y no el que recibe un círculo; y por lo tanto imprimirá "1".
+Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuál es el método que se debe ejecutar. En la mayoría de los lenguajes orientados a objetos, esta decisión se toma en forma estática. (Cuando la decisión es dinámica, en lugar de sobrecarga hablamos de [\#Multimethods Multimethods](-multimethods-multimethods.html). Por ejemplo, en la siguiente porción de código, al evaluar se ejecutará el método que recibe una figura, y no el que recibe un círculo; y por lo tanto imprimirá "1".
 
 `Figura f = new Circulo();`
 `C c = new C();`
