@@ -11,7 +11,7 @@ En objetos, cada vez que se envía un mensaje, el método invocado depende del r
 `figuras := {Cuadrado new. Rectangulo new. Circulo new}.`
 `figuras collect: [:f | f superficie ]`
 
-Cada vez que se envíe el mensaje {code|superficie} a la referencia {code|f}.
+Cada vez que se envíe el mensaje a la referencia .
 
 \\begin{frame}\[fragile\]{Dynamic Method Invocation}
 
