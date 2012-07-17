@@ -40,10 +40,10 @@ Si intentamos evaluar se produciría un error de compilación, porque esa expres
 Sobrecarga
 ----------
 
-Se dice que un *nombre de método* está **sobrecargado** en un contexto cuando es utilizado para representar dos o más métodos *distintos*, que se diferencian por su tipo o *firma*. Por ejemplo
+Se dice que un *nombre de método* está **sobrecargado** en un contexto cuando es utilizado para representar dos o más métodos o funciones distintos, que se diferencian por su tipo. El tipo de un método incluye tanto a los tipos de los parámetros como al del valor de retorno. Por ejemplo:
 
--   Dos funciones con el mismo nombre y distinto número de parámetros o parámetros de distinto tipo.
--   Dos métodos definidos para el mismo objeto con distinto número de parámetros o parámetros de distinto tipo.
+-   En Haskell es posible definir funciones con el mismo nombre y distintos tipos de parámetros o distinto tipo de retorno.
+-   En Java o C\# es posible definir dos métodos en la misma clase o jerarquía con distinto número de parámetros o con parámetros de distinto tipo. (La posibilidad de sobrecargar métodos variando el tipo de retorno es menos frecuente en el paradigma de objetos.)
 
 Por ejemplo el método está sobrecargado en la clase .
 
@@ -52,81 +52,13 @@ Por ejemplo el método está sobrecargado en la clase .
 `    void m(Circulo c) { println(2); }`
 `}`
 
-Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuál es el método que se debe ejecutar. En la mayoría de los lenguajes orientados a objetos, esta decisión se toma en forma estática. Por ejemplo, en la siguiente porción de código, al evaluar se ejecutará el método que recibe una figura, y no el que recibe un círculo; y por lo tanto imprimirá "1".
+Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuál es el método que se debe ejecutar. En la mayoría de los lenguajes orientados a objetos, esta decisión se toma en forma estática. (Cuando la decisión es dinámica, en lugar de sobrecarga hablamos de [\#Multimethods](-multimethods.html). Por ejemplo, en la siguiente porción de código, al evaluar se ejecutará el método que recibe una figura, y no el que recibe un círculo; y por lo tanto imprimirá "1".
 
 `Figura f = new Circulo();`
 `C c = new C();`
 `c.m(f); // => imprime 1!`
 
-`C c1 := new C();`
-`C c2 := new SC();`
-`C sc := new SC();`
-
-` \begin{lstlisting}[language=sool]`
-` class C {`
-`   function equals(other:CType) : Boolean is { writeln (1) }`
-` }`
-
-` class SC {`
-`   function equals(other:CType) : Boolean is { writeln (2) }`
-`   function equals(other:SCType) : Boolean is { writeln (3) }`
-` }`
-
-` CType = ObjectType { equals: CType -> Boolean }`
-` SCType = ObjectType { `
-`   equals: CType -> Boolean;`
-`   equals: SCType -> Boolean `
-` }`
-` \end{lstlisting}`
-
-\\end{frame}
-
-\\begin{frame}\[fragile\]{Sobrecarga - Ejemplo}
-
-` ¿Qué método se invoca en cada caso?`
-` \begin{lstlisting}[language=sool]`
-`   c1: CType := new C;`
-`   c2: CType := new SC;`
-`   sc: SCType := new SC;`
-
-`   c1 <= equals(c1);`
-`   c1 <= equals(c2);`
-`   c1 <= equals(sc);`
-
-`   c2 <= equals(c1);`
-`   c2 <= equals(c2);`
-`   c2 <= equals(sc);`
-`   `
-`   sc <= equals(c1);`
-`   sc <= equals(c2);`
-`   sc <= equals(sc);`
-` \end{lstlisting}`
-
-\\end{frame}
-
-\\begin{frame}\[fragile\]{Multimethods}
-
-` \begin{itemize}`
-`   \item El método a ejecutar depende de los valores de uno o más de los parámetros del método.`
-`   \item \cite{bruce2002} los presenta con una sintaxis procedural:`
-`   \begin{lstlisting}[language=sool]`
-` function equal(p1:Point, p2:Point): Boolean is { ... }`
-` function equal(p1:ColorPoint, p2:ColorPoint): Boolean is { ... }`
-`   \end{lstlisting}`
-`   \item Otros lenguajes mantienen la sintaxis que destaca a uno de los parámetros como \textit{receptor}.`
-`   \item Suele confundirse con la sobrecarga.`
-` \end{itemize}`
-
-\\end{frame}
-
-\\section{Varianza} \\frame{\\tableofcontents\[sectionstyle=show/shaded,subsectionstyle=show/shaded/shaded\]}
-
-Es algo central al paradigma de objetos, porque es lo que da pie al polimorfismo. Si se acuerdan de que cuando comenzamos con objetos diferenciamos el concepto de objeto y el de mensaje: bueno el binding es en definitiva el mecanismo que define qué método se ejecuta al enviar un mensaje. El method lookup es una de los mecanismos que llevan a cabo el binding pero no es la única.
-
-Esencialmente, lo que nos interesa es entender en qué momento se produce ese binding, y hay básicamente dos opciones:
-
--   Al compilar = early binding o estático
--   Al ejecutar = late binding o dinámico
+La interpretación que debemos hacer es que que en realidad el mensaje enviado no se identifica únicamente por su nombre, sino que incluye los tipos de los parámetros. Desde esta perspectiva los dos métodos de la clase tienen distinto nombre, son totalmente independientes uno del otro. Debemos interpretar que el primero se denomina y el segundo . En presencia de este tipo de sobrecarga el *método a ejecutar* se decidirá en tiempo de ejecución, en función del mensaje enviado, pero el *mensaje a enviar* se decide en tiempo de compilación, a partir de la información de tipos disponible en este momento. Dado que ambos métodos tienen identificadores distintos, para invocarlos se envían mensajes distintos y la decisión entre ambos será tomada en tiempo de compilación. En resumen, el mensaje enviado a no es sino .
 
 Polimorfismo de subtipos
 ------------------------
