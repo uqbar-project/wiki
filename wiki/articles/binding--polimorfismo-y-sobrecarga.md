@@ -72,6 +72,6 @@ Tres ejemplos del lenguaje Java:
 Algunas variantes
 
 -   En C++ o C\# si no les pongo virtual a los métodos el binding es estático.
--   En Eiffel se dá dinámicamente, a esta característica la denominamos multimethods.
+-   En Eiffel se da dinámicamente, a esta característica la denominamos multimethods.
 -   En Smalltalk el binding de los métodos de clases es también dinámico. (Y esto es uno de los motivos que nos da pie a decir que las clases en Smalltalk son realmente objetos, mientras que en Java no es así.)
 
