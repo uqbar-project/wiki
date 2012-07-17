@@ -31,8 +31,58 @@ El valor que tome la expresión en tiempo de ejecución puede diferir del valor 
 `}`
 `Figura f = new Circulo();`
 
-Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación {}
+Estáticamente, la variable tiene el tipo , pero cuando ese programa se ejecute, el valor de será un Circulo. La asignación es válida siempre que sea un **subtipo** de . A esta regla se la conoce como **subsumption**.
 
+como Java, con chequeo estático de tipos y en el que se le asignan tipos a las variables en forma explíciencontramos que el ejemplo anterior a un lenguaje con declaraciones explícitas para los tipos de variables, como Java
+
+\\begin{frame}\[fragile\]{Dynamic Method Invocation}
+
+` \begin{itemize}`
+`   \item El método invocado depende del \blue{receptor}.`
+`   \item Ejemplo`
+`     \begin{lstlisting}[language=sool]`
+` c1:CellType := new ClrCellClass`
+` c1 <= bump() // Ejecuta el bump de CellClass`
+
+` class CellClass { ...`
+`   function bump(): Void is { `
+`     self <= set(...) // Depende del receptor`
+`   }`
+` }`
+
+` class ClrCellClass ... `
+`   function set(nuVal: Integer): Void is`
+`     { super <= set(nuVal); self.color := red }`
+` }`
+` \end{lstlisting}`
+`   \item Incluye los mensajes a \code{self}`
+`   \item Dentro de \code{set}, la variable \code{self} tiene tipo \code{ClrCellType}.`
+` \end{itemize}`
+
+\\end{frame}
+
+Es algo central al paradigma de objetos, porque es lo que da pie al polimorfismo. Si se acuerdan de que cuando comenzamos con objetos diferenciamos el concepto de objeto y el de mensaje: bueno el binding es en definitiva el mecanismo que define qué método se ejecuta al enviar un mensaje. El method lookup es una de los mecanismos que llevan a cabo el binding pero no es la única.
+
+Esencialmente, lo que nos interesa es entender en qué momento se produce ese binding, y hay básicamente dos opciones:
+
+-   Al compilar = early binding o estático
+-   Al ejecutar = late binding o dinámico
+
+Polimorfismo de subtipos
+------------------------
+
+\\begin{frame}\[fragile\]{Polimorfismo de subtipos}
+
+` \begin{itemize}`
+`   \item Un objeto tiene muchos tipos.`
+`   \item Por ejemplo las instancias de \code{ClrCellClass} tienen los tipos \code{ClrCellType} y \code{CellType}.`
+`   \item \blue{Subsumption rule}: `
+` \end{itemize}`
+` \begin{center}`
+`   $\begin{array}{c}`
+`   \regla`
+`     {\sequ{\Gamma}{M : S'} \quad S' <: S }`
+`     {\sequ{\Gamma}{M : S}}{}`
 `   \end{array}$`
 ` \end{center}`
 ` \begin{itemize}`
