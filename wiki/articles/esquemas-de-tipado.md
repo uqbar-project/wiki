@@ -30,6 +30,21 @@ Algunas características de un sistema de tipos:
 -   Según Cardelli, un sistema de tipos debería permitir hacer validaciones utilizando la información de tipos, algorítmicamente.
 -   Las validaciones basadas en un sistema de tipos, que son más fácilmente automatizables que otros tipos de especificaciones formales.
 
+Tipado implícito o explícito
+----------------------------
+
+El tipado de Java es explícito, esto se ve en dos aspectos:
+
+-   Toda variable, parámetro, método tiene un tipo definido.
+-   Para que dos objetos puedan ser polimórficos tengo que indicarlo explícitamente: herencia o interfaces.
+
+Las interfaces cumplen dos funciones:
+
+-   Permitir un polimorfismo chequeado estáticamente y no restringido por la herencia simple.
+-   Ponerle nombre a un concepto que no quiero representar con una clase: documentar.
+
+En Smalltalk no necesito hacer una indicación explícita de que dos objetos sean polimórficos, basta con que entiendan algún(os) mensaje(s) en común. Vemos el ejemplo de los bloques y los símbolos.
+
 Chequeos estáticos y dinámicos
 ------------------------------
 
