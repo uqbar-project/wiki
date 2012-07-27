@@ -61,7 +61,7 @@ Finalmente es importante diferenciar entre chequeo dinámico y no chequeo. El ch
 
 ### Detección de errores
 
-Podemos discriminar dos tipos de errores que se pueden producir durante la ejecución de un programa:
+Cardelli propone discriminar dos tipos de errores que se pueden producir durante la ejecución de un programa:
 
 Trapped (atrapados)  
 Son los errores que se detectan inmediatamente, por ejemplo una división por cero.
@@ -71,7 +71,14 @@ Son errores que pueden no ser detectados. El programa podría continuar ejecutá
 
 Un programa se considera **seguro** (safe) si no causa untrapped errors. Un lenguaje se considera seguro si todo programa escrito en ese lenguaje está excento de untrapped errors.
 
-En todo lenguaje se puede designar un conjunto de los errores como *prohibidos*. Los errores prohibidos deberían incluir a todos los errores *untrapped*, más un subconjunto de los errores *trapped*.
+En todo lenguaje se puede designar un conjunto de los errores como *prohibidos*. Los errores prohibidos deberían incluir a todos los errores *untrapped*, más un subconjunto de los errores *trapped*. Un programa que no causa errores prohibidos se dice que tiene **buen comportamiento** (good behavior).
+
+En un lenguaje **strongly checked**, todos los oprogramas tienen buen comportamiento, es decir:
+
+-   No ocurren errores untrapped.
+-   No ocurren los errores trapped que se consideran prohibidos.
+
+Siempre queda a responsabilidad del programador evitar los errores trapped que no se eligieron como prohibidos.
 
 Tipos nominales y estructurales
 -------------------------------
