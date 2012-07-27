@@ -3,7 +3,13 @@ Introducción
 
 ### ¿Qué es un tipo?
 
--   conjunto de valores o "elementos de ese conjunto"
+Toda expresión en un programa puede denotar diferentes valores en diferentes momentos (dependiendo del lenguaje eso puede ocurrir en la misma o en diferentes ejecuciones del programa). Un *tipo* describe un conjunto de valores. Al asignarle un tipo a una expresión se está delimitando cuál es el conjunto de valores que podría denotar esa expresión.
+
+Por otro lado, las operaciones computacionales en general no pueden ser aplicadas sobre cualquier valor. Un sistema de tipos me provee una forma de estudiar qué valores tienen sentido para ser utilizados en una operación dada. Por ejemplo, si x e y son valores numéricos, la expresión x + y tiene sentido. En cambio si x e y son valores booleanos, x + y carece de sentido.
+
+Por lo tanto, la idea de tipo nos permite relacionar:
+
+-   un conjunto de valores que tienen ese tipo o **son** de ese tipo.
 -   conjunto de operaciones que puedo realizar sobre ellos
 
 ### Objetivos
