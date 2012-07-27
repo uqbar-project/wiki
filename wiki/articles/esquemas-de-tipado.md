@@ -18,8 +18,6 @@ Existen diferentes tendencias en cuanto a cómo se clasifican a los diferentes l
 
 Según Luca Cardelli un *lenguaje tipado* es el que asocia cada expresión con un tipo (con uno no trivial). El *sistema de tipos* es el componente que administra la información de tipos de un programa. Un lenguaje se considera tipado por la existencia de un sistema de tipos, independientemente de que la sintaxis del lenguaje incorpore información de tipos.
 
-### Objetivos
-
 Los objetivos de un sistema de tipos son:
 
 -   Ayudar a detectar errores al programar.
@@ -31,6 +29,9 @@ Algunas características de un sistema de tipos:
 -   Proveen información al programador, de forma más precisa que un comentario.
 -   Según Cardelli, un sistema de tipos debería permitir hacer validaciones utilizando la información de tipos, algorítmicamente.
 -   Las validaciones basadas en un sistema de tipos, que son más fácilmente automatizables que otros tipos de especificaciones formales.
+
+Detección de errores
+--------------------
 
 Chequeos estáticos y dinámicos
 ------------------------------
