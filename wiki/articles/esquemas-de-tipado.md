@@ -12,15 +12,25 @@ La idea de tipo nos permite relacionar:
 -   un conjunto de valores que *tienen* ese tipo o *son* de ese tipo,
 -   con las operaciones que pueden ser realizadas sobre esos valores.
 
+### Sistemas de tipos
+
+Existen diferentes tendencias en cuanto a cómo se clasifican a los diferentes lenguajes en función de la presencia o no de un sistema de tipos o de las características de ese sistema de tipos. Diferentes autores hablan de lenguajes tipados o no tipados, fuerte o débilmente tipados, lenguajes estáticos o dinámicos. Intentaremos proveer una forma de categorización que sea amplia para poder estudiar diferentes lenguajes y autores.
+
+Según Luca Cardelli un *lenguaje tipado* es el que asocia cada expresión con un tipo (con uno no trivial). El *sistema de tipos* es el componente que administra la información de tipos de un programa. Un lenguaje se considera tipado por la existencia de un sistema de tipos, independientemente de que la sintaxis del lenguaje incorpore información de tipos.
+
 ### Objetivos
 
 Los objetivos de un sistema de tipos son:
 
--   En primer lugar ayudar a detectar errores al programar.
+-   Ayudar a detectar errores al programar.
 -   Guiar al programador sobre las operaciones válidas en un determinado contexto, tanto en cuanto a documentación com en cuanto a ayudas automáticas que puede proveer por ejemplo un IDE.
 -   En algunos casos el comportamiento de una operación puede variar en función del tipo de los elementos involucrados en la misma. De esto vamos a diferenciar varios sabores: polimorfismo, sobrecarga, multimethods, etc.
 
-A veces se habla de lenguajes tipados o no tipados, fuerte o débilmente tipados, lenguajes estáticos o dinámicos. Esas pueden ser ideas intuitivas que ayudan, pero en este momento estamos en condiciones de ser más estrictos en nuestra clasificación.
+Algunas características de un sistema de tipos:
+
+-   Proveen información al programador, de forma más precisa que un comentario.
+-   Según Cardelli, un sistema de tipos debería permitir hacer validaciones utilizando la información de tipos, algorítmicamente.
+-   Las validaciones basadas en un sistema de tipos, que son más fácilmente automatizables que otros tipos de especificaciones formales.
 
 Chequeos estáticos y dinámicos
 ------------------------------
