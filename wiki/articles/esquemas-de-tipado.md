@@ -44,6 +44,20 @@ Esta primera diferencia parecería volcar la balanza a favor de los lenguajes co
 
 Finalmente es importante diferenciar entre chequeo dinámico y no chequeo. El chequeo dinámico me permite manejar el problema y manejarlo o por lo menos me lo informa correctamente, la ausencia de chequeo suele causar errores muy difíciles de detectar o corregir.
 
+### Detección de errores
+
+Podemos discriminar dos tipos de errores que se pueden producir durante la ejecución de un programa:
+
+Trapped (atrapados)  
+Son los errores que se detectan inmediatamente, por ejemplo una división por cero.
+
+Untrapped (no atrapados)  
+Son errores que pueden no ser detectados. El programa podría continuar ejecutándose por un tiempo antes de detectar el problema. Esto puede ocurrir en algunos lenguajes por ejemplo si se accede a posiciones de un array más allá de su longitud o se salta a una posición inválida de memoria.
+
+Un programa se considera **seguro** (safe) si no causa untrapped errors. Un lenguaje se considera seguro si todo programa escrito en ese lenguaje está excento de untrapped errors.
+
+En todo lenguaje se puede designar un conjunto de los errores como *prohibidos*. Los errores prohibidos deberían incluir a todos los errores *untrapped*, más un subconjunto de los errores *trapped*.
+
 Tipado implícito o explícito
 ----------------------------
 
