@@ -33,6 +33,16 @@ Algunas características de un sistema de tipos:
 Detección de errores
 --------------------
 
+Podemos discriminar dos tipos de errores que se pueden producir durante la ejecución de un programa:
+
+Trapped (atrapados)  
+Son los errores que se detectan inmediatamente, por ejemplo una división por cero.
+
+Untrapped (no atrapados)  
+Son errores que pueden no ser detectados. El programa podría continuar ejecutándose por un tiempo antes de detectar el problema. Esto puede ocurrir en algunos lenguajes por ejemplo si se accede a posiciones de un array más allá de su longitud o se salta a una posición inválida de memoria.
+
+Un programa se considera **seguro**
+
 Chequeos estáticos y dinámicos
 ------------------------------
 
