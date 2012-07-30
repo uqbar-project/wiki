@@ -13,8 +13,8 @@ Los Value Objet aún puede tener un estado mutable interno, en tanto este no sea
 Impacto en el diseño
 --------------------
 
-Implementaciones
-----------------
+Implementación
+--------------
 
 ### Consideraciones sobre el subtipado y las relaciones de equivalencia
 
