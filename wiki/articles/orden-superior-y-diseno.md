@@ -1,6 +1,3 @@
-Order superior
-==============
-
 *Ver también [Orden Superior](orden-superior.html)*
 
 `Una consecuencia de implementar el pasaje de funciones como argumentos en lenguajes orientados a objetos# es que el envío de mensajes desde un objeto hacia otro ocurre en dos momentos: `
