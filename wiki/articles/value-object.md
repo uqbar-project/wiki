@@ -10,20 +10,20 @@ Los Value Objects pueden tener un estado visible inmutable (por ejemplo, para mo
 
 Los Value Objet aún puede tener un estado mutable interno, en tanto este no sea expuesto a través de su interfaz, lo que habilita a que presenten evaluación diferida en en sus variables de instancia.
 
-Implementación en Java
-----------------------
+Impacto en el diseño
+--------------------
 
-### Sobre el Subtipado
+Implementaciones
+----------------
 
-### Sobre las relaciones de equivalencia
+### Consideraciones sobre el subtipado y las relaciones de equivalencia
 
-Implementación de Scala
------------------------
+### En Java
 
-Implementación en Smalltalk
----------------------------
+### Scala
 
-Implementación en C (como un TAD)
----------------------------------
+### En lenguajes con tipado dinámico
+
+=== en C (como un TAD) ==
 
 Si bien en C no tenemos objetos, podemos también implementar TADs con semántica de valor.
