@@ -24,6 +24,6 @@ Implementación
 
 ### En lenguajes con tipado dinámico
 
-=== en C (como un TAD) ==
+### en C (como un TAD)
 
 Si bien en C no tenemos objetos, podemos también implementar TADs con semántica de valor.
