@@ -23,6 +23,7 @@ Unidad 3: Diseño estructurado y funcional
 -----------------------------------------
 
 -   [Efectos y diseño](efectos-y-diseno.html)
+-   [Evaluación diferida y diseño](evaluacion-diferida-y-diseno.html)
 -   [Estado y diseño](estado-y-diseno.html)
 -   [Orden superior y diseño](orden-superior-y-diseno.html)
 -   [Identidad y diseño](identidad-y-diseno.html)
