@@ -1,10 +1,29 @@
-Value Object
+*La definición de Value Object varía bastante de autor en autor. Algunas visiones diferentes sobre este concepto están plasmadas [aquí](http://c2.com/cgi/wiki?ValueObject).*
 
--   objetos inmutables
--   favorecer codigo puro
--   jerarquias acotadas porqué sí y porqué no
--   identidad vs equivalencia
--   orden superior
--   descomposicion, objetos pequeños, independencia de contexto
--   como implementar orden superior en java
+Entendemos como Value Object a aquellos objetos que tienen una semántica de valor (en contraposición con semántica de referencia), es decir cuya identidad no es importante. Dos value objects ser intercambiables, esperando iguales resultados, en tanto ambas instancias exhiban el mismo comportamiento desde el punto de vista del observador. Dicho de otra forma, son objetos para los que podría eventualmente tener una copia del mismo, y daría lo mismo enviarle un mensaje al original o su copia.
 
+Una consecuencia importante de que los Value Object no tengan identidad importante, es que no tienen estado visiblemente mutable.
+
+Los Value Object pueden ser también analizados como un patrón de diseño. Se recomienda el capitulo correspondiente en [este libro](http://homepages.mcs.vuw.ac.nz/~tk/fps/fps-sans-escher.pdf)
+
+Los Value Objects pueden tener un estado visible inmutable (por ejemplo, para modelar una fecha), aunque también puede darse el caso en que tal estado no exista (por ejemplo, para modelar la función identidad) o se encuentre comletamente encapsulado (por ejemplo, una función aplicada parcialmente encapsula complementanete el estado de las variables que que fueron encerradas en su contexto)
+
+Los Value Objet aún puede tener un estado mutable interno, en tanto este no sea expuesto a través de su interfaz, lo que habilita a que presenten evaluación diferida en en sus variables de instancia.
+
+Implementación en Java
+----------------------
+
+### Sobre el Subtipado
+
+### Sobre las relaciones de equivalencia
+
+Implementación de Scala
+-----------------------
+
+Implementación en Smalltalk
+---------------------------
+
+Implementación en C (como un TAD)
+---------------------------------
+
+Si bien en C no tenemos objetos, podemos también implementar TADs con semántica de valor.
