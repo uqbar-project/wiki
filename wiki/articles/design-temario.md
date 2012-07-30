@@ -22,12 +22,20 @@ Unidad 2: El Proceso de Diseño y las especificaciones
 Unidad 3: Diseño estructurado y funcional
 -----------------------------------------
 
+### Generalidades
+
 -   [Efectos y diseño](efectos-y-diseno.html)
 -   [Evaluación diferida y diseño](evaluacion-diferida-y-diseno.html)
 -   [Estado y diseño](estado-y-diseno.html)
 -   [Orden superior y diseño](orden-superior-y-diseno.html)
 -   [Identidad y diseño](identidad-y-diseno.html)
 -   [Pattern Matching, Polimorfismo y diseño](pattern-matching--polimorfismo-y-diseno.html)
+
+### Patrones funcionales en objetos
+
+-   [Value Object](value-object.html)
+-   [Function Object](function-object.html)
+-   [Lazy Object y Thunk Object](lazy-object-y-thunk-object.html)
 
 Unidad 4: Diseño orientado a objetos
 ------------------------------------
