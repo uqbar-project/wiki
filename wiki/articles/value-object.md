@@ -36,11 +36,9 @@ Implementación
 `  public boolean estaAprobado() {`
 `    return nota >= 4;`
 `  }`
-
 `  public Alumno getAlumno() {`
 `    return alumno;`
 `  }`
-
 `}`
 
 Nótese que el estado, de existir, de un ValueObject no tiene porqué estar conformado exclusivamente por tipos primitivos (primitive obsession).
