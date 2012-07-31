@@ -39,11 +39,15 @@ Implementación
 `  public Alumno getAlumno() {`
 `    return alumno;`
 `  }`
+
+`  //demas getters`
 `}`
 
 Nótese que el estado, de existir, de un ValueObject no tiene porqué estar conformado exclusivamente por tipos primitivos (primitive obsession).
 
 Tampoco tiene porqué estar desprovisto de comportamiento (dto/anemic object), de hecho, normalmente lo tiene y es función de su estado.
+
+Un ValueObject puede exponer su estado interno, como también puede encapsularlo completamente (ej \[Function Object\])
 
 ### Scala
 
