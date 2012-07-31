@@ -20,6 +20,33 @@ Implementación
 
 ### En Java
 
+`public class Final {`
+`  `
+`  private final String folio;`
+`  private final Integer libro;`
+`  private final Integer nota;`
+`  private final Alumno alumno;`
+`  `
+`  public Final(String folio, String libro, Integer nota, Alumno alumno) {`
+`    this.libro = libro;`
+`    this.folio = folio;`
+`    this.nota = nota;`
+`    this.alumno = alumno;`
+`  }`
+`  public boolean estaAprobado() {`
+`    return nota >= 4;`
+`  }`
+
+`  public Alumno getAlumno() {`
+`    return alumno;`
+`  }`
+
+`}`
+
+Nótese que el estado, de existir, de un ValueObject no tiene porqué estar conformado exclusivamente por tipos primitivos (primitive obsession).
+
+Tampoco tiene porqué estar desprovisto de comportamiento (dto/anemic object), de hecho, normalmente lo tiene y es función de su estado.
+
 ### Scala
 
 ### En lenguajes con tipado dinámico
