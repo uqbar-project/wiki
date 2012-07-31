@@ -47,11 +47,13 @@ Tampoco tiene porqué estar desprovisto de comportamiento (dto/anemic object), d
 
 ### Scala
 
-class Final(val folio:String, val libro:Int, val nota:Int, val alumno:Alumno ) {
+`class Final(val folio:String, val libro:Int, val nota:Int, val alumno:Alumno ) {`
+`  def estaAprobado = nota >= 4`
+`}`
 
-` def estaAprobado = nota >= 4`
-
-}
+`case class Final(val folio:String, val libro:Int, val nota:Int, val alumno:Alumno) {`
+`  def estaAprobado = nota >= 4`
+`}`
 
 ### En lenguajes con tipado dinámico
 
