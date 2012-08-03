@@ -9,6 +9,11 @@ Una definición alternativa dice: Hay transparencia referencial cuando al realiz
 
 <!-- -->
 
+  
+También se puede pensar en las propiedades necesarias para tener Transparencia Referencial.
+
+Decimos que una operación tiene transparencia referencial si es: - Independiente: No dependen del estado de nada que este fuera de si misma - Sin estado/Stateless: No tiene un estado que se mantenga de llamada en llamada - Determinística: Siempre devuelven el mismo valor dados los mismos argumentos
+
 Efecto de Lado  
 Hay efecto de lado cuando un cambio de estado sobrevive a la realización de una operación. Por ejemplo, una operación puede modificar una variable global, modificar uno de sus argumentos, escribir datos a la pantalla o a un archivo, o hacer uso de otras operaciones que tienen efecto de lado.
 
