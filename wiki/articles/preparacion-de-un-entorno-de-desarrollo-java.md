@@ -74,6 +74,36 @@ En Ubuntu lo más sencillo para instalar el Maven es
 
 En otros sistemas operativos o para configuraciones más específicas se pueden seguir las instrucciones de: <http://tadp.wikidot.com/maven>
 
+A la configuración original de Maven, hay que indicarle cuales son los repositorios de donde bajar los artefactos de Arena. Para poder realizar esto es necesario crear el archivo ~/.m2/settings.xml. Este archivo se encuentra en el directorio del usuario, esta ruta cambia dependiendo de cada sistema operativo. Por ejemplo en Linux, si el usuario es pablo, la ruta sería /home/pablo/.m2/settings.xml
+
+El contenido de este archivo debería quedar así:
+
+` `<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+        http://maven.apache.org/xsd/settings-1.0.0.xsd">
+`  `<profiles>
+`        `<profile>
+`              `<id>`uqbar-wiki`</id>
+`              `<repositories>
+`                    `<repository>
+`                        `<id>`uqbar-wiki.org-releases`</id>
+`                        `<name>`uqbar-wiki.org-releases`</name>
+`                        `<url>[`http://uqbar-wiki.org/mvn/releases`](http://uqbar-wiki.org/mvn/releases)</url>
+`                    `</repository>
+`                    `<repository>
+`                        `<snapshots/>
+`                        `<id>`uqbar-wiki.org-snapshots`</id>
+`                        `<name>`uqbar-wiki.org-snapshots`</name>
+`                        `<url>[`http://uqbar-wiki.org/mvn/snapshots`](http://uqbar-wiki.org/mvn/snapshots)</url>
+`                   `</repository>
+`              `</repositories>
+`        `</profile>
+`  `</profiles>
+`  `<activeProfiles>
+`       `<activeProfile>`uqbar-wiki`</activeProfile>
+`  `</activeProfiles>
+` `</settings>
+
 Plugin de Maven para Eclipse
 ----------------------------
 
