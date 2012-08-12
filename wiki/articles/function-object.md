@@ -1,3 +1,8 @@
+Entendemos por Function Object a un patrón funcional aplicado a objectos que consiste en cosificar el envío de mensajes, para poder resolver problemas empleando orden superior y aplicación parcial de forma similar a como lo haríamos en el paradigma funcional.
+
+El problema
+-----------
+
 En el paradigma de objetos los mensajes no son objetos, y por tanto no tenemos forma de hablar contra los mensajes, mas allá de las capacidades reflexivas de algunos lenguajes. Dicho de otra forma los mensajes no son valores, no son "cosas".
 
 Esto nos restringe en que no tenemos mucho control sobre estos envios: por ejemplo, no tenemos forma nativa de enviar mensajes parciales o de pasar el envío de un mensaje por parámetro.
