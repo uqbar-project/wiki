@@ -35,3 +35,20 @@ En el sentido de que explícitamente construye un valor que modela una computaci
 Justamente por su semejanza con la definición de una función anónima, a este patrón se lo conoce como Function Object: un objeto que entiende en su versión mas simple un único mensaje (llamado típicamente apply, value, call, eval, etc) y cosifica un envio de mensajes.
 
 Estos objetos pueden entender opcionalmente otros mensajes que permitan implementar la noción de aplicación parcial y/o currificación, y que implementen operaciones típicas sobre funciones como, por ejemplo, la composición.
+
+En lenguajes como Java, dónde no tenemos una sintaxis especifica para instanciar estos bloques de código, tenemos que recurrir a la definición e instanciación explícita de clases, típicamente definiendo una o varias interfaces que representen a las funciones de diferentes aridades, e implementádolas e instanciandolas conjuntamente, mediante el uso de clases anónimas.
+
+Así por ejemplo, es común encontrar encontrar código que emplea bibliotecas (no estándarares) de colecciones de la siguiente forma:
+
+` Collections.map(Arrays.asList(1,2,3), new Function`<Integer, Integer>`() {`
+`     public Integer apply(Integer x) { return x + 1; }`
+` });`
+` `
+
+Lo cual es evidentemente mas verborrágico y tiene mucha mas redundancia que las soluciones anteriores, pero igualmente cumple su cometido.
+
+Function Object y Closure
+-------------------------
+
+Function Object, Strategy y Command
+-----------------------------------
