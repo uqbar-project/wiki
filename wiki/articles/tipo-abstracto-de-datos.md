@@ -1,13 +1,14 @@
 Concepto
---------
+========
 
 -   <http://c2.com/cgi/wiki?AbstractDataType>
 -   <http://es.wikipedia.org/wiki/Tipo_de_dato_abstracto>
 
 Implementaciones de TADs
-------------------------
+========================
 
-### En C
+En C
+----
 
 -   Definir si se lo pasará por valor o por referencia
 -   Codificar el .h con las declaraciones de las funciones
@@ -16,7 +17,7 @@ Implementaciones de TADs
 -   Definir sinónimos de tipos para la estructura.
 -   Implementar las funciones en .c
 
-#### Ejemplo: Un búffer
+### Ejemplo: Un búffer
 
 Un búffer es una estructura de datos similar a una cola, diseñada para permitir el agregado de elementos o lotes de elementos homogeneos de forma eficiente, al final del mismom controlando su capacidad y taza de expansión para reducir al mínimo las operaciones de gestión de memoria. A diferencia de una cola, los elementos del buffer no se sacan de a uno, sino que se extraen también en lotes. Buffers más avanzados soportan también punteros internos para delimitar regiones dentro del mismo.
 
@@ -29,7 +30,7 @@ Modelaremos un buffer de caracteres. Este soportará las siguientes operaciones:
 -   Extracción: expondrá una operación para extraer todos los caracteres como un char\*. Una vez devuelto, es importante que el buffer pierda toda referencia al array original
 -   Destrucción: expondrá una operación para destruir el buffer. Es importante que libere no solo la memoria usada por el buffer, sino también, la memoria del contenido del mismo, si no fue ya devuelto.
 
-##### Declaración de las operaciones
+#### Declaración de las operaciones
 
 Pensar las operaciones no se trata tan solo de pensar que funcionalidad expondrá, sino también, y en particular cuando tenemos TADs con estado mutable, pensar cuales son las precondiciones y postcondiciones de las mismas, y las invariantes del TAD.
 
@@ -37,10 +38,11 @@ Esta no es solo una buena práctica de diseño estructurado, sino que puede ser 
 
 Estas declaraciones las colocaremos en un .h
 
-##### Definición de la estructura interna
+#### Definición de la estructura interna
 
-##### Definición de las operaciones
+#### Definición de las operaciones
 
-### En Haskell
+En Haskell
+----------
 
 Ejemplo: una red neuronal
