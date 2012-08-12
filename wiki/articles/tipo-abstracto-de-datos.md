@@ -16,4 +16,19 @@ Implementaciones de TADs
 -   Definir sinónimos de tipos para la estructura.
 -   Implementar las funciones en .c
 
+Ejemplo: Un búffer.
+
+Un búffer es una estructura de datos similar a una cola, diseñada para permitir el agregado de elementos o lotes de elementos homogeneos de forma eficiente, al final del mismom controlando su capacidad y taza de expansión para reducir al mínimo las operaciones de gestión de memoria. A diferencia de una cola, los elementos del buffer no se sacan de a uno, sino que se extraen también en lotes. Buffers más avanzados soportan también punteros internos para delimitar regiones dentro del mismo.
+
+Por sus características, los buffers son usados típicamente para almacenar bytes o caracteres.
+
+Modelaremos un buffer de caracteres. Este soportará las siguientes operaciones:
+
+-   Creación: se creará con un tamaño inicial fijado por el usuario
+-   Concatenación: ofrecerá una operación para agregar un solo caracter, y otra para agregar un conjunto de caracteres.
+-   Extracción: expondrá una operación para extraer todos los caracteres como un char\*.
+-   Copia: expondrá una operación para copiar el búffer con su contenido.
+
 ### En Haskell
+
+Ejemplo: una red neuronal
