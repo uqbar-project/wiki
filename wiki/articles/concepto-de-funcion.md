@@ -9,7 +9,7 @@ Una forma simple de pensar una función es como una máquina con una salida y al
 
 ### Función como transformación matemática
 
-Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemplo, tener memoria de sus entradas anteriores, sino que son transformaciones matemáticas que presentan [transparencia referencial](transparencia-referencial.html).
+Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemplo, tener memoria de sus entradas anteriores, sino que son transformaciones matemáticas que presentan [transparencia referencial](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html).
 
 En particular, las funciones son relaciones que presentan las siguientes características:
 
