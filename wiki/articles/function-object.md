@@ -47,6 +47,9 @@ Así por ejemplo, es común encontrar encontrar código que emplea bibliotecas (
 
 Lo cual es evidentemente mas verborrágico y tiene mucha mas redundancia que las soluciones anteriores, pero igualmente cumple su cometido.
 
+Function Object y Orden Superior
+--------------------------------
+
 Function Object y Closure
 -------------------------
 
