@@ -76,10 +76,10 @@ La primera operación que debemos soportar es la instanciación del TAD. Esta op
 Por convención y analogía con objetos, llamaremos a esta operación **new**:
 
 `Buffer * buffer_new(int max_size) {`
-`  Buffer * self = (Buffer*) malloc(sizeof(Buffer));`
+`  Buffer * self = instance_new(Buffer);`
+`  self->content = instance_new_array(char, max_size);`
 `  self->current_size = 0;`
 `  self->max_size = max_size;`
-`  self->content = (char*) malloc(sizeof(char) * max_size);`
 `  return self;`
 `}`
 
