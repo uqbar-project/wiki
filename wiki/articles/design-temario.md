@@ -41,6 +41,8 @@ Unidad 3: Diseño estructurado y funcional
 ### Tips de C
 
 -   [Preparación del ambiente C](preparacion-del-ambiente-c.html)
+-   [Typedefs y tipos anónimos](typedefs-y-tipos-anonimos.html)
+-   [Statics](statics.html)
 -   [Macros](macros.html)
 -   [Manejo de memoria](manejo-de-memoria.html)
 -   [Punteros a función](punteros-a-funcion.html)
