@@ -55,6 +55,10 @@ Estas declaraciones las colocaremos en un .h
 
 #### Definición de las operaciones
 
+La primera operación que debemos soportar es la instanciación del TAD. Esta operación debe tomar un tamaño máximo inicial, y reservar la memoria necesaria para el buffer en sí mismo, y el vector de memoria donde se copiarán los contenidos. También debe inicializar los atributos del TAD.
+
+Por convención y analogía con objetos, llamaremos a esta operación **new**:
+
 `Buffer * buffer_new(int max_size) {`
 `  Buffer * self = (Buffer*) malloc(sizeof(Buffer));`
 `  self->current_size = 0;`
@@ -63,11 +67,21 @@ Estas declaraciones las colocaremos en un .h
 `  return self;`
 `}`
 
-`void buffer_append_char(Buffer * self, char a_char) {`
-`  _buffer_expand(self, 1);`
-`  self->content[self->current_size] = a_char;`
-`  self->current_size++;`
+La contrapartida de la instanciación del TAD es la destrucción del mismo. En ambientes con Garbage Collector esto no es normalmente necesario, por lo que no existe operación análoga en objetos. Por convención, la llamaremos **delete**:
+
+`void buffer_delete(Buffer ** self) {`
+`  if( (*self)->content != NULL ) {`
+`    free((*self)->content);`
+`  }`
+`  free(*self);`
+`  *self = NULL;`
 `}`
+
+Nótese que esta operación toma como argumento una doble indirección a un Buffer.
+
+En este caso particular, el enunciado nos plantea que solo se debe liberar la memoria del contenido del buffer, si y solo si no se ha devuelto el contenido al usuario del TAD. Para resolver esto, señalizaremos un contenido entregado al usuario setéandolo en NULL.
+
+Esto mismo debemos considerarlo a la hora de justamente devolver ese contenido, mediante la operación **extract**. Para cumplir con la precondición de que el contenido no ha sido devuelto antes, agregaremos una aserción:
 
 `char * buffer_extract(Buffer * self) {`
 `  assert(self->content != NULL);`
@@ -77,12 +91,10 @@ Estas declaraciones las colocaremos en un .h
 `  return content;`
 `}`
 
-`void buffer_delete(Buffer ** self) {`
-`  if( (*self)->content != NULL ) {`
-`    free((*self)->content);`
-`  }`
-`  free(*self);`
-`  *self = NULL;`
+`void buffer_append_char(Buffer * self, char a_char) {`
+`  _buffer_expand(self, 1);`
+`  self->content[self->current_size] = a_char;`
+`  self->current_size++;`
 `}`
 
 `static void _buffer_expand(Buffer*self, int required_space) {`
@@ -96,6 +108,8 @@ Estas declaraciones las colocaremos en un .h
 `  }`
 `}`
 `//etc...`
+
+#### Mejoras sobre el manejo de memoria
 
 En Haskell
 ----------
