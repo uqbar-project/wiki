@@ -57,6 +57,8 @@ Estas declaraciones las colocaremos en un .h
 
 #### Definición de la estructura interna
 
+*Para mas detalles sobre la sintaxis, ver [Typedefs y tipos anónimos](typedefs-y-tipos-anonimos.html)*
+
 Para modelar la estructura interna del buffer, utilizaremos un *struct*, que tendrá un campo por cada atributo de nuestro TAD: contenido, tamaño máximo y tamaño actual.
 
 `typedef struct {`
@@ -64,8 +66,6 @@ Para modelar la estructura interna del buffer, utilizaremos un *struct*, que ten
 `  int current_size;`
 `  int max_size;`
 `} Buffer;`
-
-Nótese que no lo definimos directamente como una estructura, sino que colocamos tal definición dentro de un typedef. Esto nos permitirá referenciar a nuestro tipo de dato como *Buffer*, en lugar de *struct Buffer*
 
 #### Definición de las operaciones
 
