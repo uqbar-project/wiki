@@ -55,6 +55,48 @@ Estas declaraciones las colocaremos en un .h
 
 #### Definición de las operaciones
 
+`Buffer * buffer_new(int max_size) {`
+`  Buffer * self = (Buffer*) malloc(sizeof(Buffer));`
+`  self->current_size = 0;`
+`  self->max_size = max_size;`
+`  self->content = (char*) malloc(sizeof(char) * max_size);`
+`  return self;`
+`}`
+
+`void buffer_append_char(Buffer * self, char a_char) {`
+`  _buffer_expand(self, 1);`
+`  self->content[self->current_size] = a_char;`
+`  self->current_size++;`
+`}`
+
+`char * buffer_extract(Buffer * self) {`
+`  assert(self->content != NULL);`
+`  buffer_append_char(self, '\0');`
+`  char * content = self->content;`
+`  self->content = NULL;`
+`  return content;`
+`}`
+
+`void buffer_delete(Buffer ** self) {`
+`  if( (*self)->content != NULL ) {`
+`    free((*self)->content);`
+`  }`
+`  free(*self);`
+`  *self = NULL;`
+`}`
+
+`static void _buffer_expand(Buffer*self, int required_space) {`
+`  if(_buffer_available_space(self) < required_space) {`
+`    int new_size = _buffer_optimal_new_size(self, required_space);`
+`    self->max_size = new_size; `
+`    char * new_content = (char*) malloc(sizeof(char)* new_size);`
+`    memcpy(new_content, self->content, self->current_size);  `
+`    free(self->content); `
+`    self->content = new_content;`
+`  }`
+`}`
+`//etc...`
+
 En Haskell
 ----------
 
