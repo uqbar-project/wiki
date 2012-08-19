@@ -47,13 +47,11 @@ Estas declaraciones las colocaremos en un .h
 
 #### Definición de la estructura interna
 
-typedef struct {
-
-` char * content;`
-` int current_size;`
-` int max_size;`
-
-} Buffer;
+`typedef struct {`
+`  char * content;`
+`  int current_size;`
+`  int max_size;`
+`} Buffer;`
 
 #### Definición de las operaciones
 
