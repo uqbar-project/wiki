@@ -17,6 +17,16 @@ En C
 -   Definir sinónimos de tipos para la estructura.
 -   Implementar las funciones en .c
 
+### Convenciones
+
+Si bien para implementar un TAD no es necesario seguir ninguna convención en particular, dado que C no tiene un soporte nativo para los mismos, y por tanto hay varias formas de implementarlos, es recomendable seguir convenciones para mantener consistencia en sus implemenentaciones y facilitar la comprensión del código a los demás programadores (o a uno mismo en el futuro). Nosotros aquí sugerimos la siguiente:
+
+-   Escribir los tipos en CamelCase. Por ejemplo *AerolineaLanchita*
+-   Escribir las operaciones en snake\_case.
+-   Dado que nuestros TADs no presentarán polimorfismo (al menos no el los ejemplos básicos), las operaciones estarán prefijadas por el tipo de dato, en snake case. Esto se hará así para evitar colisiones en el espacio de nombres, y facilitar el autocompletado por parte del IDE. Por ejemplo *areolinea\_lanchita\_comprar(char \* codigo\_pasaje)*
+-   Las operaciones privadas del TAD las declararemos y definiremos dentro del .c, prefijandolas con guión bajo, y declarandolas static
+-   Respetaremos todas las buenas prácticas de programación que ya conocemos de paradigmas: delegación, expresividad, declaratividad (hasta donde podamos)
+
 ### Ejemplo: Un búffer
 
 Un búffer es una estructura de datos similar a una cola, diseñada para permitir el agregado de elementos o lotes de elementos homogeneos de forma eficiente, al final del mismom controlando su capacidad y taza de expansión para reducir al mínimo las operaciones de gestión de memoria. A diferencia de una cola, los elementos del buffer no se sacan de a uno, sino que se extraen también en lotes. Buffers más avanzados soportan también punteros internos para delimitar regiones dentro del mismo.
