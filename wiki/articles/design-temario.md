@@ -38,6 +38,10 @@ Unidad 3: Diseño estructurado y funcional
 -   [Function Object](function-object.html)
 -   [Lazy Object y Thunk Object](lazy-object-y-thunk-object.html)
 
+### Tips de C
+
+### Tips de Scala
+
 Unidad 4: Diseño orientado a objetos
 ------------------------------------
 
