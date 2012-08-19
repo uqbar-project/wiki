@@ -106,23 +106,21 @@ Esto mismo debemos considerarlo a la hora de justamente devolver ese contenido, 
 `  return content;`
 `}`
 
-`void buffer_append_char(Buffer * self, char a_char) {`
-`  _buffer_expand(self, 1);`
-`  self->content[self->current_size] = a_char;`
-`  self->current_size++;`
+Luego tenemos que encarar el problema de agregar caracteres. Llamaremos a esta operación *'apend\_chars*, que tomará como parámetro el vector de caracteres a copiar, y su longitud.
+
+La operación no es trivial: debemos considerar que si no hay suficiente espacio en el buffer (es decir, la diferencia entre el tamaño actual y el máximo es menor a la longitud del vector), deberemos redimesionar el buffer de forma eficiente.
+
+Sin embargo, aún así podemos comenzar a atacar el problema, delegando apropiadamente:
+
+`void buffer_append_chars(Buffer * self, char * chars, int count){`
+`  _buffer_expand(self, count);`
+`  memcpy(self->content + self->current_size, chars, count);`
+`  self->current_size += count;`
 `}`
 
-`static void _buffer_expand(Buffer*self, int required_space) {`
-`  if(_buffer_available_space(self) < required_space) {`
-`    int new_size = _buffer_optimal_new_size(self, required_space);`
-`    self->max_size = new_size; `
-`    char * new_content = (char*) malloc(sizeof(char)* new_size);`
-`    memcpy(new_content, self->content, self->current_size);  `
-`    free(self->content); `
-`    self->content = new_content;`
-`  }`
-`}`
-`//etc...`
+Es decir, decimos que para copiar un vector de caracteres al final del buffer, debemos expandir nuestro buffer tanto como sea necesario para almacenar los caracteres, y luego procedemos a efectivamente realizar la copia y actualizar el tamaño actual. Ahora, tenemos un problema un poco mas simple: solo debemos preocuparnos por redimensionar el buffer, de ser necesario.
+
+Dado que **\_buffer\_expand** no será usada desde el exterior (es una operación interna), no la colocamos en nuestro .h.
 
 En Haskell
 ----------
