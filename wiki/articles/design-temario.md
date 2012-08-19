@@ -46,6 +46,7 @@ Unidad 3: Diseño estructurado y funcional
 -   [Macros](macros.html)
 -   [Manejo de memoria en C](manejo-de-memoria-en-c.html)
 -   [Punteros a función](punteros-a-funcion.html)
+-   [Testing en C](testing-en-c.html)
 
 ### Tips de Scala
 
