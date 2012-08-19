@@ -71,6 +71,8 @@ Para modelar la estructura interna del buffer, utilizaremos un *struct*, que ten
 
 *Para mas detalles sobre las funciones de manejo de memoria, ver [Manejo de memoria en C](manejo-de-memoria-en-c.html)*
 
+*El código completo se encuentra [aquí](http://svn2.xp-dev.com/svn/uqbar/examples/dds/estructurado/buffer)*
+
 La primera operación que debemos soportar es la instanciación del TAD. Esta operación debe tomar un tamaño máximo inicial, y reservar la memoria necesaria para el buffer en sí mismo, y el vector de memoria donde se copiarán los contenidos. También debe inicializar los atributos del TAD.
 
 Por convención y analogía con objetos, llamaremos a esta operación **new**:
