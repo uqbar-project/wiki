@@ -38,6 +38,13 @@ Esta no es solo una buena práctica de diseño estructurado, sino que puede ser 
 
 Estas declaraciones las colocaremos en un .h
 
+`Buffer * buffer_new(int max_size);`
+`void buffer_append_char(Buffer * self, char aChar);`
+`void buffer_append_chars(Buffer * self, char * chars, int count);`
+`char * buffer_extract(Buffer * self);`
+`int  buffer_current_size(Buffer * self);`
+`void buffer_delete(Buffer ** self);`
+
 #### Definición de la estructura interna
 
 #### Definición de las operaciones
