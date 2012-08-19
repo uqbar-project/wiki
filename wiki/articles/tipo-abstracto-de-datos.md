@@ -87,10 +87,9 @@ La contrapartida de la instanciación del TAD es la destrucción del mismo. En a
 
 `void buffer_delete(Buffer ** self) {`
 `  if( (*self)->content != NULL ) {`
-`    free((*self)->content);`
+`    instance_delete((*self)->content);`
 `  }`
-`  free(*self);`
-`  *self = NULL;`
+`  instance_delete(*self);`
 `}`
 
 Nótese que esta operación toma como argumento una doble indirección a un Buffer.
