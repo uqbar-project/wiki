@@ -123,8 +123,6 @@ Esto mismo debemos considerarlo a la hora de justamente devolver ese contenido, 
 `}`
 `//etc...`
 
-#### Mejoras sobre el manejo de memoria
-
 En Haskell
 ----------
 
