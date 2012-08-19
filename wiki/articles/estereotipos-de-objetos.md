@@ -11,7 +11,16 @@ En base a estos tres aspectos del objeto, podemos ensayar la siguiente caracteri
 -   Entidades: Su identidad es importante (cuando tenemos que enviarle varios mensajes a uno de estos objetos, nos importa que el receptor sea siempre el mismo, y no tan solo uno parecido). Presentan estado significativo y mutable, y poco comportamiento, fuertemente acoplado a las características anteriores. Su cíclo de vida es típicamente largo. Son ejemplos típicos de entidades aquellos objetos persistentes en una base de datos transaccional (aunque por motivos de implementación, su identidad nativa puede perder algo de importancia, y se recurre al uso de atributos que modelan la identidad).
 -   Símbolos: Su identidad es importante, no presentan comportamiento más que la comparación por identidad (==) o quizás la representación textual (toString). No presentan estado, o es inmutable. Se los emplea típicamente para modelar códigos, o elementos del metamodelo del lenguaje, como nombres de clases o selectores. Algunos lenguajes como Smalltalk o Ruby soportan nativamente estos objetos, mientras que en otros, como Java, se suple su falta con Strings
 -   Valores
--   Servicios/Tareas: aquellos objetos con una fuerte carga de comportamiento, entendida
+-   Servicios/Tareas: aquellos objetos con una fuerte carga de comportamiento independiente de su estado
+-   Objetos anémicos/DTO's
+
+| Estereotipo | Identidad    | Comportamiento | Estado            |
+|-------------|--------------|----------------|-------------------|
+| Entidad     | Importante   | Mucho          | Mucho y Mutable   |
+| Simbolo     | Importante   | Poco           | Poco e Inmutable  |
+| Valor       | Transparente | Mucho          | Mucho e Inmutable |
+| Servicio    | -            | Mucho          | Poco              |
+| DTO         | Importante   | Poco           | Mucho y Mutable   |
 
 Algunas combinaciones nos llevan a: Identidad importante, estado y comportamiento inexistentes: símbolos, candados. Identidad y estado importante: entidades Comportamiento importante, estado e identidad insignificantes: objeto función, stratey stateless,
 
