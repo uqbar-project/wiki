@@ -69,6 +69,8 @@ Para modelar la estructura interna del buffer, utilizaremos un *struct*, que ten
 
 #### Definición de las operaciones
 
+*Para mas detalles sobre las funciones de manejo de memoria, ver [Manejo de memoria en C](manejo-de-memoria-en-c.html)*
+
 La primera operación que debemos soportar es la instanciación del TAD. Esta operación debe tomar un tamaño máximo inicial, y reservar la memoria necesaria para el buffer en sí mismo, y el vector de memoria donde se copiarán los contenidos. También debe inicializar los atributos del TAD.
 
 Por convención y analogía con objetos, llamaremos a esta operación **new**:
