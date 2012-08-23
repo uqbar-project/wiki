@@ -9,6 +9,7 @@ Salado
 -   [Fideos](fideos.html)
 -   [Palitos de queso](palitos-de-queso.html)
 -   [Salsa Jack Daniel's](salsa-jack-daniel-s.html)
+-   [Bagna Cauda](bagna-cauda.html)
 
 Dulce
 -----
