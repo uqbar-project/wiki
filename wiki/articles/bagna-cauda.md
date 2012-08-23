@@ -11,6 +11,8 @@ Para 25 a 30 personas
 -   un sobre de pimienta de 50 g
 -   un puñadito de sal
 
+Nos faltaron las nueces, podría agregarse 1/4 kg de nueces.
+
 Ingredientes
 ------------
 
