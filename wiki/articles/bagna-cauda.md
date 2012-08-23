@@ -1,4 +1,7 @@
-La receta que utilizamos fue:
+Salsa
+-----
+
+Para 25 a 30 personas
 
 -   46 cabezas de ajo
 -   2 frascos grandes de anchoas (no sé bien cuántos gramos serían)
@@ -8,17 +11,10 @@ La receta que utilizamos fue:
 -   un sobre de pimienta de 50 g
 -   un puñadito de sal
 
-Habíamos calculado 25 personas, mirando lo que sobró creo que hasta 28-30 nos alcanzaba.
-
-En una repetición estaría tentado de hacer dos cambios:
-
--   Aumentar la relación anchoa/ajo. Le pondría por ahí 30 cabezas de ajo y duplicaría las anchoas.
--   Me van a putear pero yo estaría tentado de que no sea tan pesada. Para eso se podría reemplazar un poco de crema por leche.
-
 Ingredientes
 ------------
 
-Los ingredientes que compramos fueron:
+Para 22/25 personas, entre ellos varios que andaban con ganas de esquivar las verduras:
 
 -   2kg de carne saltada
 -   2kg de salchicha con piel, también saltada igual que la carne.
@@ -32,9 +28,17 @@ Los ingredientes que compramos fueron:
 -   25 espárragos, saltados (es importante saltarlos en el momento).
 -   3 kg de papines (hervidos primero y al horno después).
 -   4 morrones rojos y 2 verdes
+-   Impíamente no conseguimos cardo.
 
-En cuanto a las cantidades creo que anduvimos bien (para los 22/25 que fuimos). Algunos pensamientos:
+Discusión
+---------
 
+Habíamos calculado 25 personas, mirando lo que sobró creo que la salsa hasta 28-30 nos alcanzaba. Los ingredientes estuvieron bien para 25.
+
+Algunas cosas que se podrían revisar en una repetición:
+
+-   Aumentar la relación anchoa/ajo. Le pondría por ahí 30 cabezas de ajo y duplicaría las anchoas.
+-   Me van a putear pero yo estaría tentado de que no sea tan pesada. Para eso se podría reemplazar un poco de crema por leche.
 -   Lo que más sobró fue el repollo, evidentemente era mucho.
 -   Las demás verduras anduvieron bien, sobró un poco de cada cosa.
 -   Carne, salchichas y ravioles se agotaron, pero no tuve sensación de que faltaran.
