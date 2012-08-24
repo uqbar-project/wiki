@@ -6,7 +6,7 @@ Mas allá de que existe una diferencia técnica enorme, en una primera aproximac
 
 Por otro lado, en el laboratorio de sistemas, la VM de Pharo está instalada directamente sobre el sistema operativo (un Windows), mientras que los interpretes de Haskell y Prolog están instalados, por cuestiones prácticas para la gente del laboratorio, en un sistema operativo virtualizado montado sobre una VM VMware, pero bien podrían haberlo instalado sobre el mismo Windows.
 
-[1](https://docs.google.com/drawings/pub?id=1O7c4pjlNboSdMhZDLOKxI5MMqR8vqrA4ZvvFdKXDij4&w=754&h=543)
+![VMs](https://docs.google.com/drawings/pub?id=1O7c4pjlNboSdMhZDLOKxI5MMqR8vqrA4ZvvFdKXDij4&w=754&h=543 "VMs")
 
 Esta última VM (VMWare) es de naturaleza totalmente distinta a la VM de Pharo: emula un hardware completo, y se la conoce como Máquina Virtual de Sistema. La máquina virtual de Pharo, en cambio, emula sólo algunos algunos aspectos del hardware, y tiene como única finalidad correr código en Smalltalk. Se la conoce como Máquina Virtual de Aplicación (en azul):
 
