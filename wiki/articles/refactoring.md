@@ -1,7 +1,5 @@
 This article is a stub!
 
-<quote> People usually think about software changes either at a high level, in terms of features to be added to a system, or at a low level, in terms of lines of code to be changed. Refactorings are reorganization plans that support change at an intermediate level. = Wiliam Opdike </quote>
-
 Links
 -----
 
