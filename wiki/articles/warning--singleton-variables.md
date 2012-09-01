@@ -15,3 +15,10 @@ Ojo, a veces pasa que escribís mal una variable, entonces te dice "eh, singleto
 `esFeliz(`**`Alguin`**`) :- amigoDe(`**`Alguien`**`,_).`
 
 Y ahí sólo tenés que arreglar tu error de tipeo.
+
+En resumen, si tenés un Warning,
+
+-   puede ser que tu programa igual ande perfecto (en el primer caso la variable anónima funciona igual que una común), ó bien
+-   puede ser que por un error de tipeo tu programa no ande (qué bueno que nos avise).
+-   En general, los warnings nos deberían hacer pensar si escribimos bien las variables, y si lo hicimos bien, deberíamos entonces revisar la lógica del predicado (pifiarla en eso es un error más grave)
+
