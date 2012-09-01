@@ -41,3 +41,7 @@
 -   No utilizar variables anónimas donde corresponde.
 -   Complejidad innecesaria.
 
+### Carteles de Error del SWI-Prolog
+
+-   [Warning: Singleton Variables](warning--singleton-variables.html)
+
