@@ -42,9 +42,7 @@ Luego, parados en la carpeta en donde está el debemos ejecutar:
 
 `mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true`
 
-Esto nos creará los archivos de configuración del eclipse: y . También se ocupará de bajar de Internet todas las bibliotecas que le indicamos (por eso hay que tener conexión a Internet para ejecutar estas cosas).
-
-**Ojo:** En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
+Esto nos creará los archivos de configuración del eclipse: y . También se ocupará de bajar de Internet todas las bibliotecas que le indicamos (por eso hay que tener conexión a Internet para ejecutar estas cosas). F **Ojo:** En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
 ### Paso 4: Importación de la información al eclipse y al tomcat
 
