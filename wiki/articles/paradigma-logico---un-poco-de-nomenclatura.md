@@ -93,7 +93,7 @@ Existen dos tipos de consulta:
 </tr>
 <tr class="even">
 <td><p><strong>Existenciales</strong></p></td>
-<td><p>se buscan individuos que satisfagan la relación. En este caso una consulta puede tener muchas respuestas. Por ejemplo:</p>
+<td><p>Se verifica si <em>existe algún individuo</em> que satisfaga la consulta. Además, Prolog a veces nos sabe dar &quot;ejemplos&quot; de individuos que hacen verdadera la consulta. Por ejemplo:</p>
 <p><code> ?- mortal(X).</code><br />
 <code> ?- sonConciudadanos(X,Y).</code><br />
 <code> ?- sonConciudadanos(solon,Y).</code></p>
