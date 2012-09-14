@@ -1,3 +1,5 @@
+![](Palitos_de_Queso.jpg "Palitos_de_Queso.jpg")
+
 Ingredientes
 
 -   100 grs de queso rallado
