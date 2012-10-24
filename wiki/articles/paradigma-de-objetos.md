@@ -12,6 +12,7 @@ Teoría
 -   [Paradigma de objetos - method lookup](paradigma-de-objetos---method-lookup.html)
 -   [Redefinición](redefinicion.html)
 -   [Variables y métodos de clase](variables-y-metodos-de-clase.html)
+-   [Manejo de errores](manejo-de-errores.html)
 
 Sintaxis
 --------
