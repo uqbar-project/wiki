@@ -28,7 +28,9 @@ Al tiempo de escribir este artículo la última versión estable es 1.6. Para el
 
 A continuación se detallan los pasos básicos de instalación según el sistema operativo que se esté utilizando. Luego de realizar este paso inicial se deberá pasar a la configuración del entorno.
 
-Este es el link de [downloads](http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u3-download-1501626.html).
+Este es el link de [downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+
+Desde ahí buscan el Latest Release (a la fecha de hoy es Java Platform (JDK) 7u7) y se descargan el JDK del sistema operativo que esté instalado en sus máquinas.
 
 Para más detalles adicionales a los que se encuentran en esta página, se puede consultar el [manual de instalación de sun](http://java.sun.com/javase/6/webnotes/install/index.html).
 
