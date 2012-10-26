@@ -20,6 +20,14 @@ Si trabajamos con prototipos (por ejemplo con el Object Browser; o un lenguaje c
 
 Si trabajamos con clases (como todo el cuatrimestre excepto al principio), entonces los métodos están en las clases.
 
+¿A quiénes se le pueden mandar mensajes en un método?
+-----------------------------------------------------
+
+-   A los objetos que conocidos mediante atributos
+-   A los objetos que me pasan por parámetro
+-   A mí mismo usando self
+-   A los objetos bien conocidos que son los literales y las clases
+
 Importante no olvidar
 ---------------------
 
