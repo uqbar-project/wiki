@@ -1,4 +1,4 @@
-**self** es una pseudovariable que siempre referencia al objeto receptor del mensaje que hizo que se ejecutará el método que estamos analizando en un momento dado.
+**self** es una pseudovariable que siempre referencia al objeto receptor del mensaje que hizo que se evalúe el método que estamos analizando en un momento dado.
 
 Ejemplos:
 
