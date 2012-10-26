@@ -19,3 +19,5 @@ Entonces, podemos decir que un objeto trata polimórficamente a otros cuando les
 '' - que un tercero quiera usarlos indistintamente''
 
 '' - que entiendan los mensajes que ese tercero quiere enviarles''
+
+Cabe resaltar que para que dos objetos sean polimórficos en un contexto determinado (es decir, ante el tercero, en un momento particular), es condición necesaria que entiendan los mismos mensajes. Sin embargo, para que puedan ser usados indistintamente, además de ello, deben comportarse ante tal envío de mensaje, de una forma *similar* desde el punto de vista del dominio, produciendo efectos similares, devolviendo objetos también polimórficos entre sí, etc.
