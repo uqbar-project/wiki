@@ -1,7 +1,7 @@
 Definiciones
 ------------
 
-**Identidad:** decimos que dos objetos son idénticos si son el mismo objeto. Dentro del ambiente podemos tener dos referencias diferentes al mismo objeto. **Igualdad:** *por defecto dos* objetos son iguales si son el mismo objeto (en Object se define el mensaje = como self == anObject). La igualdad puede ser redefinida (Ver [Redefinición](redefinicion.html)) si el problema lo amerita.
+**Identidad:** decimos que dos objetos son idénticos si son el mismo objeto. Dentro del ambiente podemos tener dos referencias diferentes al mismo objeto. **Igualdad:** (o **equivalencia**) *por defecto dos* objetos son iguales si son el mismo objeto (en Object se define el mensaje = como self == anObject). La igualdad puede ser redefinida (Ver [Redefinición](redefinicion.html)) si el problema lo amerita.
 
 Ejemplos
 --------
