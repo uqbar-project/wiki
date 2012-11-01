@@ -1,3 +1,16 @@
+Resumen general
+---------------
+
+| Tema                                |                                                                                                                                                                                                                                                                                                  |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Widgets                             | Si bien dependen de lo que HTML ofrece, del lado del servidor se puede trabajar con componentes visuales que rendericen tablas paginadas, combos anidados, etc.                                                                                                                                  |
+| Layout                              | Definido por el html. Separación entre html y java. Comparte las características de layout con web respecto al acomodamiento de los controles con FlowLayout, RowLayout, etc.                                                                                                                    |
+| Binding                             | Se mapea cada componente con su modelo correspondiente, al igual que Arena. El CompoundPropertyModel trabaja por convención.                                                                                                                                                                     |
+| Manejo de estado                    | La página tiene estado como cualquier objeto que pertenece al ambiente Java.                                                                                                                                                                                                                     |
+| Navegación                          | Se pueden generar nuevas instancias de una página o recibir una página como parámetro. Al abrir nuevas sesiones desde el browser se generan nuevas instancias de página automáticamente. La navegación es a nivel aplicación y no hipervínculo de documento.                                     |
+| Pasaje de información entre páginas | Puedo definir mis propios constructores para las páginas, pasando como parámetros todas las referencias a objetos que necesite (incluyendo la página padre).                                                                                                                                     |
+| Manejo de eventos                   | Los botones deben definirse como submit y no como button para que pueda funcionar el binding de atributos, por las restricciones de la tecnología web: sólo con submit los parámetros no viajan al servidor. Tanto los buttons como los links definen sus listeners al mismo estilo SWT o swing. |
+
 Highligths
 ----------
 
