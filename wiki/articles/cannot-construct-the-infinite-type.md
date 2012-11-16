@@ -43,5 +43,5 @@ Es más, si sólo lo desactivaramos para autoAplicar:
 
 Moraleja: el sistema de tipos puede rechazar programas válidos
 
-type vs data
-------------
+type vs data/newtype
+--------------------
