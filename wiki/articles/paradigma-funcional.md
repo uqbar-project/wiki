@@ -18,7 +18,15 @@ Notas sobre el lenguaje Haskell
 -   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
 -   [Cantidad de parámetros de una función en Haskell](cantidad-de-parametros-de-una-funcion-en-haskell.html)
--   **[Errores en Haskell](errores-en-haskell.html)**
+
+### Errores en Haskell
+
+-   [Errores comunes al comenzar a trabajar con Haskell](errores-comunes-al-comenzar-a-trabajar-con-haskell.html)
+-   [Problemas comunes con los tipos numéricos de Haskell](problemas-comunes-con-los-tipos-numericos-de-haskell.html) &lt;- Entrá acá si tenés problemas con la división (/)
+-   [¿Unexpected ';'?](-unexpected-----.html)
+-   [Module Main Already Loaded](module-main-already-loaded.html)
+-   [Hugs.Trex.insertField not in scope](hugs-trex-insertfield-not-in-scope.html)
+-   [cannot construct the infinite type](cannot-construct-the-infinite-type.html)
 
 Cuestiones más avanzadas
 ------------------------
