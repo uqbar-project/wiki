@@ -1,1 +1,1 @@
-*Ver \[Paradigma\_Funcional\]*
+*Ver [Paradigma\_Funcional](paradigma-funcional.html)*
