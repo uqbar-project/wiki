@@ -60,6 +60,10 @@ Más específicamente la no-inversibilidad se da cuando en la definición de ese
 
 -   [Orden Superior](orden-superior.html)
 
+### Aritmética
+
+-   [Aritmética en Prolog](aritmetica-en-prolog.html) (Artículo Principal)
+
 Manejo de conjuntos
 -------------------
 
