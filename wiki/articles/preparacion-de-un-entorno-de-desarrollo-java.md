@@ -156,3 +156,46 @@ Si por algún motivo estuvieras usando una versión anterior, se puede instalar 
 ### Creación de un proyecto básico
 
 Una vez instaladas todas las herramientas, se puede crear un proyecto en esta plataforma siguiendo [este tutorial](creacion-de-un-proyecto-maven-basico.html) (ojo, este es un tutorial básico, si necesitan usar otras tecnologías de presentación busquen los tutoriales en las páginas de las tecnologías correspondientes).
+
+### Mavenizar un proyecto existente
+
+Si ya arrancaste tu proyecto y decidiste más tarde que necesitabas usar Maven, podés *mavenizarlo* de alguna de las siguientes maneras.
+
+#### Usando M2Eclipse
+
+- Click derecho en el Proyecto
+
+- *Configure* -&gt; *Convert to Maven Project*
+
+- Ingresar el **groupId deseado**. Preferentemente que sea el package name que se hayan definido antes, ej: *ar.edu.frba.utn.dds*
+
+- *Finish*
+
+Independientemente de si su proyecto respeta la estructura estándar de un proyecto Maven, lo van a tener configurado y funcionando. De hecho, si crean los directorios y mueven el paquete a src/main/java, Maven automágicamente lo va a detectar.
+
+`.`
+`├── src`
+`│   └── main`
+`│       ├── java`
+`│       │   └── ar`
+`│       │       └── edu`
+`│       │           └── frba`
+`│       │               └── utn`
+`│       │                   └── dds`
+`│       │                       └── Main.java`
+`│       └── resources`
+`├── pom.xml`
+
+#### A manopla
+
+- Creamos un proyecto Maven.
+
+`$ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=ar.edu.frba.utn.dds -DartifactId=Example`
+
+A todas las opciones que nos pregunte le damos enter para aceptar las default.
+
+- Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: src/main/java/ar/edu/frba/utn/dds.
+
+- Probamos hacer una compilación e instalación local.
+
+`$ mvn install`
