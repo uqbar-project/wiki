@@ -72,6 +72,8 @@ Pueden instalar el plugin de svn para eclipse basándose en [este tutorial](http
 Maven
 -----
 
+### Instalación
+
 Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.tar.gz).
 
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
