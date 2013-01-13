@@ -72,9 +72,38 @@ Pueden instalar el plugin de svn para eclipse basándose en [este tutorial](http
 Maven
 -----
 
-En Ubuntu lo más sencillo para instalar el Maven es
+Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.tar.gz).
 
-`sudo apt-get install maven2`
+Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
+
+`$ tar -xzvf apache-maven-3.0.4-bin.tar.gz`
+`$ mv apache-maven-3.0.4 /home/john/programs/`
+
+Agregar la siguiente línea al archivo **.bashrc**. Este archivo oculto (su nombre empieza con '.') contiene comandos que se ejecutan cuando se abre una terminal (consola). Se puede abrir con cualquier editor de textos (Gedit, vim, Emacs, Notepad++, etc) y se encuentra en el directorio **home** del usuario.
+
+`export PATH=$PATH:$HOME/programs/apache-maven-3.0.4/bin`
+
+Una forma sencilla de hacer ésto (sin tener que abrir un editor) es usando el programa **echo** y *appendeando* (redireccionando y agregando al final) el output al archivo. **Prestar atención al hecho de que se usan dos signos mayor**:
+
+`$ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.0.4/bin' >> .bashrc`
+
+Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:
+
+`john@notebook:~$ mvn -v`
+`Apache Maven 3.0.4 (r1232337; 2012-01-17 05:44:56-0300)`
+`Maven home: /home/john/programs/apache-maven-3.0.4`
+`Java version: 1.6.0_26, vendor: Sun Microsystems Inc.`
+`Java home: /usr/lib/jvm/java-6-sun-1.6.0.26/jre`
+`Default locale: en_US, platform encoding: UTF-8`
+`OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"`
+
+### ¡Usé un sólo '&gt;' y se me borró todo el .bashrc! ¿Ahora qué a hago?
+
+1. Don't panic
+
+2. Cuando editamos los archivos, Linux guarda una copia oculta del estado anterior del mismo. Simplemente, restauramos esa versión:
+
+`$ cp .bashrc~ .bashrc`
 
 En otros sistemas operativos o para configuraciones más específicas se pueden seguir las instrucciones de: <http://tadp.wikidot.com/maven>
 
