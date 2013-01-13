@@ -153,7 +153,6 @@ Si por algún motivo estuvieras usando una versión anterior, se puede instalar 
 
 - Se cargará el paquete **Maven Integration for Eclipse** en el recuadro blanco del centro. Seleccionarlo y hacer click en Next -&gt; Next -&gt; ... -&gt; Finish
 
-Creación de un proyecto básico
-------------------------------
+### Creación de un proyecto básico
 
 Una vez instaladas todas las herramientas, se puede crear un proyecto en esta plataforma siguiendo [este tutorial](creacion-de-un-proyecto-maven-basico.html) (ojo, este es un tutorial básico, si necesitan usar otras tecnologías de presentación busquen los tutoriales en las páginas de las tecnologías correspondientes).
