@@ -137,16 +137,19 @@ El contenido de este archivo debería quedar así:
 `  `</activeProfiles>
 ` `</settings>
 
-Plugin de Maven para Eclipse
-----------------------------
+### Plugin para Eclipse
 
-Se puede instalar siguiendo las instrucciones de: <http://m2eclipse.sonatype.org/installing-m2eclipse.html>
+Desde la versión 4.2 (Juno) Eclipse incluyó el plugin m2e como parte de la instalación. Por lo cual no hace falta instalarlo.
 
-la instalación es tan simple como utilizar el mecanismo de instalación de plugins del eclipse
+Si por algún motivo estuvieras usando una versión anterior, se puede instalar de la siguiente manera:
 
-m2eclipse Core Update Site: <http://m2eclipse.sonatype.org/sites/m2e>
+- *Help* -&gt; *Install new software..*
 
-m2eclipse Extras Update Site: <http://m2eclipse.sonatype.org/sites/m2e-extras>
+- *Add..*
+
+- En *Location* pegar la siguiente url: <http://download.eclipse.org/technology/m2e/releases> y click en *Ok*
+
+- Se cargará el paquete **Maven Integration for Eclipse** en el recuadro blanco del centro. Seleccionarlo y hacer click en Next -&gt; Next -&gt; ... -&gt; Finish
 
 Creación de un proyecto básico
 ------------------------------
