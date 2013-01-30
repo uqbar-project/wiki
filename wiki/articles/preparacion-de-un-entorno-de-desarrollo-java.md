@@ -74,7 +74,7 @@ Maven
 
 ### Instalación default
 
-Pueden seguir las instrucciones en: <http://maven.apache.org/download.cgi#Installation>
+Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Installation)
 
 ### Instalación en SO Unix-based (Linux, Solaris and Mac OS X)
 
