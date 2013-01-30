@@ -99,7 +99,7 @@ Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:
 `Default locale: en_US, platform encoding: UTF-8`
 `OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"`
 
-### ¡Usé un sólo '&gt;' y se me borró todo el .bashrc! ¿Ahora qué a hago?
+### ¡Usé un sólo '&gt;' y se me borró todo el .bashrc! ¿Ahora qué hago?
 
 1. Don't panic
 
@@ -107,7 +107,7 @@ Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:
 
 `$ cp .bashrc~ .bashrc`
 
-En otros sistemas operativos o para configuraciones más específicas se pueden seguir las instrucciones de: <http://tadp.wikidot.com/maven>
+En otros sistemas operativos o para configuraciones más específicas se pueden seguir las instrucciones de: <http://maven.apache.org/download.cgi#Installation>
 
 A la configuración original de Maven, hay que indicarle cuales son los repositorios de donde bajar los artefactos de Arena. Para poder realizar esto es necesario crear el archivo ~/.m2/settings.xml. Este archivo se encuentra en el directorio del usuario, esta ruta cambia dependiendo de cada sistema operativo. Por ejemplo en Linux, si el usuario es pablo, la ruta sería /home/pablo/.m2/settings.xml. Si trabajan con Windows, instalado en el drive C: y el nombre del usuario es Fernando, el directorio será C:\\Users\\Fernando\\.m2\\settings.xml
 
