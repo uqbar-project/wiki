@@ -72,7 +72,7 @@ Pueden instalar el plugin de svn para eclipse basándose en [este tutorial](http
 Maven
 -----
 
-### Instalación
+### Instalación en SO Unix-based (Linux, Solaris and Mac OS X)
 
 Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.tar.gz).
 
