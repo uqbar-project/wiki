@@ -152,12 +152,3 @@ Similarmente:
 ``     In the second argument of `(&&)', namely `not' ``
 `    In the expression: True && not`
 `    ....`
-
-### Aplicacion Parcial
-
-La idea de Currificación... TBC
-
-Polimorfismo
-------------
-
-TBC: head, fst, length
