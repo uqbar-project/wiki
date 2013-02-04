@@ -1,34 +1,48 @@
-Notas sobre el paradigma funcional
-----------------------------------
+Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las propiedades de unicidad y existencia), que pueden ser evaluadas para obtener un resultado. El paradigma funcional está basado en conceptos que vienen de la matemática, entonces algunas cosas (p.ej. notaciones en el lenguaje) están sacadas de lo que aprendimos en Análisis I / Álgebra / Discreta.
 
--   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
--   [Composición](composicion.html)
--   [Inferencia de tipos](inferencia-de-tipos.html)
--   [Currificación](currificacion.html)
--   [Aplicación Parcial](aplicacion-parcial.html)
+Conceptos generales
+-------------------
+
 -   [Concepto de función](concepto-de-funcion.html)
+-   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
+-   [Composición](composicion.html)
+-   [Aplicación Parcial](aplicacion-parcial.html)
+-   [Currificación](currificacion.html)
 -   [Funciones por Partes](funciones-por-partes.html)
 
-Notas sobre el lenguaje Haskell
--------------------------------
+Tipos
+-----
+
+-   [Valores compuestos](valores-compuestos.html)
+-   [Inferencia de tipos](inferencia-de-tipos.html)
+-   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
+-   [Tipos de Haskell](tipos-de-haskell.html)
+-   [Cantidad de parámetros de una función en Haskell](cantidad-de-parametros-de-una-funcion-en-haskell.html)
+
+Extras simpáticos
+-----------------
+
+-   [Definiciones locales (where)](Definiciones_locales_(where) "wikilink")
+-   [Expresiones lambda](expresiones-lambda.html)
+-   [Listas por comprensión](listas-por-comprension.html)
+
+Para aprender más sobre el lenguaje Haskell
+-------------------------------------------
 
 -   <http://en.wikibooks.org/wiki/Haskell>
 -   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
--   [Tipos de Haskell](tipos-de-haskell.html)
--   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
--   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
--   [Cantidad de parámetros de una función en Haskell](cantidad-de-parametros-de-una-funcion-en-haskell.html)
 
 ### Errores en Haskell
 
+-   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
 -   [Problemas comunes con los tipos numéricos de Haskell](problemas-comunes-con-los-tipos-numericos-de-haskell.html) &lt;- Entrá acá si tenés problemas con la división (/)
 -   [¿Unexpected ';'?](-unexpected-----.html)
 -   [Module Main Already Loaded](module-main-already-loaded.html)
 -   [Hugs.Trex.insertField not in scope](hugs-trex-insertfield-not-in-scope.html)
 -   [cannot construct the infinite type](cannot-construct-the-infinite-type.html)
 
-Cuestiones más avanzadas
-------------------------
+Problemas complejos
+-------------------
 
 -   [Append como "foldr f a"](Append_como_"foldr_f_a" "wikilink")
 
