@@ -14,7 +14,6 @@ Conceptos generales
 Tipos
 -----
 
--   [Listas y tuplas](listas-y-tuplas.html)
 -   [Tipos de Haskell](tipos-de-haskell.html)
 -   [Inferencia de tipos](inferencia-de-tipos.html)
 -   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
