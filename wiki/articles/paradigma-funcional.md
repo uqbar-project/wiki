@@ -13,10 +13,10 @@ Conceptos generales
 Tipos
 -----
 
--   [Valores compuestos](valores-compuestos.html)
+-   [Listas y tuplas](listas-y-tuplas.html)
+-   [Tipos de Haskell](tipos-de-haskell.html)
 -   [Inferencia de tipos](inferencia-de-tipos.html)
 -   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
--   [Tipos de Haskell](tipos-de-haskell.html)
 -   [Cantidad de parámetros de una función en Haskell](cantidad-de-parametros-de-una-funcion-en-haskell.html)
 
 Extras simpáticos
