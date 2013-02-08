@@ -10,6 +10,8 @@ Los paradigmas
 Conceptos Transversales
 -----------------------
 
+-   [Declaratividad](declaratividad.html)
+-   [Declaratividad vs. Expresividad](declaratividad-vs--expresividad.html)
 -   [Orden Superior](orden-superior.html)
 -   [Transparencia Referencial, Efecto de Lado y Asignación Destructiva](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html)
 -   [Diferencias entre polimorfismo, abstracción y encapsulamiento](diferencias-entre-polimorfismo--abstraccion-y-encapsulamiento.html)
@@ -17,9 +19,4 @@ Conceptos Transversales
 -   [Estrategias de Evaluación](estrategias-de-evaluacion.html)
 -   [Esquemas de Tipado](esquemas-de-tipado.html)
 -   [Máquina Virtual](maquina-virtual.html)
-
-### Declaratividad
-
--   [Declaratividad](declaratividad.html)
--   [Declaratividad vs. Expresividad](declaratividad-vs--expresividad.html)
 
