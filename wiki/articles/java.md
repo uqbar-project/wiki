@@ -31,3 +31,10 @@ Sobre el lenguaje:
     -   [Hibernate](http://www.hibernate.org/)
     -   [JDBC](http://en.wikipedia.org/wiki/Java_Database_Connectivity)
 
+<!-- -->
+
+-   SCM (Software Configuration Management)
+    -   Maven
+        -   [Apache Maven](http://maven.apache.org/)
+        -   [Maven (Wikipedia)](http://en.wikipedia.org/wiki/Apache_Maven)
+
