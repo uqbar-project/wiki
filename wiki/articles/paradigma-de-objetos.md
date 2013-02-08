@@ -63,4 +63,5 @@ Miscelánea
 
 -   [Máquina\_Virtual](maquina-virtual.html)
 -   [Diagrama de clases](diagrama-de-clases.html)
+-   [Lenguajes](lenguajes.html)
 
