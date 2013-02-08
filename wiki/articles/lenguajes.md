@@ -1,7 +1,5 @@
 A continuación mencionamos algunos lenguajes que siguen las ideas del paradigma orientado a objetos, y les dejamos algunos links y ejemplos para los curiosos.
 
-&lt;! hay que revisar esta lista, estos son algunos que se me ocurren a mí --&gt;
-
 -   [Smalltalk](smalltalk.html)
 -   [Self](self.html)
 -   [Java](java.html)
