@@ -41,8 +41,22 @@ En este punto seguramente se preguntarán si es posible hacer un programa que ex
 Elementos en un programa declarativo
 ------------------------------------
 
+Un programa declarativo separa claramente los siguientes elementos:
+
+-   El objetivo
+-   El conocimiento
+-   El motor que manipula el conocimiento para lograr el objetivo deseado
+
+En el ejemplo anterior, el objetivo es la consulta realizada sobre qué materias puede cursar un alumno. El conocimiento es la información que se encuentra en la base de conocimiento sobre las materias disponibles en la carrera y cuáles ya cursó el alumno en cuestión. El motor de Prolog toma el conocimiento y resuelve la consulta realizada en base al programa y deduce todas las posibles relaciones que la satisfagan.
+
+El mecanismo utilizado por el motor llamado **backtracking** que prueba todas las posibilidades para solucionar el problema no hace falta programarlo para cada problema particular, con lo cual podemos concentrarnos exclusivamente en el problema y no en el problema algorítmico general que permite procesar la información.
+
 Declaratividad en los distintos paradigmas
 ------------------------------------------
+
+Dentro de los paradigmas vistos, el paradigma funcional y el lógico tienen una naturaleza declarativa. Eso no quiere decir que no se pueda ser declarativo programando bajo el marco de otro paradigma, de la misma forma en que se puede programar de forma poco declarativa en lógico y funcional (por ejemplo, la recursividad no es una herramienta muy declarativa que digamos).
+
+A medida que logramos abstraer nuestros problemas podemos armar nuestros propios motores que nos permitan trabajar de forma más declarativa.
 
 Herramientas declarativas en el *mundo real*
 --------------------------------------------
