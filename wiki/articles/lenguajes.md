@@ -10,7 +10,7 @@ A continuación mencionamos algunos lenguajes que siguen las ideas del paradigma
 
 ### Híbridos
 
-Algunos lenguajes si bien implementan ciertas ideas del paradigma de objetos, también implementan abstracciones de optros paradigmas. Algunos de ellos son:
+Algunos lenguajes si bien implementan ciertas ideas del paradigma de objetos, también implementan abstracciones de otros paradigmas. Algunos de ellos son:
 
 -   [Scala](scala.html)
 -   [Python](python.html)
