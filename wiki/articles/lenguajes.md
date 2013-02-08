@@ -1,0 +1,22 @@
+A continuación mencionamos algunos lenguajes que siguen las ideas del paradigma orientado a objetos, y les dejamos algunos links y ejemplos para los curiosos.
+
+&lt;! hay que revisar esta lista, estos son algunos que se me ocurren a mí --&gt;
+
+-   [Smalltalk](smalltalk.html)
+-   [Self](self.html)
+-   [Java](java.html)
+-   [Objective C](objective-c.html)
+-   [C++](c--.html)
+-   [Groovy](groovy.html)
+-   [Ruby](ruby.html)
+
+### Híbridos
+
+Algunos lenguajes si bien implementan ciertas ideas del paradigma de objetos, también implementan abstracciones de optros paradigmas. Algunos de ellos son:
+
+-   [Scala](scala.html)
+-   [Python](python.html)
+-   [C\#](c-.html)
+-   [JavaScript](javascript.html)
+-   [Object Pascal](http://en.wikipedia.org/wiki/Object_Pascal)
+
