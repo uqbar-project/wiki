@@ -20,7 +20,7 @@ Para verlo mejor es conveniente bajar a un ejemplo, para eso vamos a pensar en e
 3.  Recorrer la lista de las materias restantes y para cada una:
     1.  Obtener su lista de corelativas
     2.  Recorrerla y para cada correlativa verificar si el alumno cursó esa materia
-    3.  En caso de no haberla cursado, elimar la materia de la colección auxiliar
+    3.  En caso de no haberla cursado, eliminar la materia de la colección auxiliar
 
 4.  Las materias que quedaron en la colección son las que se pueden cursar.
 
