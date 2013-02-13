@@ -4,8 +4,6 @@ Groovy es un lenguaje pensando para correr sobre la máquina virtual de Java, y 
 -   Presenta tipado dinámico en la mayoría de sus expresiones y algunas características de automodificación
 -   Incorpora elementos ausentes en Java que deberían estar presenten en cualquier lenguaje moderno orientado a objetos, como bloques de código y mixins
 
-Para empezar a utilizar Groovy, además de crear un proyecto en Eclipse con soporte para este lenguaje, podemos ejecutarlo desde el intérprete, en el que podemos evaluar expresiones Groovy. Para eso, una vez instalado el GDK, podemos empelar groovysh.
-
 Sobre el lenguaje:
 
 -   [Tutorial oficial de Codehaus](http://groovy.codehaus.org/Getting+Started+Guide)
