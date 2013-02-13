@@ -7,7 +7,7 @@ Groovy es un lenguaje pensando para correr sobre la máquina virtual de Java, y 
 Sobre el lenguaje:
 
 -   [Tutorial oficial de Codehaus](http://groovy.codehaus.org/Getting+Started+Guide)
--   \[n.wikipedia.org/wiki/Groovy\_(programming\_language) Groovy (wikipedia)\]
+-   [Groovy (wikipedia)](http://n.wikipedia.org/wiki/Groovy_(programming_language))
 
 Herramientas basadas en Groovy:
 
