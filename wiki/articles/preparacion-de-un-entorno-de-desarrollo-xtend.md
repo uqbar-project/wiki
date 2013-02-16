@@ -10,4 +10,5 @@ Tenés dos opciones: **Full Eclipse** (bajarte el Eclipse + el plugin directamen
 
 ### Links útiles
 
-Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
+-   Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
+
