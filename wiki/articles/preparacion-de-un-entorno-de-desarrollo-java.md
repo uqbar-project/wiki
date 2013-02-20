@@ -34,7 +34,7 @@ Desde ahí buscan el Latest Release (a la fecha de hoy es Java Platform (JDK) 7u
 
 Para más detalles adicionales a los que se encuentran en esta página, se puede consultar el [manual de instalación de sun](http://java.sun.com/javase/6/webnotes/install/index.html).
 
-#### Ubuntu
+##### Ubuntu
 
 Para instalarlo en Ubuntu se puede hacer:
 
@@ -44,11 +44,17 @@ Eso instalará el jdk default, que actualmente en Ubuntu es *OpenJDK 6*, si se d
 
 `sudo apt-get install sun-java6-jdk sun-java6-jre`
 
-#### Otros sistemas operativos
+##### Otros sistemas operativos
 
 Para otros sistemas operativos se puede bajar el instalable de: <http://java.sun.com/javase/downloads/> .
 
 [Este tutorial](http://www.it.uc3m.es/tlp/guia/guiaWinXP.html) indica cómo instalarlo en Windows XP (en especial pasos 1 a 3).
+
+### Documentación
+
+-   [Java Tutorials](http://java.sun.com/docs/books/tutorial/)
+-   [Javadoc reference guide](http://java.sun.com/j2se/1.4.2/docs/tooldocs/windows/javadoc.html)
+-   [Writing comment tips](http://java.sun.com/j2se/javadoc/writingdoccomments/index.html)
 
 Eclipse
 -------
@@ -63,6 +69,10 @@ Esa versión pesa bastante. Si no van a utilizar las herramientas de programaci�
 Para no tener problemas con los tildes y demás caracteres especiales al bajarse los ejemplos conviene tener sincronizado el mismo encoding. Para eso, desde la barra de menú: Window &gt; Preferences, filtrar por "encoding" y cambiar todos a "UTF-8" o "ISO 10646/Unicode(UTF-8)". Por ejemplo: En General &gt; Workspace &gt; Text file encoding, seleccionar Other &gt; UTF-8.
 
 También conviene desactivar el warning default de clases serializables que no definan un identificador de versión: Window &gt; Preferences, filtrar por "Serializable", solapa Java / Compiler / "Errors/Warnings", "Potential programming problems", y se setea el valor de "Serializable class without serialVersionUID" a Ignore.
+
+### Documentación
+
+-   [Página principal de Eclipse](http://www.eclipse.org/)
 
 Svn
 ---
