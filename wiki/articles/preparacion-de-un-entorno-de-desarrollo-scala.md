@@ -7,7 +7,7 @@
 
 ### Documentación
 
--   <http://www.scala-lang.org/node/197> Documentación oficial\]
+-   [Documentación oficial](http://www.scala-lang.org/node/197)
 -   [Manuales de referencia](http://www.scala-lang.org/node/198)
 
 ### Links de interés
