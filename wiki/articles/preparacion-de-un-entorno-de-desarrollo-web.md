@@ -4,7 +4,7 @@ Herramientas de desarrollo Web
 Vamos a necesitar instalar
 
 -   un web server
--   un browser
+-   un browser con capacidades de debug
 -   un plugin para nuestro IDE (Eclipse u otro) que permita administrar nuestro web server
 
 Web Server Tomcat
@@ -31,7 +31,7 @@ Browser o Navegador
 Si no lo tenés instalado podés usar:
 
 -   [Google Chrome](http://www.google.com/intl/es/chrome/)
--   [Mozilla Firefox](http://www.mozilla.org/es-AR/firefox/new/)
+-   [Mozilla Firefox](http://www.mozilla.org/es-AR/firefox/new/), al que le podés instalar [firebug](http://getfirebug.com/) (si estás en Linux recordá ejecutar sudo apt-get install firefox)
 -   [Internet Explorer](http://windows.microsoft.com/es-ES/internet-explorer/download-ie)
 -   [Safari](http://www.apple.com/es/safari/)
 -   [Opera](http://www.opera.com/download/)
