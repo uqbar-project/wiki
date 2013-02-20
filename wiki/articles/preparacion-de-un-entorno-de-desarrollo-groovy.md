@@ -11,5 +11,5 @@
 
 ### Links de interés
 
--   [Página principal de groovy](http://groovy.codehaus.org/)
+-   [Página principal de Groovy](http://groovy.codehaus.org/)
 
