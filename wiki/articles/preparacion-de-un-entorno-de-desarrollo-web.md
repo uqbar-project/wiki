@@ -40,6 +40,7 @@ Plugin para tu IDE
 ------------------
 
 -   [WTP](http://www.eclipse.org/webtools/), Web Tools Platform, que se descarga con la versión EE de Eclipse o bien [aquí](http://eclipse.org/webtools/releases/3.4.1/)
+-   [Sysdeo](http://www.eclipsetotale.com/tomcatPlugin.html)
 
 Cómo probar la instalación
 --------------------------
