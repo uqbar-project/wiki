@@ -1,7 +1,7 @@
 Recordar que los individuos compuestos son
 
--   los functores
--   las listas
+-   los \[\[Paradigma Lógico - functores|functores\]
+-   las \[\[Paradigma Lógico - Listas|listas\]
 
 y que para acceder a los componentes de un individuo compuesto podemos usar pattern matching.
 
