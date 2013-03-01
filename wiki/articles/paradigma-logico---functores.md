@@ -1,3 +1,5 @@
+Los functores son individos que nos permiten agrupar otros individuos para formar una abstracción más compleja. Tienen un nombre y una aridad determinada, si alguno de estos elementos de un functor difiere con otro pasa a ser una abstracción diferente.
+
 Ejemplo
 -------
 
