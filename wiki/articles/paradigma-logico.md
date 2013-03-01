@@ -14,9 +14,9 @@ Modelando la información
 ------------------------
 
 -   [Aritmética en Prolog](aritmetica-en-prolog.html)
--   [Trabajo con valores](logico---trabajo-con-valores.html)
 -   [Individuos simples](paradigma-logico---individuos-simples.html)
 -   [Individuos compuestos](paradigma-logico---individuos-compuestos.html)
+-   [Trabajo con valores](logico---trabajo-con-valores.html)
 
 Algunas Características Relevantes
 ----------------------------------
@@ -27,14 +27,15 @@ Algunas Características Relevantes
 -   [Múltiples Respuestas](paradigma-logico---multiples-respuestas.html)
 -   [Unificación y Pattern-Matching](unificacion-y-pattern-matching.html)
 -   [Polimorfismo en el Paradigma Lógico](polimorfismo-en-el-paradigma-logico.html)
+-   \[\[Recursividad en Logico\]
 
 Predicados de Orden Superior
 ----------------------------
 
 -   [Orden Superior](orden-superior.html)
--   [not](paradigma-logico---negacion-not.html)
+-   [not](paradigma-logico---negacion.html)
 -   [forall](paradigma-logico---el-forall.html)
--   [findall](paradigma-logico---findall.html)
+-   [findall](paradigma-logico---listas--como-obtener-todas-las-respuestas--juntas--.html)
 -   [Cómo hacer predicados de orden superior](como-hacer-predicados-de-orden-superior.html)
 
 Errores y preguntas frecuentes
