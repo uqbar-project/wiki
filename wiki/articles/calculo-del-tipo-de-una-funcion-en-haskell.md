@@ -1,4 +1,4 @@
-Dado que el haskell es un lenguaje con [Inferencia de Tipos](inferencia-de-tipos.html), no es necesario indicar el tipo de las funciones que construimos. A pesar de ello (o tal vez precisamente *por* ello) los tipos juegan un rol fundamental al programar en un lenguaje funcional (en particular en Haskell).
+Dado que el haskell es un lenguaje con [Inferencia de tipos](inferencia-de-tipos.html), no es necesario indicar el tipo de las funciones que construimos. A pesar de ello (o tal vez precisamente *por* ello) los tipos juegan un rol fundamental al programar en un lenguaje funcional (en particular en Haskell).
 
 Esto se debe a varios motivos:
 
