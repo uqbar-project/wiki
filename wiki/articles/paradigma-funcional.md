@@ -27,6 +27,7 @@ Extras simpáticos
 -   [Definiciones locales (where)](Definiciones_locales_(where) "wikilink")
 -   [Expresiones lambda](expresiones-lambda.html)
 -   [Listas por comprensión](listas-por-comprension.html)
+-   [Recursividad en Haskell](recursividad-en-haskell.html)
 
 Para aprender más sobre el lenguaje Haskell
 -------------------------------------------
