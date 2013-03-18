@@ -44,3 +44,20 @@ doble (doble 2)
 { aplicamos la función + } 8
 
 El orden en que realicemos las **reducciones** (basta de decirle simplificar) no afecta al resultado final pero sí a la eficiencia. Lo copado es que hay un motor que se encarga de esto (se llama motor de reducciones CUAC!). Para entender un poco más lo que pasa detrás de escenas hace falta meterse en la [estrategia de evaluación](estrategias-de-evaluacion.html) usada por el motor.
+
+Aplicación de funciones en Haskell
+----------------------------------
+
+Notacion matemática
+
+`f(a, b) + c d`
+
+En Haskell
+
+`f a b + c * d`
+
+La aplicación se denota solo poniendo espacio entre la función y sus argumentos. Además la aplicación de funciones que no son operadores tiene una precedencia mayor que la de los operadores (un operador es una función que recibe 2 parámetros y se usa de forma infija ya sea un chirimbolo o una función con \`\`) � Las siguientes definiciones son equivalentes, podemos ver la precedencia para la aplicación de div de forma infija y prefija:
+
+`promedio ns = (sum ns) ‘div‘ (length ns)`
+`promedio' ns = sum ns ‘div‘ length ns`
+`promedio'' ns = div (sum ns) (length ns)`
