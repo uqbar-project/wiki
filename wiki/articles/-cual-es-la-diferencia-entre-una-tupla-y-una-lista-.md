@@ -1,3 +1,5 @@
+En primer lugar vale la pena detenernos a pensar qué queremos modelar al usar tuplas y listas. La tupla representa una agrupación de valores ordenados, cada uno con un significado particular ya que se intenta modelar una abstracción compuesta por todos estos elementos. En estructurado podemos compararlas con los registros. Las listas sirven para modelar conjuntos de elementos, para agrupar valores independientes entre sí.
+
 Tuplas y listas en Haskell
 --------------------------
 
