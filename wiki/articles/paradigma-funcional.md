@@ -4,12 +4,14 @@ Conceptos generales
 -------------------
 
 -   [Concepto de función](concepto-de-funcion.html)
+-   [Aplicación](aplicacion.html)
 -   [Pattern Matching en Haskell](pattern-matching-en-haskell.html)
 -   [Composición](composicion.html)
 -   [Aplicación Parcial](aplicacion-parcial.html)
 -   [Orden Superior](orden-superior.html)
 -   [Currificación](currificacion.html)
 -   [Funciones por Partes](funciones-por-partes.html)
+-   [Lazy Evaluation](estrategias-de-evaluacion-lazy-evaluation.html)
 
 Tipos
 -----
@@ -37,7 +39,6 @@ Para aprender más sobre el lenguaje Haskell
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
 -   [Problemas comunes con los tipos numéricos de Haskell](problemas-comunes-con-los-tipos-numericos-de-haskell.html) &lt;- Entrá acá si tenés problemas con la división (/)
 -   [¿Unexpected ';'?](-unexpected-----.html)
--   [Module Main Already Loaded](module-main-already-loaded.html)
 -   [Hugs.Trex.insertField not in scope](hugs-trex-insertfield-not-in-scope.html)
 -   [cannot construct the infinite type](cannot-construct-the-infinite-type.html)
 
