@@ -1,4 +1,4 @@
-Por aplicación parcial se entiende a la [aplicación de una función](aplicacion.html), pero suministrando menos parámetros que los que esta requiere. El resultado de aplicar parcialmente una función es otra función que espera menos parámetros que la original, ya que puede realizar reemplazos en su definición por expresiones o valores concretos. La aplicación parcial es muy útil para \[\[Composición|componer funciones\] y para parametrizar funciones de [Orden Superior](orden-superior.html).
+Por aplicación parcial se entiende a la [aplicación de una función](aplicacion.html), pero suministrando menos parámetros que los que esta requiere. El resultado de aplicar parcialmente una función es otra función que espera menos parámetros que la original, ya que puede realizar reemplazos en su definición por expresiones o valores concretos. La aplicación parcial es muy útil para [componer funciones](composicion.html) y para parametrizar funciones de [Orden Superior](orden-superior.html).
 
 Por ejemplo, las siguientes expresiones presentan aplicación parcial:
 
