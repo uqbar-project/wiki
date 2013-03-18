@@ -105,7 +105,7 @@ El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros
 Aplicación
 ----------
 
-La aplicación es uno de los temas que tal vez más confunden cuando se habla de tipos de datos. La confusión más frecuente radica en no diferenciar correctamente *una expresión que tiene valor Booleano* de *una función que devuelve Booleanos*.
+La [aplicación](aplicacion.html) es uno de los temas que tal vez más confunden cuando se habla de tipos de datos. La confusión más frecuente radica en no diferenciar correctamente *una expresión que tiene valor Booleano* de *una función que devuelve Booleanos*.
 
 Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parámetros:
 
