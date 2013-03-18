@@ -18,23 +18,23 @@ En particular, las funciones son relaciones que presentan las siguientes caracte
 
 ### Función desde un punto de vista imperativo
 
-Al llevar los conceptos de función matemática al mundo computacional, la transparencia referencial implica que las funciones, comparadas contra los procedimientos imperativos, no tienen [efecto](efecto.html), su aplicación no afecta al contexto, o, cuando menos, no es visible para el observador que evalua la expresión.
+Al llevar los conceptos de función matemática al mundo computacional, la transparencia referencial implica que las funciones, comparadas contra los procedimientos imperativos, no tienen [efecto](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html), su aplicación no afecta al contexto, o, cuando menos, no es visible para el observador que evalua la expresión.
 
 Si bien no tiene sentido hablar de mutabilidad en el contexto matemático, dado que solo se manejan valores y no referencias (al menos, en un enfoque simplista), la transparencia referencial en los programas construidos en el paradigma funcional tiene dos consecuencias mas o menos evidentes:
 
--   Las funciones no pueden mutar sus argumentos ni otras variables, locales o globales, ni directa ni indirectamente. Esto se garantiza al eliminar la [asignación destructiva](asignacion-destructiva.html) del lenguaje. (podemos decir que las variables no varían)
+-   Las funciones no pueden mutar sus argumentos ni otras variables, locales o globales, ni directa ni indirectamente. Esto se garantiza al eliminar la [asignación destructiva](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html) del lenguaje. (podemos decir que las variables no varían)
 -   Las funciones no pueden realizar de forma directa operaciones de entrada/salida (aunque existen estrategias para realizarlas indirectamente preservando a la función pura)
 
 ### Función como un TAD
 
-Las funciones currificadas, en tanto valores, pueden ser también pensandas como un [TAD](tipo-abstracto-de-dato.html), para el cual:
+Las funciones currificadas, en tanto valores, pueden ser también pensandas como un [1](http://es.wikipedia.org/wiki/Tipo_abstracto_de_dato%7CTAD), para el cual:
 
 -   su única operación primitiva es la aplicación, definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell). Las demás operaciones complementarias, como la composición, se construyen a partir de la aplicación.
 -   sus valores son cada una de las funciones posibles. Así, por ejemplo, even, odd, (+) son todos valores del tipo función
 
 ### Función desde el cálculo lambda
 
-Desde el punto de vista del [cálculo lambda](calculo-lambda.html), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son expresiones lambda. Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
+Desde el punto de vista del [lambda](http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda%7Ccálculo), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son expresiones lambda. Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
 
 `siguiente` `x` `=` `x` `+` `1`
 
