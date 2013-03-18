@@ -1,7 +1,43 @@
-La idea del polimorfismo en este caso es que el predicado esViejo ande con autos, camiones y bicicletas. Es cierto que vos hiciste eso, en realidad (ahora que lo vi mejor) lo que hiciste es correcto. Pero es poco feliz. ¿Por qué?
+**Completar con teoría**
 
-1. un auto es un individuo, y lo modelás "más o menos", sí en el predicado esViejo, pero no en el predicado vehiculo. Si tengo individuos compuestos, la herramienta en lógico para eso son los functores. 2. tenés un predicado vehiculo y un functor vehiculo, eso confunde, y muestra una posible confusión de parte tuya, lo que es muy poco aconsejable al responder un final. Sé (sean) lo más clara/os posible. 3. tu modelo no soporta que las bicis tengan un dato y los camiones dos.
+Ejemplo de Polimorfismo usando functores
+----------------------------------------
 
-Para todos: es importante en el final que puedan explicar lo que proponen, relacionando con los conceptos vistos en la materia. En este caso, si escriben la solución y no explican que el predicado polimórfico es esViejo, porque funciona con distintos tipos de vehiculos, no está bien. Sigue pendiente la pregunta de cómo lo aprovecharían, fíjense en mi mail anterior en el mismo thread que hay un ejemplo para explicarlo.
+Si tenemos el siguiente requerimiento: "se tiene 3 tipos de vehiculos autos, camiones y bicicletas. Un auto es viejo si su patente es menor a F, un camion es viejo si tiene más de 60000km o más de 10 años, una bicicleta es vieja si la fecha de fabricacion es de año anterior al 2006" 1) de qué manera puedo tener una lista de diferentes vehiculos en el paradigma lógico 2) si quiero filtrar los vehículos viejos, indicar dónde y cómo se da el polimorfismo entre cada uno de los vehiculos y quién aprovecha ese polimorfismo.
 
-El final se trata de: encontrar una buena solución, y también saber describir en palabras claras la relación con los conceptos que aprendieron en la cursada. Con dar la solución solamente no alcanza. Por favor, tengan esto bien en claro.
+La idea del polimorfismo en este caso es que exista un predicado esViejo ande con autos, camiones y bicicletas y pueda ser usado de forma genérica por otro predicado. En este caso queremos no pensar en el tipo de vehículo al hacer un findall.
+
+Supongamos que nuestra base de conocimiento tiene los siguientes hechos:
+
+`hoy(fecha(22,12,2008)).`
+`vehiculo(auto("A2000")).`
+`vehiculo(auto("H2342")).`
+`vehiculo(camion(12000,2005)).`
+`vehiculo(camion(70000,2003)).`
+`vehiculo(camiion(30000,1997)).`
+`vehiculo(bici(fecha(30,10,2005))).`
+`vehiculo(bici(fecha(20,12,2008))).`
+
+Modelar a los vehículos con functores nos permite tener individuos más complejos que si sólo ponemos
+
+`vehiculo(auto,"A2000").`
+
+Además nos permite usar el mismo predicado vehiculo (de aridad 1) en este caso, para todos los tipos de vehículos, lo cual se aprovecha con el camión que tiene año y kilometraje y de otro modo no podría usarse el mismo predicado.
+
+Si lo que queremos es obtener todos los vehículos como se pide en el punto 1 alcanza con consultar:
+
+`findall(Vehiculo,vehiculo(Vehiculo),Vehiculos).`
+
+Ahora, para resolver el requerimiento podemos hacer un predicado esViejo/1 que se verifique si se cumplen las condiciones explicadas anteriormente. Para ello usaremos varias cláusulas que, por medio de pattern matching, se apliquen a cada tipo de vehículo particular.
+
+`esViejo(auto(Patente)):- Patente > "F".`
+`esViejo(camion(Kilometraje,_)):- Kilometraje > 60000.`
+`esViejo(camion(_,Anio)):- hoy(fecha(_,_,AnioActual)),`
+` AnioActual - Anio > 10.`
+`esViejo(bici(fecha(_,_,Anio)):- Anio < 2006.`
+
+Con esto podemos filtrar la lista de los vehículos viejos de la siguiente forma:
+
+`findall(Vehiculo,(vehiculo(Vehiculo),esViejo(Vehiculo)),Vehiculos).`
+
+Podemos decir entonces que el predicado polimórfico es esViejo, porque funciona con distintos tipos de vehiculos y quien lo aprovecha es el findall que no necesita hacer distinciones sobre los tipos de vehículos.
