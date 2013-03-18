@@ -1,5 +1,7 @@
 Pattern Matching es el concepto asociado al chequeo estructural de un dato respecto de una estructura esperada. El uso de pattern matching tiene la ventaja de simplificar mucho la codificación, ya que sólo escribimos la forma de lo que esperamos y podemos desglosar los componentes de estructuras complejas.
 
+Una desventaja asociada a usar pattern matching en vez de funciones para acceder a los elementos de las tuplas es que nuestro código se verá muy afectado ante un cambio en las estructuras manejadas. El simple hecho de agregar un elemento más a la tupla que representa a nuestro elemento de dominio provocará un cambio en el tipo del mismo y el mismo se propagará en todos los lugares donde se haya utilizado esta estructura directamente.
+
 Ejemplos de matcheo
 -------------------
 
@@ -21,6 +23,8 @@ También el patrón `(_,_)` matchea con los tres valores.
 
 También el patrón `unaTupla` matchea con los tres valores.
 
+### Con listas
+
 Ahora, si tengo una lista
 
 `lista1 = [(2,5),(5,3),(3,3)]`
@@ -35,8 +39,6 @@ El patrón `[x]` no matchea con `lista1` pero si matchea con `lista2`, siendo `x
 El patrón `(x:_)` matchea con `lista1`, siendo `x` `=` `(2,5)` y matchea con `lista2`, siendo `x` `=` `(2,5)`
 
 El patrón `unaTupla` matchea con `lista1` siendo `unaTupla` `=` `[(2,5),(5,3),(3,3)]` y matchea con `lista2` siendo `unaTupla` `=` `[(2,5)]`
-
-Una desventaja asociada a usar pattern matching en vez de funciones para acceder a los elementos de las tuplas es que nuestro código se verá muy afectado ante un cambio en las estructuras manejadas. El simple hecho de agregar un elemento más a la tupla que representa a nuestro elemento de dominio provocará un cambio en el tipo del mismo y el mismo se propagará en todos los lugares donde se haya utilizado esta estructura directamente.
 
 ### Con data
 
