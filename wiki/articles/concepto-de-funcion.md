@@ -27,7 +27,7 @@ Si bien no tiene sentido hablar de mutabilidad en el contexto matemático, dado 
 
 ### Función como un TAD
 
-Las funciones currificadas, en tanto valores, pueden ser también pensandas como un [1](http://es.wikipedia.org/wiki/Tipo_abstracto_de_dato%7CTAD), para el cual:
+Las funciones currificadas, en tanto valores, pueden ser también pensandas como un [TAD](http://es.wikipedia.org/wiki/Tipo_abstracto_de_dato), para el cual:
 
 -   su única operación primitiva es la aplicación, definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell). Las demás operaciones complementarias, como la composición, se construyen a partir de la aplicación.
 -   sus valores son cada una de las funciones posibles. Así, por ejemplo, even, odd, (+) son todos valores del tipo función
