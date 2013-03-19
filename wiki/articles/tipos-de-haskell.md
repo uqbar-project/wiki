@@ -69,6 +69,22 @@ Es decir, una tupla de tres componentes, a saber:
 -   Un string o lista de caracteres
 -   Una lista de tuplas cuyo primer componente es un booleano y su segundo componente es un string.
 
+### Data
+
+Es posible [definir nuestros propios tipos de dato](data--definiendo-nuestros-tipos-en-haskell.html) usando data para poder mejorar las abstracciones de nuestros programas y evitar algunos problemas asociados al uso de tuplas. Esto puede hacerse de la siguiente forma:
+
+`data NuevoTipo = Constructor Tipo1 Tipo2 ... TipoN`
+
+Usamos el constructor, como su nombre lo indica, para construir nuestros datos de este tipo y para hacer pattern matching como hacíamos con las tuplas.
+
+`data TipoAlumno = Alumno String [Int]`
+`fede = Alumno "Federico" [2,3]`
+`nombreAlumno (Alumno nombre notas) = nombre`
+`> :t nombreAlumno`
+`nombreAlumno :: TipoAlumno -> String`
+`> nombreAlumno fede`
+`"Federico"`
+
 Funciones
 ---------
 
