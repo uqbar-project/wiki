@@ -37,17 +37,6 @@ Asignar destructivamente es reemplazar el valor de una variable por otro valor.
 
 **Nota3:** Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable)
 
-¿Por qué nos interesa pensar en estos conceptos?
-------------------------------------------------
-
-Estos son algunos ejemplos concretos sobre cómo la existencia o no de efecto, asignación destructiva y transparencia referencial afectan a la hora de programar.
-
-**Separar la lógica que hace cosas de la que consulta:** Muy seguido vemos métodos (o procedimientos, dependiendo del paradigma) que tienen efecto y a su vez retornan algún valor relacionado con el mismo, estas prácticas pueden llevar a confusiones que producen un funcionamiento erróneo del sistema, sobre todo cuando el nombre del método elegido no denota que existe un efecto asociado a su ejecución. Es una buena práctica tener separada la lógica que realiza modificaciones sobre el sistema de los que sólo pretenden obtener el resultado de una consulta, que nuestros métodos tengan un único objetivo, lo cual simplifica su uso y la elección de un nombre suficientemente representativo.
-
-**Optimizaciones:** Tener asegurada la transparencia referencial permite hacer optimizaciones como las que tiene el motor de Haskell que afectan globalmente a los programas construidos con el mismo. La [evaluación perezosa o lazy](estrategias-de-evaluacion-lazy-evaluation.html) es posible gracias a esta característica.
-
-**[Testing](testing.html):** El testeo unitario se basa en la premisa de que cada test sea independiente del otro y eso se logra controlando que el estado del sistema antes y después de correr cada test sea el mismo, por ese motivo es importante mantener el efecto controlado y poder revertir aquellos cambios que sobrevivan a la ejecución de cada test particular. También la transparencia referencial es importante para el testeo unitario ya que testear el resultado de una operación que depende de algo no determinístico no es viable y hace falta usar estrategias de testeo más avanzadas ([Mock Objects](http://es.wikipedia.org/wiki/Objeto_simulado)) para evitar este tipo de dependencia.
-
 Ejemplos
 --------
 
@@ -57,7 +46,7 @@ Estos tres conceptos suelen ir de la mano y si bien pueden darse relaciones entr
 
 A continuación mostramos algunos ejemplos en Smalltalk, ya que permite la aparición de todas estas características, para dejar más en claro de qué manera podemos identificarlas.
 
-### Ejemplo 1
+### Ejemplo 1: consulta no determinística
 
 `Date today`
 
@@ -71,7 +60,7 @@ El efecto colateral de otra operación afecta a esta operación y le hace perder
 
 Ejemplos como este hacen que transparencia referencial y efecto colateral no sean conceptos opuestos.
 
-### Ejemplo 2
+### Ejemplo 2: método con efecto
 
 `#LaColeccionConEfectoDeLado`
 `>>add: unElemento`
@@ -95,7 +84,7 @@ Pero obviamente no es lo mismo escribir
 
 Acá se puede ver la importancia de utilizar la definición correcta de transparencia referencial.
 
-### Ejemplo 3
+### Ejemplo 3: método de consulta determinística
 
 `#Number`
 ` >>factorial`
@@ -109,7 +98,7 @@ Acá se puede ver la importancia de utilizar la definición correcta de transpar
 -   Efecto colateral: NO
 -   Asignaciones Destructivas: SI
 
-### El efecto colateral dependiendo del contexto
+### Ejemplo 4: El efecto colateral dependiendo del contexto
 
 `#Collection`
 `select: aBlock`
@@ -123,6 +112,17 @@ Sabemos que el método `select:` no tiene efecto colateral en sí mismo, porque 
 Sin embargo podemos ver dentro de `select:` efectos colaterales en la asignación de `newCollection` y en el `add:`. Ambos pueden ser considerados como efectos colaterales dentro de la ejecución del método, pero quien usa `select:` no se da cuenta de eso y para él no tiene efecto de lado. Es decir, las asignaciones destructivas de variables locales *no presuponen* un efecto colateral para el sistema visto como un todo, ya que esos cambios de estado no perduran más allá de la ejecución del método. Sí podría analizarse como efecto *colateral* dentro del método. Probablemente en un método tan pequeño como este no tenga importancia ese tipo de análisis, pero en el caso de algoritmos más complejos podría cobrar valor (y asumiendo que no sea posible partir un algoritmo complejo en operaciones más pequeñas que simplifiquen justamente el análisis, pero eso ya es otra cuestión).
 
 Por otra parte, aunque el `select:` no genera efectos de lado, no nos garantiza que el bloque que viene como parámetro no pueda tenerlo, por lo que uno debe tener cuidado con eso.
+
+¿Por qué nos interesa pensar en estos conceptos?
+------------------------------------------------
+
+Estos son algunos ejemplos concretos sobre cómo la existencia o no de efecto, asignación destructiva y transparencia referencial afectan a la hora de programar.
+
+**Separar la lógica que hace cosas de la que consulta:** Muy seguido vemos métodos (o procedimientos, dependiendo del paradigma) que tienen efecto y a su vez retornan algún valor relacionado con el mismo, estas prácticas pueden llevar a confusiones que producen un funcionamiento erróneo del sistema, sobre todo cuando el nombre del método elegido no denota que existe un efecto asociado a su ejecución. Es una buena práctica tener separada la lógica que realiza modificaciones sobre el sistema de los que sólo pretenden obtener el resultado de una consulta, que nuestros métodos tengan un único objetivo, lo cual simplifica su uso y la elección de un nombre suficientemente representativo.
+
+**Optimizaciones:** Tener asegurada la transparencia referencial permite hacer optimizaciones como las que tiene el motor de Haskell que afectan globalmente a los programas construidos con el mismo. La [evaluación perezosa o lazy](estrategias-de-evaluacion-lazy-evaluation.html) es posible gracias a esta característica.
+
+**[Testing](testing.html):** El testeo unitario se basa en la premisa de que cada test sea independiente del otro y eso se logra controlando que el estado del sistema antes y después de correr cada test sea el mismo, por ese motivo es importante mantener el efecto controlado y poder revertir aquellos cambios que sobrevivan a la ejecución de cada test particular. También la transparencia referencial es importante para el testeo unitario ya que testear el resultado de una operación que depende de algo no determinístico no es viable y hace falta usar estrategias de testeo más avanzadas ([Mock Objects](http://es.wikipedia.org/wiki/Objeto_simulado)) para evitar este tipo de dependencia.
 
 Preguntas frecuentes
 --------------------
