@@ -54,11 +54,14 @@ Ver [Cálculo del tipo de una función en Haskell](calculo-del-tipo-de-una-funci
 
 Recuerden que en Haskell ustedes pueden obtener el tipo de cualquier expresión escribiendo :t (type) en el interprete
 
-&gt; :t not not :: Bool -&gt; Bool
+`> :t not`
+`not :: Bool -> Bool`
 
-&gt; :t not False not False :: Bool
+`> :t not False`
+`not False :: Bool`
 
-&gt; :t not 3 Error
+`> :t not 3`
+`Error`
 
 Un problema de inferencia en Haskell
 ------------------------------------
