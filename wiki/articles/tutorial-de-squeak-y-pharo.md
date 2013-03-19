@@ -31,6 +31,8 @@ Una vez que completaron el template hacen click derecho -&gt; Accept o simplemen
 
 Si quieren editar la definición de la clase, por ejemplo para agregar/quitar variables o cosas así, clickeando sobre el nombre de la clase debería mostrarles el código que guardaron y vuelven al paso 3.
 
+Para crear una subclase pueden cambiar el template para que use la superclase en vez de Object. Más detalles, acá: [Cómo crear una subclase en Squeak](como-crear-una-subclase-en-squeak.html)
+
 Métodos
 -------
 
