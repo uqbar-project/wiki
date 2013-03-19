@@ -12,9 +12,13 @@ Una definición alternativa dice: Hay transparencia referencial cuando al realiz
   
 También se puede pensar en las propiedades necesarias para tener Transparencia Referencial.
 
-Decimos que una operación tiene transparencia referencial si es: - Independiente: No dependen del estado de nada que este fuera de si misma - Sin estado/Stateless: No tiene un estado que se mantenga de llamada en llamada - Determinística: Siempre devuelven el mismo valor dados los mismos argumentos
+Decimos que una operación tiene transparencia referencial si es:
 
-Efecto de Lado  
+-   Independiente: No dependen del estado de nada que este fuera de si misma
+-   Sin estado/Stateless: No tiene un estado que se mantenga de llamada en llamada
+-   Determinística: Siempre devuelven el mismo valor dados los mismos argumentos
+
+Efecto de Lado/Colateral (Side Effect)  
 Hay efecto de lado cuando un cambio de estado sobrevive a la realización de una operación. Por ejemplo, una operación puede modificar una variable global, modificar uno de sus argumentos, escribir datos a la pantalla o a un archivo, o hacer uso de otras operaciones que tienen efecto de lado.
 
 Otra definición válida es:
@@ -27,11 +31,20 @@ Si le sacás una foto al sistema (llamémosla F1), después realizas la operaci�
 Asignación Destructiva  
 Asignar destructivamente es reemplazar el valor de una variable por otro valor.
 
-**Nota1:** La unificación no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?)
+**Nota1:** La [unificación](unificacion-y-pattern-matching.html) no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?)
 
 **Nota2:** Unificar es encontrar una sustitución capaz de igualar 2 términos
 
 **Nota3:** Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable)
+
+¿Por qué nos interesa pensar en estos conceptos?
+------------------------------------------------
+
+Estos son algunos ejemplos concretos sobre cómo la existencia o no de efecto, asignación destructiva y transparencia referencial afectan a la hora de programar.
+
+**Optimizaciones:** Tener asegurada la transparencia referencial permite hacer optimizaciones como las que tiene el motor de Haskell que afectan globalmente a los programas construidos con el mismo. La [evaluación perezosa o lazy](estrategias-de-evaluacion-lazy-evaluation.html) es posible gracias a esta característica.
+
+**[Testing](testing.html):** El testeo unitario se basa en la premisa de que cada test sea independiente del otro y eso se logra controlando que el estado del sistema antes y después de correr cada test sea el mismo, por ese motivo es importante mantener el efecto controlado y poder revertir aquellos cambios que sobrevivan a la ejecución de cada test particular. También la transparencia referencial es importante para el testeo unitario ya que testear el resultado de una operación que depende de algo no determinístico no es viable y hace falta usar estrategias de testeo más avanzadas ([Mock Objects](http://es.wikipedia.org/wiki/Objeto_simulado)) para evitar este tipo de dependencia.
 
 Ejemplos
 --------
