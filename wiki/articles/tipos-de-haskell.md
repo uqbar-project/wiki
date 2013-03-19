@@ -102,8 +102,7 @@ El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros
 `Prelude> :t (&&)`
 `(&&) :: Bool -> Bool -> Bool`
 
-Aplicación
-----------
+### Aplicación
 
 La [aplicación](aplicacion.html) es uno de los temas que tal vez más confunden cuando se habla de tipos de datos. La confusión más frecuente radica en no diferenciar correctamente *una expresión que tiene valor Booleano* de *una función que devuelve Booleanos*.
 
@@ -152,3 +151,82 @@ Similarmente:
 ``     In the second argument of `(&&)', namely `not' ``
 `    In the expression: True && not`
 `    ....`
+
+Typeclasses
+-----------
+
+Nos gustaría poder definir los siguientes tipos (a.k.a dominios e imágenes)
+
+(+) :: (Si asumimos que a es **numérico**) entonces a - &gt; a -&gt; a
+
+(&gt;) :: (Si asumimos que a es **ordenable**) entonces a - &gt; a -&gt; Bool
+
+(==) :: (Si asumimos que a es **equiparable**) entonces a - &gt; a -&gt; Bool
+
+En Haskell eso se escribe de la siguiente manera
+
+`(+) :: (Num a) => a - > a -> a`
+`(>) :: (Ord a) => a - > a -> Bool`
+`(==) :: (Eq a) => a - > a -> Bool`
+
+Num, Ord y Eq son **restricciones de tipo**, en Haskell se las conoce como Typeclasses (no confundan esto con el término Clase que usamos en el paradigma de objetos!!)
+
+En cada Typeclass se definen un conjunto de funciones que los tipos pertenecientes deben implementar
+
+`Num a`
+`(+), (-), (*) :: a -> a -> a`
+`negate, abs, signum :: a -> a`
+`etc.`
+
+`Ord a`
+`(<), (<=), (>=), (>) :: a -> a -> Bool`
+`max, min :: a -> a -> a`
+`etc.`
+
+`Eq a`
+`(==) :: a -> a -> Bool`
+`(/=) :: a -> a -> Bool`
+
+### ¿Qué tipos pertenecen a cada restricción?
+
+![](Typeclasses.PNG "Typeclasses.PNG")
+
+Ejemplos:
+
+`elem :: (Eq a) => a -> [ a ] -> Bool`
+`elem unElemento unaLista = any (unElemento==) unaLista`
+
+`max :: (Ord a) => a -> a -> a`
+`max x y`
+`  | x > y = x`
+`  | otherwise = y`
+
+### La restricción Show
+
+Cuando utilizamos el intérprete, los resultados de nuestras funciones son valores (valores simples, compuestos o funciones), para que se puedan mostrar por pantalla esos valores tienen que tener una representación en forma de cadena de caracteres (String).
+
+La magia la realiza una función llamada show
+
+`> show 3`
+`"3"`
+`> show True`
+`"True"`
+`> show (2,3)`
+`"(2,3)"`
+
+Ahora bien, no todos los valores pueden ser parámetro de la función show. Por ejemplo las funciones no tienen una representación en String
+
+`> show length`
+`Error`
+
+Debido a esto, cuando quieren mostrar por pantalla una lista de funciones (ej \[fst,snd\]), una función parcialmente aplicada como (3+), o en general una función que retorna una función les va a tirar un error.
+
+Veamos el tipo de la función show
+
+`show :: (Show a) => a -> String`
+
+La única función que se define en la restricción Show es la función show
+
+Qué tipos pertenecen a la restricción Show? Bool, Char, Double, Float, Int, Integer, (Show a) =&gt; \[ a \] --Listas, (Show a,b) =&gt; (a,b) --Tuplas
+
+Resumiendo: casi todos todos los tipos menos el tipo función
