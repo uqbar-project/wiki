@@ -43,6 +43,7 @@ Errores y preguntas frecuentes
 
 -   [Errores frecuentes al programar en lógico](errores-frecuentes-al-programar-en-logico.html)
 -   [Preguntas Frecuentes del Paradigma Lógico](preguntas-frecuentes-del-paradigma-logico.html)
+-   [Cómo encaro un problema en Lógico?](paradigma-logico---como-pienso-la-resolucion-de-un-punto.html)
 
 Más características
 -------------------
