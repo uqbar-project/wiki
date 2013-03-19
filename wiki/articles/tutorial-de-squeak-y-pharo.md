@@ -1,4 +1,4 @@
-Empezar a usar el Squeak puede ser un poco complicado porque no es muy intuitivo, les dejamos una explicación para poder arrancar con menos miedo.
+Empezar a usar el Squeak puede ser un poco complicado porque no es muy intuitivo, les dejamos una explicación para poder arrancar con menos miedo. Pharo no es muy diferente, así que sólo aclaramos cuando difiere para no armar todo de nuevo :D
 
 Crear una Clase
 ---------------
