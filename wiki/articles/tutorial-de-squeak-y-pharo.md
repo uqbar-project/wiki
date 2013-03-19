@@ -49,7 +49,9 @@ Eso lo borran y escriben el método que tengan ganas. Por ejemplo:
 `       "Esto de abajo es fruta, pero para que se imaginen cómo podría escribirse un método"`
 `       ^ self genero nombre size > 10 ifTrue: [30] ifFalse: [20]`
 
-Acá se están usando 2 mensajes aún indefinidos: genero y nombre, que son los getters de las variables de instancia. Los accessors se pueden crear directamente haciendo click derecho en el nombre de la clase -&gt; more... -&gt; create inst var accessors
+Acá se están usando 2 mensajes aún indefinidos: genero y nombre, que son los getters de las variables de instancia. Los accessors se pueden crear directamente haciendo click derecho en el nombre de la clase y... En Squeak: -&gt; more... -&gt; create inst var accessors En Pharo: -&gt; Refactor Class -&gt; Accessors (para crear todos los que falten)
+
+`         -> Refactor instance variable -> Accessors (para elegir una variable para cual crear los accessors)`
 
 Como todavía no había hecho eso al hacer Ctrl+S al método verificarLongitud para aceptar y que se agregue efectivamente debería aparecer un cartelito diciendo que no conoce esos selectores porque no hay ninguna clase que defina genero y nombre, entonces les tira un par de opciones por si se confundieron, siendo la primera lo que tipearon, las siguientes algunas alternativas existentes y al final Cancel para seguir editando el método sin aceptar los cambios.
 
