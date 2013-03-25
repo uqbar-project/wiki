@@ -3,7 +3,7 @@ Tal vez convenga aclarar que esta no es una categorización teórica, es más bi
 Tipos simples y compuestos
 --------------------------
 
-### Básicos: caracteres y booleanos
+### Básicos: números, caracteres y booleanos
 
 Los tipos más básicos que tenemos en Haskell son los booleanos y los caracteres, que tiene los tipos y respectivamente:
 
@@ -12,7 +12,42 @@ Los tipos más básicos que tenemos en Haskell son los booleanos y los caractere
 `Prelude> :t 'a'`
 `'a' :: Char`
 
-Los números son un poquito más complejos porque tenemos números enteros, reales, racionales y muchas más variantes así que por un momento los vamos a dejar afuera.
+Qué podemos hacer con ellos? Algunos ejemplos con booleanos y caracteres:
+
+`Prelude> True && False`
+`False`
+`Prelude> True || False`
+`True`
+`Prelude> not True`
+`False`
+
+`Prelude> Char.isLower 'a'`
+`True`
+`Prelude> Char.isUpper 'a'`
+`False`
+`Prelude> Char.toLower 'A'`
+`'a'`
+`Prelude> Char.toUpper 'a'`
+`'A'`
+`Prelude> 'b' > 'a'`
+`True`
+
+El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver [más adelante](tipos-de-haskell-typeclasses.html). Algunas operaciones que podemos hacer:
+
+`Prelude> 4*6`
+`24`
+`Prelude> 2+3`
+`5`
+`Prelude> 9-4`
+`5`
+`` Prelude> 4 `div` 3 ``
+`1`
+`` Prelude> 4 `mod` 3 ``
+`1`
+`Prelude> 4/6`
+`0.6666666666666666`
+
+La división en ocasiones puede traer problemas de tipos, si tuviste problemas con esto leé el [siguiente artículo](problemas-comunes-con-los-tipos-numericos-de-haskell-para-salir-del-paso---.html)
 
 ### Listas y Strings
 
