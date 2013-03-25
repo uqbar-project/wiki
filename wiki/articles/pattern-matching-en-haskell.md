@@ -5,6 +5,27 @@ Una desventaja asociada a usar pattern matching en vez de funciones para acceder
 Ejemplos de matcheo
 -------------------
 
+### Con números y strings
+
+Si queremos saber si el nombre de un día de la semana es fin de semana podemos hacer:
+
+`esFinDeSemana dia = dia == "Sábado" || dia == "Domingo"`
+
+Sin embargo esta otra definición también es válida:
+
+`esFinDeSemana' "Sábado" = True`
+`esFinDeSemana' "Domingo" = True`
+`esFinDeSemana' _ = False`
+
+La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el principio de universo cerrado. Para que esta función funcione correctamente es importante que el encabezado con la variable anónima, que matchea con cualquier patrón, sea la última definición de esFinDeSemana', de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).
+
+Acá tenemos un ejemplito [recursivo](recursividad-en-haskell.html) típico para pattern matching con números:
+
+`factorial 0 = 1  `
+`factorial n = n * factorial (n - 1)  `
+
+Para evitar loops infinitos, es importante poner el caso base primero para que matchee con el 0, ya que la variable n también matchearía con este valor.
+
 ### Con tuplas
 
 Si tengo los valores
@@ -65,10 +86,10 @@ El patrón `(x:y:_)` matchea con `lista1` siendo `x` `=` `Coord` `2` `5` y `y` `
 
 El patrón `unaTupla` matchea con `lista1` y matchea con `lista2`
 
-Patrones con sinónimos
-----------------------
+Patrones con sinónimos (**as** Pattern)
+---------------------------------------
 
-Un sinónimo, o sea necesito por un lado el patrón para tomar algunos de sus componentes y por otro todo junto para la llamada recursiva, tal vez si lo escribo bien se entienda más:
+Usamos este patrón para definir un sinónimo, o sea necesito por un lado el patrón para tomar algunos de sus componentes y por otro todo junto para la hacer otra cosa, pongamos un par de ejemplos:
 
 `ordenada [_] = True`
 `ordenada (x1:x2:xs) = x1 > x2 && ordenada x2:xs`
@@ -83,3 +104,7 @@ Otro ejemplo, entre dos complejos representados con tuplas, obtener el que tiene
 `mayorParteReal (a@(a1, _)) (b@(b1, _))`
 ` | a1 > b1 = a`
 ` | otherwise = b`
+
+Y otro con listas por comprensión:
+
+`promedioDeAprobados alumnos = promedio [ promedio notas | alumno@(_,notas) <- alumnos, aprobo alumno ]`
