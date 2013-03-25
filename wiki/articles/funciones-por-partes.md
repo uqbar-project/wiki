@@ -13,6 +13,8 @@ En Haskell, las funciones partidas se escriben con Guardas, y se escribe la imag
 `f x | x >= 0 = x`
 `    | x <  0 = -x`
 
+Las funciones por partes no son la única forma de tener diferentes definiciones para una función, existen casos en los cuales alcanza con el uso de [pattern matching](pattern-matching-en-haskell.html).
+
 ### Errores Comunes
 
 No debemos confundir el uso de guardas (cuyo concepto se explicó arriba) con las funciones que devuelven booleanos.
