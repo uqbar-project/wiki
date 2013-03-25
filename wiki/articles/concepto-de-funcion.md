@@ -1,4 +1,4 @@
-Como su nombre lo indica, la función es el concepto fundamental del paradigma funcional: mientras que, por ejemplo, en el paradigma de objetos, los problemas se resuelven en términos de envío de mensajes entre objetos, en funcional los programas se estructurarán en torno a aplicación de funciones sobre valores. La función, es así, pues, la [computación](computacion.html) característica del paradigma.
+Como su nombre lo indica, la función es el concepto fundamental del paradigma funcional: mientras que, por ejemplo, en el paradigma de objetos, los problemas se resuelven en términos de envío de mensajes entre objetos, en funcional los programas se estructurarán en torno a aplicación de funciones sobre valores. La función, es así, pues, la [1](http://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_computaci%C3%B3n%7Ccomputación) característica del paradigma.
 
 Enfoques
 --------
@@ -27,14 +27,14 @@ Si bien no tiene sentido hablar de mutabilidad en el contexto matemático, dado 
 
 ### Función como un TAD
 
-Las funciones currificadas, en tanto valores, pueden ser también pensandas como un [TAD](http://es.wikipedia.org/wiki/Tipo_abstracto_de_dato), para el cual:
+Las funciones [currificadas](currificacion.html), en tanto valores, pueden ser también pensandas como un [TAD](http://es.wikipedia.org/wiki/Tipo_abstracto_de_dato), para el cual:
 
--   su única operación primitiva es la aplicación, definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell). Las demás operaciones complementarias, como la composición, se construyen a partir de la aplicación.
+-   su única operación primitiva es la [aplicación](aplicacion.html), definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell). Las demás operaciones complementarias, como la composición, se construyen a partir de la aplicación.
 -   sus valores son cada una de las funciones posibles. Así, por ejemplo, even, odd, (+) son todos valores del tipo función
 
 ### Función desde el cálculo lambda
 
-Desde el punto de vista del [lambda](http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda%7Ccálculo), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son expresiones lambda. Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
+Desde el punto de vista del \[<http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda>| cálculo lambda\], la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son [expresiones lambda](expresiones-lambda.html). Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
 
 `siguiente` `x` `=` `x` `+` `1`
 
@@ -52,7 +52,7 @@ Las funciones en Haskell presentan todas las carecterísticas mencionadas anteri
 
 -   Las funciones son transformaciones matemáticas, que presentan transparencia referencial, y por tanto libres de efecto
 -   Las funciones son valores
--   Las funciones tienen tipo función ((-&gt;) a b), que está determinado por su dominio e imagen. Una función de enteros en booleanos tiene tipo `Int` `->` `Bool`
+-   Las funciones tienen [tipo función](tipos-de-haskell-funciones.html) ((-&gt;) a b), que está determinado por su dominio e imagen. Una función de enteros en booleanos tiene tipo `Int` `->` `Bool`
 -   Las funciones son un caso particular de las relaciones, que presentan unicidad y existencia para todo su dominio.
 -   Las funciones están currificadas, por lo que no existen funciones de más de un argumento realmente, sino que se emulan a partir de funciones de un argumento que devuelven otra función que toma los parámetros restantes.
 -   La operación primitiva de la función es la aplicación, por la cual se evalúa una función pasandole sus argumentos y obteniendo un resultado
