@@ -17,7 +17,7 @@ Sin embargo esta otra definición también es válida:
 `esFinDeSemana' "Domingo" = True`
 `esFinDeSemana' _ = False`
 
-La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el principio de universo cerrado. Para que esta función funcione correctamente es importante que el encabezado con la variable anónima, que matchea con cualquier patrón, sea la última definición de esFinDeSemana', de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).
+La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el [ principio de universo cerrado](paradigma-logico---introduccion-universo-cerrado.html) y si sólo definimos esFinDeSemana' para "Sábado" y "Domingo" y consultamos por otro día, Haskell nos mostrará un error porque el patrón no calza con ningún elemento del dominio esperado. Para que esta función funcione correctamente es importante que el encabezado con la variable anónima, que matchea con cualquier patrón, sea la última definición de esFinDeSemana', de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).
 
 Acá tenemos un ejemplito [recursivo](recursividad-en-haskell.html) típico para pattern matching con números:
 
