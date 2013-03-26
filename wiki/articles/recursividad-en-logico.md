@@ -1,8 +1,24 @@
-Generalidades
--------------
+Un predicado recursivo es aquel que en alguna de sus cláusulas se invoca a sí mismo. Los predicados recursivos para poder funcionar correctamente necesitan contar con algún caso base que corte la recursividad.
 
 Recursividad Sin Listas
 -----------------------
+
+Un ejemplo típico es el factorial:
+
+`factorial(0,1).`
+`factorial(N,F):- Anterior is N-1,`
+` factorial(Anterior,F2),`
+` F is F2*N.`
+
+Esta definición resuelve el problema, pero no hay que olvidarse que en el paradigma lógico la búsqueda de soluciones es exhaustiva. Si consultamos por el factorial de 1, la primer respuesta será 1 ya que el factorial de 0 también es 1. Pero siendo que 0 también matchea con la variable N entrará en un loop infinito al segundo intento. Por ese motivo, una definición correcta sería:
+
+`factorial(0,1).`
+`factorial(N,F):- N > 0,`
+` Anterior is N-1,`
+` factorial(Anterior,F2),`
+` F is F2*N.`
+
+De esa forma, ambos casos son excluyentes entre sí y el 0 sólo puede tener como respuesta al 1.
 
 Recursividad Con Listas
 -----------------------
