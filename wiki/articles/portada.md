@@ -21,5 +21,6 @@ Otro material:
 
 -   [Tips para Concursos Docentes](tips-para-concursos-docentes.html)
 -   [Portal del investigador](portal-del-investigador.html)
+-   [Lombardización](lombardizacion.html)
 
 > "Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento" [1](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)
