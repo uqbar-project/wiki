@@ -18,6 +18,23 @@ Siendo las listas estructuras recursivas (compuestas por una cabeza y una cola q
 
 Un ejemplo fácil es el length.
 
-length \[\] = 0 length (x:xs) = 1 + length xs
+`length [] = 0`
+`length (x:xs) = 1 + length xs`
 
-Usamos el patrón de lista vacía \[\] para el caso base, ya que la segunda definición indefectiblemente nos llevará a ella, y el patrón de cabeza y cola para poder avanzar de a un paso por la estructura y poder procesarla fácilmente.
+Usamos el patrón de lista vacía \[\] para el caso base, ya que la segunda definición indefectiblemente nos llevará a ella, y el patrón de cabeza y cola para poder avanzar de a un paso por la estructura y poder procesarla fácilmente. En este caso particular no importa el orden de las definiciones, ya que la lista con al menos un elemento no matchea con la lista vacía y viceversa.
+
+Loops infinitos
+---------------
+
+Analicemos la siguiente función:
+
+`muchosDe n = n:(muchosDe n)`
+
+Si consultamos en el intérprete
+
+`> muchosDe 5`
+
+Esta función no podría terminar nunca, ya que no hay ningún punto en el que se corte la recursividad. Sin embargo, lo que sí podríamos hacer con esta función es usarla en un contexto que acote la ejecución gracias a la [evaluación perezosa](estrategias-de-evaluacion-lazy-evaluation.html). Veamos el siguiente ejemplo:
+
+`> (sum.take 10.muchosDe) 5`
+`50`
