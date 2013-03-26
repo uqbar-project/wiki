@@ -7,8 +7,14 @@ La Lombardización se ha extendido durante años en muchos grupos de personas. E
 Ejemplos de Lombardización
 --------------------------
 
-**No Lombardizado:** "Deberíamos tener una página en la wiki que explique la Lombardización a los mas nuevitos".
+Hablando de escribir una entrada en la wiki:
+
+**No Lombardizado:** "Deberíamos tener una página eån la wiki que explique la Lombardización a los mas nuevitos".
 
 **Lombardizado:** "Che, escribí esta página en la wiki que explica la Lombardización para los mas nuevitos".
 
-**No Lombardizado:** "Che, hay que dar la clase de polimorfismo" **Lombardizado:** "Che, puedo ayudar a dar la clase de polimorfismo? No me animo a darla solo"
+Para conseguir alguien que de una clase:
+
+**No Lombardizado:** "Che, hay que dar la clase de polimorfismo"
+
+**Lombardizado:** "Che, puedo ayudar a dar la clase de polimorfismo? No me animo a darla solo"
