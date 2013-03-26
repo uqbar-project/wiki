@@ -4,7 +4,8 @@ El término Lombardización proviene de la palabra Lombardi, tambien conocida co
 
 La Lombardización se ha extendido durante años en muchos grupos de personas. El típico grito de guerra con el que estas personas extienden estas creencias es "Lombardizáte!"
 
-!!Ejemplos de Lombardización!!
+Ejemplos de Lombardización
+--------------------------
 
 **No Lombardizado:** "Deberíamos tener una página en la wiki que explique la Lombardización a los mas nuevitos".
 
