@@ -14,3 +14,38 @@ Delegacion y Colaboración
 -------------------------
 
 Cuando tenemos bien repartidas las responsabilidades entre nuestros objetos, probablemente hayamos encontrado varios objetos. Ahora, cada uno resuelve su problema ¿Cómo los pegamos? Los objetos se conocen a través de referencias, y así pueden mandarse mensajes. Cuando un objeto resuelve parte de un problema y le pasa otra parte del problema a algun objeto que conozca, hablamos que ambos objetos estan colaborando. Así, cuando un objeto le encarga toooda la tarea a resolver a otro objeto, decimos que este delega la responsabilidad.
+
+### Ejemplo
+
+Se puede hablar de delegación, sin necesidad de que haya polimorfismo.
+
+`Tanque >> dispararA: otroTanque`
+`   | unMisil |`
+`   unMisil := misiles anyOne.`
+`   misiles remove: unMisil.`
+`   danioTotal := unMisil cuantoDañoPara: otroTanque.`
+`   otroTanque coraza > danioTotal ifTrue: `
+`        [ otroTanque coraza: otroTanque coraza - danioTotal ]`
+`        [ otroTanque coraza: 0 ].`
+
+Fíjense que en el ejemplo del tanque si asumimos que hay muchos tipos de misiles, desde el tanque las tratamos polimórficamente envíandoles el mensaje \#cuantoDañoPara:, pero no sé si delegamos lo suficiente.
+
+Veamos esta otra solución que delega mucho más que la anterior:
+
+`Tanque >> dispararA: otroTanque`
+`   self descargarMisil dañarA: otroTanque`
+`Tanque >> descargarMisil`
+`  "El remove: devuelve el parámetro"`
+`  ^misiles remove: misiles anyOne`
+`Tanque >> recibirDaño: cant`
+`  self coraza: (self coraza - cant) max: 0`
+`Misil >> dañarA: otroTanque`
+`  "Asumimos que Misil es la superclase de todos las otras clases de misiles"`
+`  otroTanque recibirDaño: (self cuantoDañoPara: otroTanque)`
+
+También se puede hablar de extensibilidad, si el día de mañana se agrega un nuevo misil (el misil Gandhi) que en vez de sacar coraza le hace un cariñito al otro tanque Con la segunda solución eso se agrega bastante fácil
+
+`MisilGandhi >> dañarA: otroTanque`
+`  otroTanque recibirCariñito`
+
+La segunda solución es más extensible. Lo malo de este agregado es la [expresividad](declaratividad-vs--expresividad.html), porque que el método se llama \#dañarA: y me da la sensación de que siempre le saca coraza ... tal vez deberíamos buscar un mejor nombre que no implique que exista un daño sobre el otro tanque.
