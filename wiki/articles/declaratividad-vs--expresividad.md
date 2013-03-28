@@ -30,7 +30,7 @@ Entonces:
 
 2. Esto significa que la noción de algorítmo/secuencia de pasos/definición del "cómo lo hace" sea menor en A que en B
 
-Así como pasa con orden superior y declaratividad, pasa con la idea de polimorfismo y declaratividad. Que se use orden superior o polimorfismo no asegura un mayor grado de declaratividad en la solución, depende de cómo se hayan utilizado.
+Así como pasa con orden superior y declaratividad, pasa con la idea de polimorfismo y declaratividad.
 
 Otra cualidad que remarcamos en las soluciones es la expresividad, decimos que una solución A es más expresiva que una solución B si la solución A se entiende más rápido/es más fácil de leer que la solución B.
 
@@ -47,44 +47,4 @@ Alguien puede decir que la solución 1 es más expresiva que la solución 2 (por
 
 A lo que vamos con esto es que, la idea de declaratividad debería ser más objetiva que la idea de expresividad.
 
-De todas formas, con la debida justificación y relacionándolo con el ejercicio del final, se puede hablar de ambos conceptos.
-
-Tambén se puede hablar de delegación, sin necesidad de que haya polimorfismo u orden superior.
-
-` Tanque >> dispararA: otroTanque`
-`    | unMisil |`
-`    unMisil := misiles anyOne.`
-`    misiles remove: unMisil.`
-`    danioTotal := unMisil cuantoDañoPara: otroTanque.`
-`    otroTanque coraza > danioTotal ifTrue: `
-`         [ otroTanque coraza: otroTanque coraza - danioTotal ]`
-`         [ otroTanque coraza: 0 ].`
-
-Fijense que en el ejemplo del tanque si asumimos que hay muchos misiles (instancias de diferentes clases), desde el tanque las tratamos polimórficamente envíandoles el mensaje \#cuantoDañoPara:, pero no se si delegamos lo suficiente.
-
-Mira esta otra solución
-
-` Tanque >> dispararA: otroTanque`
-`    self descargarMisil dañarA: otroTanque`
-
-` Tanque >> descargarMisil`
-`   "El remove: devuelve el parámetro"`
-`   ^misiles remove: misiles anyOne`
-
-` Tanque >> recibirDaño: cant`
-`   self coraza: (self coraza - cant) max: 0`
-
-` Misil >> dañarA: otroTanque`
-`   "Asumimos que Misil es la superclase de todos las otras clases de misiles"`
-`   otroTanque recibirDaño: (self cuantoDañoPara: otroTanque)`
-
-También se puede hablar de extensibilidad, si el día de mañana se agrega un nuevo misil (el misil Gandhi) que en vez de sacar coraza le hace un cariñito al otro tanque
-
-Con la segunda solución eso se agrega bastante fácil
-
-` MisilGandhi >> dañarA: otroTanque`
-`   otroTanque recibirCariñito`
-
-La segunda solución es más extensible.
-
-Y se puede volver a hablar de expresividad, porque que el método se llama \#dañarA: y me da la sensación de que siempre le saca coraza ... tal vez deberíamos buscar un mejor nombre.... y así....
+De todas formas, con la debida justificación y relacionándolo con el ejercicio del final, se puede hablar de ambos conceptos. Por lo general, las soluciones más declarativas resultan a su vez más expresivas, pero dejando las subjetividades a un lado, un código imperativo bien hecho puede resultar más legible que uno declarativo con nombres de operaciones y variables mal puestos.
