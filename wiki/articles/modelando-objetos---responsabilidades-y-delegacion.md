@@ -15,9 +15,12 @@ Delegacion y Colaboración
 
 Cuando tenemos bien repartidas las responsabilidades entre nuestros objetos, probablemente hayamos encontrado varios objetos. Ahora, cada uno resuelve su problema ¿Cómo los pegamos? Los objetos se conocen a través de referencias, y así pueden mandarse mensajes. Cuando un objeto resuelve parte de un problema y le pasa otra parte del problema a algun objeto que conozca, hablamos que ambos objetos estan colaborando. Así, cuando un objeto le encarga toooda la tarea a resolver a otro objeto, decimos que este delega la responsabilidad.
 
-### Ejemplo
+Delegación y polimorfismo
+-------------------------
 
-Se puede hablar de delegación, sin necesidad de que haya polimorfismo.
+La situación donde más natural es delegar es al querer tratar polimórficamente a varios objetos, ya que les mandamos un mensaje común y delegamos en ellos lo que le corresponde a cada uno dependiendo de qué tipo sea. Sin embargo, se puede hablar de delegación, sin necesidad de que haya polimorfismo.
+
+### Ejemplo
 
 `Tanque >> dispararA: otroTanque`
 `   | unMisil |`
