@@ -26,22 +26,19 @@ Si queremos obtener el resultado de doble (doble 2) en donde la función doble e
 
 También podemos obtener el mismo resultado aplicando primero la función doble de más afuera:
 
-doble (doble 2)
-
-{ aplicamos la función doble que está afuera del paréntesis } doble 2 + doble 2
-===============================================================================
-
-{ aplicamos la primer función doble } (2 + 2) + doble 2
-
-{ aplicamos la primer función + } 4 + doble 2
-=============================================
-
-{ aplicamos la función doble } 4 + (2 + 2)
-
-{ aplicamos la segunda función + } 4 + 4
-========================================
-
-{ aplicamos la función + } 8
+`doble (doble 2)`
+`= { aplicamos la función doble que está afuera del paréntesis }`
+`doble 2 + doble 2`
+`= { aplicamos la primer función doble }`
+`(2 + 2) + doble 2`
+`= { aplicamos la primer función + }`
+`4 + doble 2`
+`= { aplicamos la función doble }`
+`4 + (2 + 2)`
+`= { aplicamos la segunda función + }`
+`4 + 4`
+`= { aplicamos la función + }`
+`8`
 
 El orden en que realicemos las **reducciones** (basta de decirle simplificar) no afecta al resultado final pero sí a la eficiencia. Lo copado es que hay un motor que se encarga de esto (se llama motor de reducciones CUAC!). Para entender un poco más lo que pasa detrás de escenas hace falta meterse en la [estrategia de evaluación](estrategias-de-evaluacion.html) usada por el motor.
 
