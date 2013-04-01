@@ -1,4 +1,4 @@
-Muchas veces mencionamos los conceptos de declaratividad y expresividad, pero ¿cuando corresponde hablar de uno o del otro? ¿Y como se relacionan con otros conceptos vistos en la materia? Veamoslo con algunos ejemplos:
+Muchas veces mencionamos los conceptos de [Declaratividad](declaratividad.html) y Expresividad, pero ¿cuando corresponde hablar de uno o del otro? ¿Y como se relacionan con otros conceptos vistos en la materia? Veamoslo con algunos ejemplos:
 
   
 "sumar una lista de números ns"
@@ -32,7 +32,7 @@ Entonces:
 
 Así como pasa con orden superior y declaratividad, pasa con la idea de polimorfismo y declaratividad.
 
-Otra cualidad que remarcamos en las soluciones es la expresividad, decimos que una solución A es más expresiva que una solución B si la solución A se entiende más rápido/es más fácil de leer que la solución B.
+Otra cualidad que remarcamos en las soluciones es la expresividad, **decimos que una solución A es más expresiva que una solución B si la solución A se entiende más rápido/es más fácil de leer que la solución B.**
 
 Claramente la idea de expresividad puede verse de forma subjetiva.
 
