@@ -16,7 +16,11 @@ Para más detalles pueden mirar <http://www.eclipse.org/xtend/download.html>
 
 ### Tips
 
--   Las clases xtend pueden implementar interfaces Java, pero evitá tener referencias circulares entre interfaces Java y clases xtend.
+-   Las clases xtend pueden implementar interfaces Java, pero **evitá tener referencias circulares entre interfaces Java y clases xtend**.
+
+### Documentación
+
+-   [Documentación oficial](http://www.eclipse.org/xtend/documentation.html)
 
 ### Links útiles
 
