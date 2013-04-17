@@ -196,4 +196,16 @@ Le ponen el nombre que quieran y la extensión la pueden dejar como txt o cambia
 
 4) Seleccionen el archivo .st. En el panel inferior van a ver el codigo que escribieron, y arriba de los paneles superiores van a aparecer varios botones, elijan **Install**[2](http://dl.dropbox.com/u/31270395/UTN/install.png).
 
+Shortcuts / Atajos del Teclado / Fatalities
+-------------------------------------------
 
+-   **Ctrl+b** seleccionando una clase\* para que se abra un Class Browser sobre esa clase.
+-   **Ctrl+n** seleccionando un selector\* para ver sus Senders (se abre una lista de métodos desde donde se envía ese mensaje, también vale para cuando se usa un symbol igual al mensaje, onda \#size).
+-   **Ctrl+m** seleccionando un selector\* para ver sus Implementors (se abre una lista de métodos para ese mensaje)
+-   **Ctrl+shift+n** sobre una clase\* para ver en dónde se usa (References)
+-   **Ctrl+i** sobre un objeto nos permite inspeccionarlo por adentro
+-   **Alt+punto** para mandar una interrupción (útil para cuando uno se la manda y queda ejecutando algo recursivamente, se interrumpe la ejecución y se puede debuggear el stacktrace desde donde interrumpimos)
+
+\* En cualquiera de estos casos, "seleccionar" se puede entender como seleccionar un selector / nombre de clase dentro de un cacho de código (workspace, definición de un método en el class browser, el debugger, etc), o bien seleccionarlo en un listado de cualquier browser (el Class Browser, la lista de variables de instancia y temporales que aparece en un debugger, una lista de senders que hayas abierto, etc).
+
+Por cierto, todas las cosas que se listan con Ctrl también funcionan con Alt en Windows (a veces sólo funcionan con Alt).
