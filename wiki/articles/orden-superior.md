@@ -18,7 +18,7 @@ La función filter (en haskell y otros lenguajes funcionales) es un ejemplo com�
 
 `filter :: `**`(a` `->` `Bool)`**` -> [a] -> [a]`
 
-Otras funciones comunes son map, fold, funciones de ordenamiento o búsqueda, composición de funciones (.), flip, etc (pueden consultar sus tipos en el intérprete con :t).
+Otras funciones comunes son map, [fold](fold.html), funciones de ordenamiento o búsqueda, composición de funciones (.), flip, etc (pueden consultar sus tipos en el intérprete con :t).
 
 Ejemplos comunes del análisis matemático que es más difícil de ver en los lenguajes de programación son la derivada y la integral (Vemos al "proceso de derivar" como una función que recibe otra función cualquiera y devuelve su derivada).
 
