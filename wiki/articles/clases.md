@@ -42,22 +42,32 @@ Podemos pensar a las clases como "Especies" y a las instancias como "individuos"
 
 ### Method Lookup
 
-Entonces ¿Cómo responde ahora un objeto un mensaje? Con el Method Lookup. El method lookup es el mecanismo por el cual un objeto va a buscar el método correspondiente a su clase. (si no lo encuentra en su clase, no lo entiende).
+Si el código está en la clase, entonces, ¿Cómo responde ahora un objeto un mensaje? Con el Method Lookup. El method lookup es el mecanismo por el cual un objeto va a buscar el método correspondiente a su clase. (si no lo encuentra en su clase, no lo entiende). Revisar \[Herencia\] para saber
 
 ### ¡Alto! ¿Quién soy yo?
 
-Si mi código ahora no está en mi objeto, sino en una clase, **¿¿Quién es self??** self apunta siempre al objeto receptor del mensaje. Es decir, a la instancia, y no a la clase. ¿Cómo construyo ahora mis objetos? Mandándole el mensaje new a la clase correspondiente.
+Si mi código ahora no está en mi objeto, sino en una clase, **¿¿Quién es self??**
 
-simba := Leon new. mufasa := Leon new. simba tuPapaEs: mufasa.
+**`self`**` apunta siempre al `**`objeto` `receptor` `del` `mensaje`**`. `
 
-Una clase es un objeto cuya responsabilidad es servir de fábrica de objetos. Una clase posee las siguientes características:
+En éste envío de mensaje:
 
-- tiene la definición de las variables de sus objetos. - contiene métodos, que serán ejecutados conforme el method lookup llegue a ellos.
+`simba rugi`
 
-¿Como sirve una clase de fábrica? Suponiendo que tenemos una clase Dragon, podemos enviarle el mensaje new a esa clase para que cree un nuevo objeto, que diremos que es instancia de esa clase:
+simba es self. En éste otro:
 
-` Dragon new`
+`Leon new`
 
-Una clase tiene como objetivo:
+La clase Leon es self.
 
-- ser un contenedor de comportamiento (métodos) comun entre distintos objetos - modelar un concepto
+### ¿Cómo construyo ahora mis objetos?
+
+Mandándole el mensaje new a la clase correspondiente.
+
+`simba := Leon new.`
+`mufasa := Leon new.`
+`simba tuPapaEs: mufasa.`
+
+### Conclusión
+
+Una clase es un objeto cuya responsabilidad es servir de **fábrica** de objetos. Modela las **abstracciones** de mi dominio, permitiéndome definir el **comportamiento** y los **atributos** de las instancias.
