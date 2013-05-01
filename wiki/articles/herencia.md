@@ -122,3 +122,8 @@ En nuestro ejemplo
 `         classVariableNames: ''.`
 
 </code>
+
+Method Lookup
+-------------
+
+(En construcción)
