@@ -42,7 +42,7 @@ Podemos pensar a las clases como "Especies" y a las instancias como "individuos"
 
 ### Method Lookup
 
-Si el código está en la clase, entonces, ¿Cómo responde ahora un objeto un mensaje? Con el Method Lookup. El method lookup es el mecanismo por el cual un objeto va a buscar el método correspondiente a su clase. (si no lo encuentra en su clase, no lo entiende). Revisar \[Herencia\] para saber
+Si el código está en la clase, entonces, ¿Cómo responde ahora un objeto un mensaje? Con el Method Lookup. El method lookup es el mecanismo por el cual un objeto va a buscar el método correspondiente a su clase. (si no lo encuentra en su clase, no lo entiende). Revisar [Herencia](herencia.html) para conocer el Method Lookup completo.
 
 ### ¡Alto! ¿Quién soy yo?
 
@@ -67,6 +67,10 @@ Mandándole el mensaje new a la clase correspondiente.
 `simba := Leon new.`
 `mufasa := Leon new.`
 `simba tuPapaEs: mufasa.`
+
+### Diagramando Clases
+
+Ver [Diagrama de Clases](diagrama-de-clases.html)
 
 ### Conclusión
 
