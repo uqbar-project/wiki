@@ -3,7 +3,7 @@ Para crear una subclase hay dos formas:
 Forma A
 -------
 
-1.  En un class browser ctrl-click (click derecho en Pharo) sobre la superclase, les abre un menú contextual. Ahí "more..."-&gt;"subclass template" (en Pharo sin el more..).
+1.  En un class browser ó System Browser ctrl-click (click derecho en Pharo) sobre la superclase, les abre un menú contextual. Ahí "more..."-&gt;"subclass template" (en Pharo sin el more..).
 2.  Les va a aparecer un texto parecido a este (en mi ejemplo tomé como superclase a la clase Ave):
 
 `Ave subclass: #NameOfSubclass`
