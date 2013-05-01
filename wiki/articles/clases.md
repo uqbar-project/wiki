@@ -2,21 +2,27 @@
 
 ¿Por qué necesito clases? Porque tengo varios objetos *sospechosamente parecidos*. Es decir,
 
--   El comportamiento de varios objetos es igual. Es decir,
-    -   entienden los mismos mensajes
-    -   Y tienen los mismos métodos (exactamente el mismo código).
--   sus atributos son los mismos.
--   el estado interno es diferente.
+-   El **comportamiento** de varios objetos es **igual**. Es decir,
+
+  
+-&gt; entienden los mismos mensajes
+
+-&gt; Y tienen los mismos métodos (exactamente el mismo código).
+
+-   sus **atributos** son los **mismos**.
+-   el **estado interno** es **diferente**.
 
   
 Es decir, si bien tienen los mismos atributos, éstos apuntan a diferentes objetos.
 
--   su identidad es diferente.
+-   su **identidad** es **diferente**.
 
   
 Es decir, no sólo les damos diferentes nombres en diferentes referencias, sino que además son objetos diferentes.
 
-Conclusión, necesitamos una **abstracción** donde pongamos el código y los atributos en común de todos éstos objetos. Ésta abstracción es la clase, y cada objeto que se comporte igual (aunque tenga diferente estado interno) va a ser una instancia de esa clase.
+Conclusión, necesitamos una **abstracción** donde pongamos el código y los atributos en común de todos éstos objetos. Ésta abstracción es la **clase**, y cada objeto que se comporte igual (aunque tenga diferente estado interno) va a ser una **instancia** de esa clase.
+
+Podemos pensar a las clases como "Especies" y a las instancias como "individuos" de esas especies
 
 `Especie (Clase)     Individuo (instancia)`
 `Leon    simba`
