@@ -5,9 +5,9 @@
 -   El **comportamiento** de varios objetos es **igual**. Es decir,
 
   
--&gt; entienden los mismos mensajes
+-&gt; no solo entienden los mismos mensajes, sino que
 
--&gt; Y tienen los mismos métodos (exactamente el mismo código).
+-&gt; tienen los mismos métodos (exactamente el mismo código).
 
 -   sus **atributos** son los **mismos**.
 -   el **estado interno** es **diferente**.
@@ -20,7 +20,7 @@ Es decir, si bien tienen los mismos atributos, éstos apuntan a diferentes objet
   
 Es decir, no sólo les damos diferentes nombres en diferentes referencias, sino que además son objetos diferentes.
 
-Conclusión, necesitamos una **abstracción** donde pongamos el código y los atributos en común de todos éstos objetos. Ésta abstracción es la **clase**, y cada objeto que se comporte igual (aunque tenga diferente estado interno) va a ser una **instancia** de esa clase.
+En conclusión, necesitamos una **abstracción** donde pongamos el código y los atributos en común de todos éstos objetos. Ésta abstracción es la **clase**, y cada objeto que se comporte igual (aunque tenga diferente estado interno) va a ser una **instancia** de esa clase.
 
 Podemos pensar a las clases como "Especies" y a las instancias como "individuos" de esas especies
 
@@ -70,4 +70,4 @@ Mandándole el mensaje new a la clase correspondiente.
 
 ### Conclusión
 
-Una clase es un objeto cuya responsabilidad es servir de **fábrica** de objetos. Modela las **abstracciones** de mi dominio, permitiéndome definir el **comportamiento** y los **atributos** de las instancias.
+**Una clase es un objeto** cuya responsabilidad es servir de **fábrica** de objetos. Modela las **abstracciones** de mi dominio (los *conceptos* que nos interesan), permitiéndome definir el **comportamiento** y los **atributos** de las instancias.
