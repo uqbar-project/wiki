@@ -24,19 +24,29 @@ Conclusión, necesitamos una **abstracción** donde pongamos el código y los at
 
 Podemos pensar a las clases como "Especies" y a las instancias como "individuos" de esas especies
 
-`Especie (Clase)     Individuo (instancia)`
-`Leon    simba`
-`    nala`
-`    mufasa`
-`Hiena   shenzi`
-`    banzai`
-`    ed`
-`Jabalí  pumba`
-`Zuricata    timon`
+| Especie (**Clase**) | Individuo (**instancia**) |
+|---------------------|---------------------------|
+| Leon                | simba                     |
+|                     | nala                      |
+|                     | mufasa                    |
+| Hiena               | shenzi                    |
+|                     | banzai                    |
+|                     | ed                        |
+| Jabalí              | pumba                     |
+| Zuricata            | timon                     |
 
-Machete de cosas a recordar: Todo objeto es siempre instancia de una y sólo una clase. No se puede cambiar la clase de un objeto una vez creado. Entonces ¿Cómo responde ahora un objeto un mensaje? Con el Method Lookup. El method lookup es el mecanismo por el cual un objeto va a buscar el método correspondiente a su clase. (si no lo encuentra en su clase, no lo entiende).
+### Cosas a recordar
 
-¡Alto! Si mi código ahora no está en mi objeto, sino en una clase, ¿¿Quién es self?? self apunta siempre al objeto receptor del mensaje. Es decir, a la instancia, y no a la clase. ¿Cómo construyo ahora mis objetos? Mandándole el mensaje new a la clase correspondiente.
+-   Todo objeto es siempre instancia de una y sólo una clase.
+-   No se puede cambiar la clase de un objeto una vez creado.
+
+### Method Lookup
+
+Entonces ¿Cómo responde ahora un objeto un mensaje? Con el Method Lookup. El method lookup es el mecanismo por el cual un objeto va a buscar el método correspondiente a su clase. (si no lo encuentra en su clase, no lo entiende).
+
+### ¡Alto! ¿Quién soy yo?
+
+Si mi código ahora no está en mi objeto, sino en una clase, **¿¿Quién es self??** self apunta siempre al objeto receptor del mensaje. Es decir, a la instancia, y no a la clase. ¿Cómo construyo ahora mis objetos? Mandándole el mensaje new a la clase correspondiente.
 
 simba := Leon new. mufasa := Leon new. simba tuPapaEs: mufasa.
 
