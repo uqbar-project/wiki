@@ -78,13 +78,13 @@ El patrón `(Coord` `x` `5)` no matchea con `lista1` ni con `lista2`. ¡Es una C
 
 El patrón `(Coord` `x` `y:restoCoords)` matchea con `lista1`, siendo `x` `=` `2`, `y` `=` `5` y `restoCoords` `=` `[Coord` `5` `3,Coord` `3` `3]` y matchea con `lista2`, siendo `x` `=` `2`, `y` `=` `5` y `restoCoords` `=` `[]`
 
-El patrón `[x]` no matchea con `lista1` pero si matchea con `lista2`, siendo `x` `=` `2` y `y` `=` `5`
+El patrón `[x]` no matchea con `lista1` pero si matchea con `lista2`, siendo `x` `=` `Coord` `2` `5`
 
 El patrón `(x:_)` matchea con `lista1` y matchea con `lista2` siendo `x` `=` `Coord` `2` `5`
 
 El patrón `(x:y:_)` matchea con `lista1` siendo `x` `=` `Coord` `2` `5` y `y` `=` `Coord` `5` `3` pero no matchea con `lista2`
 
-El patrón `unaTupla` matchea con `lista1` y matchea con `lista2`
+El patrón `unaTupla` matchea con `lista1` y matchea con `lista2` porque no es más que una variable sin ninguna restricción después de todo
 
 Patrones con sinónimos (**as** Pattern)
 ---------------------------------------
