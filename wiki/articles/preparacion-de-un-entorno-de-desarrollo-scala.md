@@ -13,6 +13,7 @@ Lo podemos usar directamente como un plugin desde el eclipse
 
 -   [Documentación oficial](http://www.scala-lang.org/node/197)
 -   [Manuales de referencia](http://www.scala-lang.org/node/198)
+-   [Scala by Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf#) escrito por Martin Odersky, el creador de Scala.
 
 ### Links de interés
 
