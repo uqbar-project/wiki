@@ -16,7 +16,7 @@ Para más detalles pueden mirar <http://www.eclipse.org/xtend/download.html>
 
 ### Tips
 
--   Las clases xtend pueden implementar interfaces Java, pero **evitá tener referencias circulares entre interfaces Java y clases xtend**.
+-   Instalate la versión 2.4 ó superior, ya que versiones anteriores tienen problemas entre clases xtend e interfaces java cuando tienen referencias circulares entre sí.
 
 ### Documentación
 
