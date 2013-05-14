@@ -17,6 +17,11 @@ Si sos un estudiante en busca del material de una materia, tal vez te convenga i
 
 Para el que busca algo que vaya más allá de lo visto en las clases aquí hay una lista con algunos artículos sobre [Otros Temas Interesantes de Programación](otros-temas-interesantes-de-programacion.html). Finalmente, otra posibilidad es browsear nuestra colección de propuestas de [Herramientas Útiles](herramientas-utiles.html).
 
+Proyectos en los que estamos trabajando:
+----------------------------------------
+
+-   [Lista de proyectos](lista-de-proyectos.html)
+
 Otro material:
 
 -   [Tips para Concursos Docentes](tips-para-concursos-docentes.html)
