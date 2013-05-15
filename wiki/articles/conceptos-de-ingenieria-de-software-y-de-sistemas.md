@@ -27,7 +27,7 @@ Los caso de uso definen una interacción entre un actor y el sistema, para logra
 
 ### Requerimientos no funcionales
 
-Los requerimientos no funcionales son aspectos que debe tener el sistema, estos pueden o no ser específicos de una funcionalidad ("el tiempo de respuesta para procesar un pedido vía web no debe exceder los 3 segundos" o "el sistema debe funcionar 7 x 24"), definen la calidad y las características que el sistema debe soportar. También conocidos como "atributos de calidad", o "cualidades del software" algunos de estos son:
+Los requerimientos no funcionales son aspectos que debe tener el sistema, estos pueden o no ser específicos de una funcionalidad ("el tiempo de respuesta para procesar el alta de una tarjeta SUBE vía web no debe exceder los 3 segundos" o "el sistema debe funcionar 7 x 24"), definen la calidad y las características que el sistema debe soportar. También conocidos como "atributos de calidad", o "cualidades del software" algunos de estos son:
 
 -   Performance
 -   Availability (Disponibilidad)
