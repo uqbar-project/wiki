@@ -42,7 +42,7 @@ Ejemplos de restricciones posibles:
 -   **normativas o legales**: "el sistema debe estar construido según estándares de ley Sarbanes-Oxley", "el software debe contemplar que el proceso de fabricación de los productos se adapte a las normas ISO 9000", "el sistema debe cumplir con el análisis de vulnerabilidad dispuesto por la gerencia de Seguridad Informática"
 -   **de calidad**: disponibilidad: "el sistema debe estar disponible 6 x 20 / 7 x 24", performance: "las consultas de cliente por nombre no pueden tardar más de 3 segundos", escalabilidad: "se debe pemitir agregar nuevos tipos de cliente en el futuro", usabilidad: "el sistema debe permitir a un usuario nuevo capacitarse en menos de una semana".
 
-[Mas sobre cualidades del software](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnx1dG50YWRwfGd4OmUzMGM5YzRmNDdjZTYxMw)
+[Más sobre cualidades del software](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnx1dG50YWRwfGd4OmUzMGM5YzRmNDdjZTYxMw)
 
 Links relacionados
 ------------------
