@@ -55,7 +55,7 @@ Vemos la implementación en xtend:
 <code>
 
 `def double precioVenta() {`
-`    this.precioVentaBase + this.costoAdicional`
+`    precioVentaBase + this.costoAdicional`
 `}`
 
 `def double costoAdicional()   // abstract method`
