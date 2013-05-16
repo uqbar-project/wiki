@@ -2,6 +2,8 @@ Unidad 1: Diseño y Sistemas
 ---------------------------
 
 -   [Conceptos de Ingeniería de software y de sistemas](conceptos-de-ingenieria-de-software-y-de-sistemas.html)
+-   [Diseño y Tecnología](diseno-y-tecnologia.html)
+-   [Metamodelo](metamodelo.html)
 
 Unidad 2: Diseño y metodologías
 -------------------------------
@@ -13,23 +15,24 @@ Unidad 2: Diseño y metodologías
 Unidad 3: Herramientas de concepción y comunicación del diseño
 --------------------------------------------------------------
 
+-   [Comunicación](comunicacion.html)
+
 Unidad 4: Requerimientos y Diseño
 ---------------------------------
 
 -   [Conceptos básicos del diseño](conceptos-basicos-del-diseno.html)
 -   [Impacto de los requerimientos en el diseño](impacto-de-los-requerimientos-en-el-diseno.html)
--   [Comunicación](comunicacion.html)
--   [Metamodelo](metamodelo.html)
 
 Unidad 5: Modelado de objetos
 -----------------------------
 
 -   [Cosificación](cosificacion.html)
--   [Diseño y Tecnología](diseno-y-tecnologia.html)
 -   [Diseño y Sistemas de Tipos](diseno-y-sistemas-de-tipos.html)
 -   [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html)
 -   [Manejo de Errores](manejo-de-errores.html)
 -   [Ciclo de vida de un objeto](ciclo-de-vida-de-un-objeto.html)
+-   [Template method](template-method.html)
+-   [Clases vs instancias](clases-vs-instancias.html)
 -   [Double dispatch](double-dispatch.html)
 
 Unidad 6: Modelado de datos
