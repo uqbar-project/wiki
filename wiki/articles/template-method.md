@@ -2,7 +2,7 @@ Para calcular el precio de un producto, tenemos que considerar
 
 -   todos los productos tienen un precio de venta base
 -   los productos importados tienen un cargo extra determinado por el peso (300 $ x cada kilo)
--   a los productos nacionales se les suma un adicional del 10% para subsidios del estado nacional
+-   a los productos nacionales se les suma un adicional del 10% de impuestos internos
 -   y finalmente otros productos especiales incorporan un extra de 5 $ si el producto pesa más de 4 kg.
 
 Si elegimos modelar mediante subclasificación, tenemos
