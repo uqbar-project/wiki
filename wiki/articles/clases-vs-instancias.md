@@ -8,19 +8,27 @@ En los lenguajes orientados a objetos que tienen clases (como Java, Xtend, Groov
 
 Resolvemos el valor del impuesto A
 
-<code> metodo valor(Tarea tarea)
+<code>
+
+metodo valor(Tarea tarea)
 
 `   tarea.costo * 0.03`
 
-fin </code>
+fin
+
+</code>
 
 Y a continuación el valor del impuesto B
 
-<code> metodo valor(Tarea tarea)
+<code>
+
+metodo valor(Tarea tarea)
 
 `   tarea.costo * 0.02`
 
-fin </code>
+fin
+
+</code>
 
 Pero si analizamos con detenimiento veremos que los 3 impuestos comparten el mismo cálculo: la única diferencia es el % que se le aplica al costo de una tarea. No tiene sentido armar una jerarquía de clases para los impuestos:
 
@@ -32,7 +40,9 @@ Pero si analizamos con detenimiento veremos que los 3 impuestos comparten el mis
 
 Es mucho más conveniente generar una única abstracción impuesto que tenga el porcentaje como atributo:
 
-<code> Clase Impuesto
+<code>
+
+Clase Impuesto
 
 atributo porcentaje
 
@@ -40,7 +50,9 @@ metodo valor(Tarea tarea)
 
 `   tarea.costo * porcentaje`
 
-fin </code>
+fin
+
+</code>
 
 Y no necesitamos tener las clases Impuesto A, B y C: si existieran, sólo se diferenciarian en el valor que almacenan en el porcentaje al construirse.
 
