@@ -48,7 +48,7 @@ Entonces en la clase producto definimos que el precio de venta sale del precio d
 En lenguajes con chequeo de tipos, Producto debe tener definido un costoAdicional en su interfaz. Esto se puede implementar
 
 -   con un comportamiento default (por ejemplo, haciendo que costoAdicional devuelva 0)
--   o bien con un **método abstracto** (abstract method), que obliga a redefinir el método en las subclases que implementen
+-   o bien con un **método abstracto** (abstract method), que obliga a redefinir el método en las subclases
 
 Vemos la implementación en xtend:
 
