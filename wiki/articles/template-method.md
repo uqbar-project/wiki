@@ -5,7 +5,7 @@ Para calcular el precio de un producto, tenemos que considerar
 -   a los productos nacionales se les suma un adicional del 10% de impuestos internos
 -   y finalmente otros productos especiales incorporan un extra de 5 $ si el producto pesa más de 4 kg.
 
-Si elegimos modelar mediante subclasificación, tenemos
+Si elegimos modelar los productos mediante una jerarquía de subclasificación, tenemos
 
 -   Una superclase Producto, con 3 subclases
     -   ProductoImportado
