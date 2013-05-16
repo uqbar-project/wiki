@@ -62,7 +62,7 @@ Vemos la implementación en xtend:
 
 </code>
 
-En lenguajes con tipado dinámico se puede definir un método que explícitamente devuelva error para obligar a las subclases a implementarlo, ya que si ProductoImportado no define un costoAdicional el method lookup va hacia la superclase donde arroja el error. Vemos el ejemplo en Smalltalk:
+En lenguajes con tipado dinámico se puede definir un método que explícitamente devuelva error para obligar a las subclases a implementar cada operación primitiva. Vemos el ejemplo en Smalltalk:
 
 <code>
 
