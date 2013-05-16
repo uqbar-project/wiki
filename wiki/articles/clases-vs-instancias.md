@@ -10,11 +10,9 @@ Resolvemos el valor del impuesto A
 
 <code>
 
-metodo valor(Tarea tarea)
-
+`metodo valor(Tarea tarea) `
 `   tarea.costo * 0.03`
-
-fin
+`fin`
 
 </code>
 
@@ -22,11 +20,9 @@ Y a continuación el valor del impuesto B
 
 <code>
 
-metodo valor(Tarea tarea)
-
+`metodo valor(Tarea tarea) `
 `   tarea.costo * 0.02`
-
-fin
+`fin`
 
 </code>
 
@@ -42,15 +38,13 @@ Es mucho más conveniente generar una única abstracción impuesto que tenga el 
 
 <code>
 
-Clase Impuesto
+`Clase Impuesto`
 
-atributo porcentaje
+`atributo porcentaje`
 
-metodo valor(Tarea tarea)
-
+`metodo valor(Tarea tarea) `
 `   tarea.costo * porcentaje`
-
-fin
+`fin`
 
 </code>
 
