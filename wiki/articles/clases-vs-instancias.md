@@ -29,9 +29,9 @@ Y a continuación el valor del impuesto B
 Pero si analizamos con detenimiento veremos que los 3 impuestos comparten el mismo cálculo: la única diferencia es el % que se le aplica al costo de una tarea. No tiene sentido armar una jerarquía de clases para los impuestos:
 
 -   Impuesto
--   Impuesto A, método valor(Tarea)
--   Impuesto B, método valor(Tarea)
--   Impuesto C, método valor(Tarea)
+    -   Impuesto A, método valor(Tarea)
+    -   Impuesto B, método valor(Tarea)
+    -   Impuesto C, método valor(Tarea)
 
 Es mucho más conveniente generar una única abstracción impuesto que tenga el porcentaje como atributo:
 
