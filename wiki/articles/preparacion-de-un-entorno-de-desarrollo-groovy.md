@@ -12,4 +12,5 @@
 ### Links de interés
 
 -   [Página principal de Groovy](http://groovy.codehaus.org/)
+-   [Groovy vs Scala](groovy-vs-scala.html)
 
