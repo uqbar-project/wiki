@@ -18,4 +18,5 @@ Lo podemos usar directamente como un plugin desde el eclipse
 ### Links de interés
 
 -   [Página principal de Scala](http://www.scala-lang.org/)
+-   [Groovy vs Scala](groovy-vs-scala.html)
 
