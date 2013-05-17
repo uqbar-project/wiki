@@ -35,7 +35,7 @@ Unidad 5: Modelado de objetos
 -   [Clases vs instancias](clases-vs-instancias.html)
 -   [Double dispatch](double-dispatch.html)
 
-<!-- -->
+Una pregunta que muchas veces en la materia diseño es: ¿Que lenguaje uso? Acá van algunas comparativas:
 
 -   [Groovy vs Scala](groovy-vs-scala.html)
 
