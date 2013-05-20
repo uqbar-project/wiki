@@ -21,6 +21,7 @@ Tipos
 -   [Inferencia de tipos](inferencia-de-tipos.html)
 -   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
 -   [Cantidad de parámetros de una función en Haskell (Notación point-free)](notacion-point-free.html)
+-   [Data: Definiendo nuestros tipos en Haskell](data--definiendo-nuestros-tipos-en-haskell.html)
 
 Extras simpáticos
 -----------------
