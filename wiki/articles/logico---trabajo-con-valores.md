@@ -1,7 +1,7 @@
 Cuándo se usa **is**
 --------------------
 
-Cuando tengo que hacer una operación aritmética, p.ej..
+Cuando tengo que hacer una operación [aritmética](aritmetica-en-prolog.html), p.ej..
 
 `   ingresoTotal(Pers,IT):- ingresoPorSueldo(Pers,IS), ingresoPorRenta(Pers,IR), IT is IS+IR.`
 
