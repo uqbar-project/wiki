@@ -44,7 +44,7 @@ Individuos
 
 Los individuos son aquellas cosas sobre las que versa el conocimiento que queremos expresar. En el ejemplo aparecen varios individuos: socrates, atenas, solon, arquimedes, siracusa, -634, -287. Individuo es cualquier entidad acerca de la cual nos interese estudiar sus características o sus relaciones con otros individuos. P.ej. si hiciéramos un sistema para controlar correlatividades entre las materias de la facultad, tendríamos un individuo para representar cada materia. Los individuos se dividen en
 
--   **Individuos simples**: los átomos (como solon, atenas, siracusa) y los números son individuos simples.
+-   **Individuos simples**: los átomos (como solon, atenas, siracusa) y los números son individuos simples. Ver [Paradigma Lógico - individuos simples](paradigma-logico---individuos-simples.html)
 -   **Individuos compuestos**: tienen otros individuos adentro, los componentes, y se pueden ver o bien como una unidad o bien acceder a cada componente. Ver [Paradigma Lógico - individuos compuestos](paradigma-logico---individuos-compuestos.html).
 
 Predicados
