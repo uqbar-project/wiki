@@ -45,3 +45,15 @@ Otra opción más tipo "masita":
 -   nueces, 100 gramos
 -   esencia de vainilla
 
+Otra receta alternativa
+-----------------------
+
+AKA la del asado familiero (los pasos son similares o iguales al anterior) Ingredientes:
+
+-   4 huevos
+-   1 taza y un toque más de harina (preferentemente 0000, y común)
+-   2 tazas de azúcar
+-   150 gr de chocolate (recomiendo águila)
+-   150 gr de manteca
+
+Pasos: 1 - Derretir manteca y chocolate en el microondas. 2 - Romper los huevos (oh si) en un bowl y mezclarlos muy bien con el azúcar. 3 - Mezclar lo del paso 1. con lo del paso 2. Seguir mezclando. 4 - Agregar harina. Seguir mezclando, dije! 5 - En este paso agregarían nueces, almendras o lo que guste. 6 - Yo le pongo manteca y harina al molde porque da fiaca si se pega, aunque no debería pegotearse demasiado por la cantidad de manteca que lleva. 7 - Al horno! Depende el horno y soy muy inexperta, así que voy tanteando con el cuchillo. En general, cuando tiene la parte de arriba crocante y el cuchillo no sale chorreando, ya está bien.
