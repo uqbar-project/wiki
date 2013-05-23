@@ -22,3 +22,50 @@ tiene un error porque la función espera como parámetro una función, mientras 
 Moraleja:
 
 > ***No es lo mismo** un booleano/entero/string/etc **que una función que devuelve** un booleano/entero/string/etc*
+
+Composición y aplicación parcial
+--------------------------------
+
+Muchas veces se ven errores que (a veces disfrazados de un me confundí con los paréntesis) llevan a expresiones inválidas, lo importante es entender qué construcciones son válidas y cuáles no.
+
+Normalmente hay muchas formas de llegar al mismo resultado. Por ejemplo:
+
+`(not.esDivisor año) 100`
+`not (esDivisor año 100)`
+
+Estas dos lineas producen el mismo resultado. Mientras que las siguientes están mal:
+
+`not.esDivisor año 100`
+`(not.esDivisor) año 100`
+`(otroBooleano && (not.esDivisor año)) 100`
+
+Porqué? Repasemos las que estaban bien:
+
+**`(not.esDivisor` `año)`**` 100`
+
+Lo que está resaltado es una **función**. Es resultado de componer otras dos funciones: **not** y **esDivisor año**. Notá como me refiero a **esDivisor año** como una única función, que NO es **esDivisor**. Para ver que son diferentes, podemos solo chequear sus tipos:
+
+`'''esDivisor::Int->Int->Bool`
+`esDivisor año::Int->Bool'''`
+
+Esta es una versión simplificada del tipo, no es exactamente lo que diría haskell, pero a efectos de la explicación da igual. Notá que **esDivisor año** espera un argumento menos que **esDivisor** (justamente, porque ya le pasaste el año). Obviamente, si aplicamos esta función otra vez, esto se repite.
+
+**`esDivisor` `año` `100` `::` `Bool`**
+
+Esto ya no es una función. Es un booleano. Ya no puedo aplicarlo.
+
+Habiendo entendido esto, miremos otra vez la composición:
+
+`(not.esDivisor año)`
+
+Si digo que se está componiendo **not** con **esDivisor año**, podés deducir que la aplicación de una función tiene "mayor precedencia" que la composición. Una forma de entender esto es que la aplicación tiene prioridad, entonces la composición va a trabajar con el resultado de la aplicación.
+
+Comparemos esto con uno de los casos de error:
+
+`(not.esDivisor año) 100      `**`<-` `Funciona` `bien.` `Le` `aplico` `100` `al` `resultado` `de` `la` `composición`**
+`not.esDivisor año 100        `**`<-` `Falla!` `Trata` `de` `componer` `not` `con` `esDivisor` `año` `100,` `que` `es` `un` `Bool,` `no` `una` `función.`**
+
+Los otros casos erroneos también podemos deducirlos así:
+
+`(not.esDivisor) año 100      `**`<-` `Falla` `porque` `tratás` `de` `componer` `esDivisor,` `que` `espera` `más` `de` `un` `argumento.`**
+`(otroBooleano && (not.esDivisor año)) 100   `**`<-` `Falla` `porque` `(not.esDivisor` `año)` `es` `una` `función` `y` `&&` `espera` `un` `booleano.`**
