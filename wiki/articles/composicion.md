@@ -151,6 +151,8 @@ Con composición
   
 Claramente son funciones las dos expresiones a ambos lados del ".". (Notese que a la derecha del "=" también hay un parámetro menos.)
 
+Pueden encontrar otro ejemplo sobre esta clase de errores en [ Errores con composición y aplicación parcial](errores-comunes-al-comenzar-a-trabajar-con-haskell-composicion-y-aplicacion-parcial.html)
+
 ### Composición vs. Aplicación
 
 Para terminar de entenderlo recuerden la matemática, ¿es lo mismo que ? Claramente si g es una función yo no puedo hacer . Por otro lado, si en lugar de una función g tuviera un valor real x, entonces puedo hacer pero no .
