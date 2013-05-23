@@ -35,10 +35,10 @@ Programemos este mismo ejemplo en Prolog, en realidad es bastante simple: <code>
 
 ¿Qué quiere decir esto?
 
--   `hombre(socrates)` afirma que Sócrates es un hombre, o dicho de otra manera que *socrates* tiene la característica *hombre*. Es una afirmación que afecta únicamente a Sócrates y la llamamos un [hecho](hecho.html).
--   `mortal(X):-hombre(X)` es lo que llamamos una [regla](regla.html) y se puede leer como: *X es hombre ⇒ X es mortal*. La regla es una implicación, el antecedente es `hombre(X)` y el consecuente es `mortal(X)`. Esto quiere decir que para todo X que tenga la característica *hombre* se da que ese X también tiene la característica *mortal* (o más corto: todos los hombres son mortales).
+-   `hombre(socrates)` afirma que Sócrates es un hombre, o dicho de otra manera que *socrates* tiene la característica *hombre*. Es una afirmación que afecta únicamente a Sócrates y la llamamos un **hecho**, ya que es una declaración que no depende de nada para ser verdadera.
+-   `mortal(X):-hombre(X)` es lo que llamamos una **regla** y se puede leer como: *X es hombre ⇒ X es mortal*. La regla es una implicación, el antecedente es `hombre(X)` y el consecuente es `mortal(X)`. Esto quiere decir que para todo X que tenga la característica *hombre* se da que ese X también tiene la característica *mortal* (o más corto: todos los hombres son mortales).
 
-Fijate que *socrates* está en minúscula, mientras que la *X* aparece en mayúscula, ¿por qué? Los términos en minúscula se refieren a cosas particulares y las palabras en mayúscula son [incógnitas](incognita.html) (o variables).
+Fijate que *socrates* está en minúscula, mientras que la *X* aparece en mayúscula, ¿por qué? Los términos en minúscula se refieren a cosas particulares y las palabras en mayúscula son **incógnitas** (o variables).
 
 Eso se relaciona también con que la primera línea sea un hecho (porque habla de un individuo particular) y la segunda sea una regla (porque habla de todos los hombres).
 
@@ -77,7 +77,7 @@ Al ejecutar esa consulta, la secuencia de pasos del motor (simplificada) es la s
 4.  Pero la única definición del predicado hombre es `hombre(socrates)`, que no matchea con `hombre(aristoteles)`.
 5.  La base de conocimientos no dice nada acerca de aristóteles, por lo tanto no se puede verificar que Aristóteles sea mortal.
 
-En este momento aparece un concepto que llamamos [principio de universo cerrado](principio-de-universo-cerrado.html), que dice que el motor asume como falso todo lo que no pueda probar como verdadero, es decir que si al preguntarle si aristoteles es mortal, me va a contestar que no!
+En este momento aparece un concepto que llamamos **principio de universo cerrado**, que dice que el motor asume como falso todo lo que no pueda probar como verdadero, es decir que si al preguntarle si aristoteles es mortal, me va a contestar que no!
 
 Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares) trabajan con este principio. Aunque no es la única forma de trabajar, es algo bastante frecuente dado que lo contrario es en general más complicado de implementar y de utilizar.
 
