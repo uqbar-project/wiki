@@ -20,6 +20,22 @@ Errores comunes con el is
 
 Acá vienen una serie de warnings que deben tener MUY en cuenta:
 
+===Error: usar = en vez de is=== En general en la materia nunca vamos a usar el = ya que preferimos el uso de pattern matching y usarlo para resolver operaciones aritméticas no es correcto. Por qué no se puede usar = para aritmética? Veamos un ejemplo:
+
+`?- 3+5 = 2+6.`
+`No`
+`?- 3+5 = 5+3.`
+`No`
+`?- 3+5 = 8.`
+`No`
+
+El muy simpático sólo nos va a decir true cuando las dos expresiones de ambos lados del igual sean idénticas, no va a intentar resolver la igualdad:
+
+`?- 3+5 = 3+5.`
+`Yes`
+
+Muy útil, no? :P
+
 ### Error: tratar de acumular
 
 -   No usar el is como asignación. Como ya saben, en lógico no hay asignación, una vez que las variables se ligan, permanecen ligadas hasta que termine la consulta. Es decir, no vale preguntar algo como:
