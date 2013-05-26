@@ -3,9 +3,9 @@ Algunas buenas prácticas para tener en cuenta:
 Control de versiones
 --------------------
 
--   No todos los archivos deben subirse al repo. Como regla general, no deberían subir:
-    -   archivos que se pueden generar a partir de otros, por ejemplo código compilado de fuentes que escribieron ustedes. Por qué no subirlos? Porque se pueden generar y lo mas probable es que sean difrentes para cada uno de ustedes
-    -   archivos de configuración propios de cada uno, por ejemplo el .settings que genera el Eclipse. Porque estos archivos tambien se autogenran y si alguno tiene una configuración diferente (que es muy muy muy probable) la van a estar pisando a cada rato, e incluso es probable que les genere conflictos cuando usan un repositorio.
+-   No todos los archivos deben subirse al repo. Como regla general, no deberían subir archivos que se puedan generar a partir de otros, por ejemplo:
+    -   los binarios que se generan a partir del código fuente de ustedes. Ocupan espacio en el repositorio y se corre el riesgo de estar laburando con versiones desactualizadas.
+    -   archivos de configuración propios de cada uno (por ejemplo el .settings que genera el Eclipse). Si alguno tiene una configuración diferente (que es muy muy muy probable) la van a estar pisando a cada rato, e incluso es probable que les genere conflictos.
 
 <!-- -->
 
