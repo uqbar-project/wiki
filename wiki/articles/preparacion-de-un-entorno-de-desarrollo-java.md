@@ -202,19 +202,22 @@ Independientemente de si su proyecto respeta la estructura estándar de un proye
 
 #### A manopla
 
-- Creamos un proyecto Maven.
+-   Creamos un proyecto Maven.
 
 `$ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=ar.edu.frba.utn.dds -DartifactId=Example`
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
-- Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: src/main/java/ar/edu/frba/utn/dds.
+-   Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: src/main/java/ar/edu/frba/utn/dds.
 
-- Probamos hacer una compilación e instalación local.
+<!-- -->
+
+-   Probamos hacer una compilación e instalación local.
 
 `$ mvn install`
 
 Links útiles
 ------------
 
-- [Amigandonos con el entorno de desarrollo](amigandonos-con-el-entorno-de-desarrollo.html)
+-   [Amigandonos con el entorno de desarrollo](amigandonos-con-el-entorno-de-desarrollo.html)
+
