@@ -213,3 +213,8 @@ A todas las opciones que nos pregunte le damos enter para aceptar las default.
 - Probamos hacer una compilación e instalación local.
 
 `$ mvn install`
+
+Links útiles
+------------
+
+- [Amigandonos con el entorno de desarrollo](amigandonos-con-el-entorno-de-desarrollo.html)
