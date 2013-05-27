@@ -36,9 +36,7 @@ Esto mismo lo hacemos varias veces al día y antes de subir algo nuevo al reposi
 
 <!-- -->
 
--   Si están utilizando Tortoise o el plugin de subversion para Eclipse, ambos van a tener la opción “add to <svn:ignore>”. En el caso de hacerlo por consola pueden correr el comando “svn propset <svn:ignore> <nombre_de_Archivo>” o “svn propset <svn:ignore> .” si lo que quieren es ignorar todo un directorio.
-
-Tener en cuenta que los archivos o directorios que ya fueron subidos por alguien no se pueden ignorar, por lo tanto primero tienen que eliminarlos primero y commitear eso (lo cual no debería ser un problema, ya partimos de la premisa de que se pueden generar).
+-   Si están utilizando Tortoise o el plugin de subversion para Eclipse, ambos van a tener la opción “add to <svn:ignore>”. En el caso de hacerlo por consola pueden correr el comando “svn propset <svn:ignore> <nombre_de_Archivo>” o “svn propset <svn:ignore> .” si lo que quieren es ignorar todo un directorio. Algo a tener en cuenta: los archivos o directorios que ya fueron subidos por alguien no se pueden ignorar, por lo tanto primero tienen que eliminarlos y commitear eso (lo cual no debería ser un problema, ya que partimos de la premisa de que se pueden generar).
 
 ### Git
 
