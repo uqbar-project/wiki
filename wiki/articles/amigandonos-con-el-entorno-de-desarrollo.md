@@ -38,7 +38,7 @@ Esto mismo lo hacemos varias veces al día y antes de subir algo nuevo al reposi
 
 -   Si están utilizando Tortoise o el plugin de subversion para Eclipse, ambos van a tener la opción “add to <svn:ignore>”. En el caso de hacerlo por consola pueden correr el comando “svn propset <svn:ignore> <nombre_de_Archivo>” o “svn propset <svn:ignore> .” si lo que quieren es ignorar todo un directorio.
 
-Tener en cuenta que los archivos o directorios que ya fueron subidos por alguien no se pueden ignorar. En este caso, si alguien los subió por error, lo que se debe hacer es: borrar la carpeta “en el server” luego hacer update en mi máquina (lo cual me va a borrar también esa carpeta) finalmente, si la carpeta vuelve a aparecer (por ejemplo, la carpeta “target” que se genera automáticamente o “classes”, etc), puedo ahora ignorarla como se contó antes Para el paso 1, es decir borrar la carpeta del server, desde eclipse se puede hacer cambiando la perspectiva a “SVN Repository Exploring”, ahí lo que verán en la vista de la izquierda son los repositorios. Se pueden navegar y botón-derecho-&gt;Delete, borra del servidor (de nuevo acordarse de escribir un comentario digno que explique lo que estamos haciendo :P)
+Tener en cuenta que los archivos o directorios que ya fueron subidos por alguien no se pueden ignorar, por lo tanto primero tienen que eliminarlos primero y commitear eso (lo cual no debería ser un problema, ya partimos de la premisa de que se pueden generar).
 
 ### Git
 
