@@ -28,12 +28,15 @@ Unidad 5: Modelado de objetos
 
 -   [Cosificación](cosificacion.html)
 -   [Diseño y Sistemas de Tipos](diseno-y-sistemas-de-tipos.html)
--   [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html)
 -   [Manejo de Errores](manejo-de-errores.html)
+-   [Clases vs instancias](clases-vs-instancias.html)
 -   [Ciclo de vida de un objeto](ciclo-de-vida-de-un-objeto.html)
 -   [Template method](template-method.html)
--   [Clases vs instancias](clases-vs-instancias.html)
 -   [Double dispatch](double-dispatch.html)
+
+### Tecnologías
+
+-   [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html) + [Amigandonos con el entorno de desarrollo](amigandonos-con-el-entorno-de-desarrollo.html)
 
 Una pregunta que muchas veces en la materia diseño es: ¿Que lenguaje uso? Acá van algunas comparativas:
 
