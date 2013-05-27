@@ -159,13 +159,19 @@ Desde la versión 4.2 (Juno) Eclipse incluyó el plugin m2e como parte de la ins
 
 Si por algún motivo estuvieras usando una versión anterior, se puede instalar de la siguiente manera:
 
-- *Help* -&gt; *Install new software..*
+-   *Help* -&gt; *Install new software..*
 
-- *Add..*
+<!-- -->
 
-- En *Location* pegar la siguiente url: <http://download.eclipse.org/technology/m2e/releases> y click en *Ok*
+-   *Add..*
 
-- Se cargará el paquete **Maven Integration for Eclipse** en el recuadro blanco del centro. Seleccionarlo y hacer click en Next -&gt; Next -&gt; ... -&gt; Finish
+<!-- -->
+
+-   En *Location* pegar la siguiente url: <http://download.eclipse.org/technology/m2e/releases> y click en *Ok*
+
+<!-- -->
+
+-   Se cargará el paquete **Maven Integration for Eclipse** en el recuadro blanco del centro. Seleccionarlo y hacer click en Next -&gt; Next -&gt; ... -&gt; Finish
 
 ### Creación de un proyecto básico
 
@@ -177,13 +183,19 @@ Si ya arrancaste tu proyecto y decidiste más tarde que necesitabas usar Maven, 
 
 #### Usando M2Eclipse
 
-- Click derecho en el Proyecto
+-   Click derecho en el Proyecto
 
-- *Configure* -&gt; *Convert to Maven Project*
+<!-- -->
 
-- Ingresar el **groupId deseado**. Preferentemente que sea el package name que se hayan definido antes, ej: *ar.edu.frba.utn.dds*
+-   *Configure* -&gt; *Convert to Maven Project*
 
-- *Finish*
+<!-- -->
+
+-   Ingresar el **groupId deseado**. Preferentemente que sea el package name que se hayan definido antes, ej: *ar.edu.frba.utn.dds*
+
+<!-- -->
+
+-   *Finish*
 
 Independientemente de si su proyecto respeta la estructura estándar de un proyecto Maven, lo van a tener configurado y funcionando. De hecho, si crean los directorios y mueven el paquete a src/main/java, Maven automágicamente lo va a detectar.
 
