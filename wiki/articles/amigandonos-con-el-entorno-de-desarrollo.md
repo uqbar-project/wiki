@@ -55,3 +55,25 @@ Eclipse
 
 -   Avisarle al Eclipse que mis carpetas son "source folders". Esto le da una semántica a mis archivos y el tipo se aviva de que en verdad tengo paquetes y clases, en vez de archivos y carpetas (de hecho él se encarga de generarme esas carpetas).
 
+<!-- -->
+
+-   Utilización de packages (*paquetes*). Es una buena práctica agrupar las clases afines en paquetes para organizar semánticamente el código. No hay un guideline firme a seguir con respecto a cómo organizar nuestro código, ya que suele depender del contexto en el cuál estamos trabajando, pero es muy común respetar convenciones para mantener la simplicidad y flexibilidad ahorrando al desarrollador de tomar estas decisiones (“*Convention over Configuration*”).
+
+Por ejemplo, en un proyecto web tener paquetes para el “*domino*”, “*controllers*” y “*vista*” (si correspondiese) es una convención común. Cada uno de éstos agrupa las clases que tienen un concepto afín. Se podría seguir ahondando en la definición de subpaquetes agrupando, por ejemplo, por componente:
+
+`domain/`
+`   ├── home`
+`   ├── registration`
+`   │   ├── Profile.java`
+`   │   └── User.java`
+`   └── settings`
+`       ├── CustomPrivacy.java`
+`       ├── DefaultPrivacy.java`
+`       ├── Privacy.java`
+`       └── Setting.java`
+
+De esta manera, logramos mayor granularidad en la organización de nuestras clases.
+
+Otro uso de los paquetes, también relacionado con el concepto anteriormente mencionado Convention over Configuration, es el de identificar inequívocamente a una aplicación. ¿Qué significa ésto? Que las clases que yo defina formen parte de un meta grupo que los identifique, y así evitar colisiones en los nombres que yo les ponga. Por ejemplo: yo puedo definir la clase Color, pero la api de Java AWT ya define una clase Color.
+
+Es por este motivo que se utiliza el dominio de internet de la organización, pero “dado vuelta”. Por ejemplo si trabajamos para Google sería común encontrar paquetes del estilo **com.google.<la siguiente especificación>** (que podría ser, por ejemplo, la región). Para el ejemplo de Color, la api de Java la define como java.awt.Color. En nuestro caso podríamos usar, por ejemplo: **ar.edu.utn.dds.<paquete>**.
