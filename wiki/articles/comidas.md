@@ -10,6 +10,7 @@ Salado
 -   [Palitos de queso](palitos-de-queso.html)
 -   [Salsa Jack Daniel's](salsa-jack-daniel-s.html)
 -   [Bagna Cauda](bagna-cauda.html)
+-   [Locro](locro.html)
 
 Dulce
 -----
