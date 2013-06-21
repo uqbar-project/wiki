@@ -19,4 +19,4 @@ Para la salsa:
 -   Comino c/n
 -   Pimentón c/n
 
-[1](http://recetasdeargentina.com.ar/locro/)
+Receta original [1](http://recetasdeargentina.com.ar/locro/)
