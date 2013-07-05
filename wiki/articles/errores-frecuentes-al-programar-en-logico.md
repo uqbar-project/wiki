@@ -31,8 +31,8 @@
 -   Mal uso del pattern matching, en dos versiones:
     -   No aprovecharlo para quedarse con una parte de una estructura más grande (functor o lista).
     -   Usar patrones demasiado específicos, perdiendo la oportunidad de construir predicados polimórficos.
--   Usar igualdad (**=**) en lugar de **is**.
--   Usar el símbolo **=** en lugar de la misma variable.
+-   Usar igualdad (**=**) en lugar de **is**. -&gt; Explicación: el = no resuelve cuentas. Es la igualdad más trivial, la igualdad visual y directa de patrones y átomos.
+-   [ Usar el símbolo **=** en lugar de la misma variable, ó del individuo correspondiente](Sobre_el_uso_del_igual_(=)_en_Prolog "wikilink").
 
 ### Cuestiones de estilo
 
