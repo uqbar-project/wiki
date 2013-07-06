@@ -14,26 +14,28 @@ Vamos a estudiar éstos casos:
 `   padre(Hermano2,Padre2),`
 `   madre(Hermano1,Madre1),`
 `   madre(Hermano2,Madre2),`
-`   Padre1 is Padre2,`
+`   `**`Padre1` `is` `Padre2,` `%<=` `Acá`**` `
 `   Madre1 \= Madre2.`
 
 Ésta solución también **está mal**:
 
 `hacerrrrrrrrr`
 
-Éste título significa, por un lado, que
+**Si el is sólo sirve para cuentas,**
 
 -   No vale hacer <algo> `is` `Variable.`
 -   No vale hacer <algo> `is` `4.`
 
 Si bien funciona, debemos usar las herramientas para lo que corresponde. Cuando una persona lee un is, espera cuentas. Debemos usar las abstracciones que comuniquen correctamente nuestras ideas.
 
-Por otro lado, lo siguiente directamente no funciona:
+**Si las cuentas sólo se hacen con is,**
 
 -   No vale hacer `Variable` `=` `5` `*` `3.`
 -   No vale hacer `factorial(N+1,Fac).` (se debe hacer `Siguiente` `is` `N+1,` `factorial(Siguiente,Fac).` )
 
-Entonces:
+(Este código directamente no funciona).
+
+**Entonces:**
 
 -   **Sí** vale `Algo` `is` `Variable` `+` `1.` (Siempre que Variable venga unificada).
 
@@ -44,7 +46,7 @@ Más abajo la solución certera. === Variable = OtraVariable === Ésta solución
 `   padre(Hermano2,Padre2),`
 `   madre(Hermano1,Madre1),`
 `   madre(Hermano2,Madre2),`
-`   Padre1 = Padre2,`
+`   `**`Padre1` `=` `Padre2,` `%<=` `Acá`**` `
 `   Madre1 \= Madre2.`
 
 Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
