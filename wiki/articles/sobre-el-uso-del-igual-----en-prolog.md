@@ -53,7 +53,7 @@ Más abajo la solución certera. === Variable = OtraVariable === Ésta solución
 
 La idea de *verificación* que nos ofrece Lógico nos permite representar una igualdad de manera mucho más sencilla, más directa. Sabiendo que Prolog *considera cierta una consulta si sus variables matchean, y falsas si no*, podemos hacer las cosas más declarativas:
 
-El padre es el mismo, entonces, **'que sea la misma variable**'. Éste código **está bien:**
+Si el padre *es el mismo*, entonces, *que sea la misma variable*. Éste código **está bien:**
 
 `hermanastros(Hermano1,Hermano2):-`
 `   padre(Hermano1,`**`ElPadre`**`),`
