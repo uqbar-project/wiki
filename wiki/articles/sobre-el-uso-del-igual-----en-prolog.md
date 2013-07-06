@@ -3,7 +3,7 @@
 Vamos a estudiar éstos casos:
 
 1.  "Dos personas son hermanastros cuando tienen igual padre y diferente madre"
-2.  "
+2.  *<en construcción>*
 
 ### El is sólo se usa para cuentas, las cuentas sólo se hacen con is
 
@@ -19,7 +19,7 @@ Vamos a estudiar éstos casos:
 
 Ésta solución también **está mal**:
 
-`hacerrrrrrrrr`
+*<en construcción>*
 
 **Si el is sólo sirve para cuentas,**
 
@@ -31,13 +31,13 @@ Si bien funciona, debemos usar las herramientas para lo que corresponde. Cuando 
 **Si las cuentas sólo se hacen con is,**
 
 -   No vale hacer `Variable` `=` `5` `*` `3.`
--   No vale hacer `factorial(N+1,Fac).` (se debe hacer `Siguiente` `is` `N+1,` `factorial(Siguiente,Fac).` )
+-   No vale hacer `factorial(N+1,Fac).` (¡Hay una cuenta, y falta un is!)
 
 (Este código directamente no funciona).
 
 **Entonces:**
 
--   **Sí** vale `Algo` `is` `Variable` `+` `1.` (Siempre que Variable venga unificada).
+-   **Sí** vale `Resultado` `is` `Variable` `+` `1.` (Siempre que Variable venga unificada).
 
 Más abajo la solución certera. === Variable = OtraVariable === Ésta solución **está mal**:
 
@@ -70,14 +70,14 @@ En éste caso, como *las variables con nombres diferentes no representan una res
 
 Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
 
-=== Variable = individuo ===
-
-Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
+=== Variable = individuo === *<en construcción>* Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
 
 === Casos en los que el = es correcto ===
 
--   ""
+-   *<en construcción>*
 
 ### Conclusión
 
 El igual es necesario en contados casos. La mayoría de las veces uno se puede arreglar con la metáfora de identidad de lógico, y con un poquito de unificación y pattern matching.
+
+Usemos con criterio las herramientas y conceptos que nos da el paradigma.
