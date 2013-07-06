@@ -49,6 +49,25 @@ Más abajo la solución certera. === Variable = OtraVariable === Ésta solución
 `   `**`Padre1` `=` `Padre2,` `%<=` `Acá`**` `
 `   Madre1 \= Madre2.`
 
+**¿Por qué está mal?** Porque tiene cierta imperatividad, en donde nosotros
+
+La idea de *verificación* que nos ofrece Lógico es más amplia que "verificar que sean iguales". Sabiendo que Prolog *considera cierta una consulta si sus variables matchean, y falsas si no*, la idea es más directa, y podemos hacer las cosas más declarativas:
+
+El padre es el mismo, entonces, **'que sea la misma variable**'. Éste código **está bien:**
+
+`hermanastros(Hermano1,Hermano2):-`
+`   padre(Hermano1,`**`ElPadre`**`),`
+`   padre(Hermano2,`**`ElPadre`**`),`
+`   madre(Hermano1,Madre1),`
+`   madre(Hermano2,Madre2),`
+`   Madre1 \= Madre2.`
+
+Así se aprovechan mejor las herramientas mencionadas, y redujimos un poco la imperatividad.
+
+*Que dos variables tengan el mismo nombre, es una restricción implícita de igualdad*
+
+En éste caso, como *las variables con nombres diferentes no representan una restricción de diferencia*, tenemos que forzar dicha restricción con el `\=`
+
 Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
 
 === Variable = individuo ===
@@ -56,6 +75,8 @@ Más abajo la solución certera. === Variable = OtraVariable === Ésta solución
 Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
 
 === Casos en los que el = es correcto ===
+
+-   ""
 
 ### Conclusión
 
