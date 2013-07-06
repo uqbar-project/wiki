@@ -49,9 +49,9 @@ Más abajo la solución certera. === Variable = OtraVariable === Ésta solución
 `   `**`Padre1` `=` `Padre2,` `%<=` `Acá`**` `
 `   Madre1 \= Madre2.`
 
-**¿Por qué está mal?** Porque tiene cierta imperatividad, en donde nosotros
+**¿Por qué está mal?** Porque tiene cierta imperatividad, en donde nosotros estamos forzando a mano que los padres sean iguales, y que las madres sean diferentes.
 
-La idea de *verificación* que nos ofrece Lógico es más amplia que "verificar que sean iguales". Sabiendo que Prolog *considera cierta una consulta si sus variables matchean, y falsas si no*, la idea es más directa, y podemos hacer las cosas más declarativas:
+La idea de *verificación* que nos ofrece Lógico nos permite representar una igualdad de manera mucho más sencilla, más directa. Sabiendo que Prolog *considera cierta una consulta si sus variables matchean, y falsas si no*, podemos hacer las cosas más declarativas:
 
 El padre es el mismo, entonces, **'que sea la misma variable**'. Éste código **está bien:**
 
