@@ -10,5 +10,4 @@ Ftp server
 
 -   Server: ftp.uqbar-wiki.org
 -   User: uqbarwik
--   Pass: tA5X45n3qb
 
