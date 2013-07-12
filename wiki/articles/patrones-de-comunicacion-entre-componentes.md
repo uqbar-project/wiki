@@ -1,4 +1,7 @@
-AVISO: Este contenido está desactualizado, se reemplaza por el apunte que aparece en <https://docs.google.com/document/d/1EVPwqFyq2TW5Z5_VUeWdh9yLesxPBbSBzke2jHNURuk/edit?usp=sharing>
+AVISO @Deprecated
+-----------------
+
+Este contenido está desactualizado, se reemplaza por el apunte que aparece en <https://docs.google.com/document/d/1EVPwqFyq2TW5Z5_VUeWdh9yLesxPBbSBzke2jHNURuk/edit?usp=sharing>
 
 Memoria compartida (*shared memory*)
 ------------------------------------
