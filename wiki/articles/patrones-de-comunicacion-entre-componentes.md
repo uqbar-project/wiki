@@ -1,3 +1,5 @@
+AVISO: Este contenido está desactualizado, se reemplaza por el apunte que aparece en <https://docs.google.com/document/d/1EVPwqFyq2TW5Z5_VUeWdh9yLesxPBbSBzke2jHNURuk/edit?usp=sharing>
+
 Memoria compartida (*shared memory*)
 ------------------------------------
 
@@ -140,6 +142,8 @@ El ejemplo más preciso de esta idea se encuentra en los lenguajes funcionales p
 Si bien la comunicación puede ser bidireccional, el conocimiento (y por lo tanto el acoplamiento) es *a priori* unidireccional, es decir, el componente llamado no tiene ningún conocimiento de el origen del mensaje y aún puede devolver información sin tener conocimiento del destino de la misma.
 
 La aclaración *a priori* en el párrafo anterior se explica porque en lenguajes con efecto (es decir, la mayoría de los lenguajes que usamos habitualmente en la industria) los parámetros podrían ser modificados dentro del componente. Para estudiar el acoplamiento en estos contextos debemos determinar cuánto debe saber el componente llamado acerca de sus parámetros, por ejemplo si puede o no modificarlos. Esto a su vez depende del tipo de [pasaje de parámetros](pasaje-de-parametros.html) que utilicemos (por ejemplo, pasaje de parámetros por copia o pasaje de parámetros por referencia). En el caso de pasaje por parámetros por referencia, la modificación del parámetro recibido puede ser un mecanismo adicional de comunicación entre los componentes.
+
+TODO: Este ejemplo no inicializa correctamente la pila y tira error.
 
 ### Ejemplo con Call-By-Reference
 
