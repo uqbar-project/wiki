@@ -40,7 +40,7 @@ Para instalarlo en Ubuntu se puede hacer:
 
 `sudo apt-get install default-jdk`
 
-Eso instalará el jdk default, si se desea instalar en cambio el JDK de Sun se puede hacer:
+Eso instalará el jdk default (para Ubuntu es *OpenJDK de la versión que se bajaron*), si se desea instalar en cambio el JDK de Sun se puede hacer:
 
 `sudo apt-get install sun-java6-jdk sun-java6-jre`
 
