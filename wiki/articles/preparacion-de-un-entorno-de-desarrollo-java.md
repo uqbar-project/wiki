@@ -22,7 +22,7 @@ JDK (Java Development Kit)
 
 Contiene un compilador y una máquina virtual (el runtime) que traduce a código de máquina el código intermedio que genera el compilador (.java → COMPILADOR (javac.exe) → .class → VM (java.exe) → ejecutable final).
 
-Al tiempo de escribir este artículo la última versión estable es 1.6. Para el propósito aquí descripto es recomendable instalar la *Standard Edition*.
+Al tiempo de escribir este artículo la última versión estable es 1.7. Para el propósito aquí descripto es recomendable instalar la *Standard Edition*.
 
 ### Download e instalación base
 
@@ -30,7 +30,7 @@ A continuación se detallan los pasos básicos de instalación según el sistema
 
 Este es el link de [downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
-Desde ahí buscan el Latest Release (a la fecha de hoy es Java Platform (JDK) 7u7) y se descargan el JDK del sistema operativo que esté instalado en sus máquinas.
+Desde ahí buscan el Latest Release y se descargan el JDK del sistema operativo que esté instalado en sus máquinas.
 
 Para más detalles adicionales a los que se encuentran en esta página, se puede consultar el [manual de instalación de sun](http://java.sun.com/javase/6/webnotes/install/index.html).
 
