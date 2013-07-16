@@ -1,7 +1,9 @@
 Pre-requisitos
 --------------
 
-Asumimos que tenés instaladas las herramientas básicas.
+Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas instalada una JDK (no sirve que sea JRE).
+
+Para más ayuda, seguí este link.
 
 Framework Grails
 ----------------
