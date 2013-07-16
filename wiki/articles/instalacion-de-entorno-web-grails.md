@@ -22,3 +22,12 @@ Si bien se pueden descargar varios plugins para eclipse, recomendamos bajarse el
 -   <http://www.springsource.org/downloads/sts-ggts> (**IMPORTANTE**: elegir GROOVY/GRAILS TOOL SUITE, no SPRING TOOL SUITE)
 -   Más información en <http://grails.org/products/ggts>
 
+El IDE trae consigo un Web Server Tomcat integrado con el entorno, sugerimos abrir un browser cliente por afuera del entorno de desarrollo.
+
+Cómo empezar
+------------
+
+-   Tutoriales para conocer la tecnología: <http://grails.org/start>
+-   Manual de referencia: <http://grails.org/doc/latest/guide/>
+-   Plugins que se pueden instalar: <http://grails.org/plugins/>
+
