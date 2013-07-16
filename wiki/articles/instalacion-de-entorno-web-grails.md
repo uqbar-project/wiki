@@ -1,7 +1,7 @@
 Pre-requisitos
 --------------
 
-Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas instalada una JDK (no sirve que sea JRE).
+Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas una JDK (no sirve que sea JRE).
 
 Para más ayuda, seguí este [link](preparacion-de-un-entorno-de-desarrollo-java.html).
 
