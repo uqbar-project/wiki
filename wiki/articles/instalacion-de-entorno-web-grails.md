@@ -12,7 +12,7 @@ Si bien se pueden descargar varios plugins para eclipse, recomendamos bajarse el
 
 -   <http://www.springsource.org/downloads/sts-ggts> (**IMPORTANTE**: elegir GROOVY/GRAILS TOOL SUITE, no SPRING TOOL SUITE)
     -   **Nota:** para máquinas con algunos años es posible que funcione mejor con la versión Eclipse Juno. En caso contrario podés probar versiones más nuevas.
--   Más información en <http://grails.org/products/ggts>
+    -   Más información en <http://grails.org/products/ggts>
 
 El IDE trae consigo
 
