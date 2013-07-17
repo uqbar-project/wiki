@@ -23,9 +23,15 @@ Si bien se pueden descargar varios plugins para eclipse, recomendamos bajarse el
 
 El IDE trae consigo un Web Server Tomcat integrado con el entorno (aunque por cuestiones de performance les recomendamos que cuando prueben abran un browser que no esté embebido con el entorno de desarrollo sino que lo corran por fuera del mismo).
 
-**TODO : Completar la instalación**
+### Completando la instalación
 
-### Si no quieren usar Eclipse
+-   La primera pantalla que aparece es el Dashboard (si no aparece, navegar por la barra de herramientas hasta encontrarla), ir a la solapa Extensions. Instalar
+    -   Grails support
+    -   Groovy-Eclipse
+    -   SVN
+
+Si no quieren usar Eclipse
+--------------------------
 
 Después buscar un IDE de su agrado e incorporarle el plugin para Grails, acá tienen un link para integrarlo con IDEA: <http://grails.org/IDEA+Integration>
 
