@@ -11,12 +11,17 @@ Entorno integrado de desarrollo (IDE)
 Si bien se pueden descargar varios plugins para eclipse, recomendamos bajarse el Groovy/Grails Toolkit Suite del sistema operativo que tengan en
 
 -   <http://www.springsource.org/downloads/sts-ggts> (**IMPORTANTE**: elegir GROOVY/GRAILS TOOL SUITE, no SPRING TOOL SUITE)
+    -   **Nota:** para máquinas con algunos años es posible que funcione mejor con la versión Eclipse Juno. En caso contrario podés probar versiones más nuevas.
 -   Más información en <http://grails.org/products/ggts>
 
 El IDE trae consigo
 
 -   el framework Grails
--   un Web Server Tomcat integrado con el entorno (aunque por cuestiones de performance les recomendamos que cuando prueben abran un browser que no esté embebido con el entorno de desarrollo sino que lo corran por fuera del mismo)
+-   un Web Server Tomcat integrado con el entorno (aunque por cuestiones de performance les recomendamos que cuando prueben abran un browser que no esté embebido con el entorno de desarrollo sino que lo corran por fuera del mismo).
+
+### Si quieren instalarlo manualmente
+
+También pueden instalar el STS (Spring Toolkit Suite) y luego incorporarle el Grails support | Groovy compiler. Esto les permitirá jugar con el framework Grails y el compilador Groovy que uds. quieran.
 
 ### Si no quieren usar Eclipse
 
