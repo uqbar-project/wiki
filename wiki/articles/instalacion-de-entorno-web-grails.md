@@ -16,7 +16,7 @@ Si bien se pueden descargar varios plugins para eclipse, recomendamos bajarse el
 
 El IDE trae consigo
 
--   el framework Grails (fijo, apuntando al último release)
+-   el framework Grails (apuntando al último release de producción disponible)
 -   el compilador de Groovy que forma el par Grails-Groovy asociado
 -   un Web Server Tomcat integrado con el entorno (aunque por cuestiones de performance les recomendamos que cuando prueben abran un browser que no esté embebido con el entorno de desarrollo sino que lo corran por fuera del mismo).
 
