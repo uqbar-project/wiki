@@ -26,7 +26,7 @@ Recomendamos descargar la última versión (*Download latest release*) del sigui
 
 y luego seguir las instrucciones que figuran en el sitio (link Installation)
 
-Después buscan un IDE de su agrado y le incorporan plugin para Grails
+Después buscan un IDE de su agrado y le incorporan plugin para Grails, acá tienen un link para integrarlo con IDEA: <http://grails.org/IDEA+Integration>
 
 Cómo empezar
 ------------
