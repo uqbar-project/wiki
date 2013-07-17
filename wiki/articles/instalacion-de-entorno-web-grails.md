@@ -25,10 +25,12 @@ El IDE trae consigo un Web Server Tomcat integrado con el entorno (aunque por cu
 
 ### Completando la instalación
 
--   La primera pantalla que aparece es el Dashboard (si no aparece, navegar por la barra de herramientas hasta encontrarla), ir a la solapa Extensions. Instalar
+-   La primera pantalla que aparece es el Dashboard (si no aparece, navegar por la barra de herramientas hasta encontrarla), ir a la solapa Extensions. Seleccionar
     -   Grails support
     -   Groovy-Eclipse
-    -   SVN
+    -   Subversive
+
+y luego presionar el botón Install.
 
 Si no quieren usar Eclipse
 --------------------------
