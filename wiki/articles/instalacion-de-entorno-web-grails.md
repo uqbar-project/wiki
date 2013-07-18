@@ -17,7 +17,7 @@ Entorno integrado de desarrollo (IDE)
 
 Si bien se pueden descargar varios plugins para eclipse, recomendamos bajarse el Spring Toolkit Suite del sistema operativo que tengan en
 
--   <http://www.springsource.org/downloads/sts-ggts> (**IMPORTANTE**: elegir SPRING TOOL SUITE, no GROOVY/GRAILS TOOL SUITE ya que si bien define una configuración básica y sencilla, no permite jugar con distintas versiones de Grails/Groovy)
+-   <http://www.springsource.org/downloads/sts-ggts> (**IMPORTANTE**: elegir SPRING TOOL SUITE, no GROOVY/GRAILS TOOL SUITE ya que si bien define una configuración básica, no permite jugar con distintas versiones de Grails/Groovy, entre otras cosas)
     -   **Nota:** la versión Eclipse Juno es más liviana, las versiones más nuevas pueden resultar pesadas dependiendo de cada máquina.
     -   Más información en <http://grails.org/products/ggts>
 
