@@ -25,6 +25,12 @@ El IDE trae consigo un Web Server Tomcat integrado con el entorno (aunque por cu
 
 ### Completando la instalación
 
+-   Conviene crear un acceso directo al STS especificando a qué JDK apuntar:
+
+`STS -vm "/path donde está la JDK" `
+
+-   -   incluir el directorio bin en el path
+    -   las comillas son importantes en caso de haber espacios en el directorio
 -   La primera pantalla que aparece es el Dashboard (si no aparece, navegar por la barra de herramientas hasta encontrarla), ir a la solapa Extensions. Seleccionar
     -   Grails support
     -   Groovy-Eclipse
