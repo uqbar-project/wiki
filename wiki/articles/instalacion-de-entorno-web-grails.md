@@ -57,3 +57,11 @@ Cómo empezar
 -   Manual de referencia: <http://grails.org/doc/latest/guide/>
 -   Plugins que se pueden instalar: <http://grails.org/plugins/>
 
+Problemas comunes
+-----------------
+
+-   Grails 2.2.2/2.2.3 y la versión 1.7.0\_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app
+
+`Could not determine Hibernate dialect for database name [H2]!`
+
+reemplazá la versión de tu JDK por una anterior.
