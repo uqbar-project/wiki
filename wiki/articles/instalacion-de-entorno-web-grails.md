@@ -38,8 +38,8 @@ El IDE trae consigo un Web Server Tomcat integrado con el entorno (aunque por cu
 
 y luego presionar el botón Install.
 
-Configuración de Grails
------------------------
+Configuración del entorno Grails
+--------------------------------
 
 -   Primero, seguir las configuraciones estándares para cualquier eclipse como se muestra en [este link](preparacion-de-un-entorno-de-desarrollo-java-configuraciones-adicionales.html)
 -   Luego, filtrar por la palabra "Grails" y apuntar la versión de Grails en el directorio donde se instaló (Groovy &gt; Grails y hacer Add... Browse y buscar la carpeta correspondiente al paso 1)
