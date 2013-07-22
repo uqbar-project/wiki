@@ -50,6 +50,11 @@ Si no quieren usar Eclipse
 
 Después buscar un IDE de su agrado e incorporarle el plugin para Grails, acá tienen un link para integrarlo con IDEA: <http://grails.org/IDEA+Integration>
 
+Cómo crear un proyecto desde cero
+---------------------------------
+
+Muy simple, New &gt; Grails project.
+
 Cómo empezar
 ------------
 
@@ -65,6 +70,8 @@ Problemas comunes
 `Could not determine Hibernate dialect for database name [H2]!`
 
 reemplazá la versión de tu JDK por una anterior.
+
+-   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/STS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
 
 Integración con otros lenguajes de programación
 -----------------------------------------------
