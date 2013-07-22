@@ -38,11 +38,11 @@ El IDE trae consigo un Web Server Tomcat integrado con el entorno (aunque por cu
 
 y luego presionar el botón Install.
 
-Una vez instalado, ir a Window &gt; Preferences y
+Configuración de Grails
+-----------------------
 
--   configurar encoding por default en UTF-8 (como se muestra en la [instalación de herramientas)](preparacion-de-un-entorno-de-desarrollo-java.html). Aplicar cambios
--   filtrar por la palabra "spell" y desactivar la corrección ortográfica (Spelling &gt; desactivar el check Enable spell checking). Aplicar cambios
--   filtrar por la palabra "Grails" y apuntar la versión de Grails en el directorio donde se instaló (Groovy &gt; Grails y hacer Add... Browse y buscar la carpeta correspondiente al paso 1)
+-   Primero, seguir las configuraciones estándares para cualquier eclipse como se muestra en [este link](preparacion-de-un-entorno-de-desarrollo-java-configuraciones-adicionales.html)
+-   Luego, filtrar por la palabra "Grails" y apuntar la versión de Grails en el directorio donde se instaló (Groovy &gt; Grails y hacer Add... Browse y buscar la carpeta correspondiente al paso 1)
 -   si estás trabajando en un proxy tenés que configurar variables en el Grails Launch (TODO: Ver configuración Telecom)
 
 Si no quieren usar Eclipse
