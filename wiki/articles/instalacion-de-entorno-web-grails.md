@@ -65,3 +65,11 @@ Problemas comunes
 `Could not determine Hibernate dialect for database name [H2]!`
 
 reemplazá la versión de tu JDK por una anterior.
+
+Integración con otros lenguajes de programación
+-----------------------------------------------
+
+-   [Integración Grails con Xtend](integracion-grails-con-xtend.html)
+-   [Integración Grails con Scala](integracion-grails-con-scala.html)
+-   Grails se integra naturalmente con Java, sólo hay que definir las clases Java en el source folder src/java y se incluyen con la aplicación web
+
