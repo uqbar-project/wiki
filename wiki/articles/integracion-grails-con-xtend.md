@@ -40,3 +40,9 @@ Consideraciones para un proyecto Grails + Xtend
 `    // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
 `    build 'org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.4.2'`
 `}`
+
+Links
+-----
+
+-   Volver a [\[\[Instalación\_de\_Entorno\_Web\_Grails](--instalacion-de-entorno-web-grails.html)
+
