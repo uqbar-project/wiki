@@ -28,15 +28,15 @@ Consideraciones para un proyecto Grails + Xtend
 -   Para compilar el proyecto en Eclipse, hay que hacer Project &gt; Properties, en Build Path &gt; solapa Libraries &gt; Add Library &gt; Xtend Library
 -   En el archivo BuildConfig.groovy de cada proyecto, hay que incorporar la dependencia con las librerías propias de Xtend para que en la aplicación se incluya la librería xtend:
 
-`   repositories {`
-`       ...`
-`       mavenLocal()`
-`       mavenCentral()`
-
-`       // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories`
-`       mavenRepo "`[`http://repo.maven.apache.org/maven2/`](http://repo.maven.apache.org/maven2/)`"`
-`       ...`
-`   }`
-`   dependencies {`
-`       // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
-`       build 'org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.4.2'`
+`repositories {`
+`    ...`
+`    mavenLocal()`
+`    mavenCentral()`
+`    // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories`
+`    mavenRepo "`[`http://repo.maven.apache.org/maven2/`](http://repo.maven.apache.org/maven2/)`"`
+`    ...`
+`}`
+`dependencies {`
+`    // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
+`    build 'org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.4.2'`
+`}`
