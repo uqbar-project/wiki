@@ -1,22 +1,22 @@
 ### Errores conceptuales más importantes
 
 -   Confundir los conceptos del paradigma, por ejemplo:
-    -   predicados con funciones.
-    -   variables con individuos (en particular átomos).
+    -   predicados con funciones - los predicados no devuelven cosas, tienen valor de verdad. Tenerlo en cuenta para la cantidad de parámetros y para no consultarlos mal
+    -   variables con individuos (en particular átomos) - sólo escriban variables con mayúscula!
     -   [predicados con individuos](errores-comunes--usar-un-predicado-como-si-fuera-una-variable.html)
 -   Errores lógicos propiamente dichos:
-    -   Confundir **Y** con **O**.
-    -   Mezclar antecedente y consecuente en un **forall**
+    -   Confundir [**Y** con **O**](paradigma-logico---conjuncion-y-disyuncion.html)
+    -   [Mezclar antecedente y consecuente en un **forall**](paradigma-logico---el-forall-tener-claro-lo-que-se-quiere-decir.html)
     -   Confundir *existe* con *para todo* (forall).
 -   Estilos de programación no *lógicos*, por ejemplo:
-    -   Utilización innecesaria de listas.
+    -   [Utilización innecesaria de listas](paradigmalogico---listas-errores-comunes--findall-y-member.html).
     -   Estrategias algorítmicas.
 -   Programación "con efectos colaterales", por ejemplo intentos de "asignar" más de una vez un valor una misma variable.
 -   Falta de abstracción, que puede verse reflejada en:
     -   Uso de trucos programáticos de bajo nivel, en lugar de representaciones abstractas de alto nivel.
     -   Ausencia de predicados auxiliares que abstraigan conceptos reutilizables en diferentes predicados de alto nivel (lo que normalmente lleva a la repetición de código).
     -   Malas deciciones a la hora de separar un predicado en subtareas, que llevan a tener predicados auxiliares que no representan abstracciones o conceptos útiles.
--   Problemas de inversibilidad; ya sea por falta de generación o por hacerlo incorrecta-/innecesariamente.
+-   [Problemas de inversibilidad](paradigma-logico---casos-de-no-inversibilidad.html); ya sea por falta de generación o por hacerlo incorrecta-/innecesariamente.
 
 ### Problemas generales de programación
 
