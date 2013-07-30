@@ -11,13 +11,15 @@ Un objeto bloque representa un cacho de código que no se ejecutó, ese código 
 
 Si escribo en un workspace:
 
-x := 0. \[ x := x + 1\].
+`x := 0.`
+`[ x := x + 1].`
 
 ¿A qué objeto apunta la variable x después de ejecutar esas 2 líneas de código? Claro, al objeto cero (0)
 
 Para que la variable x apunte al objeto uno (1) tenemos que decirle al bloque que se ejecute.
 
-x := 0. \[ x := x + 1\] value.
+`x := 0.`
+`[ x := x + 1] value.`
 
 Ahora sí, después de ejecutar esas 2 líneas de código la variable x va a apuntar al objeto uno (1). Es importante darse cuenta que value es un mensaje que le llega al objeto bloque \[ x := x + 1\].
 
@@ -25,11 +27,10 @@ El mensaje value hace que se ejecute el código que está dentro del bloque y qu
 
 Ejemplo:
 
-\[ pepita come: 14.
-
-` 5 factorial. `
-` pepe sueldo.`
-` 3 between: 1 and: 5. ] value. "Esto devuelve el objeto true porque es lo que devuelve el último envío de mensaje dentro del bloque"`
+`[ pepita come: 14. `
+`  5 factorial. `
+`  pepe sueldo.`
+`  3 between: 1 and: 5. ] value. "Esto devuelve el objeto true porque es lo que devuelve el último envío de mensaje dentro del bloque"`
 
 Bloques como funciones
 ----------------------
