@@ -94,13 +94,11 @@ Resumen ejecutivo: ojo al piojo, inversibilidad es una cosa muy distinta a simet
 ¿Cómo hacés que un predicado sea inversible?
 --------------------------------------------
 
-En principio, todo predicado es inversible salvo que caiga en un caso de no-inversibilidad.
+En principio, todo predicado es inversible salvo que caiga en un [caso de no-inversibilidad](paradigma-logico---casos-de-no-inversibilidad.html).
 
-Estos casos tienen que ver con las submetas de un predicado que requieren variables ligadas, en estas cosas es que hay que fijarse.
+Estos casos tienen que ver con las submetas de un predicado que requieren variables ligadas, en estas cosas es que hay que fijarse para saber qué hace falta [generar](paradigma-logico---generacion.html).
 
 Por ejemplo: cuando una de las componentes de un predicado es un not/1 , necesitás que el predicado que le mandás tenga sus parámetros unificados. Cuando usás una evaluación matemática (ej: X is N \* 2), necesitás que lo de la derecha (la N) esté unificado.
-
-Ver el detalle en [Paradigma Lógico - casos de no inversibilidad](paradigma-logico---casos-de-no-inversibilidad.html)
 
 ¿Cuál sería el uso?
 -------------------
