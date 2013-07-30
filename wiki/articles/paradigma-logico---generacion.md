@@ -24,3 +24,5 @@ Entonces, no es que sea obligatorio generar, sino que significa distintas cosas 
 `   cantidadEjercitos(Jugador,Cant):-`
 `      findall(N,ocupa(Jugador,_,N),ListCants),`
 `      sumlist(ListCants,Cant).`
+
+Hay muchas causas de problemas de inversibilidad, para ver más ejemplos de diferentes tipos y cómo solucionarlos podés ver [Paradigma Lógico - casos de no inversibilidad](paradigma-logico---casos-de-no-inversibilidad.html)
