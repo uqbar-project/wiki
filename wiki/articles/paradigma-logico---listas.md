@@ -217,7 +217,8 @@ Si queremos hacer un predicado que me diga cuantos hijos pibes tiene una persona
 Los X que me interesan son los que cumplen la consulta (padre(P,H),esPibe(H))  
 
 `cuantosPibes(Persona,Cant) :- `
-`     findall(X,(padre(P,H),esPibe(H)),Pibes),`
+`     persona(Persona),`
+`     findall(H,(padre(Persona,H),esPibe(H)),Pibes),`
 `     length(Pibes,Cant).`
 
 Otro ejemplo usando listas
@@ -251,4 +252,35 @@ Recursividad Con Listas
 
 - Ver [Recursividad en Logico](recursividad-en-logico.html)  
 
+Errores comunes: findall y member
+---------------------------------
 
+El error más común para quienes no están acostumbrados a pensar en términos del paradigma es armar listas cuando no son necesarias para la resolución del problema. Esto se pone en evidencia por el uso del findall seguido por un member sobre la lista resultante. El findall arma listas, el member las desarma... son operaciones inversas!
+
+Por ejemplo, si quiero saber quiénes son los hijos de homero puedo consultar padre(homero,Hijo). Resolver esto como:
+
+`?- findall(H, padre(homero,H), Hijos), member(Hijo,Hijos).`
+
+es no estar entendiendo la forma de pensar.
+
+Si bien este primer ejemplo puede parecer obvio, hay casos en los cuales no es tan evidente, por ejemplo cuando se arma una lista de los que cumplen CONDICION con el predicado A y el predicado B consulta A y luego se obtienen los elementos con member.
+
+Siguiendo el ejemplo anterior de los hijos pibes, podemos mostrar el problema anterior de esta forma:
+
+`hijosPibes(P,Pibes) :- persona(P),`
+`     findall(H,(padre(P,H),esPibe(H)),Pibes).`
+`esHijoPibe(Persona,Hijo) :-`
+`     hijosPibes(Persona,Pibes),`
+`     member(Hijo,Pibes).`
+
+En ese caso todo lo que necesitábamos era consultar por existencia quién cumple CONDICION, y si todavía nos interesa hijosPibes/2 podríamos hacer los siguientes cambios:
+
+`hijosPibes(P,Pibes) :- persona(P),`
+`     findall(Hijo,esHijoPibe(P,Hijo),Pibes).`
+`esHijoPibe(Persona,Hijo) :-`
+`     padre(Persona,H),`
+`     esPibe(H).`
+
+En este caso fue simple porque B modelaba directamente CONDICION, pero bien podría pasar que nos esté faltando una abstracción para modelar CONDICION, que podemos solucionar definiendo otro predicado C y modificando los predicados A y B para que usen C.
+
+[Y otro caso típico de mal uso de findall y member aparece al tratar de usar el forall](paradigma-logico---forall---no-siempre-con-member.html).
