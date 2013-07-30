@@ -9,7 +9,7 @@
     -   [Mezclar antecedente y consecuente en un **forall**](paradigma-logico---el-forall-tener-claro-lo-que-se-quiere-decir.html)
     -   Confundir *existe* con *para todo* (forall).
 -   Estilos de programación no *lógicos*, por ejemplo:
-    -   [Utilización innecesaria de listas](paradigmalogico---listas-errores-comunes--findall-y-member.html).
+    -   [Utilización innecesaria de listas](paradigma-logico---listas-errores-comunes--findall-y-member.html).
     -   Estrategias algorítmicas.
 -   Programación "con efectos colaterales", por ejemplo intentos de "asignar" más de una vez un valor una misma variable.
 -   Falta de abstracción, que puede verse reflejada en:
