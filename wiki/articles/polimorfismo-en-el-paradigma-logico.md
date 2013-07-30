@@ -1,4 +1,6 @@
-**Completar con teoría**
+El polimorfismo permite obtener soluciones más genéricas, que sean válidas para diferentes tipos de datos contemplando las particularidades de cada uno de ellos. En general podemos decir que dos cosas son polimórficas cuando desde algún punto de vista comparten un tipo, o sea que pueden ser tratados indistintamente por quienes no les interesen los detalles en los cuales difieren.
+
+Si bien todos los predicados pueden recibir cualquier tipo de argumento, muchas veces el uso que se hace de ellos en el interior de las cláusulas que lo definen, delimita un rango de tipos de valores que tiene sentido recibir. En lógico no sucede un error si se envía un dato de diferente a los esperados, sino que directamente el predicado falla por no poder unificar el valor recibido con lo esperado, descartándolo como posible respuesta a la consulta.
 
 Ejemplo de Polimorfismo usando functores
 ----------------------------------------
