@@ -35,45 +35,44 @@ Ejemplo:
 Bloques como funciones
 ----------------------
 
-También se puede ver a los bloques como objetos que representan una función sin nombre (o sea, una función anónima).
+También se puede ver a los bloques como objetos que representan una función sin nombre (o sea, una función anónima, como las [Expresiones lambda](expresiones-lambda.html) de funcional!).
 
 El bloque \[ 1 \] es una función constante que siempre devuelve 1 si le decís que se ejecute.
 
-\[ 1 \] value. "Esto devuelve el objeto uno (1)"
+`[ 1 ] value. "Esto devuelve el objeto uno (1)"`
 
 Pero el chiste de las funciones es que reciban parámetros y los bloques también pueden recibir parámetros
 
-\[ :parametro1 :parametro2 :parametro3 ... :parametroN | cuerpoDelBloque \]
+`[ :parametro1 :parametro2 :parametro3 ... :parametroN | cuerpoDelBloque ]`
 
 Ejemplos:
 
-f(x) = 2x -&gt; \[ :x | 2 \* x \] value
+`f(x) = 2x -> [ :x | 2 * x ] value`
+`g(x) = x2 -> [ :x | x raisedTo: 2 ]`
+`h(x,y) = x2 + y2 -> [ :x :y | (x raisedTo: 2) + (y raisedTo: 2) ]`
+`s(a,b,c) = cos a + sen b + c -> [ :a :b :c | a cos + b sin + c ]`
 
-g(x) = x2 -&gt; \[ :x | x raisedTo: 2 \]
+¿Cómo le hacemos para usar bloques que tienen parámetros?
 
-h(x,y) = x2 + y2 -&gt; \[ :x :y | (x raisedTo: 2) + (y raisedTo: 2) \]
-
-s(a,b,c) = cos a + sen b + c -&gt; \[ :a :b :c | a cos + b sin + c \] ¿Cómo le hacemos para usar bloques que tienen parámetros?
-
-f(4) -&gt; \[ :x | 2 \* x \] value: 4 "Esto devuelve el objeto 8"
-
-h(4,3) -&gt; \[ :x :y | (x raisedTo: 2) + (y raisedTo: 2) \] value: 4 value: 3 "Esto devuelve el objeto 25"
-
-s(5,2,1) -&gt; \[ :a :b :c | a cos + b sin + c \] value: 5 value: 2 value: 1 "Esto devuelve el objeto 2.192959612288908"
+`f(4) -> [ :x | 2 * x ] value: 4 "Esto devuelve el objeto 8"`
+`h(4,3) -> [ :x :y | (x raisedTo: 2) + (y raisedTo: 2) ] value: 4 value: 3 "Esto devuelve el objeto 25"`
+`s(5,2,1) -> [ :a :b :c | a cos + b sin + c ] value: 5 value: 2 value: 1 "Esto devuelve el objeto 2.192959612288908"`
 
 Jugando con los bloques
 -----------------------
 
-bloque1 := \[ :unAve | unAve vola: 20. unAve come: 30 \]. bloque2 := \[ :unAve | unAve vola: 50. unAve come: 14 \].
-
-bloque1 value: pepita. "Esto hace que pepita vuele 20 kilometros y morfe 30 gramos de alpiste" bloque2 value: pepita. "Esto hace que pepita vuele 50 kilometros y morfe 14 gramos de alpiste" bloque1 value: pepona. "Esto hace que pepona vuele 20 kilometros y morfe 30 gramos de alpiste"
+`bloque1 := [ :unAve | unAve vola: 20. unAve come: 30 ].`
+`bloque2 := [ :unAve | unAve vola: 50. unAve come: 14 ].`
+`bloque1 value: pepita. "Esto hace que pepita vuele 20 kilometros y morfe 30 gramos de alpiste"`
+`bloque2 value: pepita. "Esto hace que pepita vuele 50 kilometros y morfe 14 gramos de alpiste"`
+`bloque1 value: pepona. "Esto hace que pepona vuele 20 kilometros y morfe 30 gramos de alpiste" `
 
 ¿Cómo funciona el \#ifTrue: y el \#ifFalse:?
 --------------------------------------------
 
 Si en un workspace escribimos
 
-(pepita energia &gt; 0) ifTrue: \[ pepita come: 30 \]
+`pepita energia > 0 ifTrue: [ pepita come: 30 ]`
 
 Pensando en términos de objeto y mensaje (mensaje = selector + parámetros) qué está pasando acá???
 
@@ -85,12 +84,12 @@ Entonces el objeto que tiene la responsabilidad de saber si el bloque debe o no 
 
 Siendo false la única instancia de la clase False y true la única instancia de la clase True, la implementación del método ifTrue: en cada una de las clases es
 
-True &gt;&gt; ifTrue: unBloque
-
+`True >> ifTrue: unBloque`
 `   "self apunta a true entonces queremos que se ejecute el bloque"`
 `   ^unBloque value `
 
-False &gt;&gt; ifTrue: unBloque
-
+`False >> ifTrue: unBloque`
 `   "self apunta a false entonces NO queremos que se ejecute el bloque"`
 `   ^nil`
+
+O sea que las estructuras de control a las que estábamos acostumbrados por el paradigma estructurado, no son más que mensajes polimórficos :D Todo sigue las mismas reglas, objetos y mensajes
