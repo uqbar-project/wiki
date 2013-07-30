@@ -125,10 +125,23 @@ Para que sea inversible debemos generar el dominio para la variable Especie
 `     esEspecie(Especie),`
 `     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).`
 
+Functores y polimorfismo
+------------------------
+
+Algo muy común es tener definiciones como:
+
+`marca(arroz(Marca),Marca).`
+`marca(lacteo(Marca,_),Marca).`
+
+El predicado marca/2 nos va a resultar muy útil para cuando no nos interese qué tipo concreto de producto se está usando, sólo que tenga una marca y nos la sepa decir. Lo importante es ser conscientes de que este predicado no es inversible, con lo cual sería incorrecto tratar de usarlo como generador de marcas por ejemplo. Si nos interesa que sea inversible tenemos que usar otro predicado que nos genere los productos, por ejemplo:
+
+`marca(arroz(Marca),Marca):- precioUnitario(arroz(Marca),_).`
+`marca(lacteo(Marca,TipoLacteo),Marca):- precioUnitario(lacteo(Marca,TipoLacteo),_).`
+
 En resumen
 ----------
 
-Resumimos los cinco casos de inversibilidad con un ejemplo de cada uno
+Resumimos los casos de inversibilidad con un ejemplo de cada uno
 
 **Negación**  
 
@@ -157,3 +170,9 @@ Resumimos los cinco casos de inversibilidad con un ejemplo de cada uno
 ` esEspecieComestible(Especie):- `
 `     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).`
 ` % Especie debe llegar ligada al forall`
+
+**Functores y Polimorfismo**  
+
+` marca(arroz(Marca),Marca).`
+` marca(lacteo(Marca,_),Marca).`
+` % `**`Si` `pretendemos` `usar` `marca/2` `para` `hacer` `consultas` `existenciales`**`, no puede tener _ ni variables que no se generen internamente en el encabezado.`
