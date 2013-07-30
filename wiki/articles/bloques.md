@@ -85,11 +85,11 @@ Entonces el objeto que tiene la responsabilidad de saber si el bloque debe o no 
 Siendo false la única instancia de la clase False y true la única instancia de la clase True, la implementación del método ifTrue: en cada una de las clases es
 
 `True >> ifTrue: unBloque`
-`   "self apunta a true entonces queremos que se ejecute el bloque"`
-`   ^unBloque value `
+`  "self apunta a true entonces queremos que se ejecute el bloque"`
+`  ^unBloque value `
 
 `False >> ifTrue: unBloque`
-`   "self apunta a false entonces NO queremos que se ejecute el bloque"`
-`   ^nil`
+`  "self apunta a false entonces NO queremos que se ejecute el bloque"`
+`  ^nil`
 
 O sea que las estructuras de control a las que estábamos acostumbrados por el paradigma estructurado, no son más que mensajes polimórficos :D Todo sigue las mismas reglas, objetos y mensajes
