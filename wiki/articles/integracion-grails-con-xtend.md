@@ -41,6 +41,15 @@ Consideraciones para un proyecto Grails + Xtend
 `    build 'org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.4.2'`
 `}`
 
+Otra opción puede ser definir esta dependencia:
+
+`dependencies {`
+`    // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
+`    build 'org.eclipse.xtend:org.eclipse.xtend.standalone:2.4.2'`
+`}`
+
+**Nota:** 2.4.2 es en realidad la versión de xtend que se quiera utilizar.
+
 Links
 -----
 
