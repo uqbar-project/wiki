@@ -47,3 +47,6 @@ Integración con Scala
 
 Integración con Xtend
 ---------------------
+
+Integración con Groovy
+----------------------
