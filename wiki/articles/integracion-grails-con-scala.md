@@ -6,7 +6,7 @@ Pre-requisitos
 Instalación del plugin de Scala
 -------------------------------
 
-En el Dashboard, solapa Extensions, buscá Scala-IDE.
+En el Dashboard, solapa Extensions, buscá "Scala IDE for Eclipse".
 
 Integración propiamente dicha
 -----------------------------
