@@ -13,6 +13,7 @@ Agregar dos referencias en el pom
 
 -   al framework Arena (consideramos Arena = Arena-JFace como predeterminado)
 -   al proyecto de dominio (asumimos que vamos a tener dos proyectos separados, uno para el dominio y otro para la ui).
+-   a otros frameworks como JUnit
 
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
