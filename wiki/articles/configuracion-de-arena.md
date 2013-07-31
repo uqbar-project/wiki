@@ -11,26 +11,21 @@ Configurar el parent pom de la siguiente manera:
 
 Agregar dos referencias en el pom
 
--   al framework Arena
+-   al framework Arena (el default es Arena-JFace)
 -   al proyecto de dominio (asumimos que vamos a tener dos proyectos separados, uno para el dominio y otro para la ui).
 
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
 `   `<dependencies>
 `       `<dependency>
+`           `<groupId>`uqbar`</groupId>
+`           `<artifactId>`arena-jface`</artifactId>
+`           `<version>`${arena-version}`</version>
+`       `</dependency>
+`       `<dependency>
 `           `<groupId>`uqbar-project.org`</groupId>
 `           `<artifactId>`videoclub.domain`</artifactId>
 `           `<version>`1.0-SNAPSHOT`</version>
-`       `</dependency>
-`       `<dependency>
-`           `<groupId>`uqbar-project.org`</groupId>
-`           `<artifactId>`arena`</artifactId>
-`           `<version>`${arena-version}`</version>
-`       `</dependency>
-`       `<dependency>
-`           `<groupId>`uqbar-project.org`</groupId>
-`           `<artifactId>`arena-jface`</artifactId>
-`           `<version>`${arena-version}`</version>
 `       `</dependency>
 `       `<dependency>
 `           `<groupId>`junit`</groupId>
