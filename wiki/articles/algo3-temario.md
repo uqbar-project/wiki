@@ -24,8 +24,13 @@ Unidad 2
 Unidad 3
 --------
 
--   [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
+### Entorno
+
 -   [Instalación de Entorno Web Grails](instalacion-de-entorno-web-grails.html)
+
+### Artículos
+
+-   [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
 -   [Referencia de HTML](html.html)
 -   [Referencia de CSS](css.html)
 -   [Creación de un proyecto web basado en JSP y Servlets](creacion-de-un-proyecto-web-basado-en-jsp-y-servlets.html)
