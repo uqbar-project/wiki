@@ -11,7 +11,7 @@ Configurar el parent pom de la siguiente manera:
 
 Agregar dos referencias en el pom
 
--   al framework Arena (el default es Arena-JFace)
+-   al framework Arena (consideramos Arena = Arena-JFace como predeterminado)
 -   al proyecto de dominio (asumimos que vamos a tener dos proyectos separados, uno para el dominio y otro para la ui).
 
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
