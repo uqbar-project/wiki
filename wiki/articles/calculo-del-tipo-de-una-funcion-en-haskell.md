@@ -57,58 +57,69 @@ Ejemplo un poco mas heavy
 
 Siendo
 
-**f x y z = (head y) &gt; (map (\\n -&gt; n x) z)**
+**`f` `x` `y` `z` `=` `(head` `y)` `>` `(map` `(\n` `->` `n` `x)` `z)`**
 
 Vamos a intentar hacer la inferencia de tipos
 
 **Por donde empezamos?**
 
-Primero tenemos que ver qué es **f** ?
+Primero tenemos que ver qué es **f** ? f es una función que tiene 3 parámetros
 
-f es una función que tiene 3 parámetros
+Ponemos 3 flechitas -&gt;
 
--- Ponemos 3 flechitas -&gt;
+`f :: esto es el tipo de `**`x`**` -> esto es el tipo de `**`y`**` -> esto es el tipo de `**`z`**` -> esto es el tipo de lo que devuelve `**`f`**
 
-f :: esto es el tipo de **x** -&gt; esto es el tipo de **y** -&gt; esto es el tipo de **z** -&gt; esto es el tipo de lo que devuelve **f**
+Como head se aplica a una lista **y** tiene que ser una lista
 
--- Como head se aplica a una lista **y** tiene que ser una lista
+`f :: esto es el tipo de `**`x`**` -> [???] -> esto es el tipo de `**`z`**` -> esto es el tipo de lo que devuelve `**`f`**
 
-f :: esto es el tipo de **x** -&gt; \[???\] -&gt; esto es el tipo de **z** -&gt; esto es el tipo de lo que devuelve **f**
+Como map recibe como segundo parámetro una lista, **z** tiene q ser una lista
 
--- Como map recibe como segundo parámetro una lista, **z** tiene q ser una lista
+`f :: esto es el tipo de `**`x`**` -> [???] -> [???] -> esto es el tipo de lo que devuelve `**`f`**
 
-f :: esto es el tipo de **x** -&gt; \[???\] -&gt; \[???\] -&gt; esto es el tipo de lo que devuelve **f**
+La función que es primer parámetro del map **(\\n -&gt; n x)** recibe como parámetro cada elemento de la lista **z**, cada uno de esos elementos va a ser **n**
 
--- La función que es primer parámetro del map **(\\n -&gt; n x)** recibe como parámetro cada elemento de la lista **z**, cada uno de esos elementos va a ser **n**
+Como **n** se está aplicando a **x** podemos inferir que **n** es una función, por lo que **z** es una lista de funciones
 
--- Como **n** se está aplicando a **x** podemos inferir que **n** es una función, por lo que **z** es una lista de funciones
+`f :: esto es el tipo de `**`x`**` -> [???] -> `**`[Dominio` `->` `Imagen]`**` -> esto es el tipo de lo que devuelve `**`f`**
 
-f :: esto es el tipo de **x** -&gt; \[???\] -&gt; **\[Dominio -&gt; Imagen\]** -&gt; esto es el tipo de lo que devuelve **f**
+Como **x** es el parámetro de **n** podemos inferir que **x** pertenece al dominio de **n**, por ende si el **Dominio** es de tipo **a** entonces **x** es de tipo **a**
 
--- Como **x** es el parámetro de **n** podemos inferir que **x** pertenece al dominio de **n**, por ende si el **Dominio** es de tipo **a** entonces **x** es de tipo **a**
+`f :: `**`a`**` -> [???] -> [`**`a`**` -> Imagen] -> esto es el tipo de lo que devuelve `**`f`**
 
-f :: **a** -&gt; \[???\] -&gt; \[**a** -&gt; Imagen\] -&gt; esto es el tipo de lo que devuelve **f**
+Respiremos profundo... Asumimos que Imagen es de tipo **b**
 
--- Respiremos profundo -- Asumimos que Imagen es de tipo **b**
+`f :: a -> [???] -> [a -> `**`b`**`] -> esto es el tipo de lo que devuelve `**`f`**
 
-f :: a -&gt; \[???\] -&gt; \[a -&gt; **b**\] -&gt; esto es el tipo de lo que devuelve **f**
+Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)**
 
--- Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)**
+Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo
 
--- Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo
+El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]**
 
--- El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]**
+Por ende **(head y)** también es de tipo **\[b\]**
 
--- Por ende **(head y)** también es de tipo **\[b\]**
+Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[ **\[ b \]** \]
 
--- Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[ **\[ b \]** \]
+`f :: a -> [ `**`[` `b` `]`**` ] -> [a -> b] -> esto es el tipo de lo que devuelve `**`f`**
 
-f :: a -&gt; \[ **\[ b \]** \] -&gt; \[a -&gt; b\] -&gt; esto es el tipo de lo que devuelve **f**
+La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool**
 
--- La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool**
+`f :: a -> [ [ b ] ] -> [a -> b] -> `**`Bool`**
 
-f :: a -&gt; \[ \[ b \] \] -&gt; \[a -&gt; b\] -&gt; **Bool**
+Nos queda un pequeño detalle, el **(&gt;)** solo puede laburar con listas ordenables entonces **\[b\]** no puede ser cualquier lista, sus elementos tienen que tener la restricción **Ord**
 
---Nos queda un pequeño detalle, el **(&gt;)** solo puede laburar con listas ordenables entonces **\[b\]** no puede ser cualquier lista, sus elementos tienen que tener la restricción **Ord**
+`f :: `**`Ord` `b`**` => a -> [ [ b ] ] -> [a -> b] -> Bool`
 
-f :: **Ord b** =&gt; a -&gt; \[ \[ b \] \] -&gt; \[a -&gt; b\] -&gt; Bool
+### Ejemplo de parcial para pensar
+
+Tenemos esta función:
+
+`f a b c d = maximoSegun (c d).filter (== snd a).map b`
+
+Y sabemos que:
+
+`*Main> :t maximoSegun`
+`maximoSegun :: Ord a1 => (a -> a1) -> [a] -> a`
+
+Cuál es el tipo de f? Ayudita: nótese que al map se le está aplicando sólo un parámetro ;)
