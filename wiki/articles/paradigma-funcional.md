@@ -43,9 +43,9 @@ Extras simpáticos
 Para aprender más sobre el lenguaje Haskell
 -------------------------------------------
 
--   [1](http://en.wikibooks.org/wiki/Haskell)
+-   [Wiki](http://en.wikibooks.org/wiki/Haskell)
 -   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
--   [| Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
+-   [Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
 
 Problemas complejos
 -------------------
