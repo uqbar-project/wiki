@@ -30,14 +30,7 @@ Extras simpáticos
 -   [Expresiones lambda](expresiones-lambda.html)
 -   [Listas por comprensión](listas-por-comprension.html)
 
-Para aprender más sobre el lenguaje Haskell
--------------------------------------------
-
--   [1](http://en.wikibooks.org/wiki/Haskell)
--   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
--   [| Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
-
-### Errores en Haskell
+### Errores comunes
 
 -   [Errores comunes al comenzar a trabajar con Haskell](errores-comunes-al-comenzar-a-trabajar-con-haskell.html)
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
@@ -45,6 +38,14 @@ Para aprender más sobre el lenguaje Haskell
 -   [¿Unexpected ';'?](-unexpected-----.html)
 -   [Hugs.Trex.insertField not in scope](hugs-trex-insertfield-not-in-scope.html)
 -   [cannot construct the infinite type](cannot-construct-the-infinite-type.html)
+-   [Tips para aprobar un parcial de funcional](tips-para-aprobar-un-parcial-de-funcional.html)
+
+Para aprender más sobre el lenguaje Haskell
+-------------------------------------------
+
+-   [1](http://en.wikibooks.org/wiki/Haskell)
+-   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+-   [| Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
 
 Problemas complejos
 -------------------
