@@ -1,3 +1,20 @@
+Variables mágicas
+-----------------
+
+Algo que se ve mucho en los parciales es gente que inventa variables mágicas por no entender orden superior y aplicación parcial, por ejemplo hacer algo como:
+
+`aprobados alumnos = filter (nota `**`alumno`**` > 4) alumnos`
+
+en vez de:
+
+`aprobados alumnos = filter ((>4).nota) alumnos`
+
+o en todo caso usando [Expresiones lambda](expresiones-lambda.html):
+
+`aprobados alumnos = filter (\alumno -> nota alumno > 4) alumnos`
+
+La variable alumno de la solución errónea no existe, y si existiera estaríamos cayendo en el problema explicado en la siguiente sección.
+
 Funciones y valores
 -------------------
 
