@@ -46,3 +46,17 @@ Integración con Xtend
 
 Integración con Groovy
 ----------------------
+
+Para bajarte los ejemplos, te recomendamos:
+
+-   hacer checkout desde el SVN
+-   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
+-   Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Groovy project
+-   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
+
+### Crear un proyecto de Groovy con Arena
+
+Necesitás agregar a tu pom las siguientes cosas:
+
+-   Dependencias: el are arena-jface
+
