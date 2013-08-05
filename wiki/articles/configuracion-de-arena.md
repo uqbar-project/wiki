@@ -54,9 +54,37 @@ Para bajarte los ejemplos, te recomendamos:
 -   Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Groovy project
 -   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
 
-### Crear un proyecto de Groovy con Arena
+#### Crear un proyecto de Groovy con Arena
 
 Necesitás agregar a tu pom las siguientes cosas:
 
--   Dependencias: el are arena-jface
+-   Proyecto padre: arena-parent
 
+`   `<parent>
+`       `<groupId>`uqbar`</groupId>
+`       `<artifactId>`arena-parent`</artifactId>
+`       `<version>`1.3-SNAPSHOT`</version>
+`   `</parent>
+
+-   Dependencias: el are arena-jface, junit para los tests unitarios y tenés el plugin para groovy
+
+`   `<dependencies>
+`       `<dependency>
+`           `<groupId>`org.codehaus.mojo`</groupId>
+`           `<artifactId>`build-helper-maven-plugin`</artifactId>
+`           `<version>`1.8`</version>
+`       `</dependency>
+
+`       `<dependency>
+`           `<groupId>`uqbar`</groupId>
+`           `<artifactId>`arena-jface`</artifactId>
+`           `<version>`${arena-version}`</version>
+`       `</dependency>
+
+`       `<dependency>
+`           `<groupId>`junit`</groupId>
+`           `<artifactId>`junit`</artifactId>
+`           `<version>`3.8.1`</version>
+`           `<scope>`test`</scope>
+`       `</dependency>
+`   `</dependencies>
