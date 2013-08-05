@@ -1,4 +1,4 @@
-La herencia es un mecanismo que tiene por objetivo principal el compartir lógica/código similar. Esto lleva a evitar la duplicación de lógica/código.
+La herencia es un mecanismo que tiene por objetivo principal el compartir lógica/código similar. Esto lleva a evitar la duplicación de lógica/código. Cuando un objeto recibe un mensaje, mediante [Method lookup](method-lookup.html) buscará el comportamiento requerido en la clase de la cual es instancia y, en caso de no tener un método para el mismo, en sus superclases.
 
 Herencia Simple
 ---------------
@@ -123,7 +123,13 @@ En nuestro ejemplo
 
 </code>
 
-Method Lookup
--------------
+Clase abtracta
+--------------
 
-(En construcción)
+En el ejemplo anterior la clase \#Ave se está usando como superclase de \#Golondrina y \#Picaflor. Si nosotros queremos instanciar un ave deberíamos elegir si será una golondrina o un picaflor para mandarle el mensaje new a alguna de esas clases. Lo que no sería correcto es:
+
+`unAve := Ave new.`
+
+Este código va a funcionar en principio, pero si yo considero que un ave tiene que poder volar y no hay una implementación en \#Ave para esta operación ya que está definido de formas diferentes en sus subclases, unAve no va a entender el mensaje.
+
+Entonces, una clase abstracta es aquella que no tiene sentido instanciar porque es demasiado genérica y no tiene una implementación concreta para algunos mensajes que debería entender porque está definido en sus subclases.
