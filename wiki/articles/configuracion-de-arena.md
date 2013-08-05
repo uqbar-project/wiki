@@ -49,7 +49,8 @@ Para bajarte los ejemplos, te recomendamos:
 -   hacer checkout desde el SVN
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
 -   Luego, botón derecho sobre el proyecto &gt; Configure &gt; Add Text Nature
--   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
+-   Luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
+-   Y finalmente botón derecho sobre el proyecto &gt; Build Path &gt; Add Library &gt; Xtend Library
 
 Integración con Groovy
 ----------------------
