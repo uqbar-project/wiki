@@ -60,31 +60,40 @@ Necesitás agregar a tu pom las siguientes cosas:
 
 -   Proyecto padre: arena-parent
 
-`   `<parent>
-`       `<groupId>`uqbar`</groupId>
-`       `<artifactId>`arena-parent`</artifactId>
-`       `<version>`1.3-SNAPSHOT`</version>
-`   `</parent>
+<parent>
+`   `<groupId>`uqbar`</groupId>
+`   `<artifactId>`arena-parent`</artifactId>
+`   `<version>`1.3-SNAPSHOT`</version>
+</parent>
 
 -   Dependencias: el are arena-jface, junit para los tests unitarios y tenés el plugin para groovy
 
-`   `<dependencies>
-`       `<dependency>
-`           `<groupId>`org.codehaus.mojo`</groupId>
-`           `<artifactId>`build-helper-maven-plugin`</artifactId>
-`           `<version>`1.8`</version>
-`       `</dependency>
+<dependencies>
+`   `<dependency>
+`       `<groupId>`org.codehaus.mojo`</groupId>
+`       `<artifactId>`build-helper-maven-plugin`</artifactId>
+`       `<version>`1.8`</version>
+`   `</dependency>
 
-`       `<dependency>
-`           `<groupId>`uqbar`</groupId>
-`           `<artifactId>`arena-jface`</artifactId>
-`           `<version>`${arena-version}`</version>
-`       `</dependency>
+`   `<dependency>
+`       `<groupId>`uqbar`</groupId>
+`       `<artifactId>`arena-jface`</artifactId>
+`       `<version>`${arena-version}`</version>
+`   `</dependency>
 
-`       `<dependency>
-`           `<groupId>`junit`</groupId>
-`           `<artifactId>`junit`</artifactId>
-`           `<version>`3.8.1`</version>
-`           `<scope>`test`</scope>
-`       `</dependency>
-`   `</dependencies>
+`   `<dependency>
+`       `<groupId>`junit`</groupId>
+`       `<artifactId>`junit`</artifactId>
+`       `<version>`3.8.1`</version>
+`       `<scope>`test`</scope>
+`   `</dependency>
+</dependencies>
+
+-   Y tenemos que definir el directorio donde están los fuentes como src/main/groovy en lugar de src/main/java que es el default para Maven:
+
+<build>
+`   `<sourceDirectory>`src/main/groovy`</sourceDirectory>
+`   `<testSourceDirectory>`src/test/groovy`</testSourceDirectory>
+`...`
+
+Podés utilizar alguno de nuestros pom.xml como ejemplo.
