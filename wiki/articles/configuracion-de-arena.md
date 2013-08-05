@@ -52,6 +52,18 @@ Para bajarte los ejemplos, te recomendamos:
 -   Luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
 -   Y finalmente botón derecho sobre el proyecto &gt; Build Path &gt; Add Library &gt; Xtend Library
 
+#### Crear un proyecto de Arena en Xtend
+
+Al pom.xml se le puede agregar una dependencia:
+
+<dependency>` `
+`     `<groupId>`org.eclipse.xtend`</groupId>` `
+`     `<artifactId>`org.eclipse.xtend.standalone`</artifactId>
+`     `<version>`2.4.2`</version>
+</dependency>
+
+Pero no siempre es feliz el plugin de maven, así que si hay inconvenientes, comentar la dependencia y agregar la libería Xtend a mano en el build path del proyecto.
+
 Integración con Groovy
 ----------------------
 
