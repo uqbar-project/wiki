@@ -74,13 +74,11 @@ Necesitás agregar a tu pom las siguientes cosas:
 `       `<artifactId>`build-helper-maven-plugin`</artifactId>
 `       `<version>`1.8`</version>
 `   `</dependency>
-
 `   `<dependency>
 `       `<groupId>`uqbar`</groupId>
 `       `<artifactId>`arena-jface`</artifactId>
 `       `<version>`${arena-version}`</version>
 `   `</dependency>
-
 `   `<dependency>
 `       `<groupId>`junit`</groupId>
 `       `<artifactId>`junit`</artifactId>
