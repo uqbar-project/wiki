@@ -42,9 +42,15 @@ Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2c
 
 En Run &gt; Run Configurations... &gt; Java Application &gt; New launch configuration (buscá el botón de la toolbar que está a la izquierda) y en la solapa Arguments, tenés que indicarle en VM Arguments que use el Launcher propio de Arena:
 
-`-Djava.system.class.loader=org.uqbar.arena.aop.ArenaClassLoader,`
+`-Djava.system.class.loader=com.uqbar.apo.APOClassLoader`
 
 de lo contrario te va a aparecer un mensaje de error:
+
+`Exception in thread "main" java.lang.RuntimeException: Esta aplicación no está corriendo con el ClassLoader necesario. Corra  la aplicación con el siguiente parámetro para la VM: -Djava.system.class.loader=com.uqbar.apo.APOClassLoader. El ClassLoader actual es: sun.misc.Launcher$AppClassLoader@6fd3633c`
+`   at org.uqbar.arena.Application.validateClassLoader(Application.java:32)`
+`   at org.uqbar.arena.Application.`<init>`(Application.java:24)`
+
+En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya cargada.
 
 Integración con Scala
 ---------------------
