@@ -38,6 +38,14 @@ Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
 Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "uqbar arena", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
 
+### Importante, para correr cualquier aplicación de Arena
+
+En Run &gt; Run Configurations... &gt; Java Application &gt; New launch configuration (buscá el botón de la toolbar que está a la izquierda) y en la solapa Arguments, tenés que indicarle en VM Arguments que use el Launcher propio de Arena:
+
+`-Djava.system.class.loader=org.uqbar.arena.aop.ArenaClassLoader,`
+
+de lo contrario te va a aparecer un mensaje de error:
+
 Integración con Scala
 ---------------------
 
