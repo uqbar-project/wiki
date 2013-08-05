@@ -56,17 +56,9 @@ Para bajarte los ejemplos, te recomendamos:
 
 #### Crear un proyecto de Groovy con Arena
 
-Necesitás agregar a tu pom las siguientes cosas:
+A las configuraciones generales del pom.xml (referenciar al parent-project y las dependencias de arena + junit), hay que incorporar:
 
--   Proyecto padre: arena-parent
-
-<parent>
-`   `<groupId>`uqbar`</groupId>
-`   `<artifactId>`arena-parent`</artifactId>
-`   `<version>`1.3-SNAPSHOT`</version>
-</parent>
-
--   Dependencias: el are arena-jface, junit para los tests unitarios y tenés el plugin para groovy
+-   Dependencias: el plugin para groovy
 
 <dependencies>
 `   `<dependency>
@@ -77,17 +69,10 @@ Necesitás agregar a tu pom las siguientes cosas:
 `   `<dependency>
 `       `<groupId>`uqbar`</groupId>
 `       `<artifactId>`arena-jface`</artifactId>
-`       `<version>`${arena-version}`</version>
-`   `</dependency>
-`   `<dependency>
-`       `<groupId>`junit`</groupId>
-`       `<artifactId>`junit`</artifactId>
-`       `<version>`3.8.1`</version>
-`       `<scope>`test`</scope>
-`   `</dependency>
+`       ...`
 </dependencies>
 
--   Y tenemos que definir el directorio donde están los fuentes como src/main/groovy en lugar de src/main/java que es el default para Maven:
+-   Y definir el directorio donde están los fuentes como src/main/groovy en lugar de src/main/java que es el default para Maven:
 
 <build>
 `   `<sourceDirectory>`src/main/groovy`</sourceDirectory>
