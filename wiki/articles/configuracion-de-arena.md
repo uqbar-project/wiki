@@ -76,7 +76,7 @@ TODO
 Integración con Xtend
 ---------------------
 
-Asumimos que además del entorno básico ya te instalaste Xtend según [este instructivo](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Xtend).
+Asumimos que además del entorno básico ya te instalaste Xtend según [este instructivo](preparacion-de-un-entorno-de-desarrollo-xtend.html).
 
 Para bajarte los ejemplos, te recomendamos:
 
