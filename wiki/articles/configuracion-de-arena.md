@@ -1,3 +1,8 @@
+Pre-requisitos
+--------------
+
+Asumimos que tenés instaladas las herramientas básicas según [este instructivo](http---uqbar-wiki-org-index-php-title-preparacion-de-un-entorno-de-desarrollo-java.html), incluyendo Maven.
+
 Qué debe tener un pom.xml de Arena
 ----------------------------------
 
