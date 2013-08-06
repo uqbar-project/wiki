@@ -101,7 +101,7 @@ Pero no siempre es feliz el plugin de maven, así que si hay inconvenientes, com
 Integración con Groovy
 ----------------------
 
-Asumimos que además del entorno básico ya te instalaste Groovy según [este instructivo](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Groovy).
+Asumimos que además del entorno básico ya te instalaste Groovy según [este instructivo](preparacion-de-un-entorno-de-desarrollo-groovy.html).
 
 Para bajarte los ejemplos, te recomendamos:
 
