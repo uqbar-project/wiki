@@ -49,7 +49,7 @@ Un programa declarativo separa claramente los siguientes elementos:
 
 En el ejemplo anterior, el objetivo es la consulta realizada sobre qué materias puede cursar un alumno. El conocimiento es la información que se encuentra en la base de conocimiento sobre las materias disponibles en la carrera y cuáles ya cursó el alumno en cuestión. El motor de Prolog toma el conocimiento y resuelve la consulta realizada en base al programa y deduce todas las posibles relaciones que la satisfagan.
 
-El mecanismo utilizado por el motor llamado **backtracking** que prueba todas las posibilidades para solucionar el problema no hace falta programarlo para cada problema particular, con lo cual podemos concentrarnos exclusivamente en el problema y no en el problema algorítmico general que permite procesar la información.
+El mecanismo utilizado por el motor de Prolog llamado [Backtracking](backtracking.html) prueba todas las posibilidades para solucionar el problema, no hace falta programar este algoritmo para cada problema particular, con lo cual podemos concentrarnos exclusivamente en el objetivo de nuestro programa y no en la complejidad algorítmica general que permite procesar la información.
 
 Declaratividad en los distintos paradigmas
 ------------------------------------------
