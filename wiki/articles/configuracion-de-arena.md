@@ -110,7 +110,7 @@ Para bajarte los ejemplos, te recomendamos:
 -   Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Groovy project
 -   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
 
-#### Crear un proyecto de Groovy con Arena
+#### Crear un proyecto de Arena en Groovy
 
 A las configuraciones generales del pom.xml (referenciar al parent-project y las dependencias de arena + junit), hay que incorporar:
 
