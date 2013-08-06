@@ -60,7 +60,7 @@ En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya c
 Integración con Scala
 ---------------------
 
-Asumimos que además del entorno básico ya te instalaste Groovy según [este instructivo](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Scala).
+Asumimos que además del entorno básico ya te instalaste Scala según [este instructivo](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Scala).
 
 Para bajarte los ejemplos, te recomendamos:
 
