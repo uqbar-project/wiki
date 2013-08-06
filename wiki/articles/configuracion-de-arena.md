@@ -1,7 +1,7 @@
 Pre-requisitos
 --------------
 
-Asumimos que tenés instaladas las herramientas básicas según se explica en [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html), incluyendo Maven.
+Asumimos que tenés instaladas las herramientas básicas según se explica en [este instructivo](preparacion-de-un-entorno-de-desarrollo-java.html), incluyendo Maven.
 
 Qué debe tener un pom.xml de Arena
 ----------------------------------
