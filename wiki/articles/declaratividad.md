@@ -31,8 +31,7 @@ En cambio, la definición declarativa eliminará todos los conceptos programáti
 En este punto seguramente se preguntarán si es posible hacer un programa que exprese solamente eso, sin toda la lógica adicional necesaria, bueno aquí está el código prolog que dice exactamente eso: <code>
 
     puedeCursar(Alumno, Materia):-
-      carrera(Alumno, Carrera), materia(Carrera, Materia),       // Es una materia de la carrera 
-                                                                 // del alumno
+      carrera(Alumno, Carrera), materia(Carrera, Materia),       // Es una materia de la carrera del alumno
       not(curso(Alumno, Materia)),                               // No cursó la materia
       forall(correlativa(Materia, Corr), curso(Alumno, Corr)).   // Cursó todas las correlativas
 
