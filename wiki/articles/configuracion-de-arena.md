@@ -60,8 +60,19 @@ En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya c
 Integración con Scala
 ---------------------
 
+Asumimos que además del entorno básico ya te instalaste Groovy según [este instructivo](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Scala).
+
+Para bajarte los ejemplos, te recomendamos:
+
+-   hacer checkout desde el SVN
+-   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
+-   Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Scala project
+-   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
+
 Integración con Xtend
 ---------------------
+
+Asumimos que además del entorno básico ya te instalaste Xtend según [este instructivo](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Xtend).
 
 Para bajarte los ejemplos, te recomendamos:
 
@@ -85,6 +96,8 @@ Pero no siempre es feliz el plugin de maven, así que si hay inconvenientes, com
 
 Integración con Groovy
 ----------------------
+
+Asumimos que además del entorno básico ya te instalaste Groovy según [este instructivo](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Groovy).
 
 Para bajarte los ejemplos, te recomendamos:
 
