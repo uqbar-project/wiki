@@ -31,11 +31,7 @@ Si le sacás una foto al sistema (llamémosla F1), después realizas la operaci�
 Asignación Destructiva  
 Asignar destructivamente es reemplazar el valor de una variable por otro valor.
 
-**Nota1:** La [unificación](unificacion-y-pattern-matching.html) no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?)
-
-**Nota2:** Unificar es encontrar una sustitución capaz de igualar 2 términos
-
-**Nota3:** Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable)
+La [unificación](unificacion-y-pattern-matching.html) no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?). Unificar es encontrar una sustitución capaz de igualar 2 términos. Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable).
 
 Ejemplos
 --------
@@ -120,7 +116,9 @@ Estos son algunos ejemplos concretos sobre cómo la existencia o no de efecto, a
 
 **Separar la lógica que hace cosas de la que consulta:** Muy seguido vemos métodos (o procedimientos, dependiendo del paradigma) que tienen efecto y a su vez retornan algún valor relacionado con el mismo, estas prácticas pueden llevar a confusiones que producen un funcionamiento erróneo del sistema, sobre todo cuando el nombre del método elegido no denota que existe un efecto asociado a su ejecución. Es una buena práctica tener separada la lógica que realiza modificaciones sobre el sistema de los que sólo pretenden obtener el resultado de una consulta, que nuestros métodos tengan un único objetivo, lo cual simplifica su uso y la elección de un nombre suficientemente representativo.
 
-**Optimizaciones:** Tener asegurada la transparencia referencial permite hacer optimizaciones como las que tiene el motor de Haskell que afectan globalmente a los programas construidos con el mismo. La [evaluación perezosa o lazy](estrategias-de-evaluacion-lazy-evaluation.html) es posible gracias a esta característica.
+**Optimizaciones:** Tener asegurada la transparencia referencial permite hacer optimizaciones como las que tiene el motor de Haskell que afectan globalmente a los programas construidos con el mismo. La [evaluación perezosa o lazy](estrategias-de-evaluacion-lazy-evaluation.html) es posible gracias a esta característica. También lo podemos ver en Prolog que para buscar soluciones utiliza el mecanismo de [Backtracking](backtracking.html) de modo que se puedan encontrar múltiples respuestas a una consulta, así como descartar los caminos por los cuales no sea posible hayar alguna, de una forma eficiente.
+
+Otro ejemplo viene de la mano del procesamiento en paralelo. Si tenemos un conjunto con millones de elementos y queremos filtrarlo por un criterio, ¿no puedo dividir ese conjunto en varios más pequeños, filtrarlos por separado en distintos procesadores y juntar sus resultados? Si yo aseguro que evaluar el criterio de filtrado sobre cada elemento no va a provocar ningún efecto que pueda alterar mi resultado final, esta optimización podría permitir aprovechar mucho mejor el hardware disponible. Si te interesa el tema acá hay algo para leer al respecto: [Scala - Parallel Collection Framework](http://infoscience.epfl.ch/record/150220/files/pc.pdf)
 
 **[Testing](testing.html):** El testeo unitario se basa en la premisa de que cada test sea independiente del otro y eso se logra controlando que el estado del sistema antes y después de correr cada test sea el mismo, por ese motivo es importante mantener el efecto controlado y poder revertir aquellos cambios que sobrevivan a la ejecución de cada test particular. También la transparencia referencial es importante para el testeo unitario ya que testear el resultado de una operación que depende de algo no determinístico no es viable y hace falta usar estrategias de testeo más avanzadas ([Mock Objects](http://es.wikipedia.org/wiki/Objeto_simulado)) para evitar este tipo de dependencia.
 
