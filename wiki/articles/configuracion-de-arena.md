@@ -69,6 +69,10 @@ Para bajarte los ejemplos, te recomendamos:
 -   Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Scala project
 -   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
 
+#### Crear un proyecto de Arena en Xtend
+
+TODO
+
 Integración con Xtend
 ---------------------
 
