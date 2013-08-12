@@ -14,6 +14,18 @@ Configurar el parent pom de la siguiente manera:
 `   `<version>`1.7`</version>
 </parent>
 
+### Dependencias para proyectos de dominio
+
+Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomendamos) tenés que definir esta dependencia
+
+<dependency>
+`   `<groupId>`org.uqbar-project`</groupId>
+`   `<artifactId>`uqbar-domain`</artifactId>
+`   `<version>`3.3`</version>
+</dependency>
+
+### Dependencias en proyectos ui
+
 Agregar dos referencias en el pom
 
 -   al framework Arena (consideramos Arena = Arena-JFace como predeterminado)
