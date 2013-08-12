@@ -24,7 +24,7 @@ Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomend
 `   `<version>`3.3`</version>
 </dependency>
 
-### Dependencias en proyectos ui
+### Dependencias para proyectos ui
 
 Agregar dos referencias en el pom
 
