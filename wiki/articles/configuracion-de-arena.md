@@ -9,9 +9,9 @@ Qué debe tener un pom.xml de Arena
 Configurar el parent pom de la siguiente manera:
 
 <parent>
-`     `<groupId>`uqbar`</groupId>
-`     `<artifactId>`arena-parent`</artifactId>
-`     `<version>`1.3-SNAPSHOT`</version>
+`   `<groupId>`org.uqbar-project`</groupId>
+`   `<artifactId>`uqbar-parent-project`</artifactId>
+`   `<version>`1.7`</version>
 </parent>
 
 Agregar dos referencias en el pom
