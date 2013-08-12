@@ -23,11 +23,11 @@ Agregar dos referencias en el pom
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
 `   `<dependencies>
-`       `<dependency>
-`           `<groupId>`uqbar`</groupId>
-`           `<artifactId>`arena-jface`</artifactId>
-`           `<version>`${arena-version}`</version>
-`       `</dependency>
+`   `<dependency>
+`       `<groupId>`org.uqbar-project`</groupId>
+`       `<artifactId>`arena-jface`</artifactId>
+`       `<version>`3.3-SNAPSHOT`</version>
+`   `</dependency>
 `       `<dependency>
 `           `<groupId>`uqbar-project.org`</groupId>
 `           `<artifactId>`videoclub.domain`</artifactId>
@@ -75,7 +75,17 @@ Esto debería bastar, si ves que al proyecto le faltan librerías de Scala o no 
 
 #### Crear un proyecto de Arena en Scala
 
-TODO
+Los proyectos Scala tienen un parent específico:
+
+`   `<parent>
+`       `<groupId>`org.uqbar-project`</groupId>
+`       `<artifactId>`uqbar-scala-parent`</artifactId>
+`       `<version>`1.0`</version>
+`   `</parent>
+
+Esto define src/main/scala como directorio default donde están los fuentes (y src/test/scala donde están los tests).
+
+En caso de duda podés utilizar alguno de nuestros pom.xml como ejemplo.
 
 Integración con Xtend
 ---------------------
