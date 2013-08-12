@@ -66,8 +66,12 @@ Para bajarte los ejemplos, te recomendamos:
 
 -   hacer checkout desde el SVN
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
--   Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Scala project
--   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
+
+Esto debería bastar, si ves que al proyecto le faltan librerías de Scala o no lo ves como un proyecto Scala, hay que trabajarlo manualmente de la siguiente manera:
+
+-   Convertirlo a un proyecto Scala. Esto se hace mediante botón derecho sobre el proyecto: Configure &gt; Convert to Scala project (o Scala &gt; Add Scala nature, dependiendo de la versión de Eclipse)
+-   Agregar las librerías de Scala: botón derecho sobre el proyecto, Build path &gt; Add Library &gt; Scala Library, ok.
+-   Correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
 
 #### Crear un proyecto de Arena en Scala
 
