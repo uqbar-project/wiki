@@ -1,7 +1,7 @@
 Download e instalación base
 ---------------------------
 
-Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un IDE (solamente necesitamos el compilador). De todos modos aca vamos a explicar como se puede armar un ambiente de desarrollo usando Eclipse y Maven (para manejo de dependencias).
+Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un IDE (solamente necesitamos el compilador). De todos modos acá vamos a explicar cómo se puede armar un ambiente de desarrollo usando Eclipse y Maven (para manejo de dependencias).
 
 Lo podemos usar directamente como un plugin desde el eclipse
 
