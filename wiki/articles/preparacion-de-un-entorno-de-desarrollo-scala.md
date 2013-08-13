@@ -30,13 +30,15 @@ Aún así, recomendamos esa configuración. Otras configuraciones posibles son:
 
 Por favor si notás que esta información está desactualizada reportalo.
 
-### Documentación
+Documentación
+-------------
 
 -   [Documentación oficial](http://www.scala-lang.org/node/197)
 -   [Manuales de referencia](http://www.scala-lang.org/node/198)
 -   [Scala by Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf#) escrito por Martin Odersky, el creador de Scala.
 
-### Links de interés
+Links de interés
+----------------
 
 -   [Página principal de Scala](http://www.scala-lang.org/)
 -   [Groovy vs Scala](groovy-vs-scala.html)
