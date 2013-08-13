@@ -1,4 +1,5 @@
-### Download e instalación base
+Download e instalación base
+---------------------------
 
 Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un IDE (solamente necesitamos el compilador). De todos modos aca vamos a explicar como se puede armar un ambiente de desarrollo usando Eclipse y Maven (para manejo de dependencias).
 
@@ -10,8 +11,7 @@ Lo podemos usar directamente como un plugin desde el eclipse
     -   Instalale el plugin para integrar scala con Maven ([m2eclipse-scala](https://github.com/sonatype/m2eclipse-scala)).
     -   Instalar uno o más plugins para los repositorios de código que uses (svn, mercurial, git). Si elegiste el Eclipse for Java Developers ya viene con el plugin de git.
 
-Versiones
----------
+### Versiones
 
 Al día 13 de agosto de 2013, una configuración posible es:
 
