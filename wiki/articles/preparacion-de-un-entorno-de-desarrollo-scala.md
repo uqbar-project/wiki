@@ -4,7 +4,7 @@ Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un I
 
 Lo podemos usar directamente como un plugin desde el eclipse
 
--   Bajar el eclipse que se adapte a tu pc que mas te guste [1](http://www.eclipse.org/downloads/). Recomendamos Eclipse IDE for Java EE Developers.
+-   Bajar el \[eclipse|<http://www.eclipse.org/downloads/>\] que se adapte a tu pc que mas te guste . Recomendamos Eclipse IDE for Java EE Developers.
 -   Instalale el plugin de Scala [el plugin](http://scala-ide.org/download/current.html). Asegurate que coincida la versión del plugin con la versión de Eclipse que tengas instalado, si no podés probar versiones "milestone" [aquí](http://scala-ide.org/download/milestone.html).
     -   Instalale el plugin de Maven (m2eclipse). Si elegiste el Eclipse for Java Developers ya viene con este plugin.
     -   Instalale el plugin para integrar scala con Maven (m2eclipse-scala).
@@ -16,8 +16,8 @@ Versiones
 Al día 13 de agosto de 2013, una configuración posible es:
 
 -   Eclipse Kepler (v4.3) for Java Developers (incluye plugins para maven y git)
--   Scala IDE 3.0.1 (para Scala 2.10 y Eclipse 3.8 o posterior). Update Site: [2](http://download.scala-ide.org/sdk/e38/scala210/stable/site)
--   m2eclipse-scala [3](http://alchim31.free.fr/m2e-scala/update-site)
+-   Scala IDE 3.0.1 (para Scala 2.10 y Eclipse 3.8 o posterior). Update Site: [1](http://download.scala-ide.org/sdk/e38/scala210/stable/site)
+-   m2eclipse-scala [2](http://alchim31.free.fr/m2e-scala/update-site)
 
 Esta configuración tiene un bug que impide la utilización del visualizador de POMs que viene con el plugin de Maven. Un *workaround* para el problema del POM es abrirlo con el editor de XML.
 
