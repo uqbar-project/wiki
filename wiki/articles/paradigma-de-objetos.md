@@ -19,6 +19,7 @@ Teoría
 -   [Prototipado vs Clases](prototipado-vs-clases.html)
 -   [igual o idéntico - = vs ==](igual-o-identico-----vs---.html)
 -   [Composición (OOP)](Composición_(OOP) "wikilink")
+-   [Garbage Collector](garbage-collector.html)
 
 Sintaxis
 --------
