@@ -1,4 +1,4 @@
-De este paradigma tenemos notas sueltas, las tratamos de organizar en secciones.
+Un objeto es un ente computacional que exhibe comportamiento (podemos comunicarnos con él mediante mensajes) y puede (o no) tener un estado interno (referencias a otros objetos).
 
 Teoría
 ------
