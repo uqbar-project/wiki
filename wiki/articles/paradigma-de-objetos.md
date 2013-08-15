@@ -1,5 +1,7 @@
 Un objeto es un ente computacional que exhibe comportamiento (podemos comunicarnos con él mediante mensajes) y puede (o no) tener un estado interno (referencias a otros objetos).
 
+Un programa basado en este paradigma es un conjunto de objetos que interactúan entre sí en un ambiente mandándose mensajes para lograr un objetivo determinado.
+
 Teoría
 ------
 
