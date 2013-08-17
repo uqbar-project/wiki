@@ -190,7 +190,7 @@ Window &gt; Preferences te permite configurar algunas propiedades para Maven. Te
 
 Una configuración más que puede ser útil para encontrar versiones nuevas de artefactos en los repositorios es dejar chequeada:
 
--   La opción "Download repository index on startup" (opción por defecto): para más información pueden leer <http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes>.
+-   La opción "Download repository index on startup" (opción por defecto chequeada): para más información pueden leer <http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes>.
 
 ### Creación de un proyecto básico
 
