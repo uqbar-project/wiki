@@ -186,8 +186,11 @@ Window &gt; Preferences te permite configurar algunas propiedades para Maven. Te
 -   tener chequeado "Do not automatically update dependencies from remote repositories" para que no intente bajarte permanentemente nuevas versiones de los componentes que utilices. Esto requiere que lo hagas en forma manual, algo que quizás sea más recomendable.
 -   tener chequeado "Download artifact sources" te permite ver el código fuente de los .jars que te bajes, esta opción hace que las descargas inicialmente tarden un poco más de tiempo pero es bueno cuando tenés algún error y necesitás entender cómo funciona alguna parte de un componente.
 -   también es bueno chequear "Download artifact javadocs" para obtener documentación de los componentes que utilizamos
--   La opción "Download repository index on startup" dejarla chequeada por defecto (para más información pueden leer: <http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes>)
 -   Y por último tener deschequeada la opción "Update Maven projects on startup" permite que manualmente vos actualices los proyectos solamente ante un cambio y no cuando levantes el Eclipse.
+
+Una configuración más que puede ser útil para encontrar versiones nuevas de artefactos en los repositorios es dejar chequeada:
+
+-   La opción "Download repository index on startup" (opción por defecto): para más información pueden leer <http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes>.
 
 ### Creación de un proyecto básico
 
