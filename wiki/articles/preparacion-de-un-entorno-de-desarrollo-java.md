@@ -210,7 +210,7 @@ Si ya arrancaste tu proyecto y decidiste más tarde que necesitabas usar Maven, 
 
 <!-- -->
 
--   Ingresar el **groupId deseado**. Preferentemente que sea el package name que se hayan definido antes, ej: *ar.edu.frba.utn.dds*
+-   Ingresar el **groupId deseado**. Preferentemente que sea el package name que se hayan definido antes, ej: *org.uqbar.arena.exampes*
 
 <!-- -->
 
@@ -222,12 +222,11 @@ Independientemente de si su proyecto respeta la estructura estándar de un proye
 `├── src`
 `│   └── main`
 `│       ├── java`
-`│       │   └── ar`
-`│       │       └── edu`
-`│       │           └── frba`
-`│       │               └── utn`
-`│       │                   └── dds`
-`│       │                       └── Main.java`
+`│       │   └── org`
+`│       │       └── uqbar`
+`│       │           └── arena`
+`│       │               └── examples`
+`│       │                    └── Main.java`
 `│       └── resources`
 `├── pom.xml`
 
@@ -235,7 +234,7 @@ Independientemente de si su proyecto respeta la estructura estándar de un proye
 
 -   Creamos un proyecto Maven.
 
-`$ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=ar.edu.frba.utn.dds -DartifactId=Example`
+`$ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=org.uqbar.arena.examples -DartifactId=Example`
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
