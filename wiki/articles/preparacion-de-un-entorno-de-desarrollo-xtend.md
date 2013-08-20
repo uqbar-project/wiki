@@ -6,6 +6,10 @@ Tenés dos opciones: **Full Eclipse** (bajarte el Eclipse + el plugin directamen
 
 El plugin de xtend es un plugin relativamente grande. Si tu instalación de eclipse tiene además otros plugins para programar en otros lenguajes, puede que sea recomendable armar una instalación aparte. Si uno usa muchos lenguajes con eclipse como IDE, puede ser recomendable tener un eclipse para cada uno (salvo obviamente en el caso en que varios lenguajes se utilicen en el mismo proyecto). Eso hace que el IDE sea más liviano y minimiza posibles problemas de incompatibilidad entre los diferentes features.
 
+De todos los items que aparecerán en el update site debemos elegir "xtend". Es importante también instalar la integración con m2eclipse. Acá un screenshot a modo de ejemplo (ojo que seguramente cambien los nombres de las cosas en el futuro).
+
+![](xtend-plugin.png "xtend-plugin.png")
+
 ### ¿Cómo empezar?
 
 -   Crear un proyecto Java.
