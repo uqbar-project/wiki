@@ -1,5 +1,39 @@
-Técnicas Avanzadas de Programación
-----------------------------------
+Técnicas Avanzadas de Programación - Contenidos actuales
+--------------------------------------------------------
+
+### Modelado en objetos avanzado
+
+-   [Traits](traits.html)
+-   [Mixins](mixins.html)
+-   [Bloques como forma de modelar comportamiento](bloques-como-forma-de-modelar-comportamiento.html)
+-   [Modelar comportamiento como objetos](modelar-comportamiento-como-objetos.html)
+-   [Uso de features de lenguajes dinámicos](uso-de-features-de-lenguajes-dinamicos.html)
+
+### Tipado dinámico vs estático en objetos
+
+-   [Binding estático vs dinámico](binding-estatico-vs-dinamico.html)
+-   [Polimorfismo tipado vs no tipado](polimorfismo-tipado-vs-no-tipado.html)
+-   [Sobrecarga](sobrecarga.html)
+
+### Metaprogramación
+
+-   [Metaprogramación](metaprogramacion.html)
+-   [Reflection](reflection.html)
+-   [Self modification](self-modification.html)
+-   [Open classes](open-classes.html)
+
+### Declaratividad y DSLs
+
+-   [Declaratividad](declaratividad.html)
+-   [DSL](dsl.html)
+-   [Builder](builder.html)
+-   [Syntax Sugar](syntax-sugar.html)
+-   [Tiempo de creación vs tiempo de uso](tiempo-de-creacion-vs-tiempo-de-uso.html)
+
+Técnicas Avanzadas de Programación - Contenidos heredados
+---------------------------------------------------------
+
+La materia cambió mucho sus contenidos en estos años, sin embargo el material teórico sigue siendo útil aunque no esté en la planificación actual.
 
 ### Material teórico
 
@@ -8,6 +42,12 @@ Técnicas Avanzadas de Programación
 -   [Bibliografía](bibliografia-sobre-programacion-avanzada-orientada-a-objetos.html)
 -   [Double dispatch](double-dispatch.html)
 -   [Refactoring](refactoring.html)
+
+Arquitecturas
+-------------
+
+-   [Arquitecturas](arquitecturas.html)
+-   [Home](home.html)
 
 ### Tutoriales
 
@@ -30,10 +70,4 @@ Apuntes para revisar
 Una lectura interesante
 
 -   <http://cacm.acm.org/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/fulltext>
-
-Arquitecturas
--------------
-
--   [Arquitecturas](arquitecturas.html)
--   [Home](home.html)
 
