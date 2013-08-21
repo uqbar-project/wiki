@@ -11,9 +11,8 @@ Técnicas Avanzadas de Programación - Contenidos actuales
 
 ### Tipado dinámico vs estático en objetos
 
--   [Binding estático vs dinámico](binding-estatico-vs-dinamico.html)
--   [Polimorfismo tipado vs no tipado](polimorfismo-tipado-vs-no-tipado.html)
--   [Sobrecarga](sobrecarga.html)
+-   [Esquemas de Tipado](esquemas-de-tipado.html)
+-   [Binding, polimorfismo y sobrecarga](binding--polimorfismo-y-sobrecarga.html)
 
 ### Metaprogramación
 
