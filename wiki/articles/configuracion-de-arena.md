@@ -191,7 +191,7 @@ Si te aparece un error similar a éste al correr un "launcher":
 Revisá
 
 -   si tenés correctamente definidos los source folders (punto anterior)
--   si tenés las librerías de Xtend/Groovy/Scala importadas en tu proyecto. En caso de que no sea así, las podés agregar manualmente: click derecho sobre el proyecto &gt; propiedades &gt; java build path &gt; solapa "libraries" &gt; "add library" y elegir la que corresponda
+-   si tenés las librerías de Xtend/Groovy/Scala importadas en tu proyecto (sólo la del lenguaje en el que te lo bajaste, claro está). En caso de que no sea así, las podés agregar manualmente: click derecho sobre el proyecto &gt; propiedades &gt; java build path &gt; solapa "libraries" &gt; "add library" y elegir la que corresponda
 -   por último, si tenés apuntado en tu proyecto un JDK válido (que apunte a un directorio que exista en tu PC, revisá Window &gt; Preferences &gt; Installed JREs)
 
 ### Problemas al correr el ejecutable
