@@ -1,5 +1,13 @@
-true vs True
-------------
+Los Booleanos como objetos
+--------------------------
+
+Operaciones Lógicas
+-------------------
+
+Errores Comunes
+---------------
+
+### true vs True
 
 En el ambiente hay un objeto llamado **true** y otro llamado **True**.
 
@@ -9,8 +17,7 @@ True es la clase de la cual true es instancia. Lo que empieza en mayúscula es c
 
 Si uno se confunde y usa True, claro, el ifTrue: no anda bien, porque el mensaje ifTrue: lo entiende el objeto true, no su clase.
 
-ifTrue: \[^true\], ¿está bien?
-------------------------------
+### ifTrue: \[^true\], ¿está bien?
 
 Miremos este método que está en una clase cuyas instancias entienden el mensaje pais
 
@@ -34,7 +41,7 @@ En resumen, el ifTrue:ifFalse: sobra, este método se puede escribir así
 
 y listo.
 
-== ^(algo = true) == Una variante del caso anterior es un código como este, dentro de una clase cuyas instancias entienden los mensajes estaLibre y estaAndando
+=== ^(algo = true) == Una variante del caso anterior es un código como este, dentro de una clase cuyas instancias entienden los mensajes estaLibre y estaAndando
 
 `   puedeUsarse`
 `       ^(self estaLibre = true) & (self estaAndando = true)`
@@ -69,7 +76,7 @@ y la conclusión es que el método puede escribirse así
 
 En esta versión estamos manejando mejor los booleanos, porque aceptamos que el resultado de `self` `estaLibre` es un booleano, que va a ser true o false, y que va a entender `&` con el otro booleano como parámetro.
 
-### Un caso parecido
+#### Un caso parecido
 
 ¿Y si en lugar de estaLibre tengo estaOcupado, qué hago, pongo
 
