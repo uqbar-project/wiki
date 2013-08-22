@@ -162,3 +162,26 @@ A las configuraciones generales del pom.xml (referenciar al parent-project y las
 `...`
 
 Podés utilizar alguno de nuestros pom.xml como ejemplo.
+
+Troubleshooting
+---------------
+
+¿Qué hacer cuando nos bajamos los ejemplos y no nos andan? Tenemos que revisar estas cosas
+
+### Checkout desde el SVN
+
+En general los ejemplos se bajan desde la estructura "proyecto/trunk", si los bajás desde el directorio proyecto, vas a tener algunos conflictos de directorio.
+
+### Source folders del proyecto
+
+Los source folders de los proyectos (que tienen maven como estructura central del proyecto) deben ser
+
+-   para proyectos Java o Xtend: src/main/java y src/test/java
+-   para proyectos Groovy: src/main/groovy y src/test/groovy
+-   y para proyectos Scala es src/main/scala y src/test/scala.
+
+Si te aparece como source folder sólo el src, o bien si no tenés source folders, una de dos: 1) corré el plugin de maven: botón derecho sobre el proyecto &gt; Configure &gt; Maven project (o mvn compile) 2) si eso no soluciona el problema, agregá los source folder a mano: botón derecho sobre el proyecto &gt; Build path &gt; new source folder o bien parado sobre el directorio src/main/el-que-corresponda botón derecho &gt; Build path &gt; Add as source folder)
+
+### Problemas para encontrar la ventana ejecutable
+
+Si
