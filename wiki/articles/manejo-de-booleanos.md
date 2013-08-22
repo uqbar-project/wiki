@@ -1,8 +1,12 @@
 Los Booleanos como objetos
 --------------------------
 
+3 &gt; 5 en un mensaje not
+
 Operaciones Lógicas
 -------------------
+
+& | and: or:
 
 Errores Comunes
 ---------------
@@ -41,7 +45,7 @@ En resumen, el ifTrue:ifFalse: sobra, este método se puede escribir así
 
 y listo.
 
-=== ^(algo = true) == Una variante del caso anterior es un código como este, dentro de una clase cuyas instancias entienden los mensajes estaLibre y estaAndando
+=== ^(algo = true) === Una variante del caso anterior es un código como este, dentro de una clase cuyas instancias entienden los mensajes estaLibre y estaAndando
 
 `   puedeUsarse`
 `       ^(self estaLibre = true) & (self estaAndando = true)`
