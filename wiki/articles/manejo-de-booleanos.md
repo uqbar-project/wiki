@@ -1,12 +1,56 @@
 Los Booleanos como objetos
 --------------------------
 
-3 &gt; 5 en un mensaje not
+Los booleanos son objetos que representan la condición de verdad ó falsedad.
 
-Operaciones Lógicas
--------------------
+Recordemos que `even` es un mensaje que entienden los números, y devuelve un booleano. (true si el número es par)
 
-& | and: or:
+`6 even. "devuelve true"`
+`true not. "devuelve false"`
+`false not. "devuelve true"`
+
+Aquí se ve que **`not`** es un mensaje que entienden los booleanos.
+
+Hay otros mensajes que devuelven booleanos:
+
+`5 < 1 "devuelve false"`
+`1 between: 0 and: 3 "devuelve true"`
+
+Conjunción y Disjunción Lógica
+------------------------------
+
+`true | false "devuelve true"`
+`true & false "devuelve false"`
+
+Para saber si el 6 es par y divisible por 3:
+
+`6 even & (6 isDivisibleBy: 3) "devuelve true"`
+
+### Agregando Vitaminas
+
+Además de los mensajes binarios `&` y `|`, tenemos los mensajes y , que en vez de recibir un booleano, reciben un bloque de código (que adentro tiene un booleano). Veamos:
+
+`6 even | 5 even`
+`6 even or: [5 even]. "devuelve true"`
+
+`5 even & 6 even. "devuelve false"`
+`5 even and: [6 even]. "devuelve false"`
+
+¿Para qué queremos estos mensajes? Porque son "lazy". Es decir, tienen algo de evaluación perezosa. Ésto significa que si estoy haciendo un "or" y el receptor ya es verdadero, no hace falta analizar el segundo elemento (el or es verdadero):
+
+`5 > 1 or: [7 * 2]. "devuelve true, sin analizar el bloque basura"`
+`5 > 1 | (7 * 2). "tira error, porque 14 no es un booleano"`
+
+Y si estoy haciendo un "and" y el receptor es falso, no hace falta analizar el segundo elemento (el and es falso):
+
+`5 even and: [4]. "devuelve false, sin analizar el bloque basura"`
+`5 even & 4. "tira error, porque 4 no es un booleano"`
+
+En general, es buena práctica utilizar and: y or:.
+
+### Para pensar
+
+¿Qué pasaría en cada caso si dentro del bloque hay una operación con efecto sobre el estado del sistema? La respuesta a ésta pregunta nos va a ayudar a entender por qué no está bueno tener efecto cuando hacemos un and: ó un or:.
 
 Errores Comunes
 ---------------
