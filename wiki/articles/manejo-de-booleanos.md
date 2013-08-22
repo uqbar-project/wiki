@@ -9,12 +9,18 @@ Recordemos que `even` es un mensaje que entienden los números, y devuelve un bo
 `true not. "devuelve false"`
 `false not. "devuelve true"`
 
-Aquí se ve que **`not`** es un mensaje que entienden los booleanos.
+Aquí se ve que **`not`** es un mensaje que entienden los booleanos (y que devuelve el booleano opuesto).
 
 Hay otros mensajes que devuelven booleanos:
 
 `5 < 1 "devuelve false"`
 `1 between: 0 and: 3 "devuelve true"`
+
+Entonces, si queremos que un método devuelva un booleano, basta con devolver el mismo resultado que obtuvimos. Por ejemplo,
+
+`"la golondrina pepita está empachada si su energía es mayor que 100"`
+`>>estasEmpachada`
+`    ^ energia > 100.`
 
 Conjunción y Disjunción Lógica
 ------------------------------
@@ -28,7 +34,7 @@ Para saber si el 6 es par y divisible por 3:
 
 ### Agregando Vitaminas
 
-Además de los mensajes binarios `&` y `|`, tenemos los mensajes y , que en vez de recibir un booleano, reciben un bloque de código (que adentro tiene un booleano). Veamos:
+Además de los mensajes binarios `&` y `|`, tenemos los mensajes `and:` y `or:`, que en vez de recibir un booleano, reciben un [bloque de código](bloques.html) (que adentro tiene un booleano). Veamos:
 
 `6 even | 5 even`
 `6 even or: [5 even]. "devuelve true"`
@@ -36,7 +42,7 @@ Además de los mensajes binarios `&` y `|`, tenemos los mensajes y , que en vez 
 `5 even & 6 even. "devuelve false"`
 `5 even and: [6 even]. "devuelve false"`
 
-¿Para qué queremos estos mensajes? Porque son "lazy". Es decir, tienen algo de evaluación perezosa. Ésto significa que si estoy haciendo un "or" y el receptor ya es verdadero, no hace falta analizar el segundo elemento (el or es verdadero):
+¿Para qué queremos estos mensajes? Porque son "lazy". Es decir, tienen algo de [evaluación perezosa](estrategias-de-evaluacion-visi-c3-b3n-operativa.html). Ésto significa que si estoy haciendo un "or" y el receptor ya es verdadero, no hace falta analizar el segundo elemento (el or es verdadero):
 
 `5 > 1 or: [7 * 2]. "devuelve true, sin analizar el bloque basura"`
 `5 > 1 | (7 * 2). "tira error, porque 14 no es un booleano"`
@@ -50,7 +56,7 @@ En general, es buena práctica utilizar and: y or:.
 
 ### Para pensar
 
-¿Qué pasaría en cada caso si dentro del bloque hay una operación con efecto sobre el estado del sistema? La respuesta a ésta pregunta nos va a ayudar a entender por qué no está bueno tener efecto cuando hacemos un and: ó un or:.
+¿Qué pasaría en cada caso si dentro del bloque hay una operación con [efecto](transparencia-referencial--efecto-de-lado-y-asignaci-c3-b3n-destructiva.html) sobre el estado del sistema? La respuesta a ésta pregunta nos va a ayudar a entender por qué no está bueno tener efecto cuando hacemos un and: ó un or:.
 
 Errores Comunes
 ---------------
