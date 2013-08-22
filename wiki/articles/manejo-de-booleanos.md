@@ -36,7 +36,7 @@ Para saber si el 6 es par y divisible por 3:
 
 Además de los mensajes binarios `&` y `|`, tenemos los mensajes `and:` y `or:`, que en vez de recibir un booleano, reciben un [bloque de código](bloques.html) (que adentro tiene un booleano). Veamos:
 
-`6 even | 5 even`
+`6 even | 5 even "devuelve true"`
 `6 even or: [5 even]. "devuelve true"`
 
 `5 even & 6 even. "devuelve false"`
