@@ -184,4 +184,32 @@ Si te aparece como source folder sólo el src, o bien si no tenés source folder
 
 ### Problemas para encontrar la ventana ejecutable
 
-Si
+Si te aparece un error similar a éste al correr un "launcher":
+
+`Error: no se ha encontrado o cargado la clase principal org.uqbar.arena.examples.conversor.xtend.ConversorWindow`
+
+Revisá
+
+-   si tenés correctamente definidos los source folders (punto anterior)
+-   si tenés las librerías de Xtend/Groovy/Scala importadas en tu proyecto. En caso de que no sea así, las podés agregar manualmente: click derecho sobre el proyecto &gt; propiedades &gt; java build path &gt; solapa "libraries" &gt; "add library" y elegir la que corresponda
+-   por último, si tenés apuntado en tu proyecto un JDK válido (que apunte a un directorio que exista en tu PC, revisá Window &gt; Preferences &gt; Installed JREs)
+
+### Problemas al correr el ejecutable
+
+Si te aparece un error como éste al correr un launcher:
+
+`Error occurred during initialization of VM`
+`java.lang.Error: java.lang.ClassNotFoundException: org.uqbar.arena.aop.ArenaClassLoader`
+`   at java.lang.ClassLoader.initSystemClassLoader(Unknown Source)`
+`   at java.lang.ClassLoader.getSystemClassLoader(Unknown Source)`
+`Caused by: java.lang.ClassNotFoundException: org.uqbar.arena.aop.ArenaClassLoader`
+`   at java.net.URLClassLoader$1.run(Unknown Source)`
+
+El problema está en el launcher, el ArenaClassLoader está deprecado, se reemplazó por el APOClassLoader (más arriba te dice cómo configurarlo).
+
+Otro problema que puede aparecer es:
+
+`Error occurred during initialization of VM`
+`java.lang.Error: java.lang.ClassNotFoundException: org.uqbar.... ....APOClassLoader`
+
+entonces el problema es que no te descargó las dependencias de Maven correctamente. Revisá los directorios de tu usuario/.m2/repository porque seguramente te falte bajar dependencias, podés probar haciendo Maven &gt; Update project (forzando el check Update snapshots), es poco probable que eso lo solucione pero al menos te puede ayudar a encontrar el origen de la dependencia errónea.
