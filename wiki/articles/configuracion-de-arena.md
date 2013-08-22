@@ -210,6 +210,6 @@ El problema está en el launcher, el ArenaClassLoader está deprecado, se reempl
 Otro problema que puede aparecer es:
 
 `Error occurred during initialization of VM`
-`java.lang.Error: java.lang.ClassNotFoundException: org.uqbar.... ....APOClassLoader`
+`java.lang.Error: java.lang.ClassNotFoundException: ....APOClassLoader`
 
 entonces el problema es que no te descargó las dependencias de Maven correctamente. Revisá los directorios de tu usuario/.m2/repository porque seguramente te falte bajar dependencias, podés probar haciendo Maven &gt; Update project (forzando el check Update snapshots), es poco probable que eso lo solucione pero al menos te puede ayudar a encontrar el origen de la dependencia errónea.
