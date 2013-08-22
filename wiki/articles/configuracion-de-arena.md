@@ -180,7 +180,7 @@ Los source folders de los proyectos (que tienen maven como estructura central de
 -   para proyectos Groovy: src/main/groovy y src/test/groovy
 -   y para proyectos Scala es src/main/scala y src/test/scala.
 
-Si te aparece como source folder sólo el src, o bien si no tenés source folders, una de dos: 1) corré el plugin de maven: botón derecho sobre el proyecto &gt; Configure &gt; Maven project (o mvn compile) 2) si eso no soluciona el problema, agregá los source folder a mano: botón derecho sobre el proyecto &gt; Build path &gt; new source folder o bien parado sobre el directorio src/main/el-que-corresponda botón derecho &gt; Build path &gt; Add as source folder)
+Si te aparece como source folder sólo el src, o bien si no tenés source folders, una de dos: 1) corré el plugin de maven: botón derecho sobre el proyecto &gt; Configure &gt; Maven project (o mvn compile) 2) si eso no soluciona el problema, agregá los source folder a mano: botón derecho sobre el proyecto &gt; Build path &gt; new source folder o bien parado sobre el directorio src/main/el-que-corresponda botón derecho &gt; Build path &gt; Add as source folder
 
 ### Problemas para encontrar la ventana ejecutable
 
