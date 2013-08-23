@@ -168,6 +168,10 @@ Troubleshooting
 
 ¿Qué hacer cuando nos bajamos ejemplos (o desarrollamos uno nuevo) y no nos andan? Tenemos que revisar estas cosas
 
+### Maven
+
+Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate \[Preparacion\_de\_un\_entorno\_de\_desarrollo\_Java\#Maven\]
+
 ### Checkout desde el SVN
 
 En general los ejemplos se bajan desde la estructura "proyecto/trunk", si los bajás desde el directorio proyecto, vas a tener algunos conflictos de directorio.
