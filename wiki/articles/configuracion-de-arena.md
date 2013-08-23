@@ -166,7 +166,7 @@ Podés utilizar alguno de nuestros pom.xml como ejemplo.
 Troubleshooting
 ---------------
 
-¿Qué hacer cuando nos bajamos los ejemplos y no nos andan? Tenemos que revisar estas cosas
+¿Qué hacer cuando nos bajamos ejemplos (o desarrollamos uno nuevo) y no nos andan? Tenemos que revisar estas cosas
 
 ### Checkout desde el SVN
 
