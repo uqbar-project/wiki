@@ -170,7 +170,7 @@ Troubleshooting
 
 ### Maven
 
-Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate \[Preparacion\_de\_un\_entorno\_de\_desarrollo\_Java\#Maven\]
+Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate [\[Preparacion\_de\_un\_entorno\_de\_desarrollo\_Java\#Maven](-preparacion-de-un-entorno-de-desarrollo-java-maven.html)\]
 
 ### Checkout desde el SVN
 
