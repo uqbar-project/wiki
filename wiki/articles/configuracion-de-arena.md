@@ -225,3 +225,9 @@ Otro problema que puede aparecer es:
 `java.lang.Error: java.lang.ClassNotFoundException: ....APOClassLoader`
 
 entonces el problema es que no te descargó las dependencias de Maven correctamente. Revisá los directorios de tu usuario/.m2/repository porque seguramente te falte bajar dependencias, podés probar haciendo Maven &gt; Update project (forzando el check Update snapshots), es poco probable que eso lo solucione pero al menos te puede ayudar a encontrar el origen de la dependencia errónea.
+
+Otro problema que te puede ocurrir cuando corras un launcher que te descargaste de nuestros ejemplos es que te aparezca un error de este tipo:
+
+`Launch configuration references non-existing project celulares-ui-arena-scala`
+
+En este caso el problema es que te descargaste el proyecto del SVN utilizando otro nombre que el que originalmente definimos. En ese caso fijate cuál es el nombre del proyecto que está esperando y renombralo a ese, o bien entrá por el menú Run Configuration y apuntá el launcher al proyecto que vos definiste.
