@@ -1,0 +1,5 @@
+Similares a los Traits, estas construcciones, que proveen la implementación de un conjunto de métodos, pueden ser combinadas y conforman un mecanismo de compartición de código complementario a las clases. Su principal diferencia con los Traits es que pueden definir y acceder a variables y su combinación no producen conflictos, ya que estos se resuelven automáticamente por un mecanismo de [linearization](flattening-vs-linearization.html).
+
+Los Mixins tienen implementaciones en varios de los lenguajes más modernos, como ser Ruby, Scala, Python y Groovy.
+
+Gracias al mecanismo de linearization, los mixins resuelven el [problema del rombo o diamante](http://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem) presente en la herencia múltiple, definiendo una precedencia entre los mixins que componen una clase dependiendo del orden de composición, es decir, si la clase C se compone de los mixins {A, B}, se tomarán los métodos de B en los casos en los que se presenten conflictos. Como consecuencia de esta decisión de diseño de los mixins, resultará diferente la composición {A, B} que {B, A}.
