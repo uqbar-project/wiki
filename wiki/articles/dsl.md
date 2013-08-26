@@ -123,7 +123,7 @@ Desarrollados como un API dentro de un lenguaje de proposito general, que se eje
 
 Si comparamos los DSLs internos y externos, en general los segundos serán mas flexibles, pero también el esfuerzo de implementarlos será mayor, no sólo porque la complejidad de implementar un parser a mano es mayor, sino que probablemente el lenguaje huésped nos proveerá muchas construcciones y bibliotecas útiles. (Digresión: aprovechar las bibliotecas existentes para otro lenguaje es un punto muy importante también a la hora de diseñar un GPL. Así es como surge gran cantidad de lenguajes que corren sobre la máquina virtual de Java o .Net)
 
-[Ejemplo de DSL interno para definir especificaciones](http://utntadp.com.ar/cursadas-anteriores/2012c1-clases/clase-12#TOC-Spec) aprovechando la sintaxis flexible de Groovy así como features de [metaprogramación](metaprogramacion.html).
+[Ejemplo de DSL interno para definir especificaciones](http://utntadp.com.ar/cursadas-anteriores/2012c1-clases/clase-12#TOC-Spec) aprovechando [features de lenguajes dinámicos](uso-de-features-de-lenguajes-dinamicos.html)
 
 ### DSL Externo
 
