@@ -15,6 +15,7 @@ A continuación mencionamos algunos features destacados por su utilidad para met
 -   Autoclases (Eigen Class): una clase exclusiva de esa instancia y que no se comparte con las demás permitiendo modificar la estructura y comportamiento de una instancia específica en vez de todas las de una determinada clase.
 -   Sintaxis flexible: Algunos lenguajes como Ruby permiten jugar con la sintaxis de modo que se pueda incrementar la expresividad del código. Algunos ejemplos de esto podría ser:
     -   omitir paréntesis y puntos en el envío de mensajes
+    -   redefinición de operadores
     -   contextualizar bloques de código de modo que se pueda elegir un receptor implícito de los mensajes
 
 Para profundizar y ver algunos ejemplos:
