@@ -19,7 +19,8 @@ Un MOP (MetaObject Protocol) es un framework de objetos que describe o modela un
 
 Dependiendo de la implementación y del lenguaje, el MOP puede soportar o no los tipos de reflection que enumeramos arriba: introspection, self-modification & intercession.
 
-### Introspection
+Introspection
+-------------
 
 Se refiere a poder obtener información acerca de los elementos de nuestro programa: clases, fields, métodos, funciones, predicados (en otros paradigmas).
 
@@ -52,7 +53,8 @@ Veamos algunas herramientas que nos dan los lenguajes Java y Smalltalk (Pharo):
 `   en Java: unConstructor.invoke(parametro1, parametro2, ...) o unaClase.newInstance()`
 `   en Pharo: unaClase new    `
 
-### Self-modification
+Self-modification
+-----------------
 
 Supongamos que queremos hacer el refactor **extract superclass**, para esto vamos a usar self-modification en Pharo, donde modificar el metamodelo usando el mismo lenguaje es algo cotidiano por ejemplo, para crear una clase usamos el template que nos provee el System Browser:
 
