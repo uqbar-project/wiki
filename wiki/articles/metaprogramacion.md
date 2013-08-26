@@ -35,4 +35,4 @@ Un metaprograma tendrá a su vez un (meta)modelo que describe a su dominio, el p
 
 Así como el programa manipula las instancias de las clases Perro o Animal, el metaprograma manipula las instancias de las clases que conforman el metamodelo (Class, Method, Field, o las que fueran).
 
-Para poder trabajar con el metamodelo hay que usar las herramientas de [Reflection](reflection.html) que el lenguaje nos brinde.
+Los lenguajes pueden proveen herramientas de [Reflection](reflection.html) para trabajar sobre su propio metamodelo.
