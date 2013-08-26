@@ -2,18 +2,26 @@ DSL viene de las siglas en inglés **Domain-Specific Language**.
 
 Un DSL es un lenguaje ideado para expresar cierta parte de un sistema. Por eso se dice que es un lenguaje de propósito específico, a diferencia de los lenguajes de propósito general (GPL).
 
+Los lenguajes con los que estamos acostumbrados a trabajar, como Java, Haskell o Groovy tienen la característica de que pueden ser utilizados para resolver problemas de programación de cualquier índole, por lo que decimos que son lenguajes de propósito general (GPL por sus siglas en inglés).
+
+Estos lenguajes son Turing-complete, siendo capaces de expresar cualquier algoritmo, y pudiendo ser aplicados a cualquier dominio. Con estos lenguajes, con mayor o menor facilidad o eficiencia, podemos construir sistemas de cálculo impositivo, implementar algoritmos de aprendizaje de máquina, etc. Es decir, son lenguajes que pretenden ser igualmente efectivos (igualmente buenos o malos) en todos los campos de accion.
+
+Sin embargo, el empleo GPLs para expresar problemas muy específicos, si bien es posible, puede significar mayor esfuerzo de lo que uno desearía, dado que las abstracciones que estos dominios plantean no están soportadas nativamente por el lenguaje; no son primitivas. Por ejemplo, escribir una transposición de matrices, aún contando con API bien diseñada, es ciertamente más complejo en Java que en Mathematica u Octave, y lenguajes como SQL están específicamente diseñados para realizar operaciones sobre una base datos.
+
+Estos lenguajes son específicos de un dominio particular (DSL, domain-specific languages), y si bien no pueden resolver todos los problemas, resuelven aquellos para los que fueron diseñados mejor que los GPL.
+
 Qué quiere decir esto ?
 
-|                    | propósito general                                    | propósito específico       |
-|--------------------|------------------------------------------------------|----------------------------|
-| Abarca construir   | la totalidad de la aplicación                        | una parte de la aplicación |
-| Tipo de Aplicacíón | cualquiera                                           | un solo tipo               |
-| Conceptos          | generales:                                           
-                                                                            
-                      -   función (en funcional),                           
-                      -   clase, objeto, método (en OOP),                   
-                      -   variable, predicado (en lógico)...                | del (único) dominio        |
-| Ejemplos           | C, Java, Smalltalk, Self, ADA, Haskell, Prolog, etc. | xpath, SQL, pic, sed       |
+|                    | propósito general                                 | propósito específico                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Abarca construir   | la totalidad de la aplicación                     | una parte de la aplicación                                                                                                                                                                             |
+| Tipo de Aplicacíón | cualquiera                                        | un solo tipo                                                                                                                                                                                           |
+| Conceptos          | generales:                                        
+                                                                         
+                      -   función (en funcional),                        
+                      -   clase, objeto, método (en OOP),                
+                      -   variable, predicado (en lógico)...             | del (único) dominio                                                                                                                                                                                    |
+| Ejemplos           | C, Java, Smalltalk, Self, ADA, Haskell, Prolog... | [xpath](http://es.wikipedia.org/wiki/XPath), SQL, [pic](http://macroexpand.org/doku.php?id=articles:uml-sequence-diagram-dsl-txl:start), [sed](http://es.wikipedia.org/wiki/Sed_(inform%C3%A1tica))... |
 
 Problema que ataca un DSL
 -------------------------
@@ -73,8 +81,63 @@ Entonces, una vía alternativa sería en pensar que **en lugar de adaptar nuestr
 
 A esto se lo conoce como **[Language-Oriented Programming](http://www.onboard.jetbrains.com/articles/04/10/lop/2.html)**, desde el punto de vista de un nuevo "paradigma". Y una de las prácticas es crear un nuevo lenguaje para expresar nuestra solución o una parte de la solución. Esto es un **DSL**.
 
-DSL Interno
------------
+Motivación para hacer un DSL
+----------------------------
 
-DSL Externo
------------
+Suponemos que con la comparación que ya vimos, aparecen varias razones. Pero vamos a enumerarlas acá para resumir:
+
+-   para acercar la brecha entre la descripción del problema en términos abstractos (descripción del dominio) y la implementación de la "computación" que lo resuelve / ejecuta.
+    -   Facilitaría la comunicación con gente no-técnica.
+    -   No programadores podrían entenderlo y escribirlo.
+-   para esconder los detalles internos
+    -   de la lógica común
+    -   o las construcciones propias del lenguaje
+-   para configuraciones de ciertas partes de la aplicación.
+-   para expresar de forma declarativa ciertas reglas del negocio, que se va a separar de la forma en que se interprete y ejecute esa regla. Ej: regular expressions.
+-   para la creación de un grafo complejo de objetos, problema que normalmente solucionamos con patrones creacionales, como factories, builders & prototypes.
+
+¿Cuando necesito un DSL? Como aproximación, diremos que si la cantidad de problemas en este domino específico que queremos resolver es pequeño, o la complejidad de crear el DSL es mayor que la resolver el problema en nuestro GPL, probablemente no lo necesitemos. De lo contrario, será una alternativa a considerar.
+
+Tipos de DSL's
+--------------
+
+A grandes rasgos, podríamos catalogar los DSLs a través de las siguientes categorías. Existen autores que refinan mucho más a detalle la categorización, incluyendo nuevos tipos. A fines prácticos de explicar la idea general a nivel de programación, nosotros optamos por acotar esa categorización:
+
+-   Parser + Compilador ó Interprete
+    -   Compilador: traduce a lenguaje maquina ejecutable: puede ser assembler o un lenguaje ejecutable por una VM como java, etc.
+    -   Interprete: a medida que se va parseando (leyendo) el código de expresado en el DSL, se va ejecutando, sin haber "generado" código ejecutable como paso intermedio.
+-   Traductor:
+    -   son los famosos generadores de código.
+    -   si bien se podría trazar una analogía con los compiladores, ya que también generan código, la diferencia es que los traductores generan código que no es "ejecutable" de por sí, sino más bien código de otro lenguaje.
+    -   Ejemplo: generadores de código. a través de Java APT (annotation processing tool)
+-   Embebidos:
+    -   se utiliza un lenguaje GPL, pero se lo usa de tal manera de "simular" o asemejarse lo mayor posible a un lenguaje propio del dominio
+    -   con syntax sugar y un diseño de API's especial, llamado Fluent Interfaces, se acerca de un lenguaje de dominio.
+    -   aprovechar las características del lenguaje GPL existente,
+    -   Evita tener que hacer un parser, compilador e interprete.
+    -   Ej: ruby
+
+### DSL Interno
+
+Desarrollados como un API dentro de un lenguaje de proposito general, que se ejecutan en su mismo ambiente, llamado lenguaje huésped.
+
+Si comparamos los DSLs internos y externos, en general los segundos serán mas flexibles, pero también el esfuerzo de implementarlos será mayor, no sólo porque la complejidad de implementar un parser a mano es mayor, sino que probablemente el lenguaje huésped nos proveerá muchas construcciones y bibliotecas útiles. (Digresión: aprovechar las bibliotecas existentes para otro lenguaje es un punto muy importante también a la hora de diseñar un GPL. Así es como surge gran cantidad de lenguajes que corren sobre la máquina virtual de Java o .Net)
+
+[Ejemplo de DSL interno para definir especificaciones](http://utntadp.com.ar/cursadas-anteriores/2012c1-clases/clase-12#TOC-Spec) aprovechando la sintaxis flexible de Groovy así como features de [metaprogramación](metaprogramacion.html).
+
+### DSL Externo
+
+Desarrollados como un lenguaje independiente, compilado, interpretado o una mezcla de ambos, que se ejecuta en un ambiente independiente, y no guarda necesariamente relación con el lenguaje en que está escrito el parser.
+
+**Ventajas**
+
+-   Libertad absoluta sobre la sintaxis del lenguaje (solo limitada por capacidad de implementación del parser, etc), por eso..
+-   Mayor expresividad del dominio.
+
+**Desventajas**
+
+-   Complejidad al tener que implementar el parser + compiler
+-   Disasociación del lenguaje "base" o de ejecución.
+-   Caemos fuera de las herramientas tradicionales, y perdemos soporte a nivel IDE (salvo, ahora con xtext)
+
+[Artículo sobre cómo hacer un DSL externo usando XText](http://www.drdobbs.com/open-source/project-of-the-month-xtext-dsl-framework/230700063)
