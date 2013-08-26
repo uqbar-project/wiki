@@ -59,3 +59,9 @@ A medida que logramos abstraer nuestros problemas podemos armar nuestros propios
 
 Herramientas declarativas en el *mundo real*
 --------------------------------------------
+
+El lenguaje SQL para trabajar con bases de datos relacionales es un claro ejemplo de declaratividad que se usa ampliamente en la indusria.
+
+Los motores de bases de datos, a partir de consultas provistas por el usuario que especifican el origen de los datos (FROM), los filtros a aplicar sobre los posibles resultados (WHERE), las transformaciones a realizar sobre las filas resultantes (SELECT) y criterios de ordenamiento (ORDER BY) por ejemplo, realizan búsquedas complejas relacionando las tablas de origen solicitadas de la forma más optimizada posible en base a los índices que el usuario defina y estadísticas que el mismo motor realiza.
+
+El algoritmo utilizado por el motor está muy separado del conocimiento (qué entidades existen, cómo se relacionan entre ellas), lo cual permite al usuario abstraerse de esta lógica de búsqueda y concentrarse exclusivamente en el modelado de datos.
