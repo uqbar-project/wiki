@@ -70,7 +70,7 @@ Mandándole el mensaje new a la clase correspondiente.
 
 ### Diagramando Clases
 
-Ver [Diagrama de Clases](diagrama-de-clases.html)
+Ver [Diagrama de clases](diagrama-de-clases.html)
 
 ### Conclusión
 
