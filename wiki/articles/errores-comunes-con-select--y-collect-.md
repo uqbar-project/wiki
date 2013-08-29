@@ -1,4 +1,26 @@
-Esto me lleva a recordar un error que aparece a menudo, no es exactamente el caso pero me viene bien para explicarlo. Fíjense una cosa: siempre que yo hago....
+Orden incorrecto entre collect: y select:
+-----------------------------------------
+
+Como se explica en [Mensajes de colecciones](mensajes-de-colecciones.html), el select: es para filtrar una colección en base a un criterio mientras que el collect: es para recolectar los resultados de enviar un mensaje a cada objeto de la colección original.
+
+Supongamos que queremos obtener una colección con los promedios de los alumnos que aprobaron, podríamos plantearlo como
+
+`(alumnos select: [:unAlumno | unAlumno aprobo ]) collect: [:unAlumno | unAlumno promedio ]`
+
+Si en vez de eso hicieramos
+
+`(alumnos collect: [:unAlumno | unAlumno promedio ]) select: [:unAlumno | unAlumno aprobo ]`
+
+Esto no va a funcionar, porque el collect: va a retornar una lista de números, no de alumnos, con lo cual el filtrado no se va a poder hacer.
+
+Si lo que queremos es en cambio obtener los promedios &gt; 4 de los alumnos, ahí no habría problema en hacer primero el collect: y luego el select:, porque el filtrado se haría sobre promedios y no sobre alumnos:
+
+`(alumnos collect: [:unAlumno | unAlumno promedio ]) select: [:unPromedio | unPromedio > 4 ]`
+
+Inicialización inecesaria de variables
+--------------------------------------
+
+Fíjense una cosa: siempre que yo hago....
 
 ` a := cualquier cosa`
 
