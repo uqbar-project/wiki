@@ -6,7 +6,7 @@ Teoría
 ------
 
 -   [Mensajes y métodos](mensajes-y-metodos.html)
--   [Referencias](variables.html) y [Pseudovariables](pseudovariable.html)
+-   Referencias: [Variables](variables.html) y [Pseudovariables](pseudovariable.html)
 -   [Encapsulamiento](encapsulamiento.html)
 -   [Polimorfismo](polimorfismo.html)
 -   [Modelando objetos - Responsabilidades y delegación](modelando-objetos---responsabilidades-y-delegacion.html)
