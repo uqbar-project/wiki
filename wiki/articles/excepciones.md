@@ -1,6 +1,15 @@
 Una excepción o error es la indicación de un problema que ocurre durante la ejecución de un programa porque alguna determinada operación no pudo realizarse. El manejo de excepciones permite al usuario crear aplicaciones tolerantes a fallas y robustos (resistentes a errores) para controlar estas excepciones y que pueda seguir ejecutando el programa sin verse afectado por el problema.
 
-La principal particularidad de los errores es que cortan el flujo de ejecución hasta que alguien se encargue de resolverlo. De esta forma si a recibe el mensaje msj1 que internamente manda self msj2 que a su vez manda self msj3 y el mismo no puede realizarse, el error se propaga hacia atrás por la cadena de mensajes enviados hasta que el mismo sea atrapado y se pueda continuar ejecutando el programa con normalidad.
+La principal particularidad de los errores es que cortan el flujo de ejecución hasta que alguien se encargue de resolverlo. Supongamos que tenemos este código:
+
+`>> msj1`
+`  self msj2.`
+`  self msj3.`
+`>> msj2`
+`  self error: 'Todo mal!'.`
+`  ^ 'Esto no se va a ejecutar nunca'.`
+
+De esta forma si el objeto que define esto recibe el mensaje msj1, el error de msj2 cortará la ejecución con lo cual no se evaluará la siguiente línea ni se mandará self msj3. Es correcto dejar que el error se propague hacia atrás por la cadena de mensajes enviados siempre que no haya nada para hacer al respecto. Eventualmente, en algún punto donde sí sea posible tomar alguna acción, se podrá manejar ese error y continuar la ejecución con normalidad.
 
 Bugs vs Errores de usuario
 --------------------------
