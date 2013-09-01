@@ -251,4 +251,4 @@ Si te aparece un error como el siguiente:
 
 `groovy-all is loaded in version 2.0.6 and you are trying to load version 2.1.6`
 
-Editá el pom.xml y cambiale la versión de groovy-all a 2.0.6
+Editá el pom.xml y cambiale la versión de groovy-all a 2.0.6 (o la versión en la que esté cargada)
