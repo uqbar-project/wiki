@@ -170,7 +170,12 @@ Troubleshooting
 
 ### Maven
 
-Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate en [el tutorial de instalación de Maven](preparacion-de-un-entorno-de-desarrollo-java-maven.html)
+Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate en [el tutorial de instalación de Maven](preparacion-de-un-entorno-de-desarrollo-java-maven.html).
+
+También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener un mensaje de error similar a éste:
+
+`[INFO] Unable to initialise extensions`
+`Component descriptor role: 'com.jcraft.jsch.UIKeyboardInteractive', implementation: 'org.apache.maven.wagon.providers.ssh.jsch.interactive.PrompterUIKeyboardInteractive', role hint: 'default' has a hint, but there are other implementations that don't`
 
 ### Checkout desde el SVN
 
@@ -193,6 +198,14 @@ Si estás en una tecnología distinta de Java, tenés que asegurarte que el proy
 -   para Xtend, Add Xtext nature
 -   para Groovy, Add Groovy nature
 -   para Scala, Add Scala nature
+
+### JDK
+
+Revisá que tengas instalada una JDK (no JRE, tiene que ser JDK con las herramientas para desarrollar en Java como el compilador, debug, etc.) y que la versión de ese JDK sea 1.7 ó superior. Si querés usar una JDK 1.6 ó inferior te va a aparecer el siguiente mensaje de error
+
+`java.lang.UnsupportedClassVersionError: ---aplicación de Arena--- : Unsupported major.minor version 51.0`
+
+porque Arena está compilado con una JDK 1.7 (1.6 ya no tiene soporte de Sun)
 
 ### Problemas para encontrar la ventana ejecutable
 
@@ -231,3 +244,11 @@ Otro problema que te puede ocurrir cuando corras un launcher que te descargaste 
 `Launch configuration references non-existing project celulares-ui-arena-scala`
 
 En este caso el problema es que te descargaste el proyecto del SVN utilizando otro nombre que el que originalmente definimos. En ese caso fijate cuál es el nombre del proyecto que está esperando y renombralo a ese, o bien entrá por el menú Run Configuration y apuntá el launcher al proyecto que vos definiste.
+
+### Problemas específicos con Groovy
+
+Si te aparece un error como el siguiente:
+
+`groovy-all is loaded in version 2.0.6 and you are trying to load version 2.1.6`
+
+Editá el pom.xml y cambiale la versión de groovy-all a 2.0.6
