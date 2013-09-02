@@ -1,10 +1,43 @@
-Supongamos que queremos extender el viejo y querido ejemplo de Pepita la golondrina para que vuele o coma en base a su salud. Cuando está cansada no puede volar, cuando está hambrienta y se le da de comer aumenta el doble de energía que cuando está normal y antes de volar come un poquito también, cuando está enérgica gasta más energía al volar que lo normal y vuela un poquito antes de comer...
+Supongamos que queremos modelar el comportamiento de personas a la hora de pagar la cuenta después de una comida en un restaurant. Los clientes pagan lo que consumen más la propina, que depende de su humor. Sabemos que la gente feliz deja de propina 25% de lo que salió la comida, la gente enojada no deja nada y los que están de un humor indiferente dejan lo que tienen en el bolsillo.
 
-Sería posible resolver toda esta lógica (y la que esté por venir más adelante) con muchos ifs en pepita, pero es posible modelarlo de otra forma: los diferentes estados de salud de pepita podrían ser otros objetos separados que le ayuden a saber cómo debería volar y comer, y por su puesto ser polimórficos para que pepita pueda delegar en ellos esta funcionalidad sin importar cuál sea su estado actual (objeto al cual referencia con algún atributo propio).
+Queremos que un cliente nos pueda decir cuánto paga en total (propina + lo que consumió) dado el importe de la comida consumida.
 
-Pasamos de tener *un objeto que resuelve todo el problema* a *un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración*. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración de pepita y el uso de [polimorfismo](polimorfismo.html).
+Sería posible resolver toda esta lógica (y la que esté por venir más adelante) con muchos ifs en el cliente, pero es posible modelarlo de otra forma: los diferentes humores del cliente podrían ser otros objetos separados que le ayuden a saber cuánta propina poner, y por su puesto ser polimórficos para que el cliente pueda delegar en ellos esta funcionalidad sin importar cuál sea su humor actual (objeto al cual referencia con algún atributo propio, como ser humor).
 
-Entonces, la composición en objetos es simplemente una relación de conocimiento entre dos objetos (por ejemplo, pepita conoce a su estado de salud) donde el objeto conocido puede cambiarse por otro que sea polimórfico para el que los conoce.
+`#Cliente`
+`>> cuantoPaga: importeTotal `
+`  ^importeTotal +  self cuantoDePropina: importeTotal `
+`>> cuantoDePropina: importeTotal `
+`  ^humor cuantoDePropina: importeTotal `
+
+`#Feliz`
+`>> cuantoDePropina: importeTotal `
+`  ^importeTotal * 1.25 `
+
+`#Enojado`
+`>> cuantoDePropina: importeTotal `
+`  ^0 `
+
+`#Indiferente`
+`>> cuantoDePropina: importeTotal`
+`  ^plataDelBolsillo `
+
+Nota: en este ejemplo se ubicó la variable “plataDelBolsillo” en la estrategia Indiferente. Esto implica que cada vez que el cliente cambie de humor a indiferente, hay que indicarle cuánta plata en el bolsillo tiene.
+
+Otra opción podría haber sido poner la plataDelBolsillo en el cliente y para que la estrategia Indiferente resuelva cuánto tiene que devolver al recibir el mensaje \#cuantoDePropina: hay dos opciones:
+
+-   Que la instancia del objeto Indiferente conozca al Cliente y le pida su \#plataDelBolsillo
+-   Que el cliente se pase por parámetro al pedirle a la estrategia cuánta propina pone, modificando el método para recibir dos parámetros, por ejemplo:
+
+`#Cliente`
+`>> cuantoDePropina: importeTotal `
+`  ^humor cuantoDePropina: importeTotal para: self`
+
+Ante la necesidad de poder cambiar el humor de la persona, separamos a la Persona (que intuitivamente iba a ser un concepto entero abarcando a su estado de humor) de su Humor en un concepto aparte. Los objetos Humor deben ser polimórficos para la persona, ya que debo poder intercambiar los distintos humores y la persona debería hablarle de la misma forma a cualquiera.
+
+Entonces en vez de tener un objeto que resuelve todo el problema tenemos un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración del cliente y el uso de [polimorfismo](polimorfismo.html).
+
+Entonces, la composición en objetos es simplemente una relación de conocimiento entre dos objetos (por ejemplo, el cliente conoce a su humor) donde el objeto conocido puede cambiarse por otro que sea polimórfico para el que los conoce.
 
 Otro ejemplo podría ser el de las colecciones con un algoritmo de ordenamiento elegido por el usuario ([SortedCollection](sabores-de-colecciones.html) en Smalltalk), donde la colección delega en otro objeto que modela el algoritmo de ordenamiento a usar sobre sus elementos.
 
@@ -42,6 +75,7 @@ La codificación propuesta en el enunciado es:
 `   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].`
 ` >>premio`
 `   ^ super premio * (1- self descuento)`
+
 `#VendedorEspecialistaSenior`
 ` >>premio`
 `   ^ super premio + self adicionalJunior.`
