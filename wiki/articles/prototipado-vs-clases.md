@@ -1,19 +1,19 @@
-En el paradigma orientado a objetos existen diferentes formas de trabajar, los esquemas que usamos en la materia son el que se basa en [clases](clases.html) (tradicional) y el que se basa en [prototipos](prototipado.html) (como se puede trabajar usando el Object Browser para Smalltalk, o nativamente por ejemplo en JavaScript).
+En el paradigma orientado a objetos, cuando se suscita el problema de que existan **diferentes objetos con igual comportamiento pero diferente identidad y estado interno**, podemos abordarlo de diferentes formas. Dos esquemas muy usados son el de **[clases](clases.html)** y el que se basa en **[prototipos](prototipado.html)**. Cada lenguaje (o herramienta) suele implementar una sóla de éstas opciones, aunque existen variaciones. Los lenguajes más tradicionales (como Java, Smalltalk, y C\#) usan el esquema de clases y [herencia](herencia.html), y en otros lugares (como Javascript, ó en el Object Browser para Smalltalk), se usa el esquema de prototipado.
 
 Más allá de cuál de estos esquemas usemos, la base es la misma: objetos que se mandan mensajes en un ambiente aprovechando las ideas de encapsulamiento, delegación y polimorfismo.
 
-Una situación común a la hora de hacer programas en objetos es que existen muchos objetos que tienen el mismo comportamiento (o con muchas similitudes) y necesitamos algún mecanismo para compartir el código entre ellos. La idea de este artículo es ver cómo se puede trabajar en cada esquema para solucionar los mismos problemas.
+La idea de este artículo es ver cómo se puede trabajar en cada esquema para solucionar los mismos problemas.
 
 Compartir comportamiento entre varios objetos
 ---------------------------------------------
 
-Qué pasa si pepita no es la única golondrina que nos interesa tener en nuestro programa, también están josefa y pepona que comen y vuelan como pepita y también deben tener una energía que podamos monitorear. Estaría bueno que josefa y pepona puedan tener el mismo comportamiento que pepita sin tener que definir lo mismo 3 veces. Aquí es donde entran los conceptos de clase y de prototipo, dependiendo de las herramientas que tengamos disponibles.
+¿Qué pasa si pepita no es la única golondrina que nos interesa tener en nuestro programa?. También están josefa y pepona que comen y vuelan como pepita y también deben tener una energía que podamos monitorear. Estaría bueno que josefa y pepona puedan tener el mismo comportamiento que pepita sin tener que definir lo mismo 3 veces. Aquí es donde entran los conceptos de clase y de prototipo, dependiendo de las herramientas que tengamos disponibles.
 
-Cuando existe la idea de clase en nuestra implementación del paradigma, el comportamiento se define una sola vez en la clase y tanto pepita como josefa y pepona son instancias de esta clase, no podemos sólo tener a pepita con su propio código porque todos los objetos son instancias de una clase que las define. Cuando cualquiera de ellas reciba el mensaje vola: lo van a entender y buscarán el método que lo define en la clase Golondrina.
+Cuando existe la idea de clase en nuestra implementación del paradigma, el comportamiento se define una sola vez en la clase y tanto pepita como josefa y pepona pasan a ser **instancias** de esta clase. No podemos sólo tener a pepita con su propio código porque todos los objetos son instancias de una clase que las define. Cuando cualquiera de las golondrinas reciba el mensaje vola:, lo van a entender y buscarán el método que lo define en la clase Golondrina.
 
-Si no tenemos la idea de clase, el mecanismo que necesitamos para que josefa y pepona compartan el código con pepita es la **colonación**. Clonando a pepita podemos crear un nuevo objeto (josefa) que entiende los mismos mensajes y tiene el mismo estado interno (comparte la forma, pero cada objeto tiene sus propias referencias), y además conoce a pepita como su **prototipo**.
+Si no tenemos la idea de clase, el mecanismo que necesitamos para que josefa y pepona compartan el código con pepita es la **colonación**. Clonando a pepita podemos crear un nuevo objeto (josefa) que entiende los mismos mensajes y tiene sus mismas variables, y además conoce a pepita como su **prototipo**.
 
-Si queremos cambiar el comportamiento general de las golondrinas alcanza con realizar estos cambios sobre la clase Golondrina o sobre el prototipo pepita, al decir que un objeto es clon de otro estamos estableciendo una relación tan fuerte entre ellos como al decir que un objeto es instancia de una clase al trabajar en el otro esquema.
+Si queremos cambiar el comportamiento general de las golondrinas alcanza con realizar estos cambios sobre la clase Golondrina o sobre el prototipo pepita. Al decir que un objeto es clon de otro estamos estableciendo una relación tan fuerte entre ellos como al decir que un objeto es instancia de una clase al trabajar en el otro esquema.
 
 Compartir comportamiento y agregar más en algunos objetos
 ---------------------------------------------------------
