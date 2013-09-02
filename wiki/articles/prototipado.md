@@ -47,3 +47,10 @@ Tenemos el objeto o1 cuyo prototipo es o2, y o1 recibe el mensaje \#m
 Si o2 a su vez tuviera otro prototipo, el method lookup continuaría hasta que se llegue a un objeto que no es clon de ningún otro.
 
 Para descargar la herramienta que soporta prototipado en Pharo Smalltalk y tutoriales de uso: [Object Browser (LOOP)](https://sites.google.com/site/objectbrowsertool/)
+
+Ejemplo completo
+----------------
+
+<img src="Prototipado.png" title="Prototipado.png" alt="Prototipado.png" width="600" />
+
+Nota: El ejemplo de Pepita es obra de Carlos Lombardi. Cualquier reproducción del mismo deberá ser autorizada por el autor.
