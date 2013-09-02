@@ -15,10 +15,10 @@ Si no tenemos la idea de clase, el mecanismo que necesitamos para que josefa y p
 
 Si queremos cambiar el comportamiento general de las golondrinas alcanza con realizar estos cambios sobre la clase Golondrina o sobre el prototipo pepita. Al decir que un objeto es clon de otro estamos estableciendo una relación tan fuerte entre ellos como al decir que un objeto es instancia de una clase al trabajar en el otro esquema.
 
-Compartir comportamiento y agregar más en algunos objetos
----------------------------------------------------------
+Diferenciar el comportamiento de algunos objetos
+------------------------------------------------
 
-Queremos que pepona que es una golondrina perezosa, entienda el mensaje descansar que hace subir su energía en 50 joules. Sin embargo pepita y josefa que son golondrinas normales deberían seguir teniendo el mismo comportamiento (no entenderían descansar).
+Supongamos que pepona es otro clon de pepita. Queremos que pepona (que es una golondrina perezosa) entienda el mensaje descansar, que hace subir su energía en 50 joules. Sin embargo pepita y josefa que son golondrinas normales deberían seguir teniendo el mismo comportamiento (no entenderían descansar).
 
 En el esquema de prototipado podemos simplemente modificar a pepona como lo haríamos con cualquier otro objeto, sin importar si fue clonado a partir de pepita o no.
 
@@ -26,7 +26,7 @@ En el esquema de prototipado podemos simplemente modificar a pepona como lo har�
 `>> descansar`
 `  energia := energia + 50`
 
-Cuando mandemos el mensaje `pepona` `descansar` lo va a entender (ya que tiene un método propio para este mensaje), va a ejecutar su método descansar y su energía se incrementará. Si mandáramos `pepita` `descansar` tendríamos un error porque pepita no entiende ese mensaje.
+Cuando mandemos el mensaje `pepona` `descansar` lo va a entender (ya que tiene un método propio para este mensaje), va a ejecutar su método descansar y su energía se incrementará. Si mandáramos `pepita` `descansar` tendríamos un error porque pepita no entendería ese mensaje.
 
 ¿Qué pasaría si estuviéramos trabajando con el esquema de clases? Siempre que aparece comportamiento nuevo, necesitamos crear otra clase que lo incluya, con lo cual necesitaríamos crear una clase GolondrinaPerezosa que [herede](herencia.html) de Golondrina y definir allí el método \#descansar. De esta forma, pepona ya no debería ser una instancia de Golondrina sino de GolondrinaPerezosa.
 
