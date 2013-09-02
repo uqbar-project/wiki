@@ -30,3 +30,5 @@ Como self siempre es el objeto receptor del mensaje, si vola: se lo mandamos a j
 Lógicamente, si le mandamos vola: a pepita, va a entender el mensaje, a ejecutar su propia definición de vola: y modificar su propia energia sin afectar a ninguno de sus clones.
 
 Una vez que tenemos el objeto clonado podemos trabajar con él modificando su comportamiento y su estado interno, con lo cual podremos mantener las similitudes con su prototipo en aquellos puntos en los cuales nos interese e introducir diferencias en otros. Si el prototipo define un método para el mensaje \#msj1 y el clon cambia su implementación, el prototipo no se verá afectado por este cambio y el clon usará su propia implementación cuando reciba \#msj1 en vez de usar la del prototipo.
+
+Para descargar la herramienta que soporta prototipado en Pharo Smalltalk y tutoriales de uso: [Object Browser (LOOP)](https://sites.google.com/site/objectbrowsertool/)
