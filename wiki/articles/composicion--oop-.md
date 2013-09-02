@@ -1,7 +1,17 @@
-**Completar con teoría**
+Supongamos que queremos extender el viejo y querido ejemplo de Pepita la golondrina para que vuele o coma en base a su salud. Cuando está cansada no puede volar, cuando está hambrienta y se le da de comer aumenta el doble de energía que cuando está normal y antes de volar come un poquito también, cuando está enérgica gasta más energía al volar que lo normal y vuela un poquito antes de comer...
 
-Ejemplo de final
-----------------
+Sería posible resolver toda esta lógica (y la que esté por venir más adelante) con muchos ifs en pepita, pero es posible modelarlo de otra forma: los diferentes estados de salud de pepita podrían ser otros objetos separados que le ayuden a saber cómo debería volar y comer, y por su puesto ser polimórficos para que pepita pueda delegar en ellos esta funcionalidad sin importar cuál sea su estado actual (objeto al cual referencia con algún atributo propio).
+
+Pasamos de tener *un objeto que resuelve todo el problema* a *un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración*. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración de pepita y el uso de [polimorfismo](polimorfismo.html).
+
+Entonces, la composición en objetos es simplemente una relación de conocimiento entre dos objetos (por ejemplo, pepita conoce a su estado de salud) donde el objeto conocido puede cambiarse por otro que sea polimórfico para el que los conoce.
+
+Otro ejemplo podría ser el de las colecciones con un algoritmo de ordenamiento elegido por el usuario ([SortedCollection](sabores-de-colecciones.html) en Smalltalk), donde la colección delega en otro objeto que modela el algoritmo de ordenamiento a usar sobre sus elementos.
+
+El uso de composición en ocasiones es una solución muy elegante para problemas aparejados por el concepto de [Herencia](herencia.html), que pueden verse en el siguiente ejemplo tomado de un final de Paradigmas de Programación:
+
+Ejemplo: de herencia a composición
+----------------------------------
 
 El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio (todos los especialistas cobran el mismo monto) por cada venta mayor a 500 pesos. Los vendedores de salón cobran un premio (diferente para cada vendedor) si hacen más de 50 ventas "
 
