@@ -62,3 +62,14 @@ Sin embargo podríamos dar un paso más para evitar la repetición de código, s
 Ahora, cuando le mandemos el mensaje `pepona` `vola:` `10`, buscará una definición propia (o en su clase) para vola:, no la va a encontrar, con lo cual seguirá buscando en su prototipo (o la superclase de su clase) donde sí existe. Al ejecutar esa definición, se enviará a sí misma el mensaje \#energiaParaDespegar; empieza a buscar un método con ese nombre en sí misma (o en su clase GolondrinaPerezosa), lo encuentra y retorna 15, valor que se usará para completar la ejecución de vola:
 
 Si le mandamos el mensaje `pepita` `vola:` `10`, encontrará y ejecutará la definición en sí misma (o en su clase Golondrina) al igual que para el mensaje \#energiaParaDespegar que retornará el valor 10.
+
+Conclusión / Corolarios
+-----------------------
+
+-   Al solucionar el problema utilizando abstracciones ya existentes, prototipado es conceptualmente más sencillo
+-   Entonces, el mecanismo de clases agrega una abstracción, ya no tengo sólo "objetos comunes".
+-   Además, prototipado me resuelve el problema de redefinición sin más conceptos, en cambio en clases yo tengo que agregar la idea de herencia entre las clases para lograr algo parecido.
+-   Por otro lado, la separación objeto - clase viene asociada con un mecanismo para conocer a las clases "globalmente", mientras que si uso prototipado tengo que preocuparme por guardar el prototipo de mis objetos en algún lado
+-   Si bien en prototipado se puede usar a prototype para delegar, esto no es lo mismo que usar **[super](super.html)** al usar herencia.
+-   En prototipado, el "contenedor" de comportamiento es dinámico, es un objeto más de mi sistema. Al usar clases, en muchos lenguajes la separación "clase - objeto" es tal que pertenecen a dos mundos diferentes, el "estático" y el "dinámico".
+
