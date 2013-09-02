@@ -19,7 +19,7 @@ Y le mandamos a josefa
 
 El objeto josefa buscará la implementación de vola: en sí mismo inicialmente, y al no tener una definición propia, la seguirá buscando en su prototipo que es pepita. Allí encuentra una definición y la ejecuta. La energía que va a disminuir es la de josefa, el estado interno de pepita se va a mantener intacto.
 
-También podríamos tener una definición de vola: usando mensajes a [self](self.html) en vez de accediendo directamente a la variable energía:
+También podríamos tener una definición de vola: usando mensajes a [self](self---pseudovariable.html) en vez de accediendo directamente a la variable energía:
 
 `#pepita`
 `>> vola: unosKilometros`
