@@ -31,4 +31,15 @@ Lógicamente, si le mandamos vola: a pepita, va a entender el mensaje, a ejecuta
 
 Una vez que tenemos el objeto clonado podemos trabajar con él modificando su comportamiento y su estado interno, con lo cual podremos mantener las similitudes con su prototipo en aquellos puntos en los cuales nos interese e introducir diferencias en otros. Si el prototipo define un método para el mensaje \#msj1 y el clon cambia su implementación, el prototipo no se verá afectado por este cambio y el clon usará su propia implementación cuando reciba \#msj1 en vez de usar la del prototipo.
 
+A modo resumen podemos decir que el [method lookup](method-lookup.html) al usar prototipado se resuelve de la siguiente forma:
+
+Tenemos el objeto o1 cuyo prototipo es o2, y o1 recibe el mensaje \#m
+
+-   o1 tiene un método cuyo nombre es \#m, se ejecuta ese método.
+-   o1 no tiene un método cuyo nombre es \#m, entonces busca una definición en su prototipo
+    -   o2 tiene un método cuyo nombre es \#m, se ejecuta ese método (el receptor sigue siendo o1)
+    -   o2 no tiene un método cuyo nombre es \#m, con lo cual habrá un error porque o1 no entiende el mensaje \#m
+
+Si o2 a su vez tuviera otro prototipo, el method lookup continuaría hasta que se llegue a un objeto que no es clon de ningún otro.
+
 Para descargar la herramienta que soporta prototipado en Pharo Smalltalk y tutoriales de uso: [Object Browser (LOOP)](https://sites.google.com/site/objectbrowsertool/)
