@@ -70,6 +70,6 @@ Conclusión / Corolarios
 -   Entonces, el mecanismo de clases agrega una abstracción, ya no tengo sólo "objetos comunes".
 -   Además, prototipado me resuelve el problema de redefinición sin más conceptos, en cambio en clases yo tengo que agregar la idea de herencia entre las clases para lograr algo parecido.
 -   Por otro lado, la separación objeto - clase viene asociada con un mecanismo para conocer a las clases "globalmente", mientras que si uso prototipado tengo que preocuparme por guardar el prototipo de mis objetos en algún lado
--   Si bien en prototipado se puede usar a prototype para delegar, esto no es lo mismo que usar **[super](super.html)** al usar herencia.
+-   Si bien en prototipado se puede usar a prototype para delegar, esto no es lo mismo que usar **[super](super.html)** al usar herencia, ya que prototype referencia a otro objeto (con su propio estado) mientras que super referencia al mismo objeto que recibió el mensaje inicial
 -   En prototipado, el "contenedor" de comportamiento es dinámico, es un objeto más de mi sistema. Al usar clases, en muchos lenguajes la separación "clase - objeto" es tal que pertenecen a dos mundos diferentes, el "estático" y el "dinámico".
 
