@@ -90,3 +90,16 @@ La solución propuesta tiene problemas que surgen por el mal uso de herencia. Lo
 **Disclaimer:** el mensaje \#totalVentas fue a parar al vendedor porque tenía sentido para todos, no sólo para los juniors, y era más simple pero para que fuera totalmente análoga podríamos tenerlo definido en \#Junior y delegar en la categoría. En caso de dudas siempre vale preguntar.
 
 Como se puede ver en el diagrama de clases de la solución con composición, para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una **[complejidad](atributos-de-calidad.html)** extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor **[flexibilidad](atributos-de-calidad.html)** del modelo.
+
+A modo de resumen rápido: **Herencia**
+
+-   Estática (no puedo cambiar la clase de un objeto en run-time, si creo otro objeto se pierde la identidad lo cual trae problemas)
+-   Menos objetos -&gt; Menos complejidad
+-   Es una relación entre clases! Es mucho más fuerte que la relación entre instancias planteada en composición. La herencia implica no sólo heredar código sino conceptos.
+
+**Composición**
+
+-   Dinámico (la implementación se puede cambiar en run-time, gracias al polimorfismo)
+-   Aumenta la cantidad de objetos -&gt; Mayor complejidad (Es más complicado entender el todo y hay que configurar adecuadamente las relaciones entre los objetos)
+-   Se reparten mejor las responsabilidades en objetos más chicos
+
