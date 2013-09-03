@@ -79,7 +79,9 @@ Para bajarte los ejemplos, te recomendamos:
 -   hacer checkout desde el SVN
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
 
-=== Crear un proyecto de Arena en Scala == Las instrucciones para tener un proyecto Scala que utilice Arena son las mismas que para cualquier [Proyecto Maven con Scala](preparacion-de-un-entorno-de-desarrollo-scala-creacion-de-un-proyecto-maven-con-scala.html)
+### Crear un proyecto de Arena en Scala
+
+Las instrucciones para tener un proyecto Scala que utilice Arena son las mismas que para cualquier [Proyecto Maven con Scala](preparacion-de-un-entorno-de-desarrollo-scala-creacion-de-un-proyecto-maven-con-scala.html)
 
 En caso de duda podés utilizar alguno de nuestros pom.xml como ejemplo.
 
