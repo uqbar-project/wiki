@@ -72,30 +72,14 @@ En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya c
 Integración con Scala
 ---------------------
 
-Asumimos que además del entorno básico ya te instalaste Scala según [este instructivo](preparacion-de-un-entorno-de-desarrollo-scala.html).
+Asumimos que además del entorno básico ya te instalaste Scala según el instructivo para [Preparacion de un entorno de desarrollo Scala](preparacion-de-un-entorno-de-desarrollo-scala.html).
 
 Para bajarte los ejemplos, te recomendamos:
 
 -   hacer checkout desde el SVN
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
 
-Esto debería bastar, si ves que al proyecto le faltan librerías de Scala o no lo ves como un proyecto Scala, hay que trabajarlo manualmente de la siguiente manera:
-
--   Convertirlo a un proyecto Scala. Esto se hace mediante botón derecho sobre el proyecto: Configure &gt; Convert to Scala project (o Scala &gt; Add Scala nature, dependiendo de la versión de Eclipse)
--   Agregar las librerías de Scala: botón derecho sobre el proyecto, Build path &gt; Add Library &gt; Scala Library, ok.
--   Correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
-
-#### Crear un proyecto de Arena en Scala
-
-Los proyectos Scala tienen un parent específico:
-
-`   `<parent>
-`       `<groupId>`org.uqbar-project`</groupId>
-`       `<artifactId>`uqbar-scala-parent`</artifactId>
-`       `<version>`1.0`</version>
-`   `</parent>
-
-Esto define src/main/scala como directorio default donde están los fuentes (y src/test/scala donde están los tests).
+=== Crear un proyecto de Arena en Scala == Las instrucciones para tener un proyecto Scala que utilice Arena son las mismas que para cualquier [Proyecto Maven con Scala](preparacion-de-un-entorno-de-desarrollo-scala-creacion-de-un-proyecto-maven-con-scala.html)
 
 En caso de duda podés utilizar alguno de nuestros pom.xml como ejemplo.
 
