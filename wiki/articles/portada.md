@@ -15,7 +15,7 @@ Si sos un estudiante en busca del material de una materia, tal vez te convenga i
 -   [Algoritmos III](algo3-temario.html)
 -   [Programación con Herramientas Modernas](programacion-con-herramientas-modernas.html)
 
-Para el que busca algo que vaya más allá de lo visto en las clases aquí hay una lista con algunos artículos sobre [Otros Temas Interesantes de Programación](otros-temas-interesantes-de-programacion.html). Finalmente, otra posibilidad es browsear nuestra colección de propuestas de [Herramientas Útiles](herramientas-utiles.html).
+Para el que busca algo que vaya más allá de lo visto en las clases aquí hay una lista con algunos artículos sobre [Otros Temas Interesantes de Programación](otros-temas-interesantes-de-programacion.html). Finalmente, otra posibilidad es browsear nuestra colección de propuestas de [Herramientas Útiles](herramientas-utiles.html), que incluye tanto herramientas propias como algunas herramientas de terceros que recomendamos.
 
 Otro material:
 
