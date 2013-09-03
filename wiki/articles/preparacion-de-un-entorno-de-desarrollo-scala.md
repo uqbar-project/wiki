@@ -30,6 +30,26 @@ Aún así, recomendamos esa configuración. Otras configuraciones posibles son:
 
 Por favor si notás que esta información está desactualizada reportalo.
 
+Creación de un proyecto Maven con Scala
+---------------------------------------
+
+La configuración de un proyecto Scala para poder utilizar Maven es relativamente compleja y tiene varias sutilezas, principalmente para poder integrar ambas herramientas dentro del Eclipse. Por eso, recomendamos la utilización de este parent project que creamos con este objetivo específico:
+
+`   `<parent>
+`       `<groupId>`org.uqbar-project`</groupId>
+`       `<artifactId>`uqbar-scala-parent`</artifactId>
+`       `<version>`1.0`</version>
+`   `</parent>
+
+Este parent project realiza varias configuraciones:
+
+-   Agrega las dependencias con Scala y ScalaTest
+-   Define src/main/scala como directorio default donde están los fuentes (y src/test/scala donde están los tests).
+-   Le indica al maven que utilice el compilador de Scala.
+-   Configura la integración con el Eclipse.
+
+Para poder utilizar ese parent project necesario realizar previamente realizar las tareas indicadas en [Configuración de Maven para poder utilizar las herramientas de Uqbar](configuracion-de-maven-para-poder-utilizar-las-herramientas-de-uqbar.html)
+
 Documentación
 -------------
 
