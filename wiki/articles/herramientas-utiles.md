@@ -2,6 +2,7 @@ Primeros pasos
 --------------
 
 -   [Amigandonos con el entorno de desarrollo](amigandonos-con-el-entorno-de-desarrollo.html)
+-   [Configuración de Maven para poder utilizar las herramientas de Uqbar](configuracion-de-maven-para-poder-utilizar-las-herramientas-de-uqbar.html)
 
 Mis plugins de eclipse
 ----------------------
