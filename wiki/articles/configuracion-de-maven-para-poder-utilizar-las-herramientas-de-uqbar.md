@@ -1,6 +1,4 @@
-A la configuración original de Maven debemos indicarle cuáles son los repositorios de donde bajar los artefactos de Uqbar. Para poder realizar esto es necesario agregar algunas indicaciones en el archivo ~/.m2/settings.xml (o crearlo en caso de que no exista).
-
-Este archivo se encuentra en el directorio del usuario, esta ruta cambia dependiendo de cada sistema operativo. Por ejemplo en Linux, si el usuario es pablo, la ruta sería /home/pablo/.m2/settings.xml. Si trabajan con Windows, instalado en el drive C: y el nombre del usuario es Fernando, el directorio será C:\\Users\\Fernando\\.m2\\settings.xml
+Para poder utilizar los artefactos Maven desarrollados por Uqbar debemos agregar los repositorios de donde bajar los artefactos de [Uqbar](http://www.uqbar-project.org) a la configuración de Maven. Esta configuración se debe indicar en el archivo , siguiendo [estas instrucciones](preparacion-de-un-entorno-de-desarrollo-java-configuracion-de-maven.html)
 
 El contenido de este archivo debería quedar así:
 
