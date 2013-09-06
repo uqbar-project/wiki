@@ -56,6 +56,7 @@ Documentación
 -   [Documentación oficial](http://www.scala-lang.org/node/197)
 -   [Manuales de referencia](http://www.scala-lang.org/node/198)
 -   [Scala by Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf#) escrito por Martin Odersky, el creador de Scala.
+-   [1](http://twitter.github.io/effectivescala/)
 
 Links de interés
 ----------------
