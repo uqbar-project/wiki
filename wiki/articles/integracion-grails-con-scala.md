@@ -39,4 +39,4 @@ Al momento de escribir este artículo no se integran del todo bien los compilado
 Troubleshooting
 ---------------
 
-Si al correr la aplicación aparece un error "missing src/scala", o "BuildException: Attribute 'srcdir' is not set.", la solución es generar un source folder nuevo que sea: "src/scala", que quede vacío. Luego volver a ejecutar run-app.
+Si al correr la aplicación aparece un error "missing src/scala", "object scala not found." o "BuildException: Attribute 'srcdir' is not set.", la solución es generar un source folder nuevo que sea: "src/scala", que quede vacío. Luego volver a ejecutar run-app.
