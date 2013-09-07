@@ -16,9 +16,11 @@ Al momento de escribir este artículo no se integran del todo bien los compilado
 -   **objetos de dominio en un proyecto en Scala**, que debe definir un group id, artifact id y version en un pom.xml para luego hacer un maven install. También se pueden utilizar herramientas similares como SBT o Gradle.
 -   **un proyecto grails** que defina objetos vista, controllers, homes, etc.
 
-1.  . Para que compile el proyecto grails, hay que apuntar al .jar generado del proyecto que contiene los objetos de dominio.
-2.  . Y para que corra la aplicación en el web server, hay que modificar el BuildConfig.groovy, apuntando al groupId, artifactId y version del proyecto que contiene los objetos de dominio.
-3.  . También hay que agregar el compilador scala para hacer el build del .war.
+**Consejos:**
+
+1.  Para que compile el proyecto grails, hay que apuntar al .jar generado del proyecto que contiene los objetos de dominio.
+2.  Y para que corra la aplicación en el web server, hay que modificar el BuildConfig.groovy, apuntando al groupId, artifactId y version del proyecto que contiene los objetos de dominio.
+3.  También hay que agregar el compilador scala para hacer el build del .war.
 
 **Ejemplo:**
 
