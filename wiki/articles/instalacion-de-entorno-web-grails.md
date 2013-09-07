@@ -62,16 +62,21 @@ Cómo empezar
 -   Manual de referencia: <http://grails.org/doc/latest/guide/>
 -   Plugins que se pueden instalar: <http://grails.org/plugins/>
 
-Problemas comunes
------------------
+Troubleshooting
+---------------
+
+### Versiones de Grails
+
+-   Te recomendamos que uses Grails 2.x ó superior
+-   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/STS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
+
+### Integración con JDK
 
 -   Grails 2.2.2/2.2.3 y la versión 1.7.0\_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app
 
 `Could not determine Hibernate dialect for database name [H2]!`
 
 reemplazá la versión de tu JDK por una anterior.
-
--   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/STS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
 
 Integración con otros lenguajes de programación
 -----------------------------------------------
