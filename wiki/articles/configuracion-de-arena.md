@@ -243,12 +243,6 @@ Otro problema es que al ejecutarlo te tire un error:
 
 (también podría ser otra key como apo.exclude.package). En ese caso deberías (dentro del Eclipse) dar un click derecho sobre el proyecto: Maven &gt; Update project chequeando la opción Update snapshots. Hacelo desde el plugin de Eclipse y no por la línea de comando.
 
-Y si en tu proyecto ves que al ejecutarlo te aparece un error como el siguiente:
-
-`Error: no se ha encontrado o cargado la clase principal xxx.ui.runnable.SesionApplication`
-
-El problema es que no está compilada la clase SesionAplication, si es xtend deberías ver la clase SesionApplication.java en el directorio xtend-gen, si es groovy el proyecto debe tener naturaleza groovy y los compilers en el build path, lo mismo aplica para proyectos en scala y java.
-
 ### Problemas específicos con Groovy
 
 Si te aparece un error como el siguiente:
