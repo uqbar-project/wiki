@@ -231,6 +231,24 @@ Otro problema que te puede ocurrir cuando corras un launcher que te descargaste 
 
 En este caso el problema es que te descargaste el proyecto del SVN utilizando otro nombre que el que originalmente definimos. En ese caso fijate cuál es el nombre del proyecto que está esperando y renombralo a ese, o bien entrá por el menú Run Configuration y apuntá el launcher al proyecto que vos definiste.
 
+Otro problema es que al ejecutarlo te tire un error:
+
+`java.util.NoSuchElementException: key not found: aop.opo.isolationLevel`
+`   at scala.collection.MapLike$class.default(MapLike.scala:228)`
+`   at scala.collection.AbstractMap.default(Map.scala:58)`
+`   at scala.collection.mutable.HashMap.apply(HashMap.scala:64)`
+`   at com.uqbar.apo.APOConfig$.getProperty(APOConfig.scala:27)`
+`   at com.uqbar.apo.APOConfig.getProperty(APOConfig.scala)`
+`   at org.uqbar.lacar.ui.impl.jface.bindings.DetailTransactionalObservableSet.`<init>` (DetailTransactionalObservableSet.java:17)`
+
+(también podría ser otra key como apo.exclude.package). En ese caso deberías (dentro del Eclipse) dar un click derecho sobre el proyecto: Maven &gt; Update project chequeando la opción Update snapshots. Hacelo desde el plugin de Eclipse y no por la línea de comando.
+
+Y si en tu proyecto ves que al ejecutarlo te aparece un error como el siguiente:
+
+`Error: no se ha encontrado o cargado la clase principal xxx.ui.runnable.SesionApplication`
+
+El problema es que no está compilada la clase SesionAplication, si es xtend deberías ver la clase SesionApplication.java en el directorio xtend-gen, si es groovy el proyecto debe tener naturaleza groovy y los compilers en el build path, lo mismo aplica para proyectos en scala y java.
+
 ### Problemas específicos con Groovy
 
 Si te aparece un error como el siguiente:
