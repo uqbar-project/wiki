@@ -241,7 +241,21 @@ Otro problema es que al ejecutarlo te tire un error:
 `   at com.uqbar.apo.APOConfig.getProperty(APOConfig.scala)`
 `   at org.uqbar.lacar.ui.impl.jface.bindings.DetailTransactionalObservableSet.`<init>` (DetailTransactionalObservableSet.java:17)`
 
-(también podría ser otra key como apo.exclude.package). En ese caso deberías (dentro del Eclipse) dar un click derecho sobre el proyecto: Maven &gt; Update project chequeando la opción Update snapshots. Hacelo desde el plugin de Eclipse y no por la línea de comando.
+(también podría ser otra key como apo.exclude.package).
+
+Hay dos formas de resolverlo, mutuamente excluyentes:
+
+#### Si usas Maven desde Eclipse
+
+En ese caso deberías (dentro del Eclipse) dar un click derecho sobre el proyecto: Maven &gt; Update project chequeando la opción Update snapshots. Hacelo desde el plugin de Eclipse y no por la línea de comando.
+
+#### Si usas la línea de comandos
+
+-   Borrar todo el contenido de .m2/repository
+-   Desde consola, ir al directorio del proyecto y usar el comando: mvn -U clean install eclipse:clean eclipse:eclipse
+-   Importar el proyecto a eclipse
+-   Click derecho sobre el proyecto &gt; build path &gt; configure build path, order and export y buscar arena-jface-3.3-SNAPSHOT.jar y hacer up hasta que quede debajo de las carpetas src
+-   En el proyecto: Run As &gt; Java Application (en el ejemplo del conversor: ConversorWindow)
 
 ### Problemas específicos con Groovy
 
