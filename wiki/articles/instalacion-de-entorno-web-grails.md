@@ -67,7 +67,7 @@ Troubleshooting
 
 ### Versiones de Grails
 
--   Te recomendamos que uses Grails 2.x ó superior
+-   Te recomendamos que uses Grails 2.x ó superior, **pero dado que los ejemplos fueron escritos en Grails 2.2.2 y hay comportamientos extraños con versiones diferentes, lo mejor es que te instales Grails 2.2.2 y opcionalmente la versión que vos quieras utilizar**
 -   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/STS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
 
 ### Integración con JDK
