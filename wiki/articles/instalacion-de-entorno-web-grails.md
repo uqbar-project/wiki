@@ -6,11 +6,13 @@ Asumimos que tenés instaladas las herramientas básicas, en particular necesita
 Framework Grails
 ----------------
 
-Recomendamos descargar la última versión (*Download latest release*) del siguiente link
+Recomendamos descargar la versión 2.2.2 del siguiente link
 
 -   <http://grails.org/download>
 
-y luego seguir las instrucciones que figuran en el sitio (link Installation)
+y luego seguir las instrucciones que figuran en el sitio (link Installation).
+
+**Atención:** la última versión 2.3.0 cambió la forma de manejar las dependencias, no te recomendamos bajarla hasta que estabilicemos los ejemplos.
 
 Entorno integrado de desarrollo (IDE)
 -------------------------------------
