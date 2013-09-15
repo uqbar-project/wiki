@@ -37,6 +37,8 @@ Evalué mi código, me tiró un error y no sé lo que significa
 -   Revisar que no haya error de tipeo (el mensaje coincide con el nombre del método definido)
 -   Revisar que el método esté definido en el lugar correcto (del lado de las instancias si es un método de instancia y del lado de la clase si el receptor es una clase)
 
+Un caso particular con el que se pueden encontrar es que un objeto de una clase de ustedes no entienda el mensaje \#adaptToNumber:andSend:, lo cual puede surgir si como parámetro de una operación matemática no era un número (por ejemplo 3 + pepita).
+
 ------------------------------------------------------------------------
 
 ***NonBooleanReceiver: proceed for truth***
