@@ -14,5 +14,6 @@ Herramientas basadas en Scala:
 -   [Specs2](http://etorreborre.github.com/specs2/)
 -   [Scala Mock](http://scalamock.org/)
 -   [SBT (Simple Build Tool)](https://github.com/sbt/sbt/)
+-   [Cake Pattern y Self Type Annotations](https://coderwall.com/p/t_rapw)
 -   Twitter, Foursquare, Linkedin
 
