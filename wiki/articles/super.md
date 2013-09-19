@@ -1,27 +1,74 @@
 **super** es una [pseudovariable](pseudovariable.html) muy parecida a [self](self.html).
 
-**super** referencia (apunta) al objeto receptor del mensaje del método que estamos analizando en un momento dado.
+**super** referencia (apunta) al objeto receptor del mensaje del método que estamos analizando en un momento dado al igual que **self**. La diferencia entre **self** y **super** es que **super** afecta al [ method lookup](paradigma-de-objetos---method-lookup.html)
 
-La diferencia entre **self** y **super** es que **super** afecta el [ method lookup](paradigma-de-objetos---method-lookup.html)
+Sin la existencia de super tendríamos problemas para resolver ciertos problemas, por ejemplo si tenemos la siguiente jerarquía de clases `A` `<|-` `B`:
 
-Cuando super está presente el algoritmo se ve modificado
+`#A >> m`
+`   "lógica definida por A para cuando se recibe el mensaje m"`
+`   ^ 'hola'`
+`#B >> m`
+`   "queremos usar la lógica que define A y además hacer otra cosa"`
+`   ^ `**`self` `m`**` , ' mundo'`
 
-Tenemos un objeto **i** instancia de la clase **C** y le enviamos un mensaje de nombre **m**.
+Si a una instancia de B le mandamos el mensaje m ejecutará el método m definido en B y en su definición se manda a sí mismo m, con lo cual se ejecuta ese mismo método (no el de A) y así indefinidamente. Para solucionar este problema podemos usar super.
 
-**self** apunta a **i** y **super** también apunta a **i**, o sea, ambos apuntan al objeto receptor del mensaje.
+`#A >> m`
+`   "lógica definida por A para cuando se recibe el mensaje m"`
+`   ^ 'hola'`
+`#B >> m`
+`   "queremos usar la lógica que define A y además hacer otra cosa"`
+`   ^ `**`super` `m`**` , ' mundo'`
 
-Tenemos que mantener una referencia a la clase donde estamos buscando en un momento determinado.
+Cuando en un método se manda un mensaje a super el method lookup se ve modificado empezando la búsqueda del método correspondiente a ese mensaje en la clase inmediatamente superior a donde está definido ese método, en vez de en la clase de la cual es instancia el objeto. De esta forma podemos [redefinir](redefinicion.html) un método de la superclase para agregar lógica nueva y a su vez reutilizar el comportamiento heredado.
 
-Al principio la *clase actual* es **C**
+Supongamos que tenemos la siguiente jerarquía de clases `A` `<|-` `B` `<|-` `C` que definen:
 
-**1.**
+`#A >> m`
+`   ^ self n + 4`
+`   >> n`
+`   ^ 1`
+`#B >> m`
+`   ^ super m + 5`
+`#C >> n`
+`   ^ 3`
 
-si el receptor del mensaje **NO** es **super** se busca en la *clase actual* un método con el nombre **m**
+Sabiendo que tanto **self** como **super** apuntan a **i**, o sea, ambos apuntan al objeto receptor del mensaje, analicemos lo que pasa si evaluamos lo siguiente:
 
-si el receptor del mensaje ES **super** entonces *clase actual* pasa a ser la superclase de la clase en donde está el método que contiene a la pseudovariable **super**
+`i := C new.`
+`i m.`
 
-**1a.** si se encuentra se ejecuta el método encontrado; se ejecuta el método en el objeto **i** y se terminó el method lookup
+Cuando i recibe el mensaje m busca un método en su clase C con el mismo nombre y no lo encuentra, con lo cual lo sigue buscando en la superclase de C, que es B. Allí existe una definición para ejecutar y vemos que al objeto referenciado por **super** (que es i) se le manda el mensaje m, haciendo que el method lookup para ese mensaje comience en la clase A (superclase de donde está definido el método). La definición de \#A&gt;&gt;m envía el mensaje n al objeto referenciado por **self** (que también es i), pero el method lookup para encontrar el método n comienza desde la clase de la cual es instancia i (o sea en C).
 
-**1b.** si no se encuentra y la *clase actual* no es **Object** la *clase actual* pasa a ser la superclase de la *clase actual* y se vuelve a **1.**
+El resultado final del cálculo sería: 3 + 4 + 5
 
-**1c.** si no se encuentra y la clase actual es **Object** entonces el objeto **i** no entiende el mensaje **m**
+Si le mandáramos el mensaje m a una instancia de B el resultado sería: 1 + 4 + 5, ya que se ejecutaría \#B&gt;&gt;m que hace `self` `n`, se empieza a buscar n en B, no se encuentra, se lo busca en A y retorna 1.
+
+Conclusión
+
+-   super sólo debe usarse para redefinir métodos que en su definición envían el mismo mensaje que se está definiendo para usar el código heredado evitando loops que se provocarían en el method lookup usando self
+-   Si el receptor del mensaje **NO** es **super**, se busca en la clase de la cual es instancia el objeto un método con el mismo nombre del mensaje.
+-   Si el receptor del mensaje ES **super** entonces se busca la definición en la superclase de la clase en donde está el método que contiene a la pseudovariable **super**.
+
+Malos usos de super
+-------------------
+
+Supongamos que tenemos este código para la jerarquía `A` `<|-` `B`
+
+`#A >> m1`
+`  "hace algo"`
+`#B >> m1`
+`  super m1`
+
+Esta redefinición usando super es innecesaria, ya que si a una instancia de B se le manda m1 el mismo method lookup buscará la definición en A en caso de no encontrarla en B.
+
+Otro error muy común (y muy grave) es usar super para mandar un mensaje con nombre diferente al método que se está definiendo:
+
+`#A >> n`
+`   ^ 1`
+`#B >> m`
+`   ^ `**`super` `n`**` + 5`
+`#C >> n`
+`   ^ 3`
+
+En este ejemplo se puede ver que se manda el mensaje n en B usando super en vez de self en el método m. Esto es un problema ya que se ignora el comportamiento que puedan tener para n las subclases de B así como una posible implementación futura de n para B. Este mal uso de super suele llevar a un comportamiento inesperado del sistema que puede no resultar en un error como sucede en este caso (retornaría 6 en vez de 8), con lo cual es muy difícil de detectar y corregir.
