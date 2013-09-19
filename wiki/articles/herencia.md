@@ -126,10 +126,17 @@ En nuestro ejemplo
 Clase abtracta
 --------------
 
-En el ejemplo anterior la clase \#Ave se está usando como superclase de \#Golondrina y \#Picaflor. Si nosotros queremos instanciar un ave deberíamos elegir si será una golondrina o un picaflor para mandarle el mensaje new a alguna de esas clases. Lo que no sería correcto es:
+En el ejemplo anterior la clase Ave se está usando como superclase de Golondrina y Picaflor. Si nosotros queremos instanciar un ave deberíamos elegir si será una golondrina o un picaflor para mandarle el mensaje new a alguna de esas clases. Lo que no sería correcto es:
 
 `unAve := Ave new.`
 
-Este código va a funcionar en principio, pero si yo considero que un ave tiene que poder volar y no hay una implementación en \#Ave para esta operación ya que está definido de formas diferentes en sus subclases, unAve no va a entender el mensaje.
+Este código va a funcionar en principio, pero si yo considero que un ave tiene que poder volar y no hay una implementación en Ave para esta operación ya que está definido de formas diferentes en sus subclases, unAve no va a entender el mensaje.
 
 Entonces, una clase abstracta es aquella que no tiene sentido instanciar porque es demasiado genérica y no tiene una implementación concreta para algunos mensajes que debería entender porque está definido en sus subclases.
+
+Una buena práctica para formalizar el contrato de lo que es ser un ave es definir los métodos faltantes en la clase \#Ave de la siguiente forma:
+
+`#Ave >> vola: unosKilometros`
+`         self subclassResponsibility`
+
+Cuando un objeto recibe el mensaje subclassResponsibility se produce un [error](manejo-de-errores.html) indicando que el método debería redefinirse en alguna subclase. De esa forma si agregamos otra subclase de Ave, como ser Gaviota, y olvidamos redefinir \#vola:, cuando una instancia de Gaviota reciba ese mensaje el error será más descriptivo que el error de no entender el mensaje, y el desarrollador sabrá que las gaviotas deberían definir su forma de volar.
