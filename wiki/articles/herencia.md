@@ -19,51 +19,25 @@ Generalización
 
 Empezamos con dos clases, Golondrina (con una variable de instancia energia) y Picaflor (con una variable de instancia energia) , definimos métodos para ambos
 
-<code>
-
-`    Golondrina >> energia`
+`#Golondrina`
+`    >> energia`
 `         ^energia`
-
-</code>
-
-<code>
-
-`    Golondrina >> come: gramos`
+`    >> come: gramos`
 `         "Una golondrina aumenta su energia en cuatro veces los gramos ingeridos"`
 `         energia := energia + (gramos * 4)`
-
-</code>
-
-<code>
-
-`    Golondrina >> vola: kms`
+`    >> vola: kms`
 `         "Una golondrina disminuye su energia en 1 Joule por cada kilometro recorrido + 10 Joules que utiliza para el despegue "`
 `         energia := energia - (kms + 10)`
 
-</code>
-
-<code>
-
-`    Picaflor >> energia`
+`#Picaflor`
+`    >> energia`
 `         ^energia`
-
-</code>
-
-<code>
-
-`    Picaflor >> come: gramos`
+`    >> come: gramos`
 `         "Un picaflor aumenta su energia en cuatro veces los gramos ingeridos"`
 `         energia := energia + (gramos * 4)`
-
-</code>
-
-<code>
-
-`    Picaflor >> vola: kms`
+`    >> vola: kms`
 `         "Un picaflor disminuye su energia en 1 Joule por cada kilometro recorrido + 20 Joules que utiliza para el despegue "`
 `         energia := energia - (kms + 20)`
-
-</code>
 
 Lo que nos permite la idea de generalización utilizando herencia es crear nuevas abtracciones.
 
@@ -71,19 +45,15 @@ En el código de arriba nos podemos dar cuenta que tanto las golondrinas como lo
 
 Ahora bien, las golondrinas y los picaflores (por ejemplo) saben comer pero además comen de la misma forma. Estaría bueno poder generalizar eso, si las únicos pajaritos con los que estoy trabajando son golondrinas y picaflores puedo decir que todas las aves comen de la misma forma. Entonces generalizo el concepto de Golondrina y Picaflor utilizando una nueva abstracción, como necesito poner en esa abstracción métodos y definir atributos nada mejor que esa nueva abstracción sea una nueva clase
 
-<code>
-
-`    Ave >> come: gramos`
+`#Ave >> come: gramos`
 `         "Un ave aumenta su energia en cuatro veces los gramos ingeridos"`
 `         energia := energia + (gramos * 4)`
-
-</code>
 
 Pero no puedo poner ese código en la clase Ave porque esa clase no tiene una variable de instancia energia.
 
 Si todas las aves tienen que tener una variable de instancia es algo que me gustaría dejar escrito solo en Ave.
 
-`Ave` `tiene` `definida` `una` `variable` `de` `instancia` `energia`
+`Ave tiene definida una variable de instancia energia`
 
 ¿Cómo sigue esto?
 
@@ -93,35 +63,27 @@ Esto se hace diciendo que Ave es superclase de Golondrina y Ave es superclase de
 
 En Smalltalk la forma de crear una clase es enviándole el mensaje \#subclass:instanceVariableNames:classVariableNames: (o uno similar, depende del dialecto de Smalltalk utilizado) a la superclase de la clase que queremos crear.
 
-<code>
-
-`    Superclass`
-`         subclass: #NameOfSubclass`
-`         instanceVariableNames: 'variableInstancia1 variableInstancia2 variableInstanciaN'`
-`         classVariableNames: 'variableClase1 variableClase2 variableClaseN'`
-
-<code>
+`Superclass`
+`   subclass: #NameOfSubclass`
+`   instanceVariableNames: 'variableInstancia1 variableInstancia2 variableInstanciaN'`
+`   classVariableNames: 'variableClase1 variableClase2 variableClaseN'`
 
 En nuestro ejemplo
 
-<code>
+`Object`
+`  subclass: #Ave`
+`  instanceVariableNames: 'energia'`
+`  classVariableNames: ''.`
 
-`    Object`
-`         subclass: #Ave`
-`         instanceVariableNames: 'energia'`
-`         classVariableNames: ''.`
+`Ave `
+`  subclass: #Golondrina`
+`  instanceVariableNames: ''`
+`  classVariableNames: ''.`
 
-`    Ave `
-`         subclass: #Golondrina`
-`         instanceVariableNames: ''`
-`         classVariableNames: ''.`
-
-`    Ave `
-`         subclass: #Picaflor`
-`         instanceVariableNames: ''`
-`         classVariableNames: ''.`
-
-</code>
+`Ave `
+`  subclass: #Picaflor`
+`  instanceVariableNames: ''`
+`  classVariableNames: ''.`
 
 Clase abtracta
 --------------
