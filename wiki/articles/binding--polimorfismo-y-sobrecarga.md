@@ -60,7 +60,7 @@ Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuá
 
 La interpretación que debemos hacer es que que en realidad el mensaje enviado no se identifica únicamente por su nombre, sino que incluye los tipos de los parámetros. Desde esta perspectiva los dos métodos de la clase tienen distinto nombre, son totalmente independientes uno del otro. Debemos interpretar que el primero se denomina y el segundo . En presencia de este tipo de sobrecarga el *método a ejecutar* se decidirá en tiempo de ejecución, en función del mensaje enviado, pero el *mensaje a enviar* se decide en tiempo de compilación, a partir de la información de tipos disponible en este momento. En resumen, el mensaje enviado a no es sino . Dado que ambos métodos tienen identificadores distintos, para invocarlos se envían mensajes distintos y la decisión entre ambos será tomada en tiempo de compilación.
 
-Veamos un ejemplo más complejo, tenemos el siguiente código en Scala:
+Veamos un ejemplo más complejo con sobrecarga y redefinición (adaptado de ["Foundations of Object-oriented Languages: Types and Semantics" por Kim Bruce](http://books.google.com.ar/books?id=9NGWq3K1RwUC&pg=PA27&dq=Kim+Bruce+overloading+vs+overriding&hl=es-419&sa=X&ei=I65AUuyWL4Om9gT5ooCQDw&ved=0CDEQ6AEwAA#v=onepage&q=Kim%20Bruce%20overloading%20vs%20overriding&f=false)), tenemos el siguiente código en Scala:
 
 `class C {`
 `   def m(other: C) = { println(1) }`
