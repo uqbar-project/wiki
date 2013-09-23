@@ -60,6 +60,56 @@ Cuando se envía un mensaje que está sobrecargado, el sistema debe decidir cuá
 
 La interpretación que debemos hacer es que que en realidad el mensaje enviado no se identifica únicamente por su nombre, sino que incluye los tipos de los parámetros. Desde esta perspectiva los dos métodos de la clase tienen distinto nombre, son totalmente independientes uno del otro. Debemos interpretar que el primero se denomina y el segundo . En presencia de este tipo de sobrecarga el *método a ejecutar* se decidirá en tiempo de ejecución, en función del mensaje enviado, pero el *mensaje a enviar* se decide en tiempo de compilación, a partir de la información de tipos disponible en este momento. En resumen, el mensaje enviado a no es sino . Dado que ambos métodos tienen identificadores distintos, para invocarlos se envían mensajes distintos y la decisión entre ambos será tomada en tiempo de compilación.
 
+Veamos un ejemplo más complejo, tenemos el siguiente código en Scala:
+
+`class C {`
+`   def m(other: C) = { println(1) }`
+`}`
+`class SC extends C{`
+`   def m(other: SC) = { println(3) }`
+`   override def m(other: C) = { println(2) }`
+`}`
+
+Si hacemos la siguiente prueba:
+
+`var c2: C = new SC()`
+`var sc: SC = new SC()`
+`c2.m(sc)`
+
+El resultado será 2, no 3, ya que el mensaje que se elige estáticamente no es m(SC), sino m(C). Para entender lo que sucede podemos hacer dos pasos bien separados: Pensar primero como compilador y después pensar como máquina virtual (pensar en tiempo de compilación y tiempo de ejecución).
+
+Empecemos como compiladores: c2 es una variable del tipo C, y sc es una variable del tipo SC. En c2 se referenciará a una instancia del tipo SC, pero eso como compiladores por ahora no nos importa, porque no estamos ejecutando el código.
+
+Luego vamos a esta llamada:
+
+Acá es donde empieza la confusión: Uno piensa que porque sc es del tipo SC y c2 es una instancia de SC (si bien la variable es de tipo C) el método que se va a ejecutar es m(SC), pero no es así. ¿Por qué? La respuesta viene de pensar como compilador, no "ejecutar" el código y mirar la el tipo de la variable c2, y deducir de ahí los posibles mensajes que entiende, y de ver bien la firma de esos mensajes.
+
+¿De qué tipo es C2? Del tipo C. ¿Qué mensajes entiende un objeto del tipo C? Vamos a ver la declaración de C:
+
+`class C {`
+`   def m(other: C) = { println(1) }`
+`}`
+
+Los objetos del tipo C sólo entienden un mensaje, y ese es m(C). Por lo tanto, siendo que SC es un subtipo de C, la firma del mensaje que va a ser llamado en va a ser m(C):Unit y no m(SC):Unit, dado que el tipo C no tiene definido ningún mensaje con parámetro SC. Esa firma es decidida en compilación y depende sólo de los tipos declarados/inferidos de las variables, y no de las instancias.
+
+Ahora sabemos la firma, terminamos de compilar el código. Pasemos al modo ejecución y pensemos como máquinas virtuales ¿Qué método se ejecuta al hacer c2.m(sc)? Para saberlo, no hay que hacer otra cosa que method lookup.
+
+1. ¿Cuál es la firma del mensaje c2.m(sc)? La firma es m(C):Unit (por lo que vimos antes en "compilación".
+
+2. ¿A quién le estoy enviando ese mensaje? Al objeto referenciado por c2, que es una instancia de la clase SC.
+
+3. Para saber qué método ejecutará entonces, comenzamos el method lookup a partir de la clase SC.
+
+`class SC extends C {`
+`  def m(other: SC) = { println(3) }`
+`   `
+`  override def m(other: C) = { println(2) }`
+`}`
+
+4. ¿Tiene SC algún método definido cuya firma sea m(C):Unit? Sí. Entonces ese es el método que se va a ejecutar, que es el que imprime 2.
+
+Eso sería básicamente todo. Lo importante de todo esto es entender que ahora los tipos son mucho más importantes para la construcción de mi modelo conceptual. Y la idea es que con ejercicios como estos uno comprueba si entendió o no que los tipos me cambian un poquito la semántica del código y me agregan algo más en lo que tengo que pensar, si bien me previenen algunos errores en compilación.
+
 Ejemplos
 --------
 
