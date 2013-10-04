@@ -80,6 +80,10 @@ Troubleshooting
 -   Te recomendamos que uses Grails 2.x ó superior, **pero dado que los ejemplos fueron escritos en Grails 2.2.2 y hay comportamientos extraños con versiones diferentes, lo mejor es que te instales Grails 2.2.2 y opcionalmente la versión que vos quieras utilizar**
 -   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/STS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
 
+### Problemas con Groovy Object al compilar
+
+Al bajar ejemplos puede haber un problema con la versión del compilador, en ese caso hay que hacer botón derecho sobre el proyecto &gt; Properties &gt; Groovy compiler y seleccionar "I don't care" en la opción "Groovy compiler level".
+
 ### Integración con JDK
 
 -   Grails 2.2.2/2.2.3 y la versión 1.7.0\_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app
