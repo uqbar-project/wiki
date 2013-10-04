@@ -31,7 +31,7 @@ El IDE trae consigo un Web Server Tomcat integrado con el entorno (aunque por cu
 ### Completando la instalación
 
 -   Conviene crear un acceso directo al STS especificando a qué JDK apuntar:
-    -   incluir el directorio bin en el path
+    -   incluir el directorio bin del JDK en el path
     -   las comillas son importantes en caso de haber espacios en el directorio
 
 `STS -vm "/path donde está la JDK" `
