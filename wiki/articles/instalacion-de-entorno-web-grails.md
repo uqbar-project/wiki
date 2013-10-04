@@ -82,7 +82,7 @@ Troubleshooting
 
 ### Problemas con Groovy Object al compilar
 
-Al bajar ejemplos puede haber un problema con la versión del compilador, en ese caso hay que hacer botón derecho sobre el proyecto &gt; Properties &gt; Groovy compiler y seleccionar "I don't care" en la opción "Groovy compiler level".
+Al bajar ejemplos puede haber un problema con la versión del compilador ("Groovy Object not found" o si avisa que hay errores con el Build path), en ese caso hay que hacer botón derecho sobre el proyecto &gt; Properties &gt; Groovy compiler y seleccionar "I don't care" en la opción "Groovy compiler level".
 
 ### Integración con JDK
 
