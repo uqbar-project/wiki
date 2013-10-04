@@ -90,7 +90,7 @@ Al bajar ejemplos puede haber un problema con la versión del compilador, en ese
 
 `Could not determine Hibernate dialect for database name [H2]!`
 
-reemplazá la versión de tu JDK por una anterior.
+reemplazá la versión de tu JDK por una distinta.
 
 Integración con otros lenguajes de programación
 -----------------------------------------------
