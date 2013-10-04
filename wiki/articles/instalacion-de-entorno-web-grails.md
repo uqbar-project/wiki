@@ -12,7 +12,7 @@ Recomendamos descargar la versión 2.2.2 del siguiente link
 
 y luego seguir las instrucciones que figuran en el sitio (link Installation).
 
-**Recomendación:** si tu instalación es Windows, no descargues Grails en "Archivos de programa" u otros directorios con espacios. Recomendamos que tengas un directorio raíz "Grails" en el C: o en el D: y de ahí tengas un subdirectorio "Grails 2.2.2", otro "Grails 2.2.3" por cada instalación.
+**Recomendación:** si tu instalación es Windows, no descargues Grails en "Archivos de programa" u otros directorios del sistema. Recomendamos que tengas un directorio raíz "Grails" en el C: o en el D: y de ahí tengas un subdirectorio "Grails 2.2.2", otro "Grails 2.2.3" por cada instalación.
 
 **Atención:** la última versión 2.3.0 cambió la forma de manejar las dependencias, no te recomendamos bajarla hasta que estabilicemos los ejemplos.
 
