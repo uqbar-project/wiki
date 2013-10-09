@@ -31,8 +31,8 @@ Acá hay dos opciones, dependiendo de cómo estés manejando las dependencias en
 
 `   `<parent>
 `       `<groupId>`org.uqbar-project`</groupId>
-`       `<artifactId>`uqbar-xtend-parent`</artifactId>
-`       `<version>`1.0`</version>
+`   `<artifactId>`uqbar-xtend-parent`</artifactId>
+`   `<version>`1.0`</version>
 `   `</parent>
 
 Luego boton derecho, "Maven" "Update Project..."
