@@ -20,8 +20,8 @@ Además de las configuraciones [sugeridas para Grails](instalacion-de-entorno-we
 
 -   especificar por default el directorio donde el compilador Xtend deja los .java generados, para que el framework Grails los pueda ver. Entonces en Window &gt; Preferences &gt; Xtend &gt; Compiler cambiamos el texto *directory* a "java" en lugar de "xtend-gen".
 
-Consideraciones para un proyecto Grails + Xtend
------------------------------------------------
+Consideraciones para un proyecto Grails + Xtend en el mismo proyecto
+--------------------------------------------------------------------
 
 -   En cada proyecto, recomendamos crear un Source Folder específico para las clases Xtend (puede ser src/xtend).
 -   Obviamente, evitar que haya dos clases (una en Java/Groovy y otra en Xtend) con el mismo nombre (esto es, dentro de un mismo package, por más que estén en distintos source folders esto va a traer conflictos)
@@ -49,6 +49,17 @@ Otra opción puede ser definir esta dependencia:
 `}`
 
 **Nota:** 2.4.2 es en realidad la versión de xtend que se quiera utilizar.
+
+Consideraciones para proyectos Grails + Xtend por separado
+----------------------------------------------------------
+
+En el proyecto Xtend -de dominio, asumimos- tenés que definir un source folder "src/main/xtend". Por las window preferences el compilador Xtend utilizará "java" como directorio donde dejar los fuentes. Esto significa que si escriben sus fuentes en "src/main/xtend" en el directorio "src/main/java" estarán los equivalentes java para que luego sean empaquetados en un jar mediante un mvn install.
+
+Luego en el proyecto de ui Grails hay que
+
+-   correr un mvn install (Run &gt; Maven install) para que lo incorpore al repositorio maven local
+-   referenciar en compilación al proyecto de dominio en Xtend, esto se hace descargando el proyecto dentro del STS, o bien agregando el .jar como librería dentro del proyecto: copian el jar en un directorio \\lib del proyecto ui y luego hacen Build path &gt; Add jar, apuntando a la dirección relativa del .jar
+-   para correr la aplicación en el servidor, referenciar en el Build Config la dependencia al .jar previamente instalado en el repositorio local, respetando group id + artifact id + version
 
 Links
 -----
