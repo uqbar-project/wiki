@@ -74,6 +74,18 @@ Cómo empezar
 -   Manual de referencia: <http://grails.org/doc/latest/guide/>
 -   Plugins que se pueden instalar: <http://grails.org/plugins/>
 
+Cómo levanto las aplicaciones
+-----------------------------
+
+-   Ctrl + Shift + Alt + G &gt; run-app va a levantar el servidor en el proyecto sobre el cual están parados (eso se puede cambiar en la consola)
+-   Una vez que aparezca un mensaje equivalente a
+
+pueden copiar la URL e ir a un Browser y pegar esa dirección para probar la aplicación.
+
+También pueden dar un click sobre la URL y eso los llevará por defecto a un browser interno, que consume bastantes recursos. Por eso recomendamos modificar la configuración default para que les abra un browser por afuera del entorno: Window &gt; Web Browser &gt; Default system web browser.
+
+Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web. No obstante este server requiere una configuración adicional para asignarle un Tomcat en forma manual (no es el Tomcat interno que trae el entorno STS de Grails), por lo que por el momento recomendamos no utilizarlo.
+
 Troubleshooting
 ---------------
 
