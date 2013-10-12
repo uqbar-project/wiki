@@ -52,7 +52,7 @@ El IDE trae consigo un Web Server Tomcat (llamado vFabric tcServer) integrado co
 
 pueden copiar la URL e ir a un Browser y pegar esa dirección para probar la aplicación.
 
-También pueden dar un click sobre la URL y eso los llevará por defecto a un browser interno, que consume bastantes recursos. Por cuestiones de performance les recomendamos que cuando corran las aplicaciones abran un browser por fuera del entorno de desarrollo (que no esté embebido en el mismo). Esto se configura en Window &gt; Web Browser &gt; Default system web browser.
+También pueden dar un click sobre la URL y eso los llevará por defecto a un browser interno, que consume bastantes recursos. Por eso recomendamos modificar la configuración default para que les abra un browser por afuera del entorno: Window &gt; Web Browser &gt; Default system web browser.
 
 Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web. No obstante este server requiere una configuración adicional para asignarle un Tomcat en forma manual (no es el Tomcat interno que trae el entorno STS de Grails), por lo que por el momento recomendamos no utilizarlo.
 
