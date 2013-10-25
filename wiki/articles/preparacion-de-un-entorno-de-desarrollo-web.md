@@ -50,7 +50,7 @@ Plugins para tu IDE
 Cómo probar la instalación
 --------------------------
 
-Levantar el servidor, hay varias formas de hacerlo: Si vas a usar el tomcat desde el Eclipse probablemente lo levantes usando Wtp o Sysdeo, en ese caso te recomiendo que primero instales esas herramientas y luego pruebes todo junto.
+Levantar el servidor, hay varias formas de hacerlo: Si vas a usar el tomcat desde el Eclipse probablemente lo levantes usando Wtp, en ese caso te recomiendo que primero instales esas herramientas y luego pruebes todo junto.
 
 También se puede levantar el tomcat por fuera del entorno de desarrollo. En Ubuntu tenés que hacer: sudo /etc/init.d/tomcat6 start
 
