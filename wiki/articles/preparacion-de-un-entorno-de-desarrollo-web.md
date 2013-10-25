@@ -58,6 +58,11 @@ En Windows hay que ir a servicios (el shortcut es Win + R: "services.msc"), busc
 
 Dos aplicaciones deberíamos poder ver ya andando luego de haber hecho eso: La página home <http://localhost:8080/>, es lo más fácil para ver si anda. La página de administración: <http://localhost:8080/manager/html>, ahí pueden ver qué aplicaciones tienen levantadas en el tomcat y realizar algunas tareas administrativas. Para poder abrir esa página tienen que loguearse con el usuario y password que ingresaron al configurar el archivo $TOMCAT\_HOME/conf/tomcat-users.xml.
 
+Por último
+----------
+
+Si estás trabajando en un lenguaje diferente a Java no te olvides de instalar los plugins con las extensiones para dicho lenguaje.
+
 Cómo empezar
 ------------
 
