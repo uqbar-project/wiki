@@ -41,8 +41,6 @@ IDE
 
 Recomendamos que te instales la versión "Eclipse IDE for Java EE Developers" (EE es Enterprise Edition) en <http://www.eclipse.org/downloads/>. Eso evita que tengas que instalarte en forma separada el plugin [WTP](http://www.eclipse.org/webtools/), Web Tools Platform (o si preferís, tenés que descargarte el Eclipse Classic para luego descargarte [aquí](http://eclipse.org/webtools/releases/3.4.1/) el plugin).
 
-Otra opción que no nos resulta tan atractiva es descargarte el plugin [Sysdeo](http://www.eclipsetotale.com/tomcatPlugin.html), al que luego hay que configurar por separado.
-
 Plugins para tu IDE
 -------------------
 
