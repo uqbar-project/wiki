@@ -5,16 +5,16 @@ Vamos a necesitar instalar
 
 -   un web server
 -   un browser con capacidades de debug
--   un plugin para nuestro IDE (Eclipse u otro) que permita administrar nuestro web server
+-   plugins para nuestro IDE (Eclipse u otro) que permita administrar nuestro web server
 
 Web Server Tomcat
 -----------------
 
 ### Instrucciones de instalación
 
-Descargarlo de [acá](http://tomcat.apache.org/download-70.cgi). Recomendamos utilizar la última versión estable disponible; ojo si estás usando el plugin Sysdeo que la versión del Tomcat 7.0 puede tener algunos problemas de instalación, si es así lo mejor es instalar el wtp que es el plugin recomendado por nosotros.
+Descargarlo de [acá](http://tomcat.apache.org/download-70.cgi).
 
-Descomprimirlo en una ubicación adecuada. Puede ser cualquier ubicación, aunque recomendamos usar una que no tenga espacios, por ejemplo: En windows pueden usar C:/tools/tomcat-version En linux/unix pueden usar /opt/tomcat o bien /home/algun-usuario/tomcat-version A la carpeta donde descomprimimos el tomcat la vamos a denominar $TOMCAT\_HOME, ej. /home/nico/Applications/apache-tomcat-6.0.20.
+Descomprimirlo en una ubicación adecuada. Puede ser cualquier ubicación, aunque recomendamos usar una que no tenga espacios, por ejemplo: En windows pueden usar C:/tools/tomcat-version En linux/unix pueden usar /opt/tomcat o bien /home/algun-usuario/tomcat-version A la carpeta donde descomprimimos el tomcat la vamos a denominar $TOMCAT\_HOME, ej. /home/nico/Applications/apache-tomcat-7.0.20.
 
 Si lo vamos a usar desde el eclipse con eso es suficiente, si alguien quisiera un uso más extensivo del tomcat tal vez tenga ganas de configurarlo como servicio.
 
@@ -36,11 +36,18 @@ Si no lo tenés instalado podés usar:
 -   [Safari](http://www.apple.com/es/safari/)
 -   [Opera](http://www.opera.com/download/)
 
-Plugin para tu IDE
-------------------
+IDE
+---
 
--   [WTP](http://www.eclipse.org/webtools/), Web Tools Platform, que se descarga con la versión EE de Eclipse o bien [aquí](http://eclipse.org/webtools/releases/3.4.1/)
--   [Sysdeo](http://www.eclipsetotale.com/tomcatPlugin.html)
+Recomendamos que te instales la versión "Eclipse IDE for Java EE Developers" (EE es Enterprise Edition) en <http://www.eclipse.org/downloads/>. Eso evita que tengas que instalarte en forma separada el plugin [WTP](http://www.eclipse.org/webtools/), Web Tools Platform (o si preferís, tenés que descargarte el Eclipse Classic para luego descargarte [aquí](http://eclipse.org/webtools/releases/3.4.1/) el plugin).
+
+Otra opción que no nos resulta tan atractiva es descargarte el plugin [Sysdeo](http://www.eclipsetotale.com/tomcatPlugin.html), al que luego hay que configurar por separado.
+
+Plugins para tu IDE
+-------------------
+
+-   El M2E y el WTP vienen con la instalación default de Eclipse EE
+-   Pero para que trabajen en forma sincronizada, necesitamos agregar el plugin "m2e wtp", esto se hace ingresando al Eclipse Marketplace, buscando "m2e wtp" e instalando el plugin. Luego restartear el IDE.
 
 Cómo probar la instalación
 --------------------------
