@@ -53,14 +53,15 @@ Cómo probar la instalación
 Levantar el servidor, si lo hacés dentro del entorno:
 
 -   debería existir una vista de "Servers". Dentro del eclipse: Window -&gt; Show view -&gt; Other -&gt; Servers. Hay que configurar un Server en dicha vista: click derecho sobre la vista -&gt; New -&gt; Server.
+    -   Elegir el server que se quiere usar (la cátedra recomienda Apache Tomcat 7) y luego Next
+    -   Luego configurar el path a la carpeta raíz donde está instalado el Server, por ejemplo "/usr/local/tomcat" (no usar ningún subdirectorio lib ni bin, el raíz)
+    -   Opcionalmente se puede elegir la JVM que ejecutará el tomcat. Es importante no utilizar una JRE, sino una JDK.
+    -   Luego de configurado el server, levantamos el mismo haciendo click derecho sobre el mismo -&gt; Debug (Start también es una opción válida). En la consola del eclipse debería aparecer una línea como:
 
-`* Elegir el server que se quiere usar (la cátedra recomienda Apache Tomcat 7) y luego Next`
-`* Luego configurar el path a la carpeta raíz donde está instalado el Server, por ejemplo "/usr/local/tomcat" (no usar ningún subdirectorio lib ni bin, el raíz)`
-`* Opcionalmente se puede elegir la JVM que ejecutará el tomcat. Es importante no utilizar una JRE, sino una JDK.`
-`* Luego de configurado el server, levantamos el mismo haciendo click derecho sobre el mismo -> Debug (Start también es una opción válida). En la consola del eclipse debería aparecer una línea como:`
 `     INFO: Server startup in 798 ms`
-`* Y al utilizar un browser, se puede hacer una consulta a `[`http://localhost:8080/`](http://localhost:8080/)` y debería aparecer una página servida por el Tomcat (aunque sea una página de error).`
-`* Una configuración adicional en caso de error puede ser `
+
+-   -   Y al utilizar un browser, se puede hacer una consulta a <http://localhost:8080/> y debería aparecer una página servida por el Tomcat (aunque sea una página de error).
+    -   Una configuración adicional en caso de error puede ser
 
 También se puede levantar el tomcat por fuera del entorno de desarrollo. En Ubuntu tenés que hacer: sudo /etc/init.d/tomcat6 start
 
