@@ -43,6 +43,6 @@ Adaptar un proyecto maven para ser usado desde el Eclipse
 
 Esto se hace en dos pasos:
 
-1.  . Se realiza el checkout como está explicado en el punto anterior
-2.  . Se ejecuta la tarea "mvn eclipse:eclipse" desde la consola o bien desde el mismo entorno botón derecho sobre el proyecto &gt; Configure &gt; Convert to Maven project.
+1.  Se realiza el checkout como está explicado en el punto anterior
+2.  Se ejecuta la tarea "mvn eclipse:eclipse" desde la consola o bien desde el mismo entorno botón derecho sobre el proyecto &gt; Configure &gt; Convert to Maven project.
 
