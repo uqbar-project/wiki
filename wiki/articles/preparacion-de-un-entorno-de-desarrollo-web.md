@@ -61,8 +61,6 @@ Levantar el servidor, si lo hacés dentro del entorno:
 `... mensajes varios de inicialización del Tomcat ...`
 `INFO: Server startup in 798 ms`
 
-Al utilizar un browser, se puede hacer una consulta a <http://localhost:8080/> y debería aparecer una página servida por el Tomcat.
-
 También se puede levantar el tomcat por fuera del entorno de desarrollo. En Ubuntu tenés que hacer: sudo /etc/init.d/tomcat6 start
 
 En Windows hay que ir a servicios (el shortcut es Win + R: "services.msc"), buscar el Tomcat y darle Start. Otra opción es abrir una ventana de comandos (Win + R: "cmd"), ir al $TOMCAT\_DIR\\bin (o sea, la carpeta bin donde está instalado el Tomcat) y ejecutar "startup".
