@@ -58,10 +58,10 @@ Levantar el servidor, si lo hacés dentro del entorno:
     -   Opcionalmente se puede elegir la JVM que ejecutará el tomcat. Es importante no utilizar una JRE, sino una JDK.
     -   Luego de configurado el server, levantamos el mismo haciendo click derecho sobre el mismo -&gt; Debug (Start también es una opción válida). En la consola del eclipse debería aparecer una línea como:
 
-`     INFO: Server startup in 798 ms`
+`... mensajes varios de inicialización del Tomcat ...`
+`INFO: Server startup in 798 ms`
 
--   -   Y al utilizar un browser, se puede hacer una consulta a <http://localhost:8080/> y debería aparecer una página servida por el Tomcat (aunque sea una página de error).
-    -   Una configuración adicional en caso de error puede ser
+Al utilizar un browser, se puede hacer una consulta a <http://localhost:8080/> y debería aparecer una página servida por el Tomcat.
 
 También se puede levantar el tomcat por fuera del entorno de desarrollo. En Ubuntu tenés que hacer: sudo /etc/init.d/tomcat6 start
 
