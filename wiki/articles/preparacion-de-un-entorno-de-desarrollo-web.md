@@ -52,7 +52,7 @@ Cómo probar la instalación
 
 Levantar el servidor, si lo hacés dentro del entorno:
 
--   debería existir una vista de "Servers". Dentro del eclipse: Window -&gt; Show view -&gt; Other -&gt; Servers. Hay que configurar un Server en dicha vista: click derecho sobre la vista -&gt; New -&gt; Server.
+-   Ir a la vista "Servers". Dentro del eclipse: Window -&gt; Show view -&gt; Other -&gt; Servers. Hay que configurar un Server en dicha vista: click derecho sobre la vista -&gt; New -&gt; Server.
     -   Elegir el server que se quiere usar (la cátedra recomienda Apache Tomcat 7) y luego Next
     -   Luego configurar el path a la carpeta raíz donde está instalado el Server, por ejemplo "/usr/local/tomcat" (no usar ningún subdirectorio lib ni bin, el raíz)
     -   Opcionalmente se puede elegir la JVM que ejecutará el tomcat. Es importante no utilizar una JRE, sino una JDK.
