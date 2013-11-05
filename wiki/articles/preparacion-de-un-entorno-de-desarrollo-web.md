@@ -56,6 +56,7 @@ Levantar el servidor, si lo hacés dentro del entorno:
     -   Elegir el server que se quiere usar (la cátedra recomienda Apache Tomcat 7) y luego Next
     -   Luego configurar el path a la carpeta raíz donde está instalado el Server, por ejemplo "/usr/local/tomcat" (no usar ningún subdirectorio lib ni bin, el raíz)
     -   Opcionalmente se puede elegir la JVM que ejecutará el tomcat. Es importante no utilizar una JRE, sino una JDK.
+    -   Una vez creado, hacer doble click sobre el Server &gt; en la parte de Server Location &gt; Use Tomcat installation (takes control of Tomcat Installation).
     -   Luego de configurado el server, levantamos el mismo haciendo click derecho sobre el mismo -&gt; Debug (Start también es una opción válida). En la consola del eclipse debería aparecer una línea como:
 
 `... mensajes varios de inicialización del Tomcat ...`
