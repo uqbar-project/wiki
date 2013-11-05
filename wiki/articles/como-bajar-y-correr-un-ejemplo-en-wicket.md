@@ -31,6 +31,6 @@ Incorporar la app al web server
 2.  Luego botón derecho sobre Server &gt; Add and Remove...
 3.  Pasar la aplicación del container Available a Configured (seleccionarla y luego presionar el botón Add&gt;)
 4.  Finish
-5.  Reiniciar el servidor
+5.  Reiniciar el servidor (botón derecho &gt; Restart in Debug o Restart)
 
 Acceder desde el browser a la direccion <http://localhost:8080/><aplicación web>/
