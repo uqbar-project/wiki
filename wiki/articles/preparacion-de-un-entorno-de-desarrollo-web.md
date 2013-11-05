@@ -45,7 +45,7 @@ Plugins para tu IDE
 -------------------
 
 -   El M2E y el WTP vienen con la instalación default de Eclipse EE
--   Pero para que trabajen en forma sincronizada, necesitamos agregar el plugin "m2e wtp", esto se hace ingresando al Eclipse Marketplace, buscando "m2e wtp" e instalando el plugin. Luego restartear el IDE.
+-   Pero para que trabajen en forma sincronizada, necesitamos agregar el plugin "m2e-wtp", esto se hace ingresando al Eclipse Marketplace, buscando "m2e-wtp" e instalando el plugin "Maven integration for Eclipse WTP". Luego restartear el IDE.
 
 Cómo probar la instalación
 --------------------------
