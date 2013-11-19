@@ -63,7 +63,8 @@ Errores posibles
 
 Si te aparece un mensaje de error
 
-`scalatest_2.9.1-1.6.1.jar is cross-compiled with an incompatible version of Scala (2.9.1). In case of errorneous report, this check can be disabled in the compiler preference page.`
+`scalatest_2.9.1-1.6.1.jar is cross-compiled with an incompatible version of Scala (2.9.1). `
+`In case of errorneous report, this check can be disabled in the compiler preference page.`
 
 la solución es botón derecho sobre el proyecto &gt; Properties &gt; Scala Compiler &gt; solapa Build Manager y deschequear la opción withVersionClasspathValidator.
 
