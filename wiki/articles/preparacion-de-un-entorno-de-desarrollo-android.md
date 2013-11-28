@@ -14,7 +14,7 @@ Reiniciar el IDE.
 Configuración para lenguaje Xtend
 ---------------------------------
 
-Una vez instalado [Preparacion\_de\_un\_entorno\_de\_desarrollo\_Xtend](el-entorno-base.html)
+Una vez instalado [el entorno base](preparacion-de-un-entorno-de-desarrollo-xtend.html)
 
 1.  Window &gt; Preferences, Xtend compiler &gt; Output folder for generated Java files, cambiar el directorio a "gen"
 2.  Agregar la librería Xtend en el proyecto: botón derecho sobre el proyecto &gt; Configure build path &gt; Libraries: Add Xtend Library, y luego chequear Xtend Library en la solapa "Order and Export" para que se incluya en el ejecutable de Android.
