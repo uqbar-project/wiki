@@ -11,6 +11,11 @@ Descargá en [este link](http://www.eclipse.org/downloads/) el Eclipse IDE for J
 
 Reiniciar el IDE.
 
+Cómo empezar
+------------
+
+-   Un [tutorial](http://www.youtube.com/watch?v=zS1frzHbKWY) de youtube que va bien tranquilo
+
 Configuración para lenguaje Xtend
 ---------------------------------
 
