@@ -33,10 +33,7 @@ Si te interesa tenés un archetype propio de Xtend para Android:
 `  -DarchetypeArtifactId=xtend-android-archetype \`
 `  -DarchetypeCatalog=`[`http://repo.maven.apache.org/maven2`](http://repo.maven.apache.org/maven2)
 
-Material de Android en Xtend
-----------------------------
-
-=
+### Material de Android en Xtend
 
 -   <http://blog.efftinge.de/2011/12/writing-android-uis-with-xtend.html>
 -   <http://nataliaossipova.wordpress.com/2013/03/10/xtending-android-development/>
