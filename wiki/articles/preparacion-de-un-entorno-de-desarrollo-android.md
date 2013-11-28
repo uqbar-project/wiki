@@ -14,6 +14,7 @@ Reiniciar el IDE.
 Cómo empezar
 ------------
 
+-   <http://developer.android.com/index.html>
 -   Un [tutorial](http://www.youtube.com/watch?v=zS1frzHbKWY) de youtube que va bien tranquilo
 
 Configuración para lenguaje Xtend
