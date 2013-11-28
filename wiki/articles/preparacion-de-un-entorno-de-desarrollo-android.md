@@ -27,11 +27,13 @@ Una vez instalado [el entorno base](preparacion-de-un-entorno-de-desarrollo-xten
 
 ### Archetype de Maven para Android + Xtend
 
-Si te interesa tenés un archetype propio de Xtend para Android:
+Si te interesa tenés un archetype para integrar estas tecnologías (disponible desde la versión 2.4.2 de Xtend):
 
 `mvn archetype:generate -DarchetypeGroupId=org.eclipse.xtend \`
 `  -DarchetypeArtifactId=xtend-android-archetype \`
 `  -DarchetypeCatalog=`[`http://repo.maven.apache.org/maven2`](http://repo.maven.apache.org/maven2)
+
+Más información en <http://www.eclipse.org/xtend/releasenotes_2_4.html>
 
 ### Material de Android en Xtend
 
