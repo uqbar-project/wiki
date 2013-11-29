@@ -59,7 +59,7 @@ Eclipse
 
 -   Utilización de packages (*paquetes*). Es una buena práctica agrupar las clases afines en paquetes para organizar semánticamente el código. No hay un guideline firme a seguir con respecto a cómo organizar nuestro código, ya que suele depender del contexto en el cuál estamos trabajando, pero es muy común respetar convenciones para mantener la simplicidad y flexibilidad ahorrando al desarrollador de tomar estas decisiones (“*Convention over Configuration*”).
 
-Por ejemplo, en un proyecto web tener paquetes para el “*domino*”, “*controllers*” y “*vista*” (si correspondiese) es una convención común. Cada uno de éstos agrupa las clases que tienen un concepto afín. Se podría seguir ahondando en la definición de subpaquetes agrupando, por ejemplo, por componente:
+Por ejemplo, en un proyecto completo tener paquetes para el “*domino*”, “*controllers*” y “*vista*” (si correspondiese) es una convención común. Cada uno de éstos agrupa las clases que tienen un concepto afín. Se podría seguir ahondando en la definición de subpaquetes agrupando, por ejemplo, por componente:
 
 `domain/`
 `   ├── home`
