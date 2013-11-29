@@ -26,8 +26,8 @@ Para que compile el código xtend dentro de un proyecto hace falta tener una lib
 
 Acá hay dos opciones, dependiendo de cómo estés manejando las dependencias en tu proyecto.
 
--   Si no estas usando maven, podés símplemente ir a las propiedades del proyecto, "Java Build Path", luego en la solapa "Libraries", "Add Library", y seleccionar "Xtend Library".
--   Si estas usando MAVEN, no deberías hacer el paso anterior, porque eso va a hacer que las cosas compilen en eclipse, pero no le estamos indicando a maven que el proyecto usa la librería de xtend, con lo cual nos va a traer problemas a futuro (por ejemplo al correr el proyecto si es una webapp va a tirar error de que no encuentra las clases de xtend). En este caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
+-   Si no estás usando maven, podés simplemente ir a las propiedades del proyecto, "Java Build Path", luego en la solapa "Libraries", "Add Library", y seleccionar "Xtend Library".
+-   Si estás usando MAVEN, no deberías hacer el paso anterior, porque eso va a hacer que las cosas compilen en eclipse (momentáneamente), pero no le estamos indicando a maven que el proyecto usa la librería de xtend, con lo cual nos va a traer problemas a futuro (por ejemplo al correr el proyecto si es una webapp va a tirar error por no encontrar las clases de xtend). En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
 `   `<parent>
 `       `<groupId>`org.uqbar-project`</groupId>
