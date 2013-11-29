@@ -21,7 +21,7 @@ Control de versiones
 
 <!-- -->
 
--   Establecer formas de trabajo y organizar el trabajo nuestro con el de los demas:
+-   Establecer formas de trabajo y organizar el trabajo nuestro con el de los demás:
     -   Cuando empiezo el día primero me sincronizo con el repositorio para ver los cambios que no tengo en el código
     -   Acepto los cambios entrantes y en caso de ser necesario resuelvo conflictos
     -   Corro los tests y veo que todo anda sobre ruedas
