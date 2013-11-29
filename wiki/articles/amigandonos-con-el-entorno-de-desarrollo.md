@@ -45,11 +45,11 @@ Esto mismo lo hacemos varias veces al día y antes de subir algo nuevo al reposi
 Eclipse
 -------
 
--   Cómo organizar los archivos: Convention Over Configuration <http://en.wikipedia.org/wiki/Convention_over_configuration>, el código productivo debería estar en src/main y el código de test en src/test. Qué gano usando estas convenciones? Me corren los tests, me integro con el mundo y eventualmente puedo usar herramientas externas sin tener que configurar nada, ya que respetan estas convenciones (como Maven).
+-   Cómo organizar los archivos: Convention Over Configuration <http://en.wikipedia.org/wiki/Convention_over_configuration>, el código productivo debería estar en src/main y el código de test en src/test. ¿Qué gano usando estas convenciones? Me corren los tests, me integro con el mundo y eventualmente puedo usar herramientas externas sin tener que configurar nada, ya que respetan estas convenciones (como Maven).
 
 <!-- -->
 
--   Formatear el código! Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad. Además, el Eclipse lo hace solo (Ctrl + Shift + F).
+-   ¡Formatear el código! Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad. Además, el Eclipse lo hace solo (Ctrl + Shift + F).
 
 <!-- -->
 
