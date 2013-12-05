@@ -110,7 +110,7 @@ También se deben analizar las posibilidades de interacción con esos elementos 
 -   Qué eventos se pueden obtener de cada control, es decir, clickear sobre el control, modificar su valor, apretar una tecla, movimiento del mouse, etc.
 -   Drag & drop.
 
-==== Layouts ===
+### Layouts
 
 -   Fijo xy.
 -   *tabs*
