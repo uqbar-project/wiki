@@ -3,7 +3,7 @@ Problema
 
 Si tenemos la multiplicacion (\*) definida para tanto Int como Float, luego
 
-square x = x\*x
+`square x = x*x`
 
 debería transformarse en tiempo de compilación en dos funciones distintas
 
@@ -11,7 +11,7 @@ square (para ints) square (para floats)
 
 Lo cual crece exponencialmente, por ejemplo con funciones como
 
-squares (x,y,z) = (x\*x, y\*y, z\*z)
+`squares (x,y,z) = (x*x, y*y, z*z)`
 
 que sería traducida en 8 funciones distintas.
 
@@ -22,7 +22,7 @@ Las typeclasses son un contrato o tipo de datos abstracto que agrupa las funcion
 
 Las typeclasses tienen como primer consecuencia que funciones como squares, que tenía 8 tipos posibles, tenga uno solo:
 
-squares :: Num a, Num b, Num c =&gt; (a,b,c) -&gt; (a,b,c)
+`squares :: Num a, Num b, Num c => (a,b,c) -> (a,b,c)`
 
 Donde Num es un typeclass.
 
@@ -32,20 +32,23 @@ Y para esta traducción, usan la metáfora de un method dictionary. Cada tipo va
 
 Ejemplo:
 
-square x = x \* x
+`square x = x * x`
 
 se transforma en algo como
 
---ambos diccionarios son del mismo tipo (que es el tipo definido en la typeclass ;) ) dictInt = ... dictFloat = ....
+`--ambos diccionarios son del mismo tipo (que es el tipo definido en la typeclass ;) )`
+`dictInt = ...`
+`dictFloat = ....`
 
-multi dict = dict !! 1 -- suponiendo que la función multiplicación esta en el diccionario en la posición 1 square dict x = multi dict x x
+`multi dict = dict !! 1 -- suponiendo que la función multiplicación esta en el diccionario en la posición 1`
+`square dict x = multi dict x x`
 
 Y cuando ejecutamos
 
-square 3
+`square 3`
 
 se traduce, como 3 es un Int, en algo como
 
-square dictInt 3
+`square dictInt 3 `
 
 En resumen: chequeo estático, dispatch dinámico :P (o algo dinámico)
