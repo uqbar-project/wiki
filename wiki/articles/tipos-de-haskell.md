@@ -222,7 +222,7 @@ En Haskell eso se escribe de la siguiente manera
 
 Num, Ord y Eq son **restricciones de tipo**, en Haskell se las conoce como Typeclasses (no confundan esto con el término Clase que usamos en el paradigma de objetos!!)
 
-En cada [Typeclass](typeclass.html) se definen un conjunto de funciones que los tipos pertenecientes deben implementar
+En cada [Typeclass](typeclasses.html) se definen un conjunto de funciones que los tipos pertenecientes deben implementar
 
 `Num a`
 `(+), (-), (*) :: a -> a -> a`
