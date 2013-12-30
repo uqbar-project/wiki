@@ -21,3 +21,7 @@ Conceptos Transversales
 -   [Esquemas de Tipado](esquemas-de-tipado.html)
 -   [Máquina Virtual](maquina-virtual.html)
 
+Material de lectura complementario
+----------------------------------
+
+[Concepts, Techniques and Models of Computer Programming](http://www.epsa.org/forms/uploadFiles/3B6300000000.filename.booksingle.pdf)
