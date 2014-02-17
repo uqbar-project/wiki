@@ -14,6 +14,18 @@ y
 
 que muestran los errores por el LogCat, una consola especial de Android.
 
+#### Cómo usarlo
+
+`Log.w("Librex", libro.toString()) `
+
+El primer parámetro indica la aplicación o agrupador, la segunda es el valor a mostrar
+
+#### Cuándo usar cada uno
+
+Es una buena recomendación leer <http://stackoverflow.com/questions/7959263/android-log-v-log-d-log-i-log-w-log-e-when-to-use-each-one>
+
+#### No veo la ventana LogCat
+
 Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escribimos LogCat y seleccionamos la que no está deprecada. También es buena opción subir el nivel de Log para no perdernos en la maraña de mensajes que emite el emulador.
 
 ### Tips para cuando tenés problemas
