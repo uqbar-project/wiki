@@ -1,3 +1,12 @@
+### LogCat
+
+Para poder mostrar información en consola, hay que reemplazar los println por
+
+-   Log.w,
+-   Log.e
+
+que muestra
+
 ### Tips para cuando tenés problemas
 
 En caso de tener inestabilidad en tu IDE (algo que puede ocurrir dada la inmadurez de las herramientas de Xtend y su relación con Eclipse) nuestra recomendación es que busques el error para ver si es un issue conocido, y que trates de tener la última versión tanto de Eclipse como de Xtend.
