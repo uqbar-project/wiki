@@ -2,10 +2,19 @@
 
 Para poder mostrar información en consola, hay que reemplazar los println por
 
-`Log.w, `
-`Log.e`
+`Log.v() // Verbose`
+`Log.d() // Debug`
+`Log.i() // Info`
+`Log.w() // Warning`
+`Log.e() // Error`
 
-que muestra
+y
+
+`Log.wtf`
+
+que muestran los errores por el LogCat, una consola especial de Android.
+
+Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escribimos LogCat y seleccionamos la que no está deprecada. También es buena opción subir el nivel de Log para no perdernos en la maraña de mensajes que emite el emulador.
 
 ### Tips para cuando tenés problemas
 
