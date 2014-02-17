@@ -40,3 +40,7 @@ Más información en <http://www.eclipse.org/xtend/releasenotes_2_4.html>
 -   <http://blog.efftinge.de/2011/12/writing-android-uis-with-xtend.html>
 -   <http://nataliaossipova.wordpress.com/2013/03/10/xtending-android-development/>
 
+### Herramientas de desarrollo
+
+-   [Herramientas de desarrollo con Android](herramientas-de-desarrollo-con-android.html)
+
