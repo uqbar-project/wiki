@@ -2,8 +2,7 @@
 
 Para poder mostrar información en consola, hay que reemplazar los println por
 
--   Log.w,
--   Log.e
+`Log.w,` `Log.e`
 
 que muestra
 
