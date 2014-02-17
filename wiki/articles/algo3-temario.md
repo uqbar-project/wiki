@@ -47,5 +47,6 @@ Unidad 4
 Unidad 5
 --------
 
--   [\[Preparacion\_de\_un\_entorno\_de\_desarrollo\_Android](-preparacion-de-un-entorno-de-desarrollo-android.html)\]
--   
+-   [Preparacion de un entorno de desarrollo Android](preparacion-de-un-entorno-de-desarrollo-android.html)
+-   [Herramientas de desarrollo con Android](herramientas-de-desarrollo-con-android.html)
+
