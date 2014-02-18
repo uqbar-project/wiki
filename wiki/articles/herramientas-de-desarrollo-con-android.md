@@ -30,6 +30,8 @@ Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escri
 
 ### Tips para cuando tenés problemas
 
+**IMPORTANTE:** no definas inner classes, esto causa que el IDE empiece a tirar popups de errores cada vez que refresca su estado y es imposible trabajar.
+
 En caso de tener inestabilidad en tu IDE (algo que puede ocurrir dada la inmadurez de las herramientas de Xtend y su relación con Eclipse) nuestra recomendación es que busques el error para ver si es un issue conocido, y que trates de tener la última versión tanto de Eclipse como de Xtend.
 
 Algunos tips rápidos
