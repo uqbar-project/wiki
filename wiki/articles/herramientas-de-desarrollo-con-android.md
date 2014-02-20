@@ -37,6 +37,13 @@ Para más información
 
 -   <http://developer.android.com/guide/topics/ui/notifiers/toasts.html>
 
+Eclipse y el plugin Android
+---------------------------
+
+Tenés una explicación de las herramientas que incorpora el plugin de Android SDK en el Eclipse acá:
+
+-   <http://www.vogella.com/tutorials/Android/article.html#adttools>
+
 Tips para cuando tenés problemas
 --------------------------------
 
