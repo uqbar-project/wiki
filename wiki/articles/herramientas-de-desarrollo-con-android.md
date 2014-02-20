@@ -26,7 +26,7 @@ Es una buena recomendación leer <http://stackoverflow.com/questions/7959263/and
 
 #### No veo la ventana LogCat
 
-Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escribimos LogCat y seleccionamos la que no está deprecada. También es buena opción subir el nivel de Log para no perdernos en la maraña de mensajes que emite el emulador.
+Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escribimos LogCat y seleccionamos la que no está deprecada. También es buena opción subir el nivel de logging a warning o info para no perdernos en la maraña de mensajes que emite el emulador.
 
 Notificaciones al usuario
 -------------------------
