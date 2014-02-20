@@ -28,6 +28,13 @@ Es una buena recomendación leer <http://stackoverflow.com/questions/7959263/and
 
 Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escribimos LogCat y seleccionamos la que no está deprecada. También es buena opción subir el nivel de Log para no perdernos en la maraña de mensajes que emite el emulador.
 
+Notificaciones al usuario
+-------------------------
+
+El concepto "toast" permite enviar al frente un mensaje al usuario sin la incomodidad que tiene el popup de tener que confirmar la lectura de ese mensaje. Es una herramienta útil tanto para informar acciones que corrieron en background como para mostrar el estado de la aplicación en modo desarrollo.
+
+<http://developer.android.com/guide/topics/ui/notifiers/toasts.html>
+
 ### Tips para cuando tenés problemas
 
 **IMPORTANTE:** no definas inner classes, esto causa que el IDE empiece a tirar popups de errores cada vez que refresca su estado y es imposible trabajar.
