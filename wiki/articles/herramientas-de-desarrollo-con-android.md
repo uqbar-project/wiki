@@ -37,7 +37,8 @@ Para más información
 
 -   <http://developer.android.com/guide/topics/ui/notifiers/toasts.html>
 
-### Tips para cuando tenés problemas
+Tips para cuando tenés problemas
+--------------------------------
 
 **IMPORTANTE:** no definas inner classes, esto causa que el IDE empiece a tirar popups de errores cada vez que refresca su estado y es imposible trabajar.
 
