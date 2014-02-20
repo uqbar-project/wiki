@@ -31,9 +31,11 @@ Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escri
 Notificaciones al usuario
 -------------------------
 
-El concepto "toast" permite enviar al frente un mensaje al usuario sin la incomodidad que tiene el popup de tener que confirmar la lectura de ese mensaje. Es una herramienta útil tanto para informar acciones que corrieron en background como para mostrar el estado de la aplicación en modo desarrollo.
+El concepto *toast* permite enviar al frente un mensaje al usuario sin la incomodidad que tiene el popup de tener que confirmar la lectura de ese mensaje. Es una herramienta útil tanto para informar acciones que corrieron en background como para mostrar el estado de la aplicación en modo desarrollo.
 
-<http://developer.android.com/guide/topics/ui/notifiers/toasts.html>
+Para más información
+
+-   <http://developer.android.com/guide/topics/ui/notifiers/toasts.html>
 
 ### Tips para cuando tenés problemas
 
