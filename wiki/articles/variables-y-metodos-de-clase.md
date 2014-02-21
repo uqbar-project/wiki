@@ -11,35 +11,74 @@ Las variables de instancia son propias de cada objeto, si cambio una referencia 
 ¿Como las usamos?
 -----------------
 
-Las variables de clase empiezan con mayuscula, y si queremos jugar con los objetos que referencian tenemos que usar accesors (no esta bueno usar directamente la variable desde la instancia porque no es algo que conoce la instancia, sino que la conoce la clase).
+Las variables de clase empiezan con mayúscula. Suponiendo que el dinero de todos los saqueos es el mismo, podemos ponerlo en una variable de clase:
 
 Por ejemplo:
 
 ` #Saqueo`
 `   >>esUtil: unPirata`
-`     ^(unPirata dineroDisponible < Saqueo dinero) and: [ unPirata teAnimasASaquear: objetivo].`
+`     ^(unPirata dineroDisponible < `**`Dinero`**`) and: [ unPirata teAnimasASaquear: objetivo].`
+
+Pero, como el Dinero es algo que en realidad "está guardado" en la clase, (y por lo tanto es responsabilidad de la clase conocerlo), una versión más correcta (y que también funciona) es:
+
+` #Saqueo`
+`   >>esUtil: unPirata`
+`     ^(unPirata dineroDisponible < `**`Saqueo`**` dinero) and: [ unPirata teAnimasASaquear: objetivo].`
+` `**`(MC)>>` `dinero`**
+`      `**`^Dinero`**
+
+Por último, una forma más correcta sería poniendo **`self` `class`**, de esta manera:
+
+` #Saqueo`
+`   >>esUtil: unPirata`
+`     ^(unPirata dineroDisponible < `**`self` `class`**` dinero) and: [ unPirata teAnimasASaquear: objetivo].`
 ` (MC)>> dinero`
 `      ^Dinero`
-` (MC)>> dinero: unaCantidad`
-`      Dinero:= unaCantidad`
 
-Métodos de clase
-----------------
+La razón por la que es más correcta, tiene que ver con la existencia de [Herencia](herencia.html), y otros mecanismos de compartición de código.
+
+Mensajes y Métodos de clase
+---------------------------
 
 Ente otras cosas, las clases crean objetos nuevos: cada vez que a le mando el mensaje **new** a una clase, tengo una nueva instancia de esa clase. Podemos crear nuevas instancias en cualquier momento de nuestro programa (en el workspace, dentro de un método, etc).
 
-Entonces, los métodos de clase son mensajes que entienden las clases. Los selectores se escriben igual que siempre (empiezan con minúscula).
-
-¿Cómo escribo métodos de clase?
-
--   En Pharo: En el segundo panel del System Browser, apretando el boton **class**, escriben el metodo como hasta ahora. (No se olviden de volver a apretar **instance** para escribir metodos de instancia)
--   En el parcial: simplemente pongan **(MC)** al lado del metodo, para diferenciarlo de los métodos de instancia.
+Entonces, los mensajes de clase son mensajes que entienden las clases. El nombre (selector) de un mensaje de clase se escribe igual que siempre (empieza con minúscula).
 
 Algunos ejemplos:
 
+Workspace:
+
+`  pepita:= Golondrina new.`
+
+`new` es uno de los primeros mensajes de clase que aprendemos: nos devuelve una nueva instancia de la clase que recibe el mensaje. En este caso, devuelve una golondrina.
+
+Workspace:
+
+`  hoy := Date today.`
+
+`today` es un mensaje de clase que le mando a la clase Date y me devuelve un objeto que representa la fecha de hoy.
+
+Workspace:
+
+`  items:= Bag with: 'brujula' with: 'botellaDeGrogXD' with: 'catalejo'.`
+
+`with:with:with:` es un mensaje que entienden las clases de colecciones (en este caso Bag es la clase que recibe el mensaje). `with:with:with:` devuelve una nueva colección, que tiene los tres elementos adentro. En éste caso, devuelve un bag con la brújula, la botella y el catalejo.
+
+### ¿Cómo escribo métodos de clase?
+
+Cada mensaje de clase debe tener asociado un método de clase (su codificación).
+
+-   En Pharo: En el segundo panel del System Browser, apretando el boton **class**, escriben el método como hasta ahora. (No se olviden de volver a apretar **instance** para escribir metodos de instancia)
+-   En el parcial: simplemente pongan **(MC)** al lado del metodo, para diferenciarlo de los métodos de instancia.
+
+Workspace:
+
+`  barbanegra := Pirata nuevoConItems: items ebriedad: 100 monedas: 1500.`
+
+El mensaje `nuevoConItems:ebriedad:monedas:` se lo mando a la clase Pirata y me decuelve un nuevo pirata ya inicializado con los items, la ebriedad y las monedas que le indiquemos. Codificación:
+
 ` #Pirata`
-` (MC)`
-` >> nuevoConItems: losItems ebriedad: nivelEbriedad monedas: unasMonedas`
+` (MC)  >> nuevoConItems: losItems ebriedad: nivelEbriedad monedas: unasMonedas`
 `    |unPirata|`
 `  unPirata:= self new.`
 `  unPirata items: losItems.`
@@ -47,8 +86,4 @@ Algunos ejemplos:
 `  unPirata monedas: unasMonedas.`
 `  ^unPirata.`
 
-`  items:= Bag with: 'brujula' with: 'botellaDeGrogXD' with: 'catalejo'.`
-
-`  Date today.`
-
-`  pepita:= Golondrina new.`
+Recordemos que, como el que recibe este mensaje es una clase, acá **self es la clase**, no una instancia.
