@@ -7,6 +7,7 @@ Lo podemos usar directamente como un plugin desde el eclipse
 
 -   Bajar el [Eclipse](http://www.eclipse.org/downloads/) más te guste. Recomendamos Eclipse IDE for Java EE Developers. Fijate de elegir uno que se adapte al sistema operativo de tu PC y que sea de 32 o 64 bits según corresponda (esta es la única herramienta dependiente de la plataforma, las demás deberían servir tanto para diferentes sistemas operativos como para diferentes arquitecturas de procesador).
 -   Instalale el plugin del [Scala IDE for Eclipse](http://scala-ide.org/download/current.html). Asegurate que coincida la versión del plugin con la versión de Eclipse que tengas instalado.
+    -   Para ejecutar y escribir tests en ScalaTest (una especie de JUnit para Scala), tenés que instalarle un plugin opcional, que se encuentra en la misma URL que usaste para instalar el ScalaIDE. Asegurate de checkear el item bajo "Scala IDE Plugins (incubation) -&gt; ScalaTests for ScalaIDE".
     -   Instalale el plugin de Maven ([m2eclipse](http://www.sonatype.org/m2eclipse)). Si elegiste el Eclipse for Java Developers ya viene con este plugin.
     -   Instalale el plugin para integrar scala con Maven ([m2eclipse-scala](https://github.com/sonatype/m2eclipse-scala)).
     -   Instalar uno o más plugins para los repositorios de código que uses (svn, mercurial, git). Si elegiste el Eclipse for Java Developers ya viene con el plugin de git.
