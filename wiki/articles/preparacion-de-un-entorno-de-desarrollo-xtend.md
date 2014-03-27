@@ -41,6 +41,7 @@ Luego boton derecho, "Maven" "Update Project..."
 ### Tips
 
 -   Instalate la versión 2.4 ó superior, ya que versiones anteriores tienen problemas entre clases xtend e interfaces java cuando hay referencias circulares entre sí.
+-   Para que eso ande se necesita un eclipse 4.2 o superior.
 
 ### Documentación
 
