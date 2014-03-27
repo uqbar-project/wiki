@@ -19,9 +19,7 @@ Acá un screenshot a modo de ejemplo (ojo que seguramente cambien los nombres de
 -   Luego crear una clase XTend.
 -   El eclipse mostrará un error similar a
 
-Acá hay dos opciones que mencionamos a continuación.
-
-Para más detalles pueden mirar <http://www.eclipse.org/xtend/download.html>
+La solución a ese problema se explica en la siguiente sección. Para más detalles pueden mirar <http://www.eclipse.org/xtend/download.html>
 
 ### Configuración de la librería de xtend
 
