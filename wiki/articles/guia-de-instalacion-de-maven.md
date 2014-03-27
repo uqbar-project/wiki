@@ -1,7 +1,5 @@
 ### Instalación default
 
-Instalar Maven Ir a maven.apache.org/download.cgi Buscar la última versión de Maven (3.2.1 a la fecha). Descargar y descomprimir Agregar al path. Crear un proyecto de prueba con maven mvn archetype:create -DgroupId=ar.edu.utn.frba.dds.demo -DartifactId=demo Configurar el compilador para que utilice Java 8. Ver <http://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html> Importar el proyecto de prueba en eclipse
-
 Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Installation)
 
 ### Instalación en SO Unix-based (Linux, Solaris and Mac OS X)
