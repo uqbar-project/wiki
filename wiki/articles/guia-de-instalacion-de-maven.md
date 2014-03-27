@@ -56,7 +56,7 @@ Una vez instaladas todas las herramientas, se puede crear un proyecto en esta pl
 
 -   Creamos un proyecto Maven.
 
-`$ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=org.uqbar.arena.examples -DartifactId=Example`
+`$ mvn archetype:create -DgroupId=ar.edu.utn.frba.dds.demo -DartifactId=demo`
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
