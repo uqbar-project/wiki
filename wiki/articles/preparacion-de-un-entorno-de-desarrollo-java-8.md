@@ -51,7 +51,7 @@ Maven
 
 Instalen Maven según la [Guía de Instalación de Maven](guia-de-instalacion-de-maven.html)
 
-Advertencia: recomendamos usar Maven desde consola y no con el plugin.
+Advertencia: recomendamos usar Maven desde consola y no con el plugin de Eclipse.
 
 Y cuando creemos un proyecto, recuerden configurar el compilador para que emplee Java 8. Ver <http://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html>
 
