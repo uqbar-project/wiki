@@ -21,7 +21,7 @@ Para instalarlo, debemos descargarlo de <http://www.oracle.com/technetwork/java/
 Los pasos siguientes dependen del sistema operativo. En Windows, el proceso esta guiado mayormente por el instalador. En Ubuntu, Mint y Linux similares debemos realizar lo siguiente:
 
 -   Pararse en el directorio donde se lo descomprimió.
--   sudo mv jdk1.8.0 /usr/bin/jvm/
+-   sudo mv jdk1.8.0 /usr/lib/jvm/
 -   sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0/jre/bin/java 500
 -   sudo update-alternatives --config java. Elegir la opcion del jdk8
 
