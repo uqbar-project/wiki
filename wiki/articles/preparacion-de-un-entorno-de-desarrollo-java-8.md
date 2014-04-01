@@ -51,7 +51,7 @@ Problema de Eclipse con Ubuntu 13.10
 
 Si instalaste Eclipse en Ubuntu 13.10 y utilizás el escritorio Unity, es posible que tengas problemas a la hora de visualizar los menús (file, edit, view, etc). Para arreglar este problema, hay que editar a mano unos archivos tal como se indica en esta [solución](http://askubuntu.com/questions/364310/eclipse-kepler-runs-weird).
 
-Hay que buscar los archivos eclipse.desktop en las rutas que la solución muestra y luego editarlos con cualquier editor de texto (nano, gedit, etc). Para esto, debemos primero pararnos en cada ruta, utilizando el comando cd.
+Hay que buscar los archivos eclipse.desktop en las rutas /usr/share/applications y ~/.local/share/applications/ y luego editarlos con cualquier editor de texto (nano, gedit, etc). Para esto, debemos primero pararnos en cada ruta, utilizando el comando cd.
 
 -   cd /usr/share/applications
 
