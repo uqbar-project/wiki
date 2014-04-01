@@ -46,6 +46,20 @@ Eclipse Kepler no viene con soporte para Java 8, así que tendremos que instalar
 -   Seleccionar Eclipse Java 8 Support For Kepler SR2 -&gt; Eclipse JDT Tools Patch for Java 8
 -   Darle Siguiente, Siguiente, Aceptar la Licencia. Y Reiniciar cuando lo pida
 
+Problema de Eclipse con Ubuntu 13.10
+------------------------------------
+
+Si instalaste Eclipse en Ubuntu 13.10 y utilizás el escritorio Unity, es posible que tengas problemas a la hora de visualizar los menús (file, edit, view, etc). Para arreglar este problema, hay que editar a mano unos archivos tal como se indica en esta [solución](http://askubuntu.com/questions/364310/eclipse-kepler-runs-weird).
+
+Hay que buscar los archivos eclipse.desktop en las rutas que la solución muestra:
+
+-   /usr/share/applications
+-   ~/.local/share/applications/
+
+Y luego editarlos con cualquier editor de texto (nano, gedit, etc). Hay que reemplazar la línea que comienza con "Exec" por:
+
+-   Exec=env UBUNTU\_MENUPROXY= /ruta/al/eclipse/eclipse
+
 Maven
 -----
 
