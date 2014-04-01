@@ -69,8 +69,6 @@ o bien sudo "el\_editor\_de\_texto\_que\_me\_guste" eclipse.desktop y reemplazam
 
 Luego repetimos los pasos anteriores para el eclipse.desktop que se encuentra en la ruta ~/.local/share/applications/.
 
-Vamos al directorio con cd, abrimos el archivo con nuestro editor de texto y reemplazamos la línea que comienza con Exec.
-
 Reiniciamos el eclipse y los menús deberían poder visualizarse correctamente.
 
 Maven
