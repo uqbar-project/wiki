@@ -63,7 +63,9 @@ o bien
 
 -   sudo gedit eclipse.desktop
 
-o bien sudo "el\_editor\_de\_texto\_que\_me\_guste" eclipse.desktop y reemplazamos la línea que comienza con Exec por: Exec=env UBUNTU\_MENUPROXY= /ruta/al/eclipse/eclipse
+o bien sudo "el\_editor\_de\_texto\_que\_me\_guste" eclipse.desktop y reemplazamos la línea que comienza con Exec por:
+
+-   Exec=env UBUNTU\_MENUPROXY= /ruta/al/eclipse/eclipse
 
 Luego repetimos los pasos anteriores para el eclipse.desktop que se encuentra en la ruta ~/.local/share/applications/.
 
