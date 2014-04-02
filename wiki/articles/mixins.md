@@ -33,6 +33,7 @@ Ejemplos
 
 -   [Uso de mixins en Ruby](http://www.tutorialspoint.com/ruby/ruby_modules.htm)
 -   [Uso de mixins en Scala](http://docs.scala-lang.org/tutorials/tour/traits.html)
+-   [Juegos de Estrategia](juegos-de-estrategia.html)
 
 En Scala es posible, no sólo aplicar el mixin estáticamente en la jerarquía, sino también al instanciar un objeto particular. En este ejemplo vemos una alternativa al [decorator](http://sourcemaking.com/design_patterns/decorator) basado en mixins: [Stackable Trait Pattern](http://www.artima.com/scalazine/articles/stackable_trait_pattern.html)
 
