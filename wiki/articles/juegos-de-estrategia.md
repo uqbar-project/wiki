@@ -13,3 +13,13 @@ Hay tres tipos de unidades:
 -   **Murallas** -&gt; Que pueden ser atacados pero no atacar. Tienen un potencial defensivo que equivale a su energía sobre 20, con un mínimo que depende de cada muralla. Comienzan con 1000 unidades de energía.
 -   **Misiles** -&gt; Que no pueden ser atacados pero pueden atacar. Su potencial ofensivo equivale a 100 multiplicado por la cantidad de kg de explosivos que tenga, que es propia de cada misil.
 
+Problemas con Herencia Simple
+-----------------------------
+
+Al intentar modelar este ejercicio con herencia simple, uno se encuentra con el problema de que no es posible separar en dos clases el comportamiento de Atacante y de Defensor, para luego hacer que Guerrero utilice ambos comportamientos. La herencia simple entonces no contribuye a una solución aceptable y se debe entonces buscar soluciones alternativas como composición que requieren una porción importante de glue code.
+
+Resolución con Mixins en Ruby
+-----------------------------
+
+Requerimiento descansar
+-----------------------
