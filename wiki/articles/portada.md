@@ -20,7 +20,6 @@ Para el que busca algo que vaya más allá de lo visto en las clases aquí hay u
 Discusiones
 
 -   [Robustez de los lenguajes](robustez-de-los-lenguajes.html)
--   [Ideas para Chocolate](ideas-para-chocolate.html)
 
 Otro material:
 
