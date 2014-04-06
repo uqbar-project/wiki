@@ -1,11 +1,5 @@
-Machaco un poquito más
-----------------------
-
-Cuando componés dos funciones, por ejemplo f y g, lo haces así
-
-`f . g`
-
-eso arma una nueeeva función, resultado de componer f con g.
+Qué es composición?
+-------------------
 
 ¿Qué queremos decir con 'Componer'?  
 Lo mismo que con composición de funciones en matemática.
@@ -15,6 +9,12 @@ fog(x) es lo mismo que f(g(x))
 Es decir que lo que devuelve g, hay que aplicárselo a f. A tener en cuenta, tanto f como g tienen que ser funciones, no podemos componer una función con un 2, o un 2 con una lista.
 
 > Sólo podemos componer funciones
+
+Para componer dos funciones en Haskell, por ejemplo f y g, se hace así
+
+`f . g`
+
+eso arma una nueeeva función, resultado de componer f con g.
 
 ### Ejemplo
 
