@@ -1,5 +1,6 @@
 Sobre el lenguaje:
 
+-   [Lambdas en Java 8](lambdas-en-java-8.html)
 -   [Java - Página oficial](http://www.java.com/es/)
 -   [Java (Wikipedia)](http://en.wikipedia.org/wiki/Java_(programming_language))
 -   [Oracle Technology Network for Java Developers](http://www.oracle.com/technetwork/java/index.html)
