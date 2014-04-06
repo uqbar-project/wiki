@@ -12,21 +12,18 @@ En una primera aproximación, una lambda es cualquier objeto que implementa algu
 -   Function: una función que toma un sólo argumento
 -   Predicate: una función que toma un sólo argumento pero que devuelve exclusivamente booleanos
 -   Consumer: una función que toma un sólo argumento y no devuelve nada, probablemente porque produce un [efecto](efecto.html). Es decir, los Consumers normalmente NO son computaciones puras.
--   Entre otras, ver: <http://docs.oracle.com/javase/8/docs/api/>
+-   Entre otras, ver: <http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>
 
 Para, por ejemplo, recibirlas por parámetro, debemos simplemente tipar al parámetro de nuestro método con alguna de estas interfaces.
 
 Ejemplo:
 
-Persona primerPersonasQueCumple(Predicate<Persona> predicado) {
-
+`Persona primerPersonasQueCumple(Predicate`<Persona>` predicado) {`
 `  for(Persona persona : personas) `
 `    if (predicado.test(persona))`
 `      return persona;`
-
 ` throw new PersonaNoExisteException();`
-
-}
+`}`
 
 Para pasarlas por parámetro, la sintaxis es la siguiente:
 
@@ -68,6 +65,28 @@ Y se usa exactamente igual. De todas formas, si no pensamos darle alguna semánt
 
 Colecciones en Java
 -------------------
+
+Una de las principales utilidades de las lambdas es el manejo de colecciones. Java 8 incorpora mensajes a sus colecciones para poder transformarlas usando mensajes análogos a las funciones de orden superior de Haskell: map, filter y reduce(fold), limit(take), entre otros: <http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html>
+
+La forma de trabajar siempre es la misma: cuando tengamos una colecciones, le enviaremos el mensaje stream() para obtener una secuencia potencialmente infinita (análoga a las listas de Haskell), al cual le podemos enviar mensajes para filtrar, mapear, etc. Cuando hayamos terminado, y si queremos reconvertir nuestro Stream a una colección (como una List, Set, o Collection), le enviaremos el mensaje collect, indicandole a que tipo de colección queremos convertirlo:
+
+-   collect(toList()) (análogo al asOrderedCollection de ST)
+-   collect(toSet()) (análogo al asSet de ST)
+-   entre otros. Ver <http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html>
+
+Ejemplo:
+
+` List`<Persona>` personas = Arrays.asList(jose, pedro, maria, anabela);`
+` Set`<Persona>` nombresDeDocentesSinRepetidos = personas.stream().filter(Persona::esDocente).map(Persona::getNombre).collect(toSet());`
+
+Lo cual es análogo al siguiente código Smalltalk:
+
+` personas := { jose. pedro. maria. anabela }`
+` nombresDeDocentesSinRepetidos := ((nombresDeDocentesSinRepetidos select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet`
+` `
+
+Más información
+---------------
 
 Para más información consultar:
 
