@@ -36,8 +36,9 @@ Eclipse Kepler
 
 La instalación del eclipse es muy sencilla: hay que bajar la versión el Eclipse IDE for Java Developers que corresponda a su sistema operativo desde <http://www.eclipse.org/downloads/> y descomprimirlo en su disco rígido. Posiblemente deseen crear un acceso directo para apuntar al ejecutable. Instal
 
-Eclipse Kepler no viene con soporte para Java 8, así que tendremos que instalarlo manualmente. Para ello, sigan los siguientes pasos: \* Con el Eclipse abierto, ir a Help -&gt; Install new software -&gt; Add Site
+Eclipse Kepler no viene con soporte para Java 8, así que tendremos que instalarlo manualmente. Para ello, sigan los siguientes pasos:
 
+-   Con el Eclipse abierto, ir a Help -&gt; Install new software -&gt; Add Site
 -   Agregar el siguiente site:
 
 ` Name: Java8Support`
