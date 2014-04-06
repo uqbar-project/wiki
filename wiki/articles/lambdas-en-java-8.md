@@ -37,6 +37,10 @@ Ejemplo:
 
 `primerPersonaQueCumple((Persona p) -> p.esMayorDeEdad())`
 
+En muchos casos como el anterior tipo del parámetro puede ser obviado, cuando este puede ser inferido por el contexto:
+
+`primerPersonaQueCumple(p -> p.esMayorDeEdad())`
+
 Referencias a métodos
 ---------------------
 
