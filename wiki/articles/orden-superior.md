@@ -81,6 +81,7 @@ Volviendo al tema principal, el chiste del orden superior es que yo paso algo m√
 
 ### Links Relacionados
 
+-   [Lambdas en Java 8](lambdas-en-java-8.html)
 -   [Introduction to higher-order functions](http://www.cs.aau.dk/~normark/prog3-03/html/notes/higher-order-fu_themes-intr-section.html)
 -   [Higher-order function](http://en.wikipedia.org/wiki/Higher-order_function)
 -   [Closures and Higher-Order Functions](http://weblog.raganwald.com/2007/01/closures-and-higher-order-functions.html)
