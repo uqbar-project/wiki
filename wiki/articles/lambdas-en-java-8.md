@@ -57,7 +57,6 @@ Por motivos de retrocompatibilidad, en realidad, cualquier Interface que defina 
 `  for(Persona persona : personas) `
 `    if (predicado.chequear(persona))`
 `      return persona;`
-
 ` throw new PersonaNoExisteException();`
 `}`
 
