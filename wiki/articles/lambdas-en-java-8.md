@@ -85,7 +85,7 @@ Ejemplo:
 Lo cual es análogo al siguiente código Smalltalk:
 
 ` personas := { jose. pedro. maria. anabela }`
-` nombresDeDocentesSinRepetidos := ((nombresDeDocentesSinRepetidos select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet`
+` nombresDeDocentesSinRepetidos := ((personas select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet`
 ` `
 
 Más información
