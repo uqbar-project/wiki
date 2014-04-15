@@ -8,6 +8,16 @@ Una **librería** es un conjunto de funciones llamadas desde "afuera" por un cli
 Framework
 ---------
 
-El **framework** representa una abstracción de diseño y tiene un comportamiento en sí mismo. No es solamente una clase, sino que es un conjunto de objetos que se relacionan para servir a un dominio específico. El cliente puede usar el framework subclasificando o componiendo sus propias clases con las clases del framework y entonces el código del framework es el que llama al código cliente. La instanciación del framework no es tan sencilla, ya que requiere un conocimiento del mismo.
+El **framework** representa una abstracción de diseño y tiene un comportamiento en sí mismo. No es solamente una clase, sino que es un conjunto de objetos que se relacionan para servir a un dominio específico.
+
+La integración con mi sistema se da de múltiples maneras
+
+-   a veces extiendo de una superclase propia del framework,
+-   o defino un objeto que respeta el contrato que pide el framework,
+-   o envío un mensaje a un objeto del framework
+
+pero es usual que el framework me pida luego cosas a mí, no tengo control sobre el flujo de envío de mensajes.
+
+La instanciación del framework no es tan sencilla, ya que requiere un conocimiento del mismo.
 
 ![](Framework.png "Framework.png")
