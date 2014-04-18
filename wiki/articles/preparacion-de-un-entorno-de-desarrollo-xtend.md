@@ -25,8 +25,8 @@ La solución a ese problema se explica en la siguiente sección. Para más detal
 
 Para poder utilizar Maven con Xtend tenés que
 
--   instalarlo como se sugiere \[aquí|en <http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven>\]
--   y configurar el settings según se explica \[aquí|<http://uqbar-wiki.org/index.php?title=Configuraci%C3%B3n_de_Maven_para_poder_utilizar_las_herramientas_de_Uqbar>\]
+-   instalarlo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven)
+-   y configurar el settings según se explica [aquí](http://uqbar-wiki.org/index.php?title=Configuraci%C3%B3n_de_Maven_para_poder_utilizar_las_herramientas_de_Uqbar)
 
 ### Configuración de la librería de xtend
 
