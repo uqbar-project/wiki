@@ -35,8 +35,6 @@ La configuración general de Maven se encuentra en el archivo . Hay varios lugar
 
 Es posible que la primera vez que agregamos una configuración, este archivo no exista. En ese caso se debe crearlo.
 
-El settings para trabajar con herramientas uqbar está [aquí](http://uqbar-wiki.org/index.php?title=Configuraci%C3%B3n_de_Maven_para_poder_utilizar_las_herramientas_de_Uqbar)
-
 ### Propiedades de Maven en Eclipse
 
 Window &gt; Preferences te permite configurar algunas propiedades para Maven. Te recomendamos
