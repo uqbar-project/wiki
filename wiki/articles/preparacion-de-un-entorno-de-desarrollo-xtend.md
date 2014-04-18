@@ -21,6 +21,13 @@ Acá un screenshot a modo de ejemplo (ojo que seguramente cambien los nombres de
 
 La solución a ese problema se explica en la siguiente sección. Para más detalles pueden mirar <http://www.eclipse.org/xtend/download.html>
 
+### Trabajo con Maven
+
+Para poder utilizar Maven con Xtend tenés que
+
+-   instalarlo como se sugiere \[aquí|en <http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven>\]
+-   y configurar el settings según se explica \[aquí|<http://uqbar-wiki.org/index.php?title=Configuraci%C3%B3n_de_Maven_para_poder_utilizar_las_herramientas_de_Uqbar>\]
+
 ### Configuración de la librería de xtend
 
 Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" 'org.eclipse.xtext.xbase.lib'.
@@ -28,7 +35,7 @@ Para que compile el código xtend dentro de un proyecto hace falta tener una lib
 Acá hay dos opciones, dependiendo de cómo estés manejando las dependencias en tu proyecto.
 
 -   Si no estás usando maven, podés simplemente ir a las propiedades del proyecto, "Java Build Path", luego en la solapa "Libraries", "Add Library", y seleccionar "Xtend Library".
--   Si estás usando MAVEN, no deberías hacer el paso anterior, porque eso va a hacer que las cosas compilen en eclipse (momentáneamente), pero no le estamos indicando a maven que el proyecto usa la librería de xtend, con lo cual nos va a traer problemas a futuro (por ejemplo al correr el proyecto si es una webapp va a tirar error por no encontrar las clases de xtend). En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
+-   Si vas a usar MAVEN, no deberías hacer el paso anterior, porque eso va a hacer que las cosas compilen en eclipse (momentáneamente), pero no le estamos indicando a maven que el proyecto usa la librería de xtend, con lo cual nos va a traer problemas a futuro (por ejemplo al correr el proyecto si es una webapp va a tirar error por no encontrar las clases de xtend). En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
 `   `<parent>
 `       `<groupId>`org.uqbar-project`</groupId>
