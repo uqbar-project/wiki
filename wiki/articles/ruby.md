@@ -4,6 +4,7 @@ Sobre el lenguaje:
 
 -   [Official site](http://www.ruby-lang.org/es/)
 -   [Ruby (wikipedia)](http://en.wikipedia.org/wiki/Ruby_(programming_language))
+-   [Operador Ampersand (a veces confuso)](http://ablogaboutcode.com/2012/01/04/the-ampersand-operator-in-ruby/)
 
 Herramientas basadas en Ruby:
 
