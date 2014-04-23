@@ -2,7 +2,7 @@ En la versión 8 del lenguaje [Java](java.html) se introduce una herramienta fun
 
 Con ellas podemos implementar fácilmente mensajes de alto nivel de abstracción, que reciben o devuelven bloques de código y se comportan de forma parecida a las funciones de [orden superior](orden-superior.html) que podemos encontrar en el [Paradigma Funcional](paradigma-funcional.html).
 
-Dado que el lenguaje Java existió mucho tiempo sin presentar Lambdas, estas presentan características distintivas si las comparamos con los bloques de Ruby o Smalltalk, o las funciones anónimas de Scala o C\#.
+Dado que el lenguaje Java existió mucho tiempo sin presentar Lambdas (a partir de utilizar [Clases Anónimas](clases-anonimas-en-java.html)), estas presentan características distintivas si las comparamos con los bloques de Ruby o Smalltalk, o las funciones anónimas de Scala o C\#.
 
 Uso básico
 ----------
