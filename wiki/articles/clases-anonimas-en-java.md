@@ -1,0 +1,1 @@
+La motivación más importante para entender las clases anónimas es la ausencia \[\[Bloques | bloques (o closures)\] en el lenguaje Java. Java 8 recién es la primer versión que introduce un mecanismo de bloques (ver [Lambdas\_en\_Java\_8](lambdas-en-java-8.html).
