@@ -7,7 +7,7 @@ Veamos un ejemplo:
 
 En smalltalk para seleccionar los elementos de una colección que cumplen cierta condición enviamos el mensaje "select:" Por ejemplo, para obtener las personas mayores de 18 años haríamos:
 
-personas select: \[:p | p edad &gt; 18 \]
+`personas select: [:p | p edad > 18 ]`
 
 Cómo haríamos eso en java ?
 
@@ -15,9 +15,20 @@ Primero que nada no existe un método "select" ni nada parecido en las coleccion
 
 Hacemos un método estático como una utilidad, al que le tenemos que pasar la colección como parámetro.
 
-public class CollectionUtils { public static Collection&lt;T&gt; select(Collection&lt;T&gt; coleccion, &lt;&lt;&lt;&lt; condicion &gt;&gt;&gt;&gt;) { ... } }
+`public class CollectionUtils {`
 
-Ejemplo con colecciones, - interfaz predicate, - con una clase normal. - scope al objeto original (atributo) - scope a variables locales (más atributos)
+`   public static Collection`<T>` select(Collection`<T>` coleccion, <<<< condicion >>>>) {`
+`       ...`
+`   }`
+
+`}`
+
+Ejemplo con colecciones,
+
+-   interfaz predicate,
+-   con una clase normal.
+-   scope al objeto original (atributo)
+-   scope a variables locales (más atributos)
 
 Aparece la Clase Anónima
 ------------------------
