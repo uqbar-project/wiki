@@ -16,11 +16,9 @@ Primero que nada no existe un método "select" ni nada parecido en las coleccion
 Hacemos un método estático como una utilidad, al que le tenemos que pasar la colección como parámetro.
 
 `public class CollectionUtils {`
-
 `   public static Collection`<T>` select(Collection`<T>` coleccion, <<<< condicion >>>>) {`
 `       ...`
 `   }`
-
 `}`
 
 Ejemplo con colecciones,
