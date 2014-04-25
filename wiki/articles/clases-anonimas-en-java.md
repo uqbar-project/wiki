@@ -220,7 +220,42 @@ O también accederle a una variable de instancia
 `            return ((Persona p)obj).getEmpleador().getNombre().equals(Empresa.this.nombre);`
 `...`
 
-Particularidades de la Implementación de Clases Anónimas
---------------------------------------------------------
+Acceso a variables locales (final)
+----------------------------------
 
-1- scope solo de var finals 2- no puede tener constructores (?)
+Existe una particularidad de la implementación de Java, para recrear el último caso en que usábamos un parámetro "edad" para fitrar.
+
+Si escribieramos eso así:
+
+`public Collection getMayoresA(int edad) {`
+`   return select(personas, new Condicion() {`
+`        @Override`
+`        public boolean cumple(Object obj) {`
+`            return ((Persona) obj).getEdad() > edad;`
+`        }`
+`   });`
+`}`
+
+Tendrímos un error de compilación al hacer "&gt; edad", es decir al intentar acceder desde el código de la clase anónima al parámetro. Esto es porque la clase anónima si bien tiene acceso al "scope" de variables del método, solo puede acceder a aquellas variables que sean **final**, es decir que sean constantes, que no puedan cambiar. Esto es por una limitación de java. La solución sería agregar el modificador **final** al parámetro
+
+`public Collection getMayoresA(final int edad) {`
+`...`
+
+Lo mismo sucede con **referencias locales**
+
+`public Collection getMayoresAlPromedioDeEdad() {`
+`   final int promedioDeEdad = this.calcularPromedioDeEdad();`
+`   return select(personas, new Condicion() {`
+`        @Override`
+`        public boolean cumple(Object obj) {`
+`            return ((Persona) obj).getEdad() > promedioDeEdad;`
+`        }`
+`   });`
+`} `
+
+Nótese que la referencia local "promedioDeEdad" está declarada como final.
+
+Y si queremos cambiar el valor de la variable local (no puedo hacerla final) ??
+-------------------------------------------------------------------------------
+
+Bien, se puede resolver, sin embargo introduce burocracia. Supongamos que queremos o
