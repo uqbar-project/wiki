@@ -3,7 +3,14 @@ Definiciones
 
 -   Una clase abstracta es una clase que no tiene instancias. Su utilidad consiste en proveer estructura y comportamiento común a todas las subclases que heredan de ella.
 
-<!-- -->
+<code>
+
+`public abstract class Figura {`
+`     public int getPerimetro();`
+
+`}`
+
+</code>
 
 -   Una interfaz permite especificar un contrato (formado por un conjunto de operaciones). Las clases que adhieren a ese contrato deben implementar esos métodos.
 
@@ -22,7 +29,7 @@ Definiciones
 `    Iterator`<T>` iterator();`
 `}`
 
-</code> *En este ejemplo las clases que implementen la interfaz Iterable deben definir un método iterator(). La interfaz sólo declara la firma de cada uno de los métodos: nombre, parámetros que recibe, tipo que devuelve y excepciones que puede arrojar*
+</code> ''En este ejemplo las clases que implementen la interfaz Iterable deben definir un método iterator(). Todos los métodos son abstractos, ya que la interfaz sólo declara la firma de cada uno de los métodos: nombre, parámetros que recibe, tipo que devuelve y excepciones que puede arrojar. ''
 
 Comparación
 -----------
