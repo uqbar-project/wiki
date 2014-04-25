@@ -50,15 +50,14 @@ Y para filtrar una colección
 `personas = ...`
 `CollectionUtils.select(personas, new MayorDe18Condicion());`
 
-Incluso si usamos los imports estáticos de Java, podemos importar métodos estáticos de una clase, para no tener que llamarlos con el nombre de la clase, punto, y el método. Quedaría:
+Incluso si usamos los imports estáticos de Java, podemos importar métodos estáticos de una clase, para no tener que llamarlos con el nombre de la clase, punto, y el método. Quedaría
 
 `import static org.uqbar-project.CollectionUtils.select;`
 `...`
-
 `personas = ...`
 `select(personas, new MayorDe18Condicion());`
 
-Ok, igualmente sigue siendo mucho más burocrático y pesado que la implementación en smalltalk. Además, los métodos estáticos en Java no pueden ser polimórficos. Son cosas raras y no métodos normales que puedan ser sobrescrito o implementado en diferentes formas.
+Ok, igualmente sigue siendo mucho más burocrático y pesado que la implementación en smalltalk.
 
 Igualmente, lo que más nos molesta es que tenemos que crear una nueva clase por cada condición por la que querramos filtrar. Es bastante molesto eso. Ejemplo, queremos filtrar las personas casadas..
 
