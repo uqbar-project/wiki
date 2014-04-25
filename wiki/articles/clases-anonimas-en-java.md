@@ -113,6 +113,14 @@ Accediendo a referencias locales (sin anónimas)
 
 Introducimos otra variante, otra situación normal.
 
+Queremos poder preguntarle a la empresa cuales son todos los empleados con más de "x" años. Es decir, no tenemos un valor único y fijo como antes, de 18, sino que lo recibimos como parámetro.
+
+` public Collection getEmpleadosMayoresA(int anios) {`
+`      return select(this.getEmpleados(), new MayoresA(anios));`
+` }`
+
+De nuevo, se ve acá que tenemos que pasarle todo el estado que necesite la condición, como parámetro en la construcción. En este caso es un parámetro. Podría ser incluso una variable local.
+
 Aparece la Clase Anónima
 ------------------------
 
