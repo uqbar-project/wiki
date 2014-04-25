@@ -7,22 +7,22 @@ Definiciones
 
 -   Una interfaz permite especificar un contrato (formado por un conjunto de operaciones). Las clases que adhieren a ese contrato deben implementar esos métodos.
 
-<code> /\*\* Implementing this interface allows an object to be the target of
+<code>
 
-`*  the "foreach" statement.`
-`* @since 1.5`
-`*/`
+`/** Implementing this interface allows an object to be the target of`
+` *  the "foreach" statement.`
+` * @since 1.5`
+` */`
+`public interface Iterable`<T>` {`
+`    /**`
+`     * Returns an iterator over a set of elements of type T.`
+`     * `
+`     * @return an Iterator.`
+`     */`
+`    Iterator`<T>` iterator();`
+`}`
 
-public interface Iterable<T> {
-
-`   /**`
-`    * Returns an iterator over a set of elements of type T.`
-`    * `
-`    * @return an Iterator.`
-`    */`
-`   Iterator`<T>` iterator();`
-
-} </code> *En este ejemplo las clases que implementen la interfaz Iterable deben definir un método iterator(). La interfaz sólo declara la firma de cada uno de los métodos: nombre, parámetros que recibe, tipo que devuelve y excepciones que puede arrojar*
+</code> *En este ejemplo las clases que implementen la interfaz Iterable deben definir un método iterator(). La interfaz sólo declara la firma de cada uno de los métodos: nombre, parámetros que recibe, tipo que devuelve y excepciones que puede arrojar*
 
 Comparación
 -----------
