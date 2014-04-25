@@ -258,4 +258,51 @@ Nótese que la referencia local "promedioDeEdad" está declarada como final.
 Y si queremos cambiar el valor de la variable local (no puedo hacerla final) ??
 -------------------------------------------------------------------------------
 
-Bien, se puede resolver, sin embargo introduce burocracia. Supongamos que queremos o
+Bien, se puede resolver, sin embargo introduce burocracia. Para no cambiar el dominio vamos a tener que caer en un ejemplo de manejo de estructura.
+
+Supongamos que queremos obtener a un diccionario o Mapa con los empleados asociados a su edad expresada en decadas. Ej:
+
+`20 >  Juan(23), Jose (27), Maria (21)`
+`30 >  Yesi (30), Nico (36)`
+`40 >  Carlos (48)`
+`...`
+
+Haríamos una iteración entre 20 y 70, por ejemplo, filtrando los empleados que tengan edad &gt;= i y edad &lt;= i + 9
+
+`public Map`<Integer, Collection>` getEmpleadosPorEdad() {`
+`    Map`<Integer, Collection>` empleadosPorEdades = new HashMap`<Integer,Collection>`();`
+`    for (int i = 20; i <= 70; i += 10) {`
+`         Collection empleadosEncontrados = select(this.getEmpleados(), new Condicion() {`
+`              @Override`
+`              public boolean cumple(Object obj) {`
+`                  int edad = ((Persona)obj).getEdad();`
+`                  return edad >= i && edad <= (i + 9)`
+`              }`
+`         });`
+`         empleadosPorEdades.put(i, empleadosEncontrados);`
+`    }`
+`}`
+
+Bien, esto no compilaría, porque desde la clase anónima estamos usando la variable local "i", que no es final. Si procedemos a ponerle "final" en la declaración, ahora no va a compilar el "for" en la parte del "i+=10" porque no se puede modificar una variable final. Entonces, estamos en una encrucijada. La forma de resolverla, es mover la clase anónima a otro método, donde la "i" sí la podemos declarar como final. Para esto podemos extraer el filtrado a otro método, y desde este pasarle la i como parámetro.
+
+`public Map`<Integer, Collection>` getEmpleadosPorEdad() {`
+`    Map`<Integer, Collection>` empleadosPorEdades = new HashMap`<Integer,Collection>`();`
+`    for (int i = 20; i <= 70; i += 10) {`
+`         Collection empleadosEncontrados = this.getEmpleadosEnLaDecadaDel(i);`
+`         empleadosPorEdades.put(i, empleadosEncontrados);`
+`    }`
+`}`
+
+Y el nuevo método:
+
+`public Collection getEmpleadosEnLaDecadaDel(final int i) {`
+`    return select(this.getEmpleados(), new Condicion() {`
+`          @Override`
+`          public boolean cumple(Object obj) {`
+`              int edad = ((Persona)obj).getEdad();`
+`              return edad >= i && edad <= (i + 9)`
+`          }`
+`    });`
+`}`
+
+Como ven el parámetro "i" nunca cambia en este método, así que sí podemos declararlo como final. Mientras que en el for puede seguir siendo "no final".
