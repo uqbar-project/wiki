@@ -7,7 +7,6 @@ Definiciones
 
 `public abstract class Figura {`
 `     public int getPerimetro();`
-
 `}`
 
 </code>
