@@ -143,7 +143,6 @@ Ejemplo:
 `           return ((Persona) obj).getEdad() > 18;`
 `       }`
 `   };`
-
 `   return select(personas, mayoresA23);`
 `}`
 
