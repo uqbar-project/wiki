@@ -191,7 +191,6 @@ La clase anónima además de poder acceder a su estado interno y mandarle mensaj
 Rehagamos el ejemplo de la empresa
 
 `  public class Empresa {`
-
 `      public Collection getEmpleados() {`
 `          return select(personas, new Condicion() {`
 `              @Override`
@@ -204,8 +203,8 @@ Rehagamos el ejemplo de la empresa
 
 Ven que acá estamos necesitamos comparar el empleador de la persona con la nosotros mismos. El problema es que estamos teniendo código dentro de una clase (anónima de Condicion) que está dentro de otra clase (Empresa). Entonces, no existe un único "this". Tenemos dos. Como regla para toda clase anónima
 
--   -   this\*: se refiere al objeto de la clase anónima, en nuestro caso sería la instancia de Condicion.
--   -   ClaseContenedora.this\*: se refiere al objeto instancia de la clase contenedora de esta anónima. En nuestro caso la Empresa.
+-   **this**: se refiere al objeto de la clase anónima, en nuestro caso sería la instancia de Condicion.
+-   **ClaseContenedora.this**: se refiere al objeto instancia de la clase contenedora de esta anónima. En nuestro caso la Empresa.
 
 Así podríamos mandarle mensajes también
 
