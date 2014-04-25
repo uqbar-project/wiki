@@ -31,7 +31,7 @@ Ahora bien, en Java no existen los bloques o closures, con lo cual, la única op
 
 Como la condición es lo que va a tener que implementar el "usuario" de este método, es decir quien quiera filtrar una colección, la definimos como una Interfaz de java, para no poner una restricción sobre una superclase (la otra opción sería que fuera una clase abstracta).
 
-Fíjense que es un objeto que tiene una [| única responsabilidad](http://en.wikipedia.org/wiki/Single_responsibility_principle) bien identificada. Dado un objeto que le paso por parámetro me sabe decir si cumple o no con la condición.
+Fíjense que es un objeto que tiene una \[única responsabilidad | <http://en.wikipedia.org/wiki/Single_responsibility_principle>\] bien identificada. Dado un objeto que le paso por parámetro me sabe decir si cumple o no con la condición.
 
 Ejemplo con colecciones,
 
