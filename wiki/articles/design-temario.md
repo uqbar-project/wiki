@@ -29,7 +29,7 @@ Unidad 5: Modelado de objetos
 -   [Cosificación](cosificacion.html)
 -   [Diseño y Sistemas de Tipos](diseno-y-sistemas-de-tipos.html)
 -   [Manejo de Errores](manejo-de-errores.html)
--   [Clase abstracta vs interfaces](clase-abstracta-vs-interfaces.html)
+-   [Clase abstracta vs interfaz](clase-abstracta-vs-interfaz.html)
 -   [Clases vs instancias](clases-vs-instancias.html)
 -   [Ciclo de vida de un objeto](ciclo-de-vida-de-un-objeto.html)
 -   [Template method](template-method.html)
