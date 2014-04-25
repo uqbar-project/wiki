@@ -13,7 +13,7 @@ Definiciones
 `   public abstract double getPerimetro();`
 `}`
 
-</code> Si tenemos la clase Rectángulo, Círculo, etc. que heredan de Figura todas se benefician del comportamiento default que permite comparar una figura con otra. Por otra parte los métodos que resuelven el área y el perímetro son **abstractos**, no se provee una implementación sino que deben ser codificados por las subclases.
+</code> Si tenemos la clase Rectángulo, Círculo, etc. que heredan de Figura todas se benefician del comportamiento default para el método menorQue que permite comparar una figura con otra. Por otra parte los métodos que resuelven el área y el perímetro son **abstractos**, no se provee una implementación sino que deben ser codificados por las subclases.
 
 -   Una interfaz permite especificar un contrato (formado por un conjunto de operaciones). Las clases que adhieren a ese contrato deben implementar esos métodos.
 
