@@ -89,11 +89,9 @@ Como se ve necesitamos pasarle la empresa a la condición. Es una condición que
 
 `class TrabajaEnCondicion implements Condicion {`
 `   private Empresa empresa;`
-
 `   public TrabajaEnCondicion(Empresa empresa) {`
 `       this.empresa = empresa;`
 `   }`
-
 `   @Override`
 `   public boolean cumple(Object obj) {`
 `       return ((Persona) obj).getEmpleador() == this.empresa;`
