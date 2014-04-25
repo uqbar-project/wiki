@@ -9,6 +9,9 @@ En smalltalk para seleccionar los elementos de una colección que cumplen cierta
 
 `personas select: [:p | p edad > 18 ]`
 
+Ejemplo en Java Sin clases anónimas
+-----------------------------------
+
 Cómo haríamos eso en java ?
 
 Primero que nada no existe un método "select" ni nada parecido en las colecciones (interfaz Collection). Así que tenemos que hacer el método nosotros.
@@ -33,12 +36,82 @@ Como la condición es lo que va a tener que implementar el "usuario" de este mé
 
 Fíjense que es un objeto que tiene una \[<http://en.wikipedia.org/wiki/Single_responsibility_principle>| \[única responsabilidad\]\] bien identificada. Dado un objeto que le paso por parámetro me sabe decir si cumple o no con la condición.
 
-Ejemplo con colecciones,
+Entonces hacemos una primer implementación de nuestro ejemplo de filtrar mayores de 18 creando una clase normal que implemente esa interfaz.
 
--   interfaz predicate,
--   con una clase normal.
--   scope al objeto original (atributo)
--   scope a variables locales (más atributos)
+`class MayorDe18Condicion implements Condicion {`
+`   @Override`
+`   public boolean cumple(Object obj) {`
+`       return ((Persona) obj).getEdad() > 18;`
+`   }`
+`}`
+
+Y para filtrar una colección
+
+`personas = ...`
+`CollectionUtils.select(personas, new MayorDe18Condicion());`
+
+Incluso si usamos los imports estáticos de Java, podemos importar métodos estáticos de una clase, para no tener que llamarlos con el nombre de la clase, punto, y el método. Quedaría:
+
+`import static org.uqbar-project.CollectionUtils.select;`
+`...`
+
+`personas = ...`
+`select(personas, new MayorDe18Condicion());`
+
+Ok, igualmente sigue siendo mucho más burocrático y pesado que la implementación en smalltalk. Además, los métodos estáticos en Java no pueden ser polimórficos. Son cosas raras y no métodos normales que puedan ser sobrescrito o implementado en diferentes formas.
+
+Igualmente, lo que más nos molesta es que tenemos que crear una nueva clase por cada condición por la que querramos filtrar. Es bastante molesto eso. Ejemplo, queremos filtrar las personas casadas..
+
+`class EsCasadaCondicion implements Condicion {`
+`   @Override`
+`   public boolean cumple(Object obj) {`
+`       return ((Persona) obj).esCasada();`
+`   }`
+`}`
+
+Y luego
+
+` casados = select(personas, new EsCasadaCondicion());`
+
+Accediendo a referencias de otro Objeto (sin anónimas)
+------------------------------------------------------
+
+Qué pasa si ahora queremos desde la condición utilizar una estado interno del objeto que está filtrando. Por ejemplo, desde una Empresa, queremos obtener sus empleados. Para eso, filtramos de la colección de personas a aquellas que trabajen para esta empresa.
+
+`public class Empresa {`
+`   `
+`   public Collection getEmpleados() {`
+`       return select(personas, new TrabajaEnCondicion(this));`
+`   }     `
+`   `
+`}`
+
+Como se ve necesitamos pasarle la empresa a la condición. Es una condición que tiene estado. En este caso se pasa a sí mismo todo el objeto Empresa.
+
+`class TrabajaEnCondicion implements Condicion {`
+`   private Empresa empresa;`
+
+`   public TrabajaEnCondicion(Empresa empresa) {`
+`       this.empresa = empresa;`
+`   }`
+
+`   @Override`
+`   public boolean cumple(Object obj) {`
+`       return ((Persona) obj).getEmpleador() == this.empresa;`
+`   }`
+`}`
+
+Cada vez más código ! :S Necesitamos declarar el atributo (estado interno) y recibirlo en el constructor.
+
+Bastante burocrático nuévamente. En smalltalk sería
+
+` Empresa>>empleados`
+`     ^personas select: [:p | (p empleador) = self]`
+
+Accediendo a referencias locales (sin anónimas)
+-----------------------------------------------
+
+Introducimos otra variante, otra situación normal.
 
 Aparece la Clase Anónima
 ------------------------
