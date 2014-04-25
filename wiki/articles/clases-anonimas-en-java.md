@@ -124,7 +124,103 @@ De nuevo, se ve acá que tenemos que pasarle todo el estado que necesite la cond
 Aparece la Clase Anónima
 ------------------------
 
-impl para el ejemplo. Reflexionar un poco.
+De lo anterior podemos concluir que la Condición en general va a ser un objetito más bien descartable, que lo uso para filtrar una colección en particular y luego lo descarto (más aún si tiene estado, no puedo reutilizar la condición "mayor a &lt;23&gt;" si luego tengo que buscar los mayores a &lt;50&gt;).
+
+Además, de que vamos a tener muchísimas clases implementaciones, según cuántos criterios de filtrado tengamos en el sistema.
+
+Esto es porque en realidad lo que necesitaríamos es expresar un pedacito de código nada más.
+
+Bien, como java no tiene bloques, para apalear un poco este problema, introduce la idea de **clase anónima interna** (del inglés anonymous inner classes). La idea es que en el cuerpo de un método pueda escribir una clase ahí mismo, "inline", es decir sin necesidad de hacerlo en otro archivo. Como voy a implementar con esto un pedacito de código "descartable", no hace falta que le ponga nombre a esta clase.
+
+Entonces, diréctamente instancio la interfaz (o clase abstracta), abro llaves, y ahí mismo la implemento.
+
+Ejemplo:
+
+`public Collection getMayoresDe18() {`
+`   Condicion mayoresA18 = new Condicion() {`
+`       @Override`
+`       public boolean cumple(Object obj) {`
+`           return ((Persona) obj).getEdad() > 18;`
+`       }`
+`   };`
+
+`   return select(personas, mayoresA23);`
+`}`
+
+Este ejemplo es equivalente al primero que hicimos. Nótese que estamos haciendo
+
+`variable =  `<nueva clase anónima>
+
+La sintaxis es
+
+` new Interface() {`
+`    `
+`    // implementación de la interface   `
+` `
+` }`
+
+Eso me da un objeto, que en este primer ejemplo lo asignamos a una variable local. Podríamos incluso no usar la variable local y diréctamente crearla para pasarla por parámetro al "select".
+
+`public Collection getMayoresDe18() {`
+`   return select(personas, new Condicion() {`
+`       @Override`
+`       public boolean cumple(Object obj) {`
+`           return ((Persona) obj).getEdad() > 18;`
+`       }`
+`     }`
+`   );`
+`}`
+
+Fíjense que es lo mismo, simplemente metimos todo el código desde el "new Cond... hasta el cierre de llaves de la calse, en el lugar del parámetro.
+
+Así, si lo miran con cariño (mucho cariño), se parece un poco a la implementación con bloques.
+
+Ojo, las reglas son las mismas que cuando definimos una clase en otro archivo. Como que:
+
+-   nos fuerza a implementar todos los métodos abstractos.
+-   podemos sobrescribir un método (en caso de hacer una subclase anónima de una clase abstracta).
+-   podemos llamar a super (pasa clase abstracta también).
+-   etc.
+
+Sin embargo, a diferencia de una clase normal tiene algunas particularidades.
+
+Acceso a la instancia contenedora (Clase.this)
+----------------------------------------------
+
+La clase anónima además de poder acceder a su estado interno y mandarle mensajes a los parámetros que recibe en métodos, "ve" y puede también acceder al estado interno y mandarle mensajes a la instancia de la clase que la creó (es decir donde está el código definido).
+
+Rehagamos el ejemplo de la empresa
+
+`  public class Empresa {`
+
+`      public Collection getEmpleados() {`
+`          return select(personas, new Condicion() {`
+`              @Override`
+`              public boolean cumple(Object obj) {`
+`                   return ((Persona) obj).getEmpleador() == Empresa.this;`
+`              }`
+`          });`
+`      }`
+`  }`
+
+Ven que acá estamos necesitamos comparar el empleador de la persona con la nosotros mismos. El problema es que estamos teniendo código dentro de una clase (anónima de Condicion) que está dentro de otra clase (Empresa). Entonces, no existe un único "this". Tenemos dos. Como regla para toda clase anónima
+
+-   -   this\*: se refiere al objeto de la clase anónima, en nuestro caso sería la instancia de Condicion.
+-   -   ClaseContenedora.this\*: se refiere al objeto instancia de la clase contenedora de esta anónima. En nuestro caso la Empresa.
+
+Así podríamos mandarle mensajes también
+
+`...`
+`            return Empresa.this.esExEmpleado((Persona) obj);`
+`...`
+
+Donde "esExEmpleado(Persona p)" sería un método de la Empresa.
+
+O también accederle a una variable de instancia
+
+`...`
+`            return ((Persona p)obj).getEmpleador().getNombre().equals(Empresa.this.nombre);`
+`...`
 
 Particularidades de la Implementación de Clases Anónimas
 --------------------------------------------------------
