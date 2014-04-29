@@ -103,7 +103,7 @@ Por ejemplo: cuando una de las componentes de un predicado es un not/1 , necesit
 ¿Cuál sería el uso?
 -------------------
 
-Inherentemente es más potente que una función, ya que te permite encontrar todos los valores para los cuales una relación se cumple (y esto tiene que ver también con la idea de "múltiples resultados"...).
+Inherentemente es más potente que una función, ya que te permite encontrar todos los valores para los cuales una relación se cumple (y esto tiene que ver también con la idea de [ múltiples resultados](paradigma-logico---multiples-respuestas.html)...).
 
 La ventaja inmediata es que te permite más formas de usarlo, lo típico: puedo preguntar si un alumno aprobó, o todos los alumnos que aprobaron, etc.
 
