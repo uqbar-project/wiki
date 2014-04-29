@@ -10,7 +10,7 @@ con lo cual puede recibir una lista de cualquier cosa, pero el de sum es
 
 `   Num a => [a] -> a`
 
-entonces sólo puede recibir una lista numérica (igual es polimórfica, porque hay muchos tipos de números.
+entonces sólo puede recibir una lista numérica (igual es polimórfica, porque hay muchos tipos de números, ver [ Typeclass Num](tipos-de-haskell-typeclasses.html)).
 
 La suma también es una operación polimórfica y su tipo es:
 
