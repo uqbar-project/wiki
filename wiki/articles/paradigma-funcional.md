@@ -18,6 +18,7 @@ Tipos
 -----
 
 -   [Tipos de Haskell](tipos-de-haskell.html)
+-   [Typeclasses](typeclasses.html)
 -   [Inferencia de tipos](inferencia-de-tipos.html)
 -   [Polimorfismo paramétrico y ad-hoc](polimorfismo-parametrico-y-ad-hoc.html)
 -   [Cantidad de parámetros de una función en Haskell (Notación point-free)](notacion-point-free.html)
@@ -29,7 +30,6 @@ Extras simpáticos
 -   [Definiciones locales (where)](Definiciones_locales_(where) "wikilink")
 -   [Expresiones lambda](expresiones-lambda.html)
 -   [Listas por comprensión](listas-por-comprension.html)
--   [Typeclasses](typeclasses.html)
 
 Errores comunes
 ---------------
