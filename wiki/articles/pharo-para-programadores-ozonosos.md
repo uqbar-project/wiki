@@ -161,8 +161,19 @@ Atención, no nos preocupemos por ese signo de admiración rojo. Ya lo dijimos, 
 
 Ya definimos nuestra clase ahora debemos agregarle métodos.
 
-Para poder agregar un método a una clase, tenemos que tener seleccionada la clase donde lo vamos a definir y hacer click sobre la categoría del método que vamos a generar; si no tenemos la categoría, la podemos crear o hacer click en **no messages** que es la que tengo cuando esta vacía o en **all methods** si ya tiene alguna.
+Para poder agregar un método a una clase, tenemos que tener seleccionada la clase donde lo vamos a definir y hacer click sobre la categoría del método que vamos a generar; si no tenemos la categoría, la podemos crear o hacer click en **no messages** que es la que tengo cuando esta vacía o en **-- all --** si ya tiene alguna.
 
 Cuando hacemos esto la sección de edición de código nos va a ofrecer el template, esto no es solo necesario para que nos muestre el template, sino que lo tengo que hacer para que Pharo sepa donde voy a meter el método.
 
 ![](PharoParaOzonosos-CreandoUnMetodo.png "PharoParaOzonosos-CreandoUnMetodo.png")
+
+Entonces vamos a escribir el código de nuestro primer método, lo que vamos a hacer es un mensaje para que el camión nos devuelva su capacidad:
+
+`      capacidad`
+`          ^ capacidad`
+
+Para guardar el método creado, tenemos que hacer CTRL+s o botón derecho y elegir la opción **Accept**.
+
+Cuando hacemos esto, nos queda el siguiente resultado.
+
+![](PharoParaOzonosos-MetodoCreado.png "PharoParaOzonosos-MetodoCreado.png")
