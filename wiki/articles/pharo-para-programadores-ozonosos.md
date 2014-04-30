@@ -75,3 +75,11 @@ Los workspace se guardan como archivos de texto con extensión *.ws*, para poder
 
 Un ejemplo Paso a Paso
 ----------------------
+
+Para poder mostrar como se usa Pharo, vamos a implementar el siguiente ejemplo.
+
+Vamos a tener que construir un sistema para administrar camiones en una empresa de logística. De cada camión vamos a saber su capacidad en kilos y su carga actual, y además podemos saber si el camión esta lleno o no.
+
+Al analizar y plantear una solución al problema, identificamos que todos los objetos camiones tienen el mismo comportamiento; por lo que extrajimos la siguiente clase:
+
+![](PharoParaOzonosos-Camion.png "PharoParaOzonosos-Camion.png")
