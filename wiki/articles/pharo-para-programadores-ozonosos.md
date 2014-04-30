@@ -145,6 +145,24 @@ En este caso tengo dos variables de instancia, capacidad y carga.
 
 Un minuto cerebrito, acá dijimos que ibamos a crear la clase Camion y vos le pusiste LgCamion; me estas cargando o todas las clases comienzan con Lg???
 
-Ninguna de las dos cosas, es un prefijo que identifica a nuestro paquete; como cree un paquete llamado Logistica definí que el prefijo que identifique a las clases dentro de este con el prefijo Lg. Esto lo tenemos que hacer porque Pharo no tiene espacios de nombres independientes, o sea no puedo tener dos clases con el mismo nombre, si quisiera crear una clase con el mismo nombre de otra que existe, voy a pisar la original. Por eso vamos a generar nombres únicos teniendo un prefijo para el paquete y el nombre de la clase.
+Ninguna de las dos cosas, es un prefijo que identifica a nuestro paquete; como cree un paquete llamado Logistica definí que el prefijo que identifique a las clases dentro de este con el prefijo Lg.
+
+Esto lo tenemos que hacer porque Pharo no tiene espacios de nombres independientes, o sea no puedo tener dos clases con el mismo nombre, si quisiera crear una clase con el mismo nombre de otra que existe, voy a pisar la original. Por eso vamos a generar nombres únicos teniendo un prefijo para el paquete y el nombre de la clase.
 
 Si estamos muy muy muy seguros que no existe otra clase que se llame Camion, podría ponerle ese nombre. Pero yo debo contarle el estandard.
+
+Después de crear la clase nos debería quedar algo así:
+
+![](PharoParaOzonosos-ClaseCreada.png "PharoParaOzonosos-ClaseCreada.png")
+
+Atención, no nos preocupemos por ese signo de admiración rojo. Ya lo dijimos, pero lo recuerdo, es un indicativo que la clase no esta documentada. Nada importante, por ahora, es algo que nos debería importar.
+
+#### Definición de Métodos
+
+Ya definimos nuestra clase ahora debemos agregarle métodos.
+
+Para poder agregar un método a una clase, tenemos que tener seleccionada la clase donde lo vamos a definir y hacer click sobre la categoría del método que vamos a generar; si no tenemos la categoría, la podemos crear o hacer click en **no messages** que es la que tengo cuando esta vacía o en **all methods** si ya tiene alguna.
+
+Cuando hacemos esto la sección de edición de código nos va a ofrecer el template, esto no es solo necesario para que nos muestre el template, sino que lo tengo que hacer para que Pharo sepa donde voy a meter el método.
+
+![](PharoParaOzonosos-CreandoUnMetodo.png "PharoParaOzonosos-CreandoUnMetodo.png")
