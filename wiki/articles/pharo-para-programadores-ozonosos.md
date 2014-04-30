@@ -16,12 +16,33 @@ Para comenzar vamos a necesitar una imagen de Pharo, cualquier imagen nos va a s
 
 Nuestro principal amigo en el desarrollo con Pharo va a ser el *System Browser*. Este lo encontramos dentro del menú principal de Pharo.
 
-![|Menún principal de Pharo](PharoParaOzonosos-World.png "|Menún principal de Pharo")
+![](PharoParaOzonosos-World.png "PharoParaOzonosos-World.png")
 
 Esto nos va a abrir la siguiente ventana (es bastante compleja para decirle ventanita).
 
-![|Ventana System Browser, es la ventana principal en la programación en Pharo.](PharoParaOzonosos-SystemBrowser.png "|Ventana System Browser, es la ventana principal en la programación en Pharo.")
+![](PharoParaOzonosos-SystemBrowser.png "PharoParaOzonosos-SystemBrowser.png")
 
 Esta ventana se divide en distintas secciones, esta ventana es central, presenta mucha mucha mucha información por eso vamos a analizarla por secciones.
 
-![|Distintas secciones dentro del SystemBrowser](PharoParaOzonosos-SystemBrowserSections.png "|Distintas secciones dentro del SystemBrowser")
+![](PharoParaOzonosos-SystemBrowserSections.png "PharoParaOzonosos-SystemBrowserSections.png")
+
+Estas Secciones son:
+
+`* `**`Categorias` `de` `clases:`**` en esta sección aparece una forma de categorizar las clases. Las categorías de las clases en Pharo`
+`  se llaman Packages, estos paquetes de clases pueden contener una o más subcategorías dentro. `
+
+`* `**`Clases:`**` una vez que selecciono un paquete se me van a mostrar las clases que están definidas en ese paquete. Porque algunas `
+`  aparecen con signo de admiración (!), porque no tienen escrita la documentación que explica que hace la clase.`
+
+`* `**`Categorías` `de` `Métodos:`**` cuando selecciono una clase se me van a mostrar los métodos que tiene definida esa clase. Estos`
+`  métodos pueden estar clasificados en distintas categorías, esto es muy útil como forma de documentación y suma mucho valor`
+`  cuando comienza a crecer mi programa.`
+
+`* `**`Metodos:`**` al ir navegando las categorías de los métodos van a ir mostrándome la lista de métodos de esa clase en la categoría `
+`  seleccionada.`
+
+`* `**`Área` `de` `Edición` `de` `Código:`**` En esta área de la ventana es donde se realiza la edición del código. Si elegimos un método vamos a`
+`  ver el código de ese método, pero si elegimos una clase nos muestra un código raro. No entremos en pánico, ese código es la definición`
+`  de la clase, ya vamos a entrar en el detalle de como hacerlo.`
+
+Por ahora debemos entender las distintas secciones del *System Browser* pronto vamos a ver para que se usa cada cosa con un ejemplo.
