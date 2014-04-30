@@ -83,3 +83,25 @@ Vamos a tener que construir un sistema para administrar camiones en una empresa 
 Al analizar y plantear una solución al problema, identificamos que todos los objetos camiones tienen el mismo comportamiento; por lo que extrajimos la siguiente clase:
 
 ![](PharoParaOzonosos-Camion.png "PharoParaOzonosos-Camion.png")
+
+Tenemos que recordar que la solución se da con los objetos que representan los camiones, las clases sirven para crear muchos camiones iguales, o sea se comportan todos juntos.
+
+Recordemos un poquito la forma de comunicación con los diagramas de clase. Este rectángulo que representa la clase tiene 3 secciones. En la superior va el nombre de la clase. En la del medio los distintos atributos que tienen los objetos creados con esta clase. Y en la inferior los mensajes que entienden los objetos creados con la clase.
+
+Perfecto ya sabemos que es lo que tenemos que hacer, ahora vamos a implementarlo en Pharo!
+
+### Creación de Paquetes
+
+Para comenzar tenemos que crear un paquete nuevo dentro de Pharo. Todas las clases de Pharo estan definidas dentro de un paquete, es muy recomendable que creemos un paquete para cada uno de los ejercicios o problemas o sistemas que creemos.
+
+Para crear un paquete tenemos que hacer click derecho sobre el sector de paquetes del System Browser y elegir la opción *Add Package...*. Esta opción nos va a preguntar el nombre del nuevo Paquete.
+
+Podemos ponerle el nombre que queramos, pero existe una convención que se usa en todos lados y que Pharo va a usar para presentarnos la información. Esta convención es separar las palabras con guión del medio.
+
+En este caso vamos a crear el paquete **Logistica**.
+
+Una aclaración importante, es que aunque es probable que Pharo se banque nombres con acentos o ñ o cualquier caracter UTF-8, a los programadores nos gusta obviar los acentos y las ñ; porque siempre siempre siempre van a traer problemas.
+
+Cuando creamos el paquete nos debería quedar algo así:
+
+![](PharoParaOzonosos-PaqueteCreado.png "PharoParaOzonosos-PaqueteCreado.png")
