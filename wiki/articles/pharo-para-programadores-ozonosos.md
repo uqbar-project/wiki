@@ -105,3 +105,46 @@ Una aclaración importante, es que aunque es probable que Pharo se banque nombre
 Cuando creamos el paquete nos debería quedar algo así:
 
 ![](PharoParaOzonosos-PaqueteCreado.png "PharoParaOzonosos-PaqueteCreado.png")
+
+### Creación de Clases
+
+Ya tenemos nuestro paquete creado, por ahora esta vació y triste y solo; por lo que vamos a comenzar creando la clase Camión.
+
+Para crear una clase tenemos que hacer las siguientes operaciones:
+
+1.  Hacer click sobre el paquete donde va a vivir nuestra nueva clase.
+2.  Ingresar la definición de la clase en el *Área de Edición de Código*, ahora vamos a hablar de que hay que escribir ahí.
+3.  Aceptar la definición, ya sea haciendo Ctrl+S o haciendo botón derecho y darle la opción Accept.
+
+#### Definición de una Clase
+
+Las clases en cualquier ambiente de Smalltalk se definen a partir de un envió de mensaje. Nadie en la vida se acuerda este mensaje que hay que mandar a la clase Object, pero al hacer click sobre un paquete la herramienta ya nos propone un template:
+
+`  Object subclass: #NameOfSubclass`
+`         instanceVariableNames: ''`
+`         classVariableNames: ''`
+`         category: 'Logistica'`
+
+La definición de nuestra clase Camion es la siguiente:
+
+`  Object subclass: #LgCamion`
+`         instanceVariableNames: 'capacidad carga'`
+`         classVariableNames: ''`
+`         category: 'Logistica'`
+
+Si se fijan no es tan tan loca.
+
+Las cosas que voy a modificar son:
+
+-   El nombre de la clase, es eso que esta después del numeral
+-   Las variables de instancia, acá agrego dentro del string cada uno de los nombres de las variables de instancia separados por un espacio.
+
+En este caso tengo dos variables de instancia, capacidad y carga.
+
+-   Nombre de la categoría donde esta clase, acá ya me pone la que corresponde al paquete donde estoy parado, pero siempre lo puedo cambiar.
+
+Un minuto cerebrito, acá dijimos que ibamos a crear la clase Camion y vos le pusiste LgCamion; me estas cargando o todas las clases comienzan con Lg???
+
+Ninguna de las dos cosas, es un prefijo que identifica a nuestro paquete; como cree un paquete llamado Logistica definí que el prefijo que identifique a las clases dentro de este con el prefijo Lg. Esto lo tenemos que hacer porque Pharo no tiene espacios de nombres independientes, o sea no puedo tener dos clases con el mismo nombre, si quisiera crear una clase con el mismo nombre de otra que existe, voy a pisar la original. Por eso vamos a generar nombres únicos teniendo un prefijo para el paquete y el nombre de la clase.
+
+Si estamos muy muy muy seguros que no existe otra clase que se llame Camion, podría ponerle ese nombre. Pero yo debo contarle el estandard.
