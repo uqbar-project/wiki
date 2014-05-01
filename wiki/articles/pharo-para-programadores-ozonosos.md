@@ -177,3 +177,61 @@ Para guardar el método creado, tenemos que hacer CTRL+s o botón derecho y eleg
 Cuando hacemos esto, nos queda el siguiente resultado.
 
 ![](PharoParaOzonosos-MetodoCreado.png "PharoParaOzonosos-MetodoCreado.png")
+
+#### Probando nuestros Objetos
+
+Ya tenemos creada nuestra clase, ahora probemos los objetos que creamos. Para poder crear objetos y mandarles mensajes necesitamos usar un workspace.
+
+En un nuevo workspace vamos a escribir el siguiente código.
+
+`      unCamion := LgCamion new.`
+`      unCamion capacidad.`
+
+Podemos ir ejecutando línea a línea. La primera nos conviene ejecutarla con un Do-It (o haciendo Ctrl+d), ya que es una línea que tiene efecto de lado. Esta línea crea un nuevo objeto a partir de la clase **LgCamion** y lo asigna a la variable local **unCamion**.
+
+La 2da línea la vamos a ejecutar con un Print-It (o haciendo Ctrl+p), ya que es una expresión que va a devolver la capacidad del camión.
+
+Dando como resultado lo siguiente:
+
+![](PharoScreenshot.7.png "PharoScreenshot.7.png")
+
+Pero porque cuando evaluamos la 2da expresión nos devuelve **nil**? Bueno, porque todas los atributos de un objeto arrancan en nil.
+
+Por eso debemos agregarle el método para poder establecer los valores de los objetos. Vamos a agregar los siguientes métodos a la clase **LgCamion**:
+
+`     capacidad: unValor.`
+`       capacidad := unValor.`
+
+`     carga`
+`       ^ carga.`
+
+`     carga: unValor`
+`       carga:=unValor.`
+
+Además vamos a definir el método para responder al mensaje **estasLleno**.
+
+`     estasLleno.`
+`       ^ capacidad = carga.`
+
+Entonces una vez que tenemos este mensaje podemos hacer una prueba más interesante con el siguiente workspace.
+
+`     unCamion := LgCamion new.`
+`     unCamion capacidad:1000. `
+`     unCamion carga:1000.`
+`     unCamion estasLleno.`
+
+Este workspace ya nos permite probar una variante, que podemos ir modificando para probar nuestros objetos. Una alternativa interesante para esto, es poder crear tests unitarios.
+
+### Como guardar mis programas
+
+En Pharo, los programas se guardan dentro de la imagen, o sea tengo que ir guardando la imagen con el código y los objetos de mis programas.
+
+#### Exportar a un .st
+
+Además puedo exportar los paquetes como un archivo *.st*. Para realizar esto podemos hacerlo desde el **System Browser** y con el botón derecho sobre un paquete y eligen la opción **File Out**.
+
+Al hacer esto se genera un archivo con el nombre del paquete y la extensión **.st** que incluye todo el código fuente de las clases del paquete.
+
+#### Importar un .st
+
+Para poder importar un archivo **.st** lo más fácil es arrastrar el archivo sobre una imagen de Pharo que se encuentre corriendo y al soltarlo elegir la opción **FileIn Entire File** y listo ya lo va a cargar en la imagen.
