@@ -42,7 +42,7 @@ Eclipse Kepler no viene con soporte para Java 8, así que tendremos que instalar
 -   Agregar el siguiente site:
 
 ` Name: Java8Support`
-` URL: `[`http://build.eclipse.org/eclipse/builds/4P/siteDir/updates/4.3-P-builds/`](http://build.eclipse.org/eclipse/builds/4P/siteDir/updates/4.3-P-builds/)
+` URL: `[`http://download.eclipse.org/eclipse/updates/4.3-P-builds/`](http://download.eclipse.org/eclipse/updates/4.3-P-builds/)
 
 -   Seleccionar Eclipse Java 8 Support For Kepler SR2 -&gt; Eclipse JDT Tools Patch for Java 8
 -   Darle Siguiente, Siguiente, Aceptar la Licencia. Y Reiniciar cuando lo pida
