@@ -64,51 +64,27 @@ En Haskell,
 
 ### Problemas con Booleanos y Guardas
 
--   Ver <http://uqbar-wiki.org/index.php?title=Funciones_por_Partes#Errores_Comunes>
+-   Ver [Funciones\_por\_Partes\#Errores\_Comunes](funciones-por-partes-errores-comunes.html)
 
-=== (algo == True) === Una variante del caso anterior es un código como este, dentro de una clase cuyas instancias entienden los mensajes estaLibre y estaAndando
+=== Mal Uso de Booleanos (algo == True) === Una variante de los problemas con Guardas es lo siguiente:
 
-`   puedeUsarse`
-`       ^(self estaLibre = true) & (self estaAndando = true)`
+`comentarioPara nota | estaAprobada nota `**`==` `False`**` = "Segui Participando"`
+`                    | nota < 7 `**`==` `True`**` = "Bien, loco!"`
+`                    | otherwise = "Sos un crack"`
 
-Analicemos la parte
+Ese código está mal. ¿Por qué? Porque **estaAprobada ya devuelve un Booleano**. De la misma manera **la función menor también devuelve un Booleano**. Entonces, en el caso del menor, está demás la comparación por True. Y en el caso del está aprobada, si lo que necesito es el opuesto del booleano, entonces debo usar la función not:
 
-`   (self estaLibre = true)`
+`comentarioPara nota | `**`not` `(estaAprobada` `nota)`**` = "Segui Participando"`
+`                    | `**`nota` `<` `7`**`  = "Bien, loco!"`
+`                    | otherwise = "Sos un crack"`
 
-La expresión `self` `estaLibre` hace lo único que puede hacer una expresión en Smalltalk: devolver un objeto. ¿Qué objeto puede ser ese?
+Ese código es el correcto. Comprobamos así:
 
-**1.**
-Si la condición es cierta, entonces el objeto que devuelve es el objeto true, el único objeto en un ambiente Smalltalk que representa el valor de verdad "cierto". Si a ese objeto le pregunto `=` `true`, ¿qué objeto va a ser el resultado?
-
-Si pregunto si dos objetos son iguales, o me va a responder true, o me va responder false, no hay otra. En este caso, true es el mismo objeto que true, o sea el = da cierto, o sea ... devuelve ¡true!, que es el mismo objeto que obtenía con
-
-`   (self estaLibre)`
-
-**2.**
-Ahora supongamos que la condición no es cierta, en ese caso me devuelve el objeto false, si a false le digo `=` `true` el resultado de eso es el objeto false, que otra vez es lo mismo que obtengo poniendo solamente
-
-`   (self estaLibre)`
-
-**Consecuencia**
-El mismo análisis lo puedo hacer con
-
-`   (self estaAndando = true)`
-
-y la conclusión es que el método puede escribirse así
-
-`   puedeUsarse`
-`       ^(self estaLibre) & (self estaAndando)`
-
-En esta versión estamos manejando mejor los booleanos, porque aceptamos que el resultado de `self` `estaLibre` es un booleano, que va a ser true o false, y que va a entender `&` con el otro booleano como parámetro.
-
-#### Un caso parecido
-
-¿Y si en lugar de estaLibre tengo estaOcupado, qué hago, pongo
-
-`   puedeUsarse`
-`       ^(self estaOcupado = false) & (self estaAndando = true)`
-
-nooooo ... quiero el booleano "contrario" al resultado de `self` `estaLibre`, para eso los booleanos entienden not, en este caso
-
-`   puedeUsarse`
-`       ^(self estaOcupado not) & (self estaAndando)`
+`> estaAprobada 5 == False`
+`True`
+`> `**`not` `(estaAprobada` `5)`**
+`True`
+`> 5 < 7 == True`
+`True`
+`> `**`5` `<` `7`**
+`True`
