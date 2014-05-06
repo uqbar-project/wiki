@@ -86,7 +86,39 @@ Lo cual es análogo al siguiente código Smalltalk:
 
 ` personas := { jose. pedro. maria. anabela }`
 ` nombresDeDocentesSinRepetidos := ((personas select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet`
-` `
+
+Ordenar
+-------
+
+El orden superior se puede aprovechar para ordenar colecciones en Java. Supongan que tienen:
+
+`public class Foo {`
+`    private String bar;`
+`    private int baz;`
+`   // y sus getters y constructor`
+` } `
+
+Cuando quieran tener algo ordenado según un criterio, antes o después, necesitarán un Comparator: es un objeto que nos dice si un objeto es "menor" que otro (precede a otro, dirían en discreta). La buena noticia es que normalmente no tendrán que declarar una clase que implemente esta interfaz, sino que podrán definirlo usando una lambda. Por ejemplo, si quieren crear una priorirty queue que esté ordenada según bar, pueden hacer:
+
+`PriorityQueue`<Foo>` foos = new PriorityQueue<>((x, y) -> x.getBar().compareTo(y.getBar()));`
+
+En general ni siquiera es necesario hacer la comparación a mano. Si quieren ordenar por una propiedad (como en este caso) pueden utilizar Comparator.comparing:
+
+` PriorityQueue`<Foo>` foos = new PriorityQueue<>(Comparator.comparing(foo -> foo.getBar()));`
+
+o lo que es lo mismo:
+
+` PriorityQueue`<Foo>` foos = new PriorityQueue<>(Comparator.comparing(Foo::getBar));`
+
+Si tienen que ordenar por multiples propiedades, pueden utilizar el mensaje thenComparing. Ejemplo de creación de un TreeSet que ordene segun bar y luego segun baz:
+
+` Set`<Foo>` foos = new TreeSet<>(Comparator.comparing(Foo::getBar).thenComparing(Foo::getBaz));`
+
+Finalmente, si tienen que ordenar al revés del orden de precedencia, pueden usar el mensaje reversed. Por ejemplo, acá se está obteniendo un stream ordenado por baz, de mayor a menor:
+
+` Arrays.asList(new Foo("hola", 2), new Foo("hello", 9)).stream().sorted(Comparator.comparing(Foo::getBaz).reversed()) ;`
+
+Para más información, miren la documentación de Comparator: <http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html>
 
 Más información
 ---------------
