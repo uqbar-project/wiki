@@ -60,13 +60,9 @@ El último ejemplo, matchear por id
 `   color:red;`
 `}`
 
-Este selector es el más "puntual" o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por "id".
+Este selector es el más "puntual" o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por "id". &lt;li id="opcionIrAAyuda"&gt;Ir a Ayuda&lt;/li&gt;
 
-<li id="opcionIrAAyuda">
-Ir a Ayuda
-
-</li>
-<button id="volver">`Volver`</button>
+&lt;button id="volver"&gt;Volver&lt;/button&gt;
 
 Algo importante para entender esto, es que en una página no deberían existir dos tags con el mismo id. No importa si están dentro de diferentes tags o en diferentes niveles. El "id" es único para todos los elementos de la página.
 
