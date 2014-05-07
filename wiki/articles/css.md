@@ -45,11 +45,13 @@ Aplica esas dos propiedades a todos los
 
 Este selector, que comienza con un punto, indica que va a matchear con cualquier tag (no importa el tipo de tag), siempre que éste tenga el valor **filaImpar** en su atributo **class**. Por ejemplo matchearía con estos tags:
 
-&lt;p class="filaImpar"&gt;Hola Soy un Párrafo&lt;p&gt;
+     <p class="filaImpar">Hola Soy un P&aacute;rrafo<p>
 
-&lt;span class="filaImpar importante"&gt;Hola Soy un Span&lt;p&gt;
+     <span class="filaImpar importante">Hola Soy un Span<p>
 
-&lt;tr class="conBordes fondoImportante filaImpar&gt; &lt;td&gt;Hola, soy una Fila&lt;/td&gt; &lt;tr&gt;
+     <tr class="conBordes fondoImportante filaImpar>
+        <td>Hola, soy una Fila</td>
+     <tr>
 
 Como se ve acá, un tag **puede tener más de un class**. Así los classes no tienen nada que ver con las clases de un lenguaje orientado a objetos. Pueden pensarlos más bien como "labels" o "etiquetas" o marcas que que hago a los tags, para luego por CSS agregarle características visuales. Así eventualmente uno en un proyecto grande, se crearía su propia convención con un conjunto de "classes" que reutilizaría en todo su sitio. Por ejemplo "titulo" o "menu", "botonGrande", "botonMediano", etc. Es una buena forma de elevar el nivel del html con nuevos significados.
 
@@ -62,9 +64,9 @@ El último ejemplo, matchear por id
 
 Este selector es el más "puntual" o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por "id".
 
-&lt;li id="opcionIrAAyuda"&gt;Ir a Ayuda&lt;/li&gt;
+     <li id="opcionIrAAyuda">Ir a Ayuda</li>
 
-&lt;button id="volver"&gt;Volver&lt;/button&gt;
+     <button id="volver">Volver</button>
 
 Algo importante para entender esto, es que en una página no deberían existir dos tags con el mismo id. No importa si están dentro de diferentes tags o en diferentes niveles. El "id" es único para todos los elementos de la página.
 
@@ -105,7 +107,9 @@ Ejemplo de varias reglas aplicando al mismo tiempo sobre un tag.
 
 Ambos reglas van a aplicar en este tag
 
-&lt;tr class="resaltar"&gt; &lt;td&gt;Hola, soy una celda&lt;/td&gt; &lt;/tr&gt;
+        <tr class="resaltar">
+            <td>Hola, soy una celda</td>
+        </tr>
 
 El texto se va a ver centrado y ademas con fondo rojo.
 
@@ -136,12 +140,12 @@ Se puede refactorizar a esto:
 
 La sintaxis entonces es:
 
-`selector1, selector2, ... selectorN {`
-`    propiedad1: valor1;`
-`    propiedad2: valor2;`
-`    ...`
-`    propiedadN: valorN;`
-`}`
+     selector1, selector2, ... selectorN {
+         propiedad1: valor1;
+         propiedad2: valor2;
+         ...
+         propiedadN: valorN;
+     }
 
 Se puede pensar como un **or**. Sería, si es un h1 **o** es un h2, o es un p.
 
