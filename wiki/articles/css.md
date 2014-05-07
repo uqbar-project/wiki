@@ -68,6 +68,17 @@ Este selector es el más "puntual" o específico, y permite matchear con tags, n
 
 Algo importante para entender esto, es que en una página no deberían existir dos tags con el mismo id. No importa si están dentro de diferentes tags o en diferentes niveles. El "id" es único para todos los elementos de la página.
 
+Uso de CSS desde HTML
+---------------------
+
+El html usa el css mediante una declaración en la sección **HEAD**.
+
+&lt;html&gt; &lt;head&gt; ... &lt;link rel="stylesheet" type="text/css" href="styles.css" /&gt; ... &lt;/head&gt; &lt;/html&gt;
+
+Donde "styles.css" sería mi archivo de estilos y estaría, en este caso en la misma carpeta en que se encuentra este html. También podríamos usar una URL absoluta:
+
+&lt;link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"&gt;
+
 Cascada
 -------
 
