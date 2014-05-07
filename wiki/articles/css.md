@@ -1,10 +1,24 @@
-Es la forma más recomendada de modificar las cuestiones estéticas de una página [HTML](html.html)
+Es la forma más recomendada de especificar y modificar las cuestiones estéticas de una página [HTML](html.html). La característica principal es que **separa estas declaraciones del propio html**. Así evita ensuciar la información (html) con cuestiones estéticas (el archivo .css). Además permite reutilizar estilos entre las diferentes páginas html, manteniendo consistencia entre el estilo de todo el sitio/aplicación.
 
-Un CSS permite definir estilos que se asocian a las diferentes partes de la página, de tres maneras distintas:
+Sintaxis
+--------
 
--   Por tag, es decir a todos los tags de un tipo (por ejemplo h1, h2, etc).
--   Por clase, es decir a los tags a los que se les haya indicado un estilo determinado (mediante el atributo **class**).
--   Por id, es decir a un elemento específico de la página según su **id**.
+CSS tiene su propio lenguaje, declarativos en el cual especificamos **reglas**. Una regla tiene la siguiente sintaxis:
+
+![](css-rule.gif "css-rule.gif")
+
+El **selector** es una expresión que nos permite matchear aquellos elementos a los que queremos aplicarle estos estilos. Luego el cuerpo de la regla contiene un conjunto de propiedades y valores para estos.
+
+Algunas propiedades aplican solo a algunos tipos de tags. Sin embargo, no es un lenguaje que "compile" o que tire errores. Simplemente si una propiedad no aplica a un tag, el browser no le va a dar bola.
+
+Selectores
+----------
+
+Básicamente lo primero que tenemos que saber sobre los selectores es que hay tres grandes tipos o formas de matchear nuestros tags.
+
+-   **Por tag**, es decir a todos los tags de un tipo (por ejemplo h1, h2, etc).
+-   **Por clase** (class), es decir a los tags a los que se les haya indicado un estilo determinado (mediante el atributo **class**).
+-   **Por id**, es decir a un elemento específico de la página según su **id**.
 
 Por ejemplo:
 
