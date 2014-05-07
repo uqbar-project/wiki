@@ -92,8 +92,8 @@ Ambos reglas van a aplicar en este tag
 
 El texto se va a ver centrado y ademas con fondo rojo.
 
-Combinando Selectores
----------------------
+Combinando Selectores (OR)
+--------------------------
 
 Es común que tengamos que aplicar los mismos estilos a diferentes tags. Para evitar duplicación de código las reglas se pueden combinar. Ej:
 
@@ -119,9 +119,11 @@ Se puede refactorizar a esto:
 
 La sintaxis entonces es:
 
-`regla1, regla2, ... reglaN {`
+`selector1, selector2, ... selectorN {`
 `    propiedad1: valor1;`
 `    propiedad2: valor2;`
 `    ...`
 `    propiedadN: valorN;`
 `}`
+
+Se puede pensar como un **or**. Sería, si es un h1 **o** es un h2, o es un p.
