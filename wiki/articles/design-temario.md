@@ -39,13 +39,10 @@ Unidad 5: Modelado de objetos
 
 #### Java
 
-=
-
 -   Preparación de un entorno de desarrollo
-
-`* `[`Preparacion` `de` `un` `entorno` `de` `desarrollo` `Java` `8`](java-8.html)
-`* `[`Preparacion` `de` `un` `entorno` `de` `desarrollo` `Java`](java-7.html)` `
-`* `[`Lambdas` `en` `Java` `8`](lambdas-en-java-8.html)
+    -   [Preparacion de un entorno de desarrollo Java 8](java-8.html)
+    -   [Preparacion de un entorno de desarrollo Java](java-7.html)
+    -   [Lambdas en Java 8](lambdas-en-java-8.html)
 
 #### Otras tecnologías
 
