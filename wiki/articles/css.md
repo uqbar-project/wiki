@@ -73,7 +73,13 @@ Uso de CSS desde HTML
 
 El html usa el css mediante una declaración en la sección **HEAD**.
 
-&lt;html&gt; &lt;head&gt; ... &lt;link rel="stylesheet" type="text/css" href="styles.css" /&gt; ... &lt;/head&gt; &lt;/html&gt;
+      <html>
+        <head>
+          ...
+          <link rel="stylesheet" type="text/css" href="styles.css" />
+          ...
+        </head>
+      </html>
 
 Donde "styles.css" sería mi archivo de estilos y estaría, en este caso en la misma carpeta en que se encuentra este html. También podríamos usar una URL absoluta:
 
