@@ -87,6 +87,8 @@ Donde "styles.css" sería mi archivo de estilos y estaría, en este caso en la m
 
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
+Existen otras formas de incluir estilos en un html, sin embargo la mejor es la que ya citamos. Las demás involucran ensuciar el html, y las pueden ver acá [1](http://www.w3schools.com/css/css_howto.asp)
+
 Cascada
 -------
 
