@@ -60,7 +60,9 @@ El último ejemplo, matchear por id
 `   color:red;`
 `}`
 
-Este selector es el más "puntual" o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por "id". &lt;li id="opcionIrAAyuda"&gt;Ir a Ayuda&lt;/li&gt;
+Este selector es el más "puntual" o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por "id".
+
+&lt;li id="opcionIrAAyuda"&gt;Ir a Ayuda&lt;/li&gt;
 
 &lt;button id="volver"&gt;Volver&lt;/button&gt;
 
