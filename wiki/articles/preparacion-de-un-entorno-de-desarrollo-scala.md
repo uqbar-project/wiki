@@ -73,5 +73,6 @@ Links de interés
 ----------------
 
 -   [Página principal de Scala](http://www.scala-lang.org/)
+-   [Un tutorial de Scala](http://paco.uqbar-project.org/te/scala/introduccin-a-scala) de Javi Fernándes, amigo de la casa
 -   [Groovy vs Scala](groovy-vs-scala.html)
 
