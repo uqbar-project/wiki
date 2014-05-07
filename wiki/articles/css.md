@@ -11,6 +11,14 @@ El **selector** es una expresión que nos permite matchear aquellos elementos a 
 
 Algunas propiedades aplican solo a algunos tipos de tags. Sin embargo, no es un lenguaje que "compile" o que tire errores. Simplemente si una propiedad no aplica a un tag, el browser no le va a dar bola.
 
+Un primer ejemplo para entender la sintaxis
+
+`span {`
+`   text-align:center;`
+`}`
+
+Aplica el valor "center" a la propiedad "text-align" de todos los tags de la página que sean de tipo <span>.
+
 Selectores
 ----------
 
@@ -20,16 +28,54 @@ Básicamente lo primero que tenemos que saber sobre los selectores es que hay tr
 -   **Por clase** (class), es decir a los tags a los que se les haya indicado un estilo determinado (mediante el atributo **class**).
 -   **Por id**, es decir a un elemento específico de la página según su **id**.
 
-Por ejemplo:
+Ejemplo por tag (ya vimos otro arriba para <span>)
 
-`td, th {`
+`td {`
+`   text-align:center;`
+`   color:red;`
 `}`
+
+Aplica esas dos propiedades a todos los
+
+<td>
 `.filaImpar {`
-`}`
-`#unElementoEspecifico {`
+`   text-align:center;`
+`   color:red;`
 `}`
 
-Entre las llaves se colocarían las indicaciones de estilo.
+Este selector, que comienza con un punto, indica que va a matchear con cualquier tag (no importa el tipo de tag), siempre que éste tenga el valor **filaImpar** en su atributo **class**. Por ejemplo matchearía con estos tags:
+
+Hola Soy un Párrafo
+
+<span class="filaImpar importante">`Hola Soy un Span`
+
+<tr class="conBordes fondoImportante filaImpar>
+<td>
+Hola, soy una Fila
+
+</td>
+<tr>
+Como se ve acá, un tag **puede tener más de un class**. Así los classes no tienen nada que ver con las clases de un lenguaje orientado a objetos. Pueden pensarlos más bien como "labels" o "etiquetas" o marcas que que hago a los tags, para luego por CSS agregarle características visuales. Así eventualmente uno en un proyecto grande, se crearía su propia convención con un conjunto de "classes" que reutilizaría en todo su sitio. Por ejemplo "titulo" o "menu", "botonGrande", "botonMediano", etc. Es una buena forma de elevar el nivel del html con nuevos significados.
+
+El último ejemplo, matchear por id
+
+`#unElementoEspecifico {`
+`   text-align:center;`
+`   color:red;`
+`}`
+
+Este selector es el más "puntual" o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por "id".
+
+<li id="opcionIrAAyuda">
+Ir a Ayuda
+
+</li>
+<button id="volver">`Volver`</button>
+
+Algo importante para entender esto, es que en una página no deberían existir dos tags con el mismo id. No importa si están dentro de diferentes tags o en diferentes niveles. El "id" es único para todos los elementos de la página.
+
+Cascada
+-------
 
 Las reglas se aplican *en cascada*, esto significa dos cosas:
 
