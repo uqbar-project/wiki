@@ -1,4 +1,4 @@
-En la versión 8 del lenguaje [Java](java.html) se introduce una herramienta fundamental para cualquier lenguaje de programación orientado a objetos y que era una de sus principales falencias: las [expresiones lambda](expresiones-lambda.html), también conocidas como [bloques](bloques.html) de código, closures, o funciones anónimas.
+En la versión 8 del lenguaje [Java](java.html) se introduce una herramienta fundamental para cualquier lenguaje de programación orientado a objetos y que era una de sus principales falencias: las [expresiones lambda](expresiones-lambda.html), también conocidas como [bloques](bloques.html) de código o funciones anónimas.
 
 Con ellas podemos implementar fácilmente mensajes de alto nivel de abstracción, que reciben o devuelven bloques de código y se comportan de forma parecida a las funciones de [orden superior](orden-superior.html) que podemos encontrar en el [Paradigma Funcional](paradigma-funcional.html).
 
@@ -119,6 +119,15 @@ Finalmente, si tienen que ordenar al revés del orden de precedencia, pueden usa
 ` Arrays.asList(new Foo("hola", 2), new Foo("hello", 9)).stream().sorted(Comparator.comparing(Foo::getBaz).reversed()) ;`
 
 Para más información, miren la documentación de Comparator: <http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html>
+
+Nombres alternativos
+--------------------
+
+A veces se referencia a las lambda de Java como closure. En términos generales esto no es correcto, dado que son ideas diferentes: una lambda es una función que no tiene nombre, mientras una closure o cierre o clausura es una función que puede acceder a las variables disponibles en el contexto en que se la declaró.
+
+Sin embargo en este lenguaje informalmente y en términos prácticos ambos conceptos son intercambiables, ya que todas las lambdas encierra su contexto, y el unico tipo de closure que se puede tener es con una lambda.
+
+Como prueba de esto, históricamente, los frameworks de Java llamaban a la interfaz a ser implementada con una clase anónima indistintamente como Closure, Function o Lambda.
 
 Más información
 ---------------
