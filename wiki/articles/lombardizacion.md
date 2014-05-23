@@ -18,3 +18,10 @@ Para conseguir alguien que de una clase:
 **No Lombardizado:** "Che, hay que dar la clase de polimorfismo"
 
 **Lombardizado:** "Che, ¿puedo ayudar a dar la clase de polimorfismo? No me animo a darla solo"
+
+Misconcepciones Comunes
+-----------------------
+
+La "lombardización" **no** significa: "eh, gato, por qué en lugar de chamuyar no te ponés a hacer algo, gil!"
+
+Originalmente no era esa la idea. Lombardización es lo que en los círculos de la chetez empresarial se llama "empowerment" (pfff). Aplica cuando alguien viene con una idea pero su idea no pasa de eso, de una propuesta, entonces "lombardizate" significa: *"si tenés una buena idea, no esperes a que otro la lleve a cabo o a que un comité de notables le de su bendición, empujala vos, hacelo"*. Frecuentemente eso pasaba con los más jóvenes o recién llegados al grupo, que tal vez por no conocer la mecánica interna esperaba que las decisiones las tomaran los más viejos y no se animaba a tener más iniciativa. Entonces **lombardizar es justamente hacer que este grupo funcione sin depender de uno que centraliza o que toma decisiones o que no se puede hacer nada sin tener su visto bueno**.
