@@ -49,8 +49,11 @@ Para aprender más sobre el lenguaje Haskell
 -   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
 -   [Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
 
-Problemas complejos
--------------------
+Problemas complejos y cosas locas
+---------------------------------
+
+Acá hay algunas cosas interesantes que escapan al nivel de funcional que se espera que aprendan para Paradigmas, si te interesa profundizar en el tema es muy interesante!
 
 -   [Append como "foldr f a"](Append_como_"foldr_f_a" "wikilink")
+-   [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 
