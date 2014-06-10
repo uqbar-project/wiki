@@ -51,4 +51,6 @@ se traduce, como 3 es un Int, en algo como
 
 `square dictInt 3 `
 
-En resumen: chequeo estático, dispatch dinámico :P (o algo dinámico)
+En resumen: chequeo estático, dispatch dinámico :P (o algo dinámico, hay magia en el medio a nivel compilador)
+
+Más sobre Typeclasses en [Tipos de Haskell](tipos-de-haskell-typeclasses.html)
