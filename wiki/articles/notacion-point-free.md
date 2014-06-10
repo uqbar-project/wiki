@@ -1,11 +1,11 @@
-La posibilidad de definir funciones utilizando aplicación parcial en la propia definición (lo cual se conoce como notación **point-free**) trae aparejado a veces la dificultad para entender cuántos parámetros espera esa función que se está definiendo.
+La posibilidad de definir funciones en términos de otras funciones (ya sea utilizando [Aplicación Parcial](aplicacion-parcial.html) y/o [Composición](composicion.html) de funciones) se conoce como notación **point-free**, y trae aparejado a veces la dificultad para entender cuántos parámetros espera esa función que se está definiendo.
 
 Por ejemplo la función es múltiplo así definida tiene dos parámetros:
 
 `` esMultiploDe a = (==0).( `mod` a) ``
 
-La regla básica
----------------
+Una reglita básica
+------------------
 
 La regla es que una función como esa tiene tantos parámetros como la suma entre:
 
@@ -18,8 +18,8 @@ Analizando el caso anterior vemos:
 -   La expresión de la derecha es una composición y por lo tanto una función a-&gt;b entonces le falta un parámetro.
 -   En total la función recibe dos parámetros.
 
-Un detalle adicional
---------------------
+Analizando un poco más los tipos
+--------------------------------
 
 Para no confundirse, en la forma más tradicional de escribir funciones a la expresión a la derecha del igual no le falta ningún parámetro:
 
@@ -30,6 +30,28 @@ Se ve claramente que x+1 es una expresión que denota un valor numérico y no un
 La definición anterior es totalmente equivalente a:
 
 `siguiente = (+1)`
+
+Al aplicar parcialmente la función (+) :: Num a =&gt; a -&gt; a -&gt; a obtenemos otra función que es del tipo Num a =&gt; a -&gt; a. Si siguiente es igual a la función (+1), entonces su tipo es el mismo que el de (+1).
+
+En general lo más común es ver funciones que sólo les falta el último parámetro, como en el caso de esMultiploDe, ya que está definida en función de una composición. No sería correcto definirla de esta forma a pesar de que ambos parámetros vayan en ese orden "aplicados al final":
+
+`esMultiploDe = (==0).flip mod`
+
+Como no coincide la imagen de la función flip mod
+
+`flip mod :: Integral c => c -> `**`c` `->` `c`**
+
+con el dominio de (==0)
+
+`(==0) :: (Eq a, Num a) => `**`a`**` -> Bool`
+
+La composición de estas dos funciones no es correcta (de hecho esa expresión tipa, pero no lo van a poder usar porque el tipo de esMultiploDe requeriría un único argumento que sea a la vez una función y un número equiparable... y como que no tiene mucho sentido)
+
+Este otro ejemplo sí sería correcto:
+
+`resto = flip mod`
+
+El tipo de la función resto es el mismo que el de la función flip mod que ya mostramos antes.
 
 Pros y Cons de la notación point-free
 -------------------------------------
