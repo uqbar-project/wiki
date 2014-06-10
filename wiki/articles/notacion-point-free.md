@@ -56,7 +56,7 @@ El tipo de la función resto es el mismo que el de la función flip mod que ya m
 Pros y Cons de la notación point-free
 -------------------------------------
 
-A favor de usar la notación point-free es que nos fuerza a dejar de pensar en función de la aplicación y los valores con los que estamos acostumbrados a trabajar, teniendo que pensar en definir funciones como equivalencia de otras funciones combinadas. El paradigma funcional se basa en la idea de combinar funciones, ellas son las divas de esta forma de pensar la programación, por eso cuando definimos funciones como composición de otras funciones y/o al aplicación parcial de las mismas con estilo point-free, el código resultante es más limpio :)
+A favor de usar la notación point-free es que nos fuerza a dejar de pensar en función de la aplicación y los valores con los que estamos acostumbrados a trabajar, teniendo que pensar en definir funciones como equivalencia de otras funciones combinadas. El paradigma funcional se basa en la idea de combinar funciones, ellas son las divas de esta forma de pensar la programación, por eso cuando definimos funciones como composición de otras funciones y/o a la aplicación parcial de las mismas con estilo point-free, el código resultante es más limpio :)
 
 La notación point-free puede llevar a ofuscar el código cuando se usa malintencionadamente. Al combinar funciones puede que se vuelva más complicado inferir mentalmente el tipo de una expresión ya que cuesta más deducir la cantidad de parámetros necesarios para que la función definida se reduzca a un valor concreto mediante la aplicación.
 
