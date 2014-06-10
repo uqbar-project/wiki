@@ -281,3 +281,5 @@ La única función que se define en la restricción Show es la función show
 Qué tipos pertenecen a la restricción Show? Bool, Char, Double, Float, Int, Integer, (Show a) =&gt; \[ a \] --Listas, (Show a,b) =&gt; (a,b) --Tuplas
 
 Resumiendo: casi todos todos los tipos menos el tipo función
+
+Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? Sí! Leer en [Data: Definiendo nuestros tipos en Haskell\#Instance](data--definiendo-nuestros-tipos-en-haskell-instance.html)
