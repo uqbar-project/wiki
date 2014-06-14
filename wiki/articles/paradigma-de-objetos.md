@@ -19,6 +19,7 @@ Teoría
 -   [Redefinición](redefinicion.html)
 -   [Variables y métodos de clase](variables-y-metodos-de-clase.html)
 -   [igual o idéntico - = vs ==](igual-o-identico-----vs---.html)
+-   [Inmutabilidad](inmutabilidad.html)
 -   [Composición (OOP)](Composición_(OOP) "wikilink")
 -   [Garbage collector](garbage-collector.html)
 
