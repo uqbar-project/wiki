@@ -12,7 +12,7 @@ Recomendamos descargar la última versión estable del GGTS (que a julio del 201
 
 Allí seleccionás el entorno adecuado para tu sistema operativo.
 
-Configuraciones
+### Configuraciones
 
 1.  Es preferible que el directorio de instalación no tenga espacios (C:\\GGTS,o C:\\IDEGrails)
 2.  Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.
@@ -21,10 +21,12 @@ Configuraciones
 
 `STS -vm "/path donde está la JDK"`
 
-1.  las comillas son importantes si en el path hay espacios en blanco, y
-2.  tené en cuenta incluir el directorio bin del JDK en el path.
+-   las comillas son importantes si en el path hay espacios en blanco, y
+-   tené en cuenta incluir el directorio bin del JDK en el path.
 
 Más información en <http://grails.org/products/ggts>
+
+### Primeros pasos
 
 -   La primera pantalla que aparece es el Dashboard (si no aparece, navegar por la barra de herramientas hasta encontrarla), ir a la solapa Extensions. Seleccionar
     -   Subversive (integración de SVN con el IDE)
