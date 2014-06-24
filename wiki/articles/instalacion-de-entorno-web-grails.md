@@ -102,9 +102,14 @@ reemplazá la versión de tu JDK por una distinta.
 Si al querer abrir la ventana de comandos te aparece una ventana de error con el siguiente mensaje:
 
 `An internal error occurred during: "Retrieving available scripts".`
-`NullPointerException`
+`java.lang.NullPointerException`
 
-hay que configurar la variable de sistema GRAILS\_HOME para que apunte al mismo path donde estás corriendo desde el IDE (Tip: si es una instalación de GGTS fijate el directorio de instalación + grails-x.y.z donde x,y,z es el número de versión que estás usando actualmente)
+hay que configurar la variable de sistema GRAILS\_HOME para que apunte al mismo path donde estás corriendo desde el IDE (Tip: si es una instalación de GGTS fijate el directorio de instalación + grails-x.y.z donde x,y,z es el número de versión que estás usando actualmente).
+
+Otra opción es que estás trabajando en un proyecto que tiene una versión de Grails que no está instalada en tu máquina, las opciones son
+
+1.  Instalar esa versión de Grails en un directorio diferente (en <http://grails.org/download>)
+2.  O bien migrar el proyecto a la nueva versión de Grails
 
 Integración con otros lenguajes de programación
 -----------------------------------------------
