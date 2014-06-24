@@ -18,9 +18,11 @@ Configuraciones
 2.  Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.
 3.  La JDK y el GGTS deben coincidir en la versión de 32 ó 64 bits (si el GGTS es 32 bits tenés que apuntar a una JDK de 32 bits, o no va a funcionar)
 4.  Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al STS:
-    1.  STS -vm "/path donde está la JDK", donde
-    2.  las comillas son importantes si en el path hay espacios en blanco, y
-    3.  tené en cuenta incluir el directorio bin del JDK en el path.
+
+`STS -vm "/path donde está la JDK"`
+
+1.  1.  las comillas son importantes si en el path hay espacios en blanco, y
+    2.  tené en cuenta incluir el directorio bin del JDK en el path.
 
 Más información en <http://grails.org/products/ggts>
 
