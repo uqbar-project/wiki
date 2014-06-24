@@ -109,7 +109,7 @@ hay que configurar la variable de sistema GRAILS\_HOME para que apunte al mismo 
 Otra opción es que estás trabajando en un proyecto que tiene una versión de Grails que no está instalada en tu máquina, las opciones son
 
 1.  Instalar esa versión de Grails en un directorio diferente (en <http://grails.org/download>)
-2.  O bien migrar el proyecto a la nueva versión de Grails
+2.  O bien migrar el proyecto a la versión de Grails que tenés instalada en tu máquina
 
 ### Problemas para levantar el IDE con proyectos pesados
 
