@@ -81,9 +81,9 @@ Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web.
 Troubleshooting
 ---------------
 
-### Versiones de Grails
+### Compatibilidad de las versiones de Grails y JDK
 
--   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/GGTS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
+Asegurate de respetar la misma versión de 32/64 bits de tu JDK/GGTS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
 
 ### Problemas con Groovy Object al compilar
 
@@ -110,6 +110,10 @@ Otra opción es que estás trabajando en un proyecto que tiene una versión de G
 
 1.  Instalar esa versión de Grails en un directorio diferente (en <http://grails.org/download>)
 2.  O bien migrar el proyecto a la nueva versión de Grails
+
+### Problemas para levantar el IDE con proyectos pesados
+
+No debería ocurrir, ya que los ejemplos son didácticos y están pensados para levantar en entornos sin mayores problemas, pero si el IDE está ocupando mucha memoria al iniciar conviene chequear este link: <http://stackoverflow.com/questions/13515704/how-to-fix-groovy-grails-tool-suite-3-extreme-memory-usage>
 
 Integración con otros lenguajes de programación
 -----------------------------------------------
