@@ -3,40 +3,29 @@ Pre-requisitos
 
 Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas una JDK, no puede ser una JRE, y recomendamos que uses 1.7 ó superior. Para más ayuda, seguí este [link](preparacion-de-un-entorno-de-desarrollo-java.html).
 
-Framework Grails
-----------------
+GGTS: Entorno integrado de Desarrollo y Framework Grails
+--------------------------------------------------------
 
-Recomendamos descargar la versión 2.2.2 del siguiente link
+Recomendamos descargar la última versión estable del GGTS (que a julio del 2014 es la 3.5.1) en el siguiente link
 
--   <http://grails.org/download>
+-   <https://spring.io/tools/ggts/all>
 
-y luego seguir las instrucciones que figuran en el sitio (link Installation).
+Allí seleccionás el entorno adecuado para tu sistema operativo.
 
-**Importante:**
+Configuraciones
 
-1.  Si tu instalación es Windows, no descargues Grails en "Archivos de programa" u otros directorios del sistema. Recomendamos que tengas un directorio raíz "Grails" en el C: o en el D: y de ahí tengas un subdirectorio "Grails 2.2.2", otro "Grails 2.2.3" y así por cada instalación.
-2.  La última versión 2.3.0 cambió la forma de manejar las dependencias, no te recomendamos bajarla hasta que estabilicemos los ejemplos.
+1.  Es preferible que el directorio de instalación no tenga espacios (C:\\GGTS,o C:\\IDEGrails)
+2.  Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.
+3.  La JDK y el GGTS deben coincidir en la versión de 32 ó 64 bits (si el GGTS es 32 bits tenés que apuntar a una JDK de 32 bits, o no va a funcionar)
+4.  Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al STS:
 
-Entorno integrado de desarrollo (IDE)
--------------------------------------
+`# STS -vm "/path donde está la JDK", donde `
+`# las comillas son importantes si en el path hay espacios en blanco, y `
+`# tené en cuenta incluir el directorio bin del JDK en el path.`
 
-Si bien se pueden descargar varios plugins para eclipse, recomendamos bajarse el Spring Toolkit Suite del sistema operativo que tengan en
-
--   <http://www.springsource.org/downloads/sts-ggts> (**IMPORTANTE**: elegir SPRING TOOL SUITE, no GROOVY/GRAILS TOOL SUITE ya que si bien define una configuración básica, no permite jugar con distintas versiones de Grails/Groovy, entre otras cosas)
-    -   **Nota:** la versión Eclipse Juno es más liviana, las versiones más nuevas pueden resultar pesadas dependiendo de cada máquina.
-    -   Más información en <http://grails.org/products/ggts>
-
-### Completando la instalación
-
--   Conviene crear un acceso directo al STS especificando a qué JDK apuntar:
-    -   incluir el directorio bin del JDK en el path
-    -   las comillas son importantes en caso de haber espacios en el directorio
-
-`STS -vm "/path donde está la JDK" `
+Más información en <http://grails.org/products/ggts>
 
 -   La primera pantalla que aparece es el Dashboard (si no aparece, navegar por la barra de herramientas hasta encontrarla), ir a la solapa Extensions. Seleccionar
-    -   Grails support
-    -   Groovy-Eclipse
     -   Subversive (integración de SVN con el IDE)
 
 y luego presionar el botón Install.
@@ -91,7 +80,7 @@ Troubleshooting
 
 ### Versiones de Grails
 
--   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/STS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
+-   Asegurate de respetar la misma versión de 32/64 bits de tu JDK/GGTS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
 
 ### Problemas con Groovy Object al compilar
 
