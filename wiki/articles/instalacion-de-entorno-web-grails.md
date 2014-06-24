@@ -113,7 +113,7 @@ Al bajar ejemplos puede haber un problema con la versión del compilador ("Groov
 
 ### Integración con JDK
 
--   Grails 2.2.2/2.2.3 y la versión 1.7.0\_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app
+Grails 2.2.2/2.2.3 y la versión 1.7.0\_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app
 
 `Could not determine Hibernate dialect for database name [H2]!`
 
