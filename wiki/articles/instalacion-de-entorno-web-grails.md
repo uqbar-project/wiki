@@ -41,7 +41,7 @@ Para instalar el plugin de SVN tenemos tres opciones: a partir de la ventana Das
 
 -   Subversive (integración de SVN con el IDE)
 
-y luego presionan el botón Install.
+y luego presionan el botón Install. Reinician el entorno y luego descargan el SVNKit.
 
 En algunas instalaciones recientes el Dashboard tira un mensaje de error, no es grave, sigan los pasos a partir del Marketplace (la opción siguiente).
 
