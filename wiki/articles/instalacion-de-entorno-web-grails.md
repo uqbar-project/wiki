@@ -14,10 +14,19 @@ Allí seleccionás el entorno adecuado para tu sistema operativo.
 
 ### Configuraciones
 
-1.  Es preferible que el directorio de instalación no tenga espacios (C:\\GGTS,o C:\\IDEGrails)
-2.  Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.
-3.  La JDK y el GGTS deben coincidir en la versión de 32 ó 64 bits (si el GGTS es 32 bits tenés que apuntar a una JDK de 32 bits, o no va a funcionar)
-4.  Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al STS:
+#### ¿Dónde lo instalo?
+
+-   Es preferible que el directorio de instalación no tenga espacios (C:\\GGTS,o C:\\IDEGrails)
+
+#### ¿Qué JDK uso?
+
+-   No uses una JDK 1.8, tiene que ser 1.6 ó 1.7 (cualquiera, la instalás en otra carpeta)
+-   Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.
+-   La JDK y el GGTS deben coincidir en la versión de 32 ó 64 bits (si el GGTS es 32 bits tenés que apuntar a una JDK de 32 bits, o no va a funcionar)
+
+#### ¿Cómo asocio la JDK al GGTS?
+
+Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al STS:
 
 `STS -vm "/path donde está la JDK"`
 
