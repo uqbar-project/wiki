@@ -97,6 +97,15 @@ Al bajar ejemplos puede haber un problema con la versión del compilador ("Groov
 
 reemplazá la versión de tu JDK por una distinta.
 
+### Problemas al querer abrir la ventana de comandos
+
+Si al querer abrir la ventana de comandos te aparece una ventana de error con el siguiente mensaje:
+
+`An internal error occurred during: "Retrieving available scripts".`
+`NullPointerException`
+
+hay que configurar la variable de sistema GRAILS\_HOME para que apunte al mismo path donde estás corriendo desde el IDE (Tip: si es una instalación de GGTS fijate el directorio de instalación + grails-x.y.z donde x,y,z es el número de versión que estás usando actualmente)
+
 Integración con otros lenguajes de programación
 -----------------------------------------------
 
