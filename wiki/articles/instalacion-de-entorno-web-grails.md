@@ -35,7 +35,7 @@ Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís
 
 Más información en <http://grails.org/products/ggts>
 
-### Primeros pasos
+### Plugins
 
 Para instalar el plugin de SVN tenemos tres opciones: a partir de la ventana Dashboard, Help &gt; Eclipse Marketplace o manualmente como en Eclipse a partir del menú Help &gt; Install New Software. Allí seleccionan
 
