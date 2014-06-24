@@ -1,7 +1,7 @@
 Pre-requisitos
 --------------
 
-Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas una JDK, no puede ser una JRE, y recomendamos que uses 1.7 ó superior. Para más ayuda, seguí este [link](preparacion-de-un-entorno-de-desarrollo-java.html).
+Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas una JDK, no puede ser una JRE, y recomendamos que uses 1.7 **(por el momento no está homologada la JDK 1.8)**. Para más ayuda, seguí este [link](preparacion-de-un-entorno-de-desarrollo-java.html).
 
 GGTS: Entorno integrado de Desarrollo y Framework Grails
 --------------------------------------------------------
@@ -10,7 +10,7 @@ Recomendamos descargar la última versión estable del GGTS (que a julio del 201
 
 -   <https://spring.io/tools/ggts/all>
 
-Allí seleccionás el entorno adecuado para tu sistema operativo. Para Windows te recomendamos que trabajes con las versiones de 32 bits.
+Allí seleccionás el entorno adecuado para tu sistema operativo.
 
 ### Configuraciones
 
@@ -28,10 +28,13 @@ Más información en <http://grails.org/products/ggts>
 
 ### Primeros pasos
 
--   La primera pantalla que aparece es el Dashboard (si no aparece, navegar por la barra de herramientas hasta encontrarla), ir a la solapa Extensions. Seleccionar
-    -   Subversive (integración de SVN con el IDE)
+Para instalar el plugin de SVN tenemos tres opciones: a partir de la ventana Dashboard, Help &gt; Eclipse Marketplace o manualmente como en Eclipse a partir del menú Help &gt; Install New Software. Allí seleccionan
 
-y luego presionar el botón Install.
+-   Subversive (integración de SVN con el IDE)
+
+y luego presionan el botón Install.
+
+En algunas instalaciones recientes el Dashboard tira un mensaje de error, no es grave, sigan los pasos a partir del Marketplace (la opción siguiente).
 
 ### Web Server
 
