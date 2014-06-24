@@ -58,11 +58,18 @@ Configuración del entorno Grails
 --------------------------------
 
 -   Primero, seguir las configuraciones estándares para cualquier eclipse como se muestra en [este link](preparacion-de-un-entorno-de-desarrollo-java-configuraciones-adicionales.html)
+
+<!-- -->
+
+-   Además, les recomendamos modificar Window &gt; Web Browser &gt; Default web browser para ejecutar las aplicaciones en un browser externo (si no el IDE se pone todavía más pesado)
+
+### ¿Cómo cambio la versión default de Grails?
+
 -   Luego, ir a Window-&gt;Preferences, y filtrar por la palabra "Grails". Seleccionar al nodo "Grails", y en la parte derecha en la sección "Grails Installations", agregar una nueva apuntando a la versión de Grails en el directorio donde se instaló (Groovy &gt; Grails y hacer Add... Browse y buscar la carpeta correspondiente al paso 1)
 -   si estás trabajando en un proxy tenés que configurar variables en el Grails Launch (TODO: Ver configuración Telecom)
 
-Si no quieren usar Eclipse
---------------------------
+¿Y si no quiero usar Eclipse?
+-----------------------------
 
 Después buscar un IDE de su agrado e incorporarle el plugin para Grails, acá tienen un link para integrarlo con IDEA: <http://grails.org/IDEA+Integration>
 
