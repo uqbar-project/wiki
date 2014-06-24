@@ -10,7 +10,7 @@ Recomendamos descargar la última versión estable del GGTS (que a julio del 201
 
 -   <https://spring.io/tools/ggts/all>
 
-Allí seleccionás el entorno adecuado para tu sistema operativo.
+Allí seleccionás el entorno adecuado para tu sistema operativo. Para Windows te recomendamos que trabajes con las versiones de 32 bits.
 
 ### Configuraciones
 
