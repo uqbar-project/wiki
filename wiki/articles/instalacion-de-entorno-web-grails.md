@@ -21,8 +21,8 @@ Configuraciones
 
 `STS -vm "/path donde está la JDK"`
 
-1.  1.  las comillas son importantes si en el path hay espacios en blanco, y
-    2.  tené en cuenta incluir el directorio bin del JDK en el path.
+1.  las comillas son importantes si en el path hay espacios en blanco, y
+2.  tené en cuenta incluir el directorio bin del JDK en el path.
 
 Más información en <http://grails.org/products/ggts>
 
