@@ -65,4 +65,4 @@ Estrategias para manejar errores
 -   Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer mandando signal al error atrapado en el bloque que maneja el problema.
 -   Atraparla y lanzar otra más adecuada agregando más información del problema.
 
-Pueden leer un poquito más sobre este tema [acá](manejo-de-errores.html)
+Pueden leer un poquito más sobre este tema [acá](manejo-de-errores.html) (los ejemplos están en Java)
