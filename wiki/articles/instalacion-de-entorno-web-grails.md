@@ -112,7 +112,8 @@ En el caso en que quieras migrar de versión un proyecto,
 
 -   modificar si es necesario en el BuildConfig.groovy las versiones de las dependencias (las versiones para un proyecto default las podés conocer creando un proyecto Grails vacío y revisando cómo se genera el BuildConfig)
 -   luego desde el menú Grails Tools &gt; Refresh Dependencies
--   De haber algún problema: hacer un grails clean (Ctrl + Alt + Shift + G &gt; clean) y un clean + refresh desde el STS
+
+Con eso debería ser suficiente. De haber algún problema: hacer un grails clean (Ctrl + Alt + Shift + G &gt; clean) y un clean + refresh desde el STS
 
 Troubleshooting
 ---------------
