@@ -101,6 +101,19 @@ También pueden dar un click sobre la URL y eso los llevará por defecto a un br
 
 Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web. No obstante este server requiere una configuración adicional para asignarle un Tomcat en forma manual (no es el Tomcat interno que trae el entorno STS de Grails), por lo que por el momento recomendamos no utilizarlo.
 
+Migrar a una version diferente de Grails
+----------------------------------------
+
+En el caso en que quieras migrar de versión un proyecto,
+
+-   tenés que buscar el archivo application.properties, modificar la línea donde está la versión de Grails a la que corresponda
+
+`app.grails.version=2.3.8`
+
+-   modificar si es necesario en el BuildConfig.groovy las versiones de las dependencias (las versiones para un proyecto default las podés conocer creando un proyecto Grails vacío y revisando cómo se genera el BuildConfig)
+-   luego desde el menú Grails Tools &gt; Refresh Dependencies
+-   De haber algún problema: hacer un grails clean (Ctrl + Alt + Shift + G &gt; clean) y un clean + refresh desde el STS
+
 Troubleshooting
 ---------------
 
