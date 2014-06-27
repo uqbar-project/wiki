@@ -143,7 +143,7 @@ Si al querer abrir la ventana de comandos (Ctrl + Shift + Alt + G) te aparece un
 es que estás trabajando en un proyecto que tiene una versión de Grails que no está instalada en tu máquina, las opciones son
 
 1.  Instalar esa versión de Grails en un directorio diferente (en <http://grails.org/download>)
-2.  O bien migrar el proyecto a la versión de Grails que tenés instalada en tu máquina como se explicó [anteriormente](migrar-a-una-version-diferente-de-grails.html)
+2.  O bien migrar el proyecto a la versión de Grails que tenés instalada en tu máquina como se explicó [anteriormente](instalacion-de-entorno-web-grails-problemas-al-querer-abrir-la-ventana-de-comandos.html)
 
 ### Problemas para levantar el IDE con proyectos pesados
 
