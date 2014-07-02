@@ -26,29 +26,29 @@ Consideraciones para un proyecto Grails + Xtend en el mismo proyecto
 -   En cada proyecto, recomendamos crear un Source Folder específico para las clases Xtend (puede ser src/xtend).
 -   Obviamente, evitar que haya dos clases (una en Java/Groovy y otra en Xtend) con el mismo nombre (esto es, dentro de un mismo package, por más que estén en distintos source folders esto va a traer conflictos)
 -   Para compilar el proyecto en Eclipse, hay que hacer Project &gt; Properties, en Build Path &gt; solapa Libraries &gt; Add Library &gt; Xtend Library
--   En el archivo BuildConfig.groovy de cada proyecto, hay que incorporar la dependencia con las librerías propias de Xtend para que en la aplicación se incluya la librería xtend:
+-   En el archivo BuildConfig.groovy de cada proyecto, hay que incorporar la dependencia con las librerías propias de Xtend para que en la aplicación se incluya la librería xtend. Para esto hay que hacer dos cosas: 1) definir como repositorio maven "<http://repo.maven.apache.org/maven2>", y 2) agregar una dependencia a la versión de xtend que queramos.
 
 `repositories {`
 `    ...`
 `    mavenLocal()`
 `    mavenCentral()`
 `    // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories`
-`    mavenRepo "`[`http://repo.maven.apache.org/maven2/`](http://repo.maven.apache.org/maven2/)`"`
+`    mavenRepo "`[`http://repo.maven.apache.org/maven2/`](http://repo.maven.apache.org/maven2/)`"    // punto 1`
 `    ...`
 `}`
 `dependencies {`
 `    // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
-`    build 'org.eclipse.xtext:org.eclipse.xtext.xbase.lib:2.4.2'`
+`    build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.6.1'  // punto 2`
 `}`
 
 Otra opción puede ser definir esta dependencia:
 
 `dependencies {`
 `    // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
-`    build 'org.eclipse.xtend:org.eclipse.xtend.standalone:2.4.2'`
+`    build 'org.eclipse.xtend:org.eclipse.xtend.standalone:2.6.1'`
 `}`
 
-**Nota:** 2.4.2 es en realidad la versión de xtend que se quiera utilizar.
+**Nota:** 2.6.1 es en realidad la versión de xtend que se quiera utilizar. Se puede buscar en el repositorio Maven las versiones disponibles desde esta URL: <http://search.maven.org/#browse>, y ahí buscan org.eclipse.xtend.lib. En los resultados les figurará la última versión o bien versiones anteriores a las que pueden apuntar (con una leyenda all(10)).
 
 Consideraciones para proyectos Grails + Xtend por separado
 ----------------------------------------------------------
