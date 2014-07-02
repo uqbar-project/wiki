@@ -48,7 +48,7 @@ Otra opción puede ser definir esta dependencia:
 `    build 'org.eclipse.xtend:org.eclipse.xtend.standalone:2.6.1'`
 `}`
 
-**Nota:** 2.6.1 es en realidad la versión de xtend que se quiera utilizar. Se puede buscar en el repositorio Maven las versiones disponibles desde esta URL: <http://search.maven.org/#browse>, y ahí buscan org.eclipse.xtend.lib. En los resultados les figurará la última versión o bien versiones anteriores a las que pueden apuntar (con una leyenda all(10)).
+**Nota:** 2.6.1 es en realidad la versión de xtend que se quiera utilizar. Se puede buscar en el repositorio Maven las versiones disponibles desde esta URL: <http://search.maven.org/#browse>, y ahí buscan org.eclipse.xtend.lib. En los resultados les figurará la última versión o bien versiones anteriores a las que pueden apuntar, a partir del link all(xxx).
 
 Consideraciones para proyectos Grails + Xtend por separado
 ----------------------------------------------------------
