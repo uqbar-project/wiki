@@ -68,13 +68,40 @@ Así se aprovechan mejor las herramientas mencionadas, y redujimos un poco la im
 
 En éste caso, como *las variables con nombres diferentes no representan una restricción de diferencia*, tenemos que forzar dicha restricción con el `\=`
 
-Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
+=== Variable = individuo === Tomemos el siguiente problema: "Un instrumento suena lindo si es de cuerda y está afinado. Solución:
 
-=== Variable = individuo === *<en construcción>* Ésto no significa que el igual esté prohibido. Ver los casos abajo de todo.
+`suenaLindo(Instrumento):-`
+`    tipo(Instrumento,`**`Tipo`**`),`
+`    `**`Tipo` `=` `cuerda`**`,`
+`    estaAfinado(Instrumento).`
 
-=== Casos en los que el = es correcto ===
+Eso está conceptualmente mal.
 
--   *<en construcción>*
+¿Por qué? Veamos:
+
+-   **La unificación de una variable se da una sola vez en la ejecución.**
+
+Eso significa que, en un programa en lógico, los valores de las variables no cambian con el tiempo (una vez unificadas). En nuestro caso, una vez unificado con "cuerda", la variable Tipo siempre es "cuerda".
+
+-   **La unificación se da para todas las ocurrencias de la misma, e instantáneamente**
+
+Eso significa que, en un programa en lógico, la variable "vale" lo mismo en cualquier parte de la regla. En nuestro caso, al unificarse Tipo con algún tipo en la 2da línea, eso "llena" la variable automáticamente en la 3era línea. Y no puede cambiar el valor!
+
+En consecuencia, decir `Tipo` `=` `cuerda` es *exactamente lo mismo* que escribir "cuerda" en todos los lugares donde escribimos "Tipo". La solución correcta:
+
+`suenaLindo(Instrumento):-`
+`    tipo(Instrumento,`**`cuerda`**`),`
+`    estaAfinado(Instrumento).`
+
+Es muy común ver este tipo de errores en predicados polimórficos y con functores. Ésto está mal:
+
+`potencia(Habilidad,Potencia):-`
+`     `**`Habilidad` `=` `velocista(VelMax)`**`,`
+`     `**`Potencia` `=` `VelMax`**`.`
+
+Ésta es la forma correcta:
+
+`potencia(`**`velocista(VelMax)`**`,`**`VelMax`**`).`
 
 ### Conclusión
 
