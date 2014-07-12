@@ -13,6 +13,10 @@ Acá un screenshot a modo de ejemplo (ojo que seguramente cambien los nombres de
 
 ![](xtend-plugin.png "xtend-plugin.png")
 
+### Configuraciones default del eclipse
+
+Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](configuraciones-generales-para-cualquier-eclipse.html)
+
 ### ¿Cómo empezar?
 
 -   Crear un proyecto Java.
