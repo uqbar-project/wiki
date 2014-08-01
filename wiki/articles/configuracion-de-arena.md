@@ -14,6 +14,14 @@ Configurar el parent pom de la siguiente manera:
 `   `<version>`1.7`</version>
 </parent>
 
+Salvo que estemos trabajando con xtend, en cuyo caso deberías usar éste:
+
+<parent>
+`    `<groupId>`org.uqbar-project`</groupId>
+`    `<artifactId>`uqbar-xtend-parent`</artifactId>
+`    `<version>`2.6.2`</version>
+</parent>
+
 ### Dependencias para proyectos de dominio
 
 Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomendamos) tenés que definir esta dependencia
@@ -94,18 +102,22 @@ Para bajarte los ejemplos, te recomendamos:
 
 -   hacer checkout desde el SVN
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
--   Luego, botón derecho sobre el proyecto &gt; Configure &gt; Add Text Nature
 -   Luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
--   Y finalmente botón derecho sobre el proyecto &gt; Build Path &gt; Add Library &gt; Xtend Library
+
+Con esto no debería ser necesario hacer ninguna otra cosa, en caso de que aparezca un error similar a éste:
+
+` Couldn't find the mandatory library 'org.eclipse.xtext.xbase.lib' 2.4.0 or higher on the project's classpath.`
+
+se puede salir del paso haciendo click derecho sobre el proyecto &gt; Build Path &gt; Add Library &gt; Xtend Library
 
 #### Crear un proyecto de Arena en Xtend
 
-Al pom.xml se le puede agregar una dependencia:
+Recordamos que deben trabajar con el parent-project específico. Esto evita tener que agregar manualmente la dependencia. En caso de ser necesario, te dejamos un ejemplo posible para el pom.xml:
 
 <dependency>` `
 `     `<groupId>`org.eclipse.xtend`</groupId>` `
 `     `<artifactId>`org.eclipse.xtend.standalone`</artifactId>
-`     `<version>`2.4.2`</version>
+`     `<version>`2.6.2`</version>
 </dependency>
 
 Pero no siempre es feliz el plugin de maven, así que si hay inconvenientes, comentar la dependencia y agregar la libería Xtend a mano en el build path del proyecto.
