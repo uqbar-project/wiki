@@ -112,7 +112,7 @@ se puede salir del paso haciendo click derecho sobre el proyecto &gt; Build Path
 
 #### Crear un proyecto de Arena en Xtend
 
-Recordamos que deben trabajar con el parent-project específico. Esto evita tener que agregar manualmente la dependencia. En caso de ser necesario, te dejamos un ejemplo posible para el pom.xml:
+Recordamos que deben trabajar con el parent-project [Integración con Xtend](especifico.html). Esto evita tener que agregar manualmente la dependencia. En caso de ser necesario, te dejamos un ejemplo posible para el pom.xml:
 
 <dependency>` `
 `     `<groupId>`org.eclipse.xtend`</groupId>` `
