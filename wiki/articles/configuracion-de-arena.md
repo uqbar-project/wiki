@@ -43,9 +43,9 @@ Agregar dos referencias en el pom
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
 `   `<dependencies>
-`   `<dependency>
-`       `<groupId>`org.uqbar-project`</groupId>
-`       `<artifactId>`arena-jface`</artifactId>
+`       `<dependency>
+`           `<groupId>`org.uqbar-project`</groupId>
+`           `<artifactId>`arena-jface`</artifactId>
 `           `<version>`3.3-SNAPSHOT`</version>
 `       `</dependency>
 `       `<dependency>
