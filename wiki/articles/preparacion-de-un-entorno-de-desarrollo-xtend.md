@@ -48,6 +48,7 @@ Luego boton derecho, "Maven" "Update Project..."
 
 ### Tips
 
+-   Al 4 de Agosto 2014, la mejor opción es bajarse la versión 2.6.2
 -   Instalate la versión 2.4 ó superior, ya que versiones anteriores tienen problemas entre clases xtend e interfaces java cuando hay referencias circulares entre sí. Para que eso ande se necesita un eclipse 4.2 o superior. A partir de 2.4.1 podés definir interfaces de xtend.
 -   Para que cuando hagas New &gt; File te aparezcan las clases y las interfaces Xtend, Window &gt; Customize Perspective... &gt; solapa Menu Visibility &gt; expandís File | New &gt; y seleccionás las de xtend (Xtend class, inteface, annotation y enum).
 
