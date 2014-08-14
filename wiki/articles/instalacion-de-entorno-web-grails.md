@@ -6,7 +6,7 @@ Asumimos que tenés instaladas las herramientas básicas, en particular necesita
 GGTS: Entorno integrado de Desarrollo y Framework Grails
 --------------------------------------------------------
 
-Recomendamos descargar la última versión estable del GGTS (que a julio del 2014 es la 3.5.1) en el siguiente link
+Recomendamos descargar la última versión estable del GGTS (que a agosto del 2014 es la 3.6.0) en el siguiente link
 
 -   <https://spring.io/tools/ggts/all>
 
@@ -16,7 +16,7 @@ Allí seleccionás el entorno adecuado para tu sistema operativo.
 
 #### ¿Dónde lo instalo?
 
--   Es preferible que el directorio de instalación no tenga espacios (C:\\GGTS,o C:\\IDEGrails)
+-   Es preferible que el directorio de instalación no tenga espacios (C:\\GGTS, C:\\IDEGrails, /home/fer/IDEGrails, etc.)
 
 #### ¿Qué JDK uso?
 
