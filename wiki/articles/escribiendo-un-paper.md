@@ -5,4 +5,5 @@ Para quienes quieran tener una breve introducción, recomiendo vean el siguiente
 En inglés: [<https://www.youtube.com/watch?v=g3dkRsTqdDA>](https://www.youtube.com/watch?v=g3dkRsTqdDA) [Slides](http://research.microsoft.com/en-us/um/people/simonpj/papers/giving-a-talk/writing-a-paper-slides.pdf)
 
 -   [Formato de un paper](formato-de-un-paper.html)
+-   [El arte de buscar related work](el-arte-de-buscar-related-work.html)
 
