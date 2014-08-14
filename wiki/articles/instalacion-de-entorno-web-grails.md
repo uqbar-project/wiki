@@ -1,7 +1,7 @@
 Pre-requisitos
 --------------
 
-Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas una JDK, no puede ser una JRE, y recomendamos que uses 1.7 **(por el momento no está homologada la JDK 1.8)**. Para más ayuda, seguí este [link](preparacion-de-un-entorno-de-desarrollo-java.html).
+Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas una JDK, no puede ser una JRE. Para más ayuda, seguí este [link](preparacion-de-un-entorno-de-desarrollo-java.html).
 
 GGTS: Entorno integrado de Desarrollo y Framework Grails
 --------------------------------------------------------
@@ -20,7 +20,7 @@ Allí seleccionás el entorno adecuado para tu sistema operativo.
 
 #### ¿Qué JDK uso?
 
--   No uses una JDK 1.8, tiene que ser 1.6 ó 1.7 (cualquiera, la instalás en otra carpeta)
+-   Si instalaste GGTS anterior a 3.6.0 o estás usando la versión anterior a 2.4.x de Grails, **no uses una JDK 1.8, tiene que ser 1.6 ó 1.7** (cualquiera, la instalás en otra carpeta)
 -   Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.
 -   La JDK y el GGTS deben coincidir en la versión de 32 ó 64 bits (si el GGTS es 32 bits tenés que apuntar a una JDK de 32 bits, o no va a funcionar)
 
