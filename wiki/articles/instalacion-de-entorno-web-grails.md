@@ -75,7 +75,11 @@ Para hacer eso (o para incorporar otra versión de Grails a tu entorno de desarr
 
 ### Configurar el proxy para poder bajar dependencias
 
-Si estás trabajando en un proxy tenés que configurar variables en el Grails Launch (TODO: Ver configuración Telecom)
+Si estás trabajando con un proxy tenés que ir a Window &gt; Preferences, Groovy &gt; Grails &gt; Grails Launch y configurar estas variables
+
+-   **http.nonProxy.hosts**: direcciones locales como 10.\*
+-   **http.proxyHost**: tu servidor proxy
+-   **http.proxyPort**: el puerto que escucha el proxy
 
 ¿Y si no quiero usar Eclipse?
 -----------------------------
