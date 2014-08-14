@@ -39,10 +39,10 @@ Más información en <http://grails.org/products/ggts>
 
 Para instalar el plugin de SVN tenemos tres opciones: a partir de la ventana Dashboard, Help &gt; Eclipse Marketplace o manualmente como en Eclipse a partir del menú Help &gt; Install New Software. Allí seleccionan
 
--   Subversive (integración de SVN con el IDE, para bajarte los ejemplos)
--   Maven Integration for Eclipse 1.4
+-   Subclipse (1.10.x, es la integración de SVN con el IDE, para bajarte los ejemplos)
+-   en caso de que tengas una versión GGTS 3.5.1 ó inferior, el plugin Maven Integration for Eclipse 1.4. Para las versiones 3.6.0 en adelante ya viene instalado por defecto
 
-y luego presionan el botón Install. Reinician el entorno y luego descargan el SVNKit.
+luego presionan el botón Install y reinician el entorno
 
 En algunas instalaciones recientes el Dashboard tira un mensaje de error, no es grave, sigan los pasos a partir del Marketplace (la opción siguiente).
 
