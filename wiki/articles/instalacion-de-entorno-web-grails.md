@@ -69,9 +69,9 @@ Configuración del entorno Grails
 Ir a Window &gt; Preferences, y filtrar por la palabra "Grails". Seleccionar al nodo "Grails" (esto es: Groovy &gt; Grails), y en la grilla "Grails Installations", pueden pasar dos cosas:
 
 -   el GGTS que instalaste ya tiene una configuración de Grails default. En ese caso vas a ver chequeada una opción de Grails, y no deberías hacer más nada
--   el GGTS lo descomprimiste en una carpeta, entonces tenés que configurar manualmmente cuál es la versión de Grails con la que vas a trabajar.
+-   el GGTS lo descomprimiste en una carpeta, entonces tenés que configurar manualmente cuál es la versión de Grails con la que vas a trabajar.
 
-Para hacer eso (o para incorporar otra versión de Grails a tu entorno de desarrollo), hagan click en Add..., luego Browse y buscar la carpeta donde está instalado el framework Grails, que está en el mismo directorio donde descomprimiste el GGTS. Ej: si descomprimiste el GGTS en la carpeta "C:\\STS\\GGTS360", la versión de Grails con la que viene es 2.4.2, y se ubicará en el directorio "C:\\STS\\GGTS360\\grails-2.4.2". Eligen ese directorio y presionan ok dos veces.
+Para hacer eso (o para incorporar otra versión de Grails a tu entorno de desarrollo), hagan click en Add..., luego Browse y buscar la carpeta donde saben que está el framework Grails. Si no estás seguro de dónde queda eso, es en el mismo directorio donde descomprimiste el GGTS. *Ej:* si descomprimiste el GGTS en la carpeta "C:\\STS\\GGTS360", la versión de Grails con la que viene es 2.4.2, y se ubicará en el directorio "C:\\STS\\GGTS360\\grails-2.4.2". Eligen ese directorio y presionan ok dos veces.
 
 ### Configurar el proxy para poder bajar dependencias
 
