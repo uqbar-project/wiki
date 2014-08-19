@@ -241,7 +241,7 @@ Otro problema que te puede ocurrir cuando corras un launcher que te descargaste 
 
 `Launch configuration references non-existing project celulares-ui-arena-scala`
 
-En este caso el problema es que te descargaste el proyecto del SVN utilizando otro nombre que el que originalmente definimos. En ese caso fijate cuál es el nombre del proyecto que está esperando y renombralo a ese, o bien entrá por el menú Run Configuration y apuntá el launcher al proyecto que vos definiste.
+En este caso el problema es que te descargaste el proyecto del SVN utilizando otro nombre que el que originalmente definimos. En ese caso fijate cuál es el nombre del proyecto que está esperando y renombralo a ese, o bien entrá por el menú Run Configuration y apuntá el launcher al proyecto que vos definiste. Otra opción puede ser que no hayas ejecutado el comando mvn compile (Run As &gt; Maven build... Goal compile)
 
 Otro problema es que al ejecutarlo te tire un error:
 
