@@ -45,8 +45,9 @@ Errores comunes
 Para aprender más sobre el lenguaje Haskell
 -------------------------------------------
 
+-   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) ([Acá en español](http://aprendehaskell.es/))
+-   [Todo lo que ud deseaba saber de Haskell y más (Por Stephen Diehl)](http://dev.stephendiehl.com/hask/)
 -   [Wiki](http://en.wikibooks.org/wiki/Haskell)
--   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
 -   [Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
 
 Problemas complejos y cosas locas
