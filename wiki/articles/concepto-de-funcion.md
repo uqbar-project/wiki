@@ -14,7 +14,7 @@ Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemp
 En particular, las funciones son relaciones que presentan las siguientes características:
 
 -   para toda entrada aceptable (su dominio), existe un único resultado (imagen), lo cual se conoce como unicidad.
--   para toda entrada del dominio, existe una un sólo resultado, lo que se conoce como existencia.
+-   para toda entrada del dominio, existe un resultado, lo que se conoce como existencia.
 
 ### Función desde un punto de vista imperativo
 
