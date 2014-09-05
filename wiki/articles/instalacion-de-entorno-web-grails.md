@@ -26,9 +26,9 @@ Allí seleccionás el entorno adecuado para tu sistema operativo.
 
 #### ¿Cómo asocio la JDK al GGTS?
 
-Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al STS:
+Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al GGTS:
 
-`STS -vm "/path donde está la JDK"`
+`GGTS -vm "/path donde está la JDK"`
 
 -   las comillas son importantes si en el path hay espacios en blanco, y
 -   tené en cuenta incluir el directorio bin del JDK en el path.
@@ -71,7 +71,7 @@ Ir a Window &gt; Preferences, y filtrar por la palabra "Grails". Seleccionar al 
 -   el GGTS que instalaste ya tiene una configuración de Grails default. En ese caso vas a ver chequeada una opción de Grails, y no deberías hacer más nada
 -   el GGTS lo descomprimiste en una carpeta, entonces tenés que configurar manualmente cuál es la versión de Grails con la que vas a trabajar.
 
-Para hacer eso (o para incorporar otra versión de Grails a tu entorno de desarrollo), hagan click en Add..., luego Browse y buscar la carpeta donde saben que está el framework Grails. Si no estás seguro de dónde queda eso, es en el mismo directorio donde descomprimiste el GGTS. *Ej:* si descomprimiste el GGTS en la carpeta "C:\\STS\\GGTS360", la versión de Grails con la que viene es 2.4.2, y se ubicará en el directorio "C:\\STS\\GGTS360\\grails-2.4.2". Eligen ese directorio y presionan ok dos veces.
+Para hacer eso (o para incorporar otra versión de Grails a tu entorno de desarrollo), hagan click en Add..., luego Browse y buscar la carpeta donde saben que está el framework Grails. Si no estás seguro de dónde queda eso, es en el mismo directorio donde descomprimiste el GGTS. *Ej:* si descomprimiste el GGTS en la carpeta "C:\\GGTS\\GGTS360", la versión de Grails con la que viene es 2.4.2, y se ubicará en el directorio "C:\\GGTS\\GGTS360\\grails-2.4.2". Eligen ese directorio y presionan ok dos veces.
 
 ### Configurar el proxy para poder bajar dependencias
 
@@ -108,7 +108,7 @@ pueden copiar la URL e ir a un Browser y pegar esa dirección para probar la apl
 
 También pueden dar un click sobre la URL y eso los llevará por defecto a un browser interno, que consume bastantes recursos. Por eso recomendamos modificar la configuración default para que les abra un browser por afuera del entorno: Window &gt; Web Browser &gt; Default system web browser.
 
-Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web. No obstante este server requiere una configuración adicional para asignarle un Tomcat en forma manual (no es el Tomcat interno que trae el entorno STS de Grails), por lo que por el momento recomendamos no utilizarlo.
+Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web. No obstante este server requiere una configuración adicional para asignarle un Tomcat en forma manual (no es el Tomcat interno que trae el entorno GGTS de Grails), por lo que por el momento recomendamos no utilizarlo.
 
 Migrar a una version diferente de Grails
 ----------------------------------------
@@ -122,7 +122,7 @@ En el caso en que quieras migrar de versión un proyecto,
 -   modificar si es necesario en el BuildConfig.groovy las versiones de las dependencias (las versiones para un proyecto default las podés conocer creando un proyecto Grails vacío y revisando cómo se genera el BuildConfig)
 -   luego desde el menú Grails Tools &gt; Refresh Dependencies
 
-Con eso debería ser suficiente. De haber algún problema: hacer un grails clean (Ctrl + Alt + Shift + G &gt; clean) y un clean + refresh desde el STS
+Con eso debería ser suficiente. De haber algún problema: hacer un grails clean (Ctrl + Alt + Shift + G &gt; clean) y un clean + refresh desde el GGTS
 
 Troubleshooting
 ---------------
