@@ -120,6 +120,16 @@ Usamos el constructor, como su nombre lo indica, para construir nuestros datos d
 `> nombreAlumno fede`
 `"Federico"`
 
+### Type
+
+Haskell nos permite definir sinónimos de tipos, o sea definir un alias para un tipo concreto que se use para modelar alguna abstracción del dominio.
+
+Por ejemplo si modelamos a los alumnos como tuplas de aridad 2 cuyo primer elemento es el nombre y el segundo una lista de números que representa las notas que se sacó, podríamos definir un tipo Alumno como:
+
+`type Alumno = (String, [Int])`
+
+De hecho, String no es más que un alias para el tipo \[Char\]
+
 Funciones
 ---------
 
