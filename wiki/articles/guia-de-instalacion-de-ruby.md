@@ -11,7 +11,7 @@ Esta guía además instala algunas dependencias que en verdad son sólo necesari
 Pasos
 -----
 
-### Instalar essentials
+### 1. Instalar essentials
 
 `sudo apt-get install curl git build-essential libssl-dev autoconf bison libreadline6 libreadline6-dev zlib1g zlib1g-dev libsqlite3-dev sqlite3`
 
