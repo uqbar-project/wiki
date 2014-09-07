@@ -4,7 +4,9 @@ Guía de Instalación de Ruby
 Introducción
 ------------
 
-La siguiente es una guía de instalación de Ruby utilizando un gestión de versiones (rbenv). Si bien este no es estrictamente necesario, simplifica el proceso de instalación, y es además fundamental cuando se desea trabajar con múltiples versiones de Ruby, algo bastante común cuando se está trabajando en más de un proyecto Ruby en una misma computadora
+La siguiente es una guía de instalación de Ruby utilizando un gestión de versiones (rbenv). Si bien este no es estrictamente necesario, simplifica el proceso de instalación, y es además fundamental cuando se desea trabajar con múltiples versiones de Ruby, algo bastante común cuando se está trabajando en más de un proyecto Ruby en una misma computadora.
+
+Esta guía además instala algunas dependencias que en verdad son sólo necesarias para el framework Rails, pero de todas formas las incluimos porque son livianas, fáciles de instalar, y previenen problemas futuros.
 
 Pasos
 -----
