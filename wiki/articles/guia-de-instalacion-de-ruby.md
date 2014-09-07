@@ -9,13 +9,13 @@ La siguiente es una guía de instalación de Ruby utilizando un gestión de vers
 Pasos
 -----
 
-1. Instalar essentials:
+### Instalar essentials
 
-sudo apt-get install curl git build-essential libssl-dev autoconf bison libreadline6 libreadline6-dev zlib1g zlib1g-dev libsqlite3-dev sqlite3
+`sudo apt-get install curl git build-essential libssl-dev autoconf bison libreadline6 libreadline6-dev zlib1g zlib1g-dev libsqlite3-dev sqlite3`
 
 Explicación: varias herramientas y bibliotecas de Ruby necesitan bajar contenido de Internet, y compilar código nativo.
 
-2. Instalar RBENV:
+### Instalar RBENV
 
 Seguir las instrucciones aquí: <https://github.com/fesplugas/rbenv-installer>. El resumen es:
 
@@ -23,20 +23,22 @@ curl <https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbe
 
 Explicación: Ruby suele cambiar bastante entre versiones, lo cual genera incompatibilidades. Para no tener problemas, se recomienda instalar Ruby a través de un manejador de versiones, que además de simplificar el proceso, permite usar versiones diferentes de esta tecnología en cada proyecto.
 
-3. Verifiquen que se haya instalado rbenv:
+### Verificar que se haya instalado rbenv
 
-echo $PATH
+`echo $PATH `
 
 La linea ~/.rbenv/bin tiene que estar presente. Si no lo está, asegúrense de que el código del punto 2 se agregó correctamente en .bashrc o .bash\_profile, y de que hayan reiniciado la terminal.
 
-4. Instalar una versión de Ruby y dejarlo como opción por defecto:
+### nstalar una versión de Ruby y dejarlo como opción por defecto
 
-rbenv install 2.0.0-p481 rbenv global 2.0.0-p481 rbenv rehash
+`rbenv install 2.0.0-p481`
+`rbenv global 2.0.0-p481`
+`rbenv rehash`
 
 Explicación: con esto instalamos una versión concreta de Ruby, y la dejamos lista para ser utilizada.
 
-5. Instalar Bundler:
+### Instalar Bundler
 
-gem install bundler
+`gem install bundler`
 
 Explicación: Bundler es una herramienta, que al igual que Maven, permite gestionar las dependencias de un proyecto.
