@@ -33,7 +33,7 @@ Explicación: Ruby suele cambiar bastante entre versiones, lo cual genera incomp
 
 La linea ~/.rbenv/bin tiene que estar presente. Si no lo está, asegúrense de que el código del punto 2 se agregó correctamente en .bashrc o .bash\_profile, y de que hayan reiniciado la terminal.
 
-### nstalar una versión de Ruby y dejarlo como opción por defecto
+### Instalar una versión de Ruby y dejarlo como opción por defecto
 
 `rbenv install 2.0.0-p481`
 `rbenv global 2.0.0-p481`
