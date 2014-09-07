@@ -17,7 +17,7 @@ Pasos
 
 Explicación: varias herramientas y bibliotecas de Ruby necesitan bajar contenido de Internet, y compilar código nativo.
 
-### Instalar RBENV
+### 2. Instalar RBENV
 
 Seguir las instrucciones aquí: <https://github.com/fesplugas/rbenv-installer>. El resumen es:
 
@@ -27,13 +27,13 @@ Seguir las instrucciones aquí: <https://github.com/fesplugas/rbenv-installer>. 
 
 Explicación: Ruby suele cambiar bastante entre versiones, lo cual genera incompatibilidades. Para no tener problemas, se recomienda instalar Ruby a través de un manejador de versiones, que además de simplificar el proceso, permite usar versiones diferentes de esta tecnología en cada proyecto.
 
-### Verificar que se haya instalado rbenv
+### 3. Verificar que se haya instalado rbenv
 
 `echo $PATH `
 
 La linea ~/.rbenv/bin tiene que estar presente. Si no lo está, asegúrense de que el código del punto 2 se agregó correctamente en .bashrc o .bash\_profile, y de que hayan reiniciado la terminal.
 
-### Instalar una versión de Ruby y dejarlo como opción por defecto
+### 4. Instalar una versión de Ruby y dejarlo como opción por defecto
 
 `rbenv install 2.0.0-p481`
 `rbenv global 2.0.0-p481`
@@ -41,7 +41,7 @@ La linea ~/.rbenv/bin tiene que estar presente. Si no lo está, asegúrense de q
 
 Explicación: con esto instalamos una versión concreta de Ruby, y la dejamos lista para ser utilizada.
 
-### Instalar Bundler
+### 5. Instalar Bundler
 
 `gem install bundler`
 
