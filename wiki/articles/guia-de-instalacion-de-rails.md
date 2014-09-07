@@ -15,16 +15,18 @@ Antes de empezar
 Pasos
 -----
 
-1.  Instalar Rails
+### Instalar Rails
 
 `gem install rails`
 
-1.  Crear un Proyecto
+### Crear un Proyecto
 
 `rails new `<NombreDelProyecto>
 `cd `<NombreDelProyecto>
 
-1.  Configurar la versión de Ruby que se esté usando, por ejemplo:
+### Configurar la versión de Ruby
+
+Por ejemplo:
 
 `rbenv local 2.0.0-p481`
 
