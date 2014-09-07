@@ -21,7 +21,9 @@ Explicación: varias herramientas y bibliotecas de Ruby necesitan bajar contenid
 
 Seguir las instrucciones aquí: <https://github.com/fesplugas/rbenv-installer>. El resumen es:
 
-curl <https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer> | bash echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash\_profile echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash\_profile
+`curl `[`https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer`](https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer)` | bash`
+`echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile`
+`echo 'eval "$(rbenv init -)"' >> ~/.bash_profile`
 
 Explicación: Ruby suele cambiar bastante entre versiones, lo cual genera incompatibilidades. Para no tener problemas, se recomienda instalar Ruby a través de un manejador de versiones, que además de simplificar el proceso, permite usar versiones diferentes de esta tecnología en cada proyecto.
 
