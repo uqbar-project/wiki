@@ -72,6 +72,10 @@ Les dice que falta un "JavaScript Runtime", descomenten en en Gemfile la línea 
 
 `gem 'therubyracer'`
 
+Y ejecuten de nuevo
+
+`bundle install`
+
 Más información
 ---------------
 
