@@ -46,3 +46,9 @@ Explicación: con esto instalamos una versión concreta de Ruby, y la dejamos li
 `gem install bundler`
 
 Explicación: Bundler es una herramienta, que al igual que Maven, permite gestionar las dependencias de un proyecto.
+
+Problemas frecuentes
+--------------------
+
+-   No se reconoce el comando rbenv: asegúrense de que hayan reiniciado la terminal, y que hayan colocado el código de inicialización en el archivo correcto (.bashrc o .bash\_profile, según qué Linux usen)
+
