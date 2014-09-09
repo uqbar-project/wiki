@@ -6,7 +6,15 @@ Asumimos que tenés instaladas las herramientas básicas, en particular necesita
 GGTS: Entorno integrado de Desarrollo y Framework Grails
 --------------------------------------------------------
 
-Recomendamos descargar la última versión estable del GGTS (que a agosto del 2014 es la 3.6.0) en el siguiente link
+Te recomendamos utilizar la versión 3.6.0 del GGTS, que es más liviana que las siguientes. Los links para descargar son:
+
+-   linux 64 bits: <http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-linux-gtk-x86_64.tar.gz>
+-   linux 32 bits: <http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-linux-gtk.tar.gz>
+-   win64: <http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-win32-x86_64.zip>
+-   win32: <http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-win32.zip>
+-   mac cocoa 64: <http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-macosx-cocoa-x86_64.tar.gz>
+
+Si querés descargar la última versión estable del GGTS tenés el siguiente link
 
 -   <https://spring.io/tools/ggts/all>
 
