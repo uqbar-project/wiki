@@ -73,7 +73,7 @@ Si uno se confunde y usa True, claro, el ifTrue: no anda bien, porque el mensaje
 
 ### ifTrue: \[^true\], ¿está bien?
 
-Miremos este método que está en una clase cuyas instancias entienden el mensaje pais
+<img src="RobinMalUsoBooleanos.jpg" title="fig:Robin siendo abofeteado por Batman. Debería hacer mejor uso de booleanos." alt="Robin siendo abofeteado por Batman. Debería hacer mejor uso de booleanos." width="300" /> Miremos este método que está en una clase cuyas instancias entienden el mensaje pais
 
 `   mismoPaisCon: unaCiudad `
 `       ((self pais) = (unaCiudad pais))`
