@@ -37,9 +37,9 @@ Si instalaron el plugin de Maven para Eclipse, o si ya viene instalado con el qu
 Si vas a trabajar con Maven, te recomendamos que tildes estas dos opciones:
 
 -   Download Artifact Sources
--   Download Artifact Javadocs
+-   Download Artifact JavaDoc
 
-para poder tener acceso al fuente y a los javadocs de todas las clases hechas por terceros (cuando utilices frameworks, por ejemplo)
+para poder tener acceso al fuente y a los javadocs de todas las clases hechas por terceros (cuando utilices frameworks, por ejemplo). También recordá destildar la marca Offline.
 
 Filtros de paquetes
 -------------------
