@@ -53,9 +53,19 @@ Mostrar en el Transcript (un workspace especial que pueden encontrar en Tools -&
 
 Un problema que tiene la línea anterior es que para cualquier problema se va a mostrar el texto en el Transcript, si pepita apuntara a nil y el error es que nil no entiende vola: también resolvería el problema con el bloque que escribe en el Transcript en vez de abrir el debugger :O Y si quiero hacer cosas distintas ante problemas distintos?
 
-Acá entra en juego lo de mandarle signal: a las clases de la jerarquía. Yo puedo tener clases propias que hereden de Error que sean particulares del dominio en el que estoy trabajando. Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe. Por ejemplo:
+Acá entra en juego lo de mandarle signal: a las clases de la jerarquía. Yo puedo tener clases propias que hereden de Error que sean particulares del dominio en el que estoy trabajando y luego hacer algo como:
+
+`NoSePuedeVolarError signal: 'No tengo suficiente energía para volar'`
+
+Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe. Por ejemplo:
 
 `[ pepita vola: 100 ] on: NoSePuedeVolarError do: [:error | Transcript show: error messageText ]`
+
+También, si estamos testeando usando SUnit podemos verificar que el resultado de ejecutar algo sea no poder volar:
+
+`self should: [ pepita vola: 100] raise: NoSePuedeVolarError`
+
+Al usar should:raise: el test va a dar verde exclusivamente si el bloque al ejecutarse lanza un error cuya clase sea NoSePuedeVolarError o alguna subclase de la misma.
 
 Estrategias para manejar errores
 --------------------------------
