@@ -32,9 +32,14 @@ En varios lenguajes de la JVM, tendremos warning sobre serialización, una tecno
 Indices de Maven
 ----------------
 
-Si instalaron el plugin de Maven para Eclipse, o si ya viene instalado con el que hayan descargado, y no piensan utilizarlo, para ahorrar tiempos de carga es recomendable desactivar la inidización de artefactos. Esto es particularmente útil cuando tenemos conexión de red limitada o máquinas con pocos recursos.
+Si instalaron el plugin de Maven para Eclipse, o si ya viene instalado con el que hayan descargado, y no piensan utilizarlo, para ahorrar tiempos de carga es recomendable desactivar la indización de artefactos. Esto es particularmente útil cuando tenemos conexión de red limitada o máquinas con pocos recursos. Para eso, ir a Window -&gt; Preferences -&gt; Maven. Marcar Offline y desmarcar Download repository indexes
 
-Para eso, ir a Window -&gt; Preferences -&gt; Maven. Marcar Offline y desmarcar Download repository indexes
+Si vas a trabajar con Maven, te recomendamos que tildes estas dos opciones:
+
+-   Download Artifact Sources
+-   Download Artifact Javadocs
+
+para poder tener acceso al fuente y a los javadocs de todas las clases hechas por terceros (cuando utilices frameworks, por ejemplo)
 
 Filtros de paquetes
 -------------------
