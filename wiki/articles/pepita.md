@@ -6,7 +6,7 @@ En muchos ejemplos en esta Wiki surge la figura de Pepita, la golondrina. Pero �
 Características Básicas
 -----------------------
 
-Pepita es una golondrina, que tiene un cierto nivel (medido en [Joules](http://es.wikipedia.org/wiki/Julio_(unidad) "wikilink")) variable de energía, y sabe hacer al menos dos cosas: volar y comer, aunque a veces y según el ejercicio se le agregan comportamientos extra.
+Pepita es una golondrina, que tiene un cierto nivel (medido en [Joules](http://es.wikipedia.org/wiki/Julio_(unidad) "wikilink")) variable de energía, y sabe hacer al menos dos cosas: volar y comer, aunque a veces y según el ejercicio se le agregan comportamientos extra: volar hacia ciertos lugares, llevar paquetes, etc.
 
 ### Volar
 
