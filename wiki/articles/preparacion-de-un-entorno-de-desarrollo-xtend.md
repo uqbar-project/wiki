@@ -4,7 +4,7 @@ NOTA IMPORTANTE : por el momento estamos trabajando con la versión 2.6.2 de Xte
 
 <http://www.eclipse.org/modeling/tmf/downloads/> y expandiendo la versión 2.6.2 seleccioná el link All-In-One Update Site. Esto descarga un zip a tu equipo local. Luego ingresás al Eclipse, Help &gt; Install New Software &gt; seleccionás Archive y buscás el zip en tu PC. Luego completás la instalación normalmente.
 
-Explicación por el momento deprecada:
+//Explicación por el momento deprecada:
 
 La página oficial de downloads de XTend es [esta](http://www.eclipse.org/xtend/download.html). Ahí vas a ver dos opciones:
 
