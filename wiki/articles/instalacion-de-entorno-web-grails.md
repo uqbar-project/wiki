@@ -177,7 +177,7 @@ No debería ocurrir, ya que los ejemplos son didácticos y están pensados para 
 
 ### Errores extraños en las annotations
 
-Revisá que el compilador tenga seteada una compatibilidad a un JDK igual para todos el grupo de trabajo.
+Revisá que el compilador tenga seteada una compatibilidad a un JDK igual para todos el grupo de trabajo. Esto se ve en Window &gt; Preferences, Java &gt; Compiler, JDK Compliance level : Compiler Compliance Level (deberían tener 1.7 todos los integrantes del grupo).
 
 Integración con otros lenguajes de programación
 -----------------------------------------------
