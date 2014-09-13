@@ -135,6 +135,14 @@ Con eso debería ser suficiente. De haber algún problema: hacer un grails clean
 Troubleshooting
 ---------------
 
+### Error al querer refrescar dependencias o compilar
+
+Si te aparece un error en la consola como éste
+
+`java.lang.ClassNotFoundException: unable to locate the java compiler com.sun.tools.javac.Main, please change your classloader settings `
+
+no estás apuntando en tu variable de entorno JAVA\_HOME a un JDK configurado en tu GGTS. Reapuntá alguno de los dos.
+
 ### Compatibilidad de las versiones de Grails y JDK
 
 Asegurate de respetar la misma versión de 32/64 bits de tu JDK/GGTS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará 'tools.jar')
@@ -166,6 +174,10 @@ es que estás trabajando en un proyecto que tiene una versión de Grails que no 
 ### Problemas para levantar el IDE con proyectos pesados
 
 No debería ocurrir, ya que los ejemplos son didácticos y están pensados para levantar en entornos sin mayores problemas, pero si el IDE está ocupando mucha memoria al iniciar conviene chequear este link: <http://stackoverflow.com/questions/13515704/how-to-fix-groovy-grails-tool-suite-3-extreme-memory-usage>
+
+### Errores extraños en las annotations
+
+Revisá que el compilador tenga seteada una compatibilidad a un JDK igual para todos el grupo de trabajo.
 
 Integración con otros lenguajes de programación
 -----------------------------------------------
