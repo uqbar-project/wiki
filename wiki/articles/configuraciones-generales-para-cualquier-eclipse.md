@@ -29,6 +29,11 @@ Warnings
 
 En varios lenguajes de la JVM, tendremos warning sobre serialización, una tecnología que no utilizaremos en la materia. Conviene desactivar el warning default de clases serializables que no definan un identificador de versión: Window &gt; Preferences, filtrar por "Serializable", solapa Java / Compiler / "Errors/Warnings", "Potential programming problems", y se setea el valor de "Serializable class without serialVersionUID" a Ignore. Aplicar cambios.
 
+SVN en Linux
+------------
+
+Si estás en Linux, te va a aparecer un mensaje de error de que no existe la librería JavaHL. Para solucionarlo, Window -&gt; Preferences -&gt; SVN, en el combo SVN interface | Client seleccionan "SVN Kit (Pure Java)"
+
 Indices de Maven
 ----------------
 
