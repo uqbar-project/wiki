@@ -71,25 +71,25 @@ Si ya desarrollaste un proyecto en Arena y querés aprovechar el modelo de la vi
 
 Te dejamos un instructivo donde los pasos son:
 
-1.  New &gt; Grails project &gt; darle un nombre al proyecto
-2.  Crear un source folder src/xtend
-3.  Copiar los packages de xtend del proyecto original a la carpeta src/xtend (se puede hacer copiando los archivos del filesystem)
-4.  Eliminar los packages que sean de interfaz de usuario (ui, runnable, application, etc.)
-5.  Modificar el BuildConfig para incorporar la librería xtend y el paquete uqbar-domain
+-   New &gt; Grails project &gt; darle un nombre al proyecto
+-   Crear un source folder src/xtend
+-   Copiar los packages de xtend del proyecto original a la carpeta src/xtend (se puede hacer copiando los archivos del filesystem)
+-   Eliminar los packages que sean de interfaz de usuario (ui, runnable, application, etc.)
+-   Modificar el BuildConfig para incorporar la librería xtend y el paquete uqbar-domain
 
 `dependencies {`
 `    build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.6.1'`
 `    build "org.uqbar-project:uqbar-domain:3.4-SNAPSHOT"`
 `}`
 
-1.  Posicionarse en el proyecto, botón derecho &gt; Grails Tools &gt; Refresh Dependencies
-2.  De no encontrar los jars de uqbar-domain, se puede agregar estas líneas en el BuildConfig.groovy:
+-   Posicionarse en el proyecto, botón derecho &gt; Grails Tools &gt; Refresh Dependencies
+-   De no encontrar los jars de uqbar-domain, se puede agregar estas líneas en el BuildConfig.groovy:
 
 `repositories {`
 `    mavenRepo "`[`http://uqbar-wiki.org/mvn/snapshots`](http://uqbar-wiki.org/mvn/snapshots)`"`
 `    mavenRepo "`[`http://uqbar-wiki.org/mvn/releases`](http://uqbar-wiki.org/mvn/releases)`"`
 
-1.  Ya se puede correr la aplicación con run-app
+-   Ya se puede correr la aplicación con run-app
 
 Links
 -----
