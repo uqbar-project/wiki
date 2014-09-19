@@ -61,6 +61,25 @@ Luego en el proyecto de ui Grails hay que
 -   referenciar en compilación al proyecto de dominio en Xtend, esto se hace descargando el proyecto dentro del STS, o bien agregando el .jar como librería dentro del proyecto: copian el jar en un directorio \\lib del proyecto ui y luego hacen Build path &gt; Add jar, apuntando a la dirección relativa del .jar
 -   para correr la aplicación en el servidor, referenciar en el Build Config la dependencia al .jar previamente instalado en el repositorio local, respetando group id + artifact id + version
 
+Cómo migrar un proyecto existente de Arena a Grails
+---------------------------------------------------
+
+Dos recomendaciones
+
+-   Es probable que tus objetos de dominio sufran modificaciones, entonces estas instrucciones consideran que vamos a integrar esos objetos xtend (repos o homes, application model y dominio) en el mismo proyecto que Grails
+-   No utilices la herramienta "Convert to Grails project"
+
+Los pasos son:
+
+1.  New &gt; Grails project &gt; darle un nombre al proyecto
+2.  Crear un source folder src/xtend
+3.  Copiar los packages de xtend del proyecto original a la carpeta src/xtend
+4.  Eliminar los packages que sean de interfaz de usuario
+5.  Modificar el BuildConfig para incorporar la librería xtend y el paquete uqbar-domain
+6.  Grails Tools &gt; Refresh Dependencies
+
+TODO: Seguir probando
+
 Links
 -----
 
