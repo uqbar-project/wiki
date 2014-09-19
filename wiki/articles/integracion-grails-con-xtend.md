@@ -75,7 +75,7 @@ Te dejamos un instructivo donde los pasos son:
 -   Crear un source folder src/xtend
 -   Copiar los packages de xtend del proyecto original a la carpeta src/xtend (se puede hacer copiando los archivos del filesystem)
 -   Eliminar los packages que sean de interfaz de usuario (ui, runnable, application, etc.)
--   Modificar el BuildConfig para incorporar la librería xtend y el paquete uqbar-domain
+-   Modificar el BuildConfig para incorporar la librería xtend y el paquete uqbar-domain, respetando ese orden (primero xtend, luego uqbar-domain):
 
 `dependencies {`
 `    build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.6.1'`
