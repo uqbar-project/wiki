@@ -9,7 +9,7 @@ Plugin de Xtend
 Lleva dos pasos
 
 -   Entrando a la dirección <http://www.eclipse.org/xtend/download.html>, se copia la URL del Update Site &gt; Latest Release (o cualquier otro release que quieran ustedes, nuestra recomendación es instalar el último release estable)
--   Dentro del STS, ir a Help &gt; Install New Sofware..., en el texto Work with pegar la URL del paso anterior y descargar solamente el último plugin de Xtend (salvo que se quiera trabajar con Xtext)
+-   Dentro del GGTS, ir a Help &gt; Install New Sofware..., en el texto Work with pegar la URL del paso anterior y descargar solamente el último plugin de Xtend (salvo que se quiera trabajar con Xtext)
 
 Una vez avanzado sobre el asistente, se reinicia el entorno.
 
@@ -58,8 +58,7 @@ En el proyecto Xtend -de dominio, asumimos- tenés que definir un source folder 
 Luego en el proyecto de ui Grails hay que
 
 -   correr un mvn install (Run &gt; Maven install) para que lo incorpore al repositorio maven local
--   referenciar en compilación al proyecto de dominio en Xtend, esto se hace descargando el proyecto dentro del STS, o bien agregando el .jar como librería dentro del proyecto: copian el jar en un directorio \\lib del proyecto ui y luego hacen Build path &gt; Add jar, apuntando a la dirección relativa del .jar
--   para correr la aplicación en el servidor, referenciar en el Build Config la dependencia al .jar previamente instalado en el repositorio local, respetando group id + artifact id + version
+-   referenciar en el Build Config la dependencia al .jar previamente instalado en el repositorio local, respetando group id + artifact id + version. Luego hacer Grails Tools &gt; Refresh Dependencies.
 
 Como migrar un proyecto existente de Arena a Grails
 ---------------------------------------------------
