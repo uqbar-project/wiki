@@ -2,7 +2,7 @@
 
 NOTA IMPORTANTE : por el momento estamos trabajando con la versión 2.6.2 de Xtend. La versión 2.7 pierde compatibilidad hacia atrás, por lo que debemos modificar los ejemplos. Para descargar la versión 2.6.2, ingresá a esta página:
 
-<http://www.eclipse.org/modeling/tmf/downloads/> y expandiendo la versión 2.6.2 seleccioná el link All-In-One Update Site. Esto descarga un zip a tu equipo local. Luego ingresás al Eclipse, Help &gt; Install New Software &gt; seleccionás Archive y buscás el zip en tu PC. Luego completás la instalación normalmente.
+<http://www.eclipse.org/modeling/tmf/downloads/> y expandiendo la versión 2.6.2 seleccioná el link All-In-One Update Site. Esto descarga un zip a tu equipo local. Luego ingresás al Eclipse, Help &gt; Install New Software (Haces click en Add)&gt; seleccionás Archive y buscás el zip en tu PC. Luego completás la instalación normalmente.
 
 //Explicación por el momento deprecada:
 
