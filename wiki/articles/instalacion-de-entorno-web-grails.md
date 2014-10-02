@@ -179,6 +179,17 @@ No debería ocurrir, ya que los ejemplos son didácticos y están pensados para 
 
 Revisá que el compilador tenga seteada una compatibilidad a un JDK igual para todos el grupo de trabajo. Esto se ve en Window &gt; Preferences, Java &gt; Compiler, JDK Compliance level : Compiler Compliance Level (deberían tener 1.7 todos los integrantes del grupo).
 
+### Errores al trabajar con librerías externas
+
+Esto puede ocurrir si estás trabajando con xtend, que utiliza guava como dependencia. Si al hacer run-app ves un mensaje de error similar al siguiente
+
+`ClassNotFoundException: com.google.common.base.Objects`
+
+buscá el archivo BuildConfig.groovy de tu proyecto y comentá estas dos líneas de configuración:
+
+`grails.project.war.file `
+`grails.project.fork`
+
 Integración con otros lenguajes de programación
 -----------------------------------------------
 
