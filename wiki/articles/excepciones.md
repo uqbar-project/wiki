@@ -1,6 +1,14 @@
-Una excepción o error es la indicación de un problema que ocurre durante la ejecución de un programa porque alguna determinada operación no pudo realizarse. El manejo de excepciones permite al usuario crear aplicaciones tolerantes a fallas y robustos (resistentes a errores) para controlar estas excepciones y que pueda seguir ejecutando el programa sin verse afectado por el problema.
+Introducción
+------------
 
-La principal particularidad de los errores es que cortan el flujo de ejecución hasta que alguien se encargue de resolverlo. Supongamos que tenemos este código:
+Cuando un programa se ejecuta, pueden ocurrir errores: problemas de diversa índole que hacen que el sistema se comporte de una forma no esperada: el usuario ingresó un valor inválido, un objeto mal programado envió un mensaje con parámetros incorrectos, etc. Si el programa continuara ejecutándose ignorando esto, lo único que lograríamos sería que se produzcan más errores, cada vez más graves. Entonces, ¿qué hacer ante un error?
+
+Lo más seguro es fallar, es decir, abortar el flujo de ejecución para impedir que el resto del programa continúe ejecutándose como si no hubiera pasado nada. Una forma de lograr esto es mediante el lanzamiento de excepciones.
+
+Excepciones
+-----------
+
+Una excepción es la indicación de un problema que ocurre durante la ejecución de un programa. La principal particularidad de las excepciones es que cortan el flujo de ejecución hasta que alguien se encargue de resolverlo. Supongamos que tenemos este código:
 
 `>> msj1`
 `  self msj2.`
@@ -9,7 +17,7 @@ La principal particularidad de los errores es que cortan el flujo de ejecución 
 `  self error: 'Todo mal!'.`
 `  ^ 'Esto no se va a ejecutar nunca'.`
 
-De esta forma si el objeto que define esto recibe el mensaje msj1, el error de msj2 cortará la ejecución con lo cual no se evaluará la siguiente línea ni se mandará self msj3. Es correcto dejar que el error se propague hacia atrás por la cadena de mensajes enviados siempre que no haya nada para hacer al respecto. Eventualmente, en algún punto donde sí sea posible tomar alguna acción, se podrá manejar ese error y continuar la ejecución con normalidad.
+De esta forma si el objeto que define esto recibe el mensaje msj1, la excepción lanzada en msj2 cortará la ejecución con lo cual no se evaluará la siguiente línea ni se mandará self msj3. Es correcto dejar que la excepción se propague hacia atrás por la cadena de mensajes enviados siempre que no haya nada para hacer al respecto. Eventualmente, en algún punto donde sí sea posible tomar alguna acción, se podrá manejar esta excepción y continuar la ejecución con normalidad.
 
 Bugs vs Errores de usuario
 --------------------------
@@ -18,10 +26,10 @@ Algunos errores surgen por un bug en el programa, por ejemplo si un objeto no en
 
 Otros errores surgen del uso del programa, ya que pueden darse situaciones que llevan a que un objeto no pueda realizar lo que se le pide. Por ejemplo, si a una colección vacía el mandamos el mensaje anyOne tira un error porque no tiene forma de resolver el problema.
 
-Lanzando errores
-----------------
+Lanzando Excepciones
+--------------------
 
-En Smalltalk la forma más fácil de lanzar un error es usando el mensaje error: que está definido en Object y por ende todos los objetos entienden. Por ejemplo:
+En Smalltalk la forma más fácil de lanzar una excepción (de tipo Error) es usando el mensaje error: que está definido en Object y por ende todos los objetos entienden. Por ejemplo:
 
 `Golondrina >> vola: unosKms`
 `  self energia < unosKms`
@@ -30,7 +38,7 @@ En Smalltalk la forma más fácil de lanzar un error es usando el mensaje error:
 
 En el ejemplo vemos que si la energía de la golondrina es menos a la cantidad de kilómetros pasados por parámetro, la operación no debería realizarse porque quedaría con energía negativa. Para evitar que eso pase se lanza el error con una descripción simpática para que el usuario o el desarrollador (dependiendo de si debería o no llegarse a esa situación) entienda qué fue lo que pasó. Lo interesante es que la línea que modifica la energía sólo llega a ejecutarse si energia &gt;= unosKms.
 
-Otra forma de lanzar errores (que viene asociada a la forma de atraparlos) es con mensaje que entienden las clases que heredan de Exception llamado signal: Esta expresión es equivalente a la que vimos antes:
+Otra forma de lanzar excepciones (que viene asociada a la forma de atraparlos) es con mensaje que entienden las clases que heredan de Exception llamado signal: Esta expresión es equivalente a la que vimos antes:
 
 `Error signal: 'No me da la nafta'.`
 
@@ -65,14 +73,14 @@ También, si estamos testeando usando SUnit podemos verificar que el resultado d
 
 `self should: [ pepita vola: 100] raise: NoSePuedeVolarError`
 
-Al usar should:raise: el test va a dar verde exclusivamente si el bloque al ejecutarse lanza un error cuya clase sea NoSePuedeVolarError o alguna subclase de la misma.
+Al usar should:raise: el test va a dar verde exclusivamente si el bloque al ejecutarse lanza una excepcion cuya clase sea NoSePuedeVolarError o alguna subclase de la misma.
 
-Estrategias para manejar errores
---------------------------------
+Estrategias para manejar excepciones
+------------------------------------
 
--   La forma por excelencia de lidiar con un error es **no hacer nada!!**. La mayoría de las veces no tenemos la capacidad de recuperarnos del problema en el mismo lugar donde se produce, lo más sano es dejarla burbujear hasta el punto en donde sí haya algo para hacer al respecto.
+-   La forma por excelencia de lidiar con una excepción es **no hacer nada!!**. La mayoría de las veces no tenemos la capacidad de recuperarnos del problema en el mismo lugar donde se produce, lo más sano es dejarla burbujear hasta el punto en donde sí haya algo para hacer al respecto.
 -   Atraparla, hacer algo y continuar con el flujo normal de ejecución
--   Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer mandando signal al error atrapado en el bloque que maneja el problema.
+-   Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer mandando signal a la excepcion atrapada en el bloque que maneja el problema.
 -   Atraparla y lanzar otra más adecuada agregando más información del problema.
 
 Pueden leer un poquito más sobre este tema [acá](manejo-de-errores.html) (los ejemplos están en Java)
