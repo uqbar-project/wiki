@@ -1,10 +1,6 @@
 ### Download e instalación base
 
-NOTA IMPORTANTE : por el momento estamos trabajando con la versión 2.6.2 de Xtend. La versión 2.7 pierde compatibilidad hacia atrás, por lo que debemos modificar los ejemplos. Para descargar la versión 2.6.2, ingresá a esta página:
-
-<http://www.eclipse.org/modeling/tmf/downloads/> y expandiendo la versión 2.6.2 seleccioná el link All-In-One Update Site. Esto descarga un zip a tu equipo local. Luego ingresás al Eclipse, Help &gt; Install New Software (Haces click en Add)&gt; seleccionás Archive y buscás el zip en tu PC. Luego completás la instalación normalmente.
-
-//Explicación por el momento deprecada:
+NOTA IMPORTANTE : por el momento estamos trabajando con la versión 2.6.2 de Xtend. La versión 2.7 pierde compatibilidad hacia atrás, por lo que debemos modificar los ejemplos.
 
 La página oficial de downloads de XTend es [esta](http://www.eclipse.org/xtend/download.html). Ahí vas a ver dos opciones:
 
@@ -18,6 +14,8 @@ De todos los items que aparecerán en el update site debemos elegir "xtend". Si 
 Acá un screenshot a modo de ejemplo (ojo que seguramente cambien los nombres de las cosas en el futuro). **¡Ojo!** Las versiones en esta imagen no necesariamente están actualizadas, recomendamos bajar siempre la última versión estable del plugin.
 
 ![](xtend-plugin.png "xtend-plugin.png")
+
+Por el momento tenés que seleccionar la versión 2.6.2 de Xtend SDK entre todos los elementos disponibles.
 
 ### Configuraciones default del eclipse
 
