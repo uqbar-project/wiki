@@ -5,7 +5,7 @@ NOTA IMPORTANTE : por el momento estamos trabajando con la versión 2.6.2 de Xte
 La página oficial de downloads de XTend es [esta](http://www.eclipse.org/xtend/download.html). Ahí vas a ver dos opciones:
 
 -   La fácil: **Full Eclipse** (bajarte el Eclipse + el plugin directamente).
--   [Configurar un Eclipse Básico](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java) y luego descargar el plugin como se explica a continuación.
+-   [Configurar un Eclipse Básico](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java) y luego descargar el plugin haciendo Help &gt; Install New Software ... y seleccionar la URL <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/> (le podés dar el nombre que quieras al update site)
 
 El plugin de xtend es un plugin relativamente grande. Si tu instalación de eclipse tiene además otros plugins para programar en otros lenguajes, puede que sea recomendable armar una instalación aparte. Si uno usa muchos lenguajes con eclipse como IDE, puede ser recomendable tener un eclipse para cada uno (salvo obviamente en el caso en que varios lenguajes se utilicen en el mismo proyecto). Eso hace que el IDE sea más liviano y minimiza posibles problemas de incompatibilidad entre los diferentes features.
 
