@@ -1,6 +1,19 @@
 Download e instalación base
 ---------------------------
 
+La instalación que nosotros recomendamos es la siguiente:
+
+1.  Eclipse JEE Kepler: <http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2>
+
+`# versiones anteriores `**`no` `funcionan`**
+`# no hemos hecho pruebas con Eclipse Luna o posteriores`
+
+1.  Instalar Android SDK for Linux solamente, sin el Eclipse: <https://developer.android.com/sdk/index.html?hl=i>
+
+`# GET THE SDK FOR AN EXISTING IDE -> Download the standalone SDK for ... sistema operativo que tenés ...`
+
+1.  
+
 Descargá en [este link](http://www.eclipse.org/downloads/) el Eclipse IDE for Java EE Developers. Luego de [configurar tu entorno base](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java), instalás el plugin para desarrollo de Android desde el Eclipse Marketplace.
 
 1.  Help &gt; Eclipse Marketplace...
