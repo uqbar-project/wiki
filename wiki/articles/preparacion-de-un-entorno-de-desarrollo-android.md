@@ -82,8 +82,7 @@ Si te interesa tenés un archetype para integrar estas tecnologías (disponible 
 Troubleshooting
 ---------------
 
--   "could not find SDK folder" implica que no están apuntando al SDK que instalaron o bien que no instalaron el Android SDK.
-    -   La solución: Window &gt; Preferences , filtran por Android y marcan el SDK Location que corresponda.
+-   "could not find SDK folder" implica que no están apuntando al SDK que instalaron o bien que no instalaron el Android SDK. Solución: Window &gt; Preferences , filtran por Android y marcan el SDK Location que corresponda.
 
 <!-- -->
 
@@ -92,11 +91,7 @@ Troubleshooting
 `Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)`
 `j  org.eclipse.swt.internal.webkit.WebKitGTK._soup_session_feature_detach(JJ)V+0`
 
-Significa que están corriendo un Eclipse anterior a Kepler.
-
--   -   La solución es bajarse un Eclipse Kepler y volver a seguir los pasos de instalación.
-
-<!-- -->
+Significa que están corriendo un Eclipse anterior a Kepler. La solución es bajarse un Eclipse Kepler y volver a seguir los pasos de instalación.
 
 -   Si al correr ven un mensaje de error que indica que no tienen devices, deben configurar un dispositivo para correr la aplicación Android (Android Virtual Device Manager del menú Window)
 
@@ -104,11 +99,7 @@ Significa que están corriendo un Eclipse anterior a Kepler.
 
 -   Si cuando quieren configurar un device no les habilita el botón Ok porque dice "NO System images installed for this target", esto implica que falta descargar del Android SDK Manager las VM (imágenes) de los dispositivos que quieren emular.
 
-<http://stackoverflow.com/questions/22541681/fail-to-create-android-virtual-device-no-system-image-installed-for-this-targe>
-
--   -   La solución: vayan entonces al Android SDK Manager y fíjense qué packages hay disponibles para instalar según la versión de Android que están ejecutando.
-
-<!-- -->
+<http://stackoverflow.com/questions/22541681/fail-to-create-android-virtual-device-no-system-image-installed-for-this-targe> Vayan entonces al Android SDK Manager y fíjense qué packages hay disponibles para instalar según la versión de Android que están ejecutando.
 
 -   Si al correr la aplicación aparece en el LogCat el siguiente mensaje:
 
@@ -120,14 +111,11 @@ revisar si el device es Android Wear, porque no es compatible con los ejemplos.
 
 `"NoClassDefFoundError: Class "Lcom/google/common/base/Objects;" not found `
 
-es porque olvidaron agregar la dependencia con xtend en el build path.
-
--   -   La solución: Botón derecho sobre el proyecto &gt; Build path &gt; Configure build path &gt; Order and Export &gt; y tildan el check Xtend Library.
-
-<!-- -->
+es porque olvidaron agregar la dependencia con xtend en el build path. Entonces: Botón derecho sobre el proyecto &gt; Build path &gt; Configure build path &gt; Order and Export &gt; y tildan el check Xtend Library.
 
 -   No hacer "Project clean" porque falla el compilador incremental de los archivos .xtend y se rompe todo el proyecto
-    -   La solución es compilar manualmente los .xtend
+
+La solución es compilar manualmente los .xtend
 
 Cómo empezar
 ------------
