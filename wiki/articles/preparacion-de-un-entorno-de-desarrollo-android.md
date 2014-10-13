@@ -51,7 +51,7 @@ Revisar el log, como son paquetes un tanto pesados es posible que haya que reint
 
 Tener paciencia, a veces no instala y hay que reintentar varias veces.
 
--   Configurar en el Android Virtual Device (AVD) Manager un **dispositivo para hacer las pruebas**. El AVD Manager aparece desde el menú Window. Les dejamos una opción posibel:
+-   Configurar en el Android Virtual Device (AVD) Manager un **dispositivo para hacer las pruebas**. El AVD Manager aparece desde el menú Window. Les dejamos una opción posible:
     -   Nexus
     -   Device: Nexus One
     -   Target: Android L (Preview) - API Level L
