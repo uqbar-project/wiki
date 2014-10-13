@@ -19,17 +19,53 @@ La instalación que nosotros recomendamos es la siguiente:
 -   En el eclipse, instalar el plugin de Xtend
     -   los ejemplos ya funcionan con la versión 2.7.2
     -   Update site: <http://www.eclipse.org/xtend/download.html>
-    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y luego marcan únicamente Xtend 2.7.2 para que no se vuelva muy pesado el entorno
+    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y luego marcan únicamente Xtend 2.7.2 para que no se vuelva muy pesado el entorno. Reinician el Eclipse.
 
 <!-- -->
 
 -   Luego descargan el plugin de Subclipse 1.10.x
-    -   Update site: <http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA>
-    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y marcan ambos paquetes
+    -   Update site: <http://subclipse.tigris.org/update_1.10.x>
+    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y marcan ambos paquetes. Reinician el Eclipse una vez más.
 
 <!-- -->
 
--   
+-   Luego descargan el plugin de Android
+    -   Pasos de instalación: Help &gt; Eclipse Marketplace... &gt; en la solapa Search, buscan "Android". Seleccionan Android Development Tools for Eclipse, Install. Reinician el Eclipse una vez más.
+
+<!-- -->
+
+-   Luego de reiniciar el Eclipse JEE Kepler reapuntar el SDK al directorio donde se instaló: Window &gt; Preferences &gt; Android SDK Location: ubican ese directorio (el que estuvo en el paso $Android\_SDK\_Path). Abran el SDK Manager como les indica el Eclipse. Verifiquen si están instalados estos componentes:
+    -   Android SDK Tools
+    -   Android SDK Platform-Tools
+    -   Android SDK Build-Tools
+
+(la API recomendada es la 20).
+
+Luego de esta instalación hay que cerrar el Android SDK Manager y volverlo a abrir porque no toma correctamente los cambios. Por si no lo encuentran el Android SDK Manager aparece desde el menú Window.
+
+-   Abrir nuevamente el Android SDK Manager e instalar los paquetes de los devices.
+    -   Android L (API 20, L preview)
+        -   SDK Platform Android L Preview
+    -   Android 4.4W (API 20)
+        -   SDK Platform
+
+Revisar el log, como son paquetes un tanto pesados es posible que haya que reintentar varias veces (cerrando y abriendo nuevamente el SDK Manager).
+
+-   Desde el SDK Manager instalar los devices de la carpeta Android L (API 20, L preview)
+    -   Android TV\*
+    -   ARM EABI\*
+    -   Intel x86\*
+-   de la carpeta Android 4.4W (API 20)
+    -   Android Wear\*
+
+Tener paciencia, a veces no instala y hay que reintentar varias veces.
+
+-   Configurar en el Android Virtual Device (AVD) Manager un dispositivo para hacer las pruebas. El AVD Manager aparece desde el menú Window. Les dejamos una opción posibel:
+    -   Nexus
+    -   Device: Nexus One
+    -   Target: Android L (Preview) - API Level L
+    -   CPU/ABI: Intel Atom (x86\_64)
+    -   Skin: HVGA permite manipular comandos más fácilmente (pero pueden probar con otros Skins, o incluso configurar otro dispositivo que tenga un Skin diferente, para simular tablets, o teléfonos con teclado)
 
 Descargá en [este link](http://www.eclipse.org/downloads/) el Eclipse IDE for Java EE Developers. Luego de [configurar tu entorno base](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java), instalás el plugin para desarrollo de Android desde el Eclipse Marketplace.
 
