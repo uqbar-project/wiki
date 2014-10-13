@@ -3,16 +3,33 @@ Download e instalación base
 
 La instalación que nosotros recomendamos es la siguiente:
 
-1.  Eclipse JEE Kepler: <http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2>
+-   Eclipse JEE Kepler
+    -   versiones anteriores **no funcionan**
+    -   no hemos hecho pruebas con Eclipse Luna o posteriores
+    -   URL de descarga: <http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2>
 
-`# versiones anteriores `**`no` `funcionan`**
-`# no hemos hecho pruebas con Eclipse Luna o posteriores`
+<!-- -->
 
-1.  Instalar Android SDK for Linux solamente, sin el Eclipse: <https://developer.android.com/sdk/index.html?hl=i>
+-   Instalar Android SDK for Linux solamente, sin el Eclipse
+    -   URL de descarga: <https://developer.android.com/sdk/index.html?hl=i>
+    -   Pasos de instalación: GET THE SDK FOR AN EXISTING IDE &gt; Download the standalone SDK for ... sistema operativo que tenés ... &gt; Descomprimirlo a una carpeta ($Android\_SDK\_Path)
 
-`# GET THE SDK FOR AN EXISTING IDE -> Download the standalone SDK for ... sistema operativo que tenés ...`
+<!-- -->
 
-1.  
+-   En el eclipse, instalar el plugin de Xtend
+    -   los ejemplos ya funcionan con la versión 2.7.2
+    -   Update site: <http://www.eclipse.org/xtend/download.html>
+    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y luego marcan únicamente Xtend 2.7.2 para que no se vuelva muy pesado el entorno
+
+<!-- -->
+
+-   Luego descargan el plugin de Subclipse 1.10.x
+    -   Update site: <http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA>
+    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y marcan ambos paquetes
+
+<!-- -->
+
+-   
 
 Descargá en [este link](http://www.eclipse.org/downloads/) el Eclipse IDE for Java EE Developers. Luego de [configurar tu entorno base](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java), instalás el plugin para desarrollo de Android desde el Eclipse Marketplace.
 
