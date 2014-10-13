@@ -18,7 +18,7 @@ La instalación que nosotros recomendamos es la siguiente:
 
 -   En el eclipse, instalar el plugin de Xtend
     -   los ejemplos ya funcionan con la versión 2.7.2
-    -   Update site: <http://www.eclipse.org/xtend/download.html>
+    -   Update site: <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/>
     -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y luego marcan únicamente Xtend 2.7.2 para que no se vuelva muy pesado el entorno. Reinician el Eclipse.
 
 <!-- -->
