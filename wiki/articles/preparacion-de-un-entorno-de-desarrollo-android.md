@@ -16,13 +16,6 @@ La instalación que nosotros recomendamos es la siguiente:
 
 <!-- -->
 
--   En el eclipse, instalar el **plugin de Xtend**
-    -   los ejemplos ya funcionan con la versión **2.7.2**
-    -   Update site: <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/>
-    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y luego marcan únicamente Xtend 2.7.2 para que no se vuelva muy pesado el entorno. Reinician el Eclipse.
-
-<!-- -->
-
 -   Luego descargan el plugin de **Subclipse 1.10.x**
     -   Update site: <http://subclipse.tigris.org/update_1.10.x>
     -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y marcan ambos paquetes. Reinician el Eclipse una vez más.
@@ -55,8 +48,6 @@ Revisar el log, como son paquetes un tanto pesados es posible que haya que reint
     -   Android TV\*
     -   ARM EABI\*
     -   Intel x86\*
--   de la carpeta Android 4.4W (API 20)
-    -   Android Wear\*
 
 Tener paciencia, a veces no instala y hay que reintentar varias veces.
 
@@ -66,6 +57,27 @@ Tener paciencia, a veces no instala y hay que reintentar varias veces.
     -   Target: Android L (Preview) - API Level L
     -   CPU/ABI: Intel Atom (x86\_64)
     -   Skin: HVGA permite manipular comandos más fácilmente (pero pueden probar con otros Skins, o incluso configurar otro dispositivo que tenga un Skin diferente, para simular tablets, o teléfonos con teclado)
+
+Instalación del lenguaje Xtend para el entorno Android
+------------------------------------------------------
+
+-   En el eclipse, instalar el **plugin de Xtend**. Los ejemplos ya funcionan con la versión **2.7.2**.
+    -   Update site: <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/>
+    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y luego marcan únicamente Xtend 2.7.2 para que no se vuelva muy pesado el entorno. Reinician el Eclipse.
+
+### Configuración
+
+-   Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](configuraciones-generales-para-cualquier-eclipse.html)
+-   Window &gt; Preferences, Xtend compiler &gt; Output folder for generated Java files, cambiar el directorio a "gen"
+-   En cada proyecto: agregar la librería Xtend en el proyecto: botón derecho sobre el proyecto &gt; Configure build path &gt; Libraries: Add Xtend Library, y luego chequear Xtend Library en la solapa "Order and Export" para que se incluya en el ejecutable de Android.
+
+### Archetype de Maven para Android + Xtend
+
+Si te interesa tenés un archetype para integrar estas tecnologías (disponible desde la versión 2.4.2 de Xtend):
+
+`mvn archetype:generate -DarchetypeGroupId=org.eclipse.xtend \`
+`  -DarchetypeArtifactId=xtend-android-archetype \`
+`  -DarchetypeCatalog=`[`http://repo.maven.apache.org/maven2`](http://repo.maven.apache.org/maven2)
 
 Troubleshooting
 ---------------
@@ -123,24 +135,6 @@ Cómo empezar
 -   <http://developer.android.com/index.html>
 -   <http://www.vogella.com/android.html>
 -   Un [tutorial](http://www.youtube.com/watch?v=zS1frzHbKWY) de youtube que va bien tranquilo
-
-Configuración para lenguaje Xtend
----------------------------------
-
-Una vez instalado [el entorno base](preparacion-de-un-entorno-de-desarrollo-xtend.html)
-
-1.  Window &gt; Preferences, Xtend compiler &gt; Output folder for generated Java files, cambiar el directorio a "gen"
-2.  En cada proyecto: agregar la librería Xtend en el proyecto: botón derecho sobre el proyecto &gt; Configure build path &gt; Libraries: Add Xtend Library, y luego chequear Xtend Library en la solapa "Order and Export" para que se incluya en el ejecutable de Android.
-
-### Archetype de Maven para Android + Xtend
-
-Si te interesa tenés un archetype para integrar estas tecnologías (disponible desde la versión 2.4.2 de Xtend):
-
-`mvn archetype:generate -DarchetypeGroupId=org.eclipse.xtend \`
-`  -DarchetypeArtifactId=xtend-android-archetype \`
-`  -DarchetypeCatalog=`[`http://repo.maven.apache.org/maven2`](http://repo.maven.apache.org/maven2)
-
-Más información en <http://www.eclipse.org/xtend/releasenotes_2_4.html>
 
 ### Material de Android en Xtend
 
