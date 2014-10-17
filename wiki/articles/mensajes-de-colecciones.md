@@ -140,6 +140,10 @@ Y otro más (el que tiene más energía):
 
 `pajaros inject: (pajaros anyOne) into: [:masFuerte :unPajaro | (unPajaro energia < masFuerte energia) ifTrue: [unPajaro] ifFalse: [masFuerte]]`
 
+### Obtener una colección de otro sabor
+
+Existen los mensajes asSet, asBag, asOrderedCollection y asSortedCollection: que retornan una colección nueva a partir de la receptora que tiene otras características (ver [sabores de colecciones](sabores-de-colecciones.html)). En particular asSet y asSortedCollection: son de uso más común para quitar repetidos u ordenar en base a un criterio respectivamente.
+
 Y el do:?
 ---------
 
