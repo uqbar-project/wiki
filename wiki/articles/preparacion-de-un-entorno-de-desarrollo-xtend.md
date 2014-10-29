@@ -1,3 +1,5 @@
+![](Xtend-logo.png "Xtend-logo.png")
+
 ### Download e instalación base
 
 NOTA IMPORTANTE : por el momento estamos trabajando con la versión 2.6.2 de Xtend. La versión 2.7 pierde compatibilidad hacia atrás, por lo que debemos modificar los ejemplos.
