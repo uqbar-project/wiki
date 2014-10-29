@@ -4,6 +4,7 @@ Entorno general
 -   Hadoop Filesystem (HDFS) es el sistema de archivos sobre el que se monta el motor de base HBase
 -   HBase es la base, que utiliza
     -   ZooKeeper como servicio de autenticación contra el servidor Master que particiona los shards de HBase
+-   Opcionalmente podemos instalar GUIs para manipular las entidades en HBase, recomendamos instalar HUE (Hadoop User Experience) que trae un HBase Explorer
 
 Download
 --------
