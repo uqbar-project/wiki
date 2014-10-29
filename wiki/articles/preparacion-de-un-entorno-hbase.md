@@ -8,8 +8,15 @@ Entorno general
 
 Todo esto debe hacerse en un sistema operativo Linux (ya sea como sistema operativo principal de tu máquina o dentro de una VM)
 
-Download
---------
+Instalación Hadoop
+------------------
+
+Descargar y seguir los pasos que se indican a continuación: <http://hadoop.apache.org/docs/r2.5.0/hadoop-project-dist/hadoop-common/SingleCluster.html>
+
+Instalación HBase
+-----------------
+
+### Download
 
 Ingresar a esta URL <http://www.apache.org/dyn/closer.cgi/hbase/>
 
@@ -17,12 +24,6 @@ Elegir un mirror, recomendamos bajar el último release estable (directorio stab
 
 **Nota:** Al 29/10/2014 la URL es <http://apache.dattatec.com/hbase/stable/hbase-0.98.7-hadoop2-bin.tar.gz>
 
-Guía de instalación Hadoop
---------------------------
+### Configuración
 
-<http://hadoop.apache.org/docs/r2.5.0/hadoop-project-dist/hadoop-common/SingleCluster.html>
-
-Guía de instalación HBase
--------------------------
-
-<http://hbase.apache.org/book/quickstart.html>
+<http://hbase.apache.org/book/quickstart.html> (seguir los pasos de instalación en modo Standalone)
