@@ -1,6 +1,8 @@
 Entorno general
 ---------------
 
+![Arquitectura general de Apache HBase](ArquitecturaHBase.png "Arquitectura general de Apache HBase")
+
 -   Hadoop Filesystem (HDFS) es el sistema de archivos sobre el que se monta el motor de base HBase
 -   HBase es la base, que utiliza
     -   ZooKeeper como servicio de autenticación contra el servidor Master que particiona los shards de HBase
