@@ -20,7 +20,7 @@ Elegir un mirror, recomendamos bajar el último release estable (directorio stab
 Guía de instalación Hadoop
 --------------------------
 
-<http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleNodeSetup.html>
+<http://hadoop.apache.org/docs/r2.5.0/hadoop-project-dist/hadoop-common/SingleCluster.html>
 
 Guía de instalación HBase
 -------------------------
