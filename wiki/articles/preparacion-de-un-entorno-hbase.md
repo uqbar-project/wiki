@@ -6,6 +6,8 @@ Entorno general
     -   ZooKeeper como servicio de autenticación contra el servidor Master que particiona los shards de HBase
 -   Opcionalmente podemos instalar GUIs para manipular las entidades en HBase, recomendamos instalar HUE (Hadoop User Experience) que trae un HBase Explorer
 
+Todo esto debe hacerse en un sistema operativo Linux (ya sea como sistema operativo principal de tu máquina o dentro de una VM)
+
 Download
 --------
 
