@@ -47,7 +47,7 @@ Tenés una explicación de las herramientas que incorpora el plugin de Android S
 Tips para cuando tenés problemas
 --------------------------------
 
-Revisá primero que nada el \[Preparacion de un entorno de desarrollo Android\#Troubleshooting|troubleshooting\]
+Revisá primero que nada el [troubleshooting](preparacion-de-un-entorno-de-desarrollo-android-troubleshooting.html)
 
 **IMPORTANTE:** no definas inner classes, esto causa que el IDE empiece a tirar popups de errores cada vez que refresca su estado y es imposible trabajar.
 
