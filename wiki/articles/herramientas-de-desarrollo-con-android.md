@@ -47,14 +47,9 @@ Tenés una explicación de las herramientas que incorpora el plugin de Android S
 Tips para cuando tenés problemas
 --------------------------------
 
+Revisá primero que nada el \[Preparacion de un entorno de desarrollo Android\#Troubleshooting|troubleshooting\]
+
 **IMPORTANTE:** no definas inner classes, esto causa que el IDE empiece a tirar popups de errores cada vez que refresca su estado y es imposible trabajar.
-
-En caso de tener inestabilidad en tu IDE (algo que puede ocurrir dada la inmadurez de las herramientas de Xtend y su relación con Eclipse) nuestra recomendación es que busques el error para ver si es un issue conocido, y que trates de tener la última versión tanto de Eclipse como de Xtend.
-
-Algunos tips rápidos
-
--   un Project &gt; Clean, suele ser suficiente.
--   en otros casos puede ser útil cerrar el IDE, renombrar el archivo .metadata y volver a abrir el Eclipse reimportando los proyectos de a uno
 
 Otro material:
 
