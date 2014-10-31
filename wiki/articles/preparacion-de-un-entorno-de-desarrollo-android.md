@@ -135,7 +135,7 @@ Luego iniciar el Eclipse normalmente.
 Si no aparece la librería de Android, botón derecho sobre el proyecto
 
 -   en la solapa Android elegir un target (por ejemplo Android 4.4W)
--   y luego agregar la librería Android Classpath Container en el build path
+-   y luego agregar la librería Android Classpath Container en el build path (Build path &gt; solapa Libraries &gt; Add... Android Classpath Container)
 
 Cómo empezar
 ------------
