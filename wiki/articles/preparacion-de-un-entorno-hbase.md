@@ -1,7 +1,7 @@
+![](Hbase_logo.png "Hbase_logo.png")
+
 Entorno general
 ---------------
-
-![](Hbase_logo.png "Hbase_logo.png")
 
 ![Arquitectura general de Apache HBase](ArquitecturaHBase.png "Arquitectura general de Apache HBase")
 
