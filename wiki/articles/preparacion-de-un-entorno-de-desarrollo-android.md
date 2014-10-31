@@ -128,7 +128,7 @@ Si se cuelga el Android SDK Content Manager, cerrar el Eclipse asegurándose de 
 -   el directorio cache
 -   y el archivo ddms.cfg
 
-Arrancar el eclipse normalmente.
+Luego iniciar el Eclipse normalmente.
 
 ### No veo la librería de Android en mi proyecto
 
