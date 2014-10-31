@@ -84,40 +84,58 @@ Si te interesa tenés un archetype para integrar estas tecnologías (disponible 
 Troubleshooting
 ---------------
 
--   "could not find SDK folder" implica que no están apuntando al SDK que instalaron o bien que no instalaron el Android SDK. Solución: Window &gt; Preferences , filtran por Android y marcan el SDK Location que corresponda.
+### "could not find SDK folder"
 
-<!-- -->
+Implica que no están apuntando al SDK que instalaron o bien que no instalaron el Android SDK. Solución: Window &gt; Preferences , filtran por Android y marcan el SDK Location que corresponda.
 
--   Si al abrir una Activity de xtend se cierra misteriosamente el Eclipse, o luego no levanta, vayan a un archivo de log que generó en la carpeta donde corrieron el link al Eclipse, si hay un stack trace similar a éste:
+### Se cierra el eclipse o no levanta
+
+Si luego de bajar algún ejemplo al abrir una Activity de xtend se cierra misteriosamente el Eclipse, o luego no levanta, vayan a un archivo de log que generó en la carpeta donde corrieron el link al Eclipse, si hay un stack trace similar a éste:
 
 `Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)`
 `j  org.eclipse.swt.internal.webkit.WebKitGTK._soup_session_feature_detach(JJ)V+0`
 
 Significa que están corriendo un Eclipse anterior a Kepler. La solución es bajarse un Eclipse Kepler y volver a seguir los pasos de instalación.
 
--   Si al correr ven un mensaje de error que indica que no tienen devices, deben configurar un dispositivo para correr la aplicación Android (Android Virtual Device Manager del menú Window)
+### No se puede ejecutar una app: "no devices"
 
-<!-- -->
+Si al correr ven un mensaje de error que indica que no tienen devices, deben configurar un dispositivo para correr la aplicación Android (Android Virtual Device Manager del menú Window)
 
--   Si cuando quieren configurar un device no les habilita el botón Ok porque dice "NO System images installed for this target", esto implica que falta descargar del Android SDK Manager las VM (imágenes) de los dispositivos que quieren emular.
+### "NO System images installed for this target"
 
-<http://stackoverflow.com/questions/22541681/fail-to-create-android-virtual-device-no-system-image-installed-for-this-targe> Vayan entonces al Android SDK Manager y fíjense qué packages hay disponibles para instalar según la versión de Android que están ejecutando.
+Si aparece ese error cuando quieren configurar un device y no les habilita el botón Ok, esto implica que falta descargar del Android SDK Manager las VM (imágenes) de los dispositivos que quieren emular. <http://stackoverflow.com/questions/22541681/fail-to-create-android-virtual-device-no-system-image-installed-for-this-targe> Vayan entonces al Android SDK Manager y fíjense qué packages hay disponibles para instalar según la versión de Android que están ejecutando.
 
--   Si al correr la aplicación aparece en el LogCat el siguiente mensaje:
+### You can't combine swipe dismissal with ActionBar \#1
 
-`You can't combine swipe dismissal with ActionBar #1`
+Si al correr la aplicación aparece en el LogCat ese siguiente mensaje revisar si el device es Android Wear, porque no es compatible con los ejemplos.
 
-revisar si el device es Android Wear, porque no es compatible con los ejemplos.
+### "NoClassDefFoundError: Class "Lcom/google/common/base/Objects;" not found
 
--   Si al correr la aplicación Android aparece en el LogCat:
+Si al correr la aplicación Android aparece en el LogCat ese mensaje de error es porque olvidaron agregar la dependencia con xtend en el build path.
 
-`"NoClassDefFoundError: Class "Lcom/google/common/base/Objects;" not found `
+Entonces: Botón derecho sobre el proyecto &gt; Build path &gt; Configure build path &gt; Order and Export &gt; y tildan el check Xtend Library.
 
-es porque olvidaron agregar la dependencia con xtend en el build path. Entonces: Botón derecho sobre el proyecto &gt; Build path &gt; Configure build path &gt; Order and Export &gt; y tildan el check Xtend Library.
+### Hice "Project Clean" y se rompió todo
 
--   No hacer "Project clean" porque falla el compilador incremental de los archivos .xtend y se rompe todo el proyecto
+No hacer "Project clean" porque falla el compilador incremental de los archivos .xtend y se rompe todo el proyecto. La solución es compilar manualmente los .xtend
 
-La solución es compilar manualmente los .xtend
+### Se cuelga el Android SDK Content Manager cuando levanta el Eclipse (0%)
+
+<http://stackoverflow.com/questions/13489141/eclipse-hangs-at-the-android-sdk-content-loader>
+
+Si se cuelga el Android SDK Content Manager, cerrar el Eclipse asegurándose de que no quedó ningún proceso levantado. Luego ingresar al %USER PROFILE%, ingresar a la carpeta .android y borrar
+
+-   el directorio cache
+-   y el archivo ddms.cfg
+
+Arrancar el eclipse normalmente.
+
+### No veo la librería de Android en mi proyecto
+
+Si no aparece la librería de Android, botón derecho sobre el proyecto
+
+-   en la solapa Android elegir un target (por ejemplo Android 4.4W)
+-   y luego agregar la librería Android Classpath Container en el build path
 
 Cómo empezar
 ------------
