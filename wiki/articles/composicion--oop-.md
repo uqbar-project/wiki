@@ -137,7 +137,7 @@ A modo de resumen rápido:
 
 **Composición**
 
--   Dinámico (la implementación se puede cambiar en run-time, gracias al polimorfismo)
+-   Dinámico (la implementación se puede cambiar en run-time, ya que se basa sólo en un atributo que se puede settear en cualquier momento con otro objeto que sea polimórfico)
 -   Aumenta la cantidad de objetos -&gt; Mayor complejidad (Es más complicado entender el todo y hay que configurar adecuadamente las relaciones entre los objetos)
 -   Se reparten mejor las responsabilidades en objetos más chicos
 
