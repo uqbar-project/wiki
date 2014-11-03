@@ -81,7 +81,7 @@ operación que retorna el nuevo valor del acumulador = maximaAltura max: persona
 
 Si col es una colección de personas y queremos obtener la persona más alta
 
-`  col inject: col anyOne into: [ :personaMasAlta :persona | personaMasAlta altura > persona altura ifTrue: [persona] ifFalse: [personaMasAlta] ]`
+`  col inject: col anyOne into: [ :personaMasAlta :persona | personaMasAlta altura > persona altura ifTrue: [personaMasAlta] ifFalse: [persona] ]`
 
 valorInicialAcumulador = col anyOne (alguna persona de la colección)
 
@@ -89,7 +89,7 @@ acumulador = personaMasAlta
 
 elementoDeLaColeccion = persona
 
-operación que retorna el nuevo valor del acumulador = personaMasAlta altura &gt; persona altura ifTrue: \[persona\] ifFalse: \[personaMasAlta\]
+operación que retorna el nuevo valor del acumulador = personaMasAlta altura &gt; persona altura ifTrue: \[personaMasAlta\] ifFalse: \[persona\]
 
 Nota: si asumimos que persona es instancia de la clase Persona podemos hacer lo siguiente
 
