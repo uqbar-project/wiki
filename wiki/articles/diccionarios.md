@@ -65,19 +65,25 @@ Otra vez, esta es una colección a la que puedo hacerle cualquier cosa, p.ej.
 
 Terminamos con otro ejemplo, una implementación de un depósito que se acuerda del stock de cada artículo usando un diccionario donde la clave es el artículo y el valor es la cantidad de unidades del artículo en el depósito.
 
-`#Depósito `
-`  `*`variables:`*
-`    artículos: Dictionary `
-`  `*`métodos:`*
+`#Depósito (v.i. artículos)`
+` >> initialize`
+`     artículos := Dictionary new.`
+` `
 ` >> cuantoTenésDe: unArtículo `
 `     ^artículos at: unArtículo `
+` `
 ` >> pone: cant de: unArtículo `
 `     artículos at: unArtículo put: (artículos at: unArtículo) + cant `
+` `
 ` >> saca: cant de: unArtículo `
 `     artículos at: unArtículo put: (artículos at: unArtículo) - cant `
+` `
 ` >> cantidadTotalDeUnidades `
 `     "trabaja sobre los valores, que son las cantidades" `
 `     ^artículos inject: 0 into: [:x :elem | x + elem]. `
+` `
 ` >> valorTotalDeposito `
 `    "a assoc key (el artículo) le pido el precio, assoc value es la cantidad de ese artículo en el depósito" `
 `     ^artículos associations  inject: 0  into: [:x :assoc |  x + assoc key precio * assoc value].`
+
+Algo importante a tener en cuenta al usar un diccionario es detenerse a pensar si no nos está faltando una abstracción que deberíamos modelar en vez de manejar asociaciones de valores. A una asociación no le podemos agregar comportamiento, con lo cual la lógica que trabaja con los valores asociados está en el objeto que tiene el mapa (como en este caso se puede ver en el producto entre el precio y la cantidad en el depósito), esa asociación bien podría reemplazarse por un objeto propio que conozca al producto y la cantidad que hay en stock al cual sí podríamos agregarle comportamiento. Forma parte de diseñar la solución decidir si es buena idea o no usar un diccionario en vez de una colección con objetos de dominio que, además de asociar otros objetos, tengan responsabilidades propias.
