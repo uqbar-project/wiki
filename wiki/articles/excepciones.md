@@ -53,27 +53,25 @@ También es posible instanciar una clase de esa jerarquía, como ser Error, y en
 
 Algunos errores pueden evitarse realizando validaciones previas, pero no siempre es posible o deseable usar este enfoque. Entonces, una vez que se produce el error tenemos que tener una forma de recuperarnos del mismo para que el programa no termine con excepción.
 
-Lo que deberíamos hacer en aquellos lugares en donde sabemos qué hacer ante un problema (que idealmente son muy pocos) es atrapar la excepción que causó el problema y evaluar un determinado código para seguir adelante de forma correcta. Para eso primero tenemos que saber qué parte del código a ejecutar es el que podría terminar en excepción, luego qué tipo de error queremos tratar y finalmente qué se debería hacer al respecto. El siguiente código va a usar el vola: de Golondrina que puede romperse:
+Lo que deberíamos hacer en aquellos lugares en donde sabemos qué hacer ante un problema (que idealmente son muy pocos) es atrapar la excepción que causó el problema y evaluar un determinado código para seguir adelante de forma correcta. Para eso primero tenemos que saber qué parte del código a ejecutar es el que podría terminar en excepción, luego qué tipo de error queremos tratar y finalmente qué se debería hacer al respecto. El siguiente código va a usar el vola: de Golondrina que puede romperse y supongamos que la forma de reaccionar ante ese problema según el requerimiento sea darle de comer para que no se muera:
 
-`[ pepita vola: 100 ] on: Error do: [:error | Transcript show: error messageText ]`
+`[ pepita vola: 100 ] on: Error do: [:error | pepita come: 50 ]`
 
-Mostrar en el Transcript (un workspace especial que pueden encontrar en Tools -&gt; Transcript) no es un manejo razonable de problemas, es sólo a modo de ejemplo. Algo lógico sería que el usuario pueda ver una ventanita indicando el problema para hacer algo al respecto.
+Un problema que tiene la línea anterior es que para cualquier problema se le va a dar de comer a pepita, si la energía de pepita apuntara a nil y el error es que nil no entiende el mensaje -, o si pepita no entiende vola:, también resolvería el problema con el bloque que le da de comer en vez de abrir el debugger :O Y si quiero hacer cosas distintas ante problemas distintos?
 
-Un problema que tiene la línea anterior es que para cualquier problema se va a mostrar el texto en el Transcript, si pepita apuntara a nil y el error es que nil no entiende vola: también resolvería el problema con el bloque que escribe en el Transcript en vez de abrir el debugger :O Y si quiero hacer cosas distintas ante problemas distintos?
-
-Acá entra en juego lo de mandarle signal: a las clases de la jerarquía. Yo puedo tener clases propias que hereden de Error que sean particulares del dominio en el que estoy trabajando y luego hacer algo como:
+Acá entra en juego lo de mandarle signal: a las clases de la jerarquía en vez de simplemente usar self error: "...". Yo puedo tener clases propias que hereden de Error que sean particulares del dominio en el que estoy trabajando y luego hacer algo como:
 
 `NoSePuedeVolarError signal: 'No tengo suficiente energía para volar'`
 
-Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe. Por ejemplo:
+Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe, entre ellos el debugger de Pharo para aquellos errores que no queremos atrapar porque son bugs del programa. Por ejemplo:
 
-`[ pepita vola: 100 ] on: NoSePuedeVolarError do: [:error | Transcript show: error messageText ]`
+`[ pepita vola: 100 ] on: NoSePuedeVolarError do: [:error | pepita come: 50 ]`
 
 También, si estamos testeando usando SUnit podemos verificar que el resultado de ejecutar algo sea no poder volar:
 
 `self should: [ pepita vola: 100] raise: NoSePuedeVolarError`
 
-Al usar should:raise: el test va a dar verde exclusivamente si el bloque al ejecutarse lanza una excepcion cuya clase sea NoSePuedeVolarError o alguna subclase de la misma.
+Al usar should:raise: el test va a dar verde exclusivamente si el bloque al ejecutarse lanza una excepcion cuya clase sea NoSePuedeVolarError o alguna subclase de la misma. Si el error que lanza vola: es por ejemplo MessageNotUnderstood (que es subclase de Error pero no tiene nada que ver con NoSePuedeVolarError) porque la energía de pepita es nil como se explicó antes, el test daría rojo :D
 
 Estrategias para manejar excepciones
 ------------------------------------
