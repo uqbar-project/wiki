@@ -17,7 +17,7 @@ Sin embargo esta otra definición también es válida:
 `esFinDeSemana' "Domingo" = True`
 `esFinDeSemana' _ = False`
 
-La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el [ principio de universo cerrado](paradigma-logico---introduccion-universo-cerrado.html) y si sólo definimos esFinDeSemana' para "Sábado" y "Domingo" y consultamos por otro día, Haskell nos mostrará un error porque el patrón no calza con ningún elemento del dominio esperado. Para que esta función funcione correctamente es importante que el encabezado con la variable anónima, que matchea con cualquier patrón, sea la última definición de esFinDeSemana', de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).
+La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el [ principio de universo cerrado](paradigma-logico---introduccion-universo-cerrado.html) y si sólo definimos esFinDeSemana' para "Sábado" y "Domingo" y consultamos por otro día, Haskell nos mostrará un error porque el patrón no calza con ningún elemento del dominio esperado. Para que esta función funcione correctamente es importante que el encabezado con la [ variable anónima](pattern-matching-en-haskell-sobre-la-variable-anonima.html), que matchea con cualquier patrón, sea la última definición de esFinDeSemana', de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).
 
 Acá tenemos un ejemplito [recursivo](recursividad-en-haskell.html) típico para pattern matching con números:
 
@@ -86,7 +86,7 @@ El patrón `(x:y:_)` matchea con `lista1` siendo `x` `=` `Coord` `2` `5` y `y` `
 
 El patrón `unaTupla` matchea con `lista1` y matchea con `lista2` porque no es más que una variable sin ninguna restricción después de todo
 
-Patrones con sinónimos (**as** Pattern)
+Patrones con sinónimos (**at** Pattern)
 ---------------------------------------
 
 Usamos este patrón para definir un sinónimo, o sea necesito por un lado el patrón para tomar algunos de sus componentes y por otro todo junto para la hacer otra cosa, pongamos un par de ejemplos:
@@ -108,3 +108,39 @@ Otro ejemplo, entre dos complejos representados con tuplas, obtener el que tiene
 Y otro con listas por comprensión:
 
 `promedioDeAprobados alumnos = promedio [ promedio notas | alumno@(_,notas) <- alumnos, aprobo alumno ]`
+
+Sobre la Variable Anónima
+-------------------------
+
+La variable anónima \_ (guión bajo) funciona, en términos de matcheo, como una variable común:
+
+`esCero 0 = True`
+`esCero x = False`
+
+Es lo mismo que decir:
+
+`esCero 0 = True`
+`esCero _ = False`
+
+De hecho, esta última opción es mejor, porque ayuda a la expresividad: si la variable no se usa en la devolución (a la derecha del igual, ó a la derecha de la guarda) entonces mejor ni ponerle nombre. Por ejemplo:
+
+`anioActual = 2014`
+`edad (nombre, anioNac, cantPerros) = anioActual - anioNac`
+
+En ese caso la función edad recibe una tupla pero a la derecha, en la definición de la función, no hace faltan el nombre y el cantPerros. Entonces, usamos variables anónimas:
+
+`edad ( _, anioNac, _) = anioActual - anioNac`
+
+### Error común con Variables Anónimas
+
+Muchas veces pensamos que no necesitamos una variable, cuando en realidad sí la usamos a la derecha del igual. Por ejemplo, si queremos tomar esa definición de "persona" como una tupla de tres, y agregarle perros a la persona, debemos devolver a una persona, pero cambiando sólo la cantidad de perros.
+
+Esto es **erróneo**:
+
+`agregarPerros cant (_, _, cantPerros) = (_, _, cantPerros + cant)`
+
+¡Son variables anónimas! Si quiero usarlas a la derecha del igual (ó sea, si quiero que sean parte de lo que devuelvo) entonces tengo que usar variables comunes.
+
+Esto está **bien**:
+
+`agregarPerros cant (nombre, anioNac, cantPerros) = (nombre, anioNac, cantPerros + 1)`
