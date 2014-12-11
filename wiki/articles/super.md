@@ -2,6 +2,9 @@
 
 **super** referencia (apunta) al objeto receptor del mensaje del método que estamos analizando en un momento dado al igual que **self**. La diferencia entre **self** y **super** es que **super** afecta al [ method lookup](paradigma-de-objetos---method-lookup.html)
 
+Problema que resuelve
+---------------------
+
 Sin la existencia de super tendríamos problemas para resolver ciertos problemas, por ejemplo si tenemos la siguiente jerarquía de clases `A` `<|-` `B`:
 
 `#A >> m`
@@ -44,31 +47,62 @@ El resultado final del cálculo sería: 3 + 4 + 5
 
 Si le mandáramos el mensaje m a una instancia de B el resultado sería: 1 + 4 + 5, ya que se ejecutaría \#B&gt;&gt;m que hace `self` `n`, se empieza a buscar n en B, no se encuentra, se lo busca en A y retorna 1.
 
-Conclusión
+Resumen
+-------
 
--   super sólo debe usarse para redefinir métodos que en su definición envían el mismo mensaje que se está definiendo para usar el código heredado evitando loops que se provocarían en el method lookup usando self
 -   Si el receptor del mensaje **NO** es **super**, se busca en la clase de la cual es instancia el objeto un método con el mismo nombre del mensaje.
 -   Si el receptor del mensaje ES **super** entonces se busca la definición en la superclase de la clase en donde está el método que contiene a la pseudovariable **super**.
+
+Conclusión
+----------
+
+*super **sólo** debe usarse para **redefinir** métodos que envían el **mismo mensaje** que se está definiendo, para **evitar loops** que se provocarían en el method lookup usando self*
 
 Malos usos de super
 -------------------
 
-Supongamos que tenemos este código para la jerarquía `A` `<|-` `B`
+### Caso 1
+
+Supongamos que tenemos este código para la jerarquía `A` `<|-` `B` (O sea B es subclase de A)
+
+Código erróneo:
 
 `#A >> m1`
 `  "hace algo"`
 `#B >> m1`
 `  super m1`
 
-Esta redefinición usando super es innecesaria, ya que si a una instancia de B se le manda m1 el mismo method lookup buscará la definición en A en caso de no encontrarla en B.
+Esta redefinición usando super es innecesaria, ya que si a una instancia de B se le manda m1 el mismo method lookup buscará la definición en A en caso de no encontrarla en B. Es además incorrecta, porque al redefinir un método semánticamente estoy indicando que "hago las cosas distintas a arriba", cuando éste no es el caso.
 
-Otro error muy común (y muy grave) es usar super para mandar un mensaje con nombre diferente al método que se está definiendo:
+Código correcto:
 
-`#A >> n`
+`#A >> m1`
+`  "hace algo"`
+
+¡No hace falta escribir nada, B ya entiende el mensaje m1!
+
+### Caso 2
+
+Otro error muy común (y muy grave) es usar super para mandar un mensaje con nombre diferente al método que se está definiendo: (C hereda de B, B hereda de A)
+
+Código erróneo:
+
+`#A >> m1`
 `   ^ 1`
-`#B >> m`
-`   ^ `**`super` `n`**` + 5`
-`#C >> n`
+`#B >> m2`
+`   ^ `**`super` `m1`**` + 5`
+`#C >> m1`
 `   ^ 3`
 
-En este ejemplo se puede ver que se manda el mensaje n en B usando super en vez de self en el método m. Esto es un problema ya que se ignora el comportamiento que puedan tener para n las subclases de B así como una posible implementación futura de n para B. Este mal uso de super suele llevar a un comportamiento inesperado del sistema que puede no resultar en un error como sucede en este caso (retornaría 6 en vez de 8), con lo cual es muy difícil de detectar y corregir.
+En este ejemplo se puede ver que se manda el mensaje m1 en B usando super en vez de self en el método m2. Esto es un problema ya que se ignora el comportamiento que puedan tener para m1 las subclases de B así como una posible implementación futura de m1 para B. Este mal uso de super suele llevar a un comportamiento inesperado del sistema que puede no resultar en un error como sucede en este caso (retornaría 6 en vez de 8), con lo cual es muy difícil de detectar y corregir.
+
+Código correcto:
+
+`#A >> m1`
+`   ^ 1`
+`#B >> m2`
+`   ^ `**`self` `m1`**` + 5`
+`#C >> m1`
+`   ^ 3`
+
+¡Si yo soy un B, quiero hacer m1 como un B! Siempre voy a querer comportarme como me corresponde a mí. Que ese método esté definido en la superclase es *una coincidencia*. Si yo quiero hacer m1, entonces hago self m1. (Releer la conclusión)
