@@ -11,7 +11,7 @@ Configurar el parent pom de la siguiente manera:
 <parent>
 `   `<groupId>`org.uqbar-project`</groupId>
 `   `<artifactId>`uqbar-parent-project`</artifactId>
-`   `<version>`1.7`</version>
+`   `<version>`1.9-alpha-1`</version>
 </parent>
 
 Salvo que estemos trabajando con xtend, en cuyo caso deberías usar éste:
@@ -19,7 +19,7 @@ Salvo que estemos trabajando con xtend, en cuyo caso deberías usar éste:
 <parent>
 `    `<groupId>`org.uqbar-project`</groupId>
 `    `<artifactId>`uqbar-xtend-parent`</artifactId>
-`    `<version>`2.6.2`</version>
+`    `<version>`2.7.3`</version>
 </parent>
 
 ### Dependencias para proyectos de dominio
@@ -29,7 +29,7 @@ Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomend
 <dependency>
 `   `<groupId>`org.uqbar-project`</groupId>
 `   `<artifactId>`uqbar-domain`</artifactId>
-`   `<version>`3.4-SNAPSHOT`</version>
+`   `<version>`3.5-alpha-1`</version>
 </dependency>
 
 ### Dependencias para proyectos de UI
@@ -38,7 +38,6 @@ Agregar dos referencias en el pom
 
 -   al framework Arena (consideramos Arena = Arena-JFace como predeterminado)
 -   al proyecto de dominio (asumimos que vamos a tener dos proyectos separados, uno para el dominio y otro para la ui).
--   a otros frameworks como JUnit
 
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
@@ -46,22 +45,25 @@ Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 `       `<dependency>
 `           `<groupId>`org.uqbar-project`</groupId>
 `           `<artifactId>`arena-jface`</artifactId>
-`           `<version>`3.4-SNAPSHOT`</version>
+`           `<version>`3.5-alpha-2`</version>
 `       `</dependency>
 `       `<dependency>
 `           `<groupId>`uqbar-project.org`</groupId>
-`           `<artifactId>`videoclub.domain`</artifactId>
+`           `<artifactId>`videoclub-domain`</artifactId>
 `           `<version>`1.0-SNAPSHOT`</version>
 `       `</dependency>
+`   `</dependencies>
+
+Las otras dependencias como JUnit se toman de la definición del parent project, en caso de ser necesario se debe agregar a mano:
+
 `       `<dependency>
 `           `<groupId>`junit`</groupId>
 `           `<artifactId>`junit`</artifactId>
 `           `<version>`4.11`</version>
 `           `<scope>`test`</scope>
 `       `</dependency>
-`   `</dependencies>
 
-Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "uqbar arena", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
+Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "arena-jface", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
 
 ### Importante, para correr cualquier aplicación de Arena
 
@@ -103,24 +105,6 @@ Para bajarte los ejemplos, te recomendamos:
 -   hacer checkout desde el SVN
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
 -   luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
-
-Con esto no debería ser necesario hacer ninguna otra cosa, en caso de que aparezca un error similar a éste:
-
-` Couldn't find the mandatory library 'org.eclipse.xtext.xbase.lib' 2.4.0 or higher on the project's classpath.`
-
-se puede salir del paso haciendo click derecho sobre el proyecto &gt; Build Path &gt; Add Library &gt; Xtend Library
-
-#### Crear un proyecto de Arena en Xtend
-
-Recordamos que deben trabajar con el parent-project [específico](configuracion-de-arena-qu-c3-a9-debe-tener-un-pom-xml-de-arena.html). Esto evita tener que agregar manualmente la dependencia. En caso de ser necesario, te dejamos un ejemplo posible para el pom.xml:
-
-<dependency>` `
-`     `<groupId>`org.eclipse.xtend`</groupId>` `
-`     `<artifactId>`org.eclipse.xtend.standalone`</artifactId>
-`     `<version>`2.6.2`</version>
-</dependency>
-
-Pero no siempre es feliz el plugin de maven, así que si hay inconvenientes, comentar la dependencia y agregar la libería Xtend a mano en el build path del proyecto.
 
 Integración con Groovy
 ----------------------
@@ -164,7 +148,7 @@ Podés utilizar alguno de nuestros pom.xml como ejemplo.
 Troubleshooting
 ---------------
 
-¿Qué hacer cuando nos bajamos ejemplos (o desarrollamos uno nuevo) y no nos andan? Tenemos que revisar estas cosas
+¿Qué hacer cuando nos bajamos ejemplos (o desarrollamos uno nuevo) y no nos andan? Chequear esta lista...
 
 ### Maven
 
@@ -242,32 +226,6 @@ Otro problema que te puede ocurrir cuando corras un launcher que te descargaste 
 `Launch configuration references non-existing project celulares-ui-arena-scala`
 
 En este caso el problema es que te descargaste el proyecto del SVN utilizando otro nombre que el que originalmente definimos. Entonces fijate cuál es el nombre del proyecto que está esperando y renombralo a ese, o bien entrá por el menú Run Configuration y apuntá el launcher al proyecto que vos definiste. Otra opción puede ser que no hayas ejecutado el comando mvn compile (Run As &gt; Maven build... Goal compile)
-
-Otro problema es que al ejecutarlo te tire un error:
-
-`java.util.NoSuchElementException: key not found: aop.opo.isolationLevel`
-`   at scala.collection.MapLike$class.default(MapLike.scala:228)`
-`   at scala.collection.AbstractMap.default(Map.scala:58)`
-`   at scala.collection.mutable.HashMap.apply(HashMap.scala:64)`
-`   at com.uqbar.apo.APOConfig$.getProperty(APOConfig.scala:27)`
-`   at com.uqbar.apo.APOConfig.getProperty(APOConfig.scala)`
-`   at org.uqbar.lacar.ui.impl.jface.bindings.DetailTransactionalObservableSet.`<init>` (DetailTransactionalObservableSet.java:17)`
-
-(también podría ser otra key como apo.exclude.package).
-
-Hay dos formas de resolverlo, mutuamente excluyentes:
-
-#### Si usas Maven desde Eclipse
-
-En ese caso deberías (dentro del Eclipse) dar un click derecho sobre el proyecto: Maven &gt; Update project chequeando la opción Update snapshots. Hacelo desde el plugin de Eclipse y no por la línea de comando.
-
-#### Si usas la línea de comandos
-
--   Borrar todo el contenido de .m2/repository
--   Desde consola, ir al directorio del proyecto y usar el comando: mvn -U clean install eclipse:clean eclipse:eclipse
--   Importar el proyecto a eclipse
--   Click derecho sobre el proyecto &gt; build path &gt; configure build path, order and export y buscar arena-jface-3.3-SNAPSHOT.jar y hacer up hasta que quede debajo de las carpetas src
--   En el proyecto: Run As &gt; Java Application (en el ejemplo del conversor: ConversorWindow)
 
 ### Problemas específicos con Groovy
 
