@@ -1,4 +1,4 @@
-Estas desarrollando un proyecto Maven para Uqbar - el cual tiene como pom padre uqbar-parent-project - y ahora lo querés desplegar en Maven Central, ¿que hacer?
+Estás desarrollando un proyecto Maven para Uqbar - el cual tiene como pom padre uqbar-parent-project - y ahora lo querés desplegar en Maven Central, ¿que hacer?
 
 1. Crear el release
 
