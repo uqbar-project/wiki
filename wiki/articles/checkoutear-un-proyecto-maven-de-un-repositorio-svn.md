@@ -24,6 +24,8 @@ En caso de hacerlo desde el eclipse, la forma de hacerlo es:
 
 Si varios proyectos comparten el mismo repositorio, una opción válida es definir el Repositorio de SVN desde una carpeta padre. *Ejemplo:* <http://svn2.xp-dev.com/svn/mi_repositorio/>
 
+Eso permitirá navegar en el árbol de proyectos del repositorio padre en lugar de definir un repositorio cada vez que nos interese bajarnos un proyecto particular.
+
 ### Checkout desde la consola en Linux
 
 Parados sobre el directorio del workspace de eclipse se ejecuta:
