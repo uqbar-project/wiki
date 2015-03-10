@@ -7,14 +7,12 @@ El proceso tiene los siguientes pasos, que se detallan a continuación:
 -   Checkout, es decir, obtener el código del proyecto desde el repositorio y alojarlo en nuestro espacio de trabajo local.
 -   Adaptación del proyecto maven para ser utilizado dentro del entorno Eclipse.
 
-Checkout
---------
+Checkout desde el Eclipse
+-------------------------
 
 El checkout se puede hacer tanto desde el eclipse como desde un cliente svn independiente. En ambos casos se debe contar con la URL del repositorio en el que se publicó el proyecto, por ejemplo:
 
 [`http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk`](http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk)`.`
-
-### Checkout desde eclipse
 
 En caso de hacerlo desde el eclipse, la forma de hacerlo es:
 
@@ -30,10 +28,9 @@ Una vez hecho todo esto se debe elegir Checkout -&gt; "Check out as a project in
 
 ### Adaptar un proyecto maven para ser usado desde el Eclipse
 
-Una vez realizado el checkout, hay tres formas de hacer este paso:
+Una vez realizado el checkout, desde el mismo entorno botón derecho sobre el proyecto &gt; Configure &gt; Convert to Maven project. O si preferís desde la consola podés hacer
 
-1.  se ejecuta la tarea "mvn eclipse:eclipse" desde la consola
-2.  desde el mismo entorno botón derecho sobre el proyecto &gt; Configure &gt; Convert to Maven project
+`mvn eclipse:eclipse`
 
 Checkout desde la consola en Linux
 ----------------------------------
@@ -47,5 +44,7 @@ Por ejemplo:
 `svn co `[`http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk`](http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk)` mi_primer_proyecto`
 
 El último parámetro indica el nombre que tendrá el proyecto en el directorio local, lo normal sería utilizar el mismo nombre del proyecto. Es importante indicarlo porque en caso contrario el default va a ser {{code|trunk} y no es útil.
+
+### Adaptar un proyecto maven para ser usado desde el Eclipse
 
 Una vez hecho todo esto se debe importar el proyecto en el eclipse (import -&gt; existing maven project y buscar el archivo pom.xml dentro del proyecto).
