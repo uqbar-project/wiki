@@ -2,7 +2,7 @@
 
 ### Download e instalación base
 
-La página oficial de downloads de XTend es [esta](http://www.eclipse.org/xtend/download.html). Ahí vas a ver dos opciones:
+La página oficial de downloads de XTend es [ésta](http://www.eclipse.org/xtend/download.html). Ahí vas a ver dos opciones:
 
 -   La fácil: **Full Eclipse** (bajarte el Eclipse + el plugin directamente).
 -   [Configurar un Eclipse Básico](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java) y luego descargar el plugin haciendo Help &gt; Install New Software ... y seleccionar la URL <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/> (le podés dar el nombre que quieras al update site)
