@@ -7,12 +7,15 @@ El proceso tiene los siguientes pasos, que se detallan a continuación:
 -   Checkout, es decir, obtener el código del proyecto desde el repositorio y alojarlo en nuestro espacio de trabajo local.
 -   Adaptación del proyecto maven para ser utilizado dentro del entorno Eclipse.
 
-Checkout desde el Eclipse
--------------------------
+Checkout
+--------
 
 El checkout se puede hacer tanto desde el eclipse como desde un cliente svn independiente. En ambos casos se debe contar con la URL del repositorio en el que se publicó el proyecto, por ejemplo:
 
 [`http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk`](http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk)`.`
+
+Checkout desde el Eclipse
+-------------------------
 
 En caso de hacerlo desde el eclipse, la forma de hacerlo es:
 
