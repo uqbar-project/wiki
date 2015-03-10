@@ -1,6 +1,6 @@
-Este artículo asume la presencia de un entorno de trabajo con Java, Eclipse, svn y maven. En caso de no contar con un repositorio de esas características conviene leer las instrucciones para la [preparación de un entorno de trabajo Java](preparacion-de-un-entorno-de-trabajo-java.html).
+Este artículo asume la presencia de un entorno de trabajo con una JDK. En caso de no contar con un repositorio de esas características conviene leer las instrucciones para la [preparación de un entorno de trabajo Java](preparacion-de-un-entorno-de-trabajo-java.html).
 
-También se asume la preexistencia de un proyecto mavenizado y publicado en un repositorio svn, si lo que se desea es crear el proyecto en lugar de checkoutearlo, aquí están las instrucciones para la [creación de un proyecto maven básico](creacion-de-un-proyecto-maven-basico.html) y su posterior publicación en el repositorio.
+También se asume la preexistencia de un proyecto mavenizado y publicado en un repositorio SVN, si lo que se desea es crear el proyecto en lugar de checkoutearlo, aquí están las instrucciones para la [creación de un proyecto maven básico](creacion-de-un-proyecto-maven-basico.html) y su posterior publicación en el repositorio.
 
 El proceso tiene los siguientes pasos, que se detallan a continuación:
 
@@ -36,7 +36,7 @@ Por ejemplo:
 
 El último parámetro indica el nombre que tendrá el proyecto en el directorio local, lo normal sería utilizar el mismo nombre del proyecto. Es importante indicarlo porque en caso contrario el default va a ser {{code|trunk} y no es útil.
 
-Una vez hecho todo esto se debe importar el proyecto en el eclipse (import -&gt; existing project into workspace).
+Una vez hecho todo esto se debe elegir Checkout -&gt; "Check out as a project in the workspace... Project name:" y elegir el nombre del proyecto para ubicarlo en el workspace del eclipse. Dejar por defecto todas las otras opciones como están.
 
 Adaptar un proyecto maven para ser usado desde el Eclipse
 ---------------------------------------------------------
