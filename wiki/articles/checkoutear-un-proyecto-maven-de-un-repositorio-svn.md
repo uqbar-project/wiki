@@ -26,7 +26,17 @@ Si varios proyectos comparten el mismo repositorio, una opción válida es defin
 
 Eso permitirá navegar en el árbol de proyectos del repositorio padre en lugar de definir un repositorio cada vez que nos interese bajarnos un proyecto particular.
 
-### Checkout desde la consola en Linux
+Una vez hecho todo esto se debe elegir Checkout -&gt; "Check out as a project in the workspace... Project name:" y elegir el nombre del proyecto para ubicarlo en el workspace del eclipse. Dejar por defecto todas las otras opciones como están.
+
+### Adaptar un proyecto maven para ser usado desde el Eclipse
+
+Una vez realizado el checkout, hay tres formas de hacer este paso:
+
+1.  se ejecuta la tarea "mvn eclipse:eclipse" desde la consola
+2.  desde el mismo entorno botón derecho sobre el proyecto &gt; Configure &gt; Convert to Maven project
+
+Checkout desde la consola en Linux
+----------------------------------
 
 Parados sobre el directorio del workspace de eclipse se ejecuta:
 
@@ -38,13 +48,4 @@ Por ejemplo:
 
 El último parámetro indica el nombre que tendrá el proyecto en el directorio local, lo normal sería utilizar el mismo nombre del proyecto. Es importante indicarlo porque en caso contrario el default va a ser {{code|trunk} y no es útil.
 
-Una vez hecho todo esto se debe elegir Checkout -&gt; "Check out as a project in the workspace... Project name:" y elegir el nombre del proyecto para ubicarlo en el workspace del eclipse. Dejar por defecto todas las otras opciones como están.
-
-Adaptar un proyecto maven para ser usado desde el Eclipse
----------------------------------------------------------
-
-Una vez realizado el checkout, hay dos formas de hacer este paso:
-
-1.  se ejecuta la tarea "mvn eclipse:eclipse" desde la consola o
-2.  desde el mismo entorno botón derecho sobre el proyecto &gt; Configure &gt; Convert to Maven project
-
+Una vez hecho todo esto se debe importar el proyecto en el eclipse (import -&gt; existing maven project y buscar el archivo pom.xml dentro del proyecto).
