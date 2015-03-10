@@ -20,14 +20,14 @@ Checkout desde el Eclipse
 En caso de hacerlo desde el eclipse, la forma de hacerlo es:
 
 -   Ir a la perspectiva "SVN Repository Exploring"
--   En la vista "SVN Repositories" hacer click derecho sobre algún espacio en blanco y ahí elegir la opción "New" -&gt; "Repository Location"
+-   En la vista "SVN Repositories" hacer click derecho sobre algún espacio en blanco y ahí elegir la opción "New" &gt; "Repository Location"
 -   Ingresar la URL del repositorio svn y aceptar
 
 Si varios proyectos comparten el mismo repositorio, una opción válida es definir el Repositorio de SVN desde una carpeta padre. *Ejemplo:* <http://svn2.xp-dev.com/svn/mi_repositorio/>
 
 Eso permitirá navegar en el árbol de proyectos del repositorio padre en lugar de definir un repositorio cada vez que nos interese bajarnos un proyecto particular.
 
-Una vez hecho todo esto se debe elegir Checkout -&gt; "Check out as a project in the workspace... Project name:" y elegir el nombre del proyecto para ubicarlo en el workspace del eclipse. Dejar por defecto todas las otras opciones como están.
+Una vez hecho todo esto se debe elegir Checkout &gt; "Check out as a project in the workspace... Project name:" y elegir el nombre del proyecto para ubicarlo en el workspace del eclipse. Dejar por defecto todas las otras opciones como están.
 
 ### Adaptar un proyecto maven para ser usado desde el Eclipse
 
@@ -46,8 +46,8 @@ Por ejemplo:
 
 `svn co `[`http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk`](http://svn2.xp-dev.com/svn/mi_repositorio/mi_primer_proyecto/trunk)` mi_primer_proyecto`
 
-El último parámetro indica el nombre que tendrá el proyecto en el directorio local, lo normal sería utilizar el mismo nombre del proyecto. Es importante indicarlo porque en caso contrario el default va a ser {{code|trunk} y no es útil.
+El último parámetro indica el nombre que tendrá el proyecto en el directorio local, lo normal sería utilizar el mismo nombre del proyecto. Es importante indicarlo porque en caso contrario el default va a ser `trunk` y no es útil.
 
 ### Adaptar un proyecto maven para ser usado desde el Eclipse
 
-Una vez hecho todo esto se debe importar el proyecto en el eclipse (import -&gt; existing maven project y buscar el archivo pom.xml dentro del proyecto).
+Una vez hecho todo esto se debe importar el proyecto en el eclipse (import &gt; existing maven project y buscar el archivo pom.xml dentro del proyecto).
