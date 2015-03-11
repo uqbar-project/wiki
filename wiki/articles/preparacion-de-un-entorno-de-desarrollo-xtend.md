@@ -15,7 +15,7 @@ Acá un screenshot a modo de ejemplo.
 
 **¡Ojo!** Las versiones en esta imagen no necesariamente están actualizadas, recomendamos bajar siempre la última versión estable del plugin.
 
-![](xtend-plugin.png "xtend-plugin.png")
+![](Xtend-installation.png "Xtend-installation.png")
 
 Deben utilizar la versión 2.7.3 de Xtend (o posterior)
 
