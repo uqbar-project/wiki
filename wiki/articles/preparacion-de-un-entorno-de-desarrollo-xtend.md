@@ -6,7 +6,7 @@
 
 <!-- -->
 
--   Buscar la versión 2.7.3 y descargar el link "All-In-One p2 Repo Update Site All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
+-   Buscar la versión **2.7.3** y descargar el link "All-In-One p2 Repo Update Site All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
 
 <!-- -->
 
@@ -14,13 +14,13 @@
 
 <!-- -->
 
--   Seleccionar el check Xtend, hacer click en Next y luego en Finish
+-   Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
 
 ![](Xtend-installation.png "Xtend-installation.png")
 
 -   Reiniciar el Eclipse
 
-**Nota Importante:** Deben utilizar la versión 2.7.3 de Xtend (versiones anteriores a 2.7 o posteriores tienen problemas de compatibilidad para utilizar los ejemplos)
+**Nota Importante:** Deben utilizar la versión *2.7.3* de Xtend (versiones anteriores a 2.7 ó posteriores tienen problemas de compatibilidad para utilizar los ejemplos)
 
 ### Configuraciones default del eclipse
 
