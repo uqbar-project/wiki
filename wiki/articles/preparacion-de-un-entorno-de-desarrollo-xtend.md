@@ -5,8 +5,10 @@
 La página oficial de downloads de XTend es [ésta](http://www.eclipse.org/xtend/download.html). Ahí vas a ver dos opciones:
 
 -   La fácil: **Full Eclipse** (bajarte el Eclipse + el plugin directamente)
--   Ingresar al Eclipse Marketplace (TODO, explicar)
--   [Configurar un Eclipse Básico](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java) y luego descargar el plugin haciendo Help &gt; Install New Software ... y seleccionar la URL <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/> (le podés dar el nombre que quieras al update site)
+-   [Configurar un Eclipse Básico](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java) y luego descargar el plugin
+
+`* a través del Marketplace haciendo Help > Eclipse Marketplace y buscando por palabra clave "Xtend"`
+`* o haciendo Help > Install New Software ... y seleccionar la URL `[`http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/`](http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/)` (le podés dar el nombre que quieras al update site)`
 
 El plugin de xtend es relativamente grande. Si tu instalación de eclipse tiene además otros plugins para programar en otros lenguajes, puede que sea recomendable armar una instalación aparte. Si uno usa muchos lenguajes con eclipse como IDE, puede ser recomendable tener un eclipse para cada uno (salvo obviamente en el caso en que varios lenguajes se utilicen en el mismo proyecto). Eso hace que el IDE sea más liviano y minimiza posibles problemas de incompatibilidad entre los diferentes features.
 
@@ -14,7 +16,7 @@ De todos los items que aparecerán en el update site debemos elegir "xtend". Si 
 
 Acá un screenshot a modo de ejemplo.
 
-**¡Ojo!** Las versiones en esta imagen no necesariamente están actualizadas, recomendamos bajar siempre la última versión estable del plugin.
+**Nota:** reemplazar 'XXX' por la última versión estable del plugin.
 
 ![](Xtend-installation.png "Xtend-installation.png")
 
