@@ -2,24 +2,25 @@
 
 ### Download e instalación base
 
-La página oficial de downloads de XTend es [ésta](http://www.eclipse.org/xtend/download.html). Ahí vas a ver dos opciones:
+-   Ingresar a <https://www.eclipse.org/modeling/tmf/downloads/>
 
--   La fácil: **Full Eclipse** (bajarte el Eclipse + el plugin directamente)
--   [Configurar un Eclipse Básico](http://uqbar-wiki.org/index.php?title=Preparacion_de_un_entorno_de_desarrollo_Java) y luego descargar el plugin
-    -   a través del Marketplace haciendo Help &gt; Eclipse Marketplace y buscando por palabra clave "Xtend" (aparece como "Eclipse Xtend x.x.x")
-    -   o haciendo Help &gt; Install New Software ... y seleccionar la URL <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/> (le podés dar el nombre que quieras al update site)
+<!-- -->
 
-El plugin de xtend es relativamente grande. Si tu instalación de eclipse tiene además otros plugins para programar en otros lenguajes, puede que sea recomendable armar una instalación aparte. Si uno usa muchos lenguajes con eclipse como IDE, puede ser recomendable tener un eclipse para cada uno (salvo obviamente en el caso en que varios lenguajes se utilicen en el mismo proyecto). Eso hace que el IDE sea más liviano y minimiza posibles problemas de incompatibilidad entre los diferentes features.
+-   Buscar la versión 2.7.3 y descargar el link "All-In-One p2 Repo Update Site All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
 
-De todos los items que aparecerán en el update site debemos elegir "xtend". Si vas a usar maven te conviene instalar la integración con m2eclipse (pero antes instalar el m2eclipse).
+<!-- -->
 
-Acá un screenshot a modo de ejemplo.
+-   Iniciar el Eclipse, hacer Help &gt; Install New Software ... botón Add, Archive y seleccionar el archivo que se descargaron
 
-**Nota:** reemplazar 'XXX' por la última versión estable del plugin.
+<!-- -->
+
+-   Seleccionar el check Xtend, hacer click en Next y luego en Finish
 
 ![](Xtend-installation.png "Xtend-installation.png")
 
-Deben utilizar la versión 2.7.3 de Xtend (o posterior)
+-   Reiniciar el Eclipse
+
+**Nota Importante:** Deben utilizar la versión 2.7.3 de Xtend (versiones anteriores a 2.7 o posteriores tienen problemas de compatibilidad para utilizar los ejemplos)
 
 ### Configuraciones default del eclipse
 
