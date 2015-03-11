@@ -32,7 +32,18 @@ En varios lenguajes de la JVM, tendremos warning sobre serialización, una tecno
 SVN en Linux
 ------------
 
-Si estás en Linux, te va a aparecer un mensaje de error de que no existe la librería JavaHL. Para solucionarlo, Window -&gt; Preferences -&gt; SVN, en el combo SVN interface | Client seleccionan "SVN Kit (Pure Java)"
+Si estás en Linux, te va a aparecer un mensaje de error de que no existe la librería JavaHL. Para solucionarlo, Window -&gt; Preferences -&gt; SVN, en el combo SVN interface | Client seleccionan "SVN Kit (Pure Java)".
+
+Qué archivos no subir al repo
+-----------------------------
+
+En Window -&gt; Preferences -&gt; Team -&gt; Ignored Resources agregá los siguientes patterns:
+
+-   bin
+-   target
+-   generated-sources
+-   .settings y .project (si vas a trabajar con Maven)
+-   .svn
 
 Indices de Maven
 ----------------
