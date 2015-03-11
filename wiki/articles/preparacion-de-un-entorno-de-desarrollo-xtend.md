@@ -35,7 +35,7 @@ La solución a ese problema se explica en la siguiente sección. Para más detal
 
 ### Trabajo con Maven
 
-Para poder utilizar Maven con Xtend tenés que instalarlo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven) (configurando el settings como se explica [aquí](http://uqbar-wiki.org/index.php?title=Configuraci%C3%B3n_de_Maven_para_poder_utilizar_las_herramientas_de_Uqbar))
+Para poder utilizar Maven con Xtend tenés que instalarlo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven)
 
 ### Configuración de la librería de xtend
 
@@ -47,7 +47,7 @@ Acá hay dos opciones, dependiendo de cómo estés manejando las dependencias en
 
 <!-- -->
 
--   Si vas a usar MAVEN (en general esto va a ser siempre así), no deberías hacer el paso anterior, porque eso va a hacer que las cosas compilen en eclipse (momentáneamente), pero no le estamos indicando a maven que el proyecto usa la librería de xtend, con lo cual nos va a traer problemas a futuro (por ejemplo al correr el proyecto si es una webapp va a tirar error por no encontrar las clases de xtend). En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
+-   Si vas a usar MAVEN (opción que recomendamos), no deberías hacer el paso anterior, porque eso va a hacer que las cosas compilen en eclipse (momentáneamente), pero no le estamos indicando a maven que el proyecto usa la librería de xtend, con lo cual nos va a traer problemas a futuro (por ejemplo al correr el proyecto si es una webapp va a tirar error por no encontrar las clases de xtend). En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
 `   `<parent>
 `       `<groupId>`org.uqbar-project`</groupId>
