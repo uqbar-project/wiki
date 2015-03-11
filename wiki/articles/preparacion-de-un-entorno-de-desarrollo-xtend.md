@@ -29,7 +29,7 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 -   Crear un proyecto Java.
 -   Luego crear una clase XTend.
--   El eclipse mostrará un error similar a
+-   El eclipse mostrará un error similar a `Mandatory` `library` `bundle` `'org.eclipse.xtext.xbase.lib'` `2.3.0` `or` `higher` `not` `found` `on` `the` `classpath."`
 
 La solución a ese problema se explica en la siguiente sección. Para más detalles pueden mirar <http://www.eclipse.org/xtend/download.html>
 
