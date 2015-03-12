@@ -6,7 +6,7 @@
 
 <!-- -->
 
--   Buscar la versión **2.7.3** y descargar el link "All-In-One p2 Repo Update Site All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
+-   Buscar la versión **2.7.3** y descargar el link "All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
 
 <!-- -->
 
