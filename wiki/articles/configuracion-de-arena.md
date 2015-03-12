@@ -29,7 +29,7 @@ Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomend
 <dependency>
 `   `<groupId>`org.uqbar-project`</groupId>
 `   `<artifactId>`uqbar-domain`</artifactId>
-`   `<version>`3.5-alpha-1`</version>
+`   `<version>`3.5.0`</version>
 </dependency>
 
 ### Dependencias para proyectos de UI
@@ -45,7 +45,7 @@ Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 `       `<dependency>
 `           `<groupId>`org.uqbar-project`</groupId>
 `           `<artifactId>`arena-jface`</artifactId>
-`           `<version>`3.5-alpha-2`</version>
+`           `<version>`3.5.0`</version>
 `       `</dependency>
 `       `<dependency>
 `           `<groupId>`uqbar-project.org`</groupId>
