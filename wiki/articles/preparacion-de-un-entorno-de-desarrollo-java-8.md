@@ -13,7 +13,9 @@ El JDK8 contiene un compilador y una máquina virtual (el runtime) que traduce a
 
 Para instalarlo, debemos descargarlo de <http://www.oracle.com/technetwork/java/javase/downloads/index.html>. Luego, procederemos a descomprimirlo.
 
-Los pasos siguientes dependen del sistema operativo. En Windows, el proceso esta guiado mayormente por el instalador. En Ubuntu, Mint y Linux similares debemos realizar lo siguiente:
+Los pasos siguientes dependen del sistema operativo. En Windows, el proceso esta guiado mayormente por el instalador. En Mac pueden utilizar homebrew.
+
+En Ubuntu, Mint y Linux similares debemos realizar lo siguiente:
 
 -   Pararse en el directorio donde se lo descomprimió.
 -   sudo mv jdk1.8.0 /usr/lib/jvm/
@@ -26,21 +28,10 @@ Con esto, el JDK ya deberia estar instalado. Probarlo desde una terminal tipeand
 
 (deberia mostrar 1.8.0)
 
-Eclipse Kepler
---------------
+Eclipse Luna
+------------
 
-La instalación del eclipse es muy sencilla: hay que bajar la versión el Eclipse IDE for Java Developers que corresponda a su sistema operativo desde <http://www.eclipse.org/downloads/> y descomprimirlo en su disco rígido. Posiblemente deseen crear un acceso directo para apuntar al ejecutable. Instal
-
-Eclipse Kepler no viene con soporte para Java 8, así que tendremos que instalarlo manualmente. Para ello, sigan los siguientes pasos:
-
--   Con el Eclipse abierto, ir a Help -&gt; Install new software -&gt; Add Site
--   Agregar el siguiente site:
-
-` Name: Java8Support`
-` URL: `[`http://download.eclipse.org/eclipse/updates/4.3-P-builds/`](http://download.eclipse.org/eclipse/updates/4.3-P-builds/)
-
--   Seleccionar Eclipse Java 8 Support For Kepler SR2 -&gt; Eclipse JDT Tools Patch for Java 8
--   Darle Siguiente, Siguiente, Aceptar la Licencia. Y Reiniciar cuando lo pida
+La instalación del eclipse es muy sencilla: hay que bajar la versión el Eclipse IDE for Java Developers que corresponda a su sistema operativo desde <http://www.eclipse.org/downloads/> y descomprimirlo en su disco rígido. Posiblemente deseen crear un acceso directo para apuntar al ejecutable.
 
 Problema de Eclipse con Ubuntu 13.10
 ------------------------------------
@@ -72,7 +63,7 @@ Maven
 
 Instalen Maven según la [Guía de Instalación de Maven](guia-de-instalacion-de-maven.html)
 
-Y cuando creemos un proyecto, recuerden configurar el compilador para que emplee Java 8. Ver <http://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html>
+Y cuando creemos un proyecto, recordá configurar el compilador para que emplee Java 8. Ver <http://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html>
 
 Links útiles
 ------------
