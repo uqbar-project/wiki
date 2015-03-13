@@ -1,4 +1,4 @@
-Este artículo asume la presencia de un entorno de trabajo con una JDK. En caso de no contar con un repositorio de esas características conviene leer las instrucciones para la [preparación de un entorno de trabajo Java](preparacion-de-un-entorno-de-trabajo-java.html).
+Este artículo asume la presencia de un entorno de trabajo con una JDK. En caso de no contar con un repositorio de esas características conviene leer las instrucciones para la [preparación de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html).
 
 También se asume la preexistencia de un proyecto mavenizado y publicado en un repositorio SVN, si lo que se desea es crear el proyecto en lugar de checkoutearlo, aquí están las instrucciones para la [creación de un proyecto maven básico](creacion-de-un-proyecto-maven-basico.html) y su posterior publicación en el repositorio.
 
