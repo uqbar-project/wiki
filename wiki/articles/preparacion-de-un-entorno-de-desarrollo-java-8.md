@@ -4,7 +4,7 @@ A continuación explicaremos como instalar un entorno de desarrollo para Java 8,
 -   Eclipse: Un entorno integrado de desarrollo (IDE), que nos servirá para codificar, compilar, probar, refactorizar nuestro software.
 -   Maven: Una herramientas de (entre otras cosas) manejo de dependencias
 
-Nota: además de lo descripto acá, será necesario contar con una herramienta de control de versiones, como por ejemplo git.
+Nota: además de lo descripto acá, será necesario contar con una herramienta de control de versiones, como por ejemplo git o svn.
 
 Digresión: Por qué Java 8 y no una versión anterior?
 ----------------------------------------------------
