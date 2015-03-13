@@ -1,15 +1,10 @@
-A continuación explicaremos como instalar un entorno de desarrollo para Java 8, el cual incluirá los siguientes elementos:
+A continuación explicaremos como instalar un entorno de desarrollo para Java, en su versión 8, el cual incluirá los siguientes elementos:
 
 -   El JDK8: Las biblioteas estándar y herramientras de construccion para la tecnologia Java y derivadas
 -   Eclipse: Un entorno integrado de desarrollo (IDE), que nos servirá para codificar, compilar, probar, refactorizar nuestro software.
 -   Maven: Una herramientas de (entre otras cosas) manejo de dependencias
 
 Nota: además de lo descripto acá, será necesario contar con una herramienta de control de versiones, como por ejemplo git o svn.
-
-Digresión: Por qué Java 8 y no una versión anterior?
-----------------------------------------------------
-
-El lenguaje Java 8 introduce una caracterstica fundamental en cualquier lenguaje de programación moderno: bloques de codigo (también conocidos como lambdas, closures, funciones anónimas). Trabajar sin las mismas limita mucho la expresividad de nuestro lenguaje, por lo que las versiones anteriores de Java no son las mas idoneas para plantear y validar diseños.
 
 Instalación del JDK (Java Development Kit)
 ------------------------------------------
