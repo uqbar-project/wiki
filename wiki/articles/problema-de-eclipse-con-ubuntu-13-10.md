@@ -38,7 +38,7 @@ Si instalaste eclipse desde los repositorios ppa, entonces eclipse debe encontra
 
 -   Reiniciamos el eclipse y los menús deberían poder visualizarse correctamente.
 
-Si seguiste los pasos adecuadamente, el archivo debería quedar parecido a este: (si lo instalaste desde los repositorios ppa)
+Si seguiste los pasos adecuadamente, el archivo debería quedar parecido a este:
 
 `      [Desktop Entry]`
 `      Type=Application`
@@ -48,3 +48,5 @@ Si seguiste los pasos adecuadamente, el archivo debería quedar parecido a este:
 `      Exec=env UBUNTU_MENUPROXY= eclipse`
 `      Terminal=false`
 `      Categories=Development;IDE;Java;`
+
+Si hubieras tenido que crearlo porque lo descargaste, copia y pega este y cambia la ruta del UBUNTU\_MENUPROXY a la que corresponda.
