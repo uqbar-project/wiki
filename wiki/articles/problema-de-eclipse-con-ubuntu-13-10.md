@@ -35,6 +35,8 @@ Si instalaste eclipse desde los repositorios ppa, entonces eclipse debe encontra
 
 -   Reiniciamos el eclipse y los menús deberían poder visualizarse correctamente.
 
+### Archivo de ejemplo
+
 Si seguiste los pasos adecuadamente, el archivo debería quedar parecido a este:
 
 `      [Desktop Entry]`
