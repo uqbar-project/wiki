@@ -62,6 +62,10 @@ Luego boton derecho, "Maven" "Update Project..."
 
 -   Para que cuando hagas New &gt; File te aparezcan las clases y las interfaces Xtend, Window &gt; Customize Perspective... &gt; solapa Menu Visibility &gt; expandís File | New &gt; y seleccionás las de xtend (Xtend class, inteface, annotation y enum).
 
+### Problema con el menu de Eclipse en Ubuntu 13.10
+
+-   [Problema de Eclipse con Ubuntu 13.10](http://uqbar-wiki.org/index.php?title=Problema_de_Eclipse_con_Ubuntu_13.10)
+
 ### Documentación
 
 -   [Documentación oficial](http://www.eclipse.org/xtend/documentation.html)
