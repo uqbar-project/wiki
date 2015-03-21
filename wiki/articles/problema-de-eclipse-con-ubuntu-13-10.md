@@ -48,4 +48,4 @@ Si seguiste los pasos adecuadamente, el archivo debería quedar parecido a este:
 `      Terminal=false`
 `      Categories=Development;IDE;Java;`
 
-Si hubieras tenido que crearlo porque lo descargaste, copia y pega este y cambia la ruta del UBUNTU\_MENUPROXY a la que corresponda.
+Si hubieras tenido que crearlo porque lo descargaste, copiá y pegá éste y cambiá la ruta del UBUNTU\_MENUPROXY a la que corresponda.
