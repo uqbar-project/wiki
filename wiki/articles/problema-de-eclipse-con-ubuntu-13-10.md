@@ -1,6 +1,3 @@
-Problema de Eclipse con Ubuntu 13.10
-------------------------------------
-
 Si instalaste Eclipse en Ubuntu 13.10 y además utilizás el entorno de escritorio Unity, es posible que tengas problemas a la hora de visualizar los menús (file, edit, view, etc). Para arreglar este problema, hay que editar a mano unos archivos tal como se indica en esta solución.
 
 O también podes actualizar tu sistema operativo, a partir de Ubuntu 14.04 LTS el problema ya fue corregido.
