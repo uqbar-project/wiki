@@ -20,7 +20,9 @@ Hay que buscar los archivos eclipse.desktop en las rutas /usr/share/applications
 
 `      sudo nano eclipse.desktop`
 
-Y reemplazamos la línea que comienza con Exec. Si descargaste Eclipse desde la página entonces:
+-   Y reemplazamos la línea que comienza con Exec.
+
+Si descargaste Eclipse desde la página entonces:
 
 `      Exec=env UBUNTU_MENUPROXY= /ruta/al/eclipse/eclipse`
 
