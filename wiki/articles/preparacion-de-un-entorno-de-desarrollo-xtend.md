@@ -2,6 +2,10 @@
 
 ### Download e instalación base
 
+Una alternativa es bajar el eclipse completo desde aquí: <http://eclipse.org/xtend/download.html>.
+
+Otra alternativa es instalar el plugin en un eclipse existente:
+
 -   Ingresar a <https://www.eclipse.org/modeling/tmf/downloads/>
 
 <!-- -->
