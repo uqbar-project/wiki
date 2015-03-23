@@ -4,6 +4,14 @@ Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Install
 
 ### Instalación en SO Unix-based (Linux, Solaris y Mac OS X)
 
+#### Mediante apt-get
+
+`$ apt-cache search maven`
+`$ sudo apt-get install maven`
+`$ sudo ln -s /usr/share/maven3/bin/mvn /usr/bin/mvn`
+
+#### Manualmente
+
 Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.tar.gz).
 
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
@@ -18,6 +26,8 @@ Agregar la siguiente línea al archivo **.bashrc**. Este archivo oculto (su nomb
 Una forma sencilla de hacer ésto (sin tener que abrir un editor) es usando el programa **echo** y *appendeando* (redireccionando y agregando al final) el output al archivo. **Prestar atención al hecho de que se usan dos signos mayor**:
 
 `$ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.3.1/bin' >> .bashrc`
+
+#### Verificación de la instalación
 
 Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:
 
