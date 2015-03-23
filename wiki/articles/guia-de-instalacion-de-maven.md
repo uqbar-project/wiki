@@ -8,22 +8,22 @@ Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/mave
 
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
 
-`$ tar -xzvf apache-maven-3.0.4-bin.tar.gz`
-`$ mv apache-maven-3.0.4 /home/john/programs/`
+`$ tar -xzvf apache-maven-3.3.1-bin.tar.gz`
+`$ mv apache-maven-3.3.1 /home/john/programs/`
 
 Agregar la siguiente línea al archivo **.bashrc**. Este archivo oculto (su nombre empieza con '.') contiene comandos que se ejecutan cuando se abre una terminal (consola). Se puede abrir con cualquier editor de textos (Gedit, vim, Emacs, Notepad++, etc) y se encuentra en el directorio **home** del usuario.
 
-`export PATH=$PATH:$HOME/programs/apache-maven-3.0.4/bin`
+`export PATH=$PATH:$HOME/programs/apache-maven-3.3.1/bin`
 
 Una forma sencilla de hacer ésto (sin tener que abrir un editor) es usando el programa **echo** y *appendeando* (redireccionando y agregando al final) el output al archivo. **Prestar atención al hecho de que se usan dos signos mayor**:
 
-`$ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.0.4/bin' >> .bashrc`
+`$ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.3.1/bin' >> .bashrc`
 
 Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:
 
 `john@notebook:~$ mvn -v`
-`Apache Maven 3.0.4 (r1232337; 2012-01-17 05:44:56-0300)`
-`Maven home: /home/john/programs/apache-maven-3.0.4`
+`Apache Maven 3.3.1 (r1232337; 2012-01-17 05:44:56-0300)`
+`Maven home: /home/john/programs/apache-maven-3.3.1`
 `Java version: 1.6.0_26, vendor: Sun Microsystems Inc.`
 `Java home: /usr/lib/jvm/java-6-sun-1.6.0.26/jre`
 `Default locale: en_US, platform encoding: UTF-8`
