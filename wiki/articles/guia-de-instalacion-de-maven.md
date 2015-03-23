@@ -4,7 +4,7 @@ Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Install
 
 ### Instalación en SO Unix-based (Linux, Solaris y Mac OS X)
 
-Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.tar.gz).
+Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.tar.gz).
 
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
 
