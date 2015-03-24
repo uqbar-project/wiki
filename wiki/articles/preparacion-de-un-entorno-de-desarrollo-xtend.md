@@ -2,9 +2,9 @@
 
 ### Download e instalación base
 
-Una alternativa es bajar el eclipse completo desde aquí: <http://eclipse.org/xtend/download.html>.
+Hasta marzo de 2015, es conveniente usar la versión 2.7.3, ya que la 2.8.0 tiene algunos bugs.
 
-Otra alternativa es instalar el plugin en un eclipse existente:
+Para eso:
 
 -   Ingresar a <https://www.eclipse.org/modeling/tmf/downloads/>
 
@@ -25,6 +25,8 @@ Otra alternativa es instalar el plugin en un eclipse existente:
 -   Reiniciar el Eclipse
 
 **Nota Importante:** Deben utilizar la versión *2.7.3* de Xtend (versiones anteriores a 2.7 ó posteriores tienen problemas de compatibilidad para utilizar los ejemplos)
+
+Para descargar el Eclipse completo (sólo versión 2.8) puedes acceder aquí: <http://eclipse.org/xtend/download.html>. Los ejemplos **NO** funcionarán con esta versión.
 
 ### Configuraciones default del eclipse
 
