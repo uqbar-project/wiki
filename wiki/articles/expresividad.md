@@ -50,7 +50,7 @@ En la industria actual de software (de hecho, en cualquier ambiente en el que se
 
 En consecuencia, la labor de un programador es en su amplia mayoría, leer y corregir código existente (propio ó de otro) y en menor medida producir código nuevo.
 
-Es por todo esto que el código fuente *no puede ser exclusivamente escrito para la computadora*. El más importante destino del código son las propias personas. Es por eso que no se puede descuidar la expresividad: es una de las varias formas de hacer la vida del programador más sencilla, y de que pueda abordar el desarrollo de tales sistemas.
+Es por todo esto que el código fuente *no puede ser exclusivamente escrito para la computadora*. El más importante destino del código son las propias personas. Es por eso que no se puede descuidar la expresividad: es una de las varias formas de hacer la vida del programador más sencilla, para que pueda abordar la construcción de sistemas como el mencionado.
 
 ### Cómo lograr la expresividad
 
@@ -67,11 +67,9 @@ Buen resumen (en inglés) <http://c2.com/cgi/wiki?GoodVariableNames>
 -   Un buen nombre debe decir exactamente cuál es el **propósito** de la variable / procedimiento / método.
     -   Por ejemplo, la función de arriba pasó de llamarse *QuieroMoverElBote* a *Promedio*, y el array de llamarse *a* a llamarse *numeros*.
 -   Ser **descriptivo**.
-    -   Por ejemplo,
+    -   Por ejemplo, no tener miedo de escribir nombres largos. *alumnosAprobados* es mejor que *alsAp*.
 -   Ser **claro y simple**.
-
--&gt; Por ejemplo,
-
+    -   Por ejemplo, se pueden usar abreviaciones claras (como *cant* en vez de *cantidad*).
 -   Respetar las **convenciones** es buena idea.
     -   Por ejemplo, el código escrito en lenguaje Python separa las palabras dentro de un nombre así: *esto\_es\_una\_variable*, mientras que en Smalltalk la convención es así: *estoEsUnaVariable*.
 -   Dar idea (no muy específica) del **tipo** ayuda también a la expresividad.
@@ -81,7 +79,6 @@ El tiempo que uno gasta en encontrar/**pensar un buen nombre**, es **tiempo bien
 
 #### Declaratividad
 
--   Ver [Declaratividad](declaratividad.html)
 -   Ver [Declaratividad vs. Expresividad](declaratividad-vs--expresividad.html)
 
 #### Identación
