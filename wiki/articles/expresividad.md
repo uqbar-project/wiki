@@ -67,9 +67,9 @@ Buen resumen (en inglés) <http://c2.com/cgi/wiki?GoodVariableNames>
 -   Un buen nombre debe decir exactamente cuál es el **propósito** de la variable / procedimiento / método.
     -   Por ejemplo, la función de arriba pasó de llamarse *QuieroMoverElBote* a *Promedio*, y el array de llamarse *a* a llamarse *numeros*.
 -   Ser **descriptivo**.
-    -   Por ejemplo, no tener miedo de escribir nombres largos. *alumnosAprobados* es mejor que *alsAp*.
+    -   Por ejemplo, no tener miedo de escribir nombres largos. *cantAlumnosAprobados* es mejor que *aprobados*.
 -   Ser **claro y simple**.
-    -   Por ejemplo, se pueden usar abreviaciones claras (como *cant* en vez de *cantidad*).
+    -   Por ejemplo, se pueden usar abreviaciones claras (como *cant* en vez de *cantidad*). Aunque las abreviaciones pueden resultar a veces dañinas: *alumnosAprobados* es mejor que *alsAp*
 -   Respetar las **convenciones** es buena idea.
     -   Por ejemplo, el código escrito en lenguaje Python separa las palabras dentro de un nombre así: *esto\_es\_una\_variable*, mientras que en Smalltalk la convención es así: *estoEsUnaVariable*.
 -   Dar idea (no muy específica) del **tipo** ayuda también a la expresividad.
