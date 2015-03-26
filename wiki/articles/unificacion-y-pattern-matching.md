@@ -1,5 +1,5 @@
-Unificación y Pattern-Matching
-------------------------------
+Unificación
+-----------
 
 Dentro de los conceptos del paradigma lógico no está incluido el concepto de **asignación**. Para dejar en claro esto vamos a llamar a esta idea **Asignación Destructiva**, esto se debe a que una asignación me permite "destruir" el valor que tiene una variable en un momento dado y reemplazarlo por otro. Esta idea de asignación no tiene sentido cuando pensamos en incógnitas (si en un momento dado decimos que una variable X vale 1, su valor será 1 y ningún otro hasta que se empiece a buscar otra solución a la misma consulta, en ese momento se desligan todas las variables y se empieza de nuevo). Las variables en el paradigma lógico se asemejan a la idea de variable matemática, y el mecanismo por el cual se le dan valores a las variables se llama **unificación**. Cuando una variable que no tiene ningún valor pasa a tenerlo vamos a decir que dicha variable a sido **ligada**, en caso contrario la variable se encuentra **sin ligar o no ligada**.
 
