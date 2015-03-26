@@ -90,4 +90,4 @@ Nos alcanza pensar que un término es un individuo (simple o compuesto - estos �
 Y pattern-matching?
 -------------------
 
-Bueno, la diferencia entre decir pattern-matching y unificación es bastante gris (algunos autores lo consideran sinónimos). Es muy común decir "unifica" o "matchea" indistintamente. Mayormente vamos a hablar de pattern-matching en la unificación de individuos compuestos (functores y listas - ya que estos individuos tienen un patrón definido) y vamos a hablar de unificación entre consulta y consecuente.
+Bueno, la diferencia entre decir pattern-matching y unificación es bastante gris (algunos autores lo consideran sinónimos). Es muy común decir "unifica" o "matchea" indistintamente. Mayormente vamos a hablar de pattern-matching en la unificación de [individuos compuestos](paradigma-logico---individuos-compuestos.html) ya que estos individuos tienen un patrón definido y vamos a hablar de unificación entre consulta y consecuente.
