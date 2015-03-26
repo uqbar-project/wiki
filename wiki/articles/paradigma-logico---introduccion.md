@@ -56,9 +56,9 @@ Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca d
 -   la base de conocimiento se compone de **cláusulas** que definen **predicados** partiendo de los **individuos** de los que queremos hablar.
 -   un programa Prolog es una base de conocimiento
 
-Con esto claro, podemos pasar a ver algunas [definiciones](paradigma-logico---un-poco-de-nomenclatura-consultas.html)
+Con esto claro, podemos pasar a ver algunas [definiciones](paradigma-logico---un-poco-de-nomenclatura.html)
 
-Estos son los conceptos principales de los que se compone un programa Prolog. Para obtener resultados a partir de un programa, hacemos [consultas](paradigma-logico-tipos-de-consulta.html).
+Estos son los conceptos principales de los que se compone un programa Prolog. Para obtener resultados a partir de un programa, hacemos [consultas](paradigma-logico---un-poco-de-nomenclatura-consultas.html).
 
 Universo Cerrado
 ----------------
