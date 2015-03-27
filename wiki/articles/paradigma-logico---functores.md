@@ -13,6 +13,8 @@ Los functores son valores, individuos.
 
 OK, son individuos compuestos, pero siguen siendo individuos. **No** son predicados, no tienen un valor de verdad.
 
+Si bien existe una similitud sintáctica entre ellos, la forma de uso es distinta, es por el contexto que Prolog decide si tratarlo como definición de un hecho, como consulta de un predicado o efectivamente como un functor.
+
 No tiene sentido consultar por functores, p.ej. hacer esta consulta
 
 `   ?- canilla(X,hierro,Y)`
@@ -20,6 +22,25 @@ No tiene sentido consultar por functores, p.ej. hacer esta consulta
 sería lo mismo que preguntar
 
 `   ?- 1`
+
+Si hacemos la consulta
+
+`   ?- canilla(X,hierro,Y)`
+
+Y no existe un predicado canilla/3, Prolog va a lanzar un error al intentar ejecutarlo como tal.
+
+Si definimos lo siguiente en nuestra base de conocimientos:
+
+`   vende(pepe, canilla(Forma,Material,Color)).`
+`   canilla(triangular,hierro,azul).`
+`   canilla(triangular,porcelana,blanco).`
+
+Y luego consultamos qué cosas vende pepe, la única respuesta que puede proveernos es basura con forma de canilla:
+
+`   ?- vende(pepe, CosaQueVende).`
+`   CosaQueVende = canilla(_G9, _G10, _G11).`
+
+En esas tres líneas de nuestra base de conocimientos tenemos un functor canilla/3 y dos hechos para el predicado canilla/3, y no hay ninguna relación entre ellos porque Prolog interpreta a los argumentos de los predicados como individuos. No va a intentar evaluar el functor canilla/3, lo va a tomar como un patrón para unificar en la consulta por pattern matching.
 
 ¿Cómo devolver functores?
 -------------------------
