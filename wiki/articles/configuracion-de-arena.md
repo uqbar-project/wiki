@@ -86,7 +86,7 @@ Asumimos que además del entorno básico ya te instalaste Scala según el instru
 
 Para bajarte los ejemplos, te recomendamos:
 
--   hacer checkout desde el SVN
+-   hacer checkout desde el SVN respetando el mismo nombre del proyecto que el directorio padre de trunk
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
 
 ### Crear un proyecto de Arena en Scala
@@ -102,7 +102,7 @@ Asumimos que además del entorno básico ya te instalaste Xtend según [este ins
 
 Para bajarte los ejemplos, te recomendamos:
 
--   hacer checkout desde el SVN
+-   hacer checkout desde el SVN respetando el mismo nombre del proyecto que el directorio padre de trunk
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
 -   luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
 
@@ -113,7 +113,7 @@ Asumimos que además del entorno básico ya te instalaste Groovy según [este in
 
 Para bajarte los ejemplos, te recomendamos:
 
--   hacer checkout desde el SVN
+-   hacer checkout desde el SVN respetando el mismo nombre del proyecto que el directorio padre de trunk
 -   una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project
 -   Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Groovy project
 -   Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: "compile")
@@ -162,6 +162,8 @@ También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener
 ### Checkout desde el SVN
 
 En general los ejemplos se bajan desde la estructura "proyecto/trunk", si los bajás desde el directorio proyecto, vas a tener algunos conflictos de directorio.
+
+Al bajarlo utilizar como nombre del proyecto el mismo nombre que el directorio padre de trunk. Ejemplo: al checkoutear "celulares-ui-arena-xtend/trunk" deben definir como nombre del proyecto "celulares-ui-arena-xtend".
 
 ### Source folders del proyecto
 
