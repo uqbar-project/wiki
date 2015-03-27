@@ -1,33 +1,35 @@
-Recordar que los individuos compuestos son
+En contraposición a los átomos y los números, que son individuos simples, existen los individuos compuestos, estos son:
 
 -   los [functores](paradigma-logico---functores.html)
 -   las [listas](paradigma-logico---listas.html)
 
-y que para acceder a los componentes de un individuo compuesto podemos usar pattern matching.
+Para acceder a los componentes de un individuo compuesto podemos usar Pattern Matching.
 
-En el caso de los functores, los componentes son los argumentos del functor. Si los quiero por separado, p.ej. si tenemos un functor
+En el caso de los functores, los componentes son los argumentos del functor. Si los quiero por separado, p.ej. si tenemos un functor de la forma canilla(Forma,Material,Color) y tenemos un predicado vende/2 que relaciona un local con una cosa que vende:
 
-`   % canilla(Forma,Material,Color)`
-`   % p.ej. tenemos un predicado vende(Local,CosaQueVende)`
 `   vende(pepe,canilla(triangular,hierro,azul)).   `
 
 podemos armar este predicado
 
 `   hayMaterial(Local,Mat):- vende(Local,canilla(_,Mat,_)).`
 
-en donde estamos accediendo por pattren
+en donde estamos abriendo el functor canilla/3 mediante pattern matching y así unificando la variable Mat con el material de la canilla que se vende en el local.
 
-En el caso de las listas, los componentes son cabeza y cola, y la notación es
+En el caso de las listas hay dos patrones básicos, una lista puede ser la lista vacía o con almenos un elemento. En caso de no ser la lista vacía los componentes son cabeza y cola, y la notación es
 
 `  [Cabeza | Cola]`
 
-donde, como la cola también es una lista, puedo hacer
+como la cola también es una lista, si la lista con la que quiero matchear espero que tenga al menos dos elementos puedo hacer:
 
 `  [Elem1 | [ Elem2 | Resto ] ]`
 
 Probar p.ej. con esta consulta
 
 `  ?- [Elem1 | [ Elem2 | Resto ] ] = [a,e,i,o,u].`
+
+Alternativamente se puede usar el patrón `[Elem1,` `Elem2` `|` `Resto]` con el mismo objetivo, es un azúcar sintáctico para unificar dos variables con los primeros dos elementos de la lista.
+
+El caso típico para usar Pattern Matching sobre listas es en la [recursividad](recursividad-en-logico-recursividad-con-listas.html).
 
 Combinando constructores de individuos compuestos
 -------------------------------------------------
