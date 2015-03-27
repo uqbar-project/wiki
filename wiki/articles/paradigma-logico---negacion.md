@@ -109,7 +109,7 @@ Entonces... ¿Qué hacemos?
 
 *Generamos*.
 
-Generar es agregar una condición que *sí* sea inversible antes del `not`, para que las variables lleguen ligadas al mismo. De ésta manera, transformamos toda consulta usando `not` en una *consulta individual*, que funcionan como nosotros esperamos (Leer más ariba).
+[Generar](paradigma-logico---generacion.html) es agregar una condición que *sí* sea inversible antes del `not`, para que las variables lleguen ligadas al mismo. De ésta manera, transformamos la consulta dentro del `not` que podía llegar a ser una *consulta existencial* en una *consulta individual*, que funcionan como nosotros esperamos (Leer más ariba).
 
 `esBueno(Persona) :- esPersona(Persona), not(esMalo(Persona)).`
 
