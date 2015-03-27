@@ -14,7 +14,9 @@ b) Cuando la semántica de la consulta es distinta a la que quiero, por ejemplo 
 
 `      findall(CantEjercitos,ocupa(Jugador,_,CantEjercitos),ListCants),`
 
-- Si la variable Jugador llega ligada, podría leerse como: "Dado este Jugador, traeme todas las cantidades de ejércitos en cada país que ocupa". - En cambio, si jugador está libre, se debería leer como: "Traeme todas las cantidades de ejércitos de todos los países ocupados por CUALQUIER JUGADOR".
+- Si la variable Jugador llega ligada, podría leerse como: "Dado este Jugador, traeme todas las cantidades de ejércitos en cada país que ocupa".
+
+- En cambio, si jugador está libre, se debería leer como: "Traeme todas las cantidades de ejércitos de todos los países ocupados por CUALQUIER JUGADOR".
 
 Entonces, no es que sea obligatorio generar, sino que el significado de la consulta es totalmente distinta, y dependiendo de lo que querramos hacer, hay que ligar previamente el jugador o no. Si nuestra intención es definir un predicado cantidadEjercitos/2 que relaciona un jugador con la cantidad total de ejércitos que tiene y lo hacemos de la siguiente forma:
 
