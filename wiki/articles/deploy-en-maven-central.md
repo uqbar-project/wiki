@@ -2,7 +2,7 @@ Estás desarrollando un proyecto Maven para Uqbar - el cual tiene como pom padre
 
 1. Creamos el release
 
-`$ mvn release:clean release:prepare`
+`$ mvn --batch-mode release:clean release:prepare`
 
 Este comando crea un commit y un tag para la nueva versión y luego otro commit agregandole nuevamente el -SNAPSHOT a la versión. La opción *--batch-mode* hace que el plugin no pregunte la versión y asuma la correlativa a la actual, puede omitirse si se quiere especificar otra versión.
 
