@@ -6,7 +6,6 @@ Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Install
 
 #### Mediante apt-get
 
-`$ apt-cache search maven`
 `$ sudo apt-get install maven`
 `$ sudo ln -s /usr/share/maven3/bin/mvn /usr/bin/mvn`
 
