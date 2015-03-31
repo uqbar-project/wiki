@@ -31,10 +31,10 @@ Una forma sencilla de hacer ésto (sin tener que abrir un editor) es usando el p
 Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:
 
 `john@notebook:~$ mvn -v`
-`Apache Maven 3.3.1 (r1232337; 2012-01-17 05:44:56-0300)`
+`Apache Maven 3.3.1 (r...)`
 `Maven home: /home/john/programs/apache-maven-3.3.1`
-`Java version: 1.6.0_26, vendor: Sun Microsystems Inc.`
-`Java home: /usr/lib/jvm/java-6-sun-1.6.0.26/jre`
+`Java version: 1....`
+`Java home: /usr/lib/jvm/...`
 `Default locale: en_US, platform encoding: UTF-8`
 `OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"`
 
@@ -61,13 +61,20 @@ Una configuración más que puede ser útil para encontrar versiones nuevas de a
 
 Hay dos formas de trabajar con Maven, integrándose con el entorno de desarrollo (Eclipse, IntelliJ, etc.) o bien trabajando directamente por consola.
 
-#### Plugin de Eclipse
+#### Plugin de Eclipse (M2E)
 
-Las versiones recientes de Eclipse (al menos desde la versión Luna) no requieren que descargues el plugin M2E, en todo caso si no lo ves entrá a <http://eclipse.org/m2e/>
+Las versiones recientes de Eclipse (al menos desde la versión Luna) no requieren que descargues el plugin M2E, en todo caso si no lo ves entrá a <http://eclipse.org/m2e/> y seguí las instrucciones de instalación. Cuando quieras ejecutar algún goal de Maven, simplemente vas a Run Configurations y elegís un Maven Goal de tu preferencia: build, clean, generate-sources, install y test. En el caso de elegir un build, tenés que completar un goal específico, p. ej: compile.
 
 #### Por consola
 
-= Hay que tener en cuenta que los cambios que hagas en un proyecto no se verán reflejados en los demás hasta que no fuerces a recompilar ese proyecto.
+= El trabajo por consola directa requiere ubicarse en el mismo directorio donde está el proyecto en el que estás en tu IDE y ejecutar los goals desde allí.
+
+Una sutil diferencia entre trabajar con el entorno integrado es que si contás con dos proyectos
+
+-   un proyecto Saraza-Domain
+-   y otro proyecto de UI Saraza-Arena que tiene una dependencia a Saraza-Domain
+
+Cuando lo debuggeen en el IDE podrán ver (y updatear) su proyecto de dominio corriendo el de Arena. En cambio si lo usan desde la consola cuando cambien algo en el dominio tendrán que instalar la version del dominio y despues actualizar la dependencia del proyecto arena en el archivo pom.
 
 ### Guías de referencia
 
@@ -84,11 +91,11 @@ Una vez instaladas todas las herramientas, se puede crear un proyecto en esta pl
 
 -   Creamos un proyecto Maven. Desde la consola
 
-`$ mvn archetype:create -DgroupId=ar.edu.utn.frba.dds.demo -DartifactId=demo`
+`$ mvn archetype:create -DgroupId=ar.edu.demo -DartifactId=demo`
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
--   Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: src/main/java/ar/edu/frba/utn/dds.
+-   Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: {code|src/main/java/ar/edu}.
 
 <!-- -->
 
