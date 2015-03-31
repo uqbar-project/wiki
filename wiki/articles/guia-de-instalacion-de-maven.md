@@ -80,8 +80,8 @@ Cuando lo debuggeen en el IDE podrán ver (y updatear) su proyecto de dominio co
 
 Cualquiera sea la opción que elijas te dejamos estos links para trabajar:
 
--   <https://maven.apache.org/guides/MavenQuickReferenceCard.pdf>
--   <http://books.sonatype.com/mvnref-book/reference/>
+-   Una guía de referencia rápida: <https://maven.apache.org/guides/MavenQuickReferenceCard.pdf>
+-   Un manual completo de Maven: <http://books.sonatype.com/mvnref-book/reference/>
 
 Y si necesitás arrancar, acá te dejamos instrucciones iniciales:
 
