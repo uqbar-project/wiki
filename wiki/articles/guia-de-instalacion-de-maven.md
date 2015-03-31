@@ -74,7 +74,7 @@ Una sutil diferencia entre trabajar con el entorno integrado es que si contás c
 -   un proyecto Saraza-Domain
 -   y otro proyecto de UI Saraza-Arena que tiene una dependencia a Saraza-Domain
 
-Cuando lo debuggeen en el IDE podrán ver (y updatear) su proyecto de dominio corriendo el de Arena. En cambio si lo usan desde la consola cuando cambien algo en el dominio tendrán que instalar la version del dominio y despues actualizar la dependencia del proyecto arena en el archivo pom.
+Cuando lo debuggeen en el IDE podrán ver (y updatear) su proyecto de dominio corriendo el de Arena. En cambio si lo usan desde la consola cuando cambien algo en el dominio tendrán que instalar la versión del dominio y después actualizar la dependencia del proyecto arena en el archivo pom.
 
 ### Guías de referencia
 
