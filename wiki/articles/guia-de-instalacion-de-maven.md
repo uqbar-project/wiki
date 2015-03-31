@@ -63,7 +63,7 @@ Hay dos formas de trabajar con Maven, integrándose con el entorno de desarrollo
 
 #### Plugin de Eclipse (M2E)
 
-Las versiones recientes de Eclipse (al menos desde la versión Luna) no requieren que descargues el plugin M2E, en todo caso si no lo ves entrá a <http://eclipse.org/m2e/> y seguí las instrucciones de instalación. Cuando quieras ejecutar algún goal de Maven, simplemente vas a Run Configurations y elegís un Maven Goal de tu preferencia: build, clean, generate-sources, install y test. En el caso de elegir un build, tenés que completar un goal específico, p. ej: compile.
+Las versiones recientes de Eclipse (al menos desde la versión Luna) no requieren que descargues el plugin M2E, en todo caso si no lo ves entrá a <http://eclipse.org/m2e/> y seguí las instrucciones de instalación. Cuando quieras ejecutar algún goal de Maven, simplemente te parás sobre el proyecto, Run As y elegís un Maven Goal de tu preferencia: build, clean, generate-sources, install o test. En el caso de elegir un build, tenés que completar un goal específico, p. ej: compile. También podés armar tu goal a partir del menú Run Configurations, y modificarle las opciones en el cuadro de diálogo.
 
 #### Por consola
 
