@@ -67,7 +67,7 @@ Las versiones recientes de Eclipse (al menos desde la versión Luna) no requiere
 
 #### Por consola
 
-= El trabajo por consola directa requiere ubicarse en el mismo directorio donde está el proyecto en el que estás en tu IDE y ejecutar los goals desde allí.
+El trabajo por consola directa requiere ubicarse en el mismo directorio donde está el proyecto en el que estás en tu IDE y ejecutar los goals desde allí.
 
 Una sutil diferencia entre trabajar con el entorno integrado es que si contás con dos proyectos
 
