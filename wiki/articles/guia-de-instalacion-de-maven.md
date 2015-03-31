@@ -95,7 +95,7 @@ Una vez instaladas todas las herramientas, se puede crear un proyecto en esta pl
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
--   Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: {code|src/main/java/ar/edu}.
+-   Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: .
 
 <!-- -->
 
