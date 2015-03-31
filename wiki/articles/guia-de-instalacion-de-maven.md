@@ -57,13 +57,32 @@ Una configuración más que puede ser útil para encontrar versiones nuevas de a
 
 -   La opción "Download repository index on startup" (opción por defecto chequeada): para más información pueden leer <http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes>.
 
-### Creación de un proyecto básico
+### Uso de Maven
+
+Hay dos formas de trabajar con Maven, integrándose con el entorno de desarrollo (Eclipse, IntelliJ, etc.) o bien trabajando directamente por consola.
+
+#### Plugin de Eclipse
+
+Las versiones recientes de Eclipse (al menos desde la versión Luna) no requieren que descargues el plugin M2E, en todo caso si no lo ves entrá a <http://eclipse.org/m2e/>
+
+#### Por consola
+
+= Hay que tener en cuenta que los cambios que hagas en un proyecto no se verán reflejados en los demás hasta que no fuerces a recompilar ese proyecto.
+
+### Guías de referencia
+
+Cualquiera sea la opción que elijas te dejamos estos links para trabajar:
+
+-   <https://maven.apache.org/guides/MavenQuickReferenceCard.pdf>
+-   <http://books.sonatype.com/mvnref-book/reference/>
+
+Y si necesitás arrancar, acá te dejamos instrucciones iniciales:
+
+#### Creación de un proyecto básico
 
 Una vez instaladas todas las herramientas, se puede crear un proyecto en esta plataforma siguiendo [este tutorial](creacion-de-un-proyecto-maven-basico.html) (ojo, este es un tutorial básico, si necesitan usar otras tecnologías de presentación busquen los tutoriales en las páginas de las tecnologías correspondientes).
 
-#### A manopla
-
--   Creamos un proyecto Maven.
+-   Creamos un proyecto Maven. Desde la consola
 
 `$ mvn archetype:create -DgroupId=ar.edu.utn.frba.dds.demo -DartifactId=demo`
 
