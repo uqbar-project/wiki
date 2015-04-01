@@ -21,7 +21,7 @@ Las heurísticas son útiles cuando no disponemos de los medios cientificos para
 
 Es equivocado buscar que una heurística se convierta en un número medible, eso resulta contradictorio por su propia definición. Por lo tanto, en elementos cualitativos, es imposible establecer medidas cuantitativas. Aunque resulte tentador convertir una heurística en una medición debemos evitar esa tentación a todo costo.
 
-Por ejemplo un error común es hablar de complejidad en número de clases o número de métodos, de la misma manera que no podemos medir la complejidad de una solución por la cantidad de líneas de código involucadras. Estas medidas son apenas indicios pero es necesario analizar las clases, los métodos, el código para poder determinar si efectivamente esa solución resulta más compleja que otra.
+Por ejemplo un error común es hablar de complejidad en número de clases o número de métodos, de la misma manera que no podemos medir la complejidad de una solución por la cantidad de líneas de código involucradas. Estas medidas son apenas indicios pero es necesario analizar las clases, los métodos, el código para poder determinar si efectivamente esa solución resulta más compleja que otra.
 
 Cohesión
 --------
