@@ -76,7 +76,7 @@ Nos falta hacer la magia!
 ¿Cómo obtener todas las respuestas 'juntas'?
 --------------------------------------------
 
-La magia consiste en que Hijos sean todos los H que son respuesta de la consulta padre(P,H) cuando P es por ejemplo homero. Hay un predicado en Prolog que hace exactamente eso:
+Si tenemos una forma de obtener múltiples respuestas a una consulta (en este caso, todos los H que son respuesta de la consulta padre(P,H) cuando P es por ejemplo homero), y lo que queremos es que todas esas respuestas estén juntas en una lista, hay un predicado en Prolog que hace exactamente eso:
 
 `findall(Elemento,Consulta,Conjunto)`
 
