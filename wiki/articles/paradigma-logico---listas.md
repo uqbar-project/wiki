@@ -252,8 +252,10 @@ Recursividad Con Listas
 
 - Ver [Recursividad en Logico](recursividad-en-logico.html)  
 
-Errores comunes: findall y member
----------------------------------
+Errores comunes
+---------------
+
+### findall y member
 
 El error más común para quienes no están acostumbrados a pensar en términos del paradigma es armar listas cuando no son necesarias para la resolución del problema. Esto se pone en evidencia por el uso del findall seguido por un member sobre la lista resultante. El findall arma listas, el member las desarma... son operaciones inversas!
 
@@ -282,5 +284,27 @@ En ese caso todo lo que necesitábamos era consultar por existencia quién cumpl
 `     esPibe(H).`
 
 En este caso fue simple porque B modelaba directamente CONDICION, pero bien podría pasar que nos esté faltando una abstracción para modelar CONDICION, que podemos solucionar definiendo otro predicado C y modificando los predicados A y B para que usen C.
+
+### findall y length
+
+Uno de los usos más comunes de findall tiene como objetivo saber cuántos individuos cumplen una determinada condicion, como en el ejemplo visto anteriormente de cantidadDeHijos/3. Sin embargo hay casos en los cuales pensamos la solución a un problema básico en término de cantidad de respuestas, lo cual disminuye la [declaratividad](declaratividad.html) de la solución. Veamos un par de ejemplos:
+
+` esPadre(Persona) :- persona(Persona),`
+`      findall(Hijo, padre(Persona, Hijo), Hijos),`
+`      length(Hijos, CantidadDeHijos),`
+`      CantidadDeHijos >= 1.`
+
+` noTieneHijos(Persona) :- persona(Persona),`
+`      findall(Hijo, padre(Persona, Hijo), Hijos),`
+`      length(Hijos, 0).`
+
+Estos dos predicados podrían definirse sin uso de listas, y no sólo eso sino que la solución de ambos es mucho más sencilla. En ambos casos debería simplemente trabajar con la idea de existencia, ya sea afirmándola o negándola, o sea:
+
+` esPadre(Persona) :- padre(Persona,_).`
+
+` noTieneHijos(Persona) :- persona(Persona),`
+`      not(padre(Persona, _)).`
+
+### findall y forall
 
 [Y otro caso típico de mal uso de findall y member aparece al tratar de usar el forall](paradigma-logico---forall---no-siempre-con-member.html).
