@@ -1,9 +1,15 @@
 ### Download e instalación base
 
--   [Descargá aquí](http://groovy.codehaus.org/Download) la última versión estable de Groovy
--   Seguí después las [instrucciones de instalación](http://groovy.codehaus.org/Installing+Groovy)
--   Y para usarlo con el Eclipse tenés que descargarte [el plugin](http://groovy.codehaus.org/Eclipse+Plugin)
-    -   si te interesa usar otro IDE tenés que usar [este link](http://groovy.codehaus.org/IDE+Support)
+-   Vas a la página [1](http://docs.codehaus.org/display/GROOVY/Eclipse+Plugin) y buscás el link de update que se adapte a la versión de tu Eclipse
+-   En Help &gt; Install New Software generás un nuevo update site que apunte al update site del punto anterior
+-   Tenés que marcar luego un Groovy compiler
+-   Y luego lo instalás (va a tardar un ratito)
+
+Ojo, no te confíes en usar el Eclipse Marketplace porque trae versiones anteriores del plugin.
+
+### Utilizar Groovy en otro IDE
+
+-   -   Seguí este link: [2](http://groovy.codehaus.org/IDE+Support)
 
 ### Documentación
 
