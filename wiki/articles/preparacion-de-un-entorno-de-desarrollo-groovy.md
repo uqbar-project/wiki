@@ -10,6 +10,10 @@
 
 Ojo, no te confíes en usar el Eclipse Marketplace porque trae versiones anteriores del plugin.
 
+Luego hay que instalar el plugin de Maven, ahora sí desde el Eclipse Marketplace.
+
+-   Help &gt; Eclipse Marketplace, buscás Maven, seleccionás "Maven Integration for Eclipse", Install, Confirm
+
 ### Utilizar Groovy en otro IDE
 
 -   Seguí este link: <http://groovy.codehaus.org/IDE+Support>
