@@ -104,6 +104,15 @@ La consulta correspondiente ya viene con esa variable ligada, o sea que las cons
 
 Volvamos a la definición: el forall se verifica si todas las respuestas a la primer consulta son respuestas de la segunda. Mirando el ejemplo de recién debería cerrar el esquema.
 
+Qué pasa si no hay soluciones para el primer parámetro de forall?
+-----------------------------------------------------------------
+
+Qué pasa si consultamos si lucas es tierno y en nuestra base de conocimientos no hay nada que le guste?
+
+`   ?- esTierno(lucas).`
+
+Esta consulta va a ser cierta, porque si no le gusta nada, es cierto que todas las cosas que le gustan son dulces. Si nos interesa que sólo diga verdadero para las personas que les gusta algo, debemos agregar otra condición fuera del forall que lo asegure.
+
 Forall e inversibilidad
 -----------------------
 
