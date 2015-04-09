@@ -125,7 +125,7 @@ donde Alim es lo que ligó la primer consulta.
 ¿Cuáles son las respuestas a la primer consulta? **Todos** los pares (persona,alimento) relacionados por leGusta.
 Entonces, el forall sólo se va a verificar si cualquier cosa que le guste **a alguien**, no importa a quién, es dulce.
 
-Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall mediante [Paradigma Lógico - generación](generacion.html):
+Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall mediante [ generación](paradigma-logico---generacion.html):
 
 `   esTierno(P):- persona(P), forall(leGusta(P,Alim),esDulce(Alim)).`
 
