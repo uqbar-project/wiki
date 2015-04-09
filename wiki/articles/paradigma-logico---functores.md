@@ -42,8 +42,8 @@ Y luego consultamos qué cosas vende pepe, la única respuesta que puede proveer
 
 En esas tres líneas de nuestra base de conocimientos tenemos predicado vende/2 que usa un functor canilla/3, y dos hechos para el predicado canilla/3. No hay ninguna relación entre ellos porque Prolog interpreta a los argumentos de los predicados como individuos. No va a intentar evaluar el functor canilla/3, lo va a tomar como un patrón para unificar en la consulta por pattern matching.
 
-¿Cómo devolver functores?
--------------------------
+Pregunta frecuente: ¿Cómo devolver functores?
+---------------------------------------------
 
 Antes que nada, el uso de la palabra "devolver", marca que faltan entender cosas, porque la pregunta "cómo devuelvo" no tiene respuesta, no se puede devolver, no existe, es otro paradigma.
 
@@ -54,3 +54,7 @@ No traten de "devolver" cosas, sino de establecer relaciones entre ellas.
 Una forma de arrancar es asumir que el parámetro me viene, entonces yo trato de describir cuáles son las condiciones que se tienen que cumplir.
 
 Una vez llegado a ese punto, si se necesita que sea inversible, analizamos cómo se van ligando las variables y si falta generar los valores posibles en algún caso.
+
+Por ejemplo, si pepe vende tornillos parker de todas las medidas disponibles, y sabemos que la medida es un número entre 1 y 5 podríamos hacer:
+
+`vende(pepe, tornillo(Medida, parker)):- between(1, 5, Medida).`
