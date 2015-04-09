@@ -17,17 +17,17 @@ Si bien existe una similitud sintáctica entre ellos, la forma de uso es distint
 
 No tiene sentido consultar por functores, p.ej. hacer esta consulta
 
-`   ?- canilla(X,hierro,Y)`
+`   ?- canilla(X,hierro,Y).`
 
 sería lo mismo que preguntar
 
-`   ?- 1`
+`   ?- 1.`
 
 Si hacemos la consulta
 
-`   ?- canilla(X,hierro,Y)`
+`   ?- canilla(X,hierro,Y).`
 
-Y no existe un predicado canilla/3, Prolog va a lanzar un error al intentar ejecutarlo como tal.
+Y no existe un predicado canilla/3, Prolog va a lanzar un error al intentar ejecutarlo como tal y no encontrar una definición.
 
 Si definimos lo siguiente en nuestra base de conocimientos:
 
@@ -40,7 +40,7 @@ Y luego consultamos qué cosas vende pepe, la única respuesta que puede proveer
 `   ?- vende(pepe, CosaQueVende).`
 `   CosaQueVende = canilla(_G9, _G10, _G11).`
 
-En esas tres líneas de nuestra base de conocimientos tenemos un functor canilla/3 y dos hechos para el predicado canilla/3, y no hay ninguna relación entre ellos porque Prolog interpreta a los argumentos de los predicados como individuos. No va a intentar evaluar el functor canilla/3, lo va a tomar como un patrón para unificar en la consulta por pattern matching.
+En esas tres líneas de nuestra base de conocimientos tenemos predicado vende/2 que usa un functor canilla/3, y dos hechos para el predicado canilla/3. No hay ninguna relación entre ellos porque Prolog interpreta a los argumentos de los predicados como individuos. No va a intentar evaluar el functor canilla/3, lo va a tomar como un patrón para unificar en la consulta por pattern matching.
 
 ¿Cómo devolver functores?
 -------------------------
