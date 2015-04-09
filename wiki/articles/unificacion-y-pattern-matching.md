@@ -90,4 +90,28 @@ Nos alcanza pensar que un término es un individuo (simple o compuesto - estos �
 Y pattern-matching?
 -------------------
 
-Bueno, la diferencia entre decir pattern-matching y unificación es bastante gris (algunos autores lo consideran sinónimos). Es muy común decir "unifica" o "matchea" indistintamente. Mayormente vamos a hablar de pattern-matching en la unificación de [individuos compuestos](paradigma-logico---individuos-compuestos.html) ya que estos individuos tienen un patrón definido y vamos a hablar de unificación entre consulta y consecuente.
+Bueno, la diferencia entre decir pattern matching y unificación es bastante gris (algunos autores lo consideran sinónimos). Es muy común decir "unifica" o "matchea" indistintamente.
+
+Vamos a hablar de unificación de variables en relación al valor que las mismas toman en base a una consulta y de pattern matching cuando en el encabezado del predicado se determina la forma que tiene que tener
+
+Mayormente vamos a hablar de pattern matching al involucrar [individuos compuestos](paradigma-logico---individuos-compuestos.html), ya que a partir de los mismos se pueden definir patrones complejos con los cuales los valores usados en las consultas deberían coincidir.
+
+Los patrones más básicos que podemos encontrar son los que no limitan en absoluto qué valores pueden matchear (las variables) y los que sólo matchean si son exactamente iguales (valores concretos). Por ejemplo, una solución de factorial podría resolverse usando pattern matching de modo que existen dos definiciones: una que sólo es válida para el factorial de 0 y otra que es válida para cualquier número.
+
+`factorial(0, 1).`
+`factorial(N, F) :- N > 0,`
+`  M is N - 1,`
+`  factorial(M, FM),`
+`  F is N * FM.`
+
+Si hacemos las siguientes consultas:
+
+`?- factorial(2, Factorial).`
+
+El 2 no matchea con el 0, pero sí con la variable N, por ende sólo la segunda cláusula es considerada para responder a la consulta.
+
+`?- factorial(0, Factorial).`
+
+El 0 matchea con el 0 y también con la variable N, por ende ambas cláusulas son usadas para responder. Sin embargo, si la variable N se unificó con el valor 0, la consulta N &gt; 0 da falso y no continúa ejecutando porque ya falló.
+
+Al trabajar con individuos compuestos podemos usar otro tipo de patrones que restrinjan parcialmente qué valores pueden pueden matchear.
