@@ -41,3 +41,40 @@ Bien:
 
 ` f 0 = 0`
 ` f x = x + 1`
+
+Poner enters de más en una expresión larga
+------------------------------------------
+
+A veces puede pasar que por un tema de legibilidad queremos partir escribir una sola expresion larga a lo largo de varias lineas (aunque en general, el problema ahí es que la expresión es larga por falta de [delegación](delegacion.html)). El tema es que tenemos que ser muy claros en indicarle a Haskell que la expresión no terminó.
+
+Dos reglas:
+
+-   Si hacemos eso, en general vamos a tener que poner la expresión entre paréntesis
+-   Y todo caso, debemos respetar la identación
+
+Mal:
+
+`f x = max`
+`          x`
+`          1`
+
+Mal:
+
+`f x = (max`
+`           x`
+`1)`
+
+Mal:
+
+`f x = (max x `
+`1)`
+
+Bien (multiples líneas)
+
+`f x = (max`
+`           x`
+`           1)`
+
+Bien (una sola línea)
+
+`f x = max x 1`
