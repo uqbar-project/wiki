@@ -26,3 +26,19 @@ Mal:
 Bien:
 
 `f x = 1`
+
+Poner enters de más entre dos ecuaciones de la misma función
+------------------------------------------------------------
+
+Las ecuaciones de una función deben estar siempre juntas, sin enters de más entre ellas
+
+Mal:
+
+`f 0 = 0`
+
+`f x = x + 1`
+
+Bien:
+
+` f 0 = 0`
+` f x = x + 1`
