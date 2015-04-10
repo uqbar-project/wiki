@@ -91,7 +91,7 @@ Una vez instaladas todas las herramientas, se puede crear un proyecto en esta pl
 
 -   Creamos un proyecto Maven. Desde la consola
 
-`$ mvn archetype:create -DgroupId=ar.edu.demo -DartifactId=demo -DinteractiveMode=false`
+`$ mvn archetype:generate -DgroupId=ar.edu.demo -DartifactId=demo -DinteractiveMode=false`
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
