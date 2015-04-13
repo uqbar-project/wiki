@@ -91,7 +91,7 @@ Entonces:
   
 findall es un predicado que relaciona a una consulta con el conjunto (lista) de sus respuestas.
 
-El otro parámetro me permite indicar cuál de las variables que usé en la consulta es la que me interesa para completar la lista. Volviendo a nuestro ejemplo
+El otro parámetro me permite indicar qué es lo que me interesa para completar la lista. Volviendo a nuestro ejemplo
 
 `cantidadDeHijos(P, Cantidad) :- `
 `    findall(H, padre(P,H), Hijos),`
