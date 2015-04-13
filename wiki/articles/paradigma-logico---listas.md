@@ -78,13 +78,13 @@ Nos falta hacer la magia!
 
 Si tenemos una forma de obtener múltiples respuestas a una consulta (en este caso, todos los H que son respuesta de la consulta padre(P,H) cuando P es por ejemplo homero), y lo que queremos es que todas esas respuestas estén juntas en una lista, hay un predicado en Prolog que hace exactamente eso:
 
-`findall(Elemento,Consulta,Conjunto)`
+`findall(UnIndividuo,Consulta,Conjunto)`
 
-Dónde:
+Donde:
 
--   es una variable de la
+-   normalmente es una variable que se usa en la
 
--   es una lista con todos los Elementos que hacen verdadera a la Consulta
+-   es una lista con todos los individuos que se encontraron al consultar la Consulta
 
 Entonces:
 
