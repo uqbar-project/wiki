@@ -50,8 +50,4 @@ Tiene el mismo resultado que:
 
 En casos como este, el uso de aplicación parcial es más interesante que el uso de la expresión lambda. No sólo hacemos lo mismo con menos código sino que demostramos un mayor entendimiento de los conceptos más fuertes del paradigma.
 
-En ocasiones sucede que no podemos aplicar parcialmente una función ya que el valor que le queremos pasar no es el primero que espera sino otro, por ejemplo si quiero saber si un nombre es exótico, que se cumple si tiene x, k, q o w, podría resolverlo de esta forma:
-
-`esExotico nombre = any (\letra -> elem letra "xkqw") nombre`
-
-En este caso amerita usar una lambda ya que no puede resolverse directamente aplicando parcialmente la función elem.
+Sin embargo hay casos en los cuales [no podemos resolver el problema aplicando parcialmente](aplicacion-parcial-puedo-aplicar-parcialmente-el-segundo-parametro-en-vez-del-primero-.html) la función que queremos usar que sí justifican el uso de una expresión lambda.
