@@ -20,13 +20,13 @@ Una expresión lambda puede recibir más de 1 parámetro separándolos por espac
 `--cuentaLoca es una función que recibe 3 parámetros`
 `cuentaLoca = (\x y z -> x * 2 - y + 10 * z)`
 
-La gracia de poder definir funciones anónimas es que nos permite armar fácilmente una función para usar en el momento, pero si no le damos un nombre a nuestras funciones podríamos perder [abstracciones](abstraccion.html) útiles que podrían luego ser utilizadas en otros puntos de nuestro programa, por lo tanto es importante se criteriosos respecto a si es una buena idea buscar un nombre para nuestra función.
-
-Por lo general, si tengo una forma sencilla de nombrar una determinada lógica que forma parte de una función más grande, lo más probable es que no quiera definir ese pedacito de lógica usando una lambda, sino con una función que se llame como la idea que tenemos en la cabeza. Si no hay un nombre claro asociado a ese pedacito de lógica, lo más probable es que no sea un concepto del dominio que merezca la pena modelar como algo aparte.
-
-Las expresiones lambda son funciones, y como tales pueden combinarse con otras funciones usando [Composición](composicion.html). Una de las ventajas que tienen las lambdas es que los parámetros tienen un nombre y puedo usar ese mismo parámetro tantas veces como quiera dentro de la definición. Si por ejemplo quisiera encontrar a todas las personas de una lista que tengan edad &lt; 20 o edad &gt; 60, yo podría resolverlo de la siguiente forma:
+La gracia de poder definir funciones anónimas es que nos permite armar fácilmente una función para usar en el momento. Como las expresiones lambda son funciones, las mismas pueden combinarse con otras funciones usando [Composición](composicion.html). Una de las ventajas que tienen las lambdas por sobre otros mecanismos de crear nuevas funciones cuando las necesito sin tener que definirlas en otro lado, es que los parámetros tienen un nombre y puedo usar ese mismo parámetro tantas veces como quiera dentro de la definición. Si por ejemplo quisiera encontrar a todas las personas de una lista que tengan edad &lt; 20 o edad &gt; 60, yo podría resolverlo de la siguiente forma:
 
 `> filter ((\e -> e < 20 || e > 60).edad) personas`
+
+Algo importante a tener en cuenta es que si no le damos un nombre a nuestras funciones podríamos perder [abstracciones](abstraccion.html) útiles que podrían luego ser utilizadas en otros puntos de nuestro programa, por lo tanto es importante se criteriosos respecto a si es una buena idea buscar un nombre para nuestra función.
+
+Por lo general, si tengo una forma sencilla de nombrar una determinada lógica que forma parte de una función más grande, lo más probable es que no quiera definir ese pedacito de lógica usando una lambda, sino con una función que se llame como la idea que tenemos en la cabeza. Si no hay un nombre claro asociado a ese pedacito de lógica, lo más probable es que no sea un concepto del dominio que merezca la pena modelar como algo aparte.
 
 Lambdas y Pattern Matching
 --------------------------
