@@ -24,7 +24,8 @@ La gracia de poder definir funciones anónimas es que nos permite armar fácilme
 
 Por lo general, si tengo una forma sencilla de nombrar una determinada lógica que forma parte de una función más grande, lo más probable es que no quiera definir ese pedacito de lógica usando una lambda, sino con una función que se llame como la idea que tenemos en la cabeza. Si no hay un nombre claro asociado a ese pedacito de lógica, lo más probable es que no sea un concepto del dominio que merezca la pena modelar como algo aparte.
 
-*Lambdas y Pattern Matching*
+Lambdas y Pattern Matching
+--------------------------
 
 Algo interesante que se puede hacer con las expresiones lambda es descomponer sus parámetros usando [pattern matching](pattern-matching-en-haskell.html) como cuando definimos funciones normales. Supongamos que dada una lista de alumnos (modelados con tuplas de tipo (String, \[Int\]) quiero obtener la primer nota que se sacó cada uno, se podría resolver de la siguiente forma:
 
@@ -34,7 +35,8 @@ Al usar pattern matching hay que tener en cuenta que si el parámetro que le lle
 
 Para este ejemplo no nos interesa contemplar a los alumnos sin notas porque no tenemos una buena respuesta para dar en ese escenario, con lo cual la solución sería correcta.
 
-*Uso de lambdas en vez de aplicación parcial*
+Uso de lambdas en vez de aplicación parcial
+-------------------------------------------
 
 Uno de los conceptos fuertes que existen en el paradigma funcional es el de [Aplicación Parcial](aplicacion-parcial.html), que nos permite crear una función nueva a partir de otra existente cuando nos hace falta para combinarla con otras funciones mediante composición o simplemente pasarla por parámetro para que otra función la evalúe cuando corresponda.
 
