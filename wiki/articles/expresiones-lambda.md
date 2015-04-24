@@ -24,6 +24,10 @@ La gracia de poder definir funciones anónimas es que nos permite armar fácilme
 
 Por lo general, si tengo una forma sencilla de nombrar una determinada lógica que forma parte de una función más grande, lo más probable es que no quiera definir ese pedacito de lógica usando una lambda, sino con una función que se llame como la idea que tenemos en la cabeza. Si no hay un nombre claro asociado a ese pedacito de lógica, lo más probable es que no sea un concepto del dominio que merezca la pena modelar como algo aparte.
 
+Las expresiones lambda son funciones, y como tales pueden combinarse con otras funciones usando [Composición](composicion.html). Una de las ventajas que tienen las lambdas es que los parámetros tienen un nombre y puedo usar ese mismo parámetro tantas veces como quiera dentro de la definición. Si por ejemplo quisiera encontrar a todas las personas de una lista que tengan edad &lt; 20 o edad &gt; 60, yo podría resolverlo de la siguiente forma:
+
+`> filter ((\e -> e < 20 || e > 60).edad) personas`
+
 Lambdas y Pattern Matching
 --------------------------
 
