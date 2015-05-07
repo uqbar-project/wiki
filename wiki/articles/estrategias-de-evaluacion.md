@@ -366,6 +366,16 @@ También sirve para hacer listas con alguna condición entre dos de sus elemento
 ` > [1,3..]`
 `   [1,3,5,7,9,11,.........`
 
+Entonces si queremos obtener los primeros 24 múltiplos de 13 podemos hacerlo de esta forma:
+
+` > [13,26..24*13]`
+`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
+
+Pero también podemos resolverlo con una lista infinita usando take
+
+` > take 24 [13,26..]`
+`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
+
 Ejemplos
 ========
 
