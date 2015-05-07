@@ -373,7 +373,7 @@ Dada la siguiente definición de take
 
 ` take 0 _ = []`
 ` take _ [] = []`
-` take (n+1) (x:xs) = x : (take n xs)`
+` take n (x:xs) = x : (take (n-1) xs)`
 
 ` take 3 [1..]`
 
@@ -424,7 +424,7 @@ Vamos a otro ejemplo
 Dada la definición de (!!)
 
 `(!!) 0 (x:_) = x`
-`(!!) (n+1) (_:xs) = (!!) n xs`
+`(!!) n (_:xs) = (!!) (n-1) xs`
 
 `(!!) 2 [4+5,2/0,3*2]`
 
@@ -444,23 +444,14 @@ Dada la definición de (!!)
 
 `6`
 
+Supongamos que hacemos esta consulta:
+
 ` > head (filter (3<) [1..])`
-`   4`
 
-Más ejemplos heavies
+Si bien la expresión `filter` `(3<)` `[1..]` no termina (seguiría buscando cuáles son mayores a 3 infinitamente), como lo que primero se evalúa es el head y se difiere la ejecución del filtrado, la ejecución va a terminar en cuanto el filter encuentre su primer elemento que pertenezca a la solución que es el 4.
 
-` primos = achurar [2..]`
-``  achurar (x:xs) = x : achurar [e | e <- xs , e `mod` x \= 0] ``
+Es importante notar que en este otro caso:
 
-` > primos`
-`  [1,3,5,7,11,13...........`
+` > head (filter (<0) [1..])`
 
---Si queremos obtener los primeros 19 múltiplos de 13
-
-` > [13,26..24*13]`
-`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
-
--- O bien
-
-` > take 24 [13,26..]`
-`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
+La evaluación nunca termina por más que se use head que era lo que antes acotaba la ejecución, ya que nunca se va a encontrar el primer elemento que cumpla la condición a diferencia del caso anterior.
