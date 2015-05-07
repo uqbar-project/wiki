@@ -371,7 +371,7 @@ Entonces si queremos obtener los primeros 24 múltiplos de 13 podemos hacerlo de
 ` > [13,26..24*13]`
 `   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
 
-Pero también podemos resolverlo con una lista infinita usando take
+Pero también podemos resolverlo con una lista infinita usando take como veremos a continuación gracias a la evaluación perezosa.
 
 ` > take 24 [13,26..]`
 `   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
