@@ -228,7 +228,7 @@ Lazy Evaluation
 ===============
 
 Visión técnica
-==============
+--------------
 
 Si tenemos la siguiente definición
 
@@ -295,7 +295,7 @@ Para evitar este quilombo en vez de tener la expresión (1+2) vamos a tener un "
 Cualquier reducción que se haga en una expresión se va a conocer automáticamente por los punteros a dicha expresión. Al uso de punteros para compartir expresiones que representan la mismo parámetro lo vamos a llamar Sharing. Al uso de la estrategia call-by-name más el Sharing lo vamos a llamar Lazy Evaluation (esta es la estrategia que usa Haskell). El Sharing nos asegura que usar Lazy Evaluation nunca requiera más pasos que la estrategia call-by-value.
 
 Visión operativa
-================
+----------------
 
 A efectos de resumir lo que vimos hasta ahora vamos a entender lo siguiente ...
 
@@ -304,7 +304,7 @@ A efectos de resumir lo que vimos hasta ahora vamos a entender lo siguiente ...
 A la estrategia call-by-value (y sus variantes) también se las conoce como Eager Evaluation. **Eager Evaluation**: con esta estrategia los parámetros tienen que resolverse antes de aplicar la función. También conocida como **evaluación ansiosa**.
 
 Estructuras infinitas
-=====================
+---------------------
 
 Pensemos en la siguiente definición
 
@@ -348,7 +348,7 @@ Siendo head (x:\_) = x y la expresión head unos
 Con este ejemplo podemos ver que unos no es una lista infinita sino potencialmente infinita, si aplicamos sobre ella funciones que no la fuerzan a evaluarse por completo la computación termina (eso sonó apocalíptico). La potencia de Lazy Evaluation está en que la expresión unos se evalúa solo lo necesario para que pueda usarla la función que la recibe como parámetro.
 
 Listas infinitas
-================
+----------------
 
 Ya vimos la lista de unos que es "infinita", ahora veamos como hacer una lista que tenga todos los números naturales
 
