@@ -84,7 +84,7 @@ Si empezamos a evaluar de derecha a izquierda
 Como se puede observar, si evaluamos las expresiones con distintas estrategias obtenemos resultados distintos; esto sucede porque las operaciones involucradas no tienen [ transparencia referencial](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html) en este caso particular debido a la introducción de una [ asignación destructiva](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html).
 
 Estrategias básicas
--------------------
+===================
 
 A una expresión que consta de una función aplicada a uno o más parámetros y que puede ser "reducida" aplicando dicha función la vamos a llamar Redex (Reducible Expression). Se le dice reducción al hecho de aplicar la función no necesariamente vamos a obtener una expresión "más corta" como veremos más adelante. Consideremos la función mult que tiene como dominio una tupla de 2 números
 
@@ -99,7 +99,7 @@ Si queremos reducir la expresión mult (1+2,2+3) está expresión contiene 3 red
 Si queremos evaluar la expresión ¿qué estrategia usamos?
 
 De adentro hacia afuera
-=======================
+-----------------------
 
 También conocida como call-by-value
 
@@ -126,7 +126,7 @@ Una de las estrategias más comunes es comenzar desde adentro hacia afuera (inne
 Esta estrategia me asegura que los parámetros de una función están completamente evaluados antes de que la función sea aplicada. Por eso se dice que los parámetros se pasan por valor.
 
 De afuera hacia adentro
-=======================
+-----------------------
 
 También conocida como call-by-name
 
@@ -156,7 +156,7 @@ Usando esta estrategia las funciones se aplican antes que los parámetros sean e
 -   Pattern-Matching (sobre listas, tuplas, etc.)
 
 Evaluaciones que no terminan
-----------------------------
+============================
 
 Tengan en cuenta la siguiente definición
 
@@ -225,7 +225,7 @@ De forma más general: Si existe alguna secuencia de evaluación que haga termin
 Corolario: si te es mucho muy importante que una expresión termine la estrategia que querés usar es call-by-name
 
 Lazy Evaluation
----------------
+===============
 
 Visión técnica
 ==============
