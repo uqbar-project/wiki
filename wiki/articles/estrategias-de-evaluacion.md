@@ -81,7 +81,7 @@ Si empezamos a evaluar de derecha a izquierda
 
 ` 2`
 
-Como se puede observar, si evaluamos las expresiones con distintas estrategias obtenemos resultados distintos; esto sucede porque las operaciones involucradas no tienen transparencia referencial en este caso particular debido a la introducción de una asignación destructiva (más sobre esto en la próxima clase teórica).
+Como se puede observar, si evaluamos las expresiones con distintas estrategias obtenemos resultados distintos; esto sucede porque las operaciones involucradas no tienen [ transparencia referencial](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html) en este caso particular debido a la introducción de una [ asignación destructiva](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html).
 
 Estrategias básicas
 -------------------
