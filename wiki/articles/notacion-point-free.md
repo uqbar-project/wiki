@@ -1,8 +1,16 @@
-La posibilidad de definir funciones en términos de otras funciones (ya sea utilizando [Aplicación Parcial](aplicacion-parcial.html) y/o [Composición](composicion.html) de funciones) se conoce como notación **point-free**, y trae aparejado a veces la dificultad para entender cuántos parámetros espera esa función que se está definiendo.
+A veces, como consecuencia de definir solamente en términos de [Aplicación Parcial](aplicacion-parcial.html) y/o [Composición](composicion.html) de funciones), escribir explícitamente los parámetros de la misma se vuelve redundante.
 
-Por ejemplo la función es múltiplo así definida tiene dos parámetros:
+Por ejemplo, se podría escribir
+
+`` esMultiploDe a b = ((==0).( `mod` a)) b  ``
+
+Sin embargo, lo que está dentro del paréntesis principal ya es una función que hace lo que queremos, con el tipo adecuado. Por lo que puede reescribirse de la siguiente manera:
 
 `` esMultiploDe a = (==0).( `mod` a) ``
+
+Lo cual se conoce como notación **point-free**, la cual es interesante porque pone nos permite concentrarnos en la combinación de las funciones en lugar del pasaje de paramétro, subiendo así nuestro nivel de abstracción.
+
+Al principio puede generar cierta confusión sobre la pregunta ¿cuantos parámetros recibe la función?. Así que analicemos algunos casos concretos.
 
 Una reglita básica
 ------------------
