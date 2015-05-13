@@ -57,9 +57,22 @@ Miremos otras consultas:
 `?- 0 is 0 + 1.`
 `No`
 
-### Error: Usar is para igualar variables
+### Error: Usar is para verificar igualdad de valores
 
 El is es **sólo para operaciones aritméticas**. Si bien funciona, lo siguiente es un error conceptual:
+
+`edad(juan,Edad) :- `
+`             Edad is 10.`
+
+La manera correcta de hacerlo es aprovechando que al hacer pattern matching, prolog *verifica que el valor sea ese*, sin usar el igual ó el is:
+
+`edad(juan,10).`
+
+¡Y listo!
+
+### Error: Usar is para igualar variables
+
+Esto es el mismo caso que el error anterior. El is es **sólo para operaciones aritméticas**. Si bien funciona, lo siguiente es un error conceptual:
 
 `hermano(PersonaA,PersonaB):-`
 `        padre(PadreA,PersonaA),`
