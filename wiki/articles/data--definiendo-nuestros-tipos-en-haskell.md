@@ -27,7 +27,7 @@ Hasta ahora cuando teníamos que representar un valor, compuesto por otros valor
 Si queremos representar un alumno por su nombre (un String) y sus notas (una lista de Int = \[Int\])
 
 `cursoK9 = [("Federico",[2,3]),("Líder",[10,10,10,10,10]),("Germain",[8,9,10])]`
-`empezaronMal unosAlumnos = filter ((4>).head.notasAlumno) unosAlumnos`
+`empezoMal unAlumno = 4 > head (notasAlumno unoAlumno)`
 
 Si queremos representar una película por su título (unString) y los puntajes que le ponen los críticos en imdb (una lista de Int = \[Int\])
 
@@ -50,8 +50,8 @@ Nada me impide consultar:
 `> puntajesPelicula ("Líder",[10,10,10,10,10])`
 `[10,10,10,10,10]`
 
-`> empezaronMal pelis`
-`[("Pedornia", [0,0,-3,-666]), ("Fight Club", [3,8,8,9,9,10])]`
+`> empezoMal (head pelis)`
+`True`
 
 Todo esto es posible porque si miramos los [tipos que infiere Haskell](inferencia-de-tipos.html) no existe diferencia entre una película y un alumno, para Haskell los alumnos y películas son sólo tuplas de 2 elementos.
 
@@ -79,9 +79,9 @@ Ahora, para obtener un nuevo alumno o una nueva película, tenemos que usar el "
 `cursoK9 = [Alumno "Federico" [2,3], Alumno "Líder" [10,10,10,10,10], Alumno "Germain" [8,9,10]]`
 
 `-- No cambia`
-`empezaronMal unosAlumnos = filter ((4>).head.notasAlumno) unosAlumnos`
+`empezoMal unAlumno = 4 > head (notasAlumno unoAlumno)`
 
-pelis = \[Pelicula "Pedornia" \[0,0,-3,-666\], Pelicula "Pulp Fiction" \[9,10,9\], Pelicula "Fight Club" \[8,8,8,9,9,10\]\]
+`pelis = [Pelicula "Pedornia" [0,0,-3,-666], Pelicula "Pulp Fiction" [9,10,9], Pelicula "Fight Club" [8,8,8,9,9,10]]`
 
 `-- Ahora estas funciones usan Pattern-Matching!`
 `nombreAlumno (Alumno nombre notas) = nombre `
@@ -99,7 +99,7 @@ Es importante remarcar que al hacer esto un alumno o una película **YA NO ES UN
 `puntajesPelicula :: TipoPelicula -> [Int]`
 
 `cursoK9 :: [ TipoAlumno ]`
-`empezaronMal :: [ TipoAlumno ] -> [ TipoAlumno ]`
+`empezoMal :: TipoAlumno -> Bool`
 
 `pelis :: [ TipoPelicula ]`
 
@@ -119,17 +119,17 @@ Ejemplos:
 `Error (puntajesPelicula espera un TipoPelicula y fede es de TipoAlumno)`
 `> puntajesPelicula pulp`
 `[9,10,9]`
-`> empezaronMal cursoK9`
-`[Alumno "Federico" [2,3]]`
-`> empezaronMal pelis`
-`Error (empezaronMal espera una [TipoAlumno] y pelis es una [TipoPelicula])`
+`> empezoMal fede`
+`True`
+`> empezoMal (head pelis)`
+`Error (empezoMal espera TipoAlumno y el primer elemento de pelis es TipoPelicula)`
 
 Deriving
 --------
 
 Es muy común querer comparar por igualdad y mostrar por pantalla un valor que tiene un tipo definido por nosotros.
 
-`> empezaronMal cursoK9`
+`> head cursoK9`
 `Error (el TipoAlumno no tiene la restricción `[`Show`](tipos-de-haskell-la-restriccion-show.html)`)`
 
 Para que esto funcione deberíamos:
@@ -144,8 +144,8 @@ En vez de hacer esto a mano, y debido a que los elementos que forman un Alumno S
 
 Con este agregado podemos hacer
 
-`> empezaronMal cursoK9`
-`[Alumno "Federico" [2,3]]`
+`> head cursoK9`
+`Alumno "Federico" [2,3]`
 
 Ahora sí hacemos lo siguiente
 
