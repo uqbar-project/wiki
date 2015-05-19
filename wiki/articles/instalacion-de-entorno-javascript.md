@@ -40,7 +40,9 @@ Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico.
 Manejo de dependencias, automatización de tareas
 ------------------------------------------------
 
-Para estas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript. Lo descargás desde <https://nodejs.org/download/>. En Linux podés hacer sudo apt-get install nodejs, o seguir las instrucciones que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
+Para estas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript. Lo descargás desde <https://nodejs.org/download/>.
+
+En Linux podés hacer sudo apt-get install nodejs, o seguir las instrucciones que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
 
 Framework de testeo unitario
 ----------------------------
