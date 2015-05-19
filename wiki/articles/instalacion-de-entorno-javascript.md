@@ -3,7 +3,7 @@ Entorno de desarrollo
 
 Si te sentís cómo con Eclipse podés incorporarle los plugins de javascript. De todas maneras no tenés las capacidades de refactor, detección de errores y las funcionalidades que este IDE trae para el entorno de una JDK (especialmente Java). A continuación te dejamos todas las opciones posibles:
 
--   Sublime3 (opción estándar recomendada)
+-   Sublime 3 (opción estándar recomendada)
 -   Brackets: <http://brackets.io/>
 -   Atom.io: <https://atom.io/>
 -   Web Storm: es una IDE paga aunque podés pedir licencias educativas <https://www.jetbrains.com/webstorm/>
