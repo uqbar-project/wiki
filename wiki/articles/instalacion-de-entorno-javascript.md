@@ -33,7 +33,7 @@ Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico.
 -   Ir a "Help-&gt;Install New Software..."
 -   Buscar en el combo la URL de nuestra distribución de eclipse (Por ejemplo con eclipse Juno es "<http://download.eclipse.org/releases/juno>")
 -   Buscar de entre todo el software los items:
+    -   "Eclipse Web Developer Tool"
+    -   "Eclipse Xml Editors and Tool", y
+    -   "JavaScript Development Tools"
 
-`* "Eclipse Web Developer Tool"`
-`* "Eclipse Xml Editors and Tool", y `
-`* "JavaScript Development Tools"`
