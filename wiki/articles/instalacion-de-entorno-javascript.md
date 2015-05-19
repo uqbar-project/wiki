@@ -28,7 +28,7 @@ Estos 3 paquetes marcan las líneas donde hay errores con un puntito y subrayan 
 
 ### Eclipse
 
-Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico. Luego:
+Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico según se explica en la página [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html). Luego:
 
 -   Ir a "Help-&gt;Install New Software..."
 -   Buscar en el combo la URL de nuestra distribución de eclipse (Por ejemplo con eclipse Juno es "<http://download.eclipse.org/releases/juno>")
