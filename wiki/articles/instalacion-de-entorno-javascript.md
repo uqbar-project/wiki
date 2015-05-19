@@ -12,8 +12,9 @@ Si te sentís cómo con Eclipse podés incorporarle los plugins de javascript. D
 ### Sublime
 
 -   Se instala desde <http://www.sublimetext.com/3>
+-   Instalá el Package Control, la herramienta que necesitás para instalar los plugins. Tenés un tutorial que explica cómo bajarlo desde Windows: <https://www.youtube.com/watch?v=sUvBxC1GG8A>
 
-Luego tenés estos packages controls recomendados:
+Luego te recomendamos que descargues estos packages controls:
 
 -   SublimeLinter
 -   SublimeLinter-jshint
