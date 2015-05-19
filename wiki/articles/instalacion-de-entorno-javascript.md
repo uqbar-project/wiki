@@ -26,8 +26,7 @@ Estos 3 paquetes marcan las líneas donde hay errores con un puntito y subrayan 
 -   **Color Highlighter:** podés ver de qué color quedan los colores que ponés codificados en el código (por nombre, rgb, rgba, etc.)
 -   **DocBlockr:** si empezás un comentario, te lo sigue en la siguiente línea si le das enter (podés evitarlo con shift + enter)
 
-Eclipse
--------
+### Eclipse
 
 Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico. Luego:
 
@@ -38,3 +37,16 @@ Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico.
     -   "Eclipse Xml Editors and Tool", y
     -   "JavaScript Development Tools"
 
+Manejo de dependencias, automatización de tareas
+------------------------------------------------
+
+Para estas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript. Lo descargás desde <https://nodejs.org/download/>. En Linux podés hacer sudo apt-get install nodejs, o seguir las instrucciones que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
+
+Framework de testeo unitario
+----------------------------
+
+Podés descargarte Mocha.js como framework de testeo unitario para tus proyectos, haciendo
+
+`$ npm install -g mocha`
+
+Para más información entrá a <http://mochajs.org/>
