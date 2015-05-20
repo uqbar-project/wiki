@@ -42,7 +42,7 @@ Para éstas y otras tareas vamos a utilizar la plataforma Node, que también es 
 
 En Linux podés hacer
 
-`sudo apt-get install nodejs`
+`$ sudo apt-get install nodejs`
 
 o seguir las instrucciones oficiales que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
 
