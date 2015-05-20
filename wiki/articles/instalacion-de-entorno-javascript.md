@@ -53,4 +53,6 @@ Podés descargarte Mocha.js como framework de testeo unitario para tus proyectos
 
 `$ npm install -g mocha`
 
+npm es node package manager, por lo que tenés que haber instalado node primero.
+
 Para más información entrá a <http://mochajs.org/>
