@@ -13,6 +13,8 @@ Instalación
 
 como sugiere <https://www.npmjs.com/package/angular>
 
+(para eso recordá que tenés que haber instalado node)
+
 Integración con Sublime 3
 -------------------------
 
