@@ -11,7 +11,7 @@ Instalación
 
 `$ npm install angular`
 
-como cuenta <https://www.npmjs.com/package/angular>
+como sugiere <https://www.npmjs.com/package/angular>
 
 Integración con Sublime 3
 -------------------------
