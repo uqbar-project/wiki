@@ -1,17 +1,15 @@
 Entorno de desarrollo
 ---------------------
 
-Si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript. De todas maneras no tenés las capacidades de refactor, detección de errores y las funcionalidades que este IDE trae para el entorno de una JDK (especialmente Java). A continuación te dejamos todas las opciones posibles:
-
--   Sublime 3 (opción estándar recomendada)
--   Web Storm: es una IDE paga aunque podés pedir licencias educativas <https://www.jetbrains.com/webstorm/>
--   Eclipse + plugins
+-   **Sublime 3** (opción recomendada): *no es un IDE* y vas a extrañar los menúes de refactor, los imports, y muchas cosas que venían con Eclipse. Pero es bastante liviano, tiene funciones de autocompletado y más abajo te comentamos que plugins (o package controls) se le pueden instalar para que tu estadía en javascript sea más placentera.
+-   **Web Storm**: posiblemente sea el mejor IDE al momento, tiene la contra de ser una herramienta paga aunque podés pedir licencias educativas <https://www.jetbrains.com/webstorm/>
+-   Eclipse + plugins: si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript (más abajo te explicamos cómo). De todas maneras no tenés demasiadas funcionalidades dentro de este entorno, olvidate de los refactors inteligentes que tenías si trabajabas en Java.
 -   Brackets: <http://brackets.io/>
 -   Atom.io: <https://atom.io/>
 
 ### Sublime
 
--   Se instala desde <http://www.sublimetext.com/3>
+-   <http://www.sublimetext.com/3> es la página principal
 -   Instalá el Package Control, la herramienta que necesitás para instalar los plugins. Tenés un tutorial que explica cómo bajarlo desde Windows: <https://www.youtube.com/watch?v=sUvBxC1GG8A>
 
 Luego te recomendamos que descargues estos packages controls:
