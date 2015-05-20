@@ -1,11 +1,11 @@
 Entorno de desarrollo
 ---------------------
 
--   **Sublime 3** (opción recomendada): *no es un IDE* y vas a extrañar los menúes de refactor, los imports, y muchas cosas que venían con Eclipse. Pero es bastante liviano, tiene funciones de autocompletado y más abajo te comentamos que plugins (o package controls) se le pueden instalar para que tu estadía en javascript sea más placentera.
+-   **Sublime 3** (opción recomendada): *no es un IDE* y vas a extrañar los menúes de refactor, los imports, y muchas cosas que venían con Eclipse. Pero es bastante liviano, tiene funciones de autocompletado y más abajo te comentamos qué plugins (o package controls) se le pueden instalar para que tu estadía en javascript sea más placentera.
 -   **Web Storm**: posiblemente sea el mejor IDE al momento, tiene la contra de ser una herramienta paga aunque podés pedir licencias educativas <https://www.jetbrains.com/webstorm/>
--   Eclipse + plugins: si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript (más abajo te explicamos cómo). De todas maneras no tenés demasiadas funcionalidades dentro de este entorno, olvidate de los refactors inteligentes que tenías si trabajabas en Java.
--   Brackets: <http://brackets.io/>
--   Atom.io: <https://atom.io/>
+-   **Eclipse + plugins**: si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript (más abajo te explicamos cómo). De todas maneras no tenés demasiadas funcionalidades dentro de este entorno, olvidate de los refactors inteligentes que tenías si trabajabas en Java.
+-   **Brackets**: <http://brackets.io/>
+-   **Atom.io**: <https://atom.io/>
 
 ### Sublime
 
