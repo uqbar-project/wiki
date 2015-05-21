@@ -1,3 +1,25 @@
+Manejo de dependencias, automatización de tareas
+------------------------------------------------
+
+Para éstas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript. Lo descargás desde <https://nodejs.org/download/>.
+
+En Linux podés hacer
+
+`$ sudo apt-get install nodejs`
+
+o seguir las instrucciones oficiales que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
+
+Framework de testeo unitario
+----------------------------
+
+Podés descargarte Mocha.js como framework de testeo unitario para tus proyectos, haciendo
+
+`$ npm install -g mocha`
+
+npm es node package manager, por lo que tenés que haber instalado node primero.
+
+Para más información entrá a <http://mochajs.org/>
+
 Entorno de desarrollo
 ---------------------
 
@@ -39,24 +61,3 @@ Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico 
     -   "Eclipse Xml Editors and Tool", y
     -   "JavaScript Development Tools"
 
-Manejo de dependencias, automatización de tareas
-------------------------------------------------
-
-Para éstas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript. Lo descargás desde <https://nodejs.org/download/>.
-
-En Linux podés hacer
-
-`$ sudo apt-get install nodejs`
-
-o seguir las instrucciones oficiales que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
-
-Framework de testeo unitario
-----------------------------
-
-Podés descargarte Mocha.js como framework de testeo unitario para tus proyectos, haciendo
-
-`$ npm install -g mocha`
-
-npm es node package manager, por lo que tenés que haber instalado node primero.
-
-Para más información entrá a <http://mochajs.org/>
