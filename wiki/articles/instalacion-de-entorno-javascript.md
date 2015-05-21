@@ -12,6 +12,10 @@ Entorno de desarrollo
 -   <http://www.sublimetext.com/3> es la página principal donde te descargás el producto
 -   Instalá el Package Control, la herramienta que necesitás para instalar los plugins. Tenés un tutorial que explica cómo bajarlo desde Windows: <https://www.youtube.com/watch?v=sUvBxC1GG8A>
 
+Hay que descargarse el Linter vía npm:
+
+`$ npm install jshint`
+
 Luego te recomendamos que descargues estos packages controls:
 
 -   SublimeLinter
