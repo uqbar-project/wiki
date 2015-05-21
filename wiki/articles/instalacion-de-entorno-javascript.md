@@ -36,7 +36,7 @@ Entorno de desarrollo
 
 Hay que descargarse el Linter vía npm:
 
-`$ npm install jshint`
+`$ npm install -g jshint`
 
 Luego te recomendamos que descargues estos packages controls:
 
