@@ -65,32 +65,12 @@ Recuerden que en Haskell ustedes pueden obtener el tipo de cualquier expresión 
 `> :t not 3`
 `Error`
 
-Un problema de inferencia en Haskell
-------------------------------------
+Problemas de inferencia en Haskell
+----------------------------------
 
-Estos días varios estuvieron experimentando un error como este:
+Si bien Haskell puede inferir correctamente el tipo de las funciones que definimos casi siempre, existen casos en los cuales necesita un poco de ayuda de parte del programador. En caso de que eso pase, conviene explicitar el tipo de nuestra función además de su definición en el .hs.
 
-``    Ambiguous type variable `a' in the constraint: ``
-``      `Eq a' ``
-``        arising from a use of `sinDuplicados' at integrador.hs:38:14-26 ``
-`   Possible cause: the monomorphism restriction applied to the following:`
-`     repetidos :: [a] -> [a] (bound at integrador.hs:38:0)`
+Por ejemplo, si estamos haciendo una función f que recibe una lista de a y retorna una lista de a, podemos hacer:
 
-no?
-
-Bueno, ese error se debe a que Haskell no puede, en esa función en particular por la que estalla, inferir el tipo.
-
-Soluciones posibles:
-
-1) En vez de escribir nuestra función como
-
-`  f = g.h`
-
-hacer
-
-`  f x = (g.h) x`
-
-2) explicitar el tipo de nuestra función, como por ejemplo:
-
-`   sarasa :: (Eq a) => [a] -> [a]`
-`   sarasa = algo . otroAlgo`
+`f :: [a] -> [a]`
+`f lista = `<lo que sea que hay que hacer con la lista para retornar otra>
