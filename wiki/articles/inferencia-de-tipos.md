@@ -30,11 +30,13 @@ Como por una rama retornamos un Int (1 :: Int) y por la otra retornamos un Bool 
 
 Sin embargo, que una expresión tenga tipo no significa que sea una expresión libre de errores.
 
-head :: \[ a \] -&gt; a head \[\] :: a
+`head :: [ a ] -> a`
+`head [] :: a`
 
 Pero a pesar de esto, si evaluamos la expresión
 
-&gt; head \[\] Error
+`> head []`
+`Error`
 
 Como la inferencia de tipos es un proceso ANTERIOR a la evaluación, los programas que hacemos en Haskell son [Type Safe](http://en.wikipedia.org/wiki/Type_safety)
 
