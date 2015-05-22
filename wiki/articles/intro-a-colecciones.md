@@ -4,7 +4,7 @@ Esto nos permite modelar conjuntos o agregados de cosas, que son muy comunes en 
 
 A primera vista una colección es un conjunto de objetos. Si la vemos con más precisión nos damos cuenta que es más preciso pensarla como un conjunto de referencias: los elementos no están adentro de la colección, sino que la colección los conoce. A su vez, como todo en Smalltalk es un objeto, podemos deducir que una colección también es un objeto.
 
-También sabemos que en Smalltalk todo objeto es instancia de una clase, entonces va a haber una clase Collection. En realidad hay toda una jerarquía con [distintos “sabores”](sabores-de-colecciones.html), distintos tipos de colecciones que nos van a servir para distintos fines.
+No hay un único tipo de colección, hay distintos [sabores de colecciones](sabores-de-colecciones.html) que nos van a servir para distintos fines, sin embargo la mayoría de las colecciones entiende un conjunto grande de [ Mensajes de colecciones](mensajes-en-comun.html), o sea, son polimórficas :) Sólo van a diferir en algunos mensajes particulares debido a la naturaleza de la colección.
 
 ¿Qué podemos hacer con una colección?
 -------------------------------------
@@ -13,7 +13,7 @@ Para tratar de responder esta pregunta no es necesario estar familiarizado con l
 
 Entonces ¿que haríamos nosotros con una colección? Pensemos en una colección de estampillas. Podemos:
 
--   Mirarlas -&gt; recorrer la colección
+-   Mirarlas -&gt; recorrer la colección y hacer algo con cada elemento
 -   Encuadernarlas por fecha -&gt; ordenar la colección
 -   Conseguir nuevas estampillas -&gt; agregar elementos a la colección
 -   Regalar una estampilla -&gt; quitar elementos de la colección.
@@ -26,35 +26,23 @@ Mientras vamos de góndola a góndola del super vamos agregándole elementos (re
 
 ¿Ahora, como podemos modelar todas estas situaciones con objetos usando Smalltalk?... ¡Enviando mensajes a colecciones! Recordemos que en el paradigma de objetos todo programa es un conjunto de objetos enviándose mensajes para concretar un objetivo en común. Bien, en este caso los objetos serán las distintas colecciones y sus elementos. Los mensajes que puede recibir una colección serán, entre otros, los que mencionamos para la colección de estampillas, dándoles un toque smalltalkero ;-)
 
-Un ejemplo rápido: La primer clase que vamos a usar y que implementa la idea de colección se llama Set. Entonces, para crear una colección y asignarla a una variable, escribiremos
+Un ejemplo rápido: El primer tipo de colección que vamos a usar se llama Set. Entonces, para crear una colección y asignarla a una variable, escribiremos
 
-`coleccionEstampillas := Set new. `
+`coleccionEstampillas := Set new.  (disclaimer, en Ozono crear un nuevo conjunto desde Referencias para usarlo directo en el workspace)`
 
-Ahora definamos tres nuevas estampillas y agreguémoslas a la colección, enviándole el mensaje add:. Defino una cuarta estampilla que no agrego.
+Supongamos que tenemos 4 objetos distintos que son estampillas (nos interesa que nos sepan decir su origen y su superficie, no importa cómo lo hacen), agreguemos algunas a la colección enviándole el mensaje add:.
 
-`pilla := Estampilla new. `
-`pilla origen: 'Brasil'. `
-`pilla alto: 6 ancho: 3. `
-`pilla2 := Estampilla new. `
-`pilla2 origen: 'Alemania'. `
-`pilla2 alto: 4 ancho: 2. `
-`pilla3 := Estampilla new. `
-`pilla3 origen: 'Brasil'. `
-`pilla3 alto: 5 ancho: 3. `
-`pilla4 := Estampilla new. `
-`pilla4 origen: 'Brasil'. `
-`pilla4 alto: 3 ancho: 1. `
-`coleccionEstampillas add: pilla. `
-`coleccionEstampillas add: pilla2. `
-`coleccionEstampillas add: pilla3. `
+`coleccionEstampillas add: estampillaBrasileraGrande . `
+`coleccionEstampillas add: estampillaAlemana . `
+`coleccionEstampillas add: estampillaBrasileraMediana . `
 
 A esta colección ya le puedo hacer algunas preguntas
 
 `coleccionEstampillas size. "devuelve 3"`
-`coleccionEstampillas includes: pilla2. "devuelve true"`
-`coleccionEstampillas includes: pilla4. "devuelve false"`
+`coleccionEstampillas includes: estampillaAlemana . "devuelve true"`
+`coleccionEstampillas includes: estampillaBrasileraChica . "devuelve false"`
 
-Claro que para que la colección me sea realmente útil, me debe permitir interactuar con sus elementos, poder hablarle (p.ej.) a pilla2 a través de la colección. Antes de ver cómo hacer esto, clarifiquemos un poco la relación entre una colección y sus elementos.
+Claro que para que la colección me sea realmente útil, me debe permitir interactuar con sus elementos, poder hablarle (p.ej.) a estampillaAlemana a través de la colección. Antes de ver cómo hacer esto, clarifiquemos un poco la relación entre una colección y sus elementos.
 
 Colecciones y referencias
 -------------------------
@@ -65,54 +53,41 @@ Los elementos de una colección son objetos como cualesquiera otros, al agregarl
 
 En el ejemplo anterior, algunas de las estampillas que creamos son elementos de la colección, y además están referenciadas por variables. Gráficamente tenemos: ![](Pdep-colecciones-1.PNG "fig:Pdep-colecciones-1.PNG")
 
-Tres aclaraciones sobre el gráfico:
+Si se están preguntando ¿en qué orden “están” las estampillas en el Set? Un Set no mantiene sus elementos en un orden determinado, más adelante veremos que hay distintos “sabores” de colecciones, algunos mantienen orden y otros no. En este momento, no es lo que nos interesa.
 
-1. por una cuestión de espacio detallamos el estado interno sólo para una estampilla, está claro que todas las estampillas conocen a un String que representa su origen y a un Point que representa su tamaño.
+Ahora agreguemos un objeto más: pedro, el coleccionista, que sabe cuál es su estampilla favorita:
 
-2. la clase Point sí existe en Dolphin (y en todos, o la gran mayoría, de los ambiente Smalltalk) y sirve para representar p.ej. puntos en coordenadas de dos dimensiones o superficies rectangulares.
-
-3. ¿en qué orden “están” las estampillas en el Set? Un Set no mantiene sus elementos en un orden determinado, más adelante veremos que hay distintos “sabores” de colecciones, algunos mantienen orden y otros no.
-
-Ahora agreguemos un objeto más
-
-`pedro := Coleccionista new. `
-`pedro estampillaPreferida: pilla3. `
+`pedro estampillaPreferida: estampillaBrasileraMediana. `
 
 El ambiente queda así:
 
-![](Pdep-colecciones-2.PNG "fig:Pdep-colecciones-2.PNG") (omitimos el nombre de la variable del coleccionista también por cuestiones de espacio)
+![](Pdep-colecciones-2.PNG "Pdep-colecciones-2.PNG")
 
 Ahora hay un objeto que tiene 3 referencias:
 
-1. es el objeto referenciado por la variable pilla3
+1. es el objeto referenciado por la variable estampillaBrasileraMediana
 
 2. es un elemento del Set
 
-3. es la estampilla preferida del Coleccionista
+3. es la estampilla preferida de pedro
 
-Ya podemos ver un poco más en detalle la relación entre una colección y sus elementos. La colección maneja referencias a los elementos que le voy agregando (p.ej. enviándole el mensaje add: ), análogas a las referencias de las variables de instancia de otros objetos. Hay dos diferencias entre las referencias que mantiene un Set y las que mantiene p.ej. una Estampilla:
+Ya podemos ver un poco más en detalle la relación entre una colección y sus elementos. La colección maneja referencias a los elementos que le voy agregando (p.ej. enviándole el mensaje add: ), análogas a las referencias de las variables de instancia de otros objetos. Hay dos diferencias entre las referencias que mantiene una colección y las que mantienen nuestros objetos p.ej. pedro:
 
--   Cada referencia de la Estampilla tiene un nombre, que es el nombre de la variable de instancia; las del Set son anónimas.
--   Cada estampilla tiene una cantidad fija de referencias (son siempre 2), un Set puede tener una cantidad arbitraria, que crece a medida que le agrego elementos al Set.
+-   Las referencia que usan nuestros objetos tienen un nombre, que es el nombre que luego usará para hablarle al objeto referenciado; las de la colección son anónimas.
+-   Nuestros objetos tienen una cantidad fija de referencias (en este caso pedro tiene una única referencia, estampillaPreferida), una colección puede tener una cantidad arbitraria, que puede crecer a medida que le agrego elementos (esto es cierto para casi todos los sabores de colecciones, más adelante hablaremos al respecto).
 
-Así, los objetos que quedan referenciados por la colección pueden tener otras referencias sin problema. Un objeto no tiene nada especial por ser elemento de una colección, sólo una referencia más hacia él. Un objeto no conoce, en principio, de qué colecciones es elemento (podría tener una referencia explícita a la colección, pero eso habría que programarlo a mano).
+Así, los objetos que quedan referenciados por la colección pueden tener otras referencias sin problema. Un objeto no tiene nada especial por ser elemento de una colección, sólo tiene una referencia más hacia él. Un objeto no conoce de qué colecciones es elemento (podría tener una referencia explícita a la colección para saberlo, pero eso habría que programarlo a mano y por lo general tampoco nos interesa).
 
-La referencia a un objeto por ser elemento de una colección cuenta para que el objeto no salga del ambiente cuando pasa el Garbage Collector. Veámoslo con un ejemplo, agregando esta línea de código:
-
-`pilla2 := 4 `
-
-El ambiente queda así:
+La referencia a un objeto por ser elemento de una colección cuenta para que el objeto no salga del ambiente cuando pasa el [Garbage Collector](garbage-collector.html). Eso significa que si dejamos de referenciar a nuestra estampilla alemana mediante la referencia estampillaAlemana, como la colección de estampillas la conoce, el objeto va a seguir en el sistema.
 
 ![](Pdep-colecciones-3.PNG "Pdep-colecciones-3.PNG")
-
-La estampilla que marcamos en verde ya no está referenciada por la variable pilla2, pero sigue viva en el ambiente, porque tiene la referencia del Set.
 
 Hablando con los elementos
 --------------------------
 
-Hay algunas operaciones que se hacen sobre una colección, en la que parte de lo que hay que hacer, es responsabilidad de cada elemento.
+Hay algunas operaciones que se hacen sobre una colección en las cuales parte de lo que hay que hacer es responsabilidad de cada elemento.
 
-Por ejemplo, supongamos que quiero obtener, de mi colección de estampillas, aquellas que tengan más de 10 cm2 de superficie. La colección no sabe la superficie de cada estampilla, sí conoce a las estampillas, entonces puede enviarle mensajes a cada una. Lo que no sabe es qué mensajes puede enviarle, un Set no sabe si lo que tiene son estampillas, perros, números, otros Set, o cualquier otro objeto, sólo representa al conjunto, sin saber nada de sus elementos. Por otro lado, cada estampilla no sabe en qué colección está, de hecho un mismo objeto podría estar en varias colecciones.
+Por ejemplo, supongamos que quiero obtener de mi colección de estampillas aquellas que tengan más de 10 cm2 de superficie. La colección no sabe la superficie de cada estampilla, sí conoce a las estampillas, entonces puede enviarle mensajes a cada una. Lo que no sabe es qué mensajes puede enviarle, un Set no sabe si lo que tiene son estampillas, perros, números, otros Set, o cualquier otro objeto, sólo representa al conjunto, sin saber nada de sus elementos. Por otro lado, cada estampilla no sabe en qué colección está, de hecho un mismo objeto podría estar en varias colecciones.
 
 Por lo tanto, para resolver mi problema necesito que actúen tanto la colección (que es la que conoce a los elementos) como cada elemento (que es el que sabe su superficie). Veamos cómo lograr esta interacción. Empecemos por decidir a quién le pedimos lo que queremos. Quiero aquellas estampillas, de las que son elementos de coleccionEstampillas, que cumplan una determinada condición.
 
@@ -120,47 +95,12 @@ Por lo tanto, para resolver mi problema necesito que actúen tanto la colección
 
 El selector (nombre del mensaje) es select: ...
 
-... o sea que necesita un parámetro. Este parámetro va a representar la condición, que es un código que se va a evaluar sobre cada elemento, y debe devolver true o false.
+... o sea que necesita un parámetro. Este parámetro va a representar una condición para el filtrado, que es un código que la colección debería evaluar sobre cada elemento, y debe devolver true o false para que la colección sepa si debería o no estar en la colección nueva a devolver.
 
-Los objetos que representan "cachos de código" son los [Bloques](bloques.html), en este caso un bloque con un parámetro. Queda así:
+Los objetos que representan "cachos de código" son los [Bloques](bloques.html), en este caso un bloque con un parámetro.
 
-`coleccionEstampillas select: [:estam | estam superficie > 10] `
+`coleccionEstampillas select: [:estampilla | estampilla superficie > 10] `
 
-Veamos "cómo es que funciona": El bloque es el que sabe qué preguntarle a cada estampilla, representa la condición. Cambiemos el código anterior un poco
-
-`condicion := [:estam | estam superficie > 10]. `
-`coleccionEstampillas select: condicion. `
-
-Ahora el bloque (que es un objeto, tan objeto como el que representa una estampilla, o el que representa un conjunto) está referenciado por una variable. Entonces puedo evaluar, por ejemplo, la condición para pilla. Los bloques entienden el mensaje value:. Lo escribo así:
-
-`condicion value: pilla `
-
-si evalúo esto, devuelve true.
-
-La coleccionEstampillas es la que conoce a sus elementos. Sabe que cuando le llega el mensaje select: con el bloque de parámetro, lo que tiene que hacer es evaluar ese bloque con cada uno de sus elementos (los elementos de coleccionEstampillas). Esta es la parte que maneja la colección.
-
-Las estampillas entienden el mensaje superficie, eso es lo que sabe hacer cada estampilla, devolver su superficie.
-
-Finalmente, ¿qué devuelve esto?
-
-Otra colección, distinta de coleccionEstampillas, y que tiene como elementos algunos de los objetos que también tiene coleccionEstampillas como elementos; exactamente los que cumplen la condición que le paso como parámetro. Si pongo
-
-`grandes := coleccionEstampillas select: [:estam | estam superficie > 10] `
-
-el ambiente va a quedar así:
-
-![](Pdep-colecciones-4.PNG "Pdep-colecciones-4.PNG")
-
-En este diagrama, podemos ver...
-
-1. que el resultado del select: es una colección distinta de coleccionEstampillas
-
-2. que coleccionEstampillas no se modificó como resultado del select:
-
-3. que hay dos estampillas que son elementos de dos colecciones.
-
-Ahora bien, si agregamos a coleccionEstampillas una nueva estampilla grande, ¿se agrega también en la colección referenciada por grandes?
-
-No, porque grandes se creó en el select: y está separada de coleccionEstampillas.
+Mientras que todos los elementos de la colección entiendan el mensaje superficie y al recibirlo retornen un número, el filtrado va a funcionar correctamente.
 
 En resumen: cuando quiero hacer una operación sobre una colección que necesita enviarle mensajes a cada elemento, la operación se la pido a la colección, y le voy a enviar como parámetro un bloque que describe la interacción con cada elemento.
