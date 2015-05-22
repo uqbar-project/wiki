@@ -4,7 +4,7 @@ Esto nos permite modelar conjuntos o agregados de cosas, que son muy comunes en 
 
 A primera vista una colección es un conjunto de objetos. Si la vemos con más precisión nos damos cuenta que es más preciso pensarla como un conjunto de referencias: los elementos no están adentro de la colección, sino que la colección los conoce. A su vez, como todo en Smalltalk es un objeto, podemos deducir que una colección también es un objeto.
 
-No hay un único tipo de colección, hay distintos [sabores de colecciones](sabores-de-colecciones.html) que nos van a servir para distintos fines, sin embargo la mayoría de las colecciones entiende un conjunto grande de [ Mensajes de colecciones](mensajes-en-comun.html), o sea, son polimórficas :) Sólo van a diferir en algunos mensajes particulares debido a la naturaleza de la colección.
+No hay un único tipo de colección, hay distintos [sabores de colecciones](sabores-de-colecciones.html) que nos van a servir para distintos fines, sin embargo la mayoría de las colecciones entiende un conjunto grande de [ mensajes en común](mensajes-de-colecciones.html), o sea, son polimórficas :) Sólo van a diferir en algunos mensajes particulares debido a la naturaleza de la colección.
 
 ¿Qué podemos hacer con una colección?
 -------------------------------------
