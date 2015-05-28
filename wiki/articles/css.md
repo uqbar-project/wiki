@@ -17,7 +17,7 @@ Un primer ejemplo para entender la sintaxis
 `   text-align:center;`
 `}`
 
-Aplica el valor "center" a la propiedad "text-align" de todos los tags de la página que sean de tipo <span>.
+Aplica el valor "center" a la propiedad "text-align" de todos los tags de la página que sean de tipo &lt;span&gt;.
 
 Selectores Principales
 ----------------------
