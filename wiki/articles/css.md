@@ -94,7 +94,7 @@ Cascada
 Las reglas se aplican *en cascada*, esto significa dos cosas:
 
 1.  En primer lugar cada componente hereda determinados estilos de sus contenedores, por ejemplo un td (celda de una tabla) hereda los del tr (fila) y del table correspondientes. Los estilos que apliquen al componente específico sobreescriben a los del contenedor, pero aquellos que no estén especificados se heredan. No todas las indicaciones de estilo son "heredables" (inheritable en inglés), es importante entender el comportamiento de cada una de las diferentes indicaciones de estilo.
-2.  En segundo lugar sobre cada componente pueden aplicarse más de un estilo, que matcheen con ese componente según su tag, class y id respectivamente. Esos diferentes estilos se van a combinar permitiendo que el estilo más específico sobreescriba los estilos más generales, pero aún manteniendo las indicaciones correspondientes al estilo más general que no sean redefinidas.
+2.  En segundo lugar sobre cada componente pueden aplicarse más de un estilo, que matcheen con ese componente según su tag, class y id respectivamente. Esos diferentes estilos se van a combinar permitiendo que el estilo más específico sobreescriba los estilos más generales, pero aun manteniendo las indicaciones correspondientes al estilo más general que no sean redefinidas.
 
 Ejemplo de varias reglas aplicando al mismo tiempo sobre un tag.
 
@@ -112,7 +112,7 @@ Ambos reglas van a aplicar en este tag
             <td>Hola, soy una celda</td>
         </tr>
 
-El texto se va a ver centrado y ademas con fondo rojo.
+El texto se va a ver centrado y además con fondo rojo.
 
 Combinando Selectores (OR)
 --------------------------
