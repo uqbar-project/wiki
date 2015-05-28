@@ -148,7 +148,7 @@ La sintaxis entonces es:
          propiedadN: valorN;
      }
 
-Se puede pensar como un **or**. Sería, si es un h1 **o** es un h2, o es un p.
+Se puede pensar como un **or**. Sería, si es un h1 **o** es un h2, **o** es un p.
 
 Ventajas del uso de CSS
 -----------------------
