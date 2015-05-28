@@ -3,11 +3,11 @@ Es la forma más recomendada de especificar y modificar las cuestiones estética
 Sintaxis
 --------
 
-CSS tiene su propio lenguaje, declarativos en el cual especificamos **reglas**. Una regla tiene la siguiente sintaxis:
+CSS tiene su propio lenguaje declarativo en el cual especificamos **reglas**. Una regla tiene la siguiente sintaxis:
 
 ![](css-rule.gif "css-rule.gif")
 
-El **selector** es una expresión que nos permite matchear aquellos elementos a los que queremos aplicarle estos estilos. Luego el cuerpo de la regla contiene un conjunto de propiedades y valores para estos.
+El **selector** es una expresión que nos permite matchear aquellos elementos a los que queremos aplicarle estos estilos. Luego el cuerpo de la regla contiene un conjunto de propiedades y valores para éstos.
 
 Algunas propiedades aplican solo a algunos tipos de tags. Sin embargo, no es un lenguaje que "compile" o que tire errores. Simplemente si una propiedad no aplica a un tag, el browser no le va a dar bola.
 
