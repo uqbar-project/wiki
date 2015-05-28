@@ -28,16 +28,15 @@ Básicamente lo primero que tenemos que saber sobre los selectores es que hay tr
 -   **Por clase** (class), es decir a los tags a los que se les haya indicado un estilo determinado (mediante el atributo **class**).
 -   **Por id**, es decir a un elemento específico de la página según su **id**.
 
-Ejemplo por tag (ya vimos otro arriba para <span>)
+Ejemplo por tag (ya vimos otro arriba para &lt;span&gt;)
 
 `td {`
 `   text-align:center;`
 `   color:red;`
 `}`
 
-Aplica esas dos propiedades a todos los
+Aplica esas dos propiedades a todos los &lt;td&gt;
 
-<td>
 `.filaImpar {`
 `   text-align:center;`
 `   color:red;`
