@@ -44,7 +44,11 @@ De la misma forma podríamos redefinir la igualdad en alguna clase propia, como 
 `      and: [ self calle = otraDireccion calle`
 `        and: [ self numeracion = otraDireccion numeracion]]`
 
-**Importante** Cuando redefinimos el = hay que redefinir también el método hash que es usado por ejemplo por las colecciones. De esa forma si queremos tener un Set de direcciones funcione como esperamos de modo que no hayan dos direcciones iguales. El hash (no sólo en objetos) es una función que retorna un número para un determinado elemento. En nuestro caso va a ser un mensaje unario que recibe el objeto al cual le redefinimos la igualdad, por ejemplo para las direcciones:
+**Importante** Sólo debería redefinirse la igualdad basado en valores que no vayan a cambiar, en nuestro ejemplo una vez construido el objeto dirección con la calle y la numeración, no debería poder cambiar esas referencias, ya que la relación de igualdad entre dos objetos debería mantenerse a lo largo del tiempo. O sea, el objeto no necesita ser totalmente [ inmutable](inmutabilidad.html) pero sí debemos garantizar que lo sea respecto a los valores usados para la igualdad.
+
+Cuando redefinimos el = hay que redefinir también el método hash que es usado por ejemplo por las colecciones. De esa forma si queremos tener un Set de direcciones funcione como esperamos de modo que no hayan dos direcciones iguales. El hash (no sólo en objetos) es una función que retorna un número para un determinado elemento. En nuestro caso va a ser un mensaje unario que recibe el objeto al cual le redefinimos la igualdad, por ejemplo para las direcciones:
 
 `hash`
 ` ^ self calle hash + self numeracion hash`
+
+Es importante que el hash se defina en función de los mismos atributos que se usaron para la igualdad para que aquellos que trabajan usando el hash se comporten de forma esperada.
