@@ -70,7 +70,7 @@ Luego, así como la OrderedCollection, también tenemos la llamada **SortedColle
 
 Si queremos ordenar los elementos de la colección con un criterio en particular, necesitamos pasárselo a la colección. La forma de hacerlo, es pasarle lo que denominamos **sortBlock**, que es un objeto [Block](bloques.html) (bloque).
 
-Con respecto a las colecciones que tienen orden, por último veremos al viejo amigo **Array**. Aquí en Smalltalk también existe, y una de sus características es que es de tamaño fijo (para instanciar un Array, hago Array new: 6, donde 6 es la cantidad de elementos que contendrá).
+Con respecto a las colecciones que tienen orden, por último veremos al viejo amigo **Array**. Aquí en Smalltalk también existe, y una de sus características es que es de tamaño fijo. Para instanciar un Array, hago Array new: 6, donde 6 es la cantidad de elementos que contendrá, alternativamete si conocemos los elementos de antemano pueden crearse de [ forma literal](arrays-literales-en-smalltalk.html) (que es uno de los pocos motivo razonable para querer usar un Array en vez de otro tipo de colección como OrderedCollection).
 
 Los Arrays no implementan el mensaje add:, justamente porque no puedo modificar su tamaño. La forma de agregarles elementos es a través del mensaje **at:put:**, como por ejemplo:
 
