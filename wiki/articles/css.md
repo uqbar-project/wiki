@@ -161,9 +161,3 @@ y preservar el OAOO (Once and only once) / DRY (Don't repeat yourself), la pági
 
 -   Por otra parte, los programadores se concentran en la lógica de presentación y en la facilidad de uso por parte del usuario
 
-Links útiles
-------------
-
--   <http://www.w3.org/TR/css3-roadmap/>
--   <http://drafts.csswg.org/css-writing-modes-3/>
-
