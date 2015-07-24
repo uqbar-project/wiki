@@ -305,6 +305,26 @@ Estos dos predicados podrían definirse sin uso de listas, y no sólo eso sino q
 ` noTieneHijos(Persona) :- persona(Persona),`
 `      not(padre(Persona, _)).`
 
+#### Caso "existe más de un"
+
+Un problema común es saber si hay más de un individuo que cumple una condición. Si alguien tiene más de un hijo, por ejemplo. Eso lo podemos saber así:
+
+` tieneMasDeUnHijo(Persona) :- persona(Persona),`
+`      findall(Hijo, padre(Persona, Hijo), Hijos),`
+`      length(Hijos, CantidadDeHijos),`
+`      CantidadDeHijos > 1.`
+
+Hay un problema nuevamente con la declaratividad, y con la manera de pensar lógicamente. Si le damos una vuelta de tuerca, podemos resolver este ejercicio **sin necesidad de armar una lista y contar**.
+
+Esto se logra pensando así: tengo más de un hijo *si existen dos hijos diferentes*.
+
+` tieneMasDeUnHijo(Persona):-`
+`      padre(Persona,Hijo1),`
+`      padre(Persona,Hijo2),`
+`      Hijo1 \= Hijo2.`
+
+¡Es mucho más directo! Y respeta mejor las ideas del paradigma.
+
 ### findall y forall
 
 [Y otro caso típico de mal uso de findall y member aparece al tratar de usar el forall](paradigma-logico---forall---no-siempre-con-member.html).
