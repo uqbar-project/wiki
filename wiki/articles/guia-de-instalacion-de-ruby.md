@@ -27,6 +27,8 @@ Seguir las instrucciones aquí: <https://github.com/fesplugas/rbenv-installer>. 
 
 Explicación: Ruby suele cambiar bastante entre versiones, lo cual genera incompatibilidades. Para no tener problemas, se recomienda instalar Ruby a través de un manejador de versiones, que además de simplificar el proceso, permite usar versiones diferentes de esta tecnología en cada proyecto.
 
+Nota: Si usan Ubuntu y lo anterior no funciona revisen estas instrucciones <https://github.com/sstephenson/rbenv#installation>
+
 ### 3. Verificar que se haya instalado rbenv
 
 `echo $PATH `
