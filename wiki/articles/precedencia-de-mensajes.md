@@ -15,7 +15,7 @@ Otro ejemplo:
 Precedencia
 -----------
 
-Bueno, antes de saber cómo evaluarlo, hay que recordar que existen 3 tipos de mensajes en Smalltalk:
+Bueno, antes de saber cómo evaluarlo, hay que recordar que existen 3 [tipos de mensajes en Smalltalk](tipos-de-mensajes-en-smalltalk.html):
 
 1.  Unarios: *pepita energía*
 2.  Binarios: *3 + 2*
