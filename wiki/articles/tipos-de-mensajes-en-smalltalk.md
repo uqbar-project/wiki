@@ -1,3 +1,5 @@
+Primero arranquemos por lo básico. Todo envío de mensaje sigue la siguiente regla: OBJETO MENSAJE PARAMETRO Lo primero que aparece es el objeto receptor, luego viene el mensaje que se le envía a dicho objeto el cual puede o no tener parámetros.
+
 Smalltalk es bastante particular en aspectos sintácticos, por eso es importante detenerse a entender cómo se interpreta. Hay 3 tipos de mensajes en Smalltalk.
 
 Los **mensajes unarios** son aquellos que no reciben parámetros, o sea que el receptor solito puede resolver lo pedido. Un ejemplo de esto sería la negación de un booleano:
@@ -24,3 +26,5 @@ Lo que tiene de simpático los parámetros intercalados es la expresividad, pero
 `   --> el segundo parámetro del mensaje between:and: es el resultado de mandarle raisedTo: a 5 con el parámetro 2, lógicamente también retorna false`
 
 Esos paréntesis son inportantes para que se interprete como queremos y no como un único envío de mensajes, donde el mensaje sería between:and:raisedTo: de 3 parámetros, que los números no entienden!
+
+La [precedencia de mensajes](precedencia-de-mensajes.html) en Smalltalk se basa en estos 3 tipos de mensajes, sólo nos va a interesar esta diferenciación por ese motivo.
