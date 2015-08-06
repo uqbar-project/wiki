@@ -19,6 +19,13 @@ Y energia: está implementado como:
 
 Al mandar energia: a pepita por primera vez (asumiendo que no había sido inicializada antes su energía), el atributo energia que tiene pepita pasa de apuntar a nil a apuntar a 100, y luego de mandar el segundo mensaje pasa de apuntar a 100 a apuntar a 50. Los objetos nil y 100 no se modifican, sólo cambia a quién conoce pepita mediante la referencia energia.
 
+SIEMPRE lo que se encuentre a la izquierda del := debe ser una variable, no se puede asignar un objeto (y por el mismo motivo no se puede asignar un envío de mensajes). Las siguientes expresiones son inválidas:
+
+` 3 := 5.   <--- 3 es un objeto, no una referencia!!!`
+` pepita energia := 10.   <--- pepita energia es un envío de mensajes, no una referencia!!!`
+
+En ningún caso vamos a poder modificar desde fuera del objeto que tiene una referencia el valor de la misma, siempre hay que mandarle un mensaje a ese objeto para que la cambie. Esto está relacionado con la idea de [encapsulamiento](encapsulamiento.html), que es una de las bases del paradigma de objetos.
+
 Referenciando nuevas instancias (Smalltalk nativo)
 --------------------------------------------------
 
