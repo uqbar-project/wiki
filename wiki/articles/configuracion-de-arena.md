@@ -159,6 +159,41 @@ También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener
 `[INFO] Unable to initialise extensions`
 `Component descriptor role: 'com.jcraft.jsch.UIKeyboardInteractive', implementation: 'org.apache.maven.wagon.providers.ssh.jsch.interactive.PrompterUIKeyboardInteractive', role hint: 'default' has a hint, but there are other implementations that don't`
 
+Puede ser que si trabajás con Xtend te surjan tres errores del tipo **Plugin execution not covered by lifecycle configuration: net.alchim31.maven:scala-maven-plugin...** al importar o crear un proyecto.
+
+![](ErrorPluginExcecution.jpg "ErrorPluginExcecution.jpg")
+
+Esto se debe a que no se encuentra un plugin que integra Scala con Maven para Eclipse. Te recomendamos utilizar dos opciones que surgen del quick fix (con el pop-up emergente, ctrl + 1 o bien click derecho sobre el problema seleccionado y en el menú emergente seleccionar Quick fix)
+
+![](ErrorPluginExecutionQuickFix.jpg "ErrorPluginExecutionQuickFix.jpg")
+
+La primer opción es ignorar este plugin solicitado ya que Maven por si solo puede compilar el proyecto sin éste y puedo correr el programa de igual forma. Esto se logra seleccionando la opción **Mark goal add-source as ignored in Eclipse build in Eclipse preferences (Experimental)**. Esta acción la debo realizar tres veces (una por cada error declarado). El resultado es la creación de un archivo XML en la ruta *..../MiWorkspace/.metadata/.plugins/org.eclipse.m2e.core/lifecycle-mapping-metadata.xml* con el siguiente código:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<lifecycleMappingMetadata>
+`  `<pluginExecutions>
+`    `<pluginExecution>
+`      `<pluginExecutionFilter>
+`        `<groupId>`net.alchim31.maven`</groupId>
+`        `<artifactId>`scala-maven-plugin`</artifactId>
+`        `<versionRange>`3.1.5`</versionRange>
+`        `<goals>
+`          `<goal>`testCompile`</goal>
+`          `<goal>`compile`</goal>
+`          `<goal>`add-source`</goal>
+`        `</goals>
+`      `</pluginExecutionFilter>
+`      `<action>
+`        `<ignore />
+`      `</action>
+`    `</pluginExecution>
+`  `</pluginExecutions>
+</lifecycleMappingMetadata>
+
+La otra opción es seleccionar **Discover new m2e connectors** e instalar el plugin. Este instala el plugin faltante y soluciona el error.
+
+![](ErrorPluginexecutionDiscover.jpg "ErrorPluginexecutionDiscover.jpg")
+
 ### Checkout desde el SVN
 
 En general los ejemplos se bajan desde la estructura "proyecto/trunk", si los bajás desde el directorio proyecto, vas a tener algunos conflictos de directorio.
