@@ -1,13 +1,17 @@
 Manejo de dependencias, automatización de tareas
 ------------------------------------------------
 
-Para éstas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript. Lo descargás desde <https://nodejs.org/download/>.
+Para éstas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript.
 
 En Linux podés hacer
 
 `$ sudo apt-get install nodejs`
 
 o seguir las instrucciones oficiales que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
+
+En Windows te recomendamos previamente descargar el Git Bash en <http://msysgit.github.io/>
+
+Y para cualquier sistema operativo en general podés descargar Node en <https://nodejs.org/download/>
 
 Framework de testeo unitario
 ----------------------------
