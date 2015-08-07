@@ -159,7 +159,7 @@ También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener
 `[INFO] Unable to initialise extensions`
 `Component descriptor role: 'com.jcraft.jsch.UIKeyboardInteractive', implementation: 'org.apache.maven.wagon.providers.ssh.jsch.interactive.PrompterUIKeyboardInteractive', role hint: 'default' has a hint, but there are other implementations that don't`
 
-Puede ser que si trabajás con Xtend te surjan tres errores del tipo **Plugin execution not covered by lifecycle configuration: net.alchim31.maven:scala-maven-plugin...** al importar o crear un proyecto.
+Si trabajás con Xtend puede ser que te surjan tres errores del tipo **Plugin execution not covered by lifecycle configuration: net.alchim31.maven:scala-maven-plugin...** al importar o crear un proyecto.
 
 ![](ErrorPluginExcecution.jpg "ErrorPluginExcecution.jpg")
 
