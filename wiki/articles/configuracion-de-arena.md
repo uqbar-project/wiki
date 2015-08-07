@@ -190,7 +190,7 @@ La primer opción es ignorar este plugin solicitado ya que Maven por si solo pue
 `  `</pluginExecutions>
 </lifecycleMappingMetadata>
 
-La otra opción es seleccionar **Discover new m2e connectors** e instalar el plugin. Este instala el plugin faltante y soluciona el error.
+La otra opción es seleccionar **Discover new m2e connectors**. Esta instala el plugin faltante y soluciona el error. Otro camino para realizar la misma acción puede ser ir a *Window-&gt;Preferences-&gt;Maven-&gt;Discovery-&gt;Open Catalog*.
 
 ![](ErrorPluginexecutionDiscover.jpg "ErrorPluginexecutionDiscover.jpg")
 
