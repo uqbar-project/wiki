@@ -11,6 +11,18 @@ Un ejemplo clásico de recursividad es \[<http://es.wikipedia.org/wiki/Sucesi%C3
 
 Esta función tiene dos casos base para el 0 y el 1 y para todos los otros números una definición recursiva.
 
+Para pensar: qué pasa si la consulta realizada es
+
+`fibonacci (-1)`
+
+Dado que la tercer definición admite números negativos va a entrar en un loop infinito. Como no es correcto usar fibonacci con números negativos, podríamos mejorar nuestra definición restringiendo el dominio de la función usando [guardas](funciones-por-partes.html) de esta forma:
+
+`fibonacci 0 = 0`
+`fibonacci 1 = 1`
+`fibonacci n | n >= 2 = fibonacci (n-1) + fibonacci (n-2)`
+
+Ahora el resultado de aplicar fibonacci con un número negativo sería un error ya que no hay ninguna definición válida para el valor indicado :)
+
 Recursividad con listas
 -----------------------
 
