@@ -9,7 +9,9 @@ Un ejemplo clásico de recursividad es \[<http://es.wikipedia.org/wiki/Sucesi%C3
 `fibonacci 1 = 1`
 `fibonacci n = fibonacci (n-1) + fibonacci (n-2)`
 
-Esta función tiene dos casos base para el 0 y el 1 y para todos los otros números una definición recursiva.
+Esta función tiene dos casos base para el 0 y el 1 (ya que la definición recursiva requiere el resultado para los dos números anteriores, no alcanza con un solo caso base) y para todos los otros números una definición recursiva genérica.
+
+Es necesario definir primero los casos base, ya que la variable n es un patrón demasiado genérico, tanto el 0 como el 1 matchean con la variable n, por ende deben definirse antes los casos para el 0 y para el 1 para que sean encontrados primero por el motor de Haskell.
 
 Para pensar: qué pasa si la consulta realizada es
 
