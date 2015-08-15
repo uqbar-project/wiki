@@ -51,15 +51,17 @@ Ahora, si tengo una lista
 `lista1 = [(2,5),(5,3),(3,3)]`
 `lista2 = [(2,5)]`
 
-El patrón `(x,5)` no matchea con `lista1` ni con `lista2`. ¡Es una tupla, no una lista! Antes de tratar de matchear, Haskell nos va a tirar un error de tipo.
+El patrón `(x,5)` no matchea con `lista1` ni con `lista2`. ¡Es una tupla, no una lista! Antes de tratar de matchear, Haskell nos va a tirar un error de tipos.
 
 El patrón `(x:xs)` matchea con `lista1`, siendo `x` `=` `(2,5)` y `xs` `=` `[(5,3),(3,3)]` y matchea con `lista2`, siendo `x` `=` `(2,5)` y `xs` `=` `[]`
 
-El patrón `[x]` no matchea con `lista1` pero si matchea con `lista2`, siendo `x` `=` `(2,5)`
+El patrón `[x]` no matchea con `lista1` porque tiene más de un elemento, pero sí matchea con `lista2`, siendo `x` `=` `(2,5)`
 
 El patrón `(x:_)` matchea con `lista1`, siendo `x` `=` `(2,5)` y matchea con `lista2`, siendo `x` `=` `(2,5)`
 
-El patrón `unaTupla` matchea con `lista1` siendo `unaTupla` `=` `[(2,5),(5,3),(3,3)]` y matchea con `lista2` siendo `unaTupla` `=` `[(2,5)]`
+El patrón `(x:y:_)` matchea con `lista1`, siendo `x` `=` `(2,5)` e `y` `=` `(5,3)`, y no matchea con `lista2` porque sólo tiene un elemento
+
+El patrón `unaTupla` matchea con `lista1` siendo `unaTupla` `=` `[(2,5),(5,3),(3,3)]` y matchea con `lista2` siendo `unaTupla` `=` `[(2,5)]`. Es sólo un nombre de variable, con lo cual no restringe realmente el tipo del valor para que sea una tupla.
 
 ### Con data
 
