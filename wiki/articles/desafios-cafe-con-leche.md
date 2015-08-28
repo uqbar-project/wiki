@@ -8,3 +8,6 @@ En muchos cursos de docentes Uqbar se acostumbra dejar "desafíos café con lech
 ### Prolog
 
 ### Smalltalk
+
+-   [Desafío: Suma de distancias](desafio--suma-de-distancias.html)
+
