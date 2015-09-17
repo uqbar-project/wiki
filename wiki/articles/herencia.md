@@ -5,7 +5,7 @@ Herencia Simple
 
 Una clase tiene siempre una superclase pero solo una.
 
-Lenguajes que implementan este tipo de herencia: Smalltalk, Java, C\#
+Lenguajes que implementan este tipo de herencia: Smalltalk, Java, C\#, entre muchos otros
 
 Herencia Múltiple
 -----------------
