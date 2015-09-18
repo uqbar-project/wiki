@@ -20,6 +20,12 @@ Además de las configuraciones [sugeridas para Grails](instalacion-de-entorno-we
 
 -   especificar por default el directorio donde el compilador Xtend deja los .java generados, para que el framework Grails los pueda ver. Entonces en Window &gt; Preferences &gt; Xtend &gt; Compiler cambiamos el texto *directory* a "java" en lugar de "xtend-gen".
 
+![](ConfiguracionXtendParaGrails2.png "ConfiguracionXtendParaGrails2.png")
+
+-   además como no vamos a usar la JDK 1.8, hay que asegurarse que el código xtend compile con compatibilidad a la JDK que estás usando. Si por ejemplo configuraste tu JDK default a 1.7, es la misma versión que tenés que decirle al compilador que use:
+
+![](ConfiguracionXtendParaGrails.png "ConfiguracionXtendParaGrails.png")
+
 Consideraciones para un proyecto Grails + Xtend en el mismo proyecto
 --------------------------------------------------------------------
 
