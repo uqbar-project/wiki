@@ -28,7 +28,7 @@ Allí seleccionás el entorno adecuado para tu sistema operativo.
 
 #### ¿Qué JDK uso?
 
--   Si bien en teoría la JDK 1.8 es compatible con Grails 2.4, nuestra experiencia nefasta nos dice que *no uses una JDK 1.8, tiene que ser 1.6 ó 1.7*' (cualquiera, la instalás en otra carpeta)
+-   Si bien en teoría la JDK 1.8 es compatible con Grails 2.4, nuestra experiencia nefasta nos dice que **no uses una JDK 1.8, tiene que ser 1.6 ó 1.7** (cualquiera, la instalás en otra carpeta)
 -   Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.
 -   La JDK y el GGTS deben coincidir en la versión de 32 ó 64 bits (si el GGTS es 32 bits tenés que apuntar a una JDK de 32 bits, o no va a funcionar)
 
