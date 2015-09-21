@@ -7,7 +7,7 @@ El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.
 Definición
 ----------
 
-El forall recibe dos parámetros, los dos deben ser consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de [orden superior](orden-superior.html), porque puede manejar predicados entro de sus parámetros.
+El forall recibe dos parámetros, los dos deben ser consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de [orden superior](orden-superior.html), porque puede manejar predicados dentro de sus parámetros.
 
 Hagámosnos la pregunta ... ¿cuándo se verifica?
 Cuando a todos los que les pasa lo primero, les pasa lo segundo.
