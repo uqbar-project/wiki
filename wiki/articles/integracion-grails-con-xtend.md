@@ -44,17 +44,17 @@ Consideraciones para un proyecto Grails + Xtend en el mismo proyecto
 `}`
 `dependencies {`
 `    // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
-`    build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.6.1'  // punto 2`
+`    build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.7.3'  // punto 2`
 `}`
 
 Otra opción puede ser definir esta dependencia:
 
 `dependencies {`
 `    // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.`
-`    build 'org.eclipse.xtend:org.eclipse.xtend.standalone:2.6.1'`
+`    build 'org.eclipse.xtend:org.eclipse.xtend.standalone:2.7.3'`
 `}`
 
-**Nota:** 2.6.1 es en realidad la versión de xtend que se quiera utilizar. Se puede buscar en el repositorio Maven las versiones disponibles desde esta URL: <http://search.maven.org/#browse>, y ahí buscan org.eclipse.xtend.lib. En los resultados les figurará la última versión o bien versiones anteriores a las que pueden apuntar, a partir del link all(xxx).
+**Nota:** 2.7.3 es en realidad la versión de xtend que se quiera utilizar. Se puede buscar en el repositorio Maven las versiones disponibles desde esta URL: <http://search.maven.org/#browse>, y ahí buscan org.eclipse.xtend.lib. En los resultados les figurará la última versión o bien versiones anteriores a las que pueden apuntar, a partir del link all(xxx).
 
 Consideraciones para proyectos Grails + Xtend por separado
 ----------------------------------------------------------
@@ -80,10 +80,11 @@ Te dejamos un instructivo donde los pasos son:
 -   Crear un source folder src/xtend
 -   Copiar los packages de xtend del proyecto original a la carpeta src/xtend (se puede hacer copiando los archivos del filesystem)
 -   Eliminar los packages que sean de interfaz de usuario (ui, runnable, application, etc.)
+-   Agregar la librería Xtend manualmente al proyecto Grails
 -   Modificar el BuildConfig para incorporar la librería xtend y el paquete uqbar-domain, respetando ese orden (primero xtend, luego uqbar-domain):
 
 `dependencies {`
-`    build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.6.1'`
+`    build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.7.3'`
 `    build "org.uqbar-project:uqbar-domain:3.4-SNAPSHOT"`
 `}`
 
@@ -93,6 +94,7 @@ Te dejamos un instructivo donde los pasos son:
 `repositories {`
 `    mavenRepo "`[`http://uqbar-wiki.org/mvn/snapshots`](http://uqbar-wiki.org/mvn/snapshots)`"`
 `    mavenRepo "`[`http://uqbar-wiki.org/mvn/releases`](http://uqbar-wiki.org/mvn/releases)`"`
+`    ...`
 
 -   Ya se puede correr la aplicación con run-app
 
