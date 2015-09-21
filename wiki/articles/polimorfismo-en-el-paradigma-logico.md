@@ -28,7 +28,9 @@ La alternativa infeliz no polimórfica sería hacer algo así:
 ` AnioActual - Anio > 10.`
 `biciVieja(fecha(_,_,Anio)):- Anio < 2006.`
 
-`?- forall(vehiculo(auto(Patente)), autoViejo(Patente)), forall(vehiculo(camion(Kms, Anio)), camionViejo(Kms, Anio)), forall(vehiculo(bici(Fecha)), biciVieja(Fecha)).`
+`?- forall(vehiculo(auto(Patente)), autoViejo(Patente)),`
+`   forall(vehiculo(camion(Kms, Anio)), camionViejo(Kms, Anio)),`
+`   forall(vehiculo(bici(Fecha)), biciVieja(Fecha)).`
 
 Para que esto se cumpla todos los vehículos deben cumplir la correspondiente validación del forall con lo cual estaría funcionando como necesitamos, pero la solución elegida es bastante molesta y repetitiva. Sin contar que si queremos incorporar las motos a nuestra base de conocimientos, la consulta sería aún más larga.
 
