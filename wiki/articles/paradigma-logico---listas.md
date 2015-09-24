@@ -148,8 +148,7 @@ Ahora tenemos que averiguar cómo ligar a P, y para eso hay que pensar cuáles s
   
 (También se podría usar el predicado padre/2 en lugar de persona/1, analizamos la diferencia entre ambos en el próximo apartado.)
 
-cantidadDeHijos(P,Cantidad) :-
-
+`cantidadDeHijos(P,Cantidad) :-`
 `    persona(P), % Generacion, asi la variable P llega ligada al findall`
 `    findall(H,padre(P,H),Hijos),`
 `    length(Hijos,Cantidad).`
