@@ -107,3 +107,10 @@ Diccionarios
 Por último, queremos mostrarles un sabor de colección que es especial. Se llama Dictionary y, como su nombre lo indica, intenta representar un diccionario. Este tipo de representación implica tener una asociación entre una clave y un valor.
 
 Poniendo como ejemplo, el propio diccionario. El diccionario es una asociación entre una clave, que son cada letra del abecedario y un apartado de páginas que tienen palabras. El diccionario lleva todo una explicación aparte, pueden profundizar más al respecto leyendo sobre [Diccionarios](diccionarios.html).
+
+Jerarquía de Colecciones (En Pharo)
+-----------------------------------
+
+Aquí se provee una imagen con una jerarquía simplificada de las colecciones existentes en Pharo. Presten especial atención a las clases explicadas en este artículo, las demás se proveen por motivos de completitud.
+
+<img src="CollectionHierarchy.png" title="Jerarquía de colecciones en Pharo Smalltalk" alt="Jerarquía de colecciones en Pharo Smalltalk" width="600" />
