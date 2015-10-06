@@ -33,7 +33,8 @@ El alumno tiene como atributos nombre, y los cursos. El curso tiene el nombre de
 Aplicando reglas de normalización (o no)
 ----------------------------------------
 
-### Campos calculados
+Campos calculados
+-----------------
 
 Es una técnica usual en muchas tecnologías, en objetos también. Podríamos pensar ejemplos:
 
@@ -69,7 +70,8 @@ Este requerimiento **no tiene nada que ver con la normalización, porque no hay 
 
 ![](Curso-cantidadInscriptos.png "Curso-cantidadInscriptos.png")
 
-### 1FN: Aplicabilidad en objetos
+1FN: Aplicabilidad en objetos
+-----------------------------
 
 La primera forma normal nos pide que
 
@@ -80,7 +82,8 @@ Aquí vemos que las restricciones de primera forma normal no aplican para el mod
 
 Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa alumno-notas). La restricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.
 
-### 2FN y 3FN en objetos
+2FN y 3FN en objetos
+--------------------
 
 Tanto 2 como 3FN buscan que todo determinante sea clave candidata, o explicado en una manera más simple, no haya dependencias de ningún atributo con otro atributo
 
