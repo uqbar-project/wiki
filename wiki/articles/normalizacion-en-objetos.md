@@ -77,3 +77,23 @@ La primera forma normal nos pide que
 Aquí vemos que las restricciones de primera forma normal no aplican para el modelo de objetos, dado que no existe el concepto de relación o tabla como punto de concentración de todos los alumnos. Cada alumno que se crea forma parte del ambiente mientras tenga una referencia, y no hay riesgo de "filas duplicadas" ni necesidad de usar una clave candidata, ya que cada objeto nuevo tiene su propia identidad respecto a los demás objetos.
 
 Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa, como veremos a continuación). La retricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.
+
+### 2FN y 3FN en objetos
+
+Tanto 2 como 3FN buscan que todo determinante sea clave candidata, o explicado en una manera más simple, no haya dependencias de ningún atributo con otro atributo
+
+-   que forme parte de la clave principal
+-   que no forme parte de la clave principal
+
+Dado que en objetos no utilizamos el concepto de clave primaria, no tiene sentido discriminar cada caso en particular. Lo que sí podemos revisar es el ejemplo nuevamente, donde en el objeto Curso se registra la información sobre el legajoDocente (un entero) y el nombreDocente (un String). Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posibles:
+
+-   aplicando la lógica de normalización, donde vemos que existe una dependencia funcional entre el nombre del docente y su legajo
+-   o bien mucho antes, cuando necesitamos la abstracción Docente, porque es necesario agregarle **comportamiento**
+
+*El proceso de normalización de entidades en el esquema relacional surge de la misma manera como un proceso de generación de abstracciones posibles en el modelo de objetos*.
+
+Por último, podríamos decidir que nuestro objeto Curso tuviera los atributos docente (una referencia a un objeto Docente), legajoDocente y nombreDocente por dos motivos:
+
+-   uno de negocio, si como en el caso anterior necesitáramos almacenar la información del docente que tomó el curso originalmente (y queremos mantenerla)
+-   para mejorar la performance, en ese caso introducimos una redundancia desnormalizando la información del curso. Eso permite que podamos obtener la información de un curso sin necesidad de navegar hacia otras entidades, algo que todo diseñador debe contemplar para los casos de uso que el negocio exige.
+
