@@ -78,7 +78,7 @@ La primera forma normal nos pide que
 
 Aquí vemos que las restricciones de primera forma normal no aplican para el modelo de objetos, dado que no existe el concepto de relación o tabla como punto de concentración de todos los alumnos. Cada alumno que se crea forma parte del ambiente mientras tenga una referencia, y no hay riesgo de "filas duplicadas" ni necesidad de usar una clave candidata, ya que cada objeto nuevo tiene su propia identidad respecto a los demás objetos.
 
-Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa, como veremos a continuación). La retricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.
+Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa alumno-notas). La restricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.
 
 ### 2FN y 3FN en objetos
 
