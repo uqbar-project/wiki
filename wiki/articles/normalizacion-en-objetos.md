@@ -2,6 +2,10 @@ El proceso de normalización se origina con el esquema relacional y ha sido ampl
 
 Si bien el modelo de objetos tiene algunas características diferenciales respecto al relacional, podemos encontrar decisiones que tienen que ver con la aplicación (o no) de la normalización y el almacenamiento redundante de la información.
 
+### Ejemplo
+
+Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre alumnos y cursos. Un alumno se inscribe en varios cursos y en cada curso tenemos muchos alumnos.
+
 Recordemos qué busca la normalización
 -------------------------------------
 
@@ -12,13 +16,17 @@ Recordemos qué busca la normalización
 Diferencias importantes a la hora de normalizar
 -----------------------------------------------
 
-| Modelo relacional                                         | Objetos                                                                                                                |
-|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| Elimina duplicados mediante la primary key                | Trabaja con identidad, no necesita claves naturales ni subrogadas                                                      |
-| No permite atributos multivaluados                        | Permite referenciar a cualquier tipo de objetos, incluido conjuntos y mapas                                            |
-| Es un modelo flexible para navegar en cualquier dirección | Las referencias tienen una sola dirección, para tener una relación bidireccional es necesario utilizar otra referencia |
+| Modelo relacional                                                                                       | Objetos                                                                                                                               |
+|---------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| Elimina duplicados mediante la primary key                                                              | Trabaja con identidad, no necesita claves naturales ni subrogadas                                                                     |
+| No permite atributos multivaluados                                                                      | Permite referenciar a cualquier tipo de objetos, incluido conjuntos y mapas                                                           |
+| Es un modelo flexible para navegar en cualquier dirección                                               | Las referencias tienen una sola dirección, para tener una relación bidireccional es necesario utilizar otra referencia                |
+| Puedo manipular los datos, los triggers o constraints me permiten asegurar la consistencia de los datos | No accedo directamente a los datos sino que envío mensajes, y los métodos permiten asegurar la consistencia del estado de cada objeto |
 
-Ejemplo
--------
+Primer modelo posible
+---------------------
 
-Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre alumnos y cursos. Un alumno se inscribe en varios cursos y en cada curso tenemos muchos alumnos.
+El alumno tiene como atributos nombre, y los cursos. El curso tiene el nombre del profesor (un String) y los alumnos que participan.
+
+Aplicando reglas de normalización (o no)
+----------------------------------------
