@@ -65,6 +65,8 @@ Si necesitamos saber cuántos inscriptos hubo al comienzo del cuatrimestre, debe
 
 Este requerimiento **no tiene nada que ver con la normalización, porque no hay redundancia**, en ese caso lo que tenemos que hacer es crear un atributo en el Curso...
 
+![](Curso-cantidadInscriptos.png "Curso-cantidadInscriptos.png")
+
 ### 1FN: Aplicabilidad en objetos
 
 La primera forma normal nos pide que
