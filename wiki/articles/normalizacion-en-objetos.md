@@ -50,3 +50,8 @@ Se trata de atributos que pueden calcularse pero que por algún motivo elegimos 
 ` where c.cantidad_alumnos > 40`
 
 </code>
+
+Mientras que si no estuviera ese dato necesitamos hacer un join con la tabla de relación cursos-alumnos + el correspondiente count.
+
+1.  también se puede tratar de mejorar la performance, aún en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso
+
