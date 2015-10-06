@@ -2,4 +2,23 @@ El proceso de normalización se origina con el esquema relacional y ha sido ampl
 
 Si bien el modelo de objetos tiene algunas características diferenciales respecto al relacional, podemos encontrar decisiones que tienen que ver con la aplicación (o no) de la normalización y el almacenamiento redundante de la información.
 
+Recordemos qué busca la normalización
+-------------------------------------
+
+-   Evitar redundancias
+-   Evitar inconsistencias: no quiero que un profesor renuncie y eso deje el curso apuntando a un profesor inexistente
+-   Reducir el impacto de los cambios en los datos: si cargué mal la información de un profesor, debería actualizarlo en un solo lugar
+
+Diferencias importantes a la hora de normalizar
+-----------------------------------------------
+
+| Modelo relacional                                         | Objetos                                                                                                                |
+|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Elimina duplicados mediante la primary key                | Trabaja con identidad, no necesita claves naturales ni subrogadas                                                      |
+| No permite atributos multivaluados                        | Permite referenciar a cualquier tipo de objetos, incluido conjuntos y mapas                                            |
+| Es un modelo flexible para navegar en cualquier dirección | Las referencias tienen una sola dirección, para tener una relación bidireccional es necesario utilizar otra referencia |
+
+Ejemplo
+-------
+
 Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre alumnos y cursos. Un alumno se inscribe en varios cursos y en cada curso tenemos muchos alumnos.
