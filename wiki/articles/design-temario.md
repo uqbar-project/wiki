@@ -61,6 +61,8 @@ Una pregunta que muchas veces en la materia diseño es: ¿Que lenguaje uso? Acá
 Unidad 6: Modelado de datos
 ---------------------------
 
+-   [Normalizacion en Objetos](normalizacion-en-objetos.html)
+
 Unidad 7: Introducción al diseño de arquitectura
 ------------------------------------------------
 
