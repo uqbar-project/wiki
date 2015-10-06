@@ -87,7 +87,9 @@ Tanto 2 como 3FN buscan que todo determinante sea clave candidata, o explicado e
 -   que forme parte de la clave principal
 -   que no forme parte de la clave principal
 
-Dado que en objetos no utilizamos el concepto de clave primaria, no tiene sentido discriminar cada caso en particular. Lo que sí podemos revisar es el ejemplo nuevamente, donde en el objeto Curso se registra la información sobre el legajoDocente (un entero) y el nombreDocente (un String). Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posibles:
+Dado que en objetos no utilizamos el concepto de clave primaria, no tiene sentido discriminar cada caso en particular. Lo que sí podemos revisar es el ejemplo nuevamente, donde en el objeto Curso se registra la información sobre el legajoDocente (un entero) y el nombreDocente (un String). ![](ObjetoCursoDesnormalizado.png "fig:ObjetoCursoDesnormalizado.png")
+
+Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posibles:
 
 -   aplicando la lógica de normalización, donde vemos que existe una dependencia funcional entre el nombre del docente y su legajo
 -   o bien mucho antes, cuando necesitamos la abstracción Docente, porque es necesario agregarle **comportamiento**
