@@ -1,3 +1,6 @@
+Objetivo
+--------
+
 El proceso de normalización se origina con el esquema relacional y ha sido ampliamente estudiado y difundido, ya que los RDBMS surgieron como una alternativa a los motores de bases de datos jerárquicos que permitían redundancia de la información y tenían problemas de consistencia, lo que llevaba a tener datos faltantes o duplicados.
 
 Si bien el modelo de objetos tiene algunas características diferenciales respecto al relacional, podemos encontrar decisiones que tienen que ver con la aplicación (o no) de la normalización y el almacenamiento redundante de la información.
@@ -8,8 +11,7 @@ Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre
 
 ![](EjemploCursosAlumnos.png "EjemploCursosAlumnos.png")
 
-Recordemos qué busca la normalización
--------------------------------------
+### Recordemos qué busca la normalización
 
 -   Evitar redundancias
 -   Evitar inconsistencias: no quiero que un profesor renuncie y eso deje el curso apuntando a un profesor inexistente
@@ -33,8 +35,7 @@ El alumno tiene como atributos nombre, y los cursos. El curso tiene el nombre de
 Aplicando reglas de normalización (o no)
 ----------------------------------------
 
-Campos calculados
------------------
+### Campos calculados
 
 Es una técnica usual en muchas tecnologías, en objetos también. Podríamos pensar ejemplos:
 
@@ -58,8 +59,7 @@ Mientras que si no estuviera ese dato necesitamos hacer un join con la tabla de 
 
 -   también se puede tratar de mejorar la performance, aún en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso
 
-Campos calculados vs. datos del negocio no siempre calculables
---------------------------------------------------------------
+### Campos calculados vs. datos del negocio no siempre calculables
 
 Si necesitamos saber cuántos inscriptos hubo al comienzo del cuatrimestre, debemos tener en cuenta que
 
@@ -70,8 +70,7 @@ Este requerimiento **no tiene nada que ver con la normalización, porque no hay 
 
 ![](Curso-cantidadInscriptos.png "Curso-cantidadInscriptos.png")
 
-1FN: Aplicabilidad en objetos
------------------------------
+### 1FN: Aplicabilidad en objetos
 
 La primera forma normal nos pide que
 
@@ -82,8 +81,7 @@ Aquí vemos que las restricciones de primera forma normal no aplican para el mod
 
 Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa alumno-notas). La restricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.
 
-2FN y 3FN en objetos
---------------------
+### 2FN y 3FN en objetos
 
 Tanto 2 como 3FN buscan que todo determinante sea clave candidata, o explicado en una manera más simple, no haya dependencias de ningún atributo con otro atributo
 
