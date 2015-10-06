@@ -6,6 +6,8 @@ Si bien el modelo de objetos tiene algunas características diferenciales respec
 
 Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre alumnos y cursos. Un alumno se inscribe en varios cursos y en cada curso tenemos muchos alumnos.
 
+![](EjemploCursosAlumnos.png "EjemploCursosAlumnos.png")
+
 Recordemos qué busca la normalización
 -------------------------------------
 
