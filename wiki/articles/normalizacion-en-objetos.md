@@ -89,7 +89,7 @@ Tanto 2 como 3FN buscan que todo determinante sea clave candidata, o explicado e
 
 Dado que en objetos no utilizamos el concepto de clave primaria, no tiene sentido discriminar cada caso en particular. Lo que sí podemos revisar es el ejemplo nuevamente, donde en el objeto Curso se registra la información sobre el legajoDocente (un entero) y el nombreDocente (un String).
 
-![](ObjetoCursoDesnormalizado.png "ObjetoCursoDesnormalizado.png")
+![](ObjetoCursoDesnormalizado.png "fig:ObjetoCursoDesnormalizado.png") ![](ObjetoCursoNormalizado.png "fig:ObjetoCursoNormalizado.png")
 
 Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posibles:
 
