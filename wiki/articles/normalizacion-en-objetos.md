@@ -47,4 +47,5 @@ Se trata de atributos que pueden calcularse pero que por algún motivo elegimos 
  select *
    from cursos c
   where c.cantidad_alumnos > 40
+ 
 ```
