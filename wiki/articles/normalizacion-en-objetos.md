@@ -43,8 +43,9 @@ Se trata de atributos que pueden calcularse pero que por algún motivo elegimos 
 
 1.  porque es conveniente cuando lo migramos a un esquema relacional, para facilitar los queries posteriores, ej: conocer los cursos con más de 40 alumnos sería
 
-``` cpp
-select *
-  from cursos c
- where c.cantidad_alumnos > 40
-```
+<code> select \*
+
+` from cursos c`
+`where c.cantidad_alumnos > 40`
+
+</code>
