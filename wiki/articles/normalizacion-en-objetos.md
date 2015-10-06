@@ -61,7 +61,9 @@ Campos calculados vs. datos del negocio no siempre calculables
 Si necesitamos saber cuántos inscriptos hubo al comienzo del cuatrimestre, debemos tener en cuenta que
 
 -   el campo se puede calcular en un momento t<sub>0</sub>
--   pero una vez pasado ese momento
+-   pero una vez pasado ese momento, el cálculo se pierde
+
+Este requerimiento **no tiene nada que ver con la normalización, porque no hay redundancia**, en ese caso lo que tenemos que hacer es crear un atributo en el Curso...
 
 ### 1FN: Aplicabilidad en objetos
 
