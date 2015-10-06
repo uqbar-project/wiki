@@ -17,16 +17,6 @@ Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre
 -   Evitar inconsistencias: no quiero que un profesor renuncie y eso deje el curso apuntando a un profesor inexistente
 -   Reducir el impacto de los cambios en los datos: si cargué mal la información de un profesor, debería actualizarlo en un solo lugar
 
-Diferencias importantes a la hora de normalizar
------------------------------------------------
-
-| Modelo relacional                                                                                       | Objetos                                                                                                                               |
-|---------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Elimina duplicados mediante la primary key                                                              | Trabaja con identidad, no necesita claves naturales ni subrogadas                                                                     |
-| No permite atributos multivaluados                                                                      | Permite referenciar a cualquier tipo de objetos, incluido conjuntos y mapas                                                           |
-| Es un modelo flexible para navegar en cualquier dirección                                               | Las referencias tienen una sola dirección, para tener una relación bidireccional es necesario utilizar otra referencia                |
-| Puedo manipular los datos, los triggers o constraints me permiten asegurar la consistencia de los datos | No accedo directamente a los datos sino que envío mensajes, y los métodos permiten asegurar la consistencia del estado de cada objeto |
-
 Primer modelo posible
 ---------------------
 
@@ -103,4 +93,24 @@ Por último, podríamos decidir que nuestro objeto Curso tuviera los atributos d
 
 -   uno de negocio, si como en el caso anterior necesitáramos almacenar la información del docente que tomó el curso originalmente (y queremos mantenerla)
 -   para mejorar la performance, en ese caso introducimos una redundancia desnormalizando la información del curso. Eso permite que podamos obtener la información de un curso sin necesidad de navegar hacia otras entidades, algo que todo diseñador debe contemplar para los casos de uso que el negocio exige.
+
+### Redundancias por problemas de navegabilidad
+
+El modelo relacional es sumamente flexible, en una relación many-to-many Alumno-Curso, podemos navegar la relación partiendo del curso o bien desde el alumno. Si necesitamos resolver estos requerimientos
+
+-   saber qué alumnos del curso de Diseño aprobaron el primer parcial
+-   saber en cuántos cursos está anotado un alumno de lunes a viernes
+
+sabemos que es mucho más fácil si la relación de asociación entre Alumno y Curso es bidireccional, es decir que un alumno conoce la lista de cursos en los que está inscripto y un curso conoce la lista de alumnos que forman parte.
+
+Resumen de diferencias entre el modelo relacional y el de objetos
+-----------------------------------------------------------------
+
+| Modelo relacional                                                                                       | Objetos                                                                                                                               |
+|---------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| Elimina duplicados mediante la primary key                                                              | Trabaja con identidad, no necesita claves naturales ni subrogadas                                                                     |
+| No permite atributos multivaluados                                                                      | Permite referenciar a cualquier tipo de objetos, incluido conjuntos y mapas                                                           |
+| Es un modelo flexible para navegar en cualquier dirección                                               | Las referencias tienen una sola dirección, para tener una relación bidireccional es necesario utilizar otra referencia                |
+| Puedo manipular los datos, los triggers o constraints me permiten asegurar la consistencia de los datos | No accedo directamente a los datos sino que envío mensajes, y los métodos permiten asegurar la consistencia del estado de cada objeto |
+
 
