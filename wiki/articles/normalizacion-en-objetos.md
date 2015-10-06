@@ -31,17 +31,6 @@ El alumno tiene como atributos nombre, y los cursos. El curso tiene el nombre de
 Aplicando reglas de normalización (o no)
 ----------------------------------------
 
-### 1FN: Aplicabilidad en objetos
-
-La primera forma normal nos pide que
-
--   **no haya filas duplicadas**, y esto se da mediante la identificación de claves candidatas
--   **no haya campos repetitivos / atributos multivaluados**
-
-Aquí vemos que las restricciones de primera forma normal no aplican para el modelo de objetos, dado que no existe el concepto de relación o tabla como punto de concentración de todos los alumnos. Cada alumno que se crea forma parte del ambiente mientras tenga una referencia, y no hay riesgo de "filas duplicadas" ni necesidad de usar una clave candidata, ya que cada objeto nuevo tiene su propia identidad respecto a los demás objetos.
-
-Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa, como veremos a continuación). La retricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.
-
 ### Campos calculados
 
 Es una técnica usual en muchas tecnologías, en objetos también. Podríamos pensar ejemplos:
@@ -66,3 +55,21 @@ Mientras que si no estuviera ese dato necesitamos hacer un join con la tabla de 
 
 -   también se puede tratar de mejorar la performance, aún en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso
 
+Campos calculados vs. datos del negocio no siempre calculables
+--------------------------------------------------------------
+
+Si necesitamos saber cuántos inscriptos hubo al comienzo del cuatrimestre, debemos tener en cuenta que
+
+-   el campo se puede calcular en un momento t<sub>0</sub>
+-   pero una vez pasado ese momento
+
+### 1FN: Aplicabilidad en objetos
+
+La primera forma normal nos pide que
+
+-   **no haya filas duplicadas**, y esto se da mediante la identificación de claves candidatas
+-   **no haya campos repetitivos / atributos multivaluados**
+
+Aquí vemos que las restricciones de primera forma normal no aplican para el modelo de objetos, dado que no existe el concepto de relación o tabla como punto de concentración de todos los alumnos. Cada alumno que se crea forma parte del ambiente mientras tenga una referencia, y no hay riesgo de "filas duplicadas" ni necesidad de usar una clave candidata, ya que cada objeto nuevo tiene su propia identidad respecto a los demás objetos.
+
+Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa, como veremos a continuación). La retricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.
