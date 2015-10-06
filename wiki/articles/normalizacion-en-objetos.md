@@ -50,7 +50,7 @@ Es una técnica usual en muchas tecnologías, en objetos también. Podríamos pe
 -   la cantidad de alumnos de un curso en condiciones de firmar
 -   el promedio de notas de un alumno en un curso
 
-Se trata de atributos que pueden calcularse pero que por algún motivo elegimos almacenarlos como dato, ya sea
+se trata de atributos que pueden calcularse pero que por algún motivo elegimos almacenarlos como dato, ya sea
 
 -   porque es conveniente cuando lo migramos a un esquema relacional, para facilitar los queries posteriores, ej: conocer los cursos con más de 40 alumnos sería
 
