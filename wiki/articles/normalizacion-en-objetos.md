@@ -84,15 +84,15 @@ Dado que en objetos no utilizamos el concepto de clave primaria, no tiene sentid
 
 Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posibles:
 
--   aplicando la lógica de normalización, donde vemos que existe una dependencia funcional entre el nombre del docente y su legajo
+-   aplicando la lógica de normalización, donde vemos que existe una dependencia funcional entre el nombre del docente y su legajo (sólo que el legajo y el nombre forman parte de la abstracción Docente y la forma de normalizarlo implica generar una referencia del curso hacia el objeto Docente)
 -   o bien mucho antes, cuando necesitamos la abstracción Docente, porque es necesario agregarle **comportamiento**
 
 *El proceso de normalización de entidades en el esquema relacional surge de la misma manera como un proceso de generación de abstracciones posibles en el modelo de objetos*.
 
 Por último, podríamos decidir que nuestro objeto Curso tuviera los atributos docente (una referencia a un objeto Docente), legajoDocente y nombreDocente por dos motivos:
 
--   uno de negocio, si como en el caso anterior necesitáramos almacenar la información del docente que tomó el curso originalmente (y queremos mantenerla)
--   para mejorar la performance, en ese caso introducimos una redundancia desnormalizando la información del curso. Eso permite que podamos obtener la información de un curso sin necesidad de navegar hacia otras entidades, algo que todo diseñador debe contemplar para los casos de uso que el negocio exige.
+-   uno de negocio, si como en el caso anterior necesitáramos almacenar la información del docente en el momento de tomar el curso
+-   para mejorar la performance, en ese caso introducimos una redundancia desnormalizando la información del curso. Eso permite que podamos obtener la información de un curso sin necesidad de navegar hacia otras entidades (dejando la referencia LAZY hacia el docente), algo que todo diseñador debe contemplar para los casos de uso que el negocio exige.
 
 ### Redundancias por problemas de navegabilidad
 
