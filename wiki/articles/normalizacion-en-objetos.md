@@ -103,8 +103,12 @@ El modelo relacional es sumamente flexible, en una relación many-to-many Alumno
 
 Es mucho más fácil encarar estos objetivos si la relación de asociación entre Alumno y Curso es bidireccional, es decir que un alumno conoce la lista de cursos en los que está inscripto y un curso conoce la lista de alumnos que forman parte.
 
-Resumen de diferencias entre el modelo relacional y el de objetos
------------------------------------------------------------------
+Resumen
+-------
+
+En el modelo de objetos podemos aplicar ciertas reglas de normalización o redundancia, generando referencias hacia nuevas entidades o bien duplicando la información de un objeto en otro.
+
+### Diferencias entre el modelo relacional y el de objetos
 
 | Modelo relacional                                                                                       | Objetos                                                                                                                               |
 |---------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
