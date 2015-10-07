@@ -92,7 +92,7 @@ Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posi
 Por último, podríamos decidir que nuestro objeto Curso tuviera los atributos docente (una referencia a un objeto Docente), legajoDocente y nombreDocente por dos motivos:
 
 -   uno de negocio, si como en el caso anterior necesitáramos almacenar la información del docente en el momento de tomar el curso
--   para mejorar la performance, en ese caso introducimos una redundancia desnormalizando la información del curso. Eso permite que podamos obtener la información de un curso sin necesidad de navegar hacia otras entidades (dejando la referencia LAZY hacia el docente), algo que todo diseñador debe contemplar para los casos de uso que el negocio exige.
+-   para mejorar la performance, en ese caso introducimos una redundancia desnormalizando la información del curso. Eso permite que podamos obtener la información de un curso sin necesidad de navegar hacia otras entidades (dejando la referencia al docente en modo LAZY), algo que todo diseñador debe contemplar para los casos de uso que el negocio exige.
 
 ### Redundancias por problemas de navegabilidad
 
