@@ -101,7 +101,7 @@ El modelo relacional es sumamente flexible, en una relación many-to-many Alumno
 -   saber qué alumnos del curso de Diseño aprobaron el primer parcial
 -   saber en cuántos cursos está anotado un alumno de lunes a viernes
 
-sabemos que es mucho más fácil si la relación de asociación entre Alumno y Curso es bidireccional, es decir que un alumno conoce la lista de cursos en los que está inscripto y un curso conoce la lista de alumnos que forman parte.
+Es mucho más fácil encarar estos objetivos si la relación de asociación entre Alumno y Curso es bidireccional, es decir que un alumno conoce la lista de cursos en los que está inscripto y un curso conoce la lista de alumnos que forman parte.
 
 Resumen de diferencias entre el modelo relacional y el de objetos
 -----------------------------------------------------------------
