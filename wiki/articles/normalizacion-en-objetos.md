@@ -47,7 +47,7 @@ se trata de atributos que pueden calcularse pero que por algún motivo elegimos 
 
 Mientras que si no estuviera ese dato necesitamos hacer un join con la tabla de relación cursos-alumnos + el correspondiente count.
 
--   también se puede tratar de mejorar la performance, aún en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso
+-   también se puede tratar de mejorar la performance, aun en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso
 
 ### Campos calculados vs. datos del negocio no siempre calculables
 
