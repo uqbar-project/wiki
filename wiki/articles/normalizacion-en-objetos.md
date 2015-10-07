@@ -96,7 +96,7 @@ Por último, podríamos decidir que nuestro objeto Curso tuviera los atributos d
 
 ### Redundancias por problemas de navegabilidad
 
-El modelo relacional es sumamente flexible, en una relación many-to-many Alumno-Curso, podemos navegar la relación partiendo del curso o bien desde el alumno. En cambio, si en el modelo de objetos necesitamos resolver estos requerimientos
+El modelo relacional es sumamente flexible, en una relación many-to-many Alumno-Curso, podemos navegar la relación partiendo desde el curso o bien desde el alumno. En cambio, si en el modelo de objetos necesitamos resolver estos requerimientos
 
 -   saber qué alumnos del curso de Diseño aprobaron el primer parcial
 -   saber en cuántos cursos está anotado un alumno de lunes a viernes
