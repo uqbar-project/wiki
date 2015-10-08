@@ -61,7 +61,7 @@ Un problema que tiene la línea anterior es que para cualquier problema se le va
 
 Acá entra en juego lo de mandarle signal: a las clases de la jerarquía en vez de simplemente usar self error: "...". Yo puedo tener clases propias que hereden de Error que sean particulares del dominio en el que estoy trabajando y luego hacer algo como:
 
-`NoSePuedeVolarError signal: 'No tengo suficiente energía para volar'`
+`NoSePuedeVolarError new signal: 'No tengo suficiente energía para volar'`
 
 Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe, entre ellos el debugger de Pharo para aquellos errores que no queremos atrapar porque son bugs del programa. Por ejemplo:
 
