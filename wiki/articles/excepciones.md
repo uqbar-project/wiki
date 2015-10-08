@@ -5,6 +5,10 @@ Cuando un programa se ejecuta, pueden ocurrir errores: problemas de diversa índ
 
 Lo más seguro es fallar, es decir, abortar el flujo de ejecución para impedir que el resto del programa continúe ejecutándose como si no hubiera pasado nada. Una forma de lograr esto es mediante el lanzamiento de excepciones.
 
+En general cada método desarrollado debería seguir las siguientes pautas: - Tener un nombre descriptivo, ya que dicho nombre nos dice qué esperar, es una promesa al usuario de lo que debería suceder luego de mandar el mensaje - Hacer todo y sólo lo que el nombre indica - Si por algún motivo no se puede cumplir con lo prometido por el nombre del método, explotar de la forma más prolija posible
+
+Es importante que aquellas cosas que puedan ser validadas para saber si no se podrá cumplir con lo prometido, se validen previamente a producir efectos colaterales, de esa forma podemos evitar algunas posibles inconsistencias en caso de poder seguir adelante manejando el problema de alguna forma.
+
 Excepciones
 -----------
 
