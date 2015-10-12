@@ -28,19 +28,3 @@ Lo que tiene de simpático los parámetros intercalados es la expresividad, pero
 Esos paréntesis son inportantes para que se interprete como queremos y no como un único envío de mensajes, donde el mensaje sería between:and:raisedTo: de 3 parámetros, que los números no entienden!
 
 La [Precedencia de Mensajes](precedencia-de-mensajes.html) en Smalltalk se basa en estos 3 tipos de mensajes, sólo nos va a interesar esta diferenciación por ese motivo.
-
-En Smalltalk lo único que escapa a la regla de OBJETO MENSAJE PARAMETRO es:
-
-1) El circunflejo ^ que se usa para retornar un determinado valor de un método, en este ejemplo el objeto apuntado por la variable energia recibe el mensaje &gt; con el parámetro 10, y el resultado de eso es lo que retorna el método por el ^
-
-` #pepita`
-` >> puedeVolar`
-`   ^ energia > 10`
-
-2) La asignación := que se usa para cambiar el valor de una referencia como se explica en [este artículo](variables.html).
-
-3) La declaración de [variables locales](variables-locales-en-metodos.html) usando pipes: | nombreDeVariable |
-
-4) Los paréntesis, que se usan para delimitar expresiones
-
-5) El punto, que se usa para separar una sentencia de otra
