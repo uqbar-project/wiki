@@ -43,13 +43,10 @@ Devuelve 64...
 
 Sí, no hay precedencia de operadores como estamos acostumbrados, con lo cual el - tiene la misma precedencia que el \* ya que ambos son binarios.
 
-Cortando la precedencia
------------------------
-
-¿Y si yo quiero que primero se haga la resta?
+¿Y si yo quiero que primero se haga la multiplicación?
 
 Uso paréntesis, como en cualquier otro lenguaje:
 
-`  2 raisedTo: (5 - 1) sqrt.   `
+`  2 raisedTo: 5 - (2 * 4 sqrt). `
 
-Devuelve 4 (2 elevado a la 2)
+Así se restaría el resultado de multiplicar 2 por la raíz de 4 al 5, con lo cual estaríamos elevando 2 a la 1.
