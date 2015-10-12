@@ -42,6 +42,7 @@ Sintaxis
 --------
 
 -   [Sintaxis de Smalltalk](sintaxis-de-smalltalk.html)
+-   [Tipos de mensajes en Smalltalk](tipos-de-mensajes-en-smalltalk.html)
 -   [Variables locales en métodos](variables-locales-en-metodos.html)
 -   [Precedencia de Mensajes](precedencia-de-mensajes.html)
 
