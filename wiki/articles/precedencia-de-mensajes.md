@@ -32,13 +32,16 @@ El ejemplo final
 
 La siguiente evaluación:
 
-`  2 raisedTo: 5 - 1 sqrt.   `
+`  2 raisedTo: 5 - 2 * 4 sqrt.   `
 
-Devuelve 16...
+Devuelve 64...
 
--   se evalúa 1 sqrt (da 1),
--   luego 5 - 1 (da 4),
--   luego 2 raisedTo: 4
+-   se evalúa 4 sqrt (da 2),
+-   luego 5 - 2 (da 3),
+-   luego 3 \* 2 (da 6)
+-   luego 2 raisedTo: 6
+
+Sí, no hay precedencia de operadores como estamos acostumbrados, con lo cual el - tiene la misma precedencia que el \* ya que ambos son binarios.
 
 Cortando la precedencia
 -----------------------
