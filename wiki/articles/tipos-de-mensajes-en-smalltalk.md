@@ -27,7 +27,7 @@ Lo que tiene de simpático los parámetros intercalados es la expresividad, pero
 
 Esos paréntesis son inportantes para que se interprete como queremos y no como un único envío de mensajes, donde el mensaje sería between:and:raisedTo: de 3 parámetros, que los números no entienden!
 
-La [precedencia de mensajes](precedencia-de-mensajes.html) en Smalltalk se basa en estos 3 tipos de mensajes, sólo nos va a interesar esta diferenciación por ese motivo.
+La [Precedencia de Mensajes](precedencia-de-mensajes.html) en Smalltalk se basa en estos 3 tipos de mensajes, sólo nos va a interesar esta diferenciación por ese motivo.
 
 En Smalltalk lo único que escapa a la regla de OBJETO MENSAJE PARAMETRO es:
 
