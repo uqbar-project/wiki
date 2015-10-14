@@ -35,7 +35,7 @@ Es una técnica usual en muchas tecnologías, en objetos también. Podríamos pe
 
 se trata de atributos que pueden calcularse pero que por algún motivo elegimos almacenarlos como dato, ya sea
 
--   porque es conveniente cuando lo migramos a un esquema relacional, para facilitar las consultas posteriores, ej: conocer los cursos con más de 40 alumnos sería
+1) **porque es conveniente cuando lo migramos a un esquema relacional**, para facilitar las consultas posteriores, ej: conocer los cursos con más de 40 alumnos sería
 
 <code lang="sql">
 
@@ -47,7 +47,7 @@ se trata de atributos que pueden calcularse pero que por algún motivo elegimos 
 
 Mientras que si no estuviera ese dato necesitaríamos hacer un join con la tabla de relación cursos-alumnos + el correspondiente count.
 
--   también se puede tratar de mejorar la performance, aun en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso
+2) **porque queremos mejorar la performance**, aun en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso
 
 ### Campos calculados vs. datos del negocio no siempre calculables
 
