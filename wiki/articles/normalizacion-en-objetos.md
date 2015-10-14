@@ -35,7 +35,7 @@ Es una técnica usual en muchas tecnologías, en objetos también. Podríamos pe
 
 se trata de atributos que pueden calcularse pero que por algún motivo elegimos almacenarlos como dato, ya sea
 
--   porque es conveniente cuando lo migramos a un esquema relacional, para facilitar los queries posteriores, ej: conocer los cursos con más de 40 alumnos sería
+-   porque es conveniente cuando lo migramos a un esquema relacional, para facilitar las consultas posteriores, ej: conocer los cursos con más de 40 alumnos sería
 
 <code lang="sql">
 
