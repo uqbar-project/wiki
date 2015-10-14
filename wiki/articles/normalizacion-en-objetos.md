@@ -14,7 +14,7 @@ Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre
 ### Recordemos qué busca la normalización
 
 -   Evitar redundancias
--   Evitar inconsistencias: no quiero que un profesor renuncie y eso deje el curso apuntando a un profesor inexistente
+-   Evitar inconsistencias: no quiero que un profesor renuncie y el curso quede apuntando a un profesor inexistente
 -   Reducir el impacto de los cambios en los datos: si cargué mal la información de un profesor, debería actualizarlo en un solo lugar
 
 Primer modelo posible
