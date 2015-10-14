@@ -54,7 +54,7 @@ Mientras que si no estuviera ese dato necesitaríamos hacer un join con la tabla
 Si necesitamos saber cuántos inscriptos hubo al comienzo del cuatrimestre, debemos tener en cuenta que
 
 -   el campo se puede calcular en un momento t<sub>0</sub>
--   pero una vez pasado ese momento, el cálculo se pierde
+-   pero una vez pasado ese momento, el cálculo puede perderse (por ejemplo porque algún alumno abandona la cursada o se cambia de curso)
 
 Este requerimiento **no tiene nada que ver con la normalización, porque no hay redundancia**, en ese caso lo que tenemos que hacer es crear un atributo en el Curso...
 
