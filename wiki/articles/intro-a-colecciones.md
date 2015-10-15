@@ -78,7 +78,7 @@ Ya podemos ver un poco más en detalle la relación entre una colección y sus e
 
 Así, los objetos que quedan referenciados por la colección pueden tener otras referencias sin problema. Un objeto no tiene nada especial por ser elemento de una colección, sólo tiene una referencia más hacia él. Un objeto no conoce de qué colecciones es elemento (podría tener una referencia explícita a la colección para saberlo, pero eso habría que programarlo a mano y por lo general tampoco nos interesa).
 
-La referencia a un objeto por ser elemento de una colección cuenta para que el objeto no salga del ambiente cuando pasa el [Garbage Collector](garbage-collector.html). Eso significa que si dejamos de referenciar a nuestra estampilla alemana mediante la referencia estampillaAlemana, como la colección de estampillas la conoce, el objeto va a seguir en el sistema.
+La referencia a un objeto por ser elemento de una colección cuenta para que el objeto no salga del ambiente cuando pasa el [Garbage collector](garbage-collector.html). Eso significa que si dejamos de referenciar a nuestra estampilla alemana mediante la referencia estampillaAlemana, como la colección de estampillas la conoce, el objeto va a seguir en el sistema.
 
 ![](Pdep-colecciones-3.PNG "Pdep-colecciones-3.PNG")
 
