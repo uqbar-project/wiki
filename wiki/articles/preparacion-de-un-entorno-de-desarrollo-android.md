@@ -1,7 +1,9 @@
 Download e instalación base
 ---------------------------
 
-La instalación que nosotros recomendamos es la siguiente:
+La instalación que nosotros recomendamos es la siguiente: <https://developer.android.com/sdk/index.html> (descargar con la última versión que a Noviembre 2015 es Marshmallow)
+
+Otra configuración posible era
 
 -   **Eclipse JEE Kepler**
     -   versiones anteriores **no funcionan**
