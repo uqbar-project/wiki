@@ -30,13 +30,6 @@ Las configuraciones que te recomendamos son:
     -   Scale: Auto
     -   Emulated Performance: Use Host GPU chequeado, Store a snapshot for faster startup deschequeado
 
-Instalación del lenguaje Xtend para el entorno Android
-------------------------------------------------------
-
--   En el eclipse, instalar el **plugin de Xtend**. Los ejemplos ya funcionan con la versión **2.7.2**.
-    -   Update site: <http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/>
-    -   Pasos de instalación: Help &gt; Install New Software &gt; seleccionan el update site y luego marcan únicamente Xtend 2.7.2 para que no se vuelva muy pesado el entorno. Reinician el Eclipse.
-
 ### Configuración
 
 -   Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](configuraciones-generales-para-cualquier-eclipse.html)
