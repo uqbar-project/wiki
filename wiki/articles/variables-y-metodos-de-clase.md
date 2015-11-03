@@ -42,7 +42,7 @@ Mensajes y Métodos de clase
 
 Ente otras cosas, las clases crean objetos nuevos: cada vez que a le mando el mensaje **new** a una clase, tengo una nueva instancia de esa clase. Podemos crear nuevas instancias en cualquier momento de nuestro programa (en el workspace, dentro de un método, etc).
 
-Entonces, los mensajes de clase son mensajes que entienden las clases. El nombre (selector) de un mensaje de clase se escribe igual que siempre (empieza con minúscula).
+Entonces, los mensajes de clase son mensajes que entienden las clases, no las instancias de las mismas. El nombre (selector) de un mensaje de clase se escribe igual que siempre (empieza con minúscula).
 
 Algunos ejemplos:
 
@@ -64,18 +64,22 @@ Workspace:
 
 `with:with:with:` es un mensaje que entienden las clases de colecciones (en este caso Bag es la clase que recibe el mensaje). `with:with:with:` devuelve una nueva colección, que tiene los tres elementos adentro. En éste caso, devuelve un bag con la brújula, la botella y el catalejo.
 
+En general es deseable tener una forma de crear objetos que ya estén inicializados adecuadamente para poder usarlos inmediatamente, y no que arranquen en un estado inválido y requieran ser configurados a posteriori.
+
 ### ¿Cómo escribo métodos de clase?
 
 Cada mensaje de clase debe tener asociado un método de clase (su codificación).
 
 -   En Pharo: En el segundo panel del System Browser, apretando el boton **class**, escriben el método como hasta ahora. (No se olviden de volver a apretar **instance** para escribir metodos de instancia)
--   En el parcial: simplemente pongan **(MC)** al lado del metodo, para diferenciarlo de los métodos de instancia.
+-   En el parcial: simplemente pongan **(MC)** al lado del método, para diferenciarlo de los métodos de instancia.
 
 Workspace:
 
 `  barbanegra := Pirata nuevoConItems: items ebriedad: 100 monedas: 1500.`
 
-El mensaje `nuevoConItems:ebriedad:monedas:` se lo mando a la clase Pirata y me decuelve un nuevo pirata ya inicializado con los items, la ebriedad y las monedas que le indiquemos. Codificación:
+El mensaje `nuevoConItems:ebriedad:monedas:` se lo mando a la clase Pirata y me devuelve un nuevo pirata ya inicializado con los items, la ebriedad y las monedas que le indiquemos.
+
+Codificación:
 
 ` #Pirata`
 ` (MC)  >> nuevoConItems: losItems ebriedad: nivelEbriedad monedas: unasMonedas`
@@ -86,4 +90,4 @@ El mensaje `nuevoConItems:ebriedad:monedas:` se lo mando a la clase Pirata y me 
 `  unPirata monedas: unasMonedas.`
 `  ^unPirata.`
 
-Recordemos que, como el que recibe este mensaje es una clase, acá **self es la clase**, no una instancia.
+Recordemos que, como el que recibe este mensaje es una clase, acá **self es la clase**, no una instancia. El motivo por el cual es importante usar self en vez de escribir el nombre de la clase (en este caso Pirata) es porque estos métodos también se heredan, y si subclaseamos Pirata no se va a comportar como queremos cuando le mandemos `nuevoConItems:ebriedad:monedas:` a la subclase. Al usar self indicamos que el mensaje debe enviarse al objeto que recibió `nuevoConItems:ebriedad:monedas:`, o sea que si se lo mandamos a una subclase de Pirata, la instancia creada será de dicha clase.
