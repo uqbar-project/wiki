@@ -10,7 +10,7 @@ Si tengo una variable de clase y cambio el valor al que referencia, automáticam
 Diferencia con las variables de instancia
 -----------------------------------------
 
-Las variables de instancia son propias de cada objeto, si cambio una referencia en un objeto la referencia de otro de la misma clase no cambia (aunque las variables se llamen igual). En cambio, si cambio la referencia de una variable de clase, cambia para todas las instancias.
+Las variables de instancia son propias de cada objeto, si cambio una referencia en un objeto la referencia de otro de la misma clase no cambia (aunque las variables se llamen igual). Si cambio la referencia de una variable de clase, todas las instancias van a verse afectadas, ya que no es una referencia propia.
 
 ¿Como las usamos?
 -----------------
