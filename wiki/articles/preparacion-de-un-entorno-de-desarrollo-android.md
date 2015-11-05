@@ -17,7 +17,7 @@ Las configuraciones que te recomendamos son:
 -   Si estás familiarizado con los shortcuts del Eclipse: File &gt; Settings &gt; Keymap y en el combo Keymaps seleccionar Eclipse
 -   Para bajarte los ejemplos activá el plugin de SVN: VCS &gt; "Enable Version Control Integration...", luego VCS &gt; Browse Repository &gt; Browse Subversion Repository, y haciendo click en el botón Agregás la URL correspondiente.
 
-[1](File:SVN_plugin.png)
+![](SVN_plugin.png "SVN_plugin.png")
 
 -   Luego reapuntar el SDK al directorio donde se instaló: Tools &gt; Android &gt; SDK Manager: ubican ese directorio Android SDK Location (el que estuvo en el paso $Android\_SDK\_Path). Además deben tener instalada alguna API (API Level xx, Revision x, Status: deben marcarla y luego seleccionar Apply). Una vez instalado reiniciar.
 
