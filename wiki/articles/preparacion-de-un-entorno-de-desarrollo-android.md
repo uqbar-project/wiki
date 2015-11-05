@@ -15,7 +15,7 @@ La instalación que nosotros recomendamos es la siguiente:
 Las configuraciones que te recomendamos son:
 
 -   Si estás familiarizado con los shortcuts del Eclipse: File &gt; Settings &gt; Keymap y en el combo Keymaps seleccionar Eclipse
--   plugin de **Subclipse 1.10.x**??
+-   Para bajarte los ejemplos activá el plugin de SVN: VCS &gt; "Enable Version Control Integration...", luego VCS &gt; Browse Repository &gt; Browse Subversion Repository, y haciendo click en el botón Agregás la URL correspondiente.
 
 <!-- -->
 
