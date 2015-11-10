@@ -10,7 +10,7 @@ Ejemplos
 
 Algunos objetos literales como los números y los símbolos (son como los strings pero arrancan con \#) son únicos en el sistema, por ese motivo evaluar \#hola == \#hola da true.
 
-Conviene hacer las comparaciones con `=` y no con `==`.
+Sin embargo, lo normal es hacer las comparaciones con `=` y no con `==`.
 
 La razón contada muy rápido: imaginate que por alguna razón en la imagen de Smalltalk (o de cualquier lenguaje que trabaja con objetos) en un momento hay dos String "hola", que están apuntados por las variables str1 y str2. La comparación
 
@@ -39,15 +39,19 @@ Esperaría que la consulta de igualdad sea cierta pero no la de identidad. Si ve
 
 De la misma forma podríamos redefinir la igualdad en alguna clase propia, como ser Direccion que tiene una calle y una numeración.
 
+`#Direccion`
 `= otraDireccion`
 ` ^ self class = otraDireccion class `
 `      and: [ self calle = otraDireccion calle`
 `        and: [ self numeracion = otraDireccion numeracion]]`
 
-**Importante** Sólo debería redefinirse la igualdad basado en valores que no vayan a cambiar, en nuestro ejemplo una vez construido el objeto dirección con la calle y la numeración, no debería poder cambiar esas referencias, ya que la relación de igualdad entre dos objetos debería mantenerse a lo largo del tiempo. O sea, el objeto no necesita ser totalmente [ inmutable](inmutabilidad.html) pero sí debemos garantizar que lo sea respecto a los valores usados para la igualdad.
+**Importante** Sólo debería redefinirse la igualdad basado en valores que no vayan a cambiar, en nuestro ejemplo una vez construido el objeto dirección con la calle y la numeración, no debería poder cambiar esas referencias, ya que la relación de igualdad entre dos objetos debería mantenerse a lo largo del tiempo. O sea, el objeto no necesita ser totalmente [inmutable](inmutabilidad.html) pero sí debemos garantizar que lo sea respecto a los valores usados para la igualdad.
 
-Cuando redefinimos el = hay que redefinir también el método hash que es usado por ejemplo por las colecciones. De esa forma si queremos tener un Set de direcciones funcione como esperamos de modo que no hayan dos direcciones iguales. El hash (no sólo en objetos) es una función que retorna un número para un determinado elemento. En nuestro caso va a ser un mensaje unario que recibe el objeto al cual le redefinimos la igualdad, por ejemplo para las direcciones:
+Cuando redefinimos el = hay que redefinir también el método hash que es usado, por ejemplo, por las colecciones. De esa forma si queremos tener un Set de direcciones funcione como esperamos de modo que no hayan dos direcciones iguales. El hash (no sólo en objetos) es una función que retorna un número para un determinado elemento y se usa para algoritmos bien conocidos, y normalmente está definida en función del hash de otros objetos para simplificar la generación de una buena clave para dichos algoritmos.
 
+Por ejemplo para las direcciones:
+
+`#Direccion`
 `hash`
 ` ^ self calle hash + self numeracion hash`
 
