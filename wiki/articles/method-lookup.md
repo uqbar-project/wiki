@@ -4,7 +4,7 @@ Es el mecanismo por el cual se determina para el envío de un mensaje qué méto
 
 Tenemos (a efectos de entender el mecanismo porque esto lo hace internamente el ambiente) que mantener una referencia a la clase donde estamos buscando en un momento determinado.
 
-Al principio la *clase actual* es **C** y el objeto receptor del mensaje ([self](self---pseudovariable.html)) es **i**.
+Al principio la *clase actual* es **C** por ser la clase a partir de la cual instanciamos al objeto receptor del mensaje que es **i**.
 
 El algoritmo es el siguiente:
 
@@ -67,6 +67,8 @@ Basándonos en el ejemplo 1, si le enviamos el mensaje **isNil** al objeto `'hol
 **-** se ejecuta el método **\#isNil** de la clase **Object** sobre **i** el objeto receptor del mensaje (o sea `hola`)
 
 Conclusión: `'hola'` entiende el mensaje **\#isNil**
+
+Es importante entender que, independientemente de dónde se mande un determinado mensaje (por ejemplo, podría ser en un método heredado donde se mande un mensaje a [self](self---pseudovariable.html)), el method lookup va a arrancar por la clase a partir de la cual se instanció el objeto. Lo único que puede alterar este mecanismo para empezar a buscar desde una clase distinta es si se mandó el mensaje a [super](super.html).
 
 Ejemplo (no entiende el mensaje)
 --------------------------------
