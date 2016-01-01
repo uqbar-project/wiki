@@ -2,7 +2,9 @@
 
 ### Download e instalación base
 
-Hasta marzo de 2015, es conveniente usar la versión 2.7.3, ya que la 2.8.0 tiene algunos bugs.
+En el 2016, todos los ejemplos de uqbar estarán utilizando la versión 2.9.1 que se puede descargar en <http://www.eclipse.org/xtend/download.html> (con plugins tanto para Eclipse como para IntelliJ IDEA).
+
+Como es posible que el equipo de desarrollo de Xtend saque nuevas versiones durante el año, dejamos una alternativa para poder instalar la versión 2.9.1 cuando ya no sea la última versión. El lector se preguntará, ¿no podría yo utilizar el plugin de las versiones 2.9.2 ó 2.9.3? Es posible, pero ya hemos experimentado problemas de retrocompatibilidad graves que impedían ejecutar los ejemplos de uqbar correctamente. Entonces nuestra recomendación es utilizar 2.9.1 como versión de tu entorno de desarrollo xtend.
 
 Para eso:
 
@@ -10,7 +12,7 @@ Para eso:
 
 <!-- -->
 
--   Buscar la versión **2.7.3** y descargar el link "All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
+-   Buscar la versión **2.9.1** y descargar el link "All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
 
 <!-- -->
 
@@ -24,10 +26,6 @@ Para eso:
 
 -   Reiniciar el Eclipse
 
-**Nota Importante:** Deben utilizar la versión *2.7.3* de Xtend (versiones anteriores a 2.7 ó posteriores tienen problemas de compatibilidad para utilizar los ejemplos)
-
-Para descargar el Eclipse completo (sólo versión 2.8) puedes acceder aquí: <http://eclipse.org/xtend/download.html>. Los ejemplos **NO** funcionarán con esta versión.
-
 ### Configuraciones default del eclipse
 
 Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](configuraciones-generales-para-cualquier-eclipse.html)
@@ -40,7 +38,7 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 La solución a ese problema se explica en la siguiente sección. Para más detalles pueden mirar <http://www.eclipse.org/xtend/download.html>
 
-### Trabajo con Maven
+### Trabajo con Maven (recomendado)
 
 Para poder utilizar Maven con Xtend tenés que instalarlo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven)
 
@@ -59,7 +57,7 @@ Acá hay dos opciones, dependiendo de cómo estés manejando las dependencias en
 `   `<parent>
 `       `<groupId>`org.uqbar-project`</groupId>
 `       `<artifactId>`uqbar-xtend-parent`</artifactId>
-`       `<version>`2.7.3`</version>
+`       `<version>`2.9.1`</version>
 `   `</parent>
 
 Luego boton derecho, "Maven" "Update Project..."
