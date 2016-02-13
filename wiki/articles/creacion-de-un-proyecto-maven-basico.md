@@ -48,10 +48,10 @@ Esto nos creará los archivos de configuración del eclipse: y . También se ocu
 
 Luego, desde el eclipse se deberá importar el proyecto, utilizando la opción "Import" -&gt; "Existing projects into workspace".
 
-Publicarlo en svn
------------------
+Publicarlo en en un repositorio
+-------------------------------
 
-[Publicar un proyecto en svn](publicar-un-proyecto-en-svn.html)
+[Publicar un proyecto en svn](publicar-un-proyecto-en-svn.html) TODO: Agregar links para git
 
 Agregar más referencias posteriormente
 --------------------------------------
