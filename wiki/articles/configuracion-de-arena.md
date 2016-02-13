@@ -223,11 +223,11 @@ Si estás en una tecnología distinta de Java, tenés que asegurarte que el proy
 
 ### JDK
 
-Revisá que tengas instalada una JDK (no JRE, tiene que ser JDK con las herramientas para desarrollar en Java como el compilador, debug, etc.) y que la versión de ese JDK sea 1.7 ó superior. Si querés usar una JDK 1.6 ó inferior te va a aparecer el siguiente mensaje de error
+Revisá que tengas instalada una JDK (no JRE, tiene que ser JDK con las herramientas para desarrollar en Java como el compilador, debug, etc.) y que la versión de ese JDK sea 1.8 ó superior. Si querés usar una JDK 1.7 ó inferior te va a aparecer el siguiente mensaje de error
 
 `java.lang.UnsupportedClassVersionError: ---aplicación de Arena--- : Unsupported major.minor version 51.0`
 
-porque Arena está compilado con una JDK 1.7 (1.6 ya no tiene soporte de Sun)
+porque Arena está compilado con una JDK 1.8
 
 ### Problemas para encontrar la ventana ejecutable
 
