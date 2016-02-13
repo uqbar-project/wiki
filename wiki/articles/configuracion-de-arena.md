@@ -37,7 +37,7 @@ Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 `       `<dependency>
 `           `<groupId>`org.uqbar-project`</groupId>
 `           `<artifactId>`arena-jface`</artifactId>
-`           `<version>`3.5.0`</version>
+`           `<version>`3.6.1`</version>
 `       `</dependency>
 `       `<dependency>
 `           `<groupId>`uqbar-project.org`</groupId>
