@@ -11,15 +11,7 @@ Configurar el parent pom de la siguiente manera:
 <parent>
 `   `<groupId>`org.uqbar-project`</groupId>
 `   `<artifactId>`uqbar-parent-project`</artifactId>
-`   `<version>`1.9-alpha-1`</version>
-</parent>
-
-Salvo que estemos trabajando con xtend, en cuyo caso deberías usar éste:
-
-<parent>
-`    `<groupId>`org.uqbar-project`</groupId>
-`    `<artifactId>`uqbar-xtend-parent`</artifactId>
-`    `<version>`2.7.3`</version>
+`   `<version>`1.9`</version>
 </parent>
 
 ### Dependencias para proyectos de dominio
@@ -64,6 +56,16 @@ Las otras dependencias como JUnit se toman de la definición del parent project,
 `       `</dependency>
 
 Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "arena-jface", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
+
+### Arena y Xtend
+
+Si estás trabajando Arena-UI desde xtend, este parent contiene todas las dependencias que necesitás (JUnit, el compilador Xtend, Arena UI, Uqbar Domain, etc.):
+
+<parent>
+`    `<groupId>`org.uqbar-project`</groupId>
+`    `<artifactId>`arena-xtend-parent`</artifactId>
+`    `<version>`3.6.1`</version>
+</parent>
 
 ### Importante, para correr cualquier aplicación de Arena
 
