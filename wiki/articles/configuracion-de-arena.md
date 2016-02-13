@@ -21,7 +21,7 @@ Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomend
 <dependency>
 `   `<groupId>`org.uqbar-project`</groupId>
 `   `<artifactId>`uqbar-domain`</artifactId>
-`   `<version>`3.5.0`</version>
+`   `<version>`3.6.1`</version>
 </dependency>
 
 ### Dependencias para proyectos de UI
