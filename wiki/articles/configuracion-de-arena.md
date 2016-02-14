@@ -3,8 +3,31 @@ Pre-requisitos
 
 Asumimos que tenés instaladas las herramientas básicas según se explica en [este instructivo](preparacion-de-un-entorno-de-desarrollo-java.html), incluyendo Maven.
 
-Qué debe tener un pom.xml de Arena
-----------------------------------
+Estructura de un proyecto Arena
+-------------------------------
+
+En general una aplicación arena consta de dos componentes o partes:
+
+-   el dominio
+-   la vista
+
+Si bien podemos tener todas las clases de ambas partes en un único proyecto, lo más prolijo es plasmar esa separación en dos proyectos (java/scala/loquesea). Porque por ejemplo, para el TP podrán reutilizar el dominio entre las diferentes tecnologías.
+
+Dependencias de los proyectos
+-----------------------------
+
+Entonces en ese esquema si seguimos con la idea de que el dominio no debe estar acoplado a la tecnología de la vista directamente, nuestro proyecto "dominio" no dependerá del artefacto arena, pero sí de otro artefacto más abstracto que establece contratos de los objetos de negocio: uqbar-domain.
+
+Por otro lado, nuestro proyecto que tendrá la vista en arena sí, lógicamente dependerá del artefacto "arena".
+
+La siguiente figura resume esto:
+
+TODO: IMAGEN
+
+Nota: si hacemos un único proyecto con dominio + ui arena, podemos sólo depender de "arena" y transitivamente veríamos a "uqbar-domain".
+
+Qué debe tener tus pom.xml
+--------------------------
 
 ### Dependencias para proyectos de dominio
 
