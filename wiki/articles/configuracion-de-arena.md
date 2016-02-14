@@ -26,8 +26,8 @@ La siguiente figura resume esto:
 
 Nota: si hacemos un único proyecto con dominio + ui arena, podemos sólo depender de "arena" y transitivamente veríamos a "uqbar-domain".
 
-Qué debe tener tus pom.xml
---------------------------
+Lo que deben tener tus pom.xml
+------------------------------
 
 ### Dependencias para proyectos de dominio
 
