@@ -22,7 +22,7 @@ Por otro lado, nuestro proyecto que tendrá la vista en arena sí, lógicamente 
 
 La siguiente figura resume esto:
 
-TODO: IMAGEN
+![](Arena-dependencias.fw.png "Arena-dependencias.fw.png")
 
 Nota: si hacemos un único proyecto con dominio + ui arena, podemos sólo depender de "arena" y transitivamente veríamos a "uqbar-domain".
 
