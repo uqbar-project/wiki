@@ -6,14 +6,6 @@ Asumimos que tenés instaladas las herramientas básicas según se explica en [e
 Qué debe tener un pom.xml de Arena
 ----------------------------------
 
-Configurar el parent pom de la siguiente manera:
-
-<parent>
-`   `<groupId>`org.uqbar-project`</groupId>
-`   `<artifactId>`uqbar-parent-project`</artifactId>
-`   `<version>`1.9`</version>
-</parent>
-
 ### Dependencias para proyectos de dominio
 
 Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomendamos) tenés que definir esta dependencia
