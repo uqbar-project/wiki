@@ -95,13 +95,13 @@ porque la variable P2, que debe llegar sin ligar al findall, llega ligada.
 
 **Un ejemplo futbolero**
 
-    ganoContra(boca, riber).
-    ganoContra(boca, zanLorenso).
-    ganoContra(boca, beles).
+    ganoContra(argentina, suiza).
+    ganoContra(argentina, belgica).
+    ganoContra(argentina, holanda).
 
-    ganoContra(riber, zanLorenso).
+    ganoContra(belgica, eeuu).
 
-    ganoContra(beles, riber).
+    ganoContra(holanda, mexico).
 
     superEquipo( Equipo ) :- findall(P, ganoContra(Equipo, P), Partidos), length(Partidos, CantGanados), CantGanados > 2.
 
