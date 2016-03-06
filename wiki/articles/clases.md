@@ -68,6 +68,17 @@ Mandándole el mensaje new a la clase correspondiente.
 `mufasa := Leon new.`
 `simba tuPapaEs: mufasa.`
 
+Es importante entender que en las líneas del estilo
+
+`  unaVar := UnaClase new.`
+
+pasan **dos** cosas, en el orden que se indica
+
+1.  se crea un objeto instancia de la clase UnaClase.
+2.  se hace que la variable unaVar haga referencia al objeto recién creado.
+
+Puede perfectamente instanciarse una clase y no asignar una variable en la misma línea con el nuevo objeto, siempre depende de lo que se esté tratando de hacer.
+
 ### Diagramando Clases
 
 Ver [Diagrama de clases](diagrama-de-clases.html)
