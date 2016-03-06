@@ -13,7 +13,7 @@ P.ej. si tengo un objeto referenciado por la variable pepe, y pongo
 ` pepe direccion`
 
 ` `**`Wollok:`**
-` pepita.direccion()`
+` pepe.direccion()`
 
 entonces
 
