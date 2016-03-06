@@ -47,41 +47,9 @@ SIEMPRE lo que se encuentre a la izquierda de la asignación debe ser una variab
 ` 3 := 5.   <--- 3 es un objeto, no una referencia!!!`
 ` pepita energia := 10.   <--- pepita energia es un envío de mensajes, no una referencia!!!`
 
+Los mismos ejemplos en Wollok serían:
+
+`3 = 5 <--- Ojo que no se está consultando por igualdad, si eso es lo que querés tenés que usar ==`
+`pepita.energia() = 10`
+
 En ningún caso vamos a poder modificar desde fuera del objeto que tiene una referencia el valor de la misma, siempre hay que mandarle un mensaje a ese objeto para que la cambie. Esto está relacionado con la idea de [encapsulamiento](encapsulamiento.html), que es una de las bases del paradigma de objetos.
-
-Referenciando nuevas instancias (Smalltalk nativo)
---------------------------------------------------
-
-En las líneas del estilo
-
-`  unaVar := UnaClase new.`
-
-pasan **dos** cosas, en el orden que se indica
-
-1.  se crea un objeto instancia de la clase UnaClase.
-2.  se hace que la variable unaVar haga referencia al objeto recién creado.
-
-### Un ejemplito
-
-Miremos esta secuencia de sentencias, se numeran para hablar de ellas abajo.
-
-`  1. col1 := OrderedCollection new.`
-`  2. col1 add: Jugador new.`
-`  3. col1 add: (Carta palo: 'espada' numero: 3).`
-`  4. col1 add: 'hola'.`
-`  5. jug := col1 first.`
-`  6. tacar := col1 second.`
-`  7. elPalo := tacar palo.`
-`  8. jug agregarCarta: (Carta palo: 'oro' numero: 4).`
-`  9. col2 := col1.`
-` 10. col2 add: 38.`
-
-Comentarios
-
--   en la línea 1 se crea una instancia de OrderedCollection, y además la variable col1 es asignada con esa instancia nueva.
--   en las líneas 2 y 3 se crean dos objetos (un jugador y una carta) sin que se asignen a ninguna variable (no nos importa cómo maneja su estado la colección).
--   en las líneas 5, 6 y 7 se asignan variables con referencias a objetos que no se crean en la misma línea, que "vienen desde antes".
--   en la línea 8, otra vez se crea un objeto sin asignarlo a una variable.
--   en la línea 9, las variable col2 pasa a apuntar al **mismo** objeto que es apuntado por la variable col1
--   por lo tanto si después de la línea 10 pido `col1` `size` me va a decir 4.
-
