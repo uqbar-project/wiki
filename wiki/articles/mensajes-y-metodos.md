@@ -9,14 +9,18 @@ Cuando se le envía un mensaje a un objeto, se activa un método cuyo nombre coi
 
 P.ej. si tengo un objeto referenciado por la variable pepe, y pongo
 
+` `**`Smalltalk:`**
 ` pepe direccion`
+
+` `**`Wollok:`**
+` pepita.direccion()`
 
 entonces
 
 -   estoy enviando el mensaje *direccion*
 -   se va a activar un método llamado *direccion*. ¿Qué método? El que decida el [method lookup](paradigma-de-objetos---method-lookup.html)
 
-Si trabajamos con prototipos (por ejemplo con el Object Browser; o un lenguaje como Self o Javascript), entonces los métodos están los objetos.
+Si trabajamos con prototipos (por ejemplo con el Object Browser o los WKO), entonces los métodos están en los objetos.
 
 Si trabajamos con clases (como todo el cuatrimestre excepto al principio), entonces los métodos están en las clases.
 
