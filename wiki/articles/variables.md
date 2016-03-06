@@ -31,7 +31,7 @@ En Wollok:
 
 `object pepita {`
 `  var energia`
-
+`  `
 `  method energia(cantidad){`
 `    energia = cantidad`
 `  }`
