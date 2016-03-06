@@ -16,6 +16,10 @@ A medida que el sistema crece esta característica toma más importancia ya que 
 
 Es importante entender que acceder a los atributos de un objeto mediante mensajes no es suficiente para afirmar que no se rompe el encapsulamiento del objeto. Supongamos que queremos calcular la distancia que tiene que volar pepita para llegar a otro lugar, es muy común ver cosas como:
 
+**`Smalltalk:`**
 `pepita lugarActual kilometraje`
+
+**`Wollok:`**
+`pepita.lugarActual(kilometraje)`
 
 (donde lugarActual y kilometraje son los getters de los respectivos objetos receptores) para trabajar con el número resultante en vez de delegar en el objeto que puede resolver el problema de la distancia a otro lugar.
