@@ -2,7 +2,7 @@ Muchachos, no olvidar: en objetos una variable es una **referencia** a un objeto
 
 En Smalltalk, cuando una variable no ha sido inicializada aún, la misma referencia al objeto `nil` que representa la nada misma (y entiende muy poquitos mensajes, porque no hay muchas cosas que uno quiera hacer con la nada).
 
-En Wollok, la nada no está representada con un objeto, sino con un valor primitivo llamado `null`. Si en algún momento ven que al ejecutar su programa, el mismo arroja un error llamado NullPointerException, significa que trataron de mandar un mensaje a algo que esperaban que fuera un objeto, pero era null, con lo cual deberían revisar que las variables involucradas en dicha operación se encuentren inicializadas correctamente.
+En Wollok, la nada no está representada con un objeto, sino con un valor primitivo llamado `null`. Si en algún momento ven que al ejecutar su programa, el mismo arroja un error que dice "wollok.lang.Exception: Cannot send message <nombre del mensaje> to null", significa que trataron de mandar un mensaje a algo que esperaban que fuera un objeto, pero era null, con lo cual deberían revisar que las variables involucradas en dicha operación se encuentren inicializadas correctamente.
 
 La [asignación](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html) de variables se logra de la siguiente forma:
 
