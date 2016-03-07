@@ -22,33 +22,79 @@ La situación donde más natural es delegar es al querer tratar polimórficament
 
 ### Ejemplo
 
+**`Smalltalk:`**
 `Tanque >> dispararA: otroTanque`
 `   | unMisil |`
 `   unMisil := misiles anyOne.`
 `   misiles remove: unMisil.`
 `   danioTotal := unMisil cuantoDañoPara: otroTanque.`
-`   otroTanque coraza > danioTotal ifTrue: `
-`        [ otroTanque coraza: otroTanque coraza - danioTotal ]`
-`        [ otroTanque coraza: 0 ].`
+`   otroTanque coraza > danioTotal `
+`     ifTrue: [ otroTanque coraza: otroTanque coraza - danioTotal ]`
+`     ifFalse: [ otroTanque coraza: 0 ].`
 
-Fíjense que en el ejemplo del tanque si asumimos que hay muchos tipos de misiles, desde el tanque las tratamos polimórficamente envíandoles el mensaje \#cuantoDañoPara:, pero no sé si delegamos lo suficiente.
+**`Wollok:`**
+`class Tanque {`
+`  method dispararA(otroTanque) {`
+`    var unMisil = misiles.anyOne() `
+`    misiles.remove(unMisil) `
+`    var danioTotal = unMisil.cuantoDanioPara(otroTanque) `
+`    if (otroTanque.coraza() > danioTotal) {`
+`      otroTanque.coraza(otroTanque.coraza() - danioTotal )`
+`    } else {`
+`      otroTanque.coraza(0)`
+`    }`
+`  }`
+`}`
+
+Fíjense que en el ejemplo anterior, si asumimos que hay muchos tipos de misiles, desde el tanque los tratamos polimórficamente envíandoles el mismo mensaje para obtener el daño que recibirá el otro tanque, pero no sé si delegamos lo suficiente.
 
 Veamos esta otra solución que delega mucho más que la anterior:
 
+**`Smaltallk:`**
 `Tanque >> dispararA: otroTanque`
 `   self descargarMisil dañarA: otroTanque`
 `Tanque >> descargarMisil`
 `  "El remove: devuelve el parámetro"`
 `  ^misiles remove: misiles anyOne`
 `Tanque >> recibirDaño: cant`
-`  self coraza: (self coraza - cant) max: 0`
+`  self coraza: ((self coraza - cant) max: 0)`
 `Misil >> dañarA: otroTanque`
 `  "Asumimos que Misil es la superclase de todos las otras clases de misiles"`
 `  otroTanque recibirDaño: (self cuantoDañoPara: otroTanque)`
 
+**`Wollok:`**
+`class Tanque {`
+`  method dispararA(otroTanque) {`
+`    self.descargarMisil().daniarA(otroTanque)`
+`  }`
+`  method descargarMisil() {`
+`    var unMisil = misiles.anyOne();`
+`    misiles.remove(unMisil)`
+`    return unMisil`
+`  }`
+`  method recibirDanio(cant) {`
+`    var corazaActual = (self.coraza() - cant).max(0)`
+`    self.coraza(corazaActual)`
+`  }`
+`}  `
+`class Misil {`
+`  method daniarA(otroTanque) {`
+`  //Asumimos que Misil es la superclase de todos las otras clases de misiles`
+`  otroTanque.recibirDanio(self.cuantoDanioPara(otroTanque))`
+`  }`
+`}`
+
 También se puede hablar de extensibilidad, si el día de mañana se agrega un nuevo misil (el misil Gandhi) que en vez de sacar coraza le hace un cariñito al otro tanque Con la segunda solución eso se agrega bastante fácil
 
+**`Smalltalk:`**
 `MisilGandhi >> dañarA: otroTanque`
 `  otroTanque recibirCariñito`
 
-La segunda solución es más extensible. Lo malo de este agregado es la [expresividad](declaratividad-vs--expresividad.html), porque que el método se llama \#dañarA: y me da la sensación de que siempre le saca coraza ... tal vez deberíamos buscar un mejor nombre que no implique que exista un daño sobre el otro tanque.
+**`Wollok:`**
+`class MisilGandhi {`
+`  method daniarA(otroTanque) {`
+`    otroTanque.recibirCarinito()`
+`  }`
+`}`
+
+La segunda solución es más extensible. Lo malo de este agregado es la [expresividad](declaratividad-vs--expresividad.html), porque "dañarA" me da la sensación de que siempre le saca coraza ... tal vez deberíamos buscar un mejor nombre que no implique que exista un daño sobre el otro tanque.
