@@ -32,23 +32,13 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 ### ¿Cómo empezar?
 
--   Crear un proyecto Maven
+-   Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven))
 
-### Trabajo con Maven (recomendado)
+`* en la primera ventana, clickear en la opción "Skip archetype "`
+`* definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds`
+`* definir un artifactId, que se asocia al nombre de tu proyecto`
 
-Para poder utilizar Maven con Xtend tenés que instalarlo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven)
-
-### Configuración de la librería de xtend
-
-Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" 'org.eclipse.xtext.xbase.lib'.
-
-Acá hay dos opciones, dependiendo de cómo estés manejando las dependencias en tu proyecto.
-
--   Si no estás usando maven, podés simplemente ir a las propiedades del proyecto, "Java Build Path", luego en la solapa "Libraries", "Add Library", y seleccionar "Xtend Library".
-
-<!-- -->
-
--   Si vas a usar MAVEN (opción que recomendamos), no deberías hacer el paso anterior, porque eso va a hacer que las cosas compilen en eclipse (momentáneamente), pero no le estamos indicando a maven que el proyecto usa la librería de xtend, con lo cual nos va a traer problemas a futuro (por ejemplo al correr el proyecto si es una webapp va a tirar error por no encontrar las clases de xtend). En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
+Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" 'org.eclipse.xtext.xbase.lib'. En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
 `   `<parent>
 `       `<groupId>`org.uqbar-project`</groupId>
