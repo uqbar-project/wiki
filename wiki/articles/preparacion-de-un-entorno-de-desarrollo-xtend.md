@@ -33,10 +33,9 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 ### ¿Cómo empezar?
 
 -   Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven))
-
-`* en la primera ventana, clickear en la opción "Skip archetype "`
-`* definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds`
-`* definir un artifactId, que se asocia al nombre de tu proyecto`
+    -   en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
+    -   definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds
+    -   definir un artifactId, que se asocia al nombre de tu proyecto
 
 Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" 'org.eclipse.xtext.xbase.lib'. En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
@@ -46,7 +45,11 @@ Para que compile el código xtend dentro de un proyecto hace falta tener una lib
 `       `<version>`2.9.1`</version>
 `   `</parent>
 
-Luego boton derecho, "Maven" "Update Project..."
+Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o bien editando el pom.xml de tu proyecto Maven recientemente creado. Luego boton derecho, "Maven" "Update Project..."
+
+¿Dónde van las clases xtend?
+
+-   En src/main/java
 
 ### Tips
 
