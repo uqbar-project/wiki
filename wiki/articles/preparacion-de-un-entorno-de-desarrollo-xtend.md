@@ -50,7 +50,7 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 ¿Dónde van las clases xtend?
 
 -   En src/main/java
--   En src/main/generated-sources vas a tener los archivos .java que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos .java. En general no deberías mirar nunca el java que genera, porque además tiene código de más.
+-   En src/main/generated-sources vas a tener los archivos .java que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos .java. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.
 
 ### Tips
 
