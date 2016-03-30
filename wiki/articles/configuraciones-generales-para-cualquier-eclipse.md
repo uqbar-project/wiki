@@ -42,7 +42,9 @@ En Window &gt; Preferences &gt; Team &gt; Ignored Resources agregá los siguient
 -   bin
 -   target
 -   generated-sources
--   .settings y .project (si vas a trabajar con Maven)
+-   .settings
+-   settings
+-   .classpath y .project (si vas a trabajar con Maven)
 -   .svn
 
 Indices de Maven
