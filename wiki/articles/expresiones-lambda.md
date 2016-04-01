@@ -33,7 +33,7 @@ Lambdas y Pattern Matching
 
 Algo interesante que se puede hacer con las expresiones lambda es descomponer sus parámetros usando [pattern matching](pattern-matching-en-haskell.html) como cuando definimos funciones normales. Supongamos que dada una lista de alumnos (modelados con tuplas de tipo (String, \[Int\]) quiero obtener la primer nota que se sacó cada uno, se podría resolver de la siguiente forma:
 
-` > map (\(_,[nota|_]) -> nota) alumnos`
+` > map (\(_,(nota:_)) -> nota) alumnos`
 
 Al usar pattern matching hay que tener en cuenta que si el parámetro que le llega a la lambda no matchea (por ejemplo si en este caso hubiera un alumno sin notas), al ejecutarse va a tirar un error indicando que los patrones usados no fueron exhaustivos, lo que significa que la función tiene un dominio acotado, posiblemente más de lo que queríamos.
 
