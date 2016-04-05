@@ -21,6 +21,7 @@ La tabla (simplificada) es la siguiente:
 `` infix  4  ==, /=, <, <=, >=, >, `elem`, `notElem` ``
 `infixr 3  &&`
 `infixr 2  ||`
+`infixr 0 $`
 
 Bonus: Asociatividad
 --------------------
