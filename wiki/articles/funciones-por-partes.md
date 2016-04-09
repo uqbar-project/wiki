@@ -61,3 +61,41 @@ y el **y** lógico se escribe así:
 Entonces, mi función se define **sin guardas**, de ésta manera:
 
 `siempreDiceLaVerdad alguien = esNiño alguien || esBorracho alguien`
+
+#### Ejemplo 3: Repetición de código
+
+Cuando se repite código a ambos lados de la guarda, ésto es un problema:
+
+`f a | a < 3     = 2 `**`+` `5` `*` `g` `a`**
+`    | otherwise = 1 `**`+` `5` `*` `g` `a`**
+
+Que puede arreglarse así:
+
+**`f` `a` `=` `fAux` `a` `+` `5` `*` `g` `a`**
+`fAux a | a < 3 = 2`
+`       | otherwise = 1`
+
+#### Ejemplo 4: Repetición de código más rebuscada
+
+También puede pasar que se repita código entre las guardas de esta manera:
+
+*Se quiere saber el precio del boleto a partir de la cantidad de kms que voy a recorrer. Se sabe que a partir de 4 km, el cálculo del boleto es el cálculo máximo ($2 + $0.1 x cantidad de kms), mientras que hasta los 4km, el cálculo es el 110% del cálculo máximo*
+
+Se propuso esta solución:
+
+`precioBoleto kms | kms >= 4  = `**`2` `+` `0.1` `*` `kms`**
+`                 | otherwise = 110 / 100 * (`**`2` `+` `0.1` `*` `kms`**`)`
+
+Pero arriba y abajo se repite `2` `+` `0.1` `*` `kms`). En este caso, se arregla con la forma más común de corregir la repetición de lógica: **delegando** en ambos casos en la misma función.
+
+En otras palabras, si yo tengo:
+
+`maximo kms = 2 + 0.1 * kms`
+
+Entonces esa lógica está ahora en **un sólo lugar**, que puedo llamar desde donde necesite:
+
+`-- Solución final correcta:`
+`precioBoleto kms | kms >= 4  = `**`maximo` `kms`**
+`                 | otherwise = 110 / 100 * (`**`maximo` `kms`**`)`
+
+Hay otras formas mejores y peores de evitar éste tipo de repeticiones, pero ésta forma (delegando) es bastante buena y sirve en muchos casos.
