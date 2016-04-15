@@ -29,6 +29,14 @@ Warnings
 
 En varios lenguajes de la JVM, tendremos warning sobre serialización, una tecnología que no utilizaremos en la materia. Conviene desactivar el warning default de clases serializables que no definan un identificador de versión: Window &gt; Preferences, filtrar por "Serializable", solapa Java / Compiler / "Errors/Warnings", "Potential programming problems", y se setea el valor de "Serializable class without serialVersionUID" a Ignore. Aplicar cambios.
 
+Shortcuts
+---------
+
+` En algunas distribuciones de Linux  existe un shortcut por defecto que es Ctrl + Space, que colisiona con el shortcut del content assist de Eclipse . Para solucionar el problema, hay que deshabilitar el binding:`
+`en Ubuntu:  System Settings -> Keyboard-> Shortcuts`
+
+en Lubuntu: click en el logo que esta abajo a la izquierda -&gt; Preferencias -&gt; Metodos de entrada por Teclado y se cambia a "Disabled"
+
 SVN en Linux
 ------------
 
