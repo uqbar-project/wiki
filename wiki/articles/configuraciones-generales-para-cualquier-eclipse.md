@@ -32,10 +32,7 @@ En varios lenguajes de la JVM, tendremos warning sobre serialización, una tecno
 Shortcuts
 ---------
 
-` En algunas distribuciones de Linux  existe un shortcut por defecto que es Ctrl + Space, que colisiona con el shortcut del content assist de Eclipse . Para solucionar el problema, hay que deshabilitar el binding:`
-`en Ubuntu:  System Settings -> Keyboard-> Shortcuts`
-
-en Lubuntu: click en el logo que esta abajo a la izquierda -&gt; Preferencias -&gt; Metodos de entrada por Teclado y se cambia a "Disabled"
+En algunas distribuciones de Linux existe un shortcut por defecto que es Ctrl + Space, que colisiona con el shortcut del content assist de Eclipse . Para solucionar el problema, hay que deshabilitar el binding: en Ubuntu: System Settings -&gt; Keyboard-&gt; Shortcuts en Lubuntu: click en el logo que esta abajo a la izquierda -&gt; Preferencias -&gt; Metodos de entrada por Teclado y se cambia a "Disabled"
 
 SVN en Linux
 ------------
