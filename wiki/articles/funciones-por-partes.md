@@ -62,7 +62,23 @@ Entonces, mi función se define **sin guardas**, de ésta manera:
 
 `siempreDiceLaVerdad alguien = esNiño alguien || esBorracho alguien`
 
-#### Ejemplo 3: Repetición de código
+#### Ejemplo 3: No usar pattern matching
+
+A veces, cuando estamos aprendiendo guardas, nos olvidamos que poseemos [Pattern Matching en Haskell](pattern-matching-en-haskell.html).
+
+En otras palabras, podríamos tener una función así:
+
+`ivaPara actividad | actividad == "cultural" = 0.0`
+`                  | actividad == "alimentaria" = 10.5`
+`                  | otherwise = 21.0`
+
+Cuando en realidad, con Pattern Matching, podría quedar más declarativo:
+
+`ivaPara "cultural" = 0.0`
+`ivaPara "alimentaria" = 10.5`
+`ivaPara _ = 21.0`
+
+#### Ejemplo 4: Repetición de código
 
 Cuando se repite código a ambos lados de la guarda, ésto es un problema:
 
@@ -75,7 +91,7 @@ Que puede arreglarse así:
 `fAux a | a < 3 = 2`
 `       | otherwise = 1`
 
-#### Ejemplo 4: Repetición de código más rebuscada
+#### Ejemplo 5: Repetición de código más rebuscada
 
 También puede pasar que se repita código entre las guardas de esta manera:
 
