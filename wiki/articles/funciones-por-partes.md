@@ -78,6 +78,16 @@ Cuando en realidad, con Pattern Matching, podría quedar más declarativo:
 `ivaPara "alimentaria" = 10.5`
 `ivaPara _ = 21.0`
 
+Otro ejemplo de lo mismo:
+
+`longitud lista | null lista = 0`
+`              | otherwise = 1 + longitud (tail lista)`
+
+Cuando quedaría más declarativo:
+
+`longitud [] = 0`
+`longitud (_:resto) = 1 + longitud resto`
+
 #### Ejemplo 4: Repetición de código
 
 Cuando se repite código a ambos lados de la guarda, ésto es un problema:
