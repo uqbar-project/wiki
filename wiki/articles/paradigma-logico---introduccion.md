@@ -46,8 +46,6 @@ Pero la principal diferencia entre el hecho y la regla es que la regla tiene un 
 
 Los hechos me permiten definir **por extensión** el conjunto de individuos que tienen una característica. Las reglas me permiten hacer esa misma definición **por comprensión**.
 
-Para más información, ver la [Sintaxis de Prolog](sintaxis-de-prolog.html)
-
 Un poco de teoría
 -----------------
 
