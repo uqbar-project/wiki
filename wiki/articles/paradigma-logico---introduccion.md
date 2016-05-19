@@ -12,7 +12,7 @@ Comencemos con un ejemplo simple, seguramente muchos de ustedes lo habrán escuc
 
 *Todos los hombres son mortales*
 
-Luego... ¿qué podemos deducir de esto? Claro adivinaste, que Sócrates es mortal. De eso se trata la programación lógica, vamos a describir nuestro conocimiento en formas de reglas y vamos a permitir que otra cosa (el [motor](motor.html)) se ocupe de procesar ese conocimiento y sacar conclusiones al respecto.
+Luego... ¿qué podemos deducir de esto? Claro adivinaste, que Sócrates es mortal. De eso se trata la programación lógica, vamos a describir nuestro conocimiento en formas de reglas y vamos a permitir que otra cosa (el [motor](declaratividad-elementos-en-un-programa-declarativo.html)) se ocupe de procesar ese conocimiento y sacar conclusiones al respecto.
 
 ¿Y solito se da cuenta de las cosas? Más o menos, en realidad no podemos pedirle al motor que solamente se ponga a deducir y que nos diga a qué conclusión llega, hay que hacerle preguntas más concretas. Por ejemplo podemos preguntarle
 
