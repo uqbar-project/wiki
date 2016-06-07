@@ -5,6 +5,17 @@ Los casos de no inversibilidad, y algunos de no funcionamiento o respuestas inco
 
 Veamos varios casos, que incluyen todos los casos de no-inversibilidad que vemos en la materia.
 
+Hechos con variables
+--------------------
+
+Por lo general aquellos predicados definidos en base a hechos no suelen ser problemáticos, porque lo normal es que incluyan información sobre los individuos a los cuales se refieren. Sin embargo, el siguiente es un hecho válido que no es inversible para su segunda aridad:
+
+` leGusta(pepe, _).`
+
+Eso dice que a pepe le gusta cualquier cosa, sin acotar de ninguna forma qué podría ser aquello que le gusta. Para hacer el predicado inversible, deberíamos acotar qué puede ser aquello que le gusta convirtiéndolo en una regla, por ejemplo:
+
+` leGusta(pepe, Comida):- comida(Comida).`
+
 Negación
 --------
 
@@ -128,7 +139,7 @@ Para que sea inversible debemos generar el dominio para la variable Especie
 Functores y polimorfismo
 ------------------------
 
-Algo muy común es tener definiciones como:
+Como caso particular de los hechos con variables, algo muy común es tener definiciones como:
 
 `marca(arroz(Marca),Marca).`
 `marca(lacteo(Marca,_),Marca).`
@@ -142,6 +153,11 @@ En resumen
 ----------
 
 Resumimos los casos de inversibilidad con un ejemplo de cada uno
+
+**Hechos con variables**  
+
+` leGusta(pepe, _).`
+` % Lo que le gusta debería acotarse de alguna forma si se pretenden hacer consultas existenciales sobre la segunda aridad`
 
 **Negación**  
 
