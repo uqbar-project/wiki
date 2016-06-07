@@ -66,7 +66,7 @@ Ahora bien, ¿son **simétricos**?
 
 Empecemos pensando qué quiere decir "simétricos". Es como una relación simétrica de las de teoría de conjuntos: una relación R es simétrica si siempre que pasa aRb, también pasa bRa.
 
-Entonces, el predicado vive, ¿es simétrico? Veamos. Si consulto
+Entonces, el predicado vive/2, ¿es simétrico? Veamos. Si consulto
 
 `  ?- vive(ruben,lanus).   `
 
@@ -82,12 +82,14 @@ O sea que bRa sería
 
 y la respuesta de esto claramente va a ser no.
 
-Entonces el predicado vive no es simétrico. Pero ya vimos que sí es inversible, porque
+Entonces el predicado vive/2 no es simétrico. Pero ya vimos que sí es inversible, porque
 
 -   inversible quiere decir "puedo hacer consultas con cualquier combinación de valores e incógnitas".
 -   y **no** quiere decir "si invierto los argumentos da las mismas respuestas". Esto es simetría.
 
-Observar que la noción de simetría sólo se aplica a predicados de 2 argumentos (para esDelSur ¿cómo sería "ser simétrico"? No tiene sentido), mientras que la de inversibilidad se aplica a cualquier predicado.
+En cambio, sonVecinos/2 es esperable que se verifique para el mismo par de individuos en cualquier orden. A su vez, por como está definido es inversible, pero no tiene nada que ver una cosa con la otra.
+
+Observar que la noción de simetría sólo se aplica a predicados de 2 argumentos (para esDelSur/1 ¿cómo sería "ser simétrico"? No tiene sentido), mientras que la de inversibilidad se aplica a cualquier predicado.
 
 Resumen ejecutivo: ojo al piojo, inversibilidad es una cosa muy distinta a simetría, no confundirse. Si no queda claro, consulte con su docente amigo. Lo que nos va a interesar en la materia es el concepto de **inversibilidad**.
 
