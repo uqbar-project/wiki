@@ -80,7 +80,7 @@ Si estás trabajando Arena-UI desde xtend, este parent contiene todas las depend
 <parent>
 `    `<groupId>`org.uqbar-project`</groupId>
 `    `<artifactId>`arena-xtend-parent`</artifactId>
-`    `<version>`3.6.1`</version>
+`    `<version>`3.6.2`</version>
 </parent>
 
 ### Integración con Xtend
