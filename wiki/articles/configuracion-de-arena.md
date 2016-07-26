@@ -269,12 +269,20 @@ Si te aparece un error como éste al correr un launcher:
 
 El problema está en el launcher, el ArenaClassLoader está deprecado, se reemplazó por el APOClassLoader (más arriba te dice cómo configurarlo).
 
+### APOClassLoader not found
+
 Otro problema que puede aparecer es:
 
 `Error occurred during initialization of VM`
 `java.lang.Error: java.lang.ClassNotFoundException: ....APOClassLoader`
 
-entonces el problema es que no te descargó las dependencias de Maven correctamente. Revisá los directorios de tu usuario/.m2/repository porque seguramente te falte bajar dependencias, podés probar haciendo Maven &gt; Update project (forzando el check Update snapshots), es poco probable que eso lo solucione pero al menos te puede ayudar a encontrar el origen de la dependencia errónea.
+entonces el problema puede darse por dos razones:
+
+1) no te descargó las dependencias de Maven correctamente. Revisá los directorios de tu usuario/.m2/repository porque seguramente te falte bajar dependencias, podés probar haciendo Maven &gt; Update project (forzando el check Update snapshots), es poco probable que eso lo solucione pero al menos te puede ayudar a encontrar el origen de la dependencia errónea.
+
+2) bajaste el proyecto desde otro path que no es el indicado. Por ejemplo el proyecto conversor-ui-arena está en el path conversor-ui-arena/trunk y vos lo bajaste desde conversor-ui-arena. Si ves un directorio trunk donde adentro está el pom.xml es eso. Volvelo a bajar desde el path que te indica el ejemplo.
+
+### Errores de launchers
 
 Otro problema que te puede ocurrir cuando corras un launcher que te descargaste de nuestros ejemplos es que te aparezca un error de este tipo:
 
