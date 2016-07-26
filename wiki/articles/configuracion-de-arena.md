@@ -269,7 +269,7 @@ Si te aparece un error como éste al correr un launcher:
 
 El problema está en el launcher, el ArenaClassLoader está deprecado, se reemplazó por el APOClassLoader (más arriba te dice cómo configurarlo).
 
-### APOClassLoader not found
+#### APOClassLoader not found
 
 Otro problema que puede aparecer es:
 
