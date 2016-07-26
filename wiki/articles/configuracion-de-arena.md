@@ -282,7 +282,7 @@ entonces el problema puede darse por dos razones:
 
 2) bajaste el proyecto desde otro path que no es el indicado. Por ejemplo el proyecto conversor-ui-arena está en el path conversor-ui-arena/trunk y vos lo bajaste desde conversor-ui-arena. Si ves un directorio trunk donde adentro está el pom.xml es eso. Volvelo a bajar desde el path que te indica el ejemplo.
 
-### Errores de launchers
+#### Errores de launchers
 
 Otro problema que te puede ocurrir cuando corras un launcher que te descargaste de nuestros ejemplos es que te aparezca un error de este tipo:
 
