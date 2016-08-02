@@ -20,10 +20,6 @@ entonces
 -   estoy enviando el mensaje *direccion*
 -   se va a activar un método llamado *direccion*. ¿Qué método? El que decida el [method lookup](paradigma-de-objetos---method-lookup.html)
 
-Si trabajamos con prototipos (por ejemplo con el Object Browser o lenguajes como Self o Javascript hasta ES5), entonces los métodos están en los objetos.
-
-Si trabajamos con clases (como todo el cuatrimestre excepto al principio), entonces los métodos están en las clases.
-
 ¿A quiénes se le pueden mandar mensajes en un método?
 -----------------------------------------------------
 
