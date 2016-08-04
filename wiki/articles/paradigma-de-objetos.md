@@ -9,9 +9,9 @@ Intuitivamente, nuestra realidad parece estar conformada por muchos objetos: aut
 
 ¿Y por qué nos interesan los objetos? Cuando programamos, queremos resolver problemas, entonces no nos van a interesar tanto los objetos por sí mismos, sino que estos pueden resolver problemas. ¿Cómo es esto de resolver problemas? Simple: las hojas de papel nos sirven para escribir en ellas, los cables para conducir energía, los automóviles, para transportarnos. Es decir, no nos va a interesar la mesa porque tenga cuatro patas y una tabla de madera, sino porque esas cuatro patas y tabla nos permitirán resolver el problema de apoyar nuestro almuerzo. De los objetos, entonces, nos va a interesar que son capaces de hacer cosas: tienen comportamiento.
 
-Hay algo más que es interesante en los objetos: a veces estos cambian con el tiempo. Por ejemplo, las mesas se deterioran después de servir de sostén por mucho tiempo, el frasco de mermelada se vacía después de sacarle mermelada varias veces, el automóvil pierde nafta cuando se mueve, y gana nafta cuando se lo recarga. Los objetos tienen un estado.
+Hay algo más que es interesante en los objetos: a veces estos cambian con el tiempo. Por ejemplo, las mesas se deterioran después de servir de sostén por mucho tiempo, el frasco de mermelada se vacía después de sacarle mermelada varias veces, el automóvil pierde nafta cuando se mueve, y gana nafta cuando se lo recarga. Los objetos pueden tener un estado, y el mismo puede cambiar.
 
-Entonces parece que la pregunta de que es un objeto se responde fácil: es una cosa, pero no cualquier cosa: tiene identidad, estado y comportamiento.
+**Entonces parece que la pregunta de qué es un objeto se responde fácil... es una cosa, pero no cualquier cosa: tiene identidad, estado y comportamiento.**
 
 Ahora nos queda realizar un último salto: en realidad hay más cosas, más objetos en nuestro mundo, que sólo automoviles, hojas o mesas. Hay por ejemplo, países, culturas,trabajos, problemas, ideas, sentimientos. Y una idea se puede diferenciar de otra (identidad), un trabajo puede resolverlos el problema de tener dinero a fin de mes (comportamiento), y un país puede cambiar (estado). Los objetos, entonces, pueden ser también cosas que no podemos tocar: cosas intangibles.
 
