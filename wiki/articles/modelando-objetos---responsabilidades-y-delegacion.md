@@ -22,79 +22,39 @@ La situación donde más natural es delegar es al querer tratar polimórficament
 
 ### Ejemplo
 
+Supongamos que queremos que un tanque que dispara misiles térmicos le dispare a otro tanque. El daño que hace un misil térmico es 10 veces la cantidad de ocupantes del tanque al que es disparado. El tanque enemigo tiene una coraza que va decrementando a medida que recibe daño (el mismo es destruído cuando la coraza llega a 0) y debe ser manejado por 3 personas. Una solución bien delegada podría ser:
+
 **`Smalltalk:`**
-`Tanque >> dispararA: otroTanque`
-`   | unMisil |`
-`   unMisil := misiles anyOne.`
-`   misiles remove: unMisil.`
-`   danioTotal := unMisil cuantoDañoPara: otroTanque.`
-`   otroTanque coraza > danioTotal `
-`     ifTrue: [ otroTanque coraza: otroTanque coraza - danioTotal ]`
-`     ifFalse: [ otroTanque coraza: 0 ].`
+`tanqueDeMisiles >> dispararA: otroTanque `
+`   otroTanque recibirDaño: (misil cuantoDañoPara: enemigo).`
+`tanqueEnemigo >> recibirDaño: cant`
+`  coraza := (coraza - cant) max: 0`
+`tanqueEnemigo >> cantidadOcupantes `
+`  ^ 3`
+`misilTermico >> cuantoDanioPara: unTanque`
+`  ^ unTanque cantidadOcupantes * 10`
 
 **`Wollok:`**
-`class Tanque {`
-`  method dispararA(otroTanque) {`
-`    var unMisil = misiles.anyOne() `
-`    misiles.remove(unMisil) `
-`    var danioTotal = unMisil.cuantoDanioPara(otroTanque) `
-`    if (otroTanque.coraza() > danioTotal) {`
-`      otroTanque.coraza(otroTanque.coraza() - danioTotal )`
-`    } else {`
-`      otroTanque.coraza(0)`
-`    }`
+`object tanqueDeMisiles {`
+`  var misil = misilTermico`
+`  method dispararA(otroTanque){`
+`    otroTanque.recibirDanio(misil.cuantoDanioPara(otroTanque))`
 `  }`
 `}`
-
-Fíjense que en el ejemplo anterior, si asumimos que hay muchos tipos de misiles, desde el tanque los tratamos polimórficamente envíandoles el mismo mensaje para obtener el daño que recibirá el otro tanque, pero no sé si delegamos lo suficiente.
-
-Veamos esta otra solución que delega mucho más que la anterior:
-
-**`Smaltallk:`**
-`Tanque >> dispararA: otroTanque`
-`   self descargarMisil dañarA: otroTanque`
-`Tanque >> descargarMisil`
-`  "El remove: devuelve el parámetro"`
-`  ^misiles remove: misiles anyOne`
-`Tanque >> recibirDaño: cant`
-`  self coraza: ((self coraza - cant) max: 0)`
-`Misil >> dañarA: otroTanque`
-`  "Asumimos que Misil es la superclase de todos las otras clases de misiles"`
-`  otroTanque recibirDaño: (self cuantoDañoPara: otroTanque)`
-
-**`Wollok:`**
-`class Tanque {`
-`  method dispararA(otroTanque) {`
-`    self.descargarMisil().daniarA(otroTanque)`
-`  }`
-`  method descargarMisil() {`
-`    var unMisil = misiles.anyOne();`
-`    misiles.remove(unMisil)`
-`    return unMisil`
-`  }`
+`object tanqueEnemigo {`
+`  var coraza = 100`
 `  method recibirDanio(cant) {`
-`    var corazaActual = (self.coraza() - cant).max(0)`
-`    self.coraza(corazaActual)`
+`    coraza = (coraza - cant).max(0)`
 `  }`
-`}  `
-`class Misil {`
-`  method daniarA(otroTanque) {`
-`  //Asumimos que Misil es la superclase de todos las otras clases de misiles`
-`  otroTanque.recibirDanio(self.cuantoDanioPara(otroTanque))`
+` `
+`  method cantidadOcupantes(){`
+`    return 3`
+`  }`
+`}`
+`object misilTermico {`
+`  method cuantoDanioPara(unTanque){`
+`    return unTanque.cantidadOcupantes()*10`
 `  }`
 `}`
 
-También se puede hablar de extensibilidad, si el día de mañana se agrega un nuevo misil (el misil Gandhi) que en vez de sacar coraza le hace un cariñito al otro tanque Con la segunda solución eso se agrega bastante fácil
-
-**`Smalltalk:`**
-`MisilGandhi >> dañarA: otroTanque`
-`  otroTanque recibirCariñito`
-
-**`Wollok:`**
-`class MisilGandhi {`
-`  method daniarA(otroTanque) {`
-`    otroTanque.recibirCarinito()`
-`  }`
-`}`
-
-La segunda solución es más extensible. Lo malo de este agregado es la [expresividad](declaratividad-vs--expresividad.html), porque "dañarA" me da la sensación de que siempre le saca coraza ... tal vez deberíamos buscar un mejor nombre que no implique que exista un daño sobre el otro tanque.
+Es particularmente importante que la forma de recibir daño esté delegada en el tanque enemigo, ya que no hay ningún motivo para que el tanque de misiles sepa de la existencia de una coraza del enemigo (mejor en términos de [encapsulamiento](encapsulamiento.html)).
