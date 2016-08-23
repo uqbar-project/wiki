@@ -2,14 +2,14 @@ Las colecciones nos resultan de utilidad porque nos permiten agrupar objetos, pa
 
 Esto nos permite modelar conjuntos o agregados de cosas, que son muy comunes en casi todos los dominios en los que podemos pensar: las piezas de un tablero de ajedrez, los integrantes de un equipo de fútbol, las líneas de una factura, ¡de todo!
 
-A primera vista una colección es un conjunto de objetos. Si la vemos con más precisión nos damos cuenta que es más preciso pensarla como un conjunto de referencias: los elementos no están adentro de la colección, sino que la colección los conoce. A su vez, como todo en Smalltalk es un objeto, podemos deducir que una colección también es un objeto.
+A primera vista una colección es un conjunto de objetos. Si la vemos con más precisión nos damos cuenta que es más preciso pensarla como un conjunto de referencias: los elementos no están adentro de la colección, sino que la colección los conoce. Y como no podía ser de otra forma, las colecciones también son objetos.
 
 No hay un único tipo de colección, hay distintos [sabores de colecciones](sabores-de-colecciones.html) que nos van a servir para distintos fines, sin embargo la mayoría de las colecciones entiende un conjunto grande de [ mensajes en común](mensajes-de-colecciones.html), o sea, son polimórficas :) Sólo van a diferir en algunos mensajes particulares debido a la naturaleza de la colección.
 
 ¿Qué podemos hacer con una colección?
 -------------------------------------
 
-Para tratar de responder esta pregunta no es necesario estar familiarizado con las colecciones de Smalltalk. Recordemos que una de las características ventajosas del Paradigma de Objetos es que acerca nuestro modelado a la forma en que percibimos la realidad.
+Para tratar de responder esta pregunta no es necesario estar familiarizado con la implementación de las colecciones. Recordemos que una de las características ventajosas del Paradigma de Objetos es que acerca nuestro modelado a la forma en que percibimos la realidad.
 
 Entonces ¿que haríamos nosotros con una colección? Pensemos en una colección de estampillas. Podemos:
 
@@ -24,23 +24,37 @@ Entonces ¿que haríamos nosotros con una colección? Pensemos en una colección
 
 Mientras vamos de góndola a góndola del super vamos agregándole elementos (referencias a objetos) a esa colección. Cuando llegamos a la caja recorremos esa colección y obtenemos información de la misma: cuánto suma el costo total de sus artículos, cuántos artículos compré...
 
-¿Ahora, como podemos modelar todas estas situaciones con objetos usando Smalltalk?... ¡Enviando mensajes a colecciones! Recordemos que en el paradigma de objetos todo programa es un conjunto de objetos enviándose mensajes para concretar un objetivo en común. Bien, en este caso los objetos serán las distintas colecciones y sus elementos. Los mensajes que puede recibir una colección serán, entre otros, los que mencionamos para la colección de estampillas, dándoles un toque smalltalkero ;-)
+¿Ahora, como podemos modelar todas estas situaciones en objetos?... ¡Enviando mensajes a colecciones! Recordemos que en el paradigma de objetos todo programa es un conjunto de objetos enviándose mensajes para concretar un objetivo en común. Bien, en este caso los objetos serán las distintas colecciones y sus elementos. Los mensajes que puede recibir una colección serán dependientes del lenguaje, claramente, pero la idea detrás es básicamente la misma.
 
-Un ejemplo rápido: El primer tipo de colección que vamos a usar se llama Set. Entonces, para crear una colección y asignarla a una variable, escribiremos
+Un ejemplo rápido: En este ejemplo vamos a usar un tipo de colección al que llamamos Set. Supongamos que tenemos 4 objetos distintos que son estampillas (nos interesa que nos sepan decir su origen y su superficie, no importa cómo lo hacen), agreguemos algunas a la colección.
 
+**`Smalltalk`**
 `coleccionEstampillas := Set new.  (disclaimer, en Ozono crear un nuevo conjunto desde Referencias para usarlo directo en el workspace)`
-
-Supongamos que tenemos 4 objetos distintos que son estampillas (nos interesa que nos sepan decir su origen y su superficie, no importa cómo lo hacen), agreguemos algunas a la colección enviándole el mensaje add:.
-
 `coleccionEstampillas add: estampillaBrasileraGrande . `
 `coleccionEstampillas add: estampillaAlemana . `
 `coleccionEstampillas add: estampillaBrasileraMediana . `
 
-A esta colección ya le puedo hacer algunas preguntas
+**`Wollok`**
+`var coleccionEstampillas = #{}`
+`coleccionEstampillas.add(estampillaBrasileraGrande)`
+`coleccionEstampillas.add(estampillaAlemana)`
+`coleccionEstampillas.add(estampillaBrasileraMediana)`
 
+Alternativamente, si ya conozco los elementos que va a tener inicialmente, usando el set literal de Wollok podemos crear directamente la colección con esos elementos.
+
+`var coleccionEstampillas = #{estampillaBrasileraGrande, estampillaAlemana, estampillaBrasileraMediana}`
+
+A esta colección de estampillas ya le puedo hacer algunas preguntas
+
+**`Smalltalk`**
 `coleccionEstampillas size. "devuelve 3"`
 `coleccionEstampillas includes: estampillaAlemana . "devuelve true"`
 `coleccionEstampillas includes: estampillaBrasileraChica . "devuelve false"`
+
+**`Wollok`**
+`coleccionEstampillas.size() // devuelve 3`
+`coleccionEstampillas.contains(estampillaAlemana) // devuelve true`
+`coleccionEstampillas.contains(estampillaBrasileraChica) // devuelve false`
 
 Claro que para que la colección me sea realmente útil, me debe permitir interactuar con sus elementos, poder hablarle (p.ej.) a estampillaAlemana a través de la colección. Antes de ver cómo hacer esto, clarifiquemos un poco la relación entre una colección y sus elementos.
 
@@ -55,11 +69,7 @@ En el ejemplo anterior, algunas de las estampillas que creamos son elementos de 
 
 Si se están preguntando ¿en qué orden “están” las estampillas en el Set? Un Set no mantiene sus elementos en un orden determinado, más adelante veremos que hay distintos “sabores” de colecciones, algunos mantienen orden y otros no. En este momento, no es lo que nos interesa.
 
-Ahora agreguemos un objeto más: pedro, el coleccionista, que sabe cuál es su estampilla favorita:
-
-`pedro estampillaPreferida: estampillaBrasileraMediana. `
-
-El ambiente queda así:
+Ahora agreguemos un objeto más: pedro, el coleccionista, que sabe cuál es su estampilla favorita (la estampillaBrasileraMediana). El ambiente queda así:
 
 ![](Pdep-colecciones-2.PNG "Pdep-colecciones-2.PNG")
 
@@ -71,10 +81,10 @@ Ahora hay un objeto que tiene 3 referencias:
 
 3. es la estampilla preferida de pedro
 
-Ya podemos ver un poco más en detalle la relación entre una colección y sus elementos. La colección maneja referencias a los elementos que le voy agregando (p.ej. enviándole el mensaje add: ), análogas a las referencias de las variables de instancia de otros objetos. Hay dos diferencias entre las referencias que mantiene una colección y las que mantienen nuestros objetos p.ej. pedro:
+Ya podemos ver un poco más en detalle la relación entre una colección y sus elementos. La colección maneja referencias a los elementos que le voy agregando (p.ej. enviándole el mensaje add: / add(elemento) ), análogas a las referencias de las variables de instancia de otros objetos. Hay dos diferencias entre las referencias que mantiene una colección y las que mantienen nuestros objetos p.ej. pedro:
 
 -   Las referencia que usan nuestros objetos tienen un nombre, que es el nombre que luego usará para hablarle al objeto referenciado; las de la colección son anónimas.
--   Nuestros objetos tienen una cantidad fija de referencias (en este caso pedro tiene una única referencia, estampillaPreferida), una colección puede tener una cantidad arbitraria, que puede crecer a medida que le agrego elementos (esto es cierto para casi todos los sabores de colecciones, más adelante hablaremos al respecto).
+-   Nuestros objetos tienen una cantidad fija de referencias (en este caso pedro tiene una única referencia, estampillaPreferida), una colección puede tener una cantidad arbitraria, que puede crecer a medida que le agrego elementos.
 
 Así, los objetos que quedan referenciados por la colección pueden tener otras referencias sin problema. Un objeto no tiene nada especial por ser elemento de una colección, sólo tiene una referencia más hacia él. Un objeto no conoce de qué colecciones es elemento (podría tener una referencia explícita a la colección para saberlo, pero eso habría que programarlo a mano y por lo general tampoco nos interesa).
 
@@ -93,13 +103,17 @@ Por lo tanto, para resolver mi problema necesito que actúen tanto la colección
 
 ¿A qué objeto le voy a pedir esto? A la colección.
 
-El selector (nombre del mensaje) es select: ...
+El selector (nombre del mensaje) es select: en Smalltalk y filter(algo) en Wollok...
 
 ... o sea que necesita un parámetro. Este parámetro va a representar una condición para el filtrado, que es un código que la colección debería evaluar sobre cada elemento, y debe devolver true o false para que la colección sepa si debería o no estar en la colección nueva a devolver.
 
-Los objetos que representan "cachos de código" son los [Bloques](bloques.html), en este caso un bloque con un parámetro.
+Los objetos que representan "cachos de código" son los [Bloques](bloques.html), en este caso un bloque con un parámetro
 
+**`Smalltalk`**
 `coleccionEstampillas select: [:estampilla | estampilla superficie > 10] `
+
+**`Wollok`**
+`coleccionEstampillas.filter({estampilla => estampilla.superficie() > 10})`
 
 Mientras que todos los elementos de la colección entiendan el mensaje superficie y al recibirlo retornen un número, el filtrado va a funcionar correctamente.
 
