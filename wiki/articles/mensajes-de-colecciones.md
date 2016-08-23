@@ -35,7 +35,7 @@ También existe el mensaje addAll: en Smalltalk y addAll(conjunto) en Wollok que
 `pajaros.remove(pepita)`
 `usuarios.remove(usuario23) `
 
-Análogamente al addAll:/addAll(conjnuto) removeAll:/removeAll(conjnuto) que le quita a la receptora todos los que estén en la colección parametrizada.
+Análogamente al addAll:/addAll(conjunto), existe el removeAll:/removeAll(conjunto) que le quita a la receptora todos los que estén en la colección parametrizada.
 
 Sin efecto
 ----------
