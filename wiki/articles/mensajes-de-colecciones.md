@@ -131,8 +131,8 @@ Que retorna la concatenación de ambos conjuntos, retornando una colección del 
 `usuarios collect: [:unUsuario | unUsuario nombre].`
 
 **`Wollok`**
-`pajaros.map({unPajaro => unPajaro.ultimoLugarDondeFue()}`
-`usuarios.map({unUsuario => unUsuario.nombre()}`
+`pajaros.map({unPajaro => unPajaro.ultimoLugarDondeFue()})`
+`usuarios.map({unUsuario => unUsuario.nombre()})`
 
 ¿Que me devuelve? Una nueva colección con los objetos que devuelve el bloque.
 
