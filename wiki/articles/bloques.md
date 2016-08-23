@@ -9,68 +9,76 @@ Un bloque es un objeto, y por lo tanto podemos hacer con él lo mismo que hacía
 
 Un objeto bloque representa un cacho de código que no se ejecutó, ese código solo se ejecutará si alguien le manda un mensaje que le indique hacerlo.
 
-Si escribo en un workspace:
+Si ejecutamos las siguientes instrucciones:
 
+**`Smalltalk`**
 `x := 0.`
 `[ x := x + 1].`
+
+**`Wollok`**
+`var x = 0`
+`{ x = x + 1 }`
 
 ¿A qué objeto apunta la variable x después de ejecutar esas 2 líneas de código? Claro, al objeto cero (0)
 
 Para que la variable x apunte al objeto uno (1) tenemos que decirle al bloque que se ejecute.
 
+**`Smalltalk`**
 `x := 0.`
 `[ x := x + 1] value.`
 
-Ahora sí, después de ejecutar esas 2 líneas de código la variable x va a apuntar al objeto uno (1). Es importante darse cuenta que value es un mensaje que le llega al objeto bloque \[ x := x + 1\].
+**`Wollok`**
+`var x = 0`
+`{ x = x + 1 }.apply()`
 
-El mensaje value hace que se ejecute el código que está dentro del bloque y que se retorne el último objeto devuelto por la última sentencia del bloque.
-
-Ejemplo:
-
-`[ pepita come: 14. `
-`  5 factorial. `
-`  pepe sueldo.`
-`  3 between: 1 and: 5. ] value. "Esto devuelve el objeto true porque es lo que devuelve el último envío de mensaje dentro del bloque"`
+Ahora sí, después de ejecutar esas 2 líneas de código la variable x va a apuntar al objeto uno (1). Es importante darse cuenta que value / apply() es un mensaje que le llega al objeto bloque. Este mensaje hace que se ejecute el código que está dentro del bloque y que se retorne el objeto devuelto por la última sentencia del bloque.
 
 Bloques como funciones
 ----------------------
 
 También se puede ver a los bloques como objetos que representan una función sin nombre (o sea, una función anónima, como las [Expresiones lambda](expresiones-lambda.html) de funcional!).
 
-El bloque \[ 1 \] es una función constante que siempre devuelve 1 si le decís que se ejecute.
+El bloque `[` `1` `]` en Smalltalk o `{` `1` `}` en Wollok es una función constante que siempre devuelve 1 si le decís que se ejecute. Pero el chiste de las funciones es que reciban parámetros y los bloques también pueden recibir parámetros, por ejemplo la sintaxis para un bloque de dos parámetros es:
 
-`[ 1 ] value. "Esto devuelve el objeto uno (1)"`
+**`Smalltalk`**
+`[ :parametro1 :parametro2 | cuerpoDelBloque ]`
 
-Pero el chiste de las funciones es que reciban parámetros y los bloques también pueden recibir parámetros
-
-`[ :parametro1 :parametro2 :parametro3 ... :parametroN | cuerpoDelBloque ]`
+**`Wollok`**
+`{ parametro1, parametro2 => cuerpoDelBloque }`
 
 Ejemplos:
 
-`f(x) = 2x -> [ :x | 2 * x ] value`
-`g(x) = x2 -> [ :x | x raisedTo: 2 ]`
-`h(x,y) = x2 + y2 -> [ :x :y | (x raisedTo: 2) + (y raisedTo: 2) ]`
-`s(a,b,c) = cos a + sen b + c -> [ :a :b :c | a cos + b sin + c ]`
+Podríamos representar las siguientes funciones...
 
-¿Cómo le hacemos para usar bloques que tienen parámetros?
+`f(x) = 2x`
+`g(x,y) = x2 + y2`
 
-`f(4) -> [ :x | 2 * x ] value: 4 "Esto devuelve el objeto 8"`
-`h(4,3) -> [ :x :y | (x raisedTo: 2) + (y raisedTo: 2) ] value: 4 value: 3 "Esto devuelve el objeto 25"`
-`s(5,2,1) -> [ :a :b :c | a cos + b sin + c ] value: 5 value: 2 value: 1 "Esto devuelve el objeto 2.192959612288908"`
+... con bloques de la siguiente forma:
 
-Jugando con los bloques
------------------------
+**`Smalltalk`**
+`f := [ :x | 2 * x ]`
+`g := [ :x :y | (x raisedTo: 2) + (y raisedTo: 2) ]`
 
-`bloque1 := [ :unAve | unAve vola: 20. unAve come: 30 ].`
-`bloque2 := [ :unAve | unAve vola: 50. unAve come: 14 ].`
-`bloque1 value: pepita. "Esto hace que pepita vuele 20 kilometros y morfe 30 gramos de alpiste"`
-`bloque2 value: pepita. "Esto hace que pepita vuele 50 kilometros y morfe 14 gramos de alpiste"`
-`bloque1 value: pepona. "Esto hace que pepona vuele 20 kilometros y morfe 30 gramos de alpiste" `
+**`Wollok`**
+`var f = {x => 2 * x }`
+`var g = {x, y => x ** 2 + y ** 2 }`
 
-¿Cómo funciona el \#ifTrue: y el \#ifFalse:?
---------------------------------------------
+¿Cómo hacemos para usar bloques que tienen parámetros? Por ejemplo si quisiéramos los equivalentes a evaluar las funciones f(4) y g(4,3)
 
-Si en un workspace escribimos
+**`Smalltalk`**
+`f value: 4 "Esto devuelve el objeto 8"`
+`g value: 4 value: 3 "Esto devuelve el objeto 25"`
+
+**`Wollok`**
+`f.apply(4) // Esto devuelve el objeto 8`
+`g.apply(4, 3) // Esto devuelve el objeto 25`
+
+Por lo general el uso que le damos a los bloques es sólo la creación de los mismos para pasar por parámetro a funcionalidad ya existente de propósito general, como son los mensajes de colecciones [Mensajes de colecciones](mensajes-de-colecciones.html) y el if de Smalltalk, no tanto la aplicación de los mismos.
+
+¿Cómo funciona el \#ifTrue: y el \#ifFalse: de Smalltalk?
+---------------------------------------------------------
+
+En Smalltalk no existe la estructura de control if/else, sino que existen ditintos mensajes que entienden los booleanos para Si en un workspace escribimos
 
 `pepita energia > 0 ifTrue: [ pepita come: 30 ]`
 
