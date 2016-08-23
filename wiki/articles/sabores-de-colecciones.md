@@ -1,7 +1,21 @@
+Sabores de colecciones en Wollok
+--------------------------------
+
+En Wollok disponemos de dos sabores básicos de colecciones: las listas y los sets (conjunto matemático). Se diferencian principalmente por las siguientes características:
+
+-   Las listas tienen orden, los sets no, por eso sólo es posible obtener un determinado elemento en base a su pocisión sólo si es una lista con el mensaje get(posicionBaseCero)
+-   Los sets no admiten repetidos, las listas sí, por eso si se agrega un elemento repetido a un set no se agregará una nueva referencia al mismo, mientras que en las listas se incluirá una nueva referencia (en otra posición) al mismo objeto.
+
+Literal de listas: \[1,2,3\] Literal de sets: \#{1,2,3}
+
+Para ejemplos de uso ver [Intro a colecciones](intro-a-colecciones.html)
+
+Sabores de colecciones en Smalltalk
+-----------------------------------
+
 Smalltalk tiene una clase llamada **Collection** que me permite representar colecciones, pero Collection es la abstracción superior de la jerarquía de colecciones. Al momento de instanciar una colección, tengo que decidirme por un sabor. A continuación intentaremos mostrar los sabores de colecciones, tratando de ordenarlos en base a sus respectivos grados de especialización.
 
-Set y Bag
----------
+### Set y Bag
 
 El primer sabor que visitaremos es el **Bag**. Esta colección es de las denominadas **sin orden** y como su nombre lo indica, es la representación de una bolsa. Una bolsa de objetos. Por ejemplo, al principio, hablamos de un carrito de compras. El Bag la colección más adecuada para esta representación. Imagínense que puedo poner tres latas de tomates, dos botellas de agua y siete peras.
 
@@ -30,8 +44,7 @@ Yo agregué 3 veces al carrito una lata de tomates, con lo cual podría esperar 
 
 Si representara mi carrito de compras con un Set (o sea que hice miCarrito:=Set new.) entonces hubiese tenido un solo objeto dentro de mi colección. Simplemente, cuando hago el segundo miCarrito add: unaLata el Set identifica que ya tiene ese objeto en la colección y no lo vuelve a agregar.
 
-Colecciones ordenadas
----------------------
+### Colecciones ordenadas
 
 Entonces ya vimos el Set y Bag, que son colecciones sin orden. Ahora introduciremos algunas colecciones con orden.
 
@@ -101,16 +114,15 @@ Si estoy en el paradigma de objetos ... seguro va a tener que ver con objetos y 
 
 Claro, eso quiere decir que solamente voy a poder tener, en una SortedCollection con "orden natural", objetos que entiendan el mensaje &lt;. Los números, los String, las fechas, todos esos entienden &lt;. Pero p.ej. si quiero poner latas en una SortedCollection, no puede ser por "orden natural", tengo que especificar el orden con el bloque con dos parámetros como vimos hace un ratito.
 
+### Jerarquía de Colecciones (En Pharo)
+
+Aquí se provee una imagen con una jerarquía simplificada de las colecciones existentes en Pharo. Presten especial atención a las clases explicadas en este artículo, las demás se proveen por motivos de completitud.
+
+<img src="CollectionHierarchy.png" title="Jerarquía de colecciones en Pharo Smalltalk" alt="Jerarquía de colecciones en Pharo Smalltalk" width="600" />
+
 Diccionarios
 ------------
 
 Por último, queremos mostrarles un sabor de colección que es especial. Se llama Dictionary y, como su nombre lo indica, intenta representar un diccionario. Este tipo de representación implica tener una asociación entre una clave y un valor.
 
 Poniendo como ejemplo, el propio diccionario. El diccionario es una asociación entre una clave, que son cada letra del abecedario y un apartado de páginas que tienen palabras. El diccionario lleva todo una explicación aparte, pueden profundizar más al respecto leyendo sobre [Diccionarios](diccionarios.html).
-
-Jerarquía de Colecciones (En Pharo)
------------------------------------
-
-Aquí se provee una imagen con una jerarquía simplificada de las colecciones existentes en Pharo. Presten especial atención a las clases explicadas en este artículo, las demás se proveen por motivos de completitud.
-
-<img src="CollectionHierarchy.png" title="Jerarquía de colecciones en Pharo Smalltalk" alt="Jerarquía de colecciones en Pharo Smalltalk" width="600" />
