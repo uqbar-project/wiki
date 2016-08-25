@@ -12,7 +12,7 @@ Web Server Tomcat
 
 ### Instrucciones de instalación
 
-Descargarlo de [acá](http://tomcat.apache.org/download-70.cgi).
+Descargarlo de [acá](http://tomcat.apache.org/index.html), en general te recomendamos bajarte la última versión disponible.
 
 Descomprimirlo en una ubicación adecuada. Puede ser cualquier ubicación, aunque recomendamos usar una que no tenga espacios, por ejemplo: En windows pueden usar C:/tools/tomcat-version En linux/unix pueden usar /opt/tomcat o bien /home/algun-usuario/tomcat-version A la carpeta donde descomprimimos el tomcat la vamos a denominar $TOMCAT\_HOME, ej. /home/nico/Applications/apache-tomcat-7.0.20.
 
