@@ -91,4 +91,4 @@ Ver [Diagrama de clases](diagrama-de-clases.html)
 
 ### Conclusión
 
-**Una clase es un objeto** cuya responsabilidad es servir de **fábrica** de objetos. Modela las **abstracciones** de mi dominio (los *conceptos* que nos interesan), permitiéndome definir el **comportamiento** y los **atributos** de las instancias.
+Una clase sirve de **fábrica** de objetos. Modela las **abstracciones** de mi dominio (los *conceptos* que nos interesan), permitiéndome definir el **comportamiento** y los **atributos** de las instancias.
