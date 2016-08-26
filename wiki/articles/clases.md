@@ -52,13 +52,9 @@ Si mi código ahora no está en mi objeto, sino en una clase, **¿¿Quién es se
 
 En éste envío de mensaje:
 
-`simba rugi`
+`simba.rugi()`
 
-simba es self. En éste otro:
-
-`Leon new`
-
-La clase Leon es self.
+Si el método rugi() de la clase Leon usa self internamente, simba es self.
 
 ### ¿Cómo construyo ahora mis objetos?
 
