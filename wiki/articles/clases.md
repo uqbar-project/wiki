@@ -60,13 +60,23 @@ Si el método rugi() de la clase Leon usa self internamente, simba es self.
 
 Mandándole el mensaje new a la clase correspondiente.
 
+**`Smalltalk`**
 `simba := Leon new.`
 `mufasa := Leon new.`
 `simba tuPapaEs: mufasa.`
 
+**`Wollok`**
+`var simba = new Leon()`
+`var mufasa = new Leon()`
+`simba.tuPapaEs(mufasa)`
+
 Es importante entender que en las líneas del estilo
 
 `  unaVar := UnaClase new.`
+
+o
+
+`  var unaVar = new UnaClase()`
 
 pasan **dos** cosas, en el orden que se indica
 
