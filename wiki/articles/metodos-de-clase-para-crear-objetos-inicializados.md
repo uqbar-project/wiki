@@ -41,8 +41,6 @@ Vemos que el método
 -   lo configura
 -   **lo devuelve** (muuuuy importante)
 
-Para ver un poquito más sobre crear objetos con parámetros, aquí hay otro artículo: [Creación de objetos, con parámetros](creacion-de-objetos--con-parametros.html)
-
 En el workspace nos queda
 
 `  elReyDelAcceso := Camion nuevoConducidoPor: cacho.`
