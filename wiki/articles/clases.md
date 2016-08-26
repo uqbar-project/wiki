@@ -92,3 +92,5 @@ Ver [Diagrama de clases](diagrama-de-clases.html)
 ### Conclusión
 
 Una clase sirve de **fábrica** de objetos. Modela las **abstracciones** de mi dominio (los *conceptos* que nos interesan), permitiéndome definir el **comportamiento** y los **atributos** de las instancias.
+
+Dependiendo del lenguaje las clases pueden ser un objeto más que entiende mensajes pensados para ellas (este es el caso de Smalltalk, ver [Variables y métodos de clase](variables-y-metodos-de-clase.html)) o una construcción distinta del lenguaje que sólo existe para declarar el comportamiento de los objetos y darnos una forma de obtener nuevas instancias mediante [constructores](constructores.html) (no envíos de mensajes).
