@@ -20,7 +20,7 @@ Para hacer testeo unitario tenés varias opciones
 
 ### Jasmine (JS puro)
 
--   Jasmine: <http://jasmine.github.io/>, que es la opción que te recomendamos. Para probarlo en el cliente, basta con descargar en <https://github.com/jasmine/jasmine/releases> el proyecto web standalone (**jasmine-standalone-x.y.z.zip** donde x, y, z es el último número de versión), integrarlo dentro de tu proyecto Javascript existente y luego editar el archivo SpecRunner.html, incorporando los archivos js de dominio y de test que quieras. Todo esto y bastante más está explicado en <http://jasmine.github.io/2.5/introduction.html>
+-   Jasmine: <http://jasmine.github.io/>, que es la opción que te recomendamos. Para probarlo en el cliente, basta con descargar en <https://github.com/jasmine/jasmine/releases> el proyecto web standalone (**jasmine-standalone-x.y.z.zip** donde x, y, z es el último número de versión), integrarlo dentro de tu proyecto Javascript existente y luego editar el archivo SpecRunner.html, incorporando los archivos js de dominio y de test que quieras. Todo esto y bastante más está explicado en <http://jasmine.github.io/2.5/introduction.html> (o bueno, podemos ver la última versión)
 
 ### Mocha
 
