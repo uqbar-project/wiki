@@ -1,7 +1,7 @@
 Manejo de dependencias, automatización de tareas
 ------------------------------------------------
 
-Para éstas y otras tareas vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript.
+Para ésta y otras tareas, vamos a utilizar la plataforma Node, que también es un servidor web desarrollado en javascript.
 
 En Linux podés hacer
 
@@ -13,10 +13,20 @@ En Windows te recomendamos previamente descargar el Git Bash en <http://msysgit.
 
 Y para cualquier sistema operativo en general podés descargar Node en <https://nodejs.org/download/>
 
+-   Si el proyecto es Javascript "puro" en el cliente, podés utilizar Bower (https://bower.io/) y en particular para instalarlo: <https://bower.io/#install-bower> (necesitás node y npm)
+
 Framework de testeo unitario
 ----------------------------
 
-Podés descargarte Mocha.js como framework de testeo unitario para tus proyectos, haciendo
+Para hacer testeo unitario tenés varias opciones
+
+### Jasmine (JS puro)
+
+-   Jasmine: <http://jasmine.github.io/>, que es la opción que te recomendamos. Para probarlo en el cliente, basta con descargar en <https://github.com/jasmine/jasmine/releases> el proyecto web standalone (\*\*jasmine-standalone-x.y.z.zip\*\* donde x, y, z es el último número de versión) y luego editar el archivo SpecRunner.html, incorporando los archivos js de dominio y de test que quieras. Todo esto y bastante más está explicado en <http://jasmine.github.io/2.5/introduction.html>
+
+### Mocha
+
+Tambien podés descargarte Mocha.js como framework de testeo unitario para tus proyectos, haciendo
 
 `$ npm install -g mocha`
 
