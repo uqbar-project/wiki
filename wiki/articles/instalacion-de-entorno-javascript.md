@@ -13,7 +13,7 @@ En Windows te recomendamos previamente descargar el Git Bash en <http://msysgit.
 
 Y para cualquier sistema operativo en general podés descargar Node en <https://nodejs.org/download/>
 
--   Si el proyecto es Javascript "puro" en el cliente, podés utilizar Bower (https://bower.io/) y en particular para instalarlo: <https://bower.io/#install-bower> (necesitás node y npm)
+-   Si el proyecto es Javascript "puro" en el cliente, podés utilizar Bower (https://bower.io/) para el manejo de dependencias en el browser y en particular para instalarlo: <https://bower.io/#install-bower> (necesitás node y npm)
 
 Framework de testeo unitario
 ----------------------------
