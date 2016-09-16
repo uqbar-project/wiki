@@ -24,7 +24,9 @@ Además de las configuraciones [sugeridas para Grails](instalacion-de-entorno-we
 
 -   además si estamos usando GGTS 3.6.0, hay que asegurarse que el código xtend compile con compatibilidad a la JDK 1.7 o van a aparecer feos mensajes de error:
 
-![](ConfiguracionXtendParaGrails.png "fig:ConfiguracionXtendParaGrails.png") (destildás la opción "Use source compatibility level from Java settings", y seleccionás entre las opciones Java 7)
+![](ConfiguracionXtendParaGrails.png "ConfiguracionXtendParaGrails.png")
+
+(destildás la opción "Use source compatibility level from Java settings", y seleccionás entre las opciones Java 7)
 
 Consideraciones para un proyecto Grails + Xtend en el mismo proyecto
 --------------------------------------------------------------------
