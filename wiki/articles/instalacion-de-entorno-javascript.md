@@ -44,7 +44,7 @@ Entorno de desarrollo
 ### Sublime
 
 -   <http://www.sublimetext.com/3> es la página principal donde te descargás el producto
--   Instalá el Package Control, la herramienta que necesitás para instalar los plugins. Tenés un tutorial que explica cómo bajarlo desde Windows: <https://www.youtube.com/watch?v=sUvBxC1GG8A>
+-   Instalá el Package Control, la herramienta que necesitás para instalar los plugins. Tenés un tutorial que explica cómo bajarlo desde Sublime: <https://packagecontrol.io/installation>
 
 Hay que descargarse el Linter vía npm:
 
