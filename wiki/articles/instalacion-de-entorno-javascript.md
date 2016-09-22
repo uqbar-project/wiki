@@ -66,6 +66,8 @@ Estos 3 paquetes marcan las líneas donde hay errores con un puntito y subrayan 
 -   **Color Highlighter:** podés ver de qué color quedan los colores que ponés codificados en el código (por nombre, rgb, rgba, etc.)
 -   **DocBlockr:** si empezás un comentario, te lo sigue en la siguiente línea si le das enter (podés evitarlo con shift + enter)
 
+Para levantar un Browser desde el Sublime cuando estés parado en un HTML: <http://michaelcrump.net/getting-sublime-3-to-launch-your-html-page-in-a-browser-with-a-key-combo/>
+
 ### Eclipse
 
 Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico según se explica en la página [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html). Luego:
