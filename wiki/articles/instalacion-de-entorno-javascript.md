@@ -50,6 +50,8 @@ Hay que descargarse el Linter vía npm:
 
 `$ sudo npm install -g jshint`
 
+(si estás en Windows iniciá la consola como Administrador).
+
 Luego te recomendamos que descargues estos packages controls:
 
 -   SublimeLinter
