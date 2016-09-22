@@ -56,6 +56,8 @@ Luego te recomendamos que descargues estos packages controls:
 -   SublimeLinter-jshint
 -   SublimeLinter-json
 
+La documentación de cómo instalarlo está en: <http://www.sublimelinter.com/en/latest/installation.html>
+
 Estos 3 paquetes marcan las líneas donde hay errores con un puntito y subrayan el error en el código mismo, además de que en la barra de estado te describe el error.
 
 -   **HTML-CSS-JS Prettify**: ctrl + shift + h y te acomoda el código
