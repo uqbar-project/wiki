@@ -34,10 +34,6 @@ Las configuraciones que te recomendamos son:
 
 Igualmente pueden configurar cualquier otro dispositivo (Phone o Tablet recomendado, no Wear porque tiene características muy diferentes)
 
-### Configuración
-
--   Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](configuraciones-generales-para-cualquier-eclipse.html)
-
 Troubleshooting
 ---------------
 
