@@ -10,14 +10,16 @@ La instalación que nosotros recomendamos es la siguiente:
 <!-- -->
 
 -   **Android Studio**
-    -   <https://developer.android.com/sdk/index.html> (descargar última versión que a Noviembre 2015 es Marshmallow)
+    -   <https://developer.android.com/sdk/index.html> (descargar última versión que a Octubre 2016 es Nougat - la 24)
+
+### Importante: Configuraciones
 
 Las configuraciones que te recomendamos son:
 
 -   Si estás familiarizado con los shortcuts del Eclipse: File &gt; Settings &gt; Keymap y en el combo Keymaps seleccionar Eclipse
--   Para bajarte los ejemplos activá el plugin de SVN: VCS &gt; "Enable Version Control Integration...", luego VCS &gt; Browse Repository &gt; Browse Subversion Repository, y haciendo click en el botón Agregás la URL correspondiente.
+-   Para bajarte los ejemplos o bien usás la opción "Check out project from Version Control" y escribís la dirección de los ejemplos, o bien descargás el repositorio Git como un zip y lo descomprimís aparte, para luego hacer Import Project.
 
-![](SVN_plugin.png "SVN_plugin.png")
+<!-- -->
 
 -   Luego reapuntar el SDK al directorio donde se instaló: Tools &gt; Android &gt; SDK Manager: ubican ese directorio Android SDK Location (el que estuvo en el paso $Android\_SDK\_Path). Además deben tener instalada alguna API (API Level xx, Revision x, Status: deben marcarla y luego seleccionar Apply). Una vez instalado reiniciar.
 
@@ -25,10 +27,12 @@ Las configuraciones que te recomendamos son:
 
 -   Para hacer las pruebas tienen dos opciones: utilizar un dispositivo Android conectado a USB o bien configurar un emulador mediante el Android Virtual Device (AVD). El AVD Manager aparece desde el menú Tools &gt; Android &gt; AVD Manager. Les dejamos una opción posible:
     -   AVD Name: El nombre que quieran
-    -   Device: 5.0" 1080x1920 420dpi
-    -   Lollipop: Android 5.1 x86\_64
+    -   Device: Nexus 5 4.95" 1080x1920 420dpi
+    -   Nougat: Android 7.0 x86\_64
     -   Scale: Auto
     -   Emulated Performance: Use Host GPU chequeado, Store a snapshot for faster startup deschequeado
+
+Igualmente pueden configurar cualquier otro dispositivo (Phone o Tablet recomendado, no Wear porque tiene características muy diferentes)
 
 ### Configuración
 
