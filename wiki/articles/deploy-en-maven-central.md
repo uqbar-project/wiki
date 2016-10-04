@@ -15,6 +15,11 @@ Este comando crea un commit y un tag para la nueva versión y luego otro commit 
 
 `$ git log # deberia haber dos commits nuevos`
 `$ git tag -l # deberia haber un tag nuevo`
+`$ git status # no debería quedar nada sin commitear`
+
+Si quedaron cambios sin commitear podés agregarlos al último commit
+
+`$ git commit --amend --no-edit`
 
 3. Pusheamos los 2 commits nuevos y el tag
 
