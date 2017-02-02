@@ -37,7 +37,7 @@ Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos p
 Aplicación
 ----------
 
-si x es Bool, entonces {{code|not x} también es de tipo Bool
+si x es Bool, entonces {{code|not x}} también es de tipo Bool
 
 Funciones Simples
 -----------------
