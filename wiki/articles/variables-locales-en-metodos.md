@@ -1,3 +1,8 @@
+---
+layout: article
+title: Variables locales en metodos
+---
+
 Se pueden usar variables locales a los métodos, lo cual puede ayudar la legibilidad o para evitar repetir la evaluación de una misma consulta a lo largo del método. Son análogas a las variables locales de procedimientos que deberían conocer de Algoritmos.
 
 Cómo se definen y usan: ahí va un ejemplo rápido (no importa mucho lo que hace)

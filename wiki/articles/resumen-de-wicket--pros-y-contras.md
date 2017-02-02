@@ -1,3 +1,8 @@
+---
+layout: article
+title: Resumen de wicket  pros y contras
+---
+
 Resumen general
 ---------------
 

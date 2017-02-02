@@ -1,3 +1,8 @@
+---
+layout: article
+title: Diferencia entre objetos y procedural   con un ejercicio de la guia 1
+---
+
 Veamos el ejercicio de la guía 1 que habla del sueldo de Pepe. El sueldo de Pepe es su sueldo básico más su bono por presentismo más otras cosas. De bono hay dos tipos
 
 -   uno que es: 100 pesos si no faltó nunca, 50 pesos si faltó un día, 0 si faltó dos o más días.

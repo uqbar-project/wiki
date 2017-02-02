@@ -1,3 +1,8 @@
+---
+layout: article
+title: Jface  controles y binding
+---
+
 **Nota:** el objetivo de esta página es comentar cómo se produce el binding entre controles de SWT/JFace y atributos de dominio. Si desea documentación para programar interfaces de usuario puede consultar [la página oficial de SWT](http://www.eclipse.org/swt/) y [el wiki de JFace](http://wiki.eclipse.org/index.php/JFace)
 
 **Nota 2:** si ud. está cursando alguna materia de programación de interfaces de usuario, la clase `ar.com.tadp.examples.jface.base.AbstractPanel`<T> provista por la cátedra le facilitará todas estas tareas.

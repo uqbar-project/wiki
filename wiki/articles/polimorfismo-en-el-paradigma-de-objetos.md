@@ -1,3 +1,8 @@
+---
+layout: article
+title: Polimorfismo en el paradigma de objetos
+---
+
 El polimorfismo en el paradigma de objetos se define como **la capacidad que tiene un objeto de poder tratar indistintamente a otros que sean potencialmente distintos**. Cuando hablamos de que un objeto "trate" a otros, estamos hablando de que interactúen a través de mensajes.
 
 Lo que nos va a interesar al programar es ver a un objeto desde un punto de vista externo (cuando mandamos mensajes) y desde un punto de vista interno (cuando implementamos el comportamiento que queremos). Al punto de vista externo, que sólo incluye el comportamiento que exhibe (los mensajes que entiende) le vamos a decir **interfaz**.

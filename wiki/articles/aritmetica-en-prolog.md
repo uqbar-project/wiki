@@ -1,3 +1,8 @@
+---
+layout: article
+title: Aritmetica en prolog
+---
+
 El predicado "is"
 -----------------
 

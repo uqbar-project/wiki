@@ -1,3 +1,8 @@
+---
+layout: article
+title: Prototipado
+---
+
 Un prototipo según la RAE es un "Ejemplar original o primer molde en que se fabrica una figura u otra cosa." Este término se utiliza en la programación orientada a objetos para aquellos objetos que sirven como base para obtener otros objetos como él, la forma de obtener nuevos objetos a partir del prototipo se denomina **clonación**.
 
 ¿Qué **problema** es el que resuelve la clonación, entonces?

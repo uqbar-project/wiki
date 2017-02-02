@@ -1,3 +1,8 @@
+---
+layout: article
+title: Metodos de clase para crear objetos inicializados
+---
+
 A veces, es necesario inicializar alguna/s de la/s variable/s de un objeto, con objetos fijos, o con objetos que hay que pasarle apenas se crea el objeto.
 
 Para esto hacemos un método al que por convención se lo llama initialize, y le enviamos el mensaje correspondiente a cada objeto que creamos desde el workspace. Por ejemplo

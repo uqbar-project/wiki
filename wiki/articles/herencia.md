@@ -1,3 +1,8 @@
+---
+layout: article
+title: Herencia
+---
+
 La herencia es un mecanismo que tiene por objetivo principal el compartir lógica/código similar. Esto lleva a evitar la duplicación de lógica/código. Cuando un objeto recibe un mensaje, mediante [Method lookup](method-lookup.html) buscará el comportamiento requerido en la clase de la cual es instancia y, en caso de no tener un método para el mismo, en sus superclases.
 
 Herencia Simple

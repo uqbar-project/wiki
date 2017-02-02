@@ -1,3 +1,8 @@
+---
+layout: article
+title: Expresiones lambda
+---
+
 Son funciones anónimas. Por ej., una función anónima que toma solo un número como argumento y produce el resultado x + x se puede definir como:
 
 `   λx → x + x`

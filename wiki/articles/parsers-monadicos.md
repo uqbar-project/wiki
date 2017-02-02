@@ -1,3 +1,8 @@
+---
+layout: article
+title: Parsers monadicos
+---
+
 Este artículo está en construcción.
 
 Un uso muy simpático para el concepto de [mónadas](monada.html) es la posibilidad de construir parsers a partir de ellas. Esto es posible en diferentes lenguajes, como [Haskell](haskell.html) y [Scala](scala.html). Este artículo intenta compendiar algo de información al respecto.

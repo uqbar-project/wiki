@@ -1,3 +1,8 @@
+---
+layout: article
+title: Clases anonimas en java
+---
+
 Motivación: ausencia de bloques
 -------------------------------
 

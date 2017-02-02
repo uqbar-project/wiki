@@ -1,3 +1,8 @@
+---
+layout: article
+title: Tipos de haskell
+---
+
 Tal vez convenga aclarar que esta no es una categorización teórica, es más bien una introducción y vamos de lo más simple a lo más complejo.
 
 Tipos simples y compuestos

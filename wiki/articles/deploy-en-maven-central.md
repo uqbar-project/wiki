@@ -1,3 +1,8 @@
+---
+layout: article
+title: Deploy en maven central
+---
+
 Estás desarrollando un proyecto Maven para Uqbar -el cual tiene como pom padre *uqbar-parent-project*- y ahora lo querés desplegar en Maven Central, ¿que hacer?
 
 Tenemos 2 tareas para hacer: **preparar** el release y luego **publicarlo**. La primera sí o sí vas a tener que hacerla en tu PC, porque vos sos responsable de, por ejemplo, elegir la versión de este nuevo release. Veamos entonces cómo hacer esto:

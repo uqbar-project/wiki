@@ -1,3 +1,8 @@
+---
+layout: article
+title: Efectos y diseno
+---
+
 Entendemos por efectos (colaterales) a aquellas modificaciones observables sobre el ambiente que son producidas por, y persisten tras, la ejecución de un programa.
 
 Son ejemplos de efectos:

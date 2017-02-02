@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   individuos compuestos
+---
+
 En contraposición a los átomos y los números, que son individuos simples, existen los individuos compuestos, estos son:
 
 -   los [functores](paradigma-logico---functores.html)

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Instalacion de entorno angular
+---
+
 Pre-requisitos
 --------------
 

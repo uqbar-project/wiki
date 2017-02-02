@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma de objetos   method lookup
+---
+
 *También conocido como **Dynamic dispatch***
 
 Es el mecanismo por el cual se relaciona el envío de un mensaje con la ejecución de un método determinado.

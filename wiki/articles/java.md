@@ -1,3 +1,8 @@
+---
+layout: article
+title: Java
+---
+
 Sobre el lenguaje:
 
 -   [Lambdas en Java 8](lambdas-en-java-8.html)

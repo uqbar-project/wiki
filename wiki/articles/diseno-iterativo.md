@@ -1,3 +1,8 @@
+---
+layout: article
+title: Diseno iterativo
+---
+
 La metodología de desarrollo nos lleva a diseñar de dos formas completamente diferentes:
 
 Las metodologías predictivas proponen el **diseño anticipado**, donde se asume que

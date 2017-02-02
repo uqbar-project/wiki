@@ -1,3 +1,8 @@
+---
+layout: article
+title: Nombres de clases
+---
+
 ¿Singular o plural?
 -------------------
 

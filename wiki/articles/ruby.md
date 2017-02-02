@@ -1,3 +1,8 @@
+---
+layout: article
+title: Ruby
+---
+
 No es este [Ruby](http://www.youtube.com/watch?v=qObzgUfCl28), pero les dejamos otros links interesantes:
 
 Sobre el lenguaje:

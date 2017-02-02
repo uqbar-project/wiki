@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   como pienso la resolucion de un punto
+---
+
 Ejemplo
 -------
 

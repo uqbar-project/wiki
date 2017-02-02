@@ -1,3 +1,8 @@
+---
+layout: article
+title: Conocimiento de dominio y refactoring
+---
+
 ¿Se puede iniciar un refactoring sin conocimiento del dominio?
 
 ¿Se puede refa La respuesta corta es: no, no se puede (\*) realizar un refactor sin conocimiento del dominio.

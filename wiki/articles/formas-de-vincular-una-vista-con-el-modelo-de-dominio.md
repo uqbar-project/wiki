@@ -1,3 +1,8 @@
+---
+layout: article
+title: Formas de vincular una vista con el modelo de dominio
+---
+
 Dado que el objetivo de la interfaz de usuario es permitir la interacción con el modelo de dominio, cada uno de los elementos que conforman la interfaz de usuario tendrá como tarea alguna parte de esta interacción, ya sea mostrar al usuario una porción del modelo de dominio, o bien permitirle realizar acciones que lo modifiquen.
 
 Una forma simple de ordenar una interfaz de usuario es considerar que cada vista (que puede ser una ventana, una página o bien una porción bien delimitada de una vista más grande) tiene como responsabilidad interactuar con un único objeto de dominio. A este objeto de dominio lo denonimaremos [modelo de la vista](modelo-de-la-vista.html).

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   negacion
+---
+
 El predicado de [orden superior](orden-superior.html) más simple, y a la vez muy utilizado, es el `not/1`, que representa una negación. Si `P` es una proposición, entonces `not(P)` es una proposición que niega el valor de verdad asumido para P. Así, la negación de algo falso se toma por verdadera, y la negación de algo con valor cierto, se toma como falso.
 
 Ejemplos

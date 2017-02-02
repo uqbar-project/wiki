@@ -1,3 +1,8 @@
+---
+layout: article
+title: Python
+---
+
 Sobre el lenguaje:
 
 -   [Python Programming Language Official Site](http://www.python.org/)

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Elementos teoricos para comparar tecnologias de presentacion
+---
+
 Clientes livianos y pesados
 ---------------------------
 

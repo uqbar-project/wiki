@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   un poco de nomenclatura
+---
+
 Resumen
 -------
 

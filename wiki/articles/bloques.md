@@ -1,3 +1,8 @@
+---
+layout: article
+title: Bloques
+---
+
 ¿Qué es un bloque?
 ------------------
 

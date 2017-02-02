@@ -1,3 +1,8 @@
+---
+layout: article
+title: Pharo para programadores ozonosos
+---
+
 La migración desde trabajar con Ozono a pasar a la versión full de Pharo puede ser complicado en ciertos sentidos pero más o menos es lo mismo pero tenemos que tener en cuenta las diferencias.
 
 Clases vs. Objetos

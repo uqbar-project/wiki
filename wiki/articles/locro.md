@@ -1,3 +1,8 @@
+---
+layout: article
+title: Locro
+---
+
 Nuestra mega receta para 30 personas:
 
 Para el locro:

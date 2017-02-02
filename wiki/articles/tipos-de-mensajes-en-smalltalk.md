@@ -1,3 +1,8 @@
+---
+layout: article
+title: Tipos de mensajes en smalltalk
+---
+
 Primero arranquemos por lo básico. Todo envío de mensaje sigue la siguiente regla: OBJETO MENSAJE PARAMETRO Lo primero que aparece es el objeto receptor, luego viene el mensaje que se le envía a dicho objeto el cual puede o no tener parámetros.
 
 Smalltalk es bastante particular en aspectos sintácticos, por eso es importante detenerse a entender cómo se interpreta. Hay 3 tipos de mensajes en Smalltalk.

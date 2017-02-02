@@ -1,3 +1,8 @@
+---
+layout: article
+title: Amigandonos con el entorno de desarrollo
+---
+
 Algunas buenas prácticas para tener en cuenta:
 
 Control de versiones

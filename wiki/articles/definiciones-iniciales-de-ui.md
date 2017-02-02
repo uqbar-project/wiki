@@ -1,3 +1,8 @@
+---
+layout: article
+title: Definiciones iniciales de ui
+---
+
 ¿Qué es una interfaz de usuario?
 --------------------------------
 

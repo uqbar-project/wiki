@@ -1,3 +1,8 @@
+---
+layout: article
+title:  unexpected     
+---
+
 Un error que puede aparecer al programar en haskell es:
 
 `ERROR `[`file:.\tp1`](file:.\tp1)` funcional:6 - Syntax error in expression (unexpected`

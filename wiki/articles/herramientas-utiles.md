@@ -1,3 +1,8 @@
+---
+layout: article
+title: Herramientas utiles
+---
+
 Primeros pasos
 --------------
 

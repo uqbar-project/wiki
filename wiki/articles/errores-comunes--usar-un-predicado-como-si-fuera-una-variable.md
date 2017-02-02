@@ -1,3 +1,8 @@
+---
+layout: article
+title: Errores comunes  usar un predicado como si fuera una variable
+---
+
 A veces se utilizan predicados unarios para representar *verdades globales* (lo que en otro paradigma sería una constante global).
 
 Por ejemplo podemos tener un predicado que nos diga la fecha de hoy:

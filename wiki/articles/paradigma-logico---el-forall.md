@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   el forall
+---
+
 Antes que nada
 --------------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Declaratividad vs  expresividad
+---
+
 Muchas veces mencionamos los conceptos de [Declaratividad](declaratividad.html) y [Expresividad](expresividad.html), pero ¿cuando corresponde hablar de uno o del otro? ¿Y como se relacionan con otros conceptos vistos en la materia? Veamoslo con algunos ejemplos:
 
   

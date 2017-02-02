@@ -1,3 +1,8 @@
+---
+layout: article
+title: Tecnicas avanzadas de programacion
+---
+
 Técnicas Avanzadas de Programación - Contenidos actuales
 --------------------------------------------------------
 

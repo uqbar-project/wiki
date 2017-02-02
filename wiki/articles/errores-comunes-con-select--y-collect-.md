@@ -1,3 +1,8 @@
+---
+layout: article
+title: Errores comunes con select  y collect 
+---
+
 Orden incorrecto entre collect: y select:
 -----------------------------------------
 

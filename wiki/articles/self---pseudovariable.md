@@ -1,3 +1,8 @@
+---
+layout: article
+title: Self   pseudovariable
+---
+
 **self** es una pseudovariable que **siempre** referencia al objeto receptor del mensaje que hizo que se evalúe el método que estamos analizando en un momento dado. Tené en cuenta que no es posible asignar self, esta referencia es manejada por la máquina virtual, no por el programador.
 
 Sirve para que el objeto receptor pueda mandarse un mensaje a sí mismo dentro de la implementación del método que se está ejecutando o para que, al mandar un mensaje a otro objeto que necesite colaborar con él, pueda pasarse a sí mismo por parámetro.

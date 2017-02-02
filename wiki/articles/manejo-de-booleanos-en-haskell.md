@@ -1,3 +1,8 @@
+---
+layout: article
+title: Manejo de booleanos en haskell
+---
+
 El Tipo Bool
 ------------
 

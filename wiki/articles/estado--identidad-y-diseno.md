@@ -1,3 +1,8 @@
+---
+layout: article
+title: Estado  identidad y diseno
+---
+
 Inmutable vs mutable
 
 Decimos que un objeto es inmutable cuando su estado es insignificante, o se mantiene constante a lo largo de su ciclo de vida, o, en una visión más relajada, luego de su momento de ínstanciación.

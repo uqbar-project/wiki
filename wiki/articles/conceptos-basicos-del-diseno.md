@@ -1,3 +1,8 @@
+---
+layout: article
+title: Conceptos basicos del diseno
+---
+
 Modelo
 ------
 

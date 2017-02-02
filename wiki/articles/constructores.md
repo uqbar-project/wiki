@@ -1,3 +1,8 @@
+---
+layout: article
+title: Constructores
+---
+
 Los constructores son métodos especiales cuya finalidad es la creación de objetos de la clase indicada con la inicialización de estado interno correspondiente. Los constructores son comunes en los lenguajes en los cuales las clases no son objetos, para invocarlos se usa la palabra reservada **new** seguido por el nombre de la clase y los parámetros según corresponda.
 
 Por ejemplo, la clase Date de Wollok define dos constructores, uno sin parámetros que retorna la fecha del día de hoy (porque es muy común querer obtener instancias con esa configuración particular, entonces se considera como la inicialización por defecto si no se indica nada), y otro con 3 parámetros para que al instanciar la fecha se la inicialice con el día, el mes y el año deseados. La sintaxis de Wollok para instanciar objetos es:

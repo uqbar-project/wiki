@@ -1,3 +1,8 @@
+---
+layout: article
+title: Errores comunes
+---
+
 Contenido del tag "web-app"
 ---------------------------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Clases
+---
+
 ### Motivación y Problema
 
 ¿Por qué necesito clases? Porque tengo varios objetos *sospechosamente parecidos*. Es decir,

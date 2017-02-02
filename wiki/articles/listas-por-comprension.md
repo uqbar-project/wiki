@@ -1,3 +1,8 @@
+---
+layout: article
+title: Listas por comprension
+---
+
 Tal vez recuerden de matemática que se pueden definir conjuntos por extensión (por ejemplo {1,2,5,9}) o por comprensión ({X \\ X Є Enteros ^ X &gt; 3 ^ X &lt; 15} ). La forma por extensión ya la vimos con en Haskell con las listas \[1,2,5,9\] y por comprensión podemos definirla mediante filtros y transformaciones (filter y map) sobre otra lista que sería el conjunto base.
 
 Las listas por comprensión en Haskell son un azúcar sintáctico que nos permite armar listas a partir de los elementos de otra luego de aplicar filtros y transformaciones, o sea, permiten escribir de una forma simple y elegante expresiones que podrían ser más complejas utilizando las funciones que ya conocemos para este fin.

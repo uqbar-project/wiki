@@ -1,3 +1,8 @@
+---
+layout: article
+title: Logico   trabajo con valores
+---
+
 Cuándo se usa **is**
 --------------------
 

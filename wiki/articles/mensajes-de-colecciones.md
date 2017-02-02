@@ -1,3 +1,8 @@
+---
+layout: article
+title: Mensajes de colecciones
+---
+
 Este es un pequeño resumen de mensajes que entiende una colección. Lo que sigue sirve para todos los [sabores de colecciones](sabores-de-colecciones.html).
 
 ¿Qué puedo hacer con los conjuntos de objetos? Muchas cosas, las colecciones entienden mensajes muy útiles para ayudarnos a abstraernos un poquito. Vamos a separarlos en los que tienen [efecto colateral](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html) sobre la colección receptora y los que no.

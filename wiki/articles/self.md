@@ -1,3 +1,8 @@
+---
+layout: article
+title: Self
+---
+
 [self - pseudovariable](self---pseudovariable.html)
 
 Self - Lenguaje de programación:

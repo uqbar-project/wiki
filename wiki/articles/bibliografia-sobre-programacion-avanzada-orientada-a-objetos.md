@@ -1,3 +1,8 @@
+---
+layout: article
+title: Bibliografia sobre programacion avanzada orientada a objetos
+---
+
 Herramientas de programación y diseño
 -------------------------------------
 

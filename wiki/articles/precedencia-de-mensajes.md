@@ -1,3 +1,8 @@
+---
+layout: article
+title: Precedencia de mensajes
+---
+
 Muchas veces nos encontramos en la situación de querer mandar varios mensajes en una misma sentencia, donde hay varios objetos involucrados. ¿Qué mensaje se evalúa primero? ¿Cuál será el objeto que finalmente sea pasado como parámetro?
 
 Ésto se ve con varios ejemplos:

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Lombardizacion
+---
+
 Dícese de aquella actitud donde una propuesta viene siempre acompañada de un compromiso de acción. Es decir, una persona lombardizada es aquella que cuando hace una propuesta, se compromete a que esa propuesta se lleve a cabo. La Lombardización acepta como compromiso diversas actitudes que incluyen desde llevarlo a cabo completamente uno mismo hasta el movilizar gente para hacerlo.
 
 El término Lombardización proviene de la palabra Lombardi, tambien conocida como "apellido de Carlono", en honor a Carlos "Carlono" "Gran Vikingo" Lombardi, perteneciente a este grupo. El orígen del uso de este vocablo se debe a...

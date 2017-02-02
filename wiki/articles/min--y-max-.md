@@ -1,3 +1,8 @@
+---
+layout: article
+title: Min  y max 
+---
+
 ejemplo: un remis cobra 2 pesos por kilómetro, mínimo 5 pesos. Tengo que escribir el método precioViaje: en la clase Remis. ¿Hago esto?
 
 `   precioViaje: unViaje`

@@ -1,3 +1,8 @@
+---
+layout: article
+title: El papel del diseno en la metodologia de desarrollo
+---
+
 El diseño cumple un rol fundamental en todos los desarrollos de software. Es entonces cuando tenemos que tomar decisiones que afectan directamente al producto que vamos a construir. Por supuesto, el qué del análisis vs. el cómo del diseño es una diferencia que aparece en todos los libros. Pero mientras en el qué del análisis las recomendaciones generales apuntan a ordenar, clasificar, separar
 
 -   en lo que es parte del sistema

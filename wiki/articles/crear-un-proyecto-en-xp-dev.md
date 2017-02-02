@@ -1,3 +1,8 @@
+---
+layout: article
+title: Crear un proyecto en xp dev
+---
+
 Crear una cuenta de usuario en xp-dev
 -------------------------------------
 

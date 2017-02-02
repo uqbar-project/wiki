@@ -1,3 +1,8 @@
+---
+layout: article
+title: Sabores de colecciones
+---
+
 Sabores de colecciones en Wollok
 --------------------------------
 

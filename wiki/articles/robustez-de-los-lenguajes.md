@@ -1,3 +1,8 @@
+---
+layout: article
+title: Robustez de los lenguajes
+---
+
 Se dijo:
 
 `  "No implementaría el software de una central atómica en Ruby"`

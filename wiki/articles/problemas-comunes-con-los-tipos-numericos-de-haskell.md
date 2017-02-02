@@ -1,3 +1,8 @@
+---
+layout: article
+title: Problemas comunes con los tipos numericos de haskell
+---
+
 Para salir del paso...
 ----------------------
 

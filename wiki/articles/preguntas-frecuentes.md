@@ -1,3 +1,8 @@
+---
+layout: article
+title: Preguntas frecuentes
+---
+
 Problemas con el entorno
 ------------------------
 

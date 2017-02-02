@@ -1,3 +1,8 @@
+---
+layout: article
+title: Append como  foldr f a 
+---
+
 El desafío
 ----------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Otros temas interesantes de programacion
+---
+
 -   [Mónada](monada.html)
 -   [Parsers Monádicos](parsers-monadicos.html)
 -   [Lenguajes Específicos de Dominio](lenguajes-especificos-de-dominio.html)

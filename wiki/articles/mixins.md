@@ -1,3 +1,8 @@
+---
+layout: article
+title: Mixins
+---
+
 Similares a los [Traits](traits.html), estas construcciones, que proveen la implementación de un conjunto de métodos, pueden ser combinadas y conforman un mecanismo de compartición de código complementario a las clases. Su principal diferencia con los Traits es que pueden definir y acceder a variables y su combinación no producen conflictos, ya que estos se resuelven automáticamente por un mecanismo de [linearization](flattening-vs-linearization.html).
 
 Los Mixins tienen implementaciones en varios de los lenguajes más modernos, como ser Ruby, Scala (en el lenguaje se les dice trait, pero son mixins), Python y Groovy.

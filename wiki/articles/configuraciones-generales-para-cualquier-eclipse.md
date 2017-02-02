@@ -1,3 +1,8 @@
+---
+layout: article
+title: Configuraciones generales para cualquier eclipse
+---
+
 Hay varias cosas que es util configurar en Eclipse, independientemente del lenguaje que elijan.
 
 Compiler

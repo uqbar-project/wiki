@@ -1,3 +1,8 @@
+---
+layout: article
+title: Entradas al proceso de diseno
+---
+
 Ralph & Wand definen que el diseño clasifica las entradas o influencias al proceso de diseño en requerimientos, objetivos, componentes primitivas, restricciones y entorno.
 
 Requerimientos

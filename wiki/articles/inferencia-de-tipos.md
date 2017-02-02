@@ -1,3 +1,8 @@
+---
+layout: article
+title: Inferencia de tipos
+---
+
 Entendemos por *inferencia de tipos* la capacidad que tienen algunos lenguajes con [chequeo estático de tipos](esquemas-de-tipado.html) para calcular el tipo de una expresión, función o variable sin necesidad de contar con anotaciones de tipo como sí se necesitan en C y Java por ejemplo.
 
 La clave de este proceso es la regla por la cual se obtiene el tipo de la aplicación de una función:

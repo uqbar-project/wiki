@@ -1,3 +1,8 @@
+---
+layout: article
+title: Transparencia referencial  efecto de lado y asignacion destructiva
+---
+
 Definiciones
 ------------
 

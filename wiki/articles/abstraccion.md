@@ -1,3 +1,8 @@
+---
+layout: article
+title: Abstraccion
+---
+
 Programar implica muchas veces manejar grandes cantidades de información, un programa es una entidad muy compleja y por lo tanto es muy difícil abarcarlo en su totalidad. Por eso necesitamos herramientas que nos permitan manejar esa complejidad.
 
 Gran parte de esas ideas trabajan con el principio de “dividir y conquistar”, esto es, tomar una parte más pequeña del programa y poder comprenderla olvidándonos momentáneamente del resto del programa. Sin embargo, siempre que uno tome una parte de un programa más grande, esa parte tendrá relaciones con otras partes del sistema. Para entenderlo yo debo poder incorporar esas otras partes a mi análisis pero sin tener que comprender todos sus detalles. Las herramientas que nos permiten eso las denominamos **abstracciones**.

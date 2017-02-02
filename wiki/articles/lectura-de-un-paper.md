@@ -1,3 +1,8 @@
+---
+layout: article
+title: Lectura de un paper
+---
+
 Un Paper puede leerse con distintos niveles de profundidad, según el interés que tengamos sobre el tema. Obviamente esto es una guía, no hace falta ser tajante al respecto:
 
 Profundidad 1

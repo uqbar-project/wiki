@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   existe vs para todo
+---
+
 En la [lógica de primer orden](http://es.wikipedia.org/wiki/L%C3%B3gica_de_primer_orden) se trabaja con variables cuantificadas, los cuantificadores indican si algo se cumple para alguno (cuantificador existencial) o para todos (cuantificador universal) los valores de un conjunto de individuos.
 
 Lo más normal es trabajar con el cuantificador existencial, motivo por el cual en el lenguaje Prolog no hay un predicado que la denote, como sí sucede para el cuantificador universal.

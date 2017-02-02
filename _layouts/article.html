@@ -1,0 +1,100 @@
+---
+layout: body
+---
+<div id="article_title">
+    <h1>
+        {{ page.title }}
+    </h1>
+</div>
+
+<div id="article_content">
+    {{ content | toc_generate }}
+</div>
+
+<div id="article_disqus">
+    {% include disqus.html %}
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on {{ page.git.last_commit.commit_date | date: '%B %d, %Y' }} by
+        {{page.git.last_commit.commit_name}}</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>{{ page.git.total_commits }}</td>
+                                <td>{{ page.git.total_additions }}</td>
+                                <td>{{ page.git.total_subtractions }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            {% for author in page.git.authors %}
+                            <tr>
+                                <td>{{ author["name"] }}</td>
+                                <td>{{ author["email"] }}</td>
+                                <td>{{ author["commits"] }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    {% for commit in page.git.commits %}
+                    <tr>
+                        <td>{{ commit["short_sha"] }}</td>
+                        <td>{{ commit["commit_date"] }}</td>
+                        <td>{{ commit["commit_name"] }}</td>
+                        <td>{{ commit["commit_email"] }}</td>
+                        <td>{{ commit["message"] }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>

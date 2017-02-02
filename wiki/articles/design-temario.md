@@ -1,3 +1,8 @@
+---
+layout: article
+title: Design temario
+---
+
 Unidad 1: Diseño y Sistemas
 ---------------------------
 

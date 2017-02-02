@@ -1,3 +1,8 @@
+---
+layout: article
+title: Diagrama de clases
+---
+
 El diagrama de clases es una herramienta para [comunicar el diseño](comunicacion.html) de un programa orientado a objetos, permitiendo modelar las relaciones entre las entidades. En UML, una [clase](clases.html) es representada por un rectángulo que posee tres divisiones: Nombre de la clase, atributos que tiene y mensajes que entiende.
 
 En el primer cuadro anotamos el nombre de la clase (si es [abstracta](herencia-clase-abstracta.html) se escribe en cursiva, o bien se usa un estereotipo &lt;<abstract>&gt; arriba del nombre de la clase).

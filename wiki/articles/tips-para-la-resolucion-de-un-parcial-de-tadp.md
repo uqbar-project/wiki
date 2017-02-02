@@ -1,3 +1,8 @@
+---
+layout: article
+title: Tips para la resolucion de un parcial de tadp
+---
+
 Herramientas a utilizar (o cosas que no pueden faltar)
 ------------------------------------------------------
 

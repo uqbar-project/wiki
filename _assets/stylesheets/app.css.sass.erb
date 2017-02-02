@@ -1,0 +1,29 @@
+//= require normalize-css/normalize.css
+//= require highlightjs/styles/default
+
+// Make sure the charset is set appropriately.
+@charset "UTF-8"
+
+// Global Foundation Settings
+@import settings
+
+// Import Foundation
+@import foundation/scss/foundation
+@import foundation/scss/foundation/components/buttons
+
+// Import custom code
+@import custom
+
+// Import sidebar code
+@import sidebar
+@import article
+
+//import the TOC code
+@import toc
+
+//Import prism scss code
+@import prism
+
+// Fix Gist layout issue with Foundation.
+div.gist table
+  table-layout: initial

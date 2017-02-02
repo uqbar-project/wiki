@@ -1,3 +1,8 @@
+---
+layout: article
+title: Variables y metodos de clase
+---
+
 Mensajes y Métodos de clase
 ---------------------------
 

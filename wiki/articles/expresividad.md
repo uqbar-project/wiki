@@ -1,3 +1,8 @@
+---
+layout: article
+title: Expresividad
+---
+
 ### Definición
 
 La expresividad puede definirse informalmente con la heurística "el nivel de **lindez** del código". En otras palabras, escribir un código **expresivo** es poner atención a las cuestiones que hacen que este código fuente sea más fácil de *entender* por *una persona*.

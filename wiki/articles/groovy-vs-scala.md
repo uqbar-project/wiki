@@ -1,3 +1,8 @@
+---
+layout: article
+title: Groovy vs scala
+---
+
 *Advertencia: Esta articulo tiene una cuota importante de subjetividad; no es una comparativa exacta. Así que tomalo con pinzas y recordá charlarlo con tu ayudante asignado.*
 
 Para la materia diseño, ambas opciones son igualmente buenas. Te explico los pros (+), contras (-), y neutros (\*) de cada una:

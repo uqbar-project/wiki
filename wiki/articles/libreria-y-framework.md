@@ -1,3 +1,8 @@
+---
+layout: article
+title: Libreria y framework
+---
+
 Librería
 --------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Preparacion de un entorno de desarrollo groovy
+---
+
 ### Download e instalación base
 
 -   Vas a la página <http://docs.codehaus.org/display/GROOVY/Eclipse+Plugin> y buscás el link de update que se adapte a la versión de tu Eclipse

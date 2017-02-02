@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   generacion
+---
+
 El concepto de "generación" puede servir para acotar el conjunto de valores posibles para una variable, pero también para ligar la variable con un valor, ya que eso cambia la forma en la que se evalúan las siguientes [consultas](paradigma-logico---un-poco-de-nomenclatura-consultas.html).
 
 Esto último tiene que ver con los [problemas de inversibilidad](paradigma-logico---casos-de-no-inversibilidad.html), y los casos de uso se dividen en dos grandes grupos:

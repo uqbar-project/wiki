@@ -1,3 +1,8 @@
+---
+layout: article
+title: Diseno y sistemas de tipos
+---
+
 En programación el chequeo estático de tipos permite detectar errores en un programa de forma previa a su ejecución. Existen amantes y detractores de esta idea y existen lenguajes profesionales con y sin chequeo de tipos. Quienes apoyan el uso de estos mecanismos sostienen que este tipo de chequeos garantiza o ayuda a garantizar la ausencia de errores en los programas, mientras que los que prefieren evitar estos chequeos sostienen que:
 
 -   a menudo resultan limitantes descartando soluciones que podrían ser viables

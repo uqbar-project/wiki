@@ -1,3 +1,8 @@
+---
+layout: article
+title: Introduccion a las metodologias de desarrollo de software
+---
+
 ¿Para qué sirve una metodología?
 --------------------------------
 

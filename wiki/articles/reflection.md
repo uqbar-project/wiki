@@ -1,3 +1,8 @@
+---
+layout: article
+title: Reflection
+---
+
 Es un caso particular de [metaprogramación](metaprogramacion.html), donde "metaprogramamos" en el mismo lenguaje en que están escritos (o vamos a escribir) los programas. Es decir, todo desde el mismo lenguaje.
 
 Nota de color: Inicialmente el lenguaje "pionero" en cuanto a reflection fue LISP.

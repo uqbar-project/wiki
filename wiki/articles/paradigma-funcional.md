@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma funcional
+---
+
 Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las propiedades de unicidad y existencia), que pueden ser evaluadas para obtener un resultado. El paradigma funcional está basado en conceptos que vienen de la matemática, entonces algunas cosas (p.ej. notaciones en el lenguaje) están sacadas de lo que aprendimos en Análisis I / Álgebra / Discreta.
 
 Conceptos generales

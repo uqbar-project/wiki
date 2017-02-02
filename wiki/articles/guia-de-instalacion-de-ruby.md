@@ -1,3 +1,8 @@
+---
+layout: article
+title: Guia de instalacion de ruby
+---
+
 Guía de Instalación de Ruby
 ===========================
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Formato de un paper
+---
+
 No todas las secciones son necesarias, pueden haber otras secciones o con otros nombres. Este solo es un template de guía.
 
 Título

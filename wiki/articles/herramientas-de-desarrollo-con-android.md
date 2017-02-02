@@ -1,3 +1,8 @@
+---
+layout: article
+title: Herramientas de desarrollo con android
+---
+
 ### LogCat
 
 Para poder mostrar información en consola, hay que reemplazar los println por

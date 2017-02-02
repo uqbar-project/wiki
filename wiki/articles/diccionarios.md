@@ -1,3 +1,8 @@
+---
+layout: article
+title: Diccionarios
+---
+
 Un Dictionary es un conjunto de asociaciones entre claves y valores, donde tanto las claves como los valores son objetos cualesquiera.
 
 Dicho de otra forma: a un Dictionary puedo pedirle que asocie un objeto valor a un objeto clave. Cada clave puede tener asociado un único objeto valor en un Dictionary; si asocio un valor a una clave que ya tenía otro valor asociado, reemplaza el valor viejo por el nuevo.

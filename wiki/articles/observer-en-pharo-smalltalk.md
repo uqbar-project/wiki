@@ -1,3 +1,8 @@
+---
+layout: article
+title: Observer en pharo smalltalk
+---
+
 Resumen
 -------
 

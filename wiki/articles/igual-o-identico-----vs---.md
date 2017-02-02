@@ -1,3 +1,8 @@
+---
+layout: article
+title: Igual o identico     vs   
+---
+
 Definiciones
 ------------
 

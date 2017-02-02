@@ -1,3 +1,8 @@
+---
+layout: article
+title: Diseno y tecnologia
+---
+
 Existe una fuerte relación entre diseño y la programación, o mejor dicho, entre el diseño y la tecnología que voy a utilizar para construir el sistema.
 
 El nivel de detalle del diseño

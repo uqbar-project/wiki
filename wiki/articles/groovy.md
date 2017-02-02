@@ -1,3 +1,8 @@
+---
+layout: article
+title: Groovy
+---
+
 Groovy es un lenguaje pensando para correr sobre la máquina virtual de Java, y con un modelo de objetos y sintaxis similar a la de aquel lenguaje, pero que a diferencia de este:
 
 -   Puede ser tanto compilado como interpretado

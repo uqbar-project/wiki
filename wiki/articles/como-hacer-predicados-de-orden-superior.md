@@ -1,3 +1,8 @@
+---
+layout: article
+title: Como hacer predicados de orden superior
+---
+
 Recordemos los predicados de orden superior que vimos hasta el momento, esos “predicados que relacionan predicados”:
 
 -   not/1

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Objective c
+---
+
 Sobre el lenguaje
 
 -   [Objective C (wikipedia)](http://en.wikipedia.org/wiki/Objective-C)

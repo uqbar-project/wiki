@@ -1,3 +1,8 @@
+---
+layout: article
+title: Desafio  suma de distancias
+---
+
 ### Parte 1
 
 Escribir el código necesario (en donde sea necesario) para poder ejecutar en un workspace:

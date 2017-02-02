@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   individuos simples
+---
+
 Los primeros individuos con los cuales estaremos trabajando son los denominados simples (en contraposición a los [individuos compuestos](paradigma-logico---individuos-compuestos.html)). Los que nos van a interesar para trabajar en general son los **átomos** y los **números**.
 
 Átomos

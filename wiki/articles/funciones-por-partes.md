@@ -1,3 +1,8 @@
+---
+layout: article
+title: Funciones por partes
+---
+
 ### Concepto Matemático
 
 Las funciones partidas ó definidas por partes ó por trozos son funciones que para diferentes valores del dominio, tienen una definición diferente. Por ejemplo, si tenemos que definir la función Módulo, para ciertos valores del dominio la función será `f(x)` `=` `x` y para otros valores será `f(x)` `=` `-x`

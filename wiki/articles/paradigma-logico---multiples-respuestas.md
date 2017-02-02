@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   multiples respuestas
+---
+
 Al hacer una [consulta](paradigma-logico---un-poco-de-nomenclatura-consultas.html) se puede obtener más de una respuesta. Esto está relacionado con que estamos trabajando con relaciones, no con funciones.
 
 P.ej. si Pedro tiene como primos a Lucía, Alan y Guido; entonces la relación "ser primos" relaciona a Pedro con tres personas, entonces si consulto sobre los primos de Pedro, lo que debe pasar es que se obtengan tres respuestas, una para cada primo.

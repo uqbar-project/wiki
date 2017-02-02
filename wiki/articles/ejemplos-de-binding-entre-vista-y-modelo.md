@@ -1,3 +1,8 @@
+---
+layout: article
+title: Ejemplos de binding entre vista y modelo
+---
+
 Introducción
 ------------
 

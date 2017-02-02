@@ -1,3 +1,8 @@
+---
+layout: article
+title: Inject into 
+---
+
 El **inject:into:** es un solo mensaje que entienden todas las colecciones, recibe 2 parámetros.
 
 `  `

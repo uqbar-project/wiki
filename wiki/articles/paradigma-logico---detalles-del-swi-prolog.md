@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   detalles del swi prolog
+---
+
 Ojo con los espacios
 --------------------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Maquina virtual
+---
+
 Puede haber un poco de confusión con la palabra Máquina Virtual (VM).
 
 La imagen de Pharo corre sobre una máquina virtual, llamada Pharo VM o Squeak VM o Cog VM. Esta VM es un programa más o menos común y corriente, sobre el cual se carga una imagen de Pharo. Esta VM es indispensable.

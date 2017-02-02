@@ -1,3 +1,8 @@
+---
+layout: article
+title: Algo3 temario
+---
+
 Unidad 1
 --------
 

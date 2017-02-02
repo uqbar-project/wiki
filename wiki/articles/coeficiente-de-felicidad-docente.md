@@ -1,3 +1,8 @@
+---
+layout: article
+title: Coeficiente de felicidad docente
+---
+
 El Coeficiente de Felicidad Docente, a.k.a. CFD, mide la felicidad producida en una persona que se dedica a la enseñanza en función de la respuesta obtenida de parte de sus pupilos.
 
 Diversos factores pueden hacer variar este índice. Algunos ejemplos:

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Css
+---
+
 Es la forma más recomendada de especificar y modificar las cuestiones estéticas de una página [HTML](html.html). La característica principal es que **separa estas declaraciones del propio html**. Así evita ensuciar la información (html) con cuestiones estéticas (el archivo .css). Además permite reutilizar estilos entre las diferentes páginas html, manteniendo consistencia entre el estilo de todo el sitio/aplicación.
 
 Sintaxis

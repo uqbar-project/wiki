@@ -1,3 +1,8 @@
+---
+layout: article
+title: Brownies
+---
+
 Ingredientes:
 
 -   Chocolate, 150 gramos

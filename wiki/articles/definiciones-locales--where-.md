@@ -1,3 +1,8 @@
+---
+layout: article
+title: Definiciones locales  where 
+---
+
 Hay ocasiones en las cuales nuestras funciones tienen una complejidad que puede disminuirse definiendo funciones más chicas que la componen, pero las mismas no son de particular interés fuera del contexto de esa función. Una forma de definir funciones que sólo se encuentran definidas en el contexto de una función es usando *where*.
 
 Supongamos que queremos hacer una función que nos dice el estado de gordura de una persona y sabemos que esto se determina a partir de la altura y el peso de la misma

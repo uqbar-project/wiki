@@ -1,3 +1,8 @@
+---
+layout: article
+title: Estrategias de evaluacion
+---
+
 Estrategias de evaluación
 -------------------------
 

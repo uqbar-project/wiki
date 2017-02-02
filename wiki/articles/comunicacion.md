@@ -1,3 +1,8 @@
+---
+layout: article
+title: Comunicacion
+---
+
 Cuando construimos modelos mentales sobre los problema que queremos resolver, ya sea como parte del proceso de análisis, diseño, etc, normalmente queremos luego transmitirlos Esto ocurre porque:
 
 -   Queremos compartirlo con otros: para explicar nuestro modelo construido e intercambiar opiniones sobre el mismo

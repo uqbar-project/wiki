@@ -1,3 +1,8 @@
+---
+layout: article
+title: Clase abstracta vs interfaz
+---
+
 Definiciones
 ------------
 

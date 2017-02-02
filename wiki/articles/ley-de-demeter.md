@@ -1,3 +1,8 @@
+---
+layout: article
+title: Ley de demeter
+---
+
 Usamos la “ley de demeter” siempre que es posible (que es la mayoría de las veces), pueden consultarla acá \[1\] y acá \[2\], un resumen:
 
         * You can play with yourself.

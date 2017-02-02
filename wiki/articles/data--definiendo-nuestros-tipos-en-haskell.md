@@ -1,3 +1,8 @@
+---
+layout: article
+title: Data  definiendo nuestros tipos en haskell
+---
+
 Cómo están definidos los Tipos en Haskell?
 ------------------------------------------
 

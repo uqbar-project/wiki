@@ -1,3 +1,8 @@
+---
+layout: article
+title: Masa de pizza
+---
+
 Cantidad: 4 pizzas
 
 Ingredientes:

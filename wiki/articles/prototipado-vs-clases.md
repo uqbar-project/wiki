@@ -1,3 +1,8 @@
+---
+layout: article
+title: Prototipado vs clases
+---
+
 En el paradigma orientado a objetos, cuando se suscita el problema de que existan **diferentes objetos con igual comportamiento pero diferente identidad y estado interno**, podemos abordarlo de diferentes formas. Dos esquemas muy usados son el de **[clases](clases.html)** y el que se basa en **[prototipos](prototipado.html)**. Cada lenguaje (o herramienta) suele implementar una sóla de éstas opciones, aunque existen variaciones. Los lenguajes más tradicionales (como Java, Smalltalk, y C\#) usan el esquema de clases y [herencia](herencia.html), y en otros lugares (como Javascript, ó en el Object Browser para Smalltalk), se usa el esquema de prototipado.
 
 Más allá de cuál de estos esquemas usemos, la base es la misma: objetos que se mandan mensajes en un ambiente aprovechando las ideas de encapsulamiento, delegación y polimorfismo.

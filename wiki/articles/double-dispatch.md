@@ -1,3 +1,8 @@
+---
+layout: article
+title: Double dispatch
+---
+
 Una definición posible de Double Dispatch, es la propuesta por [Ralph Johnson](http://www.cincomsmalltalk.com/userblogs/ralph/blogView?showComments=true&printTitle=Double_dispatch&entry=3485318158).
 
 ### ¿Qué criterio de dispatch utilizar?

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Clasificacion ui
+---
+
 Concepto de cliente y servidor
 ------------------------------
 

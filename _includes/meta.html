@@ -1,0 +1,65 @@
+{% assign url = page.url | replace: 'index.html', '' %}
+
+{% if page.title %}
+  <title>{{ site.meta.title.prefix }}{{ page.title }}{{ site.meta.title.suffix }}</title>
+  <meta property="og:title" content="{{ page.title }}" />
+{% else %}
+  <title>{{ site.meta.title.prefix }}{{ site.meta.title.suffix }}</title>
+{% endif %}
+
+{% if page.meta.description %}
+  {% assign description = page.meta.description %}
+{% elsif page.preview %}
+  {% assign description = page.preview %}
+{% elsif page.excerpt %}
+  {% assign description = page.excerpt %}
+{% elsif site.meta.description %}
+  {% assign description = site.meta.description %}
+{% else %}
+  {% assign description = null %}
+{% endif %}
+
+{% if description %}
+  <meta name="description" content="{{ description | strip_html }}" />
+  <meta property="og:description" content="{{ description | strip_html }}" />
+{% endif %}
+
+<link rel="canonical" href="{{ site.domain }}{{ url }}" />
+<meta property="og:url" content="{{ site.domain }}{{ url }}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta name="application-name" content="{{ site.name }}"/>
+
+<meta property="og:updated_time" content="{% if page.meta.update %}{{ page.meta.update | date_to_xmlschema }}{% elsif page.date %}{{ page.date | date_to_xmlschema }}{% else %} {{ site.time | date_to_xmlschema }}{% endif %}" />
+
+{% if site.meta.locale or page.meta.locale %}
+  <meta property="og:locale" content="{% if page.meta.locale %}{{ page.meta.locale }}{% else %}{{ site.meta.locale }}{% endif %}" />
+{% endif %}
+
+{% if page.meta.determiner %}
+  <meta property="og:determiner" content="{{ page.meta.determiner }}" />
+{% endif %}
+
+{% if site.keywords or page.keywords or page.categories or page.tags %}
+  <meta property="keywords" content="{% if page.keywords %}{{ page.keywords | join:',' }},{% endif %}{% if page.tags and page.tags != empty %}{{ page.tags | join:',' }},{% endif %}{% if page.categories and page.categories != empty %}{{ page.categories | join:',' }},{% endif %}{% if site.keywords %}{{ site.keywords | join:',' }}{% endif %}" />
+{% endif %}
+
+{% if page.image %}
+  <meta property="og:image" content="{{ page.image }}" />
+{% elsif page.picture %}
+  <meta property="og:image" content="{{ site.domain }}/{{ site.picture.source}}/{{ page.picture }}" />
+{% endif %}
+
+{% if page.audio %}
+  <meta property="og:audio" content="{{ page.audio }}" />
+{% endif %}
+
+{% if page.video %}
+  <meta property="og:video" content="{{ page.video }}" />
+{% elsif page.youtube %}
+  <meta property="og:video" content="https://www.youtube.com/v/{{ page.youtube }}" />
+{% endif %}
+
+{% if page.meta.type %}
+  <meta property="og:type" content="{{ page.meta.type }}" />
+{% endif %}
+

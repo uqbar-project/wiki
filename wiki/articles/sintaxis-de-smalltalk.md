@@ -1,3 +1,8 @@
+---
+layout: article
+title: Sintaxis de smalltalk
+---
+
 La sintaxis de Smalltalk es bastante particular, pero sigue unas pocas reglas generales fáciles de aprender:
 
 La regla principal es que lo primero de la sentencia es un objeto seguido por el mensaje que le queremos mandar, el cual podría o no recibir parámetros. Por ejemplo:

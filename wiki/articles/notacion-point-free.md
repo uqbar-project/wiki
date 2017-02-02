@@ -1,3 +1,8 @@
+---
+layout: article
+title: Notacion point free
+---
+
 A veces, como consecuencia de definir solamente en términos de [Aplicación Parcial](aplicacion-parcial.html) y/o [Composición](composicion.html) de funciones, escribir explícitamente los parámetros de la misma se vuelve redundante.
 
 Por ejemplo, se podría escribir

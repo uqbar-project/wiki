@@ -1,3 +1,8 @@
+---
+layout: article
+title: Como hacer para que de un objeto muestre lo que yo quiero
+---
+
 antes que nada, otra forma de saber si lo que me devuelve es lo que quiero
 --------------------------------------------------------------------------
 

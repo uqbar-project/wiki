@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico
+---
+
 Este paradigma se basa en los conceptos de lógica matemática, se basa predicados que caracterizan o relacionan a los individuos involucrados y la deducción de las posibles respuestas a una determinada consulta.
 
 Es un paradigma [declarativo](declaratividad.html). No hay [asignaciones destructivas](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html), se trabaja con el concepto de unificación.

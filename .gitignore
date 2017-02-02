@@ -1,0 +1,8 @@
+_site
+.sass-cache
+.jekyll-metadata
+.idea/*
+.bundle
+node_modules
+Gemfile.lock
+bower_components

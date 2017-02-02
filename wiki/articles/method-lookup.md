@@ -1,3 +1,8 @@
+---
+layout: article
+title: Method lookup
+---
+
 Es el mecanismo por el cual se determina para el envío de un mensaje qué método se debe ejecutar. Este mecanismo puede variar en función de la tecnología usada, la explicación que se da a continuación se basa en Smalltalk usando clases, para leer sobre este mecanismo usando prototipos ver [Prototipado](prototipado.html).
 
 ¿Qué pasa cuando a un objeto **i** instancia de la clase **C** se le envía un mensaje de nombre **m**?

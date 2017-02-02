@@ -1,3 +1,8 @@
+---
+layout: article
+title: Ast abstract syntax tree
+---
+
 ---A esto hay que darle forma --- AST simplemente es un arbol que lo que hace es representar un programa (o parte de él), se organiza en nodos y puede haber nodos que contengan otros (nada loco).
 
 Lo interesante es usarlo, para armarlo ya está hecho, esta bueno aprender a usarlo... Aka... como obtenerlo, como visitarlo, que sabe hacer cada nodo, como agregarle comportamiento.

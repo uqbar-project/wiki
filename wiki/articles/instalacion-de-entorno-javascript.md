@@ -1,3 +1,8 @@
+---
+layout: article
+title: Instalacion de entorno javascript
+---
+
 Manejo de dependencias, automatización de tareas
 ------------------------------------------------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Preparacion de un entorno de desarrollo java
+---
+
 <div style="float:right">
 \_\_TOC\_\_
 

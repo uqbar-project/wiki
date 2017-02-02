@@ -1,3 +1,8 @@
+---
+layout: article
+title: Scala
+---
+
 Sobre el lenguaje:
 
 -   [The Scala Programming Language](http://www.scala-lang.org/)

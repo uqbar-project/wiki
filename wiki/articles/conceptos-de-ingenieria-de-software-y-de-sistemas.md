@@ -1,3 +1,8 @@
+---
+layout: article
+title: Conceptos de ingenieria de software y de sistemas
+---
+
 Ingeniería de software e ingeniería de sistemas
 -----------------------------------------------
 

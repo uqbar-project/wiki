@@ -1,3 +1,8 @@
+---
+layout: article
+title: Salsa jack daniel s
+---
+
 Ingredientes
 
 -   1 tea spoon cebolla en polvo

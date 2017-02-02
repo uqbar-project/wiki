@@ -1,3 +1,8 @@
+---
+layout: article
+title: Recursividad en logico
+---
+
 Un predicado recursivo es aquel que en alguna de sus cláusulas se invoca a sí mismo. Los predicados recursivos para poder funcionar correctamente necesitan contar con algún caso base que corte la recursividad.
 
 Recursividad Sin Listas

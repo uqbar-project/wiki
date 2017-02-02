@@ -1,3 +1,8 @@
+---
+layout: article
+title: Traits
+---
+
 Un trait permite definir un conjunto de métodos que se pueden aplicar a cualquier clase, de modo que se puedan evitar los problemas asociados a la herencia múltiple en relación a la solución de conflictos.
 
 Características

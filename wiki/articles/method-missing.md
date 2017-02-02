@@ -1,3 +1,8 @@
+---
+layout: article
+title: Method missing
+---
+
 Method missing (o Does not understand en Smalltalk) es un punto de intercepción en el method lookup que ofrecen algunos lenguajes para definir código a ejecutar si el objeto receptor no entiende el mensaje recibido. Si el method lookup falla, el objeto receptor recibirá el mensaje method\_missing que en Object lanza un error por no entender el mensaje, pero qué pasa si redefinimos este mensaje?
 
 Poder interceptar el method lookup de esta forma y redefinir lo que debería suceder en caso de que un objeto de la clase A no entienda el mensaje recibido es una herramienta muy poderosa ya que permite armar definiciones genéricas para cualquier mensaje (o para un amplio conjunto que nosotros estemos interesados).

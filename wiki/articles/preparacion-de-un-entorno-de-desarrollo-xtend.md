@@ -1,3 +1,8 @@
+---
+layout: article
+title: Preparacion de un entorno de desarrollo xtend
+---
+
 ![](Xtend-logo.png "Xtend-logo.png")
 
 ### Download e instalación base

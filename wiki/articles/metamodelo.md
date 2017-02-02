@@ -1,3 +1,8 @@
+---
+layout: article
+title: Metamodelo
+---
+
 Un modelo es una descripción abstracta que describe aquello que se desea construir. Al definir un **modelo** uno sigue un conjunto de reglas. *Por ejemplo:* en un diagrama de secuencia las flechas (mensajes) entre las líneas deben darse de determinadas maneras, no pueden tener cualquier organización porque no tendría sentido. A este conjunto de reglas lo denominamos **metamodelo**.
 
 El metamodelo nos dice:

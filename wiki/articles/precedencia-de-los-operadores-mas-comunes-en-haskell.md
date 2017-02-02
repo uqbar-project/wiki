@@ -1,3 +1,8 @@
+---
+layout: article
+title: Precedencia de los operadores mas comunes en haskell
+---
+
 Definición en el Prelude
 ------------------------
 

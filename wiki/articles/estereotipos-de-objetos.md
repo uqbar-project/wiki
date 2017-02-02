@@ -1,3 +1,8 @@
+---
+layout: article
+title: Estereotipos de objetos
+---
+
 Un objeto presenta presentan tres características fundamentales:
 
 -   Comportamiento: un objeto sabe hacer cosas, y eventualmente cada uno las podría saber hacer de distinta forma.

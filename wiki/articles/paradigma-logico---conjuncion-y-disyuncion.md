@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   conjuncion y disyuncion
+---
+
 Las operaciones lógicas por excelencia son la conjunción ("Y", sólo es cierta si ambas condiciones son ciertas) y la disyunción ("O", es cierta si alguna de las condiciones es cierta).
 
 Tenemos la siguiente base de conocimiento:

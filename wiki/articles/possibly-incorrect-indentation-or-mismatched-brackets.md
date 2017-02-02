@@ -1,3 +1,8 @@
+---
+layout: article
+title: Possibly incorrect indentation or mismatched brackets
+---
+
 El problema
 ===========
 

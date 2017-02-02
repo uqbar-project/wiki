@@ -1,3 +1,8 @@
+---
+layout: article
+title: Relleno de carne
+---
+
 Cantidad: 2 docenas y media
 
 Ingredientes:

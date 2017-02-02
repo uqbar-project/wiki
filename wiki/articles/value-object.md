@@ -1,3 +1,8 @@
+---
+layout: article
+title: Value object
+---
+
 *La definición de Value Object varía bastante de autor en autor. Algunas visiones diferentes sobre este concepto están plasmadas [aquí](http://c2.com/cgi/wiki?ValueObject).*
 
 Entendemos como Value Object a aquellos objetos que tienen una semántica de valor (en contraposición con semántica de referencia), es decir cuya identidad no es importante. Dos value objects ser intercambiables, esperando iguales resultados, en tanto ambas instancias exhiban el mismo comportamiento desde el punto de vista del observador. Dicho de otra forma, son objetos para los que podría eventualmente tener una copia del mismo, y daría lo mismo enviarle un mensaje al original o su copia.

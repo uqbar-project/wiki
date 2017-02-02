@@ -1,3 +1,8 @@
+---
+layout: article
+title: Configuracion de arena
+---
+
 Pre-requisitos
 --------------
 

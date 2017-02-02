@@ -1,3 +1,8 @@
+---
+layout: article
+title: Elementos a tener en cuenta al programar ui
+---
+
 Objetivo
 --------
 

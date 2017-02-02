@@ -1,3 +1,8 @@
+---
+layout: article
+title: Git  un versionador distribuido
+---
+
 Distribuido...
 --------------
 

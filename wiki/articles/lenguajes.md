@@ -1,3 +1,8 @@
+---
+layout: article
+title: Lenguajes
+---
+
 A continuación mencionamos algunos lenguajes que siguen las ideas del paradigma orientado a objetos, y les dejamos algunos links y ejemplos para los curiosos.
 
 -   [Smalltalk](smalltalk.html)

@@ -1,3 +1,8 @@
+---
+layout: article
+title:  como convertir mi aplicacion arena en un  exe 
+---
+
 De vez en cuando surge una pregunta, enunciada, mas o menos así: "Ahora que tengo mi aplicación Arena, ¿cómo hago pera crear un .exe?".
 
 Primero, "qué hacer si a la aplicación de conversión de unidades la querés convertir en un .exe", no es una pregunta con una respuesta fácil.

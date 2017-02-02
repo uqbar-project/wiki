@@ -1,3 +1,8 @@
+---
+layout: article
+title: Preguntas frecuentes del paradigma logico
+---
+
 "Agregar" elementos a una lista
 -------------------------------
 

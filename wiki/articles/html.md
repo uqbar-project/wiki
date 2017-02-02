@@ -1,3 +1,8 @@
+---
+layout: article
+title: Html
+---
+
 El HTML es el lenguaje principal que se utiliza para construir páginas web. Es un lenguaje declarativo que permite describir la información a mostrar en una página web. Esta información es interpretada por un web browser que normalmente obtiene las diferentes páginas HTML de un [web server](web-server.html) y las muestra al usuario.
 
 Estructura General de una página HTML

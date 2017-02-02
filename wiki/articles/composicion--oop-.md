@@ -1,3 +1,8 @@
+---
+layout: article
+title: Composicion  oop 
+---
+
 Supongamos que queremos modelar el comportamiento de personas a la hora de pagar la cuenta después de una comida en un restaurant. Los clientes pagan lo que consumen más la propina, que depende de su humor. Sabemos que la gente feliz deja de propina 25% de lo que salió la comida, la gente enojada no deja nada y los que están de un humor indiferente dejan lo que tienen en el bolsillo.
 
 Queremos que un cliente nos pueda decir cuánto paga en total (propina + lo que consumió) dado el importe de la comida consumida, y además debe ser posible para una persona cambiar de humor a lo largo de la ejecución del programa.

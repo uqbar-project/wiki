@@ -1,3 +1,8 @@
+---
+layout: article
+title: Clases vs instancias
+---
+
 En los lenguajes orientados a objetos que tienen clases (como Java, Xtend, Groovy, Scala, Smalltalk, Ruby, etc.) es frecuente como diseñadores preguntarnos si un determinado requerimiento se puede resolver con instancias o con clases.
 
 **Ejemplo:** tenemos tareas en un proyecto, a cada tarea le corresponden distintos impuestos

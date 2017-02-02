@@ -1,3 +1,8 @@
+---
+layout: article
+title: Monada
+---
+
 Este artículo está en construcción.
 
 -   [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)

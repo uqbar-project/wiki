@@ -1,3 +1,8 @@
+---
+layout: article
+title: Cuestiones basicas para resolver el parcial de objetos
+---
+
 Esta es una recopilación de errores comunes a la hora de resolver un parcial de objetos. Son conceptos muy básicos, es decir, esto debe considerarse como "condiciones necesarias" para aprobar el parcial; nunca como "condiciones suficientes".
 
 Conceptos básicos

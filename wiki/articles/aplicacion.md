@@ -1,3 +1,8 @@
+---
+layout: article
+title: Aplicacion
+---
+
 Cuando se aplica una función a unos argumentos, el resultado se obtiene sustituyendo esos argumentos en el cuerpo de la función respetando el nombre que se les dio a cada uno. Es posible que esto produzca un resultado que no puede ser simplificado (e.g. un número); pero es más común que el resultado de esa sustitución sea otra expresión que contenga otra aplicación de funciones, entonces se vuelve a hacer el mismo proceso hasta producir un resultado que no pueda ser simplificado (un resultado final).
 
 Por ej., siendo doble:

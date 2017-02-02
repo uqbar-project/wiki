@@ -1,3 +1,8 @@
+---
+layout: article
+title: Inmutabilidad
+---
+
 El concepto de inmutabilidad está asociado a la ausencia de cambio. En los paradigmas Funcional y Lógico, la inmutabilidad está garantizada, ya que no es posible modificar los datos con los que trabaja una función o un predicado, en todo caso lo que se puede hacer para emular un cambio sobre una estructura es retornar una nueva estructura a partir de la original con la información que tendría como consecuencia de la transformación deseada.
 
 Decimos que un objeto es inmutable si no puede cambiar su estado interno (su conjunto de atributos) después de su inicialización. Si la interfaz del objeto tiene una forma de inicializar sus variables, pero no exhibe el comportamiento para settear sus atributos, sus usuarios no podrán alterar su estado interno más adelante. Para construir un objeto ya inicializado solemos usar [ métodos de clase](variables-y-metodos-de-clase.html), sólo habrá que mandarle al objeto un mensaje distinto (por ejemplo, si fuera un alumno que conoce su nombre y su promedio, inicializarConNombre:yPromedio:)

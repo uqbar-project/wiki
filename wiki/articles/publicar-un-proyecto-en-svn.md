@@ -1,3 +1,8 @@
+---
+layout: article
+title: Publicar un proyecto en svn
+---
+
 Antes de publicar un proyecto es (obviamente) necesario tener un usuario y un repositorio svn, una forma de hacer eso es [Crear un proyecto en xp-dev](crear-un-proyecto-en-xp-dev.html)
 
 Desde el Eclipse:

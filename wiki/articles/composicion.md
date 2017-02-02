@@ -1,3 +1,8 @@
+---
+layout: article
+title: Composicion
+---
+
 Qué es composición?
 -------------------
 

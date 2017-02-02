@@ -1,3 +1,8 @@
+---
+layout: article
+title: Ciclo de vida de un objeto
+---
+
 Es importante reconocer el ciclo de vida de un objeto, ya que el estado que puede guardar un objeto depende de eso.
 
 Tipos de ciclo de vida puede haber mucho, a modo de ejemplo podemos mencionar tres muy comunes:

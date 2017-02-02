@@ -1,3 +1,8 @@
+---
+layout: article
+title: Warning  singleton variables
+---
+
 Las singleton variables son variables que vos escribiste en tu predicado pero no se usan. Por ejemplo:
 
 "Soy feliz si tengo algun amigo"

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Como crear una subclase en squeak
+---
+
 Para crear una subclase hay dos formas:
 
 Forma A

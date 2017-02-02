@@ -1,3 +1,8 @@
+---
+layout: article
+title: Testing
+---
+
 Probar una aplicación permite verificar que el sistema (o una parte de él) funciona de acuerdo a lo especificado. Los tests permiten bajar la incertidumbre y aumentar la confianza que tenemos sobre el software que desarrollamos.
 
 Hay diferentes formas de probar una aplicación, por ejemplo si tiene una interfaz de usuario el testeo podría realizarse manualmente siguiendo los pasos necesarios (eligiendo opciones de algún menú, llenando formularios, etc) para verificar que el sistema responde de la forma esperada. Programáticamente estamos acostumbrados a probar el sistema usando la funcionalidad desarrollada desde el mismo entorno de desarrollo, por ejemplo escribiendo en un workspace de Smalltalk. Supongamos que tenemos este ejemplo:

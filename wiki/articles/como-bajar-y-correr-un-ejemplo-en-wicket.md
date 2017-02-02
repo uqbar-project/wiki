@@ -1,3 +1,8 @@
+---
+layout: article
+title: Como bajar y correr un ejemplo en wicket
+---
+
 La primera vez
 --------------
 

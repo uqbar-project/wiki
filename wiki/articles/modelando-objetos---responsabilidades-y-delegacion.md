@@ -1,3 +1,8 @@
+---
+layout: article
+title: Modelando objetos   responsabilidades y delegacion
+---
+
 A la hora de querer resolver un problema parados en el paradigma de objetos, hay ciertas cuestiones básicas que debemos tener en cuenta para triunfar y ser felices :). De todas aquellas, vamos a nombrar principalmente a las que se destacan en este paradigma en contraposición de los otros que conocemos (lógico, funcional y estructurado o procedural).
 
 Objeto

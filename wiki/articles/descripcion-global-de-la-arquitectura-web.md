@@ -1,3 +1,8 @@
+---
+layout: article
+title: Descripcion global de la arquitectura web
+---
+
 La programación web fue evolucionando a lo largo del tiempo
 
 Características de la arquitectura web tradicional

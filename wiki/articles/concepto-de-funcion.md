@@ -1,3 +1,8 @@
+---
+layout: article
+title: Concepto de funcion
+---
+
 Como su nombre lo indica, la función es el concepto fundamental del paradigma funcional: mientras que, por ejemplo, en el paradigma de objetos, los problemas se resuelven en términos de envío de mensajes entre objetos, en funcional los programas se estructurarán en torno a aplicación de funciones sobre valores. La función, es así, pues, la [computación](http://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_computaci%C3%B3n) característica del paradigma.
 
 Enfoques

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Cannot construct the infinite type
+---
+
 *Advertecia: esto es un borrador*
 
 El problema

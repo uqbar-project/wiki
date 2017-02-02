@@ -1,3 +1,8 @@
+---
+layout: article
+title: Guia de instalacion de maven
+---
+
 ### Instalación default
 
 Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Installation)

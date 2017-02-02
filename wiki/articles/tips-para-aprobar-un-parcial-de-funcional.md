@@ -1,3 +1,8 @@
+---
+layout: article
+title: Tips para aprobar un parcial de funcional
+---
+
 Lo que tiene que estar seguro para aprobar el parcial de funcional es [Orden Superior](orden-superior.html), [Aplicación Parcial](aplicacion-parcial.html) y [Composición](composicion.html).
 
 Algunas consideraciones que te llevan para el lado de la aprobación:

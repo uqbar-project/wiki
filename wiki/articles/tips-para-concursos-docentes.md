@@ -1,3 +1,8 @@
+---
+layout: article
+title: Tips para concursos docentes
+---
+
 Para un concurso hay varios consejos importantes a tener en cuenta:
 
 -   tenés que dar una clase como si estuvieras ante estudiantes. O

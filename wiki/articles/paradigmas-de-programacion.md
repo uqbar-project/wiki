@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigmas de programacion
+---
+
 -   Qué es un [Paradigma de Programación](paradigma-de-programacion.html)
 
 Los paradigmas

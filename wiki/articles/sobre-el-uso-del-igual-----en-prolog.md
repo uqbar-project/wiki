@@ -1,3 +1,8 @@
+---
+layout: article
+title: Sobre el uso del igual     en prolog
+---
+
 ### Descripción del problema
 
 Vamos a estudiar éstos casos:

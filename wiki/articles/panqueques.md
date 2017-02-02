@@ -1,3 +1,8 @@
+---
+layout: article
+title: Panqueques
+---
+
 Cantidad: 14 panqueques
 
 Ingredientes:

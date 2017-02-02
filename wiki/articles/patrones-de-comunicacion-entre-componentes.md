@@ -1,3 +1,8 @@
+---
+layout: article
+title: Patrones de comunicacion entre componentes
+---
+
 AVISO @Deprecated
 =================
 

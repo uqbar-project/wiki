@@ -1,3 +1,8 @@
+---
+layout: article
+title: Javascript
+---
+
 Sobre el lenguaje:
 
 -   [JavaScript (Wikipedia)](http://en.wikipedia.org/wiki/JavaScript)

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Creacion de un proyecto maven basico
+---
+
 El objetivo de este tutorial es crear una aplicación base utilizando las siguientes tecnologías:
 
 -   Java

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Encapsulamiento
+---
+
 ¿Qué es el encapsulamiento?
 ---------------------------
 

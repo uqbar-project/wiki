@@ -1,3 +1,8 @@
+---
+layout: article
+title: Smalltalk
+---
+
 Algunos links útiles para los que quieran conocer un poco más sobre uno de los lenguajes más viejitos:
 
 -   [Smalltalk (Wikipedia)](http://en.wikipedia.org/wiki/Smalltalk)

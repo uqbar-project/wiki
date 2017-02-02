@@ -1,3 +1,8 @@
+---
+layout: article
+title: Instalacion de entorno web grails
+---
+
 Pre-requisitos
 --------------
 

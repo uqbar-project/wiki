@@ -1,3 +1,8 @@
+---
+layout: article
+title: Garbage collector
+---
+
 El garbage collector es un mecanismo que provee la [Máquina Virtual](maquina-virtual.html) para manejar la memoria de forma transparente para el desarrollador. Cuando un objeto ya no es referenciado por ningún otro, deja de ser útil porque nadie puede mandarle mensajes. Si ya no es útil, está ocupando espacio innecesariamente, con lo cual el garbage collector se encarga de liberar ese espacio sin afectar al sistema.
 
 Al tener un garbage collector podemos evitarnos los problemas asociados al manejo manual de memoria que ocurren comunmente, por ejemplo, en lenguajes como C como liberar más de una vez la misma posición de memoria, leaks de memoria, etc. A su vez nos permite concentrarnos en los que nuestro programa debe hacer con un grado de abstracción más alto.

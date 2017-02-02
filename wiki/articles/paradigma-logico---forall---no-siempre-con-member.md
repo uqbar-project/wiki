@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma logico   forall   no siempre con member
+---
+
 Partimos de la base que el forall corresponde a la idea "a todos los que les pasa A, les pasa B".
 
 Por alguna razón, una proporción importante de las personas que están aprendiendo el paradigma lógico tienden a pensar que cada vez que quiero usar forall, tengo que tener la lista de los que les pasa A, entonces siempre que aparece forall como condición en una regla, va a ser de esta forma

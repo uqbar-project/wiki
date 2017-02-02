@@ -1,3 +1,8 @@
+---
+layout: article
+title: Esquemas de tipado
+---
+
 Introducción
 ------------
 

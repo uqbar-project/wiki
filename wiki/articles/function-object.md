@@ -1,3 +1,8 @@
+---
+layout: article
+title: Function object
+---
+
 Entendemos por Function Object a un patrón funcional aplicado a objectos que consiste en cosificar el envío de mensajes, para poder resolver problemas empleando orden superior y aplicación parcial de forma similar a como lo haríamos en el paradigma funcional.
 
 El problema

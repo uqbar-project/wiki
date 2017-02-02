@@ -1,3 +1,8 @@
+---
+layout: article
+title: Configuracion de maven para poder utilizar las herramientas de uqbar
+---
+
 Para poder utilizar los artefactos Maven desarrollados por Uqbar debemos agregar los repositorios de donde bajar los artefactos de [Uqbar](http://www.uqbar-project.org) a la configuración de Maven. Esta configuración se debe indicar en el archivo , siguiendo [estas instrucciones](preparacion-de-un-entorno-de-desarrollo-java-configuracion-de-maven.html)
 
 El contenido de este archivo debería quedar así:

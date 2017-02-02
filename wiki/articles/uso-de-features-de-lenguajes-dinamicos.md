@@ -1,3 +1,8 @@
+---
+layout: article
+title: Uso de features de lenguajes dinamicos
+---
+
 El término "lenguaje dinámico" es usado en la industria con poca rigurosidad. En lugar de intentar de dar una definición precisa, señalaremos dos características típicas de estos lenguajes (aunque bien se podrían incluir muchas más):
 
 -   Presentan [chequeo de tipos dinámico e implícito](esquemas-de-tipado.html)

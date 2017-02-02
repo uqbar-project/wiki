@@ -1,3 +1,8 @@
+---
+layout: article
+title: Creacion de objetos  con parametros
+---
+
 Eso, lo que dijo Leo. Pero algunas cositas más ...
 
 En Smalltalk no hay constructores, hay mensajes y ya.

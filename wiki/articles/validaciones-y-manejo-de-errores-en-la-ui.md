@@ -1,3 +1,8 @@
+---
+layout: article
+title: Validaciones y manejo de errores en la ui
+---
+
 Introducción
 ------------
 

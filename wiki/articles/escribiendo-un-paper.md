@@ -1,3 +1,8 @@
+---
+layout: article
+title: Escribiendo un paper
+---
+
 Un paper es un artículo de difusión científica. Dado el caracter científico del paper, la comunidad científica establece (quizás un poco ad-hoc) una cierta estructura y formato de estructura. En este artículo vamos a tratar la escritura de papers con un formato de tendencia \_formal\_.
 
 Para quienes quieran tener una breve introducción, recomiendo vean el siguiente video:

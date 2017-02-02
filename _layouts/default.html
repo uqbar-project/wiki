@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% include meta.html %}
+    {% include favicon.html %}
+    <link type="text/plain" rel="author" href="{{ site.baseurl }}/humans.txt"/>
+
+    {% stylesheet app %}
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+{% include navbar.html %}
+
+{% include sidebar.html %}
+
+<div class="column small-12 medium-10 large-10">
+    {{ content }}
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+{% javascript jquery %}
+{% javascript jquery.min %}
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+{% javascript foundation/foundation %}
+{% javascript foundation/foundation.abide %}
+{% javascript foundation/foundation.accordion %}
+{% javascript foundation/foundation.alert %}
+{% javascript foundation/foundation.clearing %}
+{% javascript foundation/foundation.dropdown %}
+{% javascript foundation/foundation.equalizer %}
+{% javascript foundation/foundation.interchange %}
+{% javascript foundation/foundation.joyride %}
+{% javascript foundation/foundation.magellan %}
+{% javascript foundation/foundation.offcanvas %}
+{% javascript foundation/foundation.orbit %}
+{% javascript foundation/foundation.reveal %}
+{% javascript foundation/foundation.slider %}
+{% javascript foundation/foundation.tab %}
+{% javascript foundation/foundation.tooltip %}
+{% javascript foundation/foundation.topbar %}
+
+{% javascript jquery.cookie %}
+<!-- Script pointing to jekyll-search.js -->
+{% javascript jekyll-search%}
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "{{site.baseurl}}/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+{% javascript prism %}
+</body>
+</html>

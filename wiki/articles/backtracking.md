@@ -1,3 +1,8 @@
+---
+layout: article
+title: Backtracking
+---
+
 En un programa desarrollado usando el paradigma lógico, existe un “motor” que actúa como control de secuencia para separar el algoritmo de búsqueda de soluciones del conocimiento de cada programa.
 
 Durante la ejecución de un programa va evaluando y combinando las reglas lógicas de la base de conocimiento para lograr los resultados esperados. La implementación del mecanismo de evaluación puede ser diferente en cada lenguaje del paradigma, pero en todos los casos debe garantizar que se agoten todas las combinaciones lógicas posibles para ofrecer el conjunto completo de respuestas alternativas posibles a cada consulta efectuada. El más difundido se denomina **backtracking**, que utiliza una estrategia de búsqueda de soluciones en estructuras de árboles denominada *primero en profundidad*.

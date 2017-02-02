@@ -1,3 +1,8 @@
+---
+layout: article
+title: Template method
+---
+
 Para calcular el precio de un producto, tenemos que considerar
 
 -   todos los productos tienen un precio de venta base

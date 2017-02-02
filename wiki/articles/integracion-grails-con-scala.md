@@ -1,3 +1,8 @@
+---
+layout: article
+title: Integracion grails con scala
+---
+
 Pre-requisitos
 --------------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Super
+---
+
 **super** es una [pseudovariable](pseudovariable.html) muy parecida a [self](self.html).
 
 **super** referencia (apunta) al objeto receptor del mensaje del método que estamos analizando en un momento dado al igual que **self**. La diferencia entre **self** y **super** es que **super** afecta al [ method lookup](paradigma-de-objetos---method-lookup.html)

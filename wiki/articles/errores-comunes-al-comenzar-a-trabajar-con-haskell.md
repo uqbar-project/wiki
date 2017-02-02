@@ -1,3 +1,8 @@
+---
+layout: article
+title: Errores comunes al comenzar a trabajar con haskell
+---
+
 Variables mágicas
 -----------------
 

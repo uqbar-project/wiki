@@ -1,3 +1,8 @@
+---
+layout: article
+title: Recursividad en haskell
+---
+
 Una función recursiva es aquella que en su definición se invoca a sí misma. La misma por lo general cuenta con una definición recursiva y al menos un caso base que corta la recursividad.
 
 Recursividad sin listas

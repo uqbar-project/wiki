@@ -1,3 +1,8 @@
+---
+layout: article
+title: Typedefs y tipos anonimos
+---
+
 *typedef* es una construcción del lenguaje C que nos permite darle alias a tipos existentes (sinónimos de tipos), de forma similar al *type* de Haskell.
 
 Esto es particularmente útil a la hora de trabajar en ANSI C con estructuras. Por ejemplo, si definimos una estructura TanqueDeAgua de la siguiente forma:

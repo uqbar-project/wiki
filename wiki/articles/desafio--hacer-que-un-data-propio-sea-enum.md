@@ -1,3 +1,8 @@
+---
+layout: article
+title: Desafio  hacer que un data propio sea enum
+---
+
 Hacer que estas consultas funcionen exactamente así:
 
 `Main> [CPersona "a" 1 .. CPersona "c" 1]`

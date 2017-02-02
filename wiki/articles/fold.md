@@ -1,3 +1,8 @@
+---
+layout: article
+title: Fold
+---
+
 Existe una familia de funciones en Haskell para modelar un algoritmo que permite procesar una estructura de datos para construir un valor, a esta idea le decimos foldear (derivado del inglés, "to fold") o reducir.
 
 ¿Cómo sumo los elementos de una lista? ¿Cómo multiplico los elementos de una lista? ¿Cómo concateno una lista de palabras?

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Fideos
+---
+
 Proporciones:
 
 -   100gr harina

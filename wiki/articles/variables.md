@@ -1,3 +1,8 @@
+---
+layout: article
+title: Variables
+---
+
 Muchachos, no olvidar: en objetos una variable es una **referencia** a un objeto.
 
 En Smalltalk, cuando una variable no ha sido inicializada aún, la misma referencia al objeto `nil` que representa la nada misma (y entiende muy poquitos mensajes, porque no hay muchas cosas que uno quiera hacer con la nada).

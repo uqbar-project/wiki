@@ -1,0 +1,69 @@
+---
+# Jekyll options.
+name: uqbar-wiki
+domain: bossiernesto.github.io
+baseurl: /uqbar-wiki-proposal
+description: "Wiki jekyll engine for Uqbar organization"
+markdown: kramdown
+highlighter: rouge
+github_username:
+disqus: tadp-wiki
+
+# Uncomment below to enable pagination.
+paginate: 10
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Guardfile
+  - LICENSE
+  - LICENSE.MIT.txt
+  - README.md
+  - Rakefile
+  - VERSION
+  - bower.json
+  - node_modules
+  - vendor
+
+livereload:
+  port: 35729
+
+gems:
+  - json
+  - jekyll-assets
+  - coffee_script
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-redirect-from
+  - jekyll/scholar
+
+# Jekyll::AssetsPlugin options.
+assets:
+  baseurl:
+  sources:
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets
+    - bower_components
+  compress:
+    css: sass
+    js: uglifier
+  autosize: true
+
+# Use a CDN to load some libraries.
+# Libraries are loaded first, asynchronously,
+# and should not depend on each other.
+cdn_enabled: true
+cdn:
+  # [ url, loaded check, local asset fallback path ]
+  libs:
+    - [ "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js", "window.jQuery" ]
+
+# Keywords will be merged with categories, tags, and page keywords.
+keywords: []
+
+toc-gen:
+    include-tocnumber: true
+
+#Categories for wiki pages
+categories: []

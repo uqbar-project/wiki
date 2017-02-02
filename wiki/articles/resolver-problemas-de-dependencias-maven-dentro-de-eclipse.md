@@ -1,3 +1,8 @@
+---
+layout: article
+title: Resolver problemas de dependencias maven dentro de eclipse
+---
+
 Cuando el plugin de maven dentro de eclipse no puede resolver una dependencia puede ser por varios motivos, aquí tratamos de armar una lista de cosas para revisar.
 
 Está mal el settings.xml

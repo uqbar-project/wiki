@@ -1,3 +1,8 @@
+---
+layout: article
+title: Guia de instalacion de rails
+---
+
 Guia de Instalación de Rails
 ============================
 

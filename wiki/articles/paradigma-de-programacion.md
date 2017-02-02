@@ -1,3 +1,8 @@
+---
+layout: article
+title: Paradigma de programacion
+---
+
 Un paradigma de programación es un marco conceptual, un conjunto de ideas que describe una forma de entender la construcción de programa, como tal define:
 
 -   Las herramientas conceptuales que se pueden utilizar para construir un programa (objetos, relaciones, funciones, instrucciones).

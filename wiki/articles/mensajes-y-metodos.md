@@ -1,3 +1,8 @@
+---
+layout: article
+title: Mensajes y metodos
+---
+
 Definiciones
 ------------
 

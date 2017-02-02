@@ -1,3 +1,8 @@
+---
+layout: article
+title: Flattening vs linearization
+---
+
 Cuando el comportamiento de un objeto es separado en distintas abstracciones, es necesario definir cómo se resolverá la tarea de encontrar el comportamiento definido (method lookup).
 
 Si las abstracciones son suficientemente dispares (sin comportamiento en común), pueden pensarse como complementarias, y, en consecuencia, la manera en la que se desarrolle dicha búsqueda no impactará en el comportamiento resultante. Sin embargo, cuando las abstracciones son análogas, o peor, contradictorias, el mecanismo que define el comportamiento final del objeto es un factor crítico.

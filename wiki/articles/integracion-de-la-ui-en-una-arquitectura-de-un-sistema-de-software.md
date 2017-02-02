@@ -1,3 +1,8 @@
+---
+layout: article
+title: Integracion de la ui en una arquitectura de un sistema de software
+---
+
 Arquitectura usual de una aplicación de software
 ------------------------------------------------
 

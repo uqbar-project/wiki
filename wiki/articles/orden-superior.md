@@ -1,3 +1,8 @@
+---
+layout: article
+title: Orden superior
+---
+
 ### Generalidades
 
 Llamamos a una determinada operación de orden superior si la misma recibe otra operación (comportamiento) por parámetro, siendo capaz de ejecutarla internamente.

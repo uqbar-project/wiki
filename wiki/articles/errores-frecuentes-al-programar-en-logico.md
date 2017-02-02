@@ -1,3 +1,8 @@
+---
+layout: article
+title: Errores frecuentes al programar en logico
+---
+
 ### Errores conceptuales más importantes
 
 -   Confundir los conceptos del paradigma, por ejemplo:

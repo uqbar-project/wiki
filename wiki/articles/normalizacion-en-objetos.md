@@ -1,3 +1,8 @@
+---
+layout: article
+title: Normalizacion en objetos
+---
+
 Objetivo
 --------
 

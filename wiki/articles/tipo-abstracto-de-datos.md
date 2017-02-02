@@ -1,3 +1,8 @@
+---
+layout: article
+title: Tipo abstracto de datos
+---
+
 Concepto
 ========
 

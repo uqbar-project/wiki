@@ -1,3 +1,8 @@
+---
+layout: article
+title: Polimorfismo parametrico y ad hoc
+---
+
 Primero que nada, cuando hablamos de polimorfismo nos referimos a la capacidad de una función de recibir por parámetro valores de distinto tipo. No es taaan importante esta clasificación en sí, pero lo explicamos para despejar dudas.
 
 Cuando hablamos de polimorfismo paramétrico tenemos una sola definición de la función, en cambio cuando tenemos polimorfismo ad-hoc tenemos muchas definiciones para la misma función de modo que se puedan soportar distintos tipos. Lo que normalmente hacemos (al menos en paradigmas) es definir funciones que son polimórficas paramétricamente, sin embargo sí usamos mucho funciones con polimorfismo ad-hoc.

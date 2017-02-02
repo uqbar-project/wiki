@@ -1,3 +1,8 @@
+---
+layout: article
+title: Refactoring
+---
+
 This article is a stub!
 
 Links

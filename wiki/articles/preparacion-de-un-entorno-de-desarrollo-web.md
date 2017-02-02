@@ -1,3 +1,8 @@
+---
+layout: article
+title: Preparacion de un entorno de desarrollo web
+---
+
 Herramientas de desarrollo Web
 ------------------------------
 

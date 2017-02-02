@@ -1,3 +1,8 @@
+---
+layout: article
+title: Juegos de estrategia
+---
+
 Modelo inicial
 --------------
 

@@ -1,3 +1,8 @@
+---
+layout: article
+title: Arrays literales en smalltalk
+---
+
 Por si les sirve les comento un toque como funciona el tema de los arrays en smalltalk.
 
 Acuérdense que en Smalltalk vale usar arrays literales.

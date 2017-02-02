@@ -1,3 +1,8 @@
+---
+layout: article
+title: Relleno dale
+---
+
 Cantidad: 1 docena y media
 
 Ingredientes:

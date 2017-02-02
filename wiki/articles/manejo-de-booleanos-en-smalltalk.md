@@ -1,3 +1,8 @@
+---
+layout: article
+title: Manejo de booleanos en smalltalk
+---
+
 Los Booleanos como objetos
 --------------------------
 
