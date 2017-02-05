@@ -31,6 +31,6 @@ test:
 
 deployment:
   publish:
-    branch: source
+    branch: master
     commands:
       - rake publish
