@@ -13,6 +13,8 @@ checkout:
   pre:
   - git config --global user.email "uqbar.bot@gmail.com"
   - git config --global user.name "UqbarBot"
+  - npm install -g bower
+  - bower install
 
 database:
   override:
