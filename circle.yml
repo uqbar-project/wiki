@@ -14,7 +14,6 @@ checkout:
   - git config --global user.email "uqbar.bot@gmail.com"
   - git config --global user.name "UqbarBot"
   - npm install -g bower
-  - bower install
 
 database:
   override:
@@ -24,6 +23,7 @@ dependencies:
   override:
    - gem install rake
    - bundle install --jobs=10 --retry=3
+   - bower install
 
 test:
   override:
