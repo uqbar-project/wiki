@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 # Development dependencies
 gem 'rake'
-gem 'rake-jekyll'
 gem 'guard-livereload'
 
 # Jekyll
@@ -25,3 +24,5 @@ gem 'jekyll-sitemap'
 gem 'jekyll-scholar'
 
 gem "sass"
+gem 'html-proofer'
+gem 'rouge'
