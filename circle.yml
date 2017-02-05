@@ -7,7 +7,7 @@ machine:
 general:
   branches:
     ignore:
-    - master
+    - gh-pages
 
 checkout:
   pre:
@@ -28,7 +28,6 @@ dependencies:
 test:
   override:
    - bundle exec jekyll build
-   - rake test
 
 deployment:
   publish:

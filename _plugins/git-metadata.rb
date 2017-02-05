@@ -62,7 +62,7 @@ module Jekyll
       def lines(file = nil)
         cmd = "git log --numstat -n #{COMMIT_THRESHOLD} --format='%h'"
         cmd << " -- #{file}" if file
-        puts cmd
+        puts "getting git log from file #{file}"
         result = %x{ #{cmd} }
         results = result.scan(/(.*)\n\n((?:.*\t.*\t.*\n)*)/)
         results.map do |line|

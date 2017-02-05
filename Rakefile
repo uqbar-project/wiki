@@ -29,7 +29,6 @@ task :test do
     puts "#{e.class}: #{e.message}"
   end
   puts "Finished running all tests"
-
 end
 
 desc "Generate and publish blog to gh-pages"
