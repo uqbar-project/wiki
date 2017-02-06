@@ -3,11 +3,11 @@ layout: article
 title: C
 ---
 
-Sobre el lenguaje:
+# Sobre el lenguaje:
 
 -   [C\# (Wikipedia)](http://en.wikipedia.org/wiki/C_Sharp_(programming_language))
 
-Herramientas basadas en C\#:
+# Herramientas basadas en C\#:
 
 -   [Mono](http://www.mono-project.com/Main_Page)
 -   [Microsoft VisualStudio IDE](http://www.microsoft.com/visualstudio/esn/team-foundation-service)

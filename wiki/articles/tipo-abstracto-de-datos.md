@@ -3,17 +3,15 @@ layout: article
 title: Tipo abstracto de datos
 ---
 
-Concepto
-========
+# Concepto
 
 -   <http://c2.com/cgi/wiki?AbstractDataType>
 -   <http://es.wikipedia.org/wiki/Tipo_de_dato_abstracto>
 
-Implementaciones de TADs
-========================
+# Implementaciones de TADs
 
-En C
-----
+
+## En C
 
 -   Definir si se lo pasará por valor o por referencia
 -   Codificar el .h con las declaraciones de las funciones
@@ -53,12 +51,14 @@ Esta no es solo una buena práctica de diseño estructurado, sino que puede ser 
 
 Estas declaraciones las colocaremos en un .h
 
-`Buffer * buffer_new(int max_size);`
-`void buffer_append_char(Buffer * self, char aChar);`
-`void buffer_append_chars(Buffer * self, char * chars, int count);`
-`char * buffer_extract(Buffer * self);`
-`int  buffer_current_size(Buffer * self);`
-`void buffer_delete(Buffer ** self);`
+```C
+Buffer * buffer_new(int max_size);
+void buffer_append_char(Buffer * self, char aChar);
+void buffer_append_chars(Buffer * self, char * chars, int count);
+char * buffer_extract(Buffer * self);
+int  buffer_current_size(Buffer * self);
+void buffer_delete(Buffer ** self);
+```
 
 #### Definición de la estructura interna
 
@@ -66,11 +66,13 @@ Estas declaraciones las colocaremos en un .h
 
 Para modelar la estructura interna del buffer, utilizaremos un *struct*, que tendrá un campo por cada atributo de nuestro TAD: contenido, tamaño máximo y tamaño actual.
 
-`typedef struct {`
-`  char * content;`
-`  int current_size;`
-`  int max_size;`
-`} Buffer;`
+```C
+typedef struct {
+  char * content;
+  int current_size;
+  int max_size;
+} Buffer;
+```
 
 #### Definición de las operaciones
 
@@ -82,22 +84,26 @@ La primera operación que debemos soportar es la instanciación del TAD. Esta op
 
 Por convención y analogía con objetos, llamaremos a esta operación **new**:
 
-`Buffer * buffer_new(int max_size) {`
-`  Buffer * self = instance_new(Buffer);`
-`  self->content = instance_new_array(char, max_size);`
-`  self->current_size = 0;`
-`  self->max_size = max_size;`
-`  return self;`
-`}`
+```C
+Buffer * buffer_new(int max_size) {
+  Buffer * self = instance_new(Buffer);
+  self->content = instance_new_array(char, max_size);
+  self->current_size = 0;
+  self->max_size = max_size;
+  return self;
+}
+```
 
 La contrapartida de la instanciación del TAD es la destrucción del mismo. En ambientes con Garbage Collector esto no es normalmente necesario, por lo que no existe operación análoga en objetos. Por convención, la llamaremos **delete**:
 
-`void buffer_delete(Buffer ** self) {`
-`  if( (*self)->content != NULL ) {`
-`    instance_delete((*self)->content);`
-`  }`
-`  instance_delete(*self);`
-`}`
+```C
+void buffer_delete(Buffer ** self) {
+  if( (*self)->content != NULL ) {
+    instance_delete((*self)->content);
+  }
+  instance_delete(*self);
+}
+```
 
 Nótese que esta operación toma como argumento una doble indirección a un Buffer.
 
@@ -105,13 +111,15 @@ En este caso particular, el enunciado nos plantea que solo se debe liberar la me
 
 Esto mismo debemos considerarlo a la hora de justamente devolver ese contenido, mediante la operación **extract**. Para cumplir con la precondición de que el contenido no ha sido devuelto antes, agregaremos una aserción:
 
-`char * buffer_extract(Buffer * self) {`
-`  assert(self->content != NULL);`
-`  buffer_append_char(self, '\0');`
-`  char * content = self->content;`
-`  self->content = NULL;`
-`  return content;`
-`}`
+```C
+char * buffer_extract(Buffer * self) {
+  assert(self->content != NULL);
+  buffer_append_char(self, '\0');
+  char * content = self->content;
+  self->content = NULL;
+  return content;
+}
+```
 
 Luego tenemos que encarar el problema de agregar caracteres. Llamaremos a esta operación *'apend\_chars*, que tomará como parámetro el vector de caracteres a copiar, y su longitud.
 
@@ -119,17 +127,19 @@ La operación no es trivial: debemos considerar que si no hay suficiente espacio
 
 Sin embargo, aún así podemos comenzar a atacar el problema, delegando apropiadamente:
 
-`void buffer_append_chars(Buffer * self, char * chars, int count){`
-`  _buffer_expand(self, count);`
-`  memcpy(self->content + self->current_size, chars, count);`
-`  self->current_size += count;`
-`}`
+```C
+void buffer_append_chars(Buffer * self, char * chars, int count){
+  _buffer_expand(self, count);
+  memcpy(self->content + self->current_size, chars, count);
+  self->current_size += count;
+}
+```
 
 Es decir, decimos que para copiar un vector de caracteres al final del buffer, debemos expandir nuestro buffer tanto como sea necesario para almacenar los caracteres, y luego procedemos a efectivamente realizar la copia y actualizar el tamaño actual. Ahora, tenemos un problema un poco mas simple: solo debemos preocuparnos por redimensionar el buffer, de ser necesario.
 
 Dado que **\_buffer\_expand** no será usada desde el exterior (es una operación interna), no la colocamos en nuestro .h.
 
-En Haskell
-----------
+## En Haskell
+
 
 Ejemplo: una red neuronal

@@ -3,6 +3,8 @@ layout: article
 title: Uso de features de lenguajes dinamicos
 ---
 
+# Terminología
+
 El término "lenguaje dinámico" es usado en la industria con poca rigurosidad. En lugar de intentar de dar una definición precisa, señalaremos dos características típicas de estos lenguajes (aunque bien se podrían incluir muchas más):
 
 -   Presentan [chequeo de tipos dinámico e implícito](esquemas-de-tipado.html)
@@ -11,6 +13,8 @@ El término "lenguaje dinámico" es usado en la industria con poca rigurosidad. 
 Es interesante marcar que la primera característica no es suficiente para hacer dinámico al lenguaje: si pudieramos reemplazar el sistema de verificación de tipos de Java para que fuera realizado enteramente en tiempo de ejecución, pero mantuviéramos su modelo de objetos y API de metaprogramación tal como la conocemos, seguiría siendo un lenguaje "estático": el tipado dinámico no es condición suficiente.
 
 Por otro lado, el tipado dinámico no es en teoría una condición necesaria para la metaprogramación, pero sí lo simplifica notablemente: la auto-modificación en lenguajes con tipado estático requeriría de sistemas de tipos mucho más complejos que los que estamos acostumbrados a ver en la mayoría de los lenguajes.
+
+# Features destacados
 
 A continuación mencionamos algunos features destacados por su utilidad para metaprogramar y hacer [DSLs](dsl.html).
 
@@ -23,7 +27,7 @@ A continuación mencionamos algunos features destacados por su utilidad para met
     -   redefinición de operadores
     -   contextualizar bloques de código de modo que se pueda elegir un receptor implícito de los mensajes
 
-Para profundizar y ver algunos ejemplos:
+# Para profundizar y ver algunos ejemplos
 
 -   [Referencia para Ruby y Groovy](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnx1dG50YWRwfGd4OjczNjhhOWY1NjZmNDQxZjU)
 -   [Creating a Ruby DSL](http://yonkeltron.com/blog/2010/05/13/creating-a-ruby-dsl/)

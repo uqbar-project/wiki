@@ -1,9 +1,9 @@
 ---
 layout: article
-title: C  
+title: C ++
 ---
 
-Sobre el lenguaje:
+# Sobre el lenguaje
 
--   [C++ (wikipedia)](http://en.wikipedia.org/wiki/C%2B%2B)
+- [C++ (wikipedia)](http://en.wikipedia.org/wiki/C%2B%2B)
 

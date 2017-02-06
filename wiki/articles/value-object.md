@@ -3,6 +3,8 @@ layout: article
 title: Value object
 ---
 
+# Introducción
+
 *La definición de Value Object varía bastante de autor en autor. Algunas visiones diferentes sobre este concepto están plasmadas [aquí](http://c2.com/cgi/wiki?ValueObject).*
 
 Entendemos como Value Object a aquellos objetos que tienen una semántica de valor (en contraposición con semántica de referencia), es decir cuya identidad no es importante. Dos value objects ser intercambiables, esperando iguales resultados, en tanto ambas instancias exhiban el mismo comportamiento desde el punto de vista del observador. Dicho de otra forma, son objetos para los que podría eventualmente tener una copia del mismo, y daría lo mismo enviarle un mensaje al original o su copia.
@@ -15,38 +17,38 @@ Los Value Objects pueden tener un estado visible inmutable (por ejemplo, para mo
 
 Los Value Objet aún puede tener un estado mutable interno, en tanto este no sea expuesto a través de su interfaz, lo que habilita a que presenten evaluación diferida en en sus variables de instancia.
 
-Impacto en el diseño
---------------------
+## Impacto en el diseño
 
-Implementación
---------------
+## Implementación
 
-### Consideraciones sobre el subtipado y las relaciones de equivalencia
+## Consideraciones sobre el subtipado y las relaciones de equivalencia
 
 ### En Java
 
-`public class Final {`
-`  `
-`  private final String folio;`
-`  private final Integer libro;`
-`  private final Integer nota;`
-`  private final Alumno alumno;`
-`  `
-`  public Final(String folio, String libro, Integer nota, Alumno alumno) {`
-`    this.libro = libro;`
-`    this.folio = folio;`
-`    this.nota = nota;`
-`    this.alumno = alumno;`
-`  }`
-`  public boolean estaAprobado() {`
-`    return nota >= 4;`
-`  }`
-`  public Alumno getAlumno() {`
-`    return alumno;`
-`  }`
+```java
+public class Final {
+  
+  private final String folio;
+  private final Integer libro;
+  private final Integer nota;
+  private final Alumno alumno;
+  
+  public Final(String folio, String libro, Integer nota, Alumno alumno) {
+    this.libro = libro;
+    this.folio = folio;
+    this.nota = nota;
+    this.alumno = alumno;
+  }
+  public boolean estaAprobado() {
+    return nota >= 4;
+  }
+  public Alumno getAlumno() {
+    return alumno;
+  }
 
-`  //demas getters`
-`}`
+  //demas getters
+}
+```
 
 Nótese que el estado, de existir, de un ValueObject no tiene porqué estar conformado exclusivamente por tipos primitivos (primitive obsession).
 
@@ -56,15 +58,17 @@ Un ValueObject puede exponer su estado interno, como también puede encapsularlo
 
 ### Scala
 
-`class Final(val folio:String, val libro:Int, val nota:Int, val alumno:Alumno ) {`
-`  def estaAprobado = nota >= 4`
-`}`
+```scala
+class Final(val folio:String, val libro:Int, val nota:Int, val alumno:Alumno ) {
+  def estaAprobado = nota >= 4
+}
 
-`case class Final(val folio:String, val libro:Int, val nota:Int, val alumno:Alumno) {`
-`  def estaAprobado = nota >= 4`
-`}`
+case class Final(val folio:String, val libro:Int, val nota:Int, val alumno:Alumno) {
+  def estaAprobado = nota >= 4
+}
+```
 
-### En lenguajes con tipado dinámico
+## En lenguajes con tipado dinámico
 
 ### en C (como un TAD)
 
