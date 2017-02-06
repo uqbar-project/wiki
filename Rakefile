@@ -42,8 +42,6 @@ task :publish => [:generate] do
     pwd = Dir.pwd
     Dir.chdir tmp
 
-    rm ".gitignore"
-
     system "git init"
     system "git add ."
     message = "Site updated at #{Time.now}"
