@@ -1,18 +1,17 @@
 ---
 layout: article
-title: Algo3 temario
+title: Temario de Algoritmos III
 ---
 
-Unidad 1
---------
+# Unidad 1
+
 
 -   [Definiciones Iniciales de UI](definiciones-iniciales-de-ui.html)
 -   [Clasificación UI](clasificacion-ui.html)
 -   [Integración de la UI en una arquitectura de un sistema de software](integracion-de-la-ui-en-una-arquitectura-de-un-sistema-de-software.html)
 -   [Elementos a tener en cuenta al programar UI](elementos-a-tener-en-cuenta-al-programar-ui.html)
 
-Unidad 2
---------
+# Unidad 2
 
 ### Entorno
 
@@ -26,8 +25,7 @@ Unidad 2
 -   [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
 -   Documentación de [Arena MVC](arena-mvc.html)
 
-Unidad 3
---------
+# Unidad 3
 
 ### Entorno
 
@@ -44,16 +42,13 @@ Unidad 3
 -   [Referencia de Expression Language](referencia-de-expression-language.html)
 -   [Referencia de JSTL](referencia-de-jstl.html)
 
-Unidad 4
---------
+# Unidad 4
 
 -   [Preparacion de un entorno de desarrollo Web](preparacion-de-un-entorno-de-desarrollo-web.html)
     -   [Como bajar y correr un ejemplo en Wicket](como-bajar-y-correr-un-ejemplo-en-wicket.html)
 -   [Resumen de Wicket: pros y contras](resumen-de-wicket--pros-y-contras.html)
 
-Unidad 5
---------
+# Unidad 5
 
 -   [Preparacion de un entorno de desarrollo Android](preparacion-de-un-entorno-de-desarrollo-android.html)
 -   [Herramientas de desarrollo con Android](herramientas-de-desarrollo-con-android.html)
-

@@ -10,3 +10,5 @@ title: wiki.template landing page
 - [{{page.title}}]({{site.baseurl}}{{page.url}})
     {% endif %}
 {% endfor %}
+
+<br>
