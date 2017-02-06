@@ -65,5 +65,20 @@ keywords: []
 toc-gen:
     include-tocnumber: true
 
+#Scholar
+scholar:
+  style: /_bibliography/mla.csl
+  locale: en
+
+  sort_by: year
+  order: descending
+
+  source: /_bibliography
+  bibliography: wikibiblio
+
+  replace_strings: true
+
+  query: "@*"
+
 #Categories for wiki pages
 categories: []
