@@ -38,10 +38,11 @@ task :publish => [:generate] do
     puts "Created temporal directory #{tmp}"
 
     cp_r "_site/.", tmp
-    cp_r "bower_components/.", tmp
 
     pwd = Dir.pwd
     Dir.chdir tmp
+
+    rm ".gitignore"
 
     system "git init"
     system "git add ."

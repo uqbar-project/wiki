@@ -1,13 +1,13 @@
 ---
 # Jekyll options.
 name: uqbar-wiki
-domain: bossiernesto.github.io
-baseurl: /uqbar-wiki-proposal
+domain: uqbar-project.github.io
+baseurl: /wiki
 description: "Wiki jekyll engine for Uqbar organization"
 markdown: kramdown
 highlighter: rouge
 github_username:
-disqus: tadp-wiki
+disqus: uqbar-wiki
 
 # Uncomment below to enable pagination.
 paginate: 10
