@@ -11,7 +11,7 @@ general:
 
 checkout:
   pre:
-  - git config --global user.email "uqbar.bot@gmail.com"
+  - git config --global user.email "bot@uqbar.org"
   - git config --global user.name "UqbarBot"
   - npm install -g bower
 
