@@ -9,6 +9,7 @@ require 'html-proofer'
 # Change your GitHub reponame
 GITHUB_REPONAME = "uqbar-project/wiki"
 DEST_BRANCH = "gh-pages"
+SOURCE_BRANCH = "master"
 
 desc "Generate blog files"
 task :generate do
@@ -35,6 +36,7 @@ desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
     puts "Created temporal directory #{tmp}"
+
     cp_r "_site/.", tmp
 
     pwd = Dir.pwd
@@ -46,7 +48,7 @@ task :publish => [:generate] do
     system "git commit -m #{message.inspect}"
     system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
     puts "Pushing to origin #{DEST_BRANCH}"
-    system "git push origin #{DEST_BRANCH} --force"
+    system "git push -f origin #{SOURCE_BRANCH}:#{DEST_BRANCH}"
 
     Dir.chdir pwd
   end
