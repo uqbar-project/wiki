@@ -9,7 +9,7 @@ Las funciones partidas ó definidas por partes ó por trozos son funciones que p
 
 #### Notación Matemática
 
-![](modulo.gif "modulo.gif")
+{% link_image modulo.gif %}
 
 #### Código en Haskell
 

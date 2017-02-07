@@ -28,7 +28,7 @@ Dependencia: uno de los elementos usa o depende del otro cuando:
 
 Este tipo de relación indica que los dos elementos colaboran entre sí, pero que esa relación es débil, casual; tiene un contexto temporal que no trasciende más allá de una operación. No obstante, sabemos que los cambios en la clase B podrían impactar en alguna medida en la clase A.
 
-![](DdC-usa.png "DdC-usa.png")
+{% link_image DdC-usa.png %}
 
 ### RELACIÓN “CONOCE”
 
@@ -48,7 +48,7 @@ Puede definirse una etiqueta que expresa el rol que cumple dicha relación. En c
 
 En las asociaciones, hay una relación más fuerte que en las dependencias (uso) entre ambos elementos. El conocimiento implica que la colaboración excede el marco temporal de una operación, aunque cada uno de los objetos sigue teniendo objetivos diferentes.
 
-![](DdC-conoce.png "DdC-conoce.png")
+{% link_image DdC-conoce.png %}
 
 Relaciones entre clases
 -----------------------
@@ -59,13 +59,13 @@ Generalización: una clase específica hereda los atributos, relaciones, operaci
 
 Cuando una subclase redefine el comportamiento de su superclase, se escriben los nombres de los métodos que redefine.
 
-![](DdC-hereda.png "DdC-hereda.png")
+{% link_image DdC-hereda.png %}
 
 ### RELACIÓN “IMPLEMENTA”
 
 Realización: se establece entre una clase y una [interfaz](interfaz.html); esto implica que la clase debe implementar todas las operaciones que defina la interfaz. Si bien no todos los lenguajes requieren explicitar por código la existencia de una interfaz (en Smalltalk no hace falta, pero en Java sí por tener un checkeo de tipos estático), desde un punto de vista conceptual la interfaz existe y puede comunicarse en el diagrama.
 
-![](DdC-implementa.png "DdC-implementa.png")
+{% link_image DdC-implementa.png %}
 
 Herramientas para diagramar
 ---------------------------

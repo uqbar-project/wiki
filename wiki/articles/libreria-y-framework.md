@@ -8,7 +8,7 @@ Librería
 
 Una **librería** es un conjunto de funciones llamadas desde "afuera" por un cliente. Dentro del POO, esto es una clase que recibe un mensaje, lo ejecuta y devuelve luego el control al cliente. La instanciación de una librería es relativamente sencilla.
 
-![](Libreria.png "Libreria.png")
+{% link_image Libreria.png %}
 
 Framework
 ---------
@@ -25,4 +25,4 @@ pero es usual que el framework me pida luego cosas a mí, no tengo control sobre
 
 La instanciación del framework no es tan sencilla, ya que requiere un conocimiento del mismo.
 
-![](Framework.png "Framework.png")
+{% link_image Framework.png %}

@@ -76,7 +76,7 @@ Si se están preguntando ¿en qué orden “están” las estampillas en el Set?
 
 Ahora agreguemos un objeto más: pedro, el coleccionista, que sabe cuál es su estampilla favorita (la estampillaBrasileraMediana). El ambiente queda así:
 
-![](Pdep-colecciones-2.PNG "Pdep-colecciones-2.PNG")
+{% link_image Pdep-colecciones-2.PNG %}
 
 Ahora hay un objeto que tiene 3 referencias:
 
@@ -95,7 +95,7 @@ Así, los objetos que quedan referenciados por la colección pueden tener otras 
 
 La referencia a un objeto por ser elemento de una colección cuenta para que el objeto no salga del ambiente cuando pasa el [Garbage collector](garbage-collector.html). Eso significa que si dejamos de referenciar a nuestra estampilla alemana mediante la referencia estampillaAlemana, como la colección de estampillas la conoce, el objeto va a seguir en el sistema.
 
-![](Pdep-colecciones-3.PNG "Pdep-colecciones-3.PNG")
+{% link_image Pdep-colecciones-3.PNG %}
 
 Hablando con los elementos
 --------------------------

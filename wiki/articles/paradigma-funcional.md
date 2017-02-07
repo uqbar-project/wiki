@@ -3,10 +3,11 @@ layout: article
 title: Paradigma funcional
 ---
 
+# Introducción
+
 Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las propiedades de unicidad y existencia), que pueden ser evaluadas para obtener un resultado. El paradigma funcional está basado en conceptos que vienen de la matemática, entonces algunas cosas (p.ej. notaciones en el lenguaje) están sacadas de lo que aprendimos en Análisis I / Álgebra / Discreta.
 
-Conceptos generales
--------------------
+# Conceptos generales
 
 -   [Concepto de función](concepto-de-funcion.html)
 -   [Aplicación](aplicacion.html)
@@ -19,8 +20,7 @@ Conceptos generales
 -   [Lazy Evaluation](estrategias-de-evaluacion-lazy-evaluation.html)
 -   [Recursividad en Haskell](recursividad-en-haskell.html)
 
-Tipos
------
+# Tipos
 
 -   [Tipos de Haskell](tipos-de-haskell.html)
 -   [Typeclasses](typeclasses.html)
@@ -29,15 +29,13 @@ Tipos
 -   [Notación point-free](notacion-point-free.html): Cuántos parámetros espera una función?
 -   [Data: Definiendo nuestros tipos en Haskell](data--definiendo-nuestros-tipos-en-haskell.html)
 
-Extras simpáticos
------------------
+# Extras simpáticos
 
 -   [Definiciones locales (where)](Definiciones_locales_(where) "wikilink")
 -   [Expresiones lambda](expresiones-lambda.html)
 -   [Listas por comprensión](listas-por-comprension.html)
 
-Errores comunes
----------------
+# Errores comunes
 
 -   [Errores comunes al comenzar a trabajar con Haskell](errores-comunes-al-comenzar-a-trabajar-con-haskell.html)
 -   [Cuándo usar paréntesis](cuando-usar-parentesis.html)
@@ -48,16 +46,14 @@ Errores comunes
 -   [cannot construct the infinite type](cannot-construct-the-infinite-type.html)
 -   [Tips para aprobar un parcial de funcional](tips-para-aprobar-un-parcial-de-funcional.html)
 
-Para aprender más sobre el lenguaje Haskell
--------------------------------------------
+# Para aprender más sobre el lenguaje Haskell
 
 -   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) ([Acá en español](http://aprendehaskell.es/))
 -   [Todo lo que ud deseaba saber de Haskell y más (Por Stephen Diehl)](http://dev.stephendiehl.com/hask/)
 -   [Wiki](http://en.wikibooks.org/wiki/Haskell)
 -   [Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
 
-Problemas complejos y cosas locas
----------------------------------
+# Problemas complejos y cosas locas
 
 Acá hay algunas cosas interesantes que escapan al nivel de funcional que se espera que aprendan para Paradigmas, si te interesa profundizar en el tema es muy interesante!
 

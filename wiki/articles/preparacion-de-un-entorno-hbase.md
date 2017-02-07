@@ -3,7 +3,7 @@ layout: article
 title: Preparacion de un entorno hbase
 ---
 
-![](Hbase_logo.png "Hbase_logo.png")
+{% link_image Hbase_logo.png %}
 
 Entorno general
 ---------------

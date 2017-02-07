@@ -27,7 +27,7 @@ Por otro lado, nuestro proyecto que tendrá la vista en arena sí, lógicamente 
 
 La siguiente figura resume esto:
 
-![](Arena-dependencias.fw.png "Arena-dependencias.fw.png")
+{% link_image Arena-dependencias.fw.png %}
 
 Nota: si hacemos un único proyecto con dominio + ui arena, podemos sólo depender de "arena" y transitivamente veríamos a "uqbar-domain".
 
@@ -184,11 +184,11 @@ También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener
 
 Si trabajás con Xtend puede ser que te surjan tres errores del tipo **Plugin execution not covered by lifecycle configuration: net.alchim31.maven:scala-maven-plugin...** al importar o crear un proyecto.
 
-![](ErrorPluginExcecution.jpg "ErrorPluginExcecution.jpg")
+{% link_image ErrorPluginExcecution.jpg %}
 
 Esto se debe a que no se encuentra un plugin que integra Scala con Maven para Eclipse. Te recomendamos utilizar dos opciones que surgen del quick fix (con el pop-up emergente, ctrl + 1 o bien click derecho sobre el problema seleccionado y en el menú emergente seleccionar Quick fix)
 
-![](ErrorPluginExecutionQuickFix.jpg "ErrorPluginExecutionQuickFix.jpg")
+{% link_image ErrorPluginExecutionQuickFix.jpg %}
 
 La primer opción es ignorar este plugin solicitado ya que Maven por si solo puede compilar el proyecto sin éste y puedo correr el programa de igual forma. Esto se logra seleccionando la opción **Mark goal add-source as ignored in Eclipse build in Eclipse preferences (Experimental)**. Esta acción la debo realizar tres veces (una por cada error declarado). El resultado es la creación de un archivo XML en la ruta *..../MiWorkspace/.metadata/.plugins/org.eclipse.m2e.core/lifecycle-mapping-metadata.xml* con el siguiente código:
 

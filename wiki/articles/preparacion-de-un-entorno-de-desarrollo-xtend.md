@@ -3,7 +3,7 @@ layout: article
 title: Preparacion de un entorno de desarrollo xtend
 ---
 
-![](Xtend-logo.png "Xtend-logo.png")
+{% link_image Xtend-logo.png %}
 
 ### Download e instalación base
 
@@ -27,7 +27,7 @@ Para eso:
 
 -   Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
 
-![](Xtend-installation.png "Xtend-installation.png")
+{% link_image Xtend-installation.png %}
 
 -   Reiniciar el Eclipse
 

@@ -3,32 +3,30 @@ layout: article
 title: Normalizacion en objetos
 ---
 
-Objetivo
---------
+# Objetivo
+
 
 El proceso de normalización se origina con el esquema relacional y ha sido ampliamente estudiado y difundido, ya que los RDBMS surgieron como una alternativa a los motores de bases de datos jerárquicos que permitían redundancia de la información y tenían problemas de consistencia, lo que llevaba a tener datos faltantes o duplicados.
 
 Si bien el modelo de objetos tiene algunas características diferenciales respecto al relacional, podemos encontrar decisiones que tienen que ver con la aplicación (o no) de la normalización y el almacenamiento redundante de la información.
 
-### Ejemplo
+## Ejemplo
 
 Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre alumnos y cursos. Un alumno se inscribe en varios cursos y en cada curso tenemos muchos alumnos.
 
-![](EjemploCursosAlumnos.png "EjemploCursosAlumnos.png")
+{% link_image EjemploCursosAlumnos.png %}
 
-### Recordemos qué busca la normalización
+## Recordemos qué busca la normalización
 
 -   Evitar redundancias
 -   Evitar inconsistencias: no quiero que un profesor renuncie y el curso quede apuntando a un profesor inexistente
 -   Reducir el impacto de los cambios en los datos: si cargué mal la información de un profesor, debería actualizarlo en un solo lugar
 
-Primer modelo posible
----------------------
+# Primer modelo posible
 
 El alumno tiene como atributos nombre, y los cursos. El curso tiene el nombre del profesor (un String) y los alumnos que participan.
 
-Aplicando reglas de normalización (o no)
-----------------------------------------
+# Aplicando reglas de normalización (o no)
 
 ### Campos calculados
 
@@ -42,13 +40,11 @@ se trata de atributos que pueden calcularse pero que por algún motivo elegimos 
 
 1) **porque es conveniente cuando lo migramos a un esquema relacional**, para facilitar las consultas posteriores, ej: conocer los cursos con más de 40 alumnos sería
 
-<code lang="sql">
-
-`select *`
-`  from cursos c`
-` where c.cantidad_alumnos > 40`
-
-</code>
+```sql
+select *
+  from cursos c
+ where c.cantidad_alumnos > 40
+```
 
 Mientras que si no estuviera ese dato necesitaríamos hacer un join con la tabla de relación cursos-alumnos + el correspondiente count.
 
@@ -63,7 +59,7 @@ Si necesitamos saber cuántos inscriptos hubo al comienzo del cuatrimestre, debe
 
 Este requerimiento **no tiene nada que ver con la normalización, porque no hay redundancia**, en ese caso lo que tenemos que hacer es crear un atributo en el Curso...
 
-![](Curso-cantidadInscriptos.png "Curso-cantidadInscriptos.png")
+{% link_image Curso-cantidadInscriptosmalizado.png %}
 
 ### 1FN: Aplicabilidad en objetos
 
@@ -85,7 +81,11 @@ Tanto 2 como 3FN buscan que todo determinante sea clave candidata, o explicado e
 
 Dado que en objetos no utilizamos el concepto de clave primaria, no tiene sentido discriminar cada caso en particular. Lo que sí podemos revisar es el ejemplo nuevamente, donde en el objeto Curso se registra la información sobre el legajoDocente (un entero) y el nombreDocente (un String).
 
-![](ObjetoCursoDesnormalizado.png "fig:ObjetoCursoDesnormalizado.png") pasa a... ![](ObjetoCursoNormalizado.png "fig:ObjetoCursoNormalizado.png")
+{% link_image ObjetoCursoDesnormalizado.png %}
+
+pasa a... 
+
+{% link_image ObjetoCursoNormalizado.png %}
 
 Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posibles:
 
@@ -108,8 +108,7 @@ El modelo relacional es sumamente flexible, en una relación many-to-many Alumno
 
 Es mucho más fácil encarar estos objetivos si la relación de asociación entre Alumno y Curso es bidireccional, es decir que un alumno conoce la lista de cursos en los que está inscripto y un curso conoce la lista de alumnos que forman parte.
 
-Resumen
--------
+# Resumen
 
 En el modelo de objetos podemos aplicar ciertas reglas de normalización o redundancia, generando referencias hacia nuevas entidades o bien duplicando la información de un objeto en otro.
 

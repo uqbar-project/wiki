@@ -10,7 +10,7 @@ Sintaxis
 
 CSS tiene su propio lenguaje declarativo en el cual especificamos **reglas**. Una regla tiene la siguiente sintaxis:
 
-![](css-rule.gif "css-rule.gif")
+{% link_image css-rule.gif %}
 
 El **selector** es una expresión que nos permite matchear aquellos elementos a los que queremos aplicarle estos estilos. Luego el cuerpo de la regla contiene un conjunto de propiedades y valores para éstos.
 

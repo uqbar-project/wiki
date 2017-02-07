@@ -33,7 +33,7 @@ A continuación se detallan las operaciones que se encuentran implementadas en S
 
 **@:** Realiza una copia de la implementación de un mensaje, utilizando otro nombre.
 
-![](Operaciones-de-Traits.png "Operaciones-de-Traits.png")
+{% link_image Operaciones-de-Traits.png %}
 
 ### Solución de conflictos
 

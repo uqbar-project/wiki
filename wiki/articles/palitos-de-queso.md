@@ -3,7 +3,7 @@ layout: article
 title: Palitos de queso
 ---
 
-![](Palitos_de_Queso.jpg "Palitos_de_Queso.jpg")
+{% link_image Palitos_de_Queso.jpg %}
 
 Ingredientes
 
