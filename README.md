@@ -1,8 +1,7 @@
-# Uqbar wiki template
+# Uqbar wiki
 
-Template based on wiki.template
+[![CircleCI](https://circleci.com/gh/uqbar-project/wiki.svg?style=svg)](https://circleci.com/gh/uqbar-project/wiki)
 
-##Requisitos
+Wiki armada en base a wiki.template de jekyll con algunos plugins, como git metadata, categorías, custom tags, etc.
 
-* Jekyll
-* Ruby 2.0+
+Se puede ver todo lo que ofrece la wiki en terminos de implementación y features en este [link](https://uqbar-project.github.io/wiki/wiki/articles/como-empezar.html)
