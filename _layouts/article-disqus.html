@@ -1,6 +1,7 @@
 ---
 layout: body
 ---
+
 <div id="article_title">
     <h1>
         {{ page.title }}
@@ -11,4 +12,8 @@ layout: body
     {{ content | toc_generate }}
 </div>
 
-{%include metadata.html%}
+<div id="article_disqus">
+    {% include disqus.html %}
+</div>
+
+{% include metadata.html %}
