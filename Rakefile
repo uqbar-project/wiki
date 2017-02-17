@@ -43,6 +43,10 @@ task :publish => [:generate] do
     Dir.chdir tmp
 
     system "git init"
+
+    #Create CNAME File
+    system "echo wiki.uqbar.org > CNAME"
+
     system "git add ."
     message = "Site updated at #{Time.now}"
     system "git commit -m #{message.inspect}"
