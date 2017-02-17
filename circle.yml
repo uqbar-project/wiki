@@ -27,7 +27,7 @@ dependencies:
 
 test:
   override:
-   - bundle exec rake test >> failed_urls.txt
+   - bundle exec rake test >> $CIRCLE_ARTIFACTS/failed_urls.txt
 
 deployment:
   publish:
