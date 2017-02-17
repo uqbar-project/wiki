@@ -3,7 +3,6 @@ require "tmpdir"
 
 require "bundler/setup"
 require "jekyll"
-require 'byebug'
 require 'html-proofer'
 
 # Change your GitHub reponame
