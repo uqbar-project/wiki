@@ -5,7 +5,7 @@ title: Portada
 
 <div class="search-site">
   <h4>
-    Search in this wiki
+    Buscar en la wiki
   </h4>
 
   {% include jekyll_search.html %}
@@ -46,3 +46,5 @@ Otro material:
 -   [AST-Abstract Syntax Tree]({{site.baseurl}}/wiki/articles/ast-abstract-syntax-tree.html)
 
 > "Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento" [1](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)
+
+<br>
