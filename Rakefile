@@ -3,7 +3,7 @@ require "tmpdir"
 
 require "bundler/setup"
 require "jekyll"
-
+require 'byebug'
 require 'html-proofer'
 
 # Change your GitHub reponame
@@ -14,7 +14,7 @@ SOURCE_BRANCH = "master"
 desc "Generate blog files"
 task :generate do
   Jekyll::Site.new(Jekyll.configuration({
-                                            "source"      => ".",
+                                            "source" => ".",
                                             "destination" => "_site"
                                         })).process
 end
@@ -23,10 +23,11 @@ desc "Check the generated page with html proofer"
 task :test do
   begin
     HTMLProofer.check_directory("./_site", {:external_only => true,
-                                            :parallel => { :in_processes => 3},
-                                            :url_ignore => [/uqbar-project/]}).run
+                                            :parallel => {:in_processes => 3},
+                                            :cache => {:timeframe => '2w'},
+                                            :typhoeus => {:headers => {"User-Agent" => "Mozilla/5.0 (compatible; My New User-Agent)"}},
+                                            :url_ignore => []}).run
   rescue => e
-    puts "Task #{task_name} failed"
     puts "#{e.class}: #{e.message}"
   end
   puts "Finished running all tests"
