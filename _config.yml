@@ -1,8 +1,8 @@
 ---
 # Jekyll options.
 name: uqbar-wiki
-domain: uqbar-project.github.io
-baseurl:
+domain: wiki.uqbar.org
+baseurl: 
 description: "Wiki jekyll engine for Uqbar organization"
 markdown: kramdown
 highlighter: rouge
