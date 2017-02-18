@@ -100,7 +100,7 @@ Pueden instalar el plugin de svn para eclipse basándose en [este tutorial](http
 
 # Maven
 
-##Instalación
+## Instalación
 
 ### Instalación default
 
