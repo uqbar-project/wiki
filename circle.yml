@@ -28,7 +28,7 @@ dependencies:
 test:
   override:
    - bundle exec jekyll build
-   - bundle exec rake test >> $CIRCLE_ARTIFACTS/failed_urls.txt
+   - bundle exec rake test >> $CIRCLE_ARTIFACTS/failed_urls.txt 2>&1
 
 deployment:
   publish:
