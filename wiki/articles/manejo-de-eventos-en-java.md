@@ -9,7 +9,8 @@ Para registrarse y recibir este tipo de eventos se utiliza un {{code|PropertyCha
 
 Pueden encontrar más documentación al respecto en:
 
--   Tutorial de Java sobre [Bound Properties](http://download.oracle.com/javase/tutorial/javabeans/properties/bound.html)
--   Aquí hay [otro tutorial sobre Bound Properties](http://enos.itcollege.ee/~jpoial/docs/tutorial/javabeans/properties/bound.html)
+-   Tutorial de Java sobre [Bound Properties](https://docs.oracle.com/javase/tutorial/javabeans/writing/properties.html)
+-   Aquí hay [otro tutorial sobre Bound Properties](http://geti.dcc.ufrj.br/cursos/fes_2008_1/javatutorial/javabeans/properties/bound.html)
 -   Documentación sobre [databinding de eclipse](http://www.vogella.de/articles/EclipseDataBinding/article.html)
+
 

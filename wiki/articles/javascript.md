@@ -12,7 +12,7 @@ title: Javascript
 
 -   La mayoría de los web browsers modernos (Google Chrome, Mozilla Firefox, Opera, Safari) están implementados usando JS.
 -   [Adobe](http://www.adobe.com/) Acrobat, Reader, Dreamweaver, Photoshop, Illustrator, etc.
--   [Apache OpenOffice](http://www.openoffice.org/index1-passthru.html?utm_expid=57643286-7&utm_referrer=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOpenOffice.org)
+-   [Apache OpenOffice](https://www.openoffice.org/es/)
 -   [Google Apps Script](http://www.google.com/script/start/)
 -   [Adobe AIR](http://www.adobe.com/products/air.html)
 -   [GNOME Shell](https://live.gnome.org/GnomeShell)

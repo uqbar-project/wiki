@@ -5,3 +5,6 @@ _site
 .bundle
 node_modules
 bower_components
+tmp
+.byebug_history
+

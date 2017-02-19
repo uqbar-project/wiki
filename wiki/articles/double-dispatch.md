@@ -3,7 +3,15 @@ layout: article
 title: Double dispatch
 ---
 
-Una definición posible de Double Dispatch, es la propuesta por [Ralph Johnson](http://www.cincomsmalltalk.com/userblogs/ralph/blogView?showComments=true&printTitle=Double_dispatch&entry=3485318158).
+
+{% wiki_note_alert %}
+  El link del blog de Ralph Johnson no existe mas... Reemplazando por el paper de ECOOP 2005
+  
+  Link anterior cincomsmalltalk<dot>com/userblogs/ralph/blogView?showComments=true&printTitle=Double_dispatch&entry=3485318158
+  
+{% endwiki_note_alert %}
+
+Una definición posible de Double Dispatch, es la propuesta por [Ralph Johnson](http://www.laputan.org/reflection/Foote-Johnson-Noble-ECOOP-2005.html).
 
 ### ¿Qué criterio de dispatch utilizar?
 
@@ -15,3 +23,5 @@ Sin embargo, otra forma de interpretarlo sería que el mejor Double Dispatch es 
 -   No extensible, ya que agregar un nuevo tipo implicaría necesariamente agregar todas las combinaciones posibles.
 
 Esto no descarta la posibilidad de realizar un double dispatch basado en tipos, pero considera que el code smell no puede ser ignorado y por lo se prefiere evitar esa forma de utilización. En una estrategia de dispatch basada en el comportamiento de los objetos, es más probable que los nuevos casos que surjan puedan asociarse a alguno de los roles preexistentes.
+
+

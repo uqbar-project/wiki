@@ -3,7 +3,7 @@ layout: article
 title: Diferencias entre polimorfismo  abstraccion y encapsulamiento
 ---
 
-La pregunta se dispara en el ejercicio 2 de este final: <http://archivos-pdep.googlegroups.com/web/Final-Paradigmas-2009-02-21.pdf> Al que se propone la siguiente solución:
+La pregunta se dispara en el ejercicio 2 de este final: <https://4924d24e-a-62cb3a1a-s-sites.googlegroups.com/site/paradigmasdeprogramacion/material/finales/Final-Paradigmas-2009-02-21.pdf?attachauth=ANoY7coMuceO9Vwh6d-fwKJSqt8dGTHXeZgc710Y7plcNdMOw7VoS9GkODpIW98urrjbUmrHh4R4xbYjFB006RTku6kQtbKGpvJQq-g2hKYWesaJ0aBaDc6NmXO9fEVanJvTqDIDZiHp7lJbKtAZXxjMYSdJuA2tRn4WttDot55C-nOA-IUav9THft_xtRDs9YBcB1A8Bgd28DRN-XaLF2JwkcLd_bWNH12PNi1aE2z4NU6jySDuzFdtZ4XeR3r5rQyks1G4GmfN-peDM8ZQvUdPfXFiO1dzKA%3D%3D&attredirects=0> Al que se propone la siguiente solución:
 
 > Que la V.I. tipo referencie a un objeto que puede ser de las clases MateriaPrima, ProductoSemiElaborado y ProductoTerminado, y estas clases sean clases independientes, es decir que no sean subclases de ninguna ya que según el diagrama no comparten características. Entonces ahora Material deja de ser clase abstracta, para crear un material creamos un objeto de la clase Material, y a la variable tipo le asignamos un objeto de la clase de material que corresponda(MateriaPrima, ProductoSemiElaborado o ProductoTerminado).
 

@@ -6,7 +6,9 @@ title: Como bajar y correr un ejemplo en wicket
 La primera vez
 --------------
 
-Crear un repositorio SVN que apunte a la URL que te pasamos. **Ejemplo:** <http://xp-dev.com/svn/uqbar/examples/ui/web/wicket/xtend/>
+Crear un repositorio SVN que apunte a la URL que te pasamos. 
+
+**Ejemplo:** <http://xp-dev.com/svn/uqbar/examples/ui/web/wicket/xtend/>
 
 Bajar el proyecto del SVN
 -------------------------
@@ -38,4 +40,8 @@ Incorporar la app al web server
 4.  Finish
 5.  Reiniciar el servidor (botón derecho &gt; Restart in Debug o Restart)
 
-Acceder desde el browser a la direccion <http://localhost:8080/><aplicación web>/
+Acceder desde el browser a la direccion 
+
+```
+<http://localhost:8080/><aplicación web>/
+```

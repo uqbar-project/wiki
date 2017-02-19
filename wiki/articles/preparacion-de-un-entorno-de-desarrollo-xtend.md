@@ -63,7 +63,7 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 
 ### Problema con el menu de Eclipse en Ubuntu 13.10
 
--   [Problema de Eclipse con Ubuntu 13.10](http://uqbar-wiki.org/index.php?title=Problema_de_Eclipse_con_Ubuntu_13.10)
+-   [Problema de Eclipse con Ubuntu 13.10]({% link_article problema-de-eclipse-con-ubuntu-13-10 %}})
 
 ### Documentación
 

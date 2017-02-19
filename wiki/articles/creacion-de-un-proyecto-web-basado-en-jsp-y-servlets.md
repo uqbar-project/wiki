@@ -3,6 +3,8 @@ layout: article
 title: Creacion de un proyecto web basado en jsp y servlets
 ---
 
+# Introducción
+
 El objetivo de este tutorial es crear una aplicación base utilizando las siguientes tecnologías:
 
 -   Java
@@ -13,38 +15,42 @@ El objetivo de este tutorial es crear una aplicación base utilizando las siguie
 
 Se asume la presencia de un entorno con todas esas herramientas configuradas adecuadamente.
 
-Creación del proyecto
----------------------
+# Creación del proyecto
 
 ### Paso 1: Creación en base a un arquetype de maven
 
 Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente comando maven (previo asignar valores adecuados para groupId y artifactId)
 
-`mvn archetype:create                             \`
-`    -DartifactId=basic-jsp-example               \`
-`    -DgroupId=com.uqbar-project.edu.progui       \`
-`    -DarchetypeArtifactId=maven-archetype-webapp `
+```bash
+mvn archetype:create                             \
+    -DartifactId=basic-jsp-example               \
+    -DgroupId=com.uqbar-project.edu.progui       \
+    -DarchetypeArtifactId=maven-archetype-webapp 
+```
 
 ### Paso 2: Agregar bibliotecas necesarias al pom
 
 Luego de ejecutar eso tendremos el código generado en el directorio con el nombre indicado en el (en mi caso ). En ese directorio encontrarán el , si vamos a utilizar servlets (que es lo más probable) hay que editarlo para agregar las bibliotecas correspondientes:
 
-`       `<dependency>
-`           `<groupId>`javax.servlet`</groupId>
-`           `<artifactId>`servlet-api`</artifactId>
-`           `<version>`2.5`</version>
-`           `<scope>`provided`</scope>
-`       `</dependency>
-`       `<dependency>
-`           `<groupId>`javax.servlet.jsp`</groupId>
-`           `<artifactId>`jsp-api`</artifactId>
-`           `<version>`2.1`</version>
-`           `<scope>`provided`</scope>
-`       `</dependency>
+```xml
+       <dependency>
+           <groupId>javax.servlet</groupId>
+           <artifactId>servlet-api</artifactId>
+           <version>2.5</version>
+           <scope>provided</scope>
+       </dependency>
+       <dependency>
+           <groupId>javax.servlet.jsp</groupId>
+           <artifactId>jsp-api</artifactId>
+           <version>2.1</version>
+           <scope>provided</scope>
+       </dependency>
+```
 
 ### Paso 3: Crear una carpeta adicional para las clases java
 
 Dentro del mismo directorio veremos una carpeta y dentro dos carpetas con fuentes
+
 
 src/main/webapp:Es el lugar donde se ubicarán nuestras páginas web, y dendro de ella en la carpeta  se encuentra la configuración del tomcat.
 src/main/resources:Que estará vacía y es el lugar donde poner archivos de configuración y otros recursos *no web* (toda la información web va en webapp).  
@@ -57,7 +63,7 @@ src/main/java:Es el lugar para ubicar nuestras clases Java.
 
 Luego, parados en la carpeta en donde está el debemos ejecutar:
 
-`mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true`
+mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
 
 Esto nos creará los archivos de configuración del eclipse: y . También habrá bajado todas las bibliotecas que le indicamos. En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
@@ -65,7 +71,7 @@ Esto nos creará los archivos de configuración del eclipse: y . También habrá
 
 El último paso será generar la información necesaria para el plugin de sysdeo.
 
-`mvn sysdeo-tomcat:generate`
+mvn sysdeo-tomcat:generate
 
 La información generada se encuentra en el archivo . Normalmente no es necesario hacer nada directamente con ese archivo, pero si tenemos dudas sobre que se haya ejecutado todo correctamente ese es el lugar donde mirar.
 
@@ -79,7 +85,9 @@ Luego, desde el eclipse se deberá:
 
 Una vez finalizado todo esto se puede ingresar desde su explorador favorito y ver que todo funciona, en mi caso la URL de prueba es:
 
-[`http://localhost:8080/example.jsp/`](http://localhost:8080/example.jsp/)
+```
+http://localhost:8080/example.jsp/
+```
 
 Publicarlo en svn
 -----------------
@@ -101,32 +109,38 @@ Para poder tener soporte para EL y JSTL en el proyecto eclipse, se deben agregar
 
 Expression Languaje  
 
+```xml
 <dependency>
-`   `<groupId>`javax.el`</groupId>` `
-`   `<artifactId>`el-api`</artifactId>
-`   `<version>`2.2`</version>
-`   `<optional>`true`</optional>
+   <groupId>javax.el</groupId> 
+   <artifactId>el-api</artifactId>
+   <version>2.2</version>
+   <optional>true</optional>
 </dependency>
+```
 
 JSTL  
 
+```xml
 <dependency>
-`   `<groupId>`javax.servlet`</groupId>
-`   `<artifactId>`jstl`</artifactId>
-`   `<version>`1.2`</version>
-`   `<scope>`runtime`</scope>
+   <groupId>javax.servlet</groupId>
+   <artifactId>jstl</artifactId>
+   <version>1.2</version>
+   <scope>runtime</scope>
 </dependency>
+```
 
 ### Definir repositorios adicionales
 
 Estas bibliotecas no se encuentran en el repositorio default del maven (repo1.maven.com), por lo tanto debemos agregar un repositorio adicional. Hay muchas formas de hacer esto, una sencilla es agregarlo en el pom, antes de las dependencias. Un repositorio posible para esta tarea es el de JBoss, para agregarlo pueden hacer:
 
+```xml
 <repositories>
-`   `<repository>
-`       `<id>`jboss`</id>
-`       `<url>[`http://repository.jboss.org/maven2`](http://repository.jboss.org/maven2)</url>
-`   `</repository>
+   <repository>
+       <id>jboss</id>
+       <url>[http://repository.jboss.org/maven2](http://repository.jboss.org/maven2)</url>
+   </repository>
 </repositories>
+```
 
 ### Actualizar el proyecto eclipse
 
@@ -134,11 +148,11 @@ Una vez hecho esto deben:
 
 -   Actualizar los archivos de configuración de eclipse y sysdeo:
 
-`mvn eclipse:eclipse sysdeo-tomcat:generate -DdownloadSources=true -DdownloadJavadocs=true`
+mvn eclipse:eclipse sysdeo-tomcat:generate -DdownloadSources=true -DdownloadJavadocs=true
 
 -   Si tienen dependencias con otros proyectos que estén en su workspace de eclipse, una idea útil es hacer que el maven genere referencias contra esos proyectos en lugar de contra jars en su repositorio local. Para eso deben agregar a la línea anterior:
 
-`-Dmaven.eclipse.workspace=`<path a su workspace de eclipse>
+-Dmaven.eclipse.workspace=<path a su workspace de eclipse>
 
 :\* Ojo: Eso funciona para el eclipse pero no para el sysdeo así que en caso de utilizar esta idea deberán modificar el path del devloader a mano (no todavía, eso se puede hacer después del siguiente paso)
 
@@ -165,10 +179,12 @@ Configuración en
 
 Adicionalmente es necesario indicar en el qué tag libraries queremos utilizar, por ejemplo para agregar el debemos indicar:
 
+```xml
 <taglib>
-`   `<taglib-uri>[`http://java.sun.com/jstl/core`](http://java.sun.com/jstl/core)</taglib-uri>
-`   `<taglib-location>`c.tld`</taglib-location>
+   <taglib-uri>[http://java.sun.com/jstl/core](http://java.sun.com/jstl/core)</taglib-uri>
+   <taglib-location>c.tld</taglib-location>
 </taglib>
+```
 
 Esto hay que ponerlo dentro del tag , al final de todo.
 
@@ -176,12 +192,16 @@ Indicaciones en la página
 
 Para usar EL:
 
-`<%@ page isELIgnored ="false" %> `
+```
+<%@ page isELIgnored ="false" %> 
+```
 
 Para usar JSTL:
 
-`<%@ page pageEncoding="UTF-8" %> `
-`<%@ taglib uri="`[`http://java.sun.com/jstl/core`](http://java.sun.com/jstl/core)`" prefix="c" %>`
+```
+<%@ page pageEncoding="UTF-8" %> 
+<%@ taglib uri="[http://java.sun.com/jstl/core](http://java.sun.com/jstl/core)" prefix="c" %>
+```
 
 Links relacionados
 ------------------

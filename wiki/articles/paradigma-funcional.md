@@ -51,7 +51,7 @@ Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las p
 -   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) ([Acá en español](http://aprendehaskell.es/))
 -   [Todo lo que ud deseaba saber de Haskell y más (Por Stephen Diehl)](http://dev.stephendiehl.com/hask/)
 -   [Wiki](http://en.wikibooks.org/wiki/Haskell)
--   [Funciones que trae por defecto (Prelude)](http://www.haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html)
+-   [Funciones que trae por defecto (Prelude)](http://hackage.haskell.org/package/base-4.9.1.0/docs/Prelude.html)
 
 # Problemas complejos y cosas locas
 

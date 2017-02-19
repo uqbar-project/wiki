@@ -67,7 +67,7 @@ Para otros sistemas operativos se puede bajar el instalable de: <http://java.sun
 # Documentación
 
 -   [Java Tutorials](http://java.sun.com/docs/books/tutorial/)
--   [Javadoc reference guide](http://java.sun.com/j2se/1.4.2/docs/tooldocs/windows/javadoc.html)
+-   [Javadoc reference guide](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html)
 -   [Writing comment tips](http://java.sun.com/j2se/javadoc/writingdoccomments/index.html)
 
 # Eclipse

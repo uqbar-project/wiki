@@ -71,7 +71,24 @@ También se puede levantar el tomcat por fuera del entorno de desarrollo. En Ubu
 
 En Windows hay que ir a servicios (el shortcut es Win + R: "services.msc"), buscar el Tomcat y darle Start. Otra opción es abrir una ventana de comandos (Win + R: "cmd"), ir al $TOMCAT\_DIR\\bin (o sea, la carpeta bin donde está instalado el Tomcat) y ejecutar "startup".
 
-Dos aplicaciones deberíamos poder ver ya andando luego de haber hecho eso: La página home <http://localhost:8080/>, es lo más fácil para ver si anda. La página de administración: <http://localhost:8080/manager/html>, ahí pueden ver qué aplicaciones tienen levantadas en el tomcat y realizar algunas tareas administrativas. Para poder abrir esa página tienen que loguearse con el usuario y password que ingresaron al configurar el archivo $TOMCAT\_HOME/conf/tomcat-users.xml.
+Dos aplicaciones deberíamos poder ver ya andando luego de haber hecho eso: 
+
+La página home 
+
+```
+<http://localhost:8080/>
+```
+
+es lo más fácil para ver si anda. 
+
+
+La página de administración: 
+
+```
+<http://localhost:8080/manager/html>
+```
+
+ahí pueden ver qué aplicaciones tienen levantadas en el tomcat y realizar algunas tareas administrativas. Para poder abrir esa página tienen que loguearse con el usuario y password que ingresaron al configurar el archivo $TOMCAT\_HOME/conf/tomcat-users.xml.
 
 Por último
 ----------

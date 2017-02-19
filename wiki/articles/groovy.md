@@ -11,8 +11,8 @@ Groovy es un lenguaje pensando para correr sobre la máquina virtual de Java, y 
 
 Sobre el lenguaje:
 
--   [Tutorial oficial de Codehaus](http://groovy.codehaus.org/Getting+Started+Guide)
--   [Groovy (wikipedia)](http://n.wikipedia.org/wiki/Groovy_(programming_language))
+-   [Tutorial oficial de Codehaus](http://groovy-lang.org/documentation.html#gettingstarted)
+-   [Groovy (wikipedia)](https://en.wikipedia.org/wiki/Groovy_(programming_language))
 
 Herramientas basadas en Groovy:
 
@@ -22,6 +22,6 @@ Herramientas basadas en Groovy:
 -   [Sublime Text](http://www.sublimetext.com/)
 -   [Notepad++](http://www.notepad-plus-plus.org/)
 -   [Gradle](http://www.gradle.org/)
--   [Griffon (MVC)](http://griffon.codehaus.org/)
+-   [Griffon (MVC)](http://griffon-framework.org/)
 -   [Tellurium (Automated Testing Framework)](http://code.google.com/p/aost/)
 

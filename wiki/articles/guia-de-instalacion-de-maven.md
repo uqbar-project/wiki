@@ -3,45 +3,55 @@ layout: article
 title: Guia de instalacion de maven
 ---
 
-### Instalación default
+# Instalación default
 
 Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Installation)
 
-### Instalación en SO Unix-based (Linux, Solaris y Mac OS X)
+# Instalación en SO Unix-based (Linux, Solaris y Mac OS X)
 
 #### Mediante apt-get
 
-`$ sudo apt-get install maven`
-`$ sudo ln -s /usr/share/maven3/bin/mvn /usr/bin/mvn`
+```bash
+$ sudo apt-get install maven
+$ sudo ln -s /usr/share/maven3/bin/mvn /usr/bin/mvn
+```
 
 #### Manualmente
 
-Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.tar.gz).
+Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz).
 
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
 
-`$ tar -xzvf apache-maven-3.3.1-bin.tar.gz`
-`$ mv apache-maven-3.3.1 /home/john/programs/`
+```bash
+$ tar -xzvf apache-maven-3.3.1-bin.tar.gz
+$ mv apache-maven-3.3.1 /home/john/programs/
+```
 
 Agregar la siguiente línea al archivo **.bashrc**. Este archivo oculto (su nombre empieza con '.') contiene comandos que se ejecutan cuando se abre una terminal (consola). Se puede abrir con cualquier editor de textos (Gedit, vim, Emacs, Notepad++, etc) y se encuentra en el directorio **home** del usuario.
 
-`export PATH=$PATH:$HOME/programs/apache-maven-3.3.1/bin`
+```bash
+export PATH=$PATH:$HOME/programs/apache-maven-3.3.1/bin
+```
 
 Una forma sencilla de hacer ésto (sin tener que abrir un editor) es usando el programa **echo** y *appendeando* (redireccionando y agregando al final) el output al archivo. **Prestar atención al hecho de que se usan dos signos mayor**:
 
-`$ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.3.1/bin' >> .bashrc`
+```bash
+$ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.3.1/bin' >> .bashrc
+```
 
 #### Verificación de la instalación
 
 Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:
 
-`john@notebook:~$ mvn -v`
-`Apache Maven 3.3.1 (r...)`
-`Maven home: /home/john/programs/apache-maven-3.3.1`
-`Java version: 1....`
-`Java home: /usr/lib/jvm/...`
-`Default locale: en_US, platform encoding: UTF-8`
-`OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"`
+```bash
+john@notebook:~$ mvn -v
+Apache Maven 3.3.1 (r...)
+Maven home: /home/john/programs/apache-maven-3.3.1
+Java version: 1....
+Java home: /usr/lib/jvm/...
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"
+```
 
 ### Configuración de Maven
 
@@ -62,7 +72,7 @@ Una configuración más que puede ser útil para encontrar versiones nuevas de a
 
 -   La opción "Download repository index on startup" (opción por defecto chequeada): para más información pueden leer <http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes>.
 
-### Uso de Maven
+# Uso de Maven
 
 Hay dos formas de trabajar con Maven, integrándose con el entorno de desarrollo (Eclipse, IntelliJ, etc.) o bien trabajando directamente por consola.
 
@@ -81,7 +91,7 @@ Una sutil diferencia entre trabajar con el entorno integrado es que si contás c
 
 Cuando lo debuggeen en el IDE podrán ver (y updatear) su proyecto de dominio corriendo el de Arena. En cambio si lo usan desde la consola cuando cambien algo en el dominio tendrán que instalar la versión del dominio y después actualizar la dependencia del proyecto arena en el archivo pom.
 
-### Guías de referencia
+# Guías de referencia
 
 Cualquiera sea la opción que elijas te dejamos estos links para trabajar:
 
@@ -90,13 +100,15 @@ Cualquiera sea la opción que elijas te dejamos estos links para trabajar:
 
 Y si necesitás arrancar, acá te dejamos instrucciones iniciales:
 
-#### Creación de un proyecto básico
+## Creación de un proyecto básico
 
 Una vez instaladas todas las herramientas, se puede crear un proyecto en esta plataforma siguiendo [este tutorial](creacion-de-un-proyecto-maven-basico.html) (ojo, este es un tutorial básico, si necesitan usar otras tecnologías de presentación busquen los tutoriales en las páginas de las tecnologías correspondientes).
 
 -   Creamos un proyecto Maven. Desde la consola
 
-`$ mvn archetype:generate -DgroupId=ar.edu.demo -DartifactId=demo -DinteractiveMode=false`
+```bash
+$ mvn archetype:generate -DgroupId=ar.edu.demo -DartifactId=demo -DinteractiveMode=false
+```
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
@@ -106,4 +118,6 @@ A todas las opciones que nos pregunte le damos enter para aceptar las default.
 
 -   Probamos hacer una compilación e instalación local.
 
-`$ mvn install`
+```bash
+$ mvn install
+```

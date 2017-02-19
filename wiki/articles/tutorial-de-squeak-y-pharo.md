@@ -195,11 +195,11 @@ Le ponen el nombre que quieran y la extensión la pueden dejar como txt o cambia
   
 1) Botón derecho sobre el fondo. En el menú **World** van a **Tools -&gt; File Browser**.
 
-2) En el File Browser van a ver tres paneles:el de la izquierda muestra el arbol de directorios y carpetas de su sistema.[1](http://dl.dropbox.com/u/31270395/UTN/filebrowser.png)
+2) En el File Browser van a ver tres paneles:el de la izquierda muestra el arbol de directorios y carpetas de su sistema.
 
 3) Seleccionar la carpeta donde esta instalado Pharo, que es donde va a estar el archivo .st que quieren importar. En el panel de la derecha, van a ver la lista de los archivos incluidos en esa carpeta.
 
-4) Seleccionen el archivo .st. En el panel inferior van a ver el codigo que escribieron, y arriba de los paneles superiores van a aparecer varios botones, elijan **Install**[2](http://dl.dropbox.com/u/31270395/UTN/install.png).
+4) Seleccionen el archivo .st. En el panel inferior van a ver el codigo que escribieron, y arriba de los paneles superiores van a aparecer varios botones, elijan **Install**
 
 Shortcuts / Atajos del Teclado / Fatalities
 -------------------------------------------

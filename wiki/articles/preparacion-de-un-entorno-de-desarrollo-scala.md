@@ -22,7 +22,7 @@ Lo podemos usar directamente como un plugin desde el eclipse
 Al día 13 de agosto de 2013, una configuración posible es:
 
 -   Eclipse Kepler (v4.3) for Java Developers (incluye plugins para maven y git)
--   [Scala IDE 3.0.1](http://download.scala-ide.org/sdk/e38/scala210/stable/site) (para Scala 2.10 y Eclipse 3.8 o posterior).
+-   [Scala IDE 4.5](http://scala-ide.org/download/sdk.html) (para Scala 2.10.6 y 2.11.8 y Eclipse 4.6.1).
 -   m2eclipse-scala del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site)
 
 Esta configuración tiene un bug que impide la utilización del visualizador de POMs que viene con el plugin de Maven. Un *workaround* para el problema del POM es abrirlo con el editor de XML.

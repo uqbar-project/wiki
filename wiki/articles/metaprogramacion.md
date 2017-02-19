@@ -3,6 +3,8 @@ layout: article
 title: Metaprogramacion
 ---
 
+# Concepto
+
 **Metaprogramación** es el proceso o la práctica por la cual escribimos programas que generan, manipulan o utilizan otros programas.
 
 Ejemplos:
@@ -11,8 +13,7 @@ Ejemplos:
 -   Un formateador de código es un programa que manipula otro programa.
 -   Una herramienta como javadoc utiliza nuestro programa para generar su documentación.
 
-Para qué se usa la metaprogramación ?
--------------------------------------
+# Para qué se usa la metaprogramación ?
 
 En general la metaprogramación se utiliza más fuertemente en el **desarrollo de frameworks**. Simplemente porque un framework va a resolver cierta problemática de una aplicación, pero no va a estar diseñado para ninguna en particular. Es decir, la idea de framework es que se va a poder aplicar y utilizar en diferentes dominios desconocidos para el creador del framework.
 
@@ -27,8 +28,7 @@ Ejemplos:
     -   code coverage: herramientas que miden cuánto de nuestro código es realmente ejecutado al correr los tests, y cuales lineas no.
     -   analizadores de código: que evalúan nuestro código y genera métrics o miden violaciones a reglas definidas. Como el estilo de código, complejidad ciclomática, etc. Por ejemplo para java existe sonar que junto a maven automatizan y concrentran varias otras herramientas.
 
-Modelos y metamodelos
----------------------
+# Modelos y metamodelos
 
 Así como todo programa construye un modelo para describir su dominio. El domino de un metaprograma es otro programa denominado programa objeto o base y tendrá un modelo que describe a ese programa, al que llamamos **metamodelo**.
 
@@ -42,4 +42,5 @@ Así como el programa manipula las instancias de las clases Perro o Animal, el m
 
 Los lenguajes pueden proveen herramientas de [Reflection](reflection.html) para trabajar sobre su propio metamodelo.
 
-[Ejemplo de metaprogramación en Java: XUnit](http://utntadp.com.ar/cursadas-anteriores/2012c1-clases/clase-9)
+[Ejemplo de metaprogramación en Java: XUnit](https://github.com/uqbar-paco/metaprogramacion-xunit-java)
+[Ejemplo de metaprogramación en Ruby: XUnit](https://github.com/uqbar-paco/metaprogramacion-xunit-ruby)

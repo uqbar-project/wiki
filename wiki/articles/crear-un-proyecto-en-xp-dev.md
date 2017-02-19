@@ -23,7 +23,9 @@ En la página siguiente elegir la solapa "Source Control" y ahí seguir el link:
 
 En la página resultante se mostrará la URL del repositorio que se acaba de crear, por ejemplo:
 
-[`http://svn2.xp-dev.com/svn/proyecto-de-prueba/`](http://svn2.xp-dev.com/svn/proyecto-de-prueba/)` `
+```
+http://svn2.xp-dev.com/svn/proyecto-de-prueba
+```
 
 Es importante registrar esa URL para poder publicar sus proyectos ahí.
 
