@@ -12,6 +12,9 @@ disqus: uqbar-wiki
 # Uncomment below to enable pagination.
 paginate: 10
 
+#debug in build
+debug: false
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -81,4 +84,5 @@ scholar:
   query: "@*"
 
 #Categories for wiki pages
-categories: []
+category_dir: categories
+categories: [java, enviroment, scala, haskell, python, ruby, dds, paradigmas, tadp, algo3]

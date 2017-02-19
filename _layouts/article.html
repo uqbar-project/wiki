@@ -4,12 +4,22 @@ layout: body
 
 <div id="article_title">
     <h1>
-        {{ page.title }}
+        <i>{{ page.title }}</i>
     </h1>
+
+    <div id="siteSub">De Uqbar wiki</div>
 </div>
+
+{% if page.featured %}
+    {% include featured_star.html %}
+{% endif %}
 
 <div id="article_content">
     {{ content | toc_generate }}
 </div>
+
+{% if page.categories%}
+    {% include article_categories.html %}
+{% endif %}
 
 {%include metadata.html%}

@@ -1,0 +1,18 @@
+<div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            {% for category in page.categories %}
+             <li><a href="/categories/{{category}}" title="{{category}}">{{category | capitalize}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            {% if page.hidden_categories %}
+                {% for category in page.hidden_categories %}
+                <li><a href="/categories/{{category}}" title="{{category}}">{{category | capitalize}}</a></li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</div>

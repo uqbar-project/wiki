@@ -1,7 +1,10 @@
 ---
 layout: article
 title: Calculo del tipo de una funcion en haskell
+categories: [haskell]
 ---
+
+# Introduccion
 
 Dado que el haskell es un lenguaje con [Inferencia de tipos](inferencia-de-tipos.html), no es necesario indicar el tipo de las funciones que construimos. A pesar de ello (o tal vez precisamente *por* ello) los tipos juegan un rol fundamental al programar en un lenguaje funcional (en particular en Haskell).
 
@@ -29,22 +32,27 @@ Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, 
 
 A continuación se describen paso a paso los ejemplos que permiten comprender el mecanismo de inferencia utilizado en el lenguaje Haskell.
 
-Antes de empezar: cómo leer el tipo de una función en Haskell
--------------------------------------------------------------
+# Antes de empezar: cómo leer el tipo de una función en Haskell
 
 Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos posibles de Haskell, eso está explicado en el artículo sobre [Tipos de Haskell](tipos-de-haskell.html)
 
-Aplicación
-----------
+# Aplicación
 
-si x es Bool, entonces {{code|not x}} también es de tipo Bool
+si x es Bool, entonces 
 
-Funciones Simples
------------------
+```haskell
+{{code|not x}} 
+```
+
+también es de tipo Bool
+
+## Funciones Simples
 
 Al intentar calcular el tipo de una función, lo primero que tenemos que hacer es mirar las funciones que se usan dentro de su definición. Por ejemplo:
 
-`none x y = not x && not y`
+```haskell
+none x y = not x && not y
+```
 
 Para determinar el tipo de la función none podemos seguir los siguientes pasos:
 
@@ -57,12 +65,13 @@ En el último paso podemos ver que en realidad para saber el tipo de no sería n
 
 Por otro lado, en ejemplos más complejos analizar los parámetros será indispensable para poder saber el tipo de retorno (por ejemplo en la presencia de polimorfismo).
 
-Ejemplo un poco mas heavy
--------------------------
+## Ejemplo un poco mas heavy
 
 Siendo
 
-**`f` `x` `y` `z` `=` `(head` `y)` `>` `(map` `(\n` `->` `n` `x)` `z)`**
+```haskell
+f x y z = (head y) > (map (\n -> n x) z)
+```
 
 Vamos a intentar hacer la inferencia de tipos
 
@@ -72,29 +81,41 @@ Primero tenemos que ver qué es **f** ? f es una función que tiene 3 parámetro
 
 Ponemos 3 flechitas -&gt;
 
-`f :: esto es el tipo de `**`x`**` -> esto es el tipo de `**`y`**` -> esto es el tipo de `**`z`**` -> esto es el tipo de lo que devuelve `**`f`**
+```
+f :: esto es el tipo de **x** -> esto es el tipo de **y** -> esto es el tipo de **z** -> esto es el tipo de lo que devuelve **f**
+```
 
 Como head se aplica a una lista **y** tiene que ser una lista
 
-`f :: esto es el tipo de `**`x`**` -> [???] -> esto es el tipo de `**`z`**` -> esto es el tipo de lo que devuelve `**`f`**
+```
+f :: esto es el tipo de `**`x`**` -> [???] -> esto es el tipo de `**`z`**` -> esto es el tipo de lo que devuelve `**`f`**
+```
 
 Como map recibe como segundo parámetro una lista, **z** tiene q ser una lista
 
-`f :: esto es el tipo de `**`x`**` -> [???] -> [???] -> esto es el tipo de lo que devuelve `**`f`**
+```
+f :: esto es el tipo de `**`x`**` -> [???] -> [???] -> esto es el tipo de lo que devuelve `**`f`**
+```
 
 La función que es primer parámetro del map **(\\n -&gt; n x)** recibe como parámetro cada elemento de la lista **z**, cada uno de esos elementos va a ser **n**
 
 Como **n** se está aplicando a **x** podemos inferir que **n** es una función, por lo que **z** es una lista de funciones
 
-`f :: esto es el tipo de `**`x`**` -> [???] -> `**`[Dominio` `->` `Imagen]`**` -> esto es el tipo de lo que devuelve `**`f`**
+```
+f :: esto es el tipo de `**`x`**` -> [???] -> `**`[Dominio` `->` `Imagen]`**` -> esto es el tipo de lo que devuelve `**`f`**
+```
 
 Como **x** es el parámetro de **n** podemos inferir que **x** pertenece al dominio de **n**, por ende si el **Dominio** es de tipo **a** entonces **x** es de tipo **a**
 
-`f :: `**`a`**` -> [???] -> [`**`a`**` -> Imagen] -> esto es el tipo de lo que devuelve `**`f`**
+```
+f :: `**`a`**` -> [???] -> [`**`a`**` -> Imagen] -> esto es el tipo de lo que devuelve `**`f`**
+```
 
 Respiremos profundo... Asumimos que Imagen es de tipo **b**
 
-`f :: a -> [???] -> [a -> `**`b`**`] -> esto es el tipo de lo que devuelve `**`f`**
+```
+f :: a -> [???] -> [a -> `**`b`**`] -> esto es el tipo de lo que devuelve `**`f`**
+```
 
 Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)**
 
@@ -106,25 +127,36 @@ Por ende **(head y)** también es de tipo **\[b\]**
 
 Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[ **\[ b \]** \]
 
-`f :: a -> [ `**`[` `b` `]`**` ] -> [a -> b] -> esto es el tipo de lo que devuelve `**`f`**
+```
+f :: a -> [ `**`[` `b` `]`**` ] -> [a -> b] -> esto es el tipo de lo que devuelve `**`f`**
+```
 
 La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool**
 
-`f :: a -> [ [ b ] ] -> [a -> b] -> `**`Bool`**
+```
+f :: a -> [ [ b ] ] -> [a -> b] -> `**`Bool`**
+```
 
 Nos queda un pequeño detalle, el **(&gt;)** solo puede laburar con listas ordenables entonces **\[b\]** no puede ser cualquier lista, sus elementos tienen que tener la restricción **Ord**
 
-`f :: `**`Ord` `b`**` => a -> [ [ b ] ] -> [a -> b] -> Bool`
+```
+f :: `**`Ord` `b`**` => a -> [ [ b ] ] -> [a -> b] -> Bool`
+```
 
-### Ejemplo de parcial para pensar
+## Ejemplo de parcial para pensar
 
 Tenemos esta función:
 
-`f a b c d = maximoSegun (c d).filter (== snd a).map b`
+
+```haskell
+f a b c d = maximoSegun (c d).filter (== snd a).map b
+```
 
 Y sabemos que:
 
-`*Main> :t maximoSegun`
-`maximoSegun :: Ord a1 => (a -> a1) -> [a] -> a`
+```haskell
+*Main> :t maximoSegun
+maximoSegun :: Ord a1 => (a -> a1) -> [a] -> a
+```
 
 Cuál es el tipo de f? Ayudita: nótese que al map se le está aplicando sólo un parámetro ;)

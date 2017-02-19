@@ -2,6 +2,7 @@
 layout: article
 title: Preparacion de un entorno de desarrollo java
 categories: [java, enviroment]
+featured: true
 ---
 
 
@@ -226,7 +227,7 @@ Una vez instaladas todas las herramientas, se puede crear un proyecto en esta pl
 
 Si ya arrancaste tu proyecto y decidiste más tarde que necesitabas usar Maven, podés *mavenizarlo* de alguna de las siguientes maneras.
 
-## Usando M2Eclipse
+### Usando M2Eclipse
 
 -   Click derecho en el Proyecto
 
@@ -258,7 +259,7 @@ Independientemente de si su proyecto respeta la estructura estándar de un proye
 ├── pom.xml
 ```
 
-## A manopla
+### A manopla
 
 -   Creamos un proyecto Maven.
 

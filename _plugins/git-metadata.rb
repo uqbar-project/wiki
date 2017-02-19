@@ -1,6 +1,6 @@
 require 'rbconfig'
 
-COMMIT_THRESHOLD = 10
+COMMIT_THRESHOLD = 5
 
 module Jekyll
   module GitMetadata
@@ -10,6 +10,7 @@ module Jekyll
 
       def generate(site)
         raise "Git is not installed" unless git_installed?
+        @site = site
 
         Dir.chdir(site.source) do
           site.config['git'] = site_data
@@ -62,7 +63,7 @@ module Jekyll
       def lines(file = nil)
         cmd = "git log --numstat -n #{COMMIT_THRESHOLD} --format='%h'"
         cmd << " -- #{file}" if file
-        puts "getting git log from file #{file}"
+        puts "getting git log from file #{file}" if @site.config['debug']
         result = %x{ #{cmd} }
         results = result.scan(/(.*)\n\n((?:.*\t.*\t.*\n)*)/)
         results.map do |line|

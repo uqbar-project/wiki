@@ -1,0 +1,20 @@
+---
+layout: navpage
+type: category
+---
+
+<h1>Articles for category: {{ page.category | capitalize }}</h1>
+
+<main>
+    <ul>
+    {% for article in site.pages %}
+        {% if article.url contains 'wiki/articles/' %}
+            {% for category in article.categories %}
+                {% if category == page.category %}
+                    <li><a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+</main>
