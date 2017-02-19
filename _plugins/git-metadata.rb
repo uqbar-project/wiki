@@ -14,7 +14,7 @@ module Jekyll
 
         Dir.chdir(site.source) do
           site.config['git'] = site_data
-          (site.pages + site.posts).each do |page|
+          site.pages.each do |page|
             next if is_not_wiki page.path
             page.data['git'] = page_data(page.path)
           end

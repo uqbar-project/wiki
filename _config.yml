@@ -39,6 +39,7 @@ gems:
   - jekyll-gist
   - jekyll-redirect-from
   - jekyll/scholar
+  - jekyll-sitemap
 
 # Jekyll::AssetsPlugin options.
 assets:
