@@ -4,13 +4,29 @@ layout: body
 
 <div id="article_title">
     <h1>
-        {{ page.title }}
+        <i>{{ page.title }}</i>
     </h1>
+
+    <div id="siteSub">De Uqbar wiki</div>
 </div>
+
+{% if page.featured %}
+    {% include featured_star.html %}
+{% endif %}
 
 <div id="article_content">
     {{ content | toc_generate }}
 </div>
+
+<div id="bibliography">
+    <h2>Bibliografía</h2>
+
+    {% bibliography --cited %}
+</div>
+
+{% if page.categories%}
+    {% include article_categories.html %}
+{% endif %}
 
 <div id="article_disqus">
     {% include disqus.html %}
