@@ -5,7 +5,7 @@ title: Preparacion de un entorno de desarrollo groovy
 
 ### Download e instalación base
 
--   Vas a la página <http://docs.codehaus.org/display/GROOVY/Eclipse+Plugin> y buscás el link de update que se adapte a la versión de tu Eclipse
+-   Vas a la página <https://github.com/groovy/groovy-eclipse> y buscás el link de update que se adapte a la versión de tu Eclipse
 -   En Help &gt; Install New Software generás un nuevo update site en base al link del punto anterior
 -   Componentes a instalar:
     -   Extra Groovy Compilers, elegí la versión más reciente
@@ -21,14 +21,14 @@ Luego hay que instalar el plugin de Maven, ahora sí desde el Eclipse Marketplac
 
 ### Utilizar Groovy en otro IDE
 
--   Seguí este link: <http://groovy.codehaus.org/IDE+Support>
+-   Seguí este link: <http://groovy-lang.org/ides.html>
 
 ### Documentación
 
--   <http://groovy.codehaus.org/Documentation>
+-   <http://groovy-lang.org/documentation.html>
 
 ### Links de interés
 
--   [Página principal de Groovy](http://groovy.codehaus.org/)
+-   [Página principal de Groovy](http://groovy-lang.org)
 -   [Groovy vs Scala](groovy-vs-scala.html)
 

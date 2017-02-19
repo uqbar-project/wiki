@@ -6,7 +6,7 @@ title: Bibliografia sobre programacion avanzada orientada a objetos
 Herramientas de programación y diseño
 -------------------------------------
 
--   Carlos Lombardi y Nicolás Passerini, Introducción a la Orientación a Objetos, disponible en: <http://groups.google.com/group/archivos-pdep/web/apunte-objetos-1-4.doc>.
+-   Carlos Lombardi y Nicolás Passerini, Introducción a la Orientación a Objetos, disponible en: <http://www.pdep.com.ar/material/apuntes/apunte-objetos-1-5.pdf?attredirects=0>.
 -   Erich Gamma, Richard Helm, Ralph Johnson y John M. Vlissides, Design Patterns: Elements of Reusable Object-Oriented Software, Addison-Wesley Professional Computing Series, 1994
 -   Andrew Hunt y David Thomas, The Pragmatic Programmer: From Journeyman to Master, Addison-Wesley Professional, 1999.
 -   Alfred Aho, John Hopcroft y Jeffrey Ullman, Data Structures and Algorithms, Addison-Wesley, 1983

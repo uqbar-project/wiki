@@ -37,7 +37,7 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 ### ¿Cómo empezar?
 
--   Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](http://uqbar-wiki.org/index.php?title=Gu%C3%ADa_de_Instalaci%C3%B3n_de_Maven))
+-   Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí]({% link_article guia-de-instalacion-de-maven %}))
     -   en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
     -   definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds
     -   definir un artifactId, que se asocia al nombre de tu proyecto

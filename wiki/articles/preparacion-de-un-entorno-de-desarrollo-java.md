@@ -61,7 +61,8 @@ sudo apt-get install sun-java6-jdk sun-java6-jre
 
 Para otros sistemas operativos se puede bajar el instalable de: <http://java.sun.com/javase/downloads/> .
 
-[Este tutorial](http://www.it.uc3m.es/tlp/guia/guiaWinXP.html) indica cómo instalarlo en Windows XP (en especial pasos 1 a 3).
+[Este tutorial](http://web.archive.org/web/20120622095549/http://www.it.uc3m.es/tlp/guia/guiaWinXP.html) indica cómo instalarlo en Windows XP (en especial pasos 1 a 3).
+[Tutorial para Windows 7](http://www.luiskano.net/blog/2010/04/28/tutorial-instalar-java-jdk-en-windows-7/)
 
 # Documentación
 
@@ -97,7 +98,7 @@ También conviene desactivar el warning default de clases serializables que no d
 
 # SVN
 
-Pueden instalar el plugin de svn para eclipse basándose en [este tutorial](http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA).
+Pueden instalar el plugin de svn para eclipse basándose en [este tutorial](http://archive.matsim.org/book/export/html/365).
 
 # Maven
 
@@ -109,7 +110,7 @@ Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Install
 
 ### Instalación en SO Unix-based (Linux, Solaris and Mac OS X)
 
-Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.tar.gz).
+Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz).
 
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
 

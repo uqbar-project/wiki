@@ -71,7 +71,7 @@ y la conclusión según {% cite Burmako_scalamacros %}, es que las macros han si
 
 # Mas información 
 
-Ver más en detalle sobre macros en scala 2.10 en el siguiente [link](http://tadp-utn-frba.github.io/scripts/clase_14/)
+Ver más en detalle sobre macros en scala 2.10 en el siguiente [link](http://tadp-utn-frba.github.io/scripts/clase_14)
 
 
 {% include article_bibliography.html %}
