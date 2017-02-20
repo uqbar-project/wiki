@@ -2,7 +2,7 @@
     <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
         <ul>
             {% for category in page.categories %}
-             <li><a href="/categories/{{category}}" title="{{category}}">{{category | capitalize}}</a></li>
+             <li><a href="/categories/{{category}}" title="{{category}}">{{category | replace: '_', ' ' | capitalize}}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -10,7 +10,7 @@
         <ul>
             {% if page.hidden_categories %}
                 {% for category in page.hidden_categories %}
-                <li><a href="/categories/{{category}}" title="{{category}}">{{category | capitalize}}</a></li>
+                <li><a href="/categories/{{category}}" title="{{category}}">{{category | replace: '_', ' ' | capitalize}}}</a></li>
                 {% endfor %}
             {% endif %}
         </ul>

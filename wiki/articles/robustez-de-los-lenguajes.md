@@ -1,11 +1,12 @@
 ---
 layout: article
 title: Robustez de los lenguajes
+categories: [reliability_engineering, scala]
 ---
 
 Se dijo:
 
-`  "No implementaría el software de una central atómica en Ruby"`
+> "No implementaría el software de una central atómica en Ruby" 
 
 Y eso disparó una discusión acerca de qué hace que un lenguaje de programación, una práctica, o una herramienta sea segura para un software que no puede fallar, que debería tener la menor cantidad de errores posibles y ser tolerante a ellos en caso que ocurran.
 

@@ -90,4 +90,4 @@ scholar:
 
 #Categories for wiki pages
 category_dir: categories
-categories: [java, enviroment, scala, haskell, python, ruby, dds, paradigmas, tadp, algo3]
+categories: [java, enviroment, scala, haskell, python, ruby, dds, paradigmas, tadp, algo3, reliability_engineering]
