@@ -6,11 +6,13 @@ module Jekyll
   module GitMetadata
     class Generator < Jekyll::Generator
 
+      attr_accessor :commit_threshold
       safe true
 
       def generate(site)
         raise "Git is not installed" unless git_installed?
         @site = site
+        self.commit_threshold = site.config['watch'] ? 1 : COMMIT_THRESHOLD
 
         Dir.chdir(site.source) do
           site.config['git'] = site_data
@@ -61,7 +63,7 @@ module Jekyll
       end
 
       def lines(file = nil)
-        cmd = "git log --numstat -n #{COMMIT_THRESHOLD} --format='%h'"
+        cmd = "git log --numstat -n #{self.commit_threshold} --format='%h'"
         cmd << " -- #{file}" if file
         puts "getting git log from file #{file}" if @site.config['debug']
         result = %x{ #{cmd} }
