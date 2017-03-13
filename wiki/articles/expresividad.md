@@ -11,34 +11,30 @@ La expresividad puede definirse informalmente con la heurística "el nivel de **
 
 Para responder esa pregunta comparemos estos dos códigos en Pascal:
 
-<table>
-<tbody>
-<tr class="odd">
-<td><p><code></p>
-<p><code>Function QuieroMoverElBote(a: Array of Integer, c:Integer):Real;</code><br />
-<code>Var b  : Integer; d  : Real; e  : Integer; Begin</code><br />
-<code> For b := 1 to c do Begin e := e + a[b]; </code><br />
-<code>  End;  d := e / c;</code><br />
-<code> QuieroMoverElBote := d; End.</code></p>
-<p></code></p></td>
-<td><p>| <code></p>
-<p><code>Function Promedio(numeros: Array of Integer, cantidad:Integer):Real;</code><br />
-<code>Var</code><br />
-<code>   i  : Integer;</code><br />
-<code>   sumatoria  : Integer;</code><br />
-<code>Begin</code><br />
-<code> For i := 1 to cantidad do</code><br />
-<code>  Begin</code><br />
-<code>   sumatoria := sumatoria + numeros[i]; </code><br />
-<code>  End;</code><br />
-<code> Promedio := sumatoria / cantidad;</code><br />
-<code>End.</code></p>
-<p></code></p></td>
-</tr>
-</tbody>
-</table>
+```pascal
+Function QuieroMoverElBote(a: Array of Integer, c:Integer):Real;
+Var b  : Integer; d  : Real; e  : Integer; 
+Begin
+ For b := 1 to c do 
+  Begin 
+   e := e + a[b];
+  End;  
+ d := e / c;
+ QuieroMoverElBote := d; 
+End.
 
-En el código de la derecha puede verse con claridad el objetivo de este programa, mientras que en el de la izquierda está "escondido". Sin embargo, la computadora ejecutando este código produce exactamente el mismo resultado con cualquiera de los dos programas. La diferencia está en el programador que lee un programa ó el otro.
+Function Promedio(numeros: Array of Integer, cantidad:Integer):Real;
+Var i  : Integer; sumatoria  : Integer;
+Begin
+ For i := 1 to cantidad do
+  Begin
+   sumatoria := sumatoria + numeros[i];
+  End;
+ Promedio := sumatoria / cantidad;
+End.
+```
+
+En la segunda implementación puede verse con claridad el objetivo de este programa, mientras que en el primero está "escondido". Sin embargo, la computadora ejecutando este código produce exactamente el mismo resultado con cualquiera de los dos programas. La diferencia está en el programador que lee un programa ó el otro.
 
 Es por eso que muchas veces se suele considerar a la Expresividad como algo **subjetivo**. Sin embargo, en líneas generales, hay formas de alcanzar la expresividad.
 
