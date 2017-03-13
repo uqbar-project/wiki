@@ -15,8 +15,10 @@ Las funciones partidas ó definidas por partes ó por trozos son funciones que p
 
 En Haskell, las funciones partidas se escriben con Guardas, y se escribe la imagen de cada parte *a la derecha* del igual:
 
-`f x | x >= 0 = x`
-`    | x <  0 = -x`
+```haskell
+`f x | x >= 0 = x
+    | x <  0 = -x
+```
 
 Las funciones por partes no son la única forma de tener diferentes definiciones para una función, existen casos en los cuales alcanza con el uso de [pattern matching](pattern-matching-en-haskell.html).
 
@@ -28,22 +30,28 @@ No debemos confundir el uso de guardas (cuyo concepto se explicó arriba) con la
 
 Tomemos éste ejemplo: "Cierta edad es adulta cuando es 18 ó más"
 
-`esAdulta edad | edad >= 18 = True`
-`              | otherwise = False`
+```haskell
+esAdulta edad | edad >= 18 = True
+              | otherwise = False
+```
 
 ¡Pero esto es un uso incorrecto de las guardas! En otras palabras: Si una expresión es verdadera ó falsa *por sí sola*, no se lo debo preguntar, tengo que devolver directamente eso.
 
 Ésta es la **manera correcta** de hacerlo:
 
-`esAdulta edad = edad >= 18`
+```haskell
+esAdulta edad = edad >= 18`
+```
 
 #### Ejemplo 2
 
 Representemos una función que me diga si alguien siempre dice la verdad, sabiendo que "los niños y los borrachos siempre dicen la verdad" Ésta es una manera de hacerlo, errónea:
 
-`siempreDiceLaVerdad alguien | esNiño alguien = True`
-`                            | esBorracho alguien = True`
-`                            | otherwise = False`
+```haskell
+siempreDiceLaVerdad alguien | esNiño alguien = True
+                            | esBorracho alguien = True
+                            | otherwise = False
+```
 
 Si bien ésto funciona, es un mal uso de las funciones por partes, ya que no es cierto que esa función tenga diferentes "partes". La definición es lógica, y es *una sola*. Es un "ó" lógico:
 
