@@ -84,10 +84,13 @@ En Haskell
 f a b + c * d
 ```
 
-La aplicación se denota solo poniendo espacio entre la función y sus argumentos. Además la aplicación de funciones que no son operadores tiene una precedencia mayor que la de los operadores (un operador es una función que recibe 2 parámetros y se usa de forma infija ya sea un chirimbolo o una función con \`\`) � Las siguientes definiciones son equivalentes, podemos ver la precedencia para la aplicación de div de forma infija y prefija:
+* La aplicación se denota solo poniendo espacio entre la función y sus argumentos. 
+* Además, la aplicación de funciones que no son operadores tiene una precedencia mayor que la de los operadores (un operador es una función que recibe 2 parámetros y se usa de forma infija ya sea un chirimbolo o una función con `` ` ``) 
+
+Las siguientes definiciones son equivalentes, podemos ver la precedencia para la aplicación de div de forma infija y prefija:
 
 ```haskell
-promedio ns = (sum ns) ‘div‘ (length ns)
-promedio' ns = sum ns ‘div‘ length ns
+promedio ns = (sum ns) `div` (length ns)
+promedio' ns = sum ns `div` length ns
 promedio'' ns = div (sum ns) (length ns)
 ```
