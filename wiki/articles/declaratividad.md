@@ -33,14 +33,14 @@ En cambio, la definición declarativa eliminará todos los conceptos programáti
 
 1.  Un alumno puede cursar las materias de su carrera que no haya cursado aún y cuyas correlativas sí haya cursado.
 
-En este punto seguramente se preguntarán si es posible hacer un programa que exprese solamente eso, sin toda la lógica adicional necesaria, bueno aquí está el código prolog que dice exactamente eso: <code>
+En este punto seguramente se preguntarán si es posible hacer un programa que exprese solamente eso, sin toda la lógica adicional necesaria, bueno aquí está el código prolog que dice exactamente eso:
 
+```prolog
     puedeCursar(Alumno, Materia):-
-      carrera(Alumno, Carrera), materia(Carrera, Materia),       // Es una materia de la carrera del alumno
-      not(curso(Alumno, Materia)),                               // No cursó la materia
-      forall(correlativa(Materia, Corr), curso(Alumno, Corr)).   // Cursó todas las correlativas
-
-</code>
+      carrera(Alumno, Carrera), materia(Carrera, Materia),       % Es una materia de la carrera del alumno
+      not(curso(Alumno, Materia)),                               % No cursó la materia
+      forall(correlativa(Materia, Corr), curso(Alumno, Corr)).   % Cursó todas las correlativas
+```
 
 Elementos en un programa declarativo
 ------------------------------------
