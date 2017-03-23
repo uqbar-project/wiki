@@ -39,18 +39,23 @@ Las funciones [currificadas](currificacion.html), en tanto valores, pueden ser t
 
 ### Función desde el cálculo lambda
 
-Desde el punto de vista del \[<http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda>| cálculo lambda\], la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son [expresiones lambda](expresiones-lambda.html). Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
+Desde el punto de vista del [cálculo lambda](http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son [expresiones lambda](expresiones-lambda.html). Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
 
-`siguiente` `x` `=` `x` `+` `1`
+```haskell
+siguiente x = x + 1
+```
 
 En cálculo lambda no tipado la escribiríamos:
 
-`siguiente` `=` `𝛌x.sum` `x` `one`
+```
+siguiente = 𝛌x.sum x one
+```
 
-Equivalent a la siguiente definición Haskell:
+Equivalente a la siguiente definición Haskell:
 
-`siguiente` `=` `\x` `->` `x` `+` `1`
-
+```haskell
+siguiente = \x -> x + 1
+```
 ### Funciones en Haskell
 
 Las funciones en Haskell presentan todas las carecterísticas mencionadas anteriormente. A modo de resumen, decimos que:
