@@ -72,14 +72,14 @@ Prelude> :t ['H','o','l','a']
 
 Para cualquier lista el tipo se escribe poniendo entre corchetes el tipo de los elementos la lista, por ejemplo una lista de booleanos:
 
-```haskell
+```Haskell
 Prelude> :t [True, False]
 [True, False] :: [Bool]
 ```
 
 También una lista de Strings (o lista de listas de caracteres):
 
-```haskell
+```Haskell
 Prelude> :t ["Hola", "Chau"]
 ["Hola", "Chau"] :: [ [Char] ]
 ```
@@ -111,7 +111,7 @@ Prelude> :t (False, ('H', "ola"))
 
 También podemos tener tuplas de más de dos componentes
 
-```haskell
+```Haskell
 Prelude> :t (True, 'H', [False])
 (True, 'H', [False]) :: (Bool, Char, [Bool])
 ```
@@ -120,7 +120,7 @@ es decir, un booleano, un caracter y una lista de booleanos.
 
 Para finalizar podemos ver un ejemplo en el que combianmos todo lo anterior (no es trivial, tomate tu tiempo para leerlo!):
 
-```haskell
+```Haskell
 Prelude> :t ([True, False, True], "Chau", [(True, "True"), (False, "False")])
 ([True, False, True], "Chau", [(True, "True"), (False, "False")])
   :: ([Bool], [Char], [(Bool, [Char])])
@@ -148,7 +148,7 @@ De hecho, String no es más que un alias para el tipo \[Char\]. Sin embargo, es 
 
 Es posible [definir nuestros propios tipos de dato](data--definiendo-nuestros-tipos-en-haskell.html) usando data para poder mejorar las abstracciones de nuestros programas y evitar algunos problemas asociados al uso de tuplas. Esto puede hacerse de la siguiente forma:
 
-```haskell
+```Haskell
 data NuevoTipo = Constructor Tipo1 Tipo2 ... TipoN
 ```
 
