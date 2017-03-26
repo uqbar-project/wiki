@@ -5,14 +5,11 @@ title: Tipos de haskell
 
 Tal vez convenga aclarar que esta no es una categorización teórica, es más bien una introducción y vamos de lo más simple a lo más complejo.
 
-Tipos simples y compuestos
---------------------------
-
-### Básicos: números, caracteres y booleanos
+## Tipos Simples
 
 Los tipos más básicos que tenemos en Haskell son los booleanos y los caracteres, que tiene los tipos y respectivamente:
 
-```haskell
+```Haskell
 Prelude> :t True
 True :: Bool
 Prelude> :t 'a'
@@ -21,7 +18,7 @@ Prelude> :t 'a'
 
 Qué podemos hacer con ellos? Algunos ejemplos con booleanos y caracteres:
 
-```haskell
+```Haskell
 Prelude> True && False
 False
 Prelude> True || False
@@ -41,9 +38,9 @@ Prelude> 'b' > 'a'
 True
 ```
 
-El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver [más adelante](tipos-de-haskell-typeclasses.html). Algunas operaciones que podemos hacer:
+El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver en más detalle más adelante. Algunas operaciones que podemos hacer:
 
-```haskell
+```Haskell
 Prelude> 4*6
 24
 Prelude> 2+3
@@ -58,18 +55,22 @@ Prelude> 4/6
 0.6666666666666666
 ```
 
-La división en ocasiones puede traer problemas de tipos, si tuviste problemas con esto leé el [siguiente artículo](problemas-comunes-con-los-tipos-numericos-de-haskell-para-salir-del-paso---.html)
+La división en ocasiones puede traer problemas de tipos, si tuviste problemas con esto leé el [siguiente artículo](problemas-comunes-con-los-tipos-numericos-de-haskell.html)
+
+## Tipos Compuestos
 
 ### Listas y Strings
 
-Un String es simplemente una lista de caracteres; se puede escribir o :
+Un String es simplemente una lista de caracteres que puede escribirse con una sintaxis particular, los siguientes ejemplos son equivalentes:
 
-```haskell
+```Haskell
 Prelude> :t "Hola"
 "Hola" :: [Char]
+Prelude> :t ['H','o','l','a']
+['H','o','l','a'] :: [Char]
 ```
 
-Más aún, para cualquier lista el tipo se escribe poniendo entre corchetes el tipo de los elementos la lista, por ejemplo una lista de booleanos:
+Para cualquier lista el tipo se escribe poniendo entre corchetes el tipo de los elementos la lista, por ejemplo una lista de booleanos:
 
 ```haskell
 Prelude> :t [True, False]
@@ -85,25 +86,25 @@ Prelude> :t ["Hola", "Chau"]
 
 ### Tuplas
 
-Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto. (Esto está más detallado en [¿Cuál es la diferencia entre una tupla y una lista?](-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html), pero antes te recomiendo mirar los ejemplos que siguen.)
+Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los componentes pueden ser cada uno de un tipo distinto. (Esto está más detallado en [¿Cuál es la diferencia entre una tupla y una lista?](cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html), pero antes te recomiendo mirar los ejemplos que siguen.)
 
 Una de las tuplas más simples que se puede imaginar es:
 
-```haskell
+```Haskell
 Prelude> :t (True, 'H')
 (True, 'H') :: (Bool, Char)
 ```
 
 es decir, una tupla compuesta por un booleano y un caracter. Sin embargo, los elementos de las tuplas también pueden ser compuestos, como un String:
 
-```haskell
+```Haskell
 Prelude> :t (True, "Hola")
 (True, "Hola") :: (Bool, [Char])
 ```
 
 o inclusive el componente de una tupla puede ser otra tupla:
 
-```haskell
+```Haskell
 Prelude> :t (False, ('H', "ola"))
 (False, ('H', "ola")) :: (Bool, (Char, [Char]))
 ```
@@ -121,7 +122,8 @@ Para finalizar podemos ver un ejemplo en el que combianmos todo lo anterior (no 
 
 ```haskell
 Prelude> :t ([True, False, True], "Chau", [(True, "True"), (False, "False")])
-  :: ([Bool], [Char], [(Bool, [Char])])
+([True, False, True], "Chau", [(True, "True"), (False, "False")])
+  :: ([Bool], [Char], [(Bool, [Char])])
 ```
 
 Es decir, una tupla de tres componentes, a saber:
@@ -129,6 +131,18 @@ Es decir, una tupla de tres componentes, a saber:
 -   Una lista de booleanos
 -   Un string o lista de caracteres
 -   Una lista de tuplas cuyo primer componente es un booleano y su segundo componente es un string.
+
+### Type
+
+Haskell nos permite definir sinónimos de tipos, o sea definir un alias para un tipo concreto que se use para modelar alguna abstracción que nos interese.
+
+Por ejemplo si modelamos a los alumnos como tuplas de aridad 2 cuyo primer elemento es el nombre y el segundo una lista de números que representa las notas que se sacó, podríamos definir un tipo Alumno como:
+
+```Haskell
+type Alumno = (String, [Int])
+```
+
+De hecho, String no es más que un alias para el tipo \[Char\]. Sin embargo, es importante tener en cuenta que estos sinónimos sólo son útiles a efectos de declarar los tipos de otros datos o de las funciones de nuestro programa, pero para el motor de inferencia de tipos, estos alias son ignorados con lo cual si preguntamos de qué tipo es una función en donde se espera un alumno por parámetro, nos dirá (String, [Int]) y no Alumno.
 
 ### Data
 
@@ -140,52 +154,41 @@ data NuevoTipo = Constructor Tipo1 Tipo2 ... TipoN
 
 Usamos el constructor, como su nombre lo indica, para construir nuestros datos de este tipo y para hacer pattern matching como hacíamos con las tuplas.
 
-```haskell
-data TipoAlumno = Alumno String [Int]
-fede = Alumno "Federico" [2,3]
-nombreAlumno (Alumno nombre notas) = nombre
+```Haskell
+data Alumno = UnAlumno String [Int]
+fede = UnAlumno "Federico" [2,3]
+nombreAlumno (UnAlumno nombre notas) = nombre
 > :t nombreAlumno
-nombreAlumno :: TipoAlumno -> String
+nombreAlumno :: Alumno -> String
 > nombreAlumno fede
 "Federico"
 ```
 
-### Type
+El nombre del constructor puede coincidir con el nombre del tipo de dato, en este caso usamos nombres distintos para denotar que son cosas distintas y en qué contexto se usa cada una.
 
-Haskell nos permite definir sinónimos de tipos, o sea definir un alias para un tipo concreto que se use para modelar alguna abstracción del dominio.
-
-Por ejemplo si modelamos a los alumnos como tuplas de aridad 2 cuyo primer elemento es el nombre y el segundo una lista de números que representa las notas que se sacó, podríamos definir un tipo Alumno como:
-
-```haskell
-type Alumno = (String, [Int])
-```
-
-De hecho, String no es más que un alias para el tipo \[Char\]
-
-Funciones
----------
+## Funciones
 
 ### Funciones con un único parámetro
 
 El tipo de una función que tiene un parámetro se indica relacionando mediante el símbolo la entrada o dominio de la función con la salida o imagen. Por ejemplo la función not recibe un booleano y devuelve otro:
 
-```haskell
+```Haskell
 Prelude> :t not
 not :: Bool -> Bool
 ```
 
-La función recibe un caracter y devuelve un booleano.
+La función isLower recibe un caracter y devuelve un booleano.
 
-```haskell
+```Haskell
 Prelude> :t isLower 
 isLower :: Char -> Bool
 ```
 
 (Nótese que la función isLower está en el módulo Char, dependiendo de su versión de Haskell tal vez deban escribir para poder probar el ejemplo, o bien importar el módulo correspondiente.)
 
-Y la función recibe una lista de booleanos y devuelve un booleano (*and*ea todos los booleanos de la lista)
+Y la función and recibe una lista de booleanos y devuelve un booleano (resultado de realizar la conjunción entre todos los booleanos de la lista)
 
-```haskell
+```Haskell
 Prelude> :t and
 and :: [Bool] -> Bool
 ```
@@ -198,7 +201,7 @@ Las funciones de más de un parámetro tienen alguna sutileza porque en Haskell 
 
 El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros) a la función
 
-```haskell
+```Haskell
 Prelude> :t (&&)
 (&&) :: Bool -> Bool -> Bool
 ```
@@ -209,7 +212,7 @@ La [aplicación](aplicacion.html) es uno de los temas que tal vez más confunden
 
 Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parámetros:
 
-```haskell
+```Haskell
 Prelude> :t not
 not :: Bool -> Bool
 Prelude> :t Char.isLower
@@ -224,7 +227,7 @@ En este punto es importante entender que ninguno de estos ejemplos es un *valor 
 
 Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos obtener valores booleanos:
 
-```haskell
+```Haskell
 *Main> :t not True
 not True :: Bool
 *Main> :t Char.isLower 'a'
@@ -239,7 +242,7 @@ En síntesis es un valor booleano, en cambio no es un valor booleano, es una fun
 
 Si intentamos utilizar un valor función en un lugar donde se espera un valor booleano, obtendremos un error:
 
-```haskell
+```Haskell
 *Main> not Char.isLower
 <interactive>:1:4:
      Couldn't match expected type `Bool' 
@@ -251,7 +254,7 @@ Es decir, el primer argumento de debe ser y en cambio se recibió un argumento d
 
 Similarmente:
 
-```haskell
+```Haskell
 *Main> True && not
 <interactive>:1:8:
      Couldn't match expected type `Bool' 
@@ -261,20 +264,19 @@ Similarmente:
     ....
 ```
 
-Typeclasses
------------
+## Typeclasses
 
 Nos gustaría poder definir los siguientes tipos (a.k.a dominios e imágenes)
 
-(+) :: (Si asumimos que a es **numérico**) entonces a - &gt; a -&gt; a
+(+) :: (Si asumimos que a es **numérico**) entonces a -> a -> a
 
-(&gt;) :: (Si asumimos que a es **ordenable**) entonces a - &gt; a -&gt; Bool
+(&gt;) :: (Si asumimos que a es **ordenable**) entonces a -> a -> Bool
 
-(==) :: (Si asumimos que a es **equiparable**) entonces a - &gt; a -&gt; Bool
+(==) :: (Si asumimos que a es **equiparable**) entonces a -> a -> Bool
 
 En Haskell eso se escribe de la siguiente manera
 
-```haskell
+```Haskell
 (+) :: (Num a) => a - > a -> a
 (>) :: (Ord a) => a - > a -> Bool
 (==) :: (Eq a) => a - > a -> Bool
@@ -284,7 +286,7 @@ Num, Ord y Eq son **restricciones de tipo**, en Haskell se las conoce como Typec
 
 En cada [Typeclass](typeclasses.html) se definen un conjunto de funciones que los tipos pertenecientes deben implementar
 
-```haskell
+```Haskell
 Num a
 (+), (-), (*) :: a -> a -> a
 negate, abs, signum :: a -> a
@@ -302,11 +304,17 @@ Eq a
 
 ### ¿Qué tipos pertenecen a cada restricción?
 
-![](Typeclasses.PNG "Typeclasses.PNG")
+Num: Los tipos concretos más comunes que integran esta familia son Int y Float.
+
+Ord: Además de incluír a la mayoría de los tipos numéricos (como Int y Float) incluye a los caracteres, los booleanos (sí, hay un orden preestablecido para los booleanos aunque no sea común usarlo). También incluye a las listas y las tuplas siempre y cuando los tipos que las compongan sean ordenables (por ejemplo los Strings, que son listas de caracteres, son ordenables). Las funciones **no son ordenables**.
+
+Eq: Todos los Ord y los Num son también esquiparables. Para las listas y tuplas, son equiparables si los tipos que las componen lo son. Las funciones **no son equiparables**.
+
+¿Y los data? Algo muy común es que querramos que nuestros tipos de datos sean equiparables. Si los tipos de datos que componen a nuestros data lo son, alcanza con derivar Eq y no necesitaremos definir la igualdad. De lo contrario, para que sea Eq será necesario dar un pasito más avanzado y declarar que nuestro tipo de dato es instancia de la typeclass Eq e incluir una definición para la función (==) como se explica en el artículo sobre [data](data--definiendo-nuestros-tipos-en-haskell.html).
 
 Ejemplos:
 
-```haskell
+```Haskell
 elem :: (Eq a) => a -> [ a ] -> Bool
 elem unElemento unaLista = any (unElemento==) unaLista
 
@@ -322,7 +330,7 @@ Cuando utilizamos el intérprete, los resultados de nuestras funciones son valor
 
 La magia la realiza una función llamada show
 
-```haskell
+```Haskell
 > show 3
 "3"
 > show True
@@ -333,7 +341,7 @@ La magia la realiza una función llamada show
 
 Ahora bien, no todos los valores pueden ser parámetro de la función show. Por ejemplo las funciones no tienen una representación en String
 
-```haskell
+```Haskell
 > show length
 Error
 ```
@@ -342,14 +350,14 @@ Debido a esto, cuando quieren mostrar por pantalla una lista de funciones (ej \[
 
 Veamos el tipo de la función show
 
-```haskell
+```Haskell
 show :: (Show a) => a -> String
 ```
 
 La única función que se define en la restricción Show es la función show
 
-Qué tipos pertenecen a la restricción Show? Bool, Char, Double, Float, Int, Integer, (Show a) =&gt; \[ a \] --Listas, (Show a,b) =&gt; (a,b) --Tuplas
+Qué tipos pertenecen a la restricción Show? Bool, Char, Double, Float, Int, Integer, (Show a) => \[ a \] --Listas, (Show a,b) => (a,b) --Tuplas
 
 Resumiendo: casi todos todos los tipos menos el tipo función
 
-Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? Sí! Leer en [Data: Definiendo nuestros tipos en Haskell\#Instance](data--definiendo-nuestros-tipos-en-haskell-instance.html)
+Al igual que se mencionó anteriormente para Eq, podemos hacer que un tipo de dato propio pueda ser mostrado con la función Show ya sea usando **deriving** si sólo se compone de otros datos de tipo Show o haciendo que sea instancia de Show y definiendo la función Show como querramos.
