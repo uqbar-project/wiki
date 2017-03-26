@@ -12,7 +12,7 @@ Tipos simples y compuestos
 
 Los tipos más básicos que tenemos en Haskell son los booleanos y los caracteres, que tiene los tipos y respectivamente:
 
-```Haskell
+```haskell
 Prelude> :t True
 True :: Bool
 Prelude> :t 'a'
@@ -21,7 +21,7 @@ Prelude> :t 'a'
 
 Qué podemos hacer con ellos? Algunos ejemplos con booleanos y caracteres:
 
-```Haskell
+```haskell
 Prelude> True && False
 False
 Prelude> True || False
@@ -43,7 +43,7 @@ True
 
 El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver [más adelante](tipos-de-haskell-typeclasses.html). Algunas operaciones que podemos hacer:
 
-```Haskell
+```haskell
 Prelude> 4*6
 24
 Prelude> 2+3
@@ -64,21 +64,21 @@ La división en ocasiones puede traer problemas de tipos, si tuviste problemas c
 
 Un String es simplemente una lista de caracteres; se puede escribir o :
 
-```Haskell
+```haskell
 Prelude> :t "Hola"
 "Hola" :: [Char]
 ```
 
 Más aún, para cualquier lista el tipo se escribe poniendo entre corchetes el tipo de los elementos la lista, por ejemplo una lista de booleanos:
 
-```Haskell
+```haskell
 Prelude> :t [True, False]
 [True, False] :: [Bool]
 ```
 
 También una lista de Strings (o lista de listas de caracteres):
 
-```Haskell
+```haskell
 Prelude> :t ["Hola", "Chau"]
 ["Hola", "Chau"] :: [ [Char] ]
 ```
@@ -89,28 +89,28 @@ Una tupla es también un valor compuesto. A diferencia de las listas el número 
 
 Una de las tuplas más simples que se puede imaginar es:
 
-```Haskell
+```haskell
 Prelude> :t (True, 'H')
 (True, 'H') :: (Bool, Char)
 ```
 
 es decir, una tupla compuesta por un booleano y un caracter. Sin embargo, los elementos de las tuplas también pueden ser compuestos, como un String:
 
-```Haskell
+```haskell
 Prelude> :t (True, "Hola")
 (True, "Hola") :: (Bool, [Char])
 ```
 
 o inclusive el componente de una tupla puede ser otra tupla:
 
-```Haskell
+```haskell
 Prelude> :t (False, ('H', "ola"))
 (False, ('H', "ola")) :: (Bool, (Char, [Char]))
 ```
 
 También podemos tener tuplas de más de dos componentes
 
-```Haskell
+```haskell
 Prelude> :t (True, 'H', [False])
 (True, 'H', [False]) :: (Bool, Char, [Bool])
 ```
@@ -119,7 +119,7 @@ es decir, un booleano, un caracter y una lista de booleanos.
 
 Para finalizar podemos ver un ejemplo en el que combianmos todo lo anterior (no es trivial, tomate tu tiempo para leerlo!):
 
-```Haskell
+```haskell
 Prelude> :t ([True, False, True], "Chau", [(True, "True"), (False, "False")])
   :: ([Bool], [Char], [(Bool, [Char])])
 ```
@@ -134,13 +134,13 @@ Es decir, una tupla de tres componentes, a saber:
 
 Es posible [definir nuestros propios tipos de dato](data--definiendo-nuestros-tipos-en-haskell.html) usando data para poder mejorar las abstracciones de nuestros programas y evitar algunos problemas asociados al uso de tuplas. Esto puede hacerse de la siguiente forma:
 
-```Haskell
+```haskell
 data NuevoTipo = Constructor Tipo1 Tipo2 ... TipoN
 ```
 
 Usamos el constructor, como su nombre lo indica, para construir nuestros datos de este tipo y para hacer pattern matching como hacíamos con las tuplas.
 
-```Haskell
+```haskell
 data TipoAlumno = Alumno String [Int]
 fede = Alumno "Federico" [2,3]
 nombreAlumno (Alumno nombre notas) = nombre
@@ -156,7 +156,7 @@ Haskell nos permite definir sinónimos de tipos, o sea definir un alias para un 
 
 Por ejemplo si modelamos a los alumnos como tuplas de aridad 2 cuyo primer elemento es el nombre y el segundo una lista de números que representa las notas que se sacó, podríamos definir un tipo Alumno como:
 
-```Haskell
+```haskell
 type Alumno = (String, [Int])
 ```
 
@@ -169,14 +169,14 @@ Funciones
 
 El tipo de una función que tiene un parámetro se indica relacionando mediante el símbolo la entrada o dominio de la función con la salida o imagen. Por ejemplo la función not recibe un booleano y devuelve otro:
 
-```Haskell
+```haskell
 Prelude> :t not
 not :: Bool -> Bool
 ```
 
 La función recibe un caracter y devuelve un booleano.
 
-```Haskell
+```haskell
 Prelude> :t isLower 
 isLower :: Char -> Bool
 ```
@@ -185,7 +185,7 @@ isLower :: Char -> Bool
 
 Y la función recibe una lista de booleanos y devuelve un booleano (*and*ea todos los booleanos de la lista)
 
-```Haskell
+```haskell
 Prelude> :t and
 and :: [Bool] -> Bool
 ```
@@ -198,7 +198,7 @@ Las funciones de más de un parámetro tienen alguna sutileza porque en Haskell 
 
 El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros) a la función
 
-```Haskell
+```haskell
 Prelude> :t (&&)
 (&&) :: Bool -> Bool -> Bool
 ```
@@ -209,7 +209,7 @@ La [aplicación](aplicacion.html) es uno de los temas que tal vez más confunden
 
 Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parámetros:
 
-```Haskell
+```haskell
 Prelude> :t not
 not :: Bool -> Bool
 Prelude> :t Char.isLower
@@ -224,7 +224,7 @@ En este punto es importante entender que ninguno de estos ejemplos es un *valor 
 
 Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos obtener valores booleanos:
 
-```Haskell
+```haskell
 *Main> :t not True
 not True :: Bool
 *Main> :t Char.isLower 'a'
@@ -239,7 +239,7 @@ En síntesis es un valor booleano, en cambio no es un valor booleano, es una fun
 
 Si intentamos utilizar un valor función en un lugar donde se espera un valor booleano, obtendremos un error:
 
-```Haskell
+```haskell
 *Main> not Char.isLower
 <interactive>:1:4:
      Couldn't match expected type `Bool' 
@@ -251,7 +251,7 @@ Es decir, el primer argumento de debe ser y en cambio se recibió un argumento d
 
 Similarmente:
 
-```Haskell
+```haskell
 *Main> True && not
 <interactive>:1:8:
      Couldn't match expected type `Bool' 
@@ -274,7 +274,7 @@ Nos gustaría poder definir los siguientes tipos (a.k.a dominios e imágenes)
 
 En Haskell eso se escribe de la siguiente manera
 
-```Haskell
+```haskell
 (+) :: (Num a) => a - > a -> a
 (>) :: (Ord a) => a - > a -> Bool
 (==) :: (Eq a) => a - > a -> Bool
@@ -284,7 +284,7 @@ Num, Ord y Eq son **restricciones de tipo**, en Haskell se las conoce como Typec
 
 En cada [Typeclass](typeclasses.html) se definen un conjunto de funciones que los tipos pertenecientes deben implementar
 
-```Haskell
+```haskell
 Num a
 (+), (-), (*) :: a -> a -> a
 negate, abs, signum :: a -> a
@@ -306,7 +306,7 @@ Eq a
 
 Ejemplos:
 
-```Haskell
+```haskell
 elem :: (Eq a) => a -> [ a ] -> Bool
 elem unElemento unaLista = any (unElemento==) unaLista
 
@@ -322,7 +322,7 @@ Cuando utilizamos el intérprete, los resultados de nuestras funciones son valor
 
 La magia la realiza una función llamada show
 
-```Haskell
+```haskell
 > show 3
 "3"
 > show True
@@ -333,7 +333,7 @@ La magia la realiza una función llamada show
 
 Ahora bien, no todos los valores pueden ser parámetro de la función show. Por ejemplo las funciones no tienen una representación en String
 
-```Haskell
+```haskell
 > show length
 Error
 ```
@@ -342,7 +342,7 @@ Debido a esto, cuando quieren mostrar por pantalla una lista de funciones (ej \[
 
 Veamos el tipo de la función show
 
-```Haskell
+```haskell
 show :: (Show a) => a -> String
 ```
 
