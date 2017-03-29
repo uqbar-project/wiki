@@ -37,18 +37,20 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 ### ¿Cómo empezar?
 
--   Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí]({% link_article guia-de-instalacion-de-maven %}))
-    -   en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
-    -   definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds
-    -   definir un artifactId, que se asocia al nombre de tu proyecto
+*  Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí]({% link_article guia-de-instalacion-de-maven %}))
+ * en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
+ * definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds
+ * definir un artifactId, que se asocia al nombre de tu proyecto
 
 Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" 'org.eclipse.xtext.xbase.lib'. En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
-`   `<parent>
-`       `<groupId>`org.uqbar-project`</groupId>
-`       `<artifactId>`uqbar-xtend-parent`</artifactId>
-`       `<version>`2.9.1`</version>
-`   `</parent>
+```xml
+<parent>
+     <groupId>`org.uqbar-project`</groupId>
+     <artifactId>`uqbar-xtend-parent`</artifactId>
+     <version>`2.9.1`</version>
+</parent>
+```
 
 Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o bien editando el pom.xml de tu proyecto Maven recientemente creado. Luego boton derecho, "Maven" "Update Project..."
 
@@ -59,17 +61,17 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 
 ### Tips
 
--   Para que cuando hagas New &gt; File te aparezcan las clases y las interfaces Xtend, Window &gt; Customize Perspective... &gt; solapa Menu Visibility &gt; expandís File | New &gt; y seleccionás las de xtend (Xtend class, inteface, annotation y enum).
+* Para que cuando hagas New &gt; File te aparezcan las clases y las interfaces Xtend, Window &gt; Customize Perspective... &gt; solapa Menu Visibility &gt; expandís File | New &gt; y seleccionás las de xtend (Xtend class, inteface, annotation y enum).
 
 ### Problema con el menu de Eclipse en Ubuntu 13.10
 
--   [Problema de Eclipse con Ubuntu 13.10]({% link_article problema-de-eclipse-con-ubuntu-13-10 %}})
+* [Problema de Eclipse con Ubuntu 13.10]({% link_article problema-de-eclipse-con-ubuntu-13-10 %}})
 
 ### Documentación
 
--   [Documentación oficial](http://www.eclipse.org/xtend/documentation.html)
+* [Documentación oficial](http://www.eclipse.org/xtend/documentation.html)
 
 ### Links útiles
 
--   Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
+* Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
 
