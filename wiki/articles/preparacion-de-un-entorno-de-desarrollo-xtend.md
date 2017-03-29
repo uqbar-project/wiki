@@ -3,7 +3,7 @@ layout: article
 title: Preparacion de un entorno de desarrollo xtend
 ---
 
-<img src="Xtend-logo.png" height="200px" width="150px">
+<img src="/img/wiki/Xtend-logo.png" height="200px" width="150px">
 
 ### Download e instalación base
 
