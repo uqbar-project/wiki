@@ -13,7 +13,7 @@ Como es posible que el equipo de desarrollo de Xtend saque nuevas versiones dura
 
 Para eso:
 
--   Ingresar a <https://www.eclipse.org/modeling/tmf/downloads/>
+* Ingresar a <https://www.eclipse.org/modeling/tmf/downloads/>
 
 <!-- -->
 
@@ -21,13 +21,13 @@ Para eso:
 
 <!-- -->
 
--   Iniciar el Eclipse, hacer Help &gt; Install New Software ... botón Add, Archive y seleccionar el archivo que se descargaron
+* Iniciar el Eclipse, hacer Help &gt; Install New Software ... botón Add, Archive y seleccionar el archivo que se descargaron
 
 <!-- -->
 
--   Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
+* Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
 
-{% link_image Xtend-installation.png %}
+<img src="/img/wiki/Xtend-installation.png" height="80%" width="80%">
 
 -   Reiniciar el Eclipse
 
@@ -46,9 +46,9 @@ Para que compile el código xtend dentro de un proyecto hace falta tener una lib
 
 ```xml
 <parent>
-     <groupId>`org.uqbar-project`</groupId>
-     <artifactId>`uqbar-xtend-parent`</artifactId>
-     <version>`2.9.1`</version>
+     <groupId>org.uqbar-project</groupId>
+     <artifactId>uqbar-xtend-parent</artifactId>
+     <version>2.9.1</version>
 </parent>
 ```
 
@@ -56,8 +56,8 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 
 ¿Dónde van las clases xtend?
 
--   En src/main/java
--   En src/main/generated-sources vas a tener los archivos .java que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos .java. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.
+* En src/main/java
+* En src/main/generated-sources vas a tener los archivos .java que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos .java. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.
 
 ### Tips
 
