@@ -27,9 +27,9 @@ Para eso:
 
 * Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
 
-<img src="/img/wiki/Xtend-installation.png" height="80%" width="80%">
+<img src="/img/wiki/Xtend-installation.png" height="60%" width="60%">
 
--   Reiniciar el Eclipse
+* Reiniciar el Eclipse
 
 ### Configuraciones default del eclipse
 
@@ -42,7 +42,7 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
  * definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds
  * definir un artifactId, que se asocia al nombre de tu proyecto
 
-Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" 'org.eclipse.xtext.xbase.lib'. En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
+Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" *org.eclipse.xtext.xbase.lib*. En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
 ```xml
 <parent>
