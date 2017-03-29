@@ -3,7 +3,7 @@ layout: article
 title: Preparacion de un entorno de desarrollo xtend
 ---
 
-{% link_image Xtend-logo.png %}
+<img src="Xtend-logo.png" height="200px" width="150px">
 
 ### Download e instalación base
 
@@ -37,7 +37,7 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 ### ¿Cómo empezar?
 
-*  Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí]({% link_article guia-de-instalacion-de-maven %}))
+*  Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](guia-de-instalacion-de-maven.html)
  * en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
  * definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds
  * definir un artifactId, que se asocia al nombre de tu proyecto
@@ -65,7 +65,7 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 
 ### Problema con el menu de Eclipse en Ubuntu 13.10
 
-* [Problema de Eclipse con Ubuntu 13.10]({% link_article problema-de-eclipse-con-ubuntu-13-10 %}})
+* [Problema de Eclipse con Ubuntu 13.10](problema-de-eclipse-con-ubuntu-13-10.html)
 
 ### Documentación
 
