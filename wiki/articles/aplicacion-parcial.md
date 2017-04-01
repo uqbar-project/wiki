@@ -7,38 +7,37 @@ Por aplicación parcial se entiende a la [aplicación de una función](aplicacio
 
 Por ejemplo, las siguientes expresiones presentan aplicación parcial:
 
--   `map` `fst`
+-   `take 3`
 -   `(+1)`
--   `foldl` `(+)`
--   `foldl` `(+)` `0`
+-   `max "hola"`
 
-Para visualizar mejor la transformación que ocurre al aplicar parcialmente una función pueden consultar el tipo de la función map y de la función map fst usando :t en el editor de Haskell. Podemos realizar un análisis en función del tipo de las expresiones anteriores, cuantos más parámetros se aplican menor aridad (cantidad de parámetros) tiene la función resultante:
+Para visualizar mejor la transformación que ocurre al aplicar parcialmente una función pueden consultar el tipo de las funciones sin aplicar y parcialmente aplicadas usando :t en el editor de Haskell. Podemos realizar un análisis en función del tipo de las expresiones anteriores, cuantos más parámetros se aplican menor aridad (cantidad de parámetros) tiene la función resultante:
 
-`*Main> :t map`
-`map :: (a -> b) -> [a] -> [b]`
-`*Main> :t map fst`
-`map fst :: [(b, b1)] -> [b]`
+```Haskell
+*Main> :t take
+take :: Int -> [a] -> [a]
+*Main> :t take 3
+take 3 :: [a] -> [a]
 
-`*Main> :t (+)`
-`(+) :: Num a => a -> a -> a`
-`*Main> :t (+1)`
-`(+1) :: Num a => a -> a`
+*Main> :t (+)
+(+) :: Num a => a -> a -> a
+*Main> :t (+1)
+(+1) :: Num a => a -> a
 
-`*Main> :t foldl`
-`foldl :: (a -> b -> a) -> a -> [b] -> a`
-`*Main> :t foldl (+)`
-`foldl (+) :: Num b => b -> [b] -> b`
-`*Main> :t foldl (+) 0`
-`foldl (+) 0 :: Num b => [b] -> b`
+*Main> :t max
+max :: Ord a => a -> a -> a
+*Main> :t max "hola"
+max "hola" :: [Char] -> [Char]
+```
 
-En el caso de map fst y del fold (+) vemos también que no sólo disminuyó la cantidad de parámetros, sino que el tipo de la función resultante es más particular, ya que fst obliga a que la lista sea una lista de duplas y el + a que la lista y el valor inicial del foldl sean números.
+En el caso de max "hola" vemos también que no sólo disminuyó la cantidad de parámetros, sino que el tipo de la función resultante es más particular, ya que "hola" obliga a que el otro valor esperado por el max también sea de tipo String para poder compararlos y determinar cuál es mayor en orden alfabético.
 
 Las siguientes funciones no están aplicadas parcialmente:
 
--   `all` (no está aplicada)
+-   `take` (no está aplicada)
 -   `odd` (no está aplicada)
--   `odd` `3` (está completamente aplicada, esta expresión no es de tipo función sino que es un booleano)
--   `filter` `(>5)` `[4,5,9,10]` (está completamente aplicada, esta expresión no es de tipo función sino que es una lista de números)
+-   `odd 3` (está completamente aplicada, esta expresión no es de tipo función sino que es un booleano)
+-   `max 0 3` (está completamente aplicada, esta expresión no es de tipo función sino que es un número)
 
 Una consecuencia de esto es que sólo pueden aplicarse parcialmente funciones de 2 o más argumentos. Para que la aplicación parcial exista, es necesario que las funciones estén currificadas (ver [Currificación](currificacion.html)).
 
@@ -57,7 +56,7 @@ Nosotros esperaríamos que nos diga True, pero vamos a tener un error de tipos:
 
 ``    Couldn't match expected type `[ [Char] ]' with actual type `Char' ``
 
-Esto sucede porque si a elem le aplicamos un String (equivalente a \[Char\]), el resultado va a ser una función de tipo \[ \[Char\] \] -&gt; Bool
+Esto sucede porque si a elem le aplicamos un String (equivalente a \[Char\]), el resultado va a ser una función de tipo \[ \[Char\] \] -> Bool
 
 Formas posibles de resolverlo:
 
@@ -75,6 +74,6 @@ Podemos aprovechar ese feature para aplicar el segundo parámetro y no el primer
 
 **Usando la función flip**
 
-En Haskell existe una función de [Orden Superior](orden-superior.html) llamada flip cuyo tipo es `(a` `->` `b` `->` `c)` `->` `b` `->` `a` `->` `c`, y sirve justamente para resolver esta clase de problemas ya que lo que hace es aplicar la función que recibe con los parámetros en el orden inverso al que le llegan. Podríamos usar flip parcialmente aplicada para lograr nuestro objetivo.
+En Haskell existe una función de [Orden Superior](orden-superior.html) llamada flip cuyo tipo es `(a -> b -> c) -> b -> a -> c`, y sirve justamente para resolver esta clase de problemas ya que lo que hace es aplicar la función que recibe con los parámetros en el orden inverso al que le llegan. Podríamos usar flip parcialmente aplicada para lograr nuestro objetivo.
 
 `esExotico nombre = any (flip elem "XKQWxkqw") nombre`
