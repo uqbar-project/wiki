@@ -116,31 +116,22 @@ not . even
 
 **son distintas**: la primera *denota* un *valor booleano* (True o False) mientras que la segunda denota *una función*.
 
-Esta segunda expresión es más poderosa que la primera, porque me permite que yo la use en funciones de orden superior, por ejemplo
+Esta segunda expresión es más poderosa en cuanto a que nos permite hacer más cosas que la primera, ya que la construcción de la función independiente de su aplicación sirve, por ejemplo, para trabajar con [funciones de orden superior](orden-superior.html).
 
-```haskell
-filter (not.even) [1,2,3,4,5,6,7,8,9]
-```
-
-En cuanto a la definición de función , no tiene grandes ventajas sobre salvo que nos ayuda a entrenarnos en el uso de la composición, que después podemos utilizar para otras cosas.
-
-Aunque en funciones más complejas puede tener su utilidad, para un ejemplo de esto vean: [Append como "foldr f a"](Append_como_"foldr_f_a" "wikilink").
+En cuanto a la definición de función, no tiene grandes ventajas sobre salvo que nos ayuda a entrenarnos en el uso de la composición, que después podemos utilizar para otras cosas. Sin embargo, una de las virtudes asociadas si se reemplazan muchas aplicaciones anidadas por composición de funciones podría implicar un código más limpio, porque la sintaxis de Haskell está diseñada de modo que eso suceda.
 
 Errores comunes
 ---------------
 
 ### Ejemplo
 
-Supongamos una lista de alumnos representados con tuplas de tipo (nombre::String, nota::Int). Queremos obtener los nombres de los alumnos aprobados (nota &gt;= 4).
+Supongamos una lista de alumnos de los cuales se sabe su nombre y su nota. Queremos obtener los nombres de los alumnos aprobados.
 
 Podemos suponer además la existencia de las funciones:
 
 ```haskell
-nombre (nom, _) = nom
-aprobado (_, not) = not >= 4
-
-nombres alumnos = map nombre alumnos
-aprobados alumnos = filter aprobado alumnos
+nombres :: [Alumno] -> [String]
+aprobados :: [Alumno] -> [Alumno]
 ```
 
 Un error que veo con frecuencia es hacer:
@@ -176,7 +167,7 @@ nombreDeAprobados = nombres . aprobados
   
 Claramente son funciones las dos expresiones a ambos lados del ".". (Notese que a la derecha del "=" también hay un parámetro menos.)
 
-Pueden encontrar otro ejemplo sobre esta clase de errores en [ Errores con composición y aplicación parcial](errores-comunes-al-comenzar-a-trabajar-con-haskell-composicion-y-aplicacion-parcial.html)
+Pueden encontrar otro ejemplo sobre esta clase de errores en [ Errores con composición y aplicación parcial](errores-comunes-al-comenzar-a-trabajar-con-haskell.html)
 
 ### Composición vs. Aplicación
 
