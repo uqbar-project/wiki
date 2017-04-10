@@ -12,7 +12,7 @@ Recordemos que `even` es una función que recibe un número, y devuelve un boole
 
 Hagamos estas consultas en la consola (El simbolito `>` al inicio de la línea indica que se está haciendo una consulta):
 
-```Haskell
+```haskell
 > even 6 
 True
 > not True
@@ -25,7 +25,7 @@ Aquí se ve que **`not`** es una función recibe un Bool (y que devuelve el bool
 
 Hay otras funciones que devuelven booleanos:
 
-```Haskell
+```haskell
 > 5 < 1
 True`
 > "mama" == "papa"
@@ -34,7 +34,7 @@ False
 
 Entonces, si queremos que una función devuelva un booleano, basta con devolver el mismo resultado que obtuvimos. Por ejemplo,
 
-```Haskell
+```haskell
 --"la golondrina pepita está empachada si su energía es mayor que 100"
 estaEmpachada energia = energia > 100
 ```
@@ -42,7 +42,7 @@ estaEmpachada energia = energia > 100
 Conjunción y Disjunción Lógica
 ------------------------------
 
-```Haskell
+```haskell
 > True || False
 True
 > True && False
