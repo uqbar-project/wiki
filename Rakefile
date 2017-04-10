@@ -22,10 +22,10 @@ desc "Check the generated page with html proofer"
 task :test do
   begin
     HTMLProofer.check_directory("./_site", {:external_only => true,
-                                            :parallel => {:in_processes => 3},
+                                            :parallel => {:in_processes => 6},
                                             :cache => {:timeframe => '2w'},
                                             :typhoeus => {:headers => {"User-Agent" => "Mozilla/5.0 (compatible; My New User-Agent)"}},
-                                            :url_ignore => []}).run
+                                            :url_ignore => ['/wiki/', '/wiki.uqbar.org/']}).run
   rescue => e
     puts "#{e.class}: #{e.message}"
   end
