@@ -37,7 +37,23 @@ Main> even
      (...)
 ```
 
-Así que recomendamos escribir esto arriba de todo en su archivo .hs:
+#### Solución rápida 1
+Arriba de todo en el archivo .hs escribir:
+
+```Haskell
+import Text.Show.Functions
+```
+
+Esto hace que las funciones sean mostrables:
+
+```Haskell
+Main> even
+<function>
+```
+
+#### Solución rápida 2
+
+En realidad, técnicamente lo que estamos haciendo al hacer el import de Text.Show.Functions es lo mismo que agregar esto al principio de nuestro archivo:
 
 ```Haskell
 instance Show (a -> b) where
