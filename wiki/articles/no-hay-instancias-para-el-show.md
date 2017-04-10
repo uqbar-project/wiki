@@ -56,6 +56,6 @@ Explicación
 
 <Sección en construcción>
 
-Para entender más sobre el tema, se recomienda la lectura de [Definiendo nuestros Tipos](/wiki/articles/data--definiendo-nuestros-tipos-en-haskell.html)
+Para entender más sobre el tema, se recomienda la lectura de [Definiendo nuestros Tipos](data--definiendo-nuestros-tipos-en-haskell.html)
 
 También se recomienda la lectura de Learn you a Haskell, el capítulo sobre [clases de tipos](http://aprendehaskell.es/content/Tipos.html#clases-de-tipos-paso-a-paso-1a-parte)
