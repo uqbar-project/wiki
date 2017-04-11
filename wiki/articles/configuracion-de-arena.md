@@ -38,11 +38,13 @@ Lo que deben tener tus pom.xml
 
 Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomendamos) tenés que definir esta dependencia
 
+{% highlight xml %}
 <dependency>
-`   `<groupId>`org.uqbar-project`</groupId>
-`   `<artifactId>`uqbar-domain`</artifactId>
-`   `<version>`3.6.1`</version>
+  <groupId>org.uqbar-project</groupId>
+  <artifactId>uqbar-domain</artifactId>
+  <version>3.6.1</version>
 </dependency>
+{% endhighlight %}
 
 ### Dependencias para proyectos de UI
 
@@ -53,27 +55,31 @@ Agregar dos referencias en el pom
 
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
-`   `<dependencies>
-`       `<dependency>
-`           `<groupId>`org.uqbar-project`</groupId>
-`           `<artifactId>`arena-jface`</artifactId>
-`           `<version>`3.6.1`</version>
-`       `</dependency>
-`       `<dependency>
-`           `<groupId>`uqbar-project.org`</groupId>
-`           `<artifactId>`videoclub-domain`</artifactId>
-`           `<version>`1.0.0-SNAPSHOT`</version>
-`       `</dependency>
-`   `</dependencies>
+{% highlight xml %}
+<dependencies>
+  <dependency>
+    <groupId>org.uqbar-project</groupId>
+    <artifactId>arena-jface</artifactId>
+    <version>3.6.1</version>
+  </dependency>
+  <dependency>
+    <groupId>uqbar-project.org</groupId>
+    <artifactId>videoclub-domain</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </dependency>
+</dependencies>
+{% endhighlight %}
 
 Las otras dependencias como JUnit se toman de la definición del parent project, en caso de ser necesario se debe agregar a mano:
 
-`       `<dependency>
-`           `<groupId>`junit`</groupId>
-`           `<artifactId>`junit`</artifactId>
-`           `<version>`4.11`</version>
-`           `<scope>`test`</scope>
-`       `</dependency>
+{% highlight xml %}
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.11</version>
+  <scope>test</scope>
+</dependency>
+{% endhighlight %}
 
 Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "arena-jface", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
 
@@ -82,11 +88,13 @@ Arena y Xtend
 
 Si estás trabajando Arena-UI desde xtend, este parent contiene todas las dependencias que necesitás (JUnit, el compilador Xtend, Arena UI, Uqbar Domain, etc.):
 
+{% highlight xml %}
 <parent>
-`    `<groupId>`org.uqbar-project`</groupId>
-`    `<artifactId>`arena-xtend-parent`</artifactId>
-`    `<version>`3.6.2`</version>
+  <groupId>org.uqbar-project</groupId>
+  <artifactId>arena-xtend-parent</artifactId>
+  <version>3.6.2</version>
 </parent>
+{% endhighlight %}
 
 ### Integración con Xtend
 
@@ -132,24 +140,28 @@ A las configuraciones generales del pom.xml (referenciar al parent-project y las
 
 -   Dependencias: el plugin para groovy
 
+{% highlight xml %}
 <dependencies>
-`   `<dependency>
-`       `<groupId>`org.codehaus.mojo`</groupId>
-`       `<artifactId>`build-helper-maven-plugin`</artifactId>
-`       `<version>`1.8`</version>
-`   `</dependency>
-`   `<dependency>
-`       `<groupId>`uqbar`</groupId>
-`       `<artifactId>`arena-jface`</artifactId>
-`       ...`
+  <dependency>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <version>1.8</version>
+  </dependency>
+  <dependency>
+    <groupId>uqbar</groupId>
+    <artifactId>arena-jface</artifactId>
+...
 </dependencies>
+{% endhighlight %}
 
 -   Y definir el directorio donde están los fuentes como src/main/groovy en lugar de src/main/java que es el default para Maven:
 
+{% highlight xml %}
 <build>
-`   `<sourceDirectory>`src/main/groovy`</sourceDirectory>
-`   `<testSourceDirectory>`src/test/groovy`</testSourceDirectory>
-`...`
+  <sourceDirectory>src/main/groovy</sourceDirectory>
+  <testSourceDirectory>src/test/groovy</testSourceDirectory>
+...
+{% endhighlight %}
 
 Podés utilizar alguno de nuestros pom.xml como ejemplo.
 
@@ -190,32 +202,34 @@ Esto se debe a que no se encuentra un plugin que integra Scala con Maven para Ec
 
 {% link_image ErrorPluginExecutionQuickFix.jpg %}
 
-La primer opción es ignorar este plugin solicitado ya que Maven por si solo puede compilar el proyecto sin éste y puedo correr el programa de igual forma. Esto se logra seleccionando la opción **Mark goal add-source as ignored in Eclipse build in Eclipse preferences (Experimental)**. Esta acción la debo realizar tres veces (una por cada error declarado). El resultado es la creación de un archivo XML en la ruta *..../MiWorkspace/.metadata/.plugins/org.eclipse.m2e.core/lifecycle-mapping-metadata.xml* con el siguiente código:
+La primer opción es ignorar este plugin solicitado ya que Maven por si solo puede compilar el proyecto sin éste y puedo correr el programa de igual forma. Esto se logra seleccionando la opción **Mark goal add-source as ignored in Eclipse build in Eclipse preferences (Experimental)**. Esta acción la debo realizar tres veces (una por cada error declarado). El resultado es la creación de un archivo XML en la ruta `.../MiWorkspace/.metadata/.plugins/org.eclipse.m2e.core/lifecycle-mapping-metadata.xml` con el siguiente código:
 
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <lifecycleMappingMetadata>
-`  `<pluginExecutions>
-`    `<pluginExecution>
-`      `<pluginExecutionFilter>
-`        `<groupId>`net.alchim31.maven`</groupId>
-`        `<artifactId>`scala-maven-plugin`</artifactId>
-`        `<versionRange>`3.1.5`</versionRange>
-`        `<goals>
-`          `<goal>`testCompile`</goal>
-`          `<goal>`compile`</goal>
-`          `<goal>`add-source`</goal>
-`        `</goals>
-`      `</pluginExecutionFilter>
-`      `<action>
-`        `<ignore />
-`      `</action>
-`    `</pluginExecution>
-`  `</pluginExecutions>
+  <pluginExecutions>
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <versionRange>3.1.5</versionRange>
+        <goals>
+          <goal>testCompile</goal>
+          <goal>compile</goal>
+          <goal>add-source</goal>
+        </goals>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+  </pluginExecutions>
 </lifecycleMappingMetadata>
+{% endhighlight %}
 
 La otra opción es seleccionar **Discover new m2e connectors**. Esta instala el plugin faltante y soluciona el error. Otro camino para realizar la misma acción puede ser ir a *Window-&gt;Preferences-&gt;Maven-&gt;Discovery-&gt;Open Catalog*.
 
-![](ErrorPluginexecutionDiscover.jpg "ErrorPluginexecutionDiscover.jpg")
+{% link_image ErrorPluginexecutionDiscover.jpg %}
 
 ### Checkout desde el SVN
 
