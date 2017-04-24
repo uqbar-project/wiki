@@ -27,7 +27,7 @@ Hay otras funciones que devuelven booleanos:
 
 ```haskell
 > 5 < 1
-True`
+True
 > "mama" == "papa"
 False
 ```
@@ -87,33 +87,33 @@ False
 
 ### Problemas con Booleanos y Guardas
 
--   Ver [Funciones\_por\_Partes\#Errores\_Comunes](funciones-por-partes-errores-comunes.html)
+-   En [Funciones\_por\_Partes\#Errores\_Comunes](funciones-por-partes.html) hay algunos errores comunes.
 
-=== Mal Uso de Booleanos (algo == True) === Una variante de los problemas con Guardas es lo siguiente:
+#### Mal Uso de Booleanos (algo == True)
+
+Una variante de los problemas con Guardas es lo siguiente:
 
 ```Haskell
-comentarioPara nota | estaAprobada nota == False = "Segui Participando"
-                    | nota < 7 == True = "Bien, loco!"
-                    | otherwise = "Sos un crack"
+desaprueba nota = estaAprobada nota == False
+pierdePromocion nota = estaAprobada nota == True && nota < 8
 ```
 
-Ese código está mal. ¿Por qué? Porque **estaAprobada ya devuelve un Booleano**. De la misma manera **la función menor también devuelve un Booleano**. Entonces, en el caso del menor, está demás la comparación por True. Y en el caso del está aprobada, si lo que necesito es el opuesto del booleano, entonces debo usar la función not:
+Ese código está mal. ¿Por qué? Porque **estaAprobada ya devuelve un Booleano**. De la misma manera **la función menor también devuelve un Booleano**. Entonces, en el caso de pierdePromocion, está demás la comparación por True. Y en el caso del desaprobada, si lo que necesito es el opuesto del booleano, entonces debo usar la función not:
 
 ```Haskell
-comentarioPara nota | not (estaAprobada nota) = "Segui Participando"
-                    | nota < 7 = "Bien, loco!"
-                    | otherwise = "Sos un crack"
+desaprueba nota = not (estaAprobada nota)
+pierdePromocion nota = estaAprobada nota && nota < 8
 ```
 
 Ese código es el correcto. Comprobamos así:
 
 ```Haskell
-> estaAprobada 5 == False
+> estaAprobada 7 == False
 True
-> not (estaAprobada 5)
+> not (estaAprobada 7)
 True
-> 5 < 7 == True
+> estaAprobada 7 == True
 True
-> 5 < 7
+> estaAprobada 7
 True
 ```
