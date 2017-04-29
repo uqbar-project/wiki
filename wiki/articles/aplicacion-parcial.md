@@ -77,3 +77,65 @@ Podemos aprovechar ese feature para aplicar el segundo parámetro y no el primer
 En Haskell existe una función de [Orden Superior](orden-superior.html) llamada flip cuyo tipo es `(a -> b -> c) -> b -> a -> c`, y sirve justamente para resolver esta clase de problemas ya que lo que hace es aplicar la función que recibe con los parámetros en el orden inverso al que le llegan. Podríamos usar flip parcialmente aplicada para lograr nuestro objetivo.
 
 `esExotico nombre = any (flip elem "XKQWxkqw") nombre`
+
+Ejemplos de aplicación parcial
+-------------------------------------------------------------------
+### Uso
+Suponiendo que se tiene una función genérica como el between, genérica porque tiene bocha de parámetros:
+
+```haskell
+between menor mayor nro = menor <= nro && nro <= mayor
+```
+
+Y se usa así:
+
+```haskell
+> between 5 10 7
+True
+```
+
+Podés hacer nuevas funciones a partir de esa, aplicando parcialmente.
+Por ejemplo, podés hacer una función más específica, que tome, en vez de tres cosas, sólo una:
+
+```haskell
+(between 18 65)
+```
+
+¡Porque le falta un parámetro!
+
+Y se puede usar para componer:
+
+```haskell
+debeVotar persona = (between 18 65 . edad) persona
+```
+
+## Ejemplo
+
+Supongamos que trabajamos para Spotify. Recién estamos empezando, y tenemos que modelar las canciones y los usuarios en Haskell.
+Elegimos modelarlos con data, donde cada canción tiene un nombre, la cantidad de likes y dislikes; y cada usuario tiene un nombre de usuario y un número que representa hace cuántos años usa Spotify:
+
+```haskell
+data Cancion = UnaCancion String Float Float
+data Usuario = UnUsuario String Float
+```
+
+Para decidir si poner una canción en la pantalla de inicio de un usuario, el Sr. Spotify nos comenta que usan un algoritmo muy raro, 
+con un cálculo llamado tasaDeRecomendabilidad, que depende tanto de la canción como del usuario; y ponen una canción en la pantalla de inicio de alguien si esa tasa da mayor a 1000. El cálculo de la tasaDeRecomendabilidad es una formulita que nos dan ellos, y nos dicen que se calcula así:
+
+```haskell
+tasaDeRecomendabilidad (UnUsuario _ antiguedad) (UnaCancion _ likes dislikes) = likes / dislikes * antiguedad + likes * pi / 29
+```
+
+Notar que el cálculo es ridículamente extraño (pero nosotros nos abstraemos de él). Y deciden si la tasa pasa su evaluación así:
+
+```haskell
+esTasaRecomendable tasa = tasa > 1000
+```
+
+Nos delegan escribir cómo decidir si una canción se pone en la pantalla de inicio de un usuario. Entonces hacemos:
+
+```haskell
+vaEnPantallaDeInicioDe usuario cancion = (esTasaRecomendable.tasaDeRecomendabilidad usuario) cancion
+```
+
+Acá, tasaDeRecomendabilidad es una función de 2 parámetros, pero como ya le pasamos uno, tasaDeRecomendabilidad usuario es una función de 1 parámetro. Porque ahora sólo espera 1 parámetro, no 2 (el primero ya lo tiene).
