@@ -109,7 +109,7 @@ Y se puede usar para componer:
 debeVotar persona = (between 18 65 . edad) persona
 ```
 
-## Ejemplo
+### Ejemplo
 
 Supongamos que trabajamos para Spotify. Recién estamos empezando, y tenemos que modelar las canciones y los usuarios en Haskell.
 Elegimos modelarlos con data, donde cada canción tiene un nombre, la cantidad de likes y dislikes; y cada usuario tiene un nombre de usuario y un número que representa hace cuántos años usa Spotify:
