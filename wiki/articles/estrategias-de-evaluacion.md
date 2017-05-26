@@ -14,39 +14,57 @@ La operación que realizamos en funcional es aplicar funciones, la idea del tema
 Primer ejemplo
 ==============
 
-`  masUno x = x + 1`
+```Haskell
+  masUno x = x + 1
+```
 
 La expresión masUno (2\*3) puede ser evaluada de la siguiente forma
 
-`  masUno (2*3)`
+```Haskell
+  masUno (2*3)
+```
 
 -   aplicamos \*
 
-`  masUno 6`
+```Haskell
+  masUno 6
+```
 
 -   aplicamos masUno
 
-`  6 + 1`
+```Haskell
+  6 + 1
+```
 
 -   aplicamos +
 
-`  7`
+```Haskell
+  7
+```
 
 Alternativamente podemos evaluar la misma expresión pero aplicando las funciones en el orden inverso
 
-`  masUno (2*3)`
+```Haskell
+  masUno (2*3)
+```
 
 -   aplicamos masUno
 
-`  (2*3) + 1`
+```Haskell
+  (2*3) + 1
+```
 
 -   aplicamos \*
 
-`  6 + 1`
+```Haskell
+  6 + 1
+```
 
 -   aplicamos +
 
-`  7`
+```Haskell
+  7
+```
 
 No importa el orden en que apliquemos las funciones vamos a llegar al mismo resultado final. Esto no solo vale para ejemplos sencillos sino que se cumple siempre en Haskell.
 
@@ -56,35 +74,51 @@ Si tenemos la expresión n + (n := 1) y n empieza apuntando a 0.
 
 Si empezamos a evaluar de izquierda a derecha
 
-` n + (n := 1)`
+```Haskell
+ n + (n := 1)
+```
 
 -   aplicamos n
 
-` 0 + (n := 1)`
+```Haskell
+ 0 + (n := 1)
+```
 
 -   aplicamos :=
 
-` 0 + 1`
+```Haskell
+ 0 + 1
+```
 
 -   aplicamos +
 
-` 1`
+```Haskell
+ 1
+```
 
 Si empezamos a evaluar de derecha a izquierda
 
-` n + (n:= 1)`
+```Haskell
+ n + (n:= 1)
+```
 
 -   aplicamos :=
 
-` n + 1`
+```Haskell
+ n + 1
+```
 
 -   aplicamos n
 
-` 1 + 1`
+```Haskell
+ 1 + 1
+```
 
 -   aplicamos +
 
-` 2`
+```Haskell
+ 2
+```
 
 Como se puede observar, si evaluamos las expresiones con distintas estrategias obtenemos resultados distintos; esto sucede porque las operaciones involucradas no tienen [ transparencia referencial](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html) en este caso particular debido a la introducción de una [ asignación destructiva](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html).
 
@@ -93,7 +127,9 @@ Estrategias básicas
 
 A una expresión que consta de una función aplicada a uno o más parámetros y que puede ser "reducida" aplicando dicha función la vamos a llamar Redex (Reducible Expression). Se le dice reducción al hecho de aplicar la función no necesariamente vamos a obtener una expresión "más corta" como veremos más adelante. Consideremos la función mult que tiene como dominio una tupla de 2 números
 
-` mult (x,y) = x * y`
+```Haskell
+ mult (x,y) = x * y
+```
 
 Si queremos reducir la expresión mult (1+2,2+3) está expresión contiene 3 redexs
 
@@ -110,23 +146,33 @@ También conocida como call-by-value
 
 Una de las estrategias más comunes es comenzar desde adentro hacia afuera (innermost evaluation), esta estrategia elige el redex que está "más adentro" entendiendo por esto al redex que no contiene otro redex. Si existe más de un redex que cumple dicha condición se elige el que está más a la izquierda. Vamos al ejemplo
 
-` mult (1+2,2+3)`
+```Haskell
+ mult (1+2,2+3)
+```
 
 -   aplicamos el primer +
 
-` mult (3,2+3)`
+```Haskell
+ mult (3,2+3)
+```
 
 -   aplicamos el +
 
-` mult (3,5)`
+```Haskell
+ mult (3,5)
+```
 
 -   aplicamos mult
 
-` 3 * 5`
+```Haskell
+ 3 * 5
+```
 
 -   aplicamos \*
 
-` 15`
+```Haskell
+ 15
+```
 
 Esta estrategia me asegura que los parámetros de una función están completamente evaluados antes de que la función sea aplicada. Por eso se dice que los parámetros se pasan por valor.
 
@@ -141,19 +187,27 @@ mult (1+2,2+3)
 
 -   aplicamos mult
 
-` (1+2) * (2+3)`
+```Haskell
+ (1+2) * (2+3)
+```
 
 -   aplicamos el primer + (Si seguimos lo que dijimos arriba deberíamos aplicar primero el \* pero vamos a explicar porque no lo hacemos más abajo)
 
-`  3 * (2+3)`
+```Haskell
+  3 * (2+3)
+```
 
 -   aplicamos +
 
-`  3 * 5`
+```Haskell
+  3 * 5
+```
 
 -   aplicamos \*
 
-`  15`
+```Haskell
+  15
+```
 
 Usando esta estrategia las funciones se aplican antes que los parámetros sean evaluados. Por esto se dice que los parámetros se pasan por nombre. Nota: Hay que tener en cuenta que muchas funciones que ya vienen con Haskell requieren que sus parámetros estén evaluados antes de que la función sea aplicada, incluso cuando usamos la estrategia "de afuera hacia adentro". Por ejemplo, el operador \* y el + no pueden ser aplicados hasta que sus dos parámetros hayan sido evaluados a números. A las funciones que cumplen con esta propiedad las vamos a llamar funciones estrictas. Funciones estrictas que nos van a interesar a nosotros:
 
@@ -165,49 +219,69 @@ Evaluaciones que no terminan
 
 Tengan en cuenta la siguiente definición
 
-` inf = 1 + inf`
+```Haskell
+ inf = 1 + inf
+```
 
 Intentar reducir la expresión inf siempre nos va a dar como resultado una expresión más y más grande (independientemente de la estrategia de evaluación que usemos)
 
-` inf`
+```Haskell
+ inf
+```
 
 -   aplicamos inf
 
-` 1 + inf`
+```Haskell
+ 1 + inf
+```
 
 -   aplicamos inf (porque + es estricta)
 
-` 1 + (1 + inf)`
+```Haskell
+ 1 + (1 + inf)
+```
 
 -   aplicamos inf (porque + es estricta)
 
 ....
 
-` 1 + (1 + (1 + (1 + (1 + (1 + .... + inf )))))`
+```Haskell
+ 1 + (1 + (1 + (1 + (1 + (1 + .... + inf )))))
+```
 
 Por ende, está evaluación nunca terminaría.
 
 Sabiendo que
 
-` fst (x,_) = x`
+```Haskell
+ fst (x,_) = x
+```
 
 Consideremos la expresión fst (0,inf)
 
 Usando la estrategia call-by-value
 
-` fst (0,inf)`
+```Haskell
+ fst (0,inf)
+```
 
 -   aplicamos inf
 
-` fst (0, 1 + inf )`
+```Haskell
+ fst (0, 1 + inf )
+```
 
 -   aplicamos inf
 
-` fst (0, 1 + (1 + inf) )`
+```Haskell
+ fst (0, 1 + (1 + inf) )
+```
 
 -   aplicamos inf
 
-` fst (0, 1 + (1 + (1 + inf) ) )`
+```Haskell
+ fst (0, 1 + (1 + (1 + inf) ) )
+```
 
 -   aplicamos inf
 
@@ -217,11 +291,15 @@ Usando call-by-value la evaluación de la expresión no termina.
 
 Usemos call-by-name:
 
-` fst (0,inf)`
+```Haskell
+ fst (0,inf)
+```
 
 -   aplicamos fst
 
-` 0`
+```Haskell
+ 0
+```
 
 Usando call-by-name la expresión se evalúa por completo con solo una reducción. En este ejemplo se puede ver que ciertas expresiones que pueden no terminar cuando se evalúan con la estrategia call-by-value pueden terminar cuando se usa la estrategia call-by-name.
 
@@ -237,43 +315,63 @@ Visión técnica
 
 Si tenemos la siguiente definición
 
-` alCuadrado x = x * x`
+```Haskell
+ alCuadrado x = x * x
+```
 
 Vamos a evaluar la expresión alCuadrado (2\*3) usando call-by-value
 
-` alCuadrado (1+2)`
+```Haskell
+ alCuadrado (1+2)
+```
 
 -   aplicamos +
 
-` alCuadrado 3`
+```Haskell
+ alCuadrado 3
+```
 
 -   aplicamos alCuadrado
 
-` 3 * 3`
+```Haskell
+ 3 * 3
+```
 
 -   aplicamos \*
 
-` 9`
+```Haskell
+ 9
+```
 
 Ahora vamos a evaluar la misma expresión usando call-by-name
 
-` alCuadrado (1+2)`
+```Haskell
+ alCuadrado (1+2)
+```
 
 -   aplicamos alCuadrado el primer +
 
-` (1+2) * (1+2)`
+```Haskell
+ (1+2) * (1+2)
+```
 
 -   aplicamos el +
 
-` 3 * (1+2)`
+```Haskell
+ 3 * (1+2)
+```
 
 -   aplicamos el \*
 
-` 3 * 3`
+```Haskell
+ 3 * 3
+```
 
 -   aplicamos el \*
 
-` 9`
+```Haskell
+ 9
+```
 
 Llegamos la mismo resultado pero en el segundo ejemplo realizamos una reducción más (4 reducciones vs 3 reducciones).
 
@@ -283,19 +381,27 @@ Corolario: cuando usamos call-by-value los parámetros son evaluados una y solo 
 
 Para evitar este quilombo en vez de tener la expresión (1+2) vamos a tener un "puntero a la expresión" llamémoslo p.
 
-`alCuadrado (1+2)`
+```Haskell
+alCuadrado (1+2)
+```
 
 -   aplicamos alCuadrado
 
-`let p = (1+2) in p * p`
+```Haskell
+let p = (1+2) in p * p
+```
 
 -   aplicamos +
 
-`let p = 3 in p * p`
+```Haskell
+let p = 3 in p * p
+```
 
 -   aplicamos \*
 
-` 9`
+```Haskell
+ 9
+```
 
 Cualquier reducción que se haga en una expresión se va a conocer automáticamente por los punteros a dicha expresión. Al uso de punteros para compartir expresiones que representan la mismo parámetro lo vamos a llamar Sharing. Al uso de la estrategia call-by-name más el Sharing lo vamos a llamar Lazy Evaluation (esta es la estrategia que usa Haskell). El Sharing nos asegura que usar Lazy Evaluation nunca requiera más pasos que la estrategia call-by-value.
 
@@ -313,19 +419,27 @@ Estructuras infinitas
 
 Pensemos en la siguiente definición
 
-`  unos = 1 : unos`
+```Haskell
+  unos = 1 : unos
+```
 
 (A partir de ahora vamos a pensar que evaluamos todo en Haskell así que la estrategia que usamos es Lazy Evaluation)
 
-` unos`
+```Haskell
+ unos
+```
 
 -   aplicamos unos
 
-` 1 : unos`
+```Haskell
+ 1 : unos
+```
 
 -   aplicamos unos
 
-` 1 : ( 1 : unos )`
+```Haskell
+ 1 : ( 1 : unos )
+```
 
 -   aplicamos unos
 
@@ -333,22 +447,30 @@ Pensemos en la siguiente definición
 
 En Haskell
 
-`  > unos`
-`   [1,1,1,1,1,1,1........`
+```Haskell
+  > unos
+   [1,1,1,1,1,1,1........
+```
 
 Como se puede ver la evaluación de unos no termina. A pesar de esto podemos usar la expresión unos dentro de nuestro programa y aplicarla a otras funciones. Por ejemplo
 
 Siendo head (x:\_) = x y la expresión head unos
 
-` head unos`
+```Haskell
+ head unos
+```
 
 -   deberíamos aplicar head pero como head me fuerza a tener la lista separada en cabeza:cola tenemos que evaluar unos por el pattern-matching
 
-` head (1:unos)`
+```Haskell
+ head (1:unos)
+```
 
 -   aplicamos head
 
-` 1`
+```Haskell
+ 1
+```
 
 Con este ejemplo podemos ver que unos no es una lista infinita sino potencialmente infinita, si aplicamos sobre ella funciones que no la fuerzan a evaluarse por completo la computación termina (eso sonó apocalíptico). La potencia de Lazy Evaluation está en que la expresión unos se evalúa solo lo necesario para que pueda usarla la función que la recibe como parámetro.
 
@@ -357,116 +479,161 @@ Listas infinitas
 
 Ya vimos la lista de unos que es "infinita", ahora veamos como hacer una lista que tenga todos los números naturales
 
-` naturalesDesde x = x : naturalesDesde (x+1)`
+```Haskell
+ naturalesDesde x = x : naturalesDesde (x+1)
+```
 
-` > naturalesDesde 1`
-`   [1,2,3,4,5,6,7,8,9,...........`
+```Haskell
+ > naturalesDesde 1
+   [1,2,3,4,5,6,7,8,9,...........
+```
 
 Haskell trae un atajo para esto
 
-` naturalesDesde x = [x..]`
+```Haskell
+ naturalesDesde x = [x..]
+```
 
 También sirve para hacer listas con alguna condición entre dos de sus elementos consecutivos
 
-` > [1,3..]`
-`   [1,3,5,7,9,11,.........`
+```Haskell
+ > [1,3..]
+   [1,3,5,7,9,11,.........
+```
 
 Entonces si queremos obtener los primeros 24 múltiplos de 13 podemos hacerlo de esta forma:
 
-` > [13,26..24*13]`
-`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
+```Haskell
+ > [13,26..24*13]
+   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]
+```
 
 Pero también podemos resolverlo con una lista infinita usando take como veremos a continuación gracias a la evaluación perezosa.
 
-` > take 24 [13,26..]`
-`   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]`
+```Haskell
+ > take 24 [13,26..]
+   [13,26,39,52,65,78,91,104,117,130,143,156,169,182,195,208,221,234,247]
+```
 
 Ejemplos
 ========
 
 Dada la siguiente definición de take
 
-` take 0 _ = []`
-` take _ [] = []`
-` take n (x:xs) = x : (take (n-1) xs)`
+```Haskell
+ take 0 _ = []
+ take _ [] = []
+ take n (x:xs) = x : (take (n-1) xs)
+```
 
-` take 3 [1..]`
-
--   aplicamos ..
-
-` take 3 (1:[2..])`
-
--   aplicamos take - 3ra línea
-
-` 1 : (take 2 [2..])`
+```Haskell
+ take 3 [1..]
+```
 
 -   aplicamos ..
 
-` 1 : (take 2 (2:[3..]))`
+```Haskell
+ take 3 (1:[2..])
+```
 
 -   aplicamos take - 3ra línea
 
-` 1 : ( 2 : (take 1 [3..]))`
+```Haskell
+ 1 : (take 2 [2..])
+```
 
 -   aplicamos ..
 
-` 1 : ( 2 : (take 1 (3:[4..])))`
+```Haskell
+ 1 : (take 2 (2:[3..]))
+```
 
 -   aplicamos take - 3ra línea
 
-` 1 : ( 2 : ( 3 : (take 0 [ 4.. ]))))`
+```Haskell
+ 1 : ( 2 : (take 1 [3..]))
+```
+
+-   aplicamos ..
+
+```Haskell
+ 1 : ( 2 : (take 1 (3:[4..])))
+```
+
+-   aplicamos take - 3ra línea
+
+```Haskell
+ 1 : ( 2 : ( 3 : (take 0 [ 4.. ]))))
+```
 
 -   aplicamos take - 1ra línea
 
-` 1 : ( 2 : ( 3 : [] ))) = [1,2,3]`
+```Haskell
+ 1 : ( 2 : ( 3 : [] ))) = [1,2,3]
+```
 
 Vamos a otro ejemplo
 
-` take 3 [4+5,2/0,3*2]`
+```Haskell
+ take 3 [4+5,2/0,3*2]
+```
 
 -   aplicamos el + (porque dice x: en take 3ra línea)
 
-` take 3 [9,2/0,3*2]`
+```Haskell
+ take 3 [9,2/0,3*2]
+```
 
 -   aplicamos take - 3ra línea
 
-` 9 : take 2 [2/0,3*2]`
+```Haskell
+ 9 : take 2 [2/0,3*2]
+```
 
 -   aplicamos /
 
-` 9 : ERROR DIVISON BY ZERO !!!`
+```Haskell
+ 9 : ERROR DIVISON BY ZERO !!!`
 
 Dada la definición de (!!)
 
-`(!!) 0 (x:_) = x`
-`(!!) n (_:xs) = (!!) (n-1) xs`
+```Haskell
+(!!) 0 (x:_) = x
+(!!) n (_:xs) = (!!) (n-1) xs`
 
-`(!!) 2 [4+5,2/0,3*2]`
+```Haskell
+(!!) 2 [4+5,2/0,3*2]`
 
 -   aplicamos el !! (no es necesario aplicar el + porque en (!!) dice (\_:xs) )
 
-`(!!) 1 [2/0,3*2]`
+```Haskell
+(!!) 1 [2/0,3*2]`
 
 -   aplicamos el !! (no es necesario aplicar la / por lo anterior)
 
-`(!!) 0 [3*2]`
+```Haskell
+(!!) 0 [3*2]`
 
 -   aplicamos \* (porque la primer línea de !! lo pide)
 
-`(!!) 0 [6]`
+```Haskell
+(!!) 0 [6]`
 
 -   aplicamos !!
 
-`6`
+```Haskell
+6`
 
 Supongamos que hacemos esta consulta:
 
-` > head (filter (3<) [1..])`
+```Haskell
+ > head (filter (3<) [1..])`
 
-Si bien la expresión `filter` `(3<)` `[1..]` no termina (seguiría buscando cuáles son mayores a 3 infinitamente), como lo que primero se evalúa es el head y se difiere la ejecución del filtrado, la ejecución va a terminar en cuanto el filter encuentre su primer elemento que pertenezca a la solución que es el 4.
+Si bien la expresión `filter (3<) [1..]` no termina (seguiría buscando cuáles son mayores a 3 infinitamente), como lo que primero se evalúa es el head y se difiere la ejecución del filtrado, la ejecución va a terminar en cuanto el filter encuentre su primer elemento que pertenezca a la solución que es el 4.
 
 Es importante notar que en este otro caso:
 
-` > head (filter (<0) [1..])`
+```Haskell
+ > head (filter (<0) [1..])`
 
 La evaluación nunca termina por más que se use head que era lo que antes acotaba la ejecución, ya que nunca se va a encontrar el primer elemento que cumpla la condición a diferencia del caso anterior.
