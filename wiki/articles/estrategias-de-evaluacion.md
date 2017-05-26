@@ -593,47 +593,56 @@ Vamos a otro ejemplo
 -   aplicamos /
 
 ```Haskell
- 9 : ERROR DIVISON BY ZERO !!!`
+ 9 : ERROR DIVISON BY ZERO !!!
+```
 
 Dada la definición de (!!)
 
 ```Haskell
 (!!) 0 (x:_) = x
-(!!) n (_:xs) = (!!) (n-1) xs`
+(!!) n (_:xs) = (!!) (n-1) xs
+```
 
 ```Haskell
-(!!) 2 [4+5,2/0,3*2]`
+(!!) 2 [4+5,2/0,3*2]
+```
 
 -   aplicamos el !! (no es necesario aplicar el + porque en (!!) dice (\_:xs) )
 
 ```Haskell
-(!!) 1 [2/0,3*2]`
+(!!) 1 [2/0,3*2]
+```
 
 -   aplicamos el !! (no es necesario aplicar la / por lo anterior)
 
 ```Haskell
-(!!) 0 [3*2]`
+(!!) 0 [3*2]
+```
 
 -   aplicamos \* (porque la primer línea de !! lo pide)
 
 ```Haskell
-(!!) 0 [6]`
+(!!) 0 [6]
+```
 
 -   aplicamos !!
 
 ```Haskell
-6`
+6
+```
 
 Supongamos que hacemos esta consulta:
 
 ```Haskell
- > head (filter (3<) [1..])`
+ > head (filter (3<) [1..])
+ ```
 
 Si bien la expresión `filter (3<) [1..]` no termina (seguiría buscando cuáles son mayores a 3 infinitamente), como lo que primero se evalúa es el head y se difiere la ejecución del filtrado, la ejecución va a terminar en cuanto el filter encuentre su primer elemento que pertenezca a la solución que es el 4.
 
 Es importante notar que en este otro caso:
 
 ```Haskell
- > head (filter (<0) [1..])`
+ > head (filter (<0) [1..])
+ ```
 
 La evaluación nunca termina por más que se use head que era lo que antes acotaba la ejecución, ya que nunca se va a encontrar el primer elemento que cumpla la condición a diferencia del caso anterior.
