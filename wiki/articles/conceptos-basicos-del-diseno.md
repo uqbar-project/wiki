@@ -63,9 +63,11 @@ Aquí vemos que un cliente conoce a objetos factura, pero también a renglones d
 
 Si el cliente conoce de menos no tiene forma de saber el total de facturación si no sabe que cada factura tiene como interfaz un método que me permite saber el total 
 
-```
+``` java
 public BigDecimal getTotal()
 ```
+
+<br>
 
 **El mismo ejemplo con nivel adecuado de acoplamiento entre cliente y factura**
 
