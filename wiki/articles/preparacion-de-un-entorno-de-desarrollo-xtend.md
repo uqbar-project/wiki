@@ -61,7 +61,7 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 
 ### Tips
 
-* Para que cuando hagas New &gt; File te aparezcan las clases y las interfaces Xtend, Window &gt; Customize Perspective... &gt; solapa Menu Visibility &gt; expandís File | New &gt; y seleccionás las de xtend (Xtend class, inteface, annotation y enum).
+* Para que cuando hagas New &gt; File te aparezcan las clases y las interfaces Xtend, Window &gt; Customize Perspective... &gt; solapa Menu Visibility &gt; expandís File > New &gt; y seleccionás las de xtend (Xtend class, inteface, annotation y enum).
 
 ### Problema con el menu de Eclipse en Ubuntu 13.10
 
