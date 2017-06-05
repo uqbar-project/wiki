@@ -14,20 +14,19 @@ En Linux podés hacer
 $ sudo apt-get install nodejs
 ```
 
-o seguir las instrucciones oficiales que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
+o seguir las instrucciones oficiales que están [aquí](https://github.com/nodejs/node/wiki).
 
-En Windows te recomendamos previamente descargar el Git Bash en <http://msysgit.github.io/>
-
-Y para cualquier sistema operativo en general podés descargar Node en <https://nodejs.org/download/>
+- en Windows te recomendamos previamente descargar el Git Bash en <http://msysgit.github.io/>
+- y para cualquier sistema operativo en general podés descargar Node en <https://nodejs.org/download/>
 
 Framework de testeo unitario
 ----------------------------
 
 Para hacer testeo unitario tenés varias opciones
 
-### Jasmine (JS puro)
+### Jasmine (recomendado)
 
--   Jasmine: <http://jasmine.github.io/>, que es la opción que te recomendamos. Para probarlo en el cliente, basta con descargar en <https://github.com/jasmine/jasmine/releases> el proyecto web standalone (**jasmine-standalone-x.y.z.zip** donde x, y, z es el último número de versión), integrarlo dentro de tu proyecto Javascript existente y luego editar el archivo SpecRunner.html, incorporando los archivos js de dominio y de test que quieras. Todo esto y bastante más está explicado en <http://jasmine.github.io/2.5/introduction.html> (o bueno, podemos ver la última versión)
+-   [Jasmine](http://jasmine.github.io/), que es la opción que te recomendamos. Para probarlo en el cliente, basta con descargar en <https://github.com/jasmine/jasmine/releases> el proyecto web standalone (**jasmine-standalone-x.y.z.zip** donde x, y, z es el último número de versión), integrarlo dentro de tu proyecto Javascript existente y luego editar el archivo SpecRunner.html, incorporando los archivos js de dominio y de test que quieras. Todo esto y bastante más está explicado en <http://jasmine.github.io/2.5/introduction.html> (o bueno, podemos ver la última versión)
 
 ### Mocha
 
@@ -44,16 +43,16 @@ Para más información entrá a <http://mochajs.org/>
 Entorno de desarrollo
 ---------------------
 
--   **Sublime 3** (opción recomendada): *no es un IDE* y vas a extrañar los menúes de refactor, los imports, y muchas cosas que venían con Eclipse. Pero es bastante liviano, tiene funciones de autocompletado y más abajo te comentamos qué plugins (o package controls) se le pueden instalar para que tu estadía en javascript sea más placentera.
--   **Web Storm**: posiblemente sea el mejor IDE al momento, tiene la contra de ser una herramienta paga aunque podés pedir licencias educativas <https://www.jetbrains.com/webstorm/>
+-   [**Sublime 3**](https://www.sublimetext.com/) (opción recomendada): *no es un IDE* y vas a extrañar los menúes de refactor, los imports, y muchas cosas que venían con Eclipse. Pero es bastante liviano, tiene funciones de autocompletado y más abajo te comentamos qué plugins (o package controls) se le pueden instalar para que tu estadía en javascript sea más placentera.
+-   [**Web Storm**](https://www.jetbrains.com/webstorm/): posiblemente sea el mejor IDE al momento, tiene la contra de ser una herramienta paga aunque podés pedir licencias educativas
 -   **Eclipse + plugins**: si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript (más abajo te explicamos cómo). De todas maneras no tenés demasiadas funcionalidades dentro de este entorno, olvidate de los refactors inteligentes que tenías si trabajabas en Java.
--   **Brackets**: <http://brackets.io/>
--   **Atom.io**: <https://atom.io/>
+-   [**Brackets**](http://brackets.io/)
+-   [**Atom.io**](https://atom.io/)
 
 ### Sublime
 
--   <http://www.sublimetext.com/3> es la página principal donde te descargás el producto
--   Instalá el Package Control, la herramienta que necesitás para instalar los plugins. Tenés un tutorial que explica cómo bajarlo desde Sublime: <https://packagecontrol.io/installation>
+-   [Link a la página principal](http://www.sublimetext.com/3) donde te descargás el producto
+-   Instalá el Package Control, la herramienta que necesitás para instalar los plugins. Tenés [este tutorial](https://packagecontrol.io/installation) que explica cómo bajarlo desde Sublime.
 
 Hay que descargarse el Linter vía npm:
 
@@ -61,7 +60,7 @@ Hay que descargarse el Linter vía npm:
 $ sudo npm install -g jshint
 ```
 
-(si estás en Windows iniciá la consola como Administrador).
+(si estás en Windows iniciá la consola como Administrador y ejecutá directamente npm install -g jshint sin sudo).
 
 Luego te recomendamos que descargues estos packages controls:
 
