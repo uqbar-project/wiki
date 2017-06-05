@@ -10,7 +10,9 @@ Para ésta y otras tareas, vamos a utilizar la plataforma Node, que también es 
 
 En Linux podés hacer
 
-`$ sudo apt-get install nodejs`
+``` bash
+$ sudo apt-get install nodejs
+```
 
 o seguir las instrucciones oficiales que están aquí: <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>.
 
@@ -31,7 +33,9 @@ Para hacer testeo unitario tenés varias opciones
 
 Tambien podés descargarte Mocha.js como framework de testeo unitario para tus proyectos, haciendo
 
-`$ npm install -g mocha`
+``` bash
+$ npm install -g mocha
+```
 
 npm es node package manager, por lo que tenés que haber instalado node primero. Si estás en Windows correlo desde el Git Bash que instalaste previamente.
 
@@ -53,7 +57,9 @@ Entorno de desarrollo
 
 Hay que descargarse el Linter vía npm:
 
-`$ sudo npm install -g jshint`
+``` bash
+$ sudo npm install -g jshint
+```
 
 (si estás en Windows iniciá la consola como Administrador).
 
