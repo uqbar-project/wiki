@@ -83,7 +83,7 @@ Para levantar un Browser desde el Sublime cuando estés parado en un HTML: <http
 Para instalarse los plugins de Eclipse tenés que configurar tu entorno básico según se explica en la página [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.html). Luego:
 
 -   Ir a "Help-&gt;Install New Software..."
--   Buscar en el combo la URL de nuestra distribución de eclipse (Por ejemplo con eclipse Juno es "<http://download.eclipse.org/releases/juno>")
+-   Buscar en el combo la URL de nuestra distribución de eclipse (Por ejemplo con eclipse Neon es "<http://download.eclipse.org/releases/neon>")
 -   Buscar de entre todo el software los items:
     -   "Eclipse Web Developer Tool"
     -   "Eclipse Xml Editors and Tool", y
