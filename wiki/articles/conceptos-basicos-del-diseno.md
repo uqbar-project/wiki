@@ -6,12 +6,12 @@ title: Conceptos basicos del diseno
 Modelo
 ------
 
-Un modelo es una simplificación. Es una interpretación de la realidad que abstrae los aspectos relevantes para la solución de un problema. \[DDD-Eric Evans\].
+Un modelo es una simplificación. Es una interpretación de la realidad que abstrae los aspectos relevantes para la solución de un problema. (Definición extraída de [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) de Eric Evans.
 
 Dominio
 -------
 
-Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas "actividades" o "intereses" y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifique, seleccione y estructure el conocimiento de manera de enfocarlo en lo que necesitamos para solucionar el problema.
+Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas "actividades" o "intereses" y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifiquen, seleccionen y estructuren el conocimiento de manera de enfocarlo en lo que necesitamos para solucionar el problema.
 
 Heurística
 ----------
@@ -45,37 +45,43 @@ Es el grado en que los componentes de un sistema se conocen.
 
 Un cliente conoce sus facturas para calcular el total, y está bien que las conozca. Lo que es nocivo para el cliente es conocer de más o de menos. De más porque si el cliente le pide las líneas (los renglones) a cada factura y luego a cada línea le pide el precio unitario de cada producto, cualquier modificación en el cálculo del precio de un producto (por ejemplo, descuento por cantidad dependiente del producto), el que se ve directamente afectado es el cliente.
 
-<font color="#8B0000">**Ejemplo de código con alto nivel de acoplamiento**</font> <code>
+**Ejemplo de código con alto nivel de acoplamiento**
 
-`public BigDecimal getMontoTotal() {`
-`    BigDecimal total = new BigDecimal(0);`
-`    for (Factura factura : this.facturas) {`
-`        for (Renglon renglon : factura.renglones) { `
-`            total = total.add(renglon.getProducto().getPrecioUnitario() * renglon.getCantidad());`
-`        }`
-`    }`
-`    return total;`
-`}`
+``` java
+public BigDecimal getMontoTotal() {
+    BigDecimal total = new BigDecimal(0);
+    for (Factura factura : this.facturas) {
+        for (Renglon renglon : factura.renglones) { 
+            total = total.add(renglon.getProducto().getPrecioUnitario() * renglon.getCantidad());
+        }
+    }
+    return total;
+}
+```
 
-</code> Aquí vemos que un cliente conoce a objetos factura, pero también a renglones de factura y a productos.
+Aquí vemos que un cliente conoce a objetos factura, pero también a renglones de factura y a productos.
 
-Si el cliente conoce de menos no tiene forma de saber el total de facturación si no sabe que cada factura tiene como interfaz un método que me permite saber el total (`public` `BigDecimal` `getTotal()`)
+Si el cliente conoce de menos no tiene forma de saber el total de facturación si no sabe que cada factura tiene como interfaz un método que me permite saber el total 
 
-<font color="#0047AB">**El mismo ejemplo con nivel adecuado de acoplamiento entre cliente y factura**</font> <code>
+```
+public BigDecimal getTotal()
+```
 
-`public BigDecimal getMontoTotal() {`
-`    BigDecimal total = new BigDecimal(0);`
-`    for (Factura factura : this.facturas) {`
-`        total = total.add(factura.getTotal());`
-`    }`
-`    return total;`
-`}`
+**El mismo ejemplo con nivel adecuado de acoplamiento entre cliente y factura**
 
-</code>
+``` java
+public BigDecimal getMontoTotal() {
+    BigDecimal total = new BigDecimal(0);
+    for (Factura factura : this.facturas) {
+        total = total.add(factura.getTotal());
+    }
+    return total;
+}
+```
 
 ### Acoplamiento explícito e implícito
 
-En algunos casos, el acoplamiento entre dos entidades de software no es fácilmente detectable, a estos acoplamientos se los denomina \*implícitos\*. Esto se produce cuando una entidad de software, para su funcionamiento depende de una característica de otra que no está visible en su interfaz pública y en cambio forma parte de su implementación interna. En algunos libros este concepto puede encontrarse mencionado como *Program to an interface, not to an implementation*.
+En algunos casos, el acoplamiento entre dos entidades de software no es fácilmente detectable, por lo que se llaman acoplamientos **implícitos**. Esto se produce cuando una entidad de software para su funcionamiento depende de una característica de otra que no está visible en su interfaz pública y en cambio forma parte de su implementación interna. En algunos libros este concepto puede encontrarse mencionado como *Program to an interface, not to an implementation*.
 
 El acoplamiento entre dos entidades de software produce una dependencia: un cambio en una de ellas posiblemente produzca un cambio en la otra. Al modificar una entidad de software es importante poder conocer cuáles son todas las otras entidades que pudieran ser afectadas por este cambio. Por eso, en el caso en que tengamos un acoplamiento, siempre es preferible que lo explicitemos, ya que facilitará la mantenibilidad del sistema y nos dará una herramienta para asegurar la consistencia ante las modificaciones.
 
@@ -88,10 +94,10 @@ Los casos de uso pueden ser útiles para establecer requisitos de comportamiento
 
 Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un usuario.
 
-[Mas sobre requerimientos]({% link_article conceptos-de-ingenieria-de-software-y-de-sistemas %})
+[Más sobre requerimientos](conceptos-de-ingenieria-de-software-y-de-sistemas.html)
 
 Links relacionados
 ------------------
 
--   [Volver a Diseño de Sistemas]({% link_article design-temario %})
+-   [Volver a Diseño de Sistemas](design-temario.html)
 
