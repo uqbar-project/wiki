@@ -38,9 +38,9 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 ### ¿Cómo empezar?
 
 *  Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](guia-de-instalacion-de-maven.html)
- * en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
- * definir un groupId, que puede ser el edu.xxxx (nombre de la materia). Ej: edu.algo2 | edu.dds
- * definir un artifactId, que se asocia al nombre de tu proyecto
+    * en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
+    * definir un groupId, que puede ser el edu.*materia* . Ej: edu.dds, edu.algo2, etc.
+    * definir un artifactId, que se asocia al nombre de tu proyecto
 
 Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" *org.eclipse.xtext.xbase.lib*. En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
