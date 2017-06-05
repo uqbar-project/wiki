@@ -16,6 +16,7 @@ Salado
 -   [Salsa Jack Daniel's](salsa-jack-daniel-s.html)
 -   [Bagna Cauda](bagna-cauda.html)
 -   [Locro](locro.html)
+-   [Guiso de Lentejas](guiso-de-lentejas.html)
 
 Dulce
 -----
