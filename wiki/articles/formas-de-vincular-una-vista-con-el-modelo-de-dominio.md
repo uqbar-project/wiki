@@ -84,12 +84,14 @@ Otra posibilidad es permitir que los objetos de dominio manejen la transaccional
 
 A veces es necesario tener comportamiento en la vista que no es atribuible a ningún objeto de dominio. En ese caso algunas de las estrategias posibles son:
 
-Modelo de aplicación  
+#### Modelo de aplicación  
+
 Llamamos modelo de aplicación a un objeto que tiene lógica que no es atribuible a un objeto de dominio, sin embargo es independiente de la tecnología, por lo tanto podemos considerarlo modelo. Un objeto de estas características nos provee de un espacio en donde colocar lógica utilizando las mismas herramietas del dominio pero sin tener que restringirnos a las limitaciones que solemos establecer sobre los objetos de domino.
 
 Tipicamente los casos de uso complejos de una aplicación tendrán un modelo de este tipo que contemple la lógica necesaria para llevarlos a cabo. Pueden tener tanto lógica de navegación como de visualización, aunque en algunos casos también se decide separar ambos tipos de lógica.
 
-Value Models  
+#### Value Models  
+
 Otra forma de desacoplar la vista y el modelo es proveyendo un almacenamiento intermedio para cada control, que guarda el valor manejado por el control hasta el momento del submit, en el cual será volcado al modelo de dominio. Al objeto que contiene el valor durante ese tiempo se lo denomina ValueModel y la principal diferencia con la estrategia anterior es que en ese caso se tenía un único intermediario para toda la vista, mientras que ahora tenemos un intermediario por cada control.
 
 Un ValueModel provee de la posibilidad de definir trasnformaciones y validaciones a cada control. Una ventaja importante de este mecanismo es que provee de una forma sencilla de reutilizar la lógica de transformación y validación.

@@ -14,62 +14,78 @@ Uso básico
 
 En una primera aproximación, una lambda es cualquier objeto que implementa algunas de las siguientes interfaces:
 
--   Function: una función que toma un sólo argumento
--   Predicate: una función que toma un sólo argumento pero que devuelve exclusivamente booleanos
--   Consumer: una función que toma un sólo argumento y no devuelve nada, probablemente porque produce un [efecto](efecto.html). Es decir, los Consumers normalmente NO son computaciones puras.
--   Entre otras, ver: <http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>
+-   **Function:** una función que toma un sólo argumento
+-   **Predicate:** una función que toma un sólo argumento pero que devuelve exclusivamente booleanos
+-   **Consumer:** una función que toma un sólo argumento y no devuelve nada, probablemente porque produce un [efecto](efecto.html). Es decir, los Consumers normalmente NO son computaciones puras.
+-   Para otras variantes, ver: <http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>
 
-Para, por ejemplo, recibirlas por parámetro, debemos simplemente tipar al parámetro de nuestro método con alguna de estas interfaces.
+Si queremos recibirlas por parámetro, debemos simplemente tipar al parámetro de nuestro método con alguna de estas interfaces.
 
 Ejemplo:
 
-`Persona primerPersonasQueCumple(Predicate`<Persona>` predicado) {`
-`  for(Persona persona : personas) `
-`    if (predicado.test(persona))`
-`      return persona;`
-` throw new PersonaNoExisteException();`
-`}`
+``` java
+Persona primerPersonasQueCumple(Predicate<Persona> predicado) {
+   for(Persona persona : personas) 
+      if (predicado.test(persona))
+         return persona;
+   throw new PersonaNoExisteException();
+}
+```
 
 Para pasarlas por parámetro, la sintaxis es la siguiente:
-
-`(TipoParametro parametro) -> cuerpo`
+ 
+``` java
+(TipoParametro parametro) -> cuerpo
+```
 
 que es análogo al siguiente bloque en Smalltalk (recordar que en Smalltalk las variables no se tipan explícitamente):
 
-` [ :parametro | cuerpo  ]`
+``` smalltalk
+ [ :parametro | cuerpo  ]
+```
 
 Ejemplo:
 
-`primerPersonaQueCumple((Persona p) -> p.esMayorDeEdad())`
+``` java
+primerPersonaQueCumple((Persona p) -> p.esMayorDeEdad())
+```
 
 En muchos casos como el anterior tipo del parámetro puede ser obviado, cuando este puede ser inferido por el contexto:
 
-`primerPersonaQueCumple(p -> p.esMayorDeEdad())`
+``` java
+primerPersonaQueCumple(p -> p.esMayorDeEdad())
+```
 
 Referencias a métodos
 ---------------------
 
 Si el cuerpo del método es el envío de un sólo mensaje (como en el ejemplo anterior), entonces podemos usar una MethodReference:
 
-`primerPersonaQueCumple(Persona::esMayorDeEdad)`
+``` java
+primerPersonaQueCumple(Persona::esMayorDeEdad)
+```
 
 Interfaces de un sólo mensaje
 -----------------------------
 
-Por motivos de retrocompatibilidad, en realidad, cualquier Interface que defina un sólo mensaje puede ser usada con la sintaxis de lambda. Ejemplo:
+Por motivos de retrocompatibilidad, en realidad, cualquier interface que defina un sólo mensaje puede ser usada con la sintaxis de lambda. Ejemplo:
 
-`interface ChequeadorDePersona {`
-`   boolean chequear(Persona p);`
-`}`
+``` java
+interface ChequeadorDePersona {
+   boolean chequear(Persona p);
+}
+```
 
-`Persona primerPersonasQueCumple(ChequeadorDePersona predicado) {`
-`  for(Persona persona : personas) `
-`    if (predicado.chequear(persona))`
-`      return persona;`
-` throw new PersonaNoExisteException();`
-`}`
+``` java
+Persona primerPersonasQueCumple(ChequeadorDePersona predicado) {
+   for(Persona persona : personas) 
+      if (predicado.chequear(persona))
+         return persona;
+   throw new PersonaNoExisteException();
+}
+```
 
-Y se usa exactamente igual. De todas formas, si no pensamos darle alguna semántica particular a nuestro bloque de código, preferiremos usar normalente las interfaces estándar comentadas antes
+Y se usa exactamente igual. De todas formas, si no pensamos darle alguna semántica particular a nuestro bloque de código, preferiremos usar normalente las interfaces estándar comentadas anteriormente.
 
 Colecciones en Java
 -------------------
@@ -84,44 +100,74 @@ La forma de trabajar siempre es la misma: cuando tengamos una colecciones, le en
 
 Ejemplo:
 
-` List`<Persona>` personas = Arrays.asList(jose, pedro, maria, anabela);`
-` Set`<Persona>` nombresDeDocentesSinRepetidos = personas.stream().filter(Persona::esDocente).map(Persona::getNombre).collect(toSet());`
+``` java
+List<Persona> personas = Arrays.asList(jose, pedro, maria, anabela);
+Set<Persona> nombresDeDocentesSinRepetidos = personas
+    .stream()
+    .filter( Persona::esDocente)
+    .map(Persona::getNombre)
+    .collect(toSet());
+```
 
 Lo cual es análogo al siguiente código Smalltalk:
 
-` personas := { jose. pedro. maria. anabela }`
-` nombresDeDocentesSinRepetidos := ((personas select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet`
+``` smalltalk
+ personas := { jose. pedro. maria. anabela }
+ nombresDeDocentesSinRepetidos := 
+     ((personas select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet
+```
 
 Ordenar
 -------
 
 El orden superior se puede aprovechar para ordenar colecciones en Java. Supongan que tienen:
 
-`public class Foo {`
-`    private String bar;`
-`    private int baz;`
-`   // y sus getters y constructor`
-` } `
+``` java
+public class Foo {
+   private String bar;
+   private int baz;
+   // y sus getters y constructor
+} 
+```
 
 Cuando quieran tener algo ordenado según un criterio, antes o después, necesitarán un Comparator: es un objeto que nos dice si un objeto es "menor" que otro (precede a otro, dirían en discreta). La buena noticia es que normalmente no tendrán que declarar una clase que implemente esta interfaz, sino que podrán definirlo usando una lambda. Por ejemplo, si quieren crear una priorirty queue que esté ordenada según bar, pueden hacer:
 
-`PriorityQueue`<Foo>` foos = new PriorityQueue<>((x, y) -> x.getBar().compareTo(y.getBar()));`
+``` java
+PriorityQueue<Foo> foos = 
+    new PriorityQueue<>((x, y) -> x.getBar().compareTo(y.getBar()));
+```
 
 En general ni siquiera es necesario hacer la comparación a mano. Si quieren ordenar por una propiedad (como en este caso) pueden utilizar Comparator.comparing:
 
-` PriorityQueue`<Foo>` foos = new PriorityQueue<>(Comparator.comparing(foo -> foo.getBar()));`
+``` java
+PriorityQueue<Foo> foos = 
+    new PriorityQueue<>(Comparator.comparing(foo -> foo.getBar()));
+```
 
 o lo que es lo mismo:
 
-` PriorityQueue`<Foo>` foos = new PriorityQueue<>(Comparator.comparing(Foo::getBar));`
+``` java
+PriorityQueue<Foo> foos = 
+    new PriorityQueue<>(Comparator.comparing(Foo::getBar));
+```
 
 Si tienen que ordenar por multiples propiedades, pueden utilizar el mensaje thenComparing. Ejemplo de creación de un TreeSet que ordene segun bar y luego segun baz:
 
-` Set`<Foo>` foos = new TreeSet<>(Comparator.comparing(Foo::getBar).thenComparing(Foo::getBaz));`
+``` java
+Set<Foo> foos = 
+    new TreeSet<>(
+        Comparator.comparing(Foo::getBar).thenComparing(Foo::getBaz)
+    );
+```
 
 Finalmente, si tienen que ordenar al revés del orden de precedencia, pueden usar el mensaje reversed. Por ejemplo, acá se está obteniendo un stream ordenado por baz, de mayor a menor:
 
-` Arrays.asList(new Foo("hola", 2), new Foo("hello", 9)).stream().sorted(Comparator.comparing(Foo::getBaz).reversed()) ;`
+``` java
+Arrays.asList(new Foo("hola", 2), 
+              new Foo("hello", 9))
+        .stream()
+        .sorted(Comparator.comparing(Foo::getBaz).reversed());
+```
 
 Para más información, miren la documentación de Comparator: <http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html>
 
