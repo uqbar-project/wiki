@@ -67,5 +67,5 @@ Por otra parte, el diseño de sistemas se preocupa por distribuir correctamente 
 
 ## Links relacionados
 
--  [Algo3 Temario](algo3-temario.html)
+-  [Temario Algoritmos III](algo3-temario.html)
 

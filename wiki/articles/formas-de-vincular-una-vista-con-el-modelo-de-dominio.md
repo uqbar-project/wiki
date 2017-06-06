@@ -104,5 +104,5 @@ Links relacionados
 ------------------
 
 -   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
--   [Algo3 Temario](algo3-temario.html)
+-   [Temario Algoritmos III](algo3-temario.html)
 

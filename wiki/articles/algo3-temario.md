@@ -3,6 +3,9 @@ layout: article
 title: Temario de Algoritmos III
 ---
 
+El sitio oficial de la materia es <http://algo3.uqbar-project.org>
+
+
 # Unidad 1 - Introducción a las UI
 
 

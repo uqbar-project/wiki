@@ -22,7 +22,7 @@ Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pens
 -   Otra opción es usar códigos de retorno del lado del dominio: -2 significa que la fecha de nacimiento es mayor a la fecha de hoy, -3 es que la fecha de nacimiento es anterior a 1900, etc. Sigue habiendo un alto acoplamiento entre los errores que el negocio dispara y el mensaje que la UI debe mostrar.
 -   Lo que más nos gusta es marcar los errores con excepciones. Eso permite tener distintos tipos de error y también asociar un mensaje para el usuario:
 
-```Java
+```java
    >>Empleado
    public void validar() {
       ...
@@ -45,14 +45,16 @@ Para manejar las excepciones suele ser útil tener una excepción que sea base d
 Pero ¿dónde? Una buena regla es poner try/catch en los lugares en los que, de otra manera, la aplicación mostraría el stack trace al usuario. Nosotros no queremos que eso suceda, pero es preferible que el usuario llame por una pantalla rota a que el error quede escondido, como en estos típicos casos: <code>
 
 ```java
-   >>Código de pantalla
-   public void buscarSocios() {
-      try {
-          ... hacemos la búsqueda ...
-      } catch (Exception e) {
-          e.printStackTrace();
-      }
+
+>>>Código de pantalla
+public void buscarSocios() {
+   try {
+       ... hacemos la búsqueda ...
+   } catch (Exception e) {
+       e.printStackTrace();
    }
+}
+
 ```
 
 El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" búsquedas no funcionan. A veces trae datos y a veces no. De esa manera la aplicación pierde robustez.
@@ -60,21 +62,23 @@ El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" bús
 Otro error común en el manejo de errores es encerrar sólo *parte* del código en un bloque try/catch (la instrucción que sabemos que puede fallar), loguear el error o incluso no manejarlo y permitir que el método siga ejecutándose, como lo muestra el siguiente ejemplo: <code>
 
 ```java
-   >>Código de pantalla
-   public void buscarSocios() {
-      Socio socio = null;
-      try {
-          ... hacemos la búsqueda ...
-      } catch (ProgramException e) {
-          e.printStackTrace();
-      }
-      // envío mensajes al socio que puede no estar correctamente inicializado
-      if (socio.getAntiguedad() > 2) {
-         ...
-      }
-      ...
+
+>>>Código de pantalla
+public void buscarSocios() {
+   Socio socio = null;
+   try {
+       ... hacemos la búsqueda ...
+   } catch (ProgramException e) {
+       e.printStackTrace();
+   }
+   // envío mensajes al socio que puede no estar correctamente inicializado
+   if (socio.getAntiguedad() > 2) {
       ...
    }
+   ...
+   ...
+}
+
 ```
 
 Tenemos dos problemas que resolver:
@@ -99,19 +103,21 @@ Por otra parte, necesitamos informar al usuario que cuando estábamos buscando l
 ## Un ejemplo genérico de manejo de errores en UI
 
 ```java
-   >>Código de pantalla
-   public void agregarSocio() {
-      try {
-          Socio socio = ... recolectamos la información de la UI ...
-          socio.validar();
-          ... pedimos que generen el socio, esto depende de nuestra estrategia ...
-      } catch (UserException e) {
-          this.messageWarning(e.getMessage());
-      } catch (Exception e) {
-          this.logger.fatal("AppSocios", e.getMessage());
-          this.messageError("Ocurrió un error al agregar el socio. Por favor consulte al administrador del sistema");
-      }
+
+>>>Código de pantalla
+public void agregarSocio() {
+   try {
+       Socio socio = ... recolectamos la información de la UI ...
+       socio.validar();
+       ... pedimos que generen el socio, esto depende de nuestra estrategia ...
+   } catch (UserException e) {
+       this.messageWarning(e.getMessage());
+   } catch (Exception e) {
+       this.logger.fatal("AppSocios", e.getMessage());
+       this.messageError("Ocurrió un error al agregar el socio. Por favor consulte al administrador del sistema");
    }
+}
+
 ```
 
 Los métodos messageWarning y messageError, como dijimos antes, dependen de la tecnología a implementar, en nuestro caso asumimos que está en una superclase de Form de la cual hereda la pantalla de Alta de un Socio.
@@ -124,4 +130,4 @@ Un agregado que se podría hacer es evitar poner los mensajes de error en el có
 
 # Links relacionados
 
-- [Algo3 Temario](algo3-temario.html)
+- [Temario Algoritmos III](algo3-temario.html)

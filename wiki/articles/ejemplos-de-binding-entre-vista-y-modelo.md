@@ -174,5 +174,5 @@ Links relacionados
 
 -   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
 -   [JFace: Controles y binding](jface--controles-y-binding.html)
--   [Algo3 Temario](algo3-temario.html)
+-   [Temario Algoritmos III](algo3-temario.html)
 

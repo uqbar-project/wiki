@@ -69,5 +69,5 @@ Entonces el cliente hace más que "mostrar en forma amistosa" el formulario... d
 Links relacionados
 ------------------
 
--   [Algo3 Temario](algo3-temario.html)
+-   [Temario Algoritmos III](algo3-temario.html)
 

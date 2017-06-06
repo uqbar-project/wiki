@@ -50,5 +50,5 @@ Problemas
 Links relacionados
 ------------------
 
--   [Algo3 Temario](algo3-temario.html)
+-   [Temario Algoritmos III](algo3-temario.html)
 

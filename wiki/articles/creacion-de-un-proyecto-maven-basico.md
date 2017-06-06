@@ -90,5 +90,5 @@ Links relacionados
 ------------------
 
 -   Una vez creado el proyecto, en el caso (probable) que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [Checkoutear un proyecto maven de un repositorio svn](checkoutear-un-proyecto-maven-de-un-repositorio-svn.html).
--   [Algo3 Temario](algo3-temario.html)
+-   [Temario Algoritmos III](algo3-temario.html)
 

@@ -43,5 +43,5 @@ Nuestra idea es que la presentación no solo hable con el dominio sino que le pi
 Links relacionados
 ------------------
 
--   [Algo3 Temario](algo3-temario.html)
+-   [Temario Algoritmos III](algo3-temario.html)
 
