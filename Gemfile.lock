@@ -185,10 +185,10 @@ DEPENDENCIES
   jekyll-sitemap
   mini_magick
   nokogiri
-  rake
+  rake (~> 12.0.0)
   rouge
   sass
   uglifier
 
 BUNDLED WITH
-   1.12.1
+   1.13.0
