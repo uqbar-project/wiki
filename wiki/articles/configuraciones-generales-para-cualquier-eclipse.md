@@ -3,19 +3,23 @@ layout: article
 title: Configuraciones generales para cualquier eclipse
 ---
 
-Hay varias cosas que es util configurar en Eclipse, independientemente del lenguaje que elijan.
+Hay varias cosas que es útil configurar en Eclipse, independientemente del lenguaje que elijan.
 
 Compiler
 --------
 
 Algunas versiones de Eclipse utilizan por defecto compatibilidad con el compilador Java 1.4, algo que no es conveniente si vamos a trabajar con herramientas como Generics o Annotations que vienen a partir del JDK 1.5.
 
-Para esto deben ir a Window Preferences &gt; Java &gt; Compiler &gt; y donde dice JDK Compliance subir la propiedad "Compiler compliance level" de 1.4 a una superior (1.6, 1.7, etc.)
+Para esto deben ir a Window Preferences &gt; Java &gt; Compiler &gt; y donde dice JDK Compliance subir la propiedad "Compiler compliance level" de 1.4 a una superior (1.8 ó superior)
 
 En caso contrario al bajar proyectos compilados en JDKs superiores aparecerán mensajes de error como estos:
 
-`Syntax error, annotations are only available if source level is 1.5 or greater`
-`Syntax error, parameterized types are only available if source level is 1.5 or greater`
+```bash
+
+Syntax error, annotations are only available if source level is 1.5 or greater
+Syntax error, parameterized types are only available if source level is 1.5 or greater
+
+```
 
 Encoding
 --------
@@ -39,15 +43,9 @@ Shortcuts
 
 En algunas distribuciones de Linux existe un shortcut por defecto que es Ctrl + Space, que colisiona con el shortcut del content assist de Eclipse . Para solucionar el problema, hay que deshabilitar el binding: en Ubuntu: System Settings -&gt; Keyboard-&gt; Shortcuts en Lubuntu: click en el logo que esta abajo a la izquierda -&gt; Preferencias -&gt; Metodos de entrada por Teclado y se cambia a "Disabled"
 
-SVN en Linux
-------------
-
-Si estás en Linux, te va a aparecer un mensaje de error de que no existe la librería JavaHL. Para solucionarlo, Window &gt; Preferences &gt; SVN, en el combo SVN interface | Client seleccionan "SVN Kit (Pure Java)".
-
 Qué archivos no subir al repo
 -----------------------------
-
-En Window &gt; Preferences &gt; Team &gt; Ignored Resources agregá los siguientes patterns:
+Anteriormente esto se configuraba en Window &gt; Preferences &gt; Team &gt; Ignored Resources, actualmente al usar git hay que configurar un archivo .gitignore en cada proyecto. Pero viene bien saber que estos patrones deberíamos ignorarlos:
 
 -   bin
 -   target
@@ -76,9 +74,14 @@ Groovy, Java y Xtend comparten la forma de importar paquetes. En un JDK estánda
 
 Para eso, en Java &gt; Appearance &gt; Type Filters, agregar las siguientes expresiones:
 
-`   sun.*`
-`   *.internal.*`
-`   edu.emory.mathcs.backport.*`
-`   java.awt.*`
-`   java.swing.*`
-`   org.omg.*`
+```bash
+
+bash
+sun.*
+*.internal.*
+edu.emory.mathcs.backport.*
+java.awt.*
+java.swing.*
+org.omg.*
+
+```

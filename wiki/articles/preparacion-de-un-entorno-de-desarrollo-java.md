@@ -59,7 +59,7 @@ y definir la versión con la que vas a usar.
 
 ## Otros sistemas operativos
 
-Para otros sistemas operativos se puede bajar el instalable de: <http://www.oracle.com/technetwork/java/javase/downloads/index.html>, y seguir los pasos explicados en <http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html>
+Para otros sistemas operativos desde [este link](http://www.oracle.com/technetwork/java/javase/downloads/index.html) seguís [la explicación paso por paso que se encuentra aquí](http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html).
 
 # Documentación
 
@@ -79,11 +79,8 @@ Esa versión pesa bastante. Si no van a utilizar las herramientas de programaci�
 
 ## Configuraciones adicionales
 
-Para no tener problemas con los tildes y demás caracteres especiales al bajarse los ejemplos conviene tener sincronizado el mismo encoding. Para eso, desde la barra de menú: Window &gt; Preferences, filtrar por "encoding" y cambiar todos a "UTF-8" o "ISO 10646/Unicode(UTF-8)". Por ejemplo: En General &gt; Workspace &gt; Text file encoding, seleccionar Other &gt; UTF-8. Aplicar cambios.
+-    Te recomendamos chequear [estas configuraciones de Eclipse](/wiki/articles/configuraciones-generales-para-cualquier-eclipse.html)
 
-Filtrar en el menú por la palabra "spell" y desactivar la corrección ortográfica (Spelling &gt; desactivar el check Enable spell checking). Aplicar cambios.
-
-También conviene desactivar el warning default de clases serializables que no definan un identificador de versión: Window &gt; Preferences, filtrar por "Serializable", solapa Java / Compiler / "Errors/Warnings", "Potential programming problems", y se setea el valor de "Serializable class without serialVersionUID" a Ignore. Aplicar cambios.
 
 ## Documentación
 
@@ -92,7 +89,7 @@ También conviene desactivar el warning default de clases serializables que no d
 
 # Maven
 
-Para instalar Maven te recomendamos [esta página](/wiki/articles/guia-de-instalacion-de-maven.html)
+Para instalar Maven te recomendamos [seguir las instrucciones de esta página](/wiki/articles/guia-de-instalacion-de-maven.html)
 
 
 ## Creación de un proyecto básico

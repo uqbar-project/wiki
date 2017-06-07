@@ -15,7 +15,7 @@ title: Portada
 
 ¡Hola!
 
-Bienvenidos al wiki del grupo [Uqbar](http://www.uqbar-project.org). Somos un grupo de docentes, investigadores y alumnos de diferentes universidades de la Argentina que enseñamos, aprendemos y trabajamos en diferentes temas relacionados con la construcción de software.
+Bienvenidos a la herramienta colaborativa del grupo [Uqbar](http://www.uqbar-project.org). Somos un grupo de docentes, investigadores y alumnos de diferentes universidades de la Argentina que enseñamos, aprendemos y trabajamos en diferentes temas relacionados con la construcción de software.
 
 El objetivo de esta página es proveer un lugar integrado en el cual agrupar y organizar el conocimiento con el que trabajamos, que sirva tanto para compartirlo entre las distintas universidades en las que nos desempeñamos como para la comunidad en general.
 

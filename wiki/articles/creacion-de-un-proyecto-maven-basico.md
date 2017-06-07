@@ -7,88 +7,92 @@ El objetivo de este tutorial es crear una aplicación base utilizando las siguie
 
 -   Java
 -   Eclipse
--   Svn
+-   Git
 -   Maven
 
-Se asume la presencia de un entorno con todas esas herramientas configuradas adecuadamente.
+Se asume la presencia de un entorno con todas esas herramientas configuradas adecuadamente. En caso de duda recomendamos ir [al siguiente link](/wiki/articles/preparacion-de-un-entorno-de-desarrollo-java.html).
 
 Creación del proyecto
 ---------------------
 
-### Paso 1: Creación en base a un arquetype de maven
+### Paso 1: Creación del proyecto Maven
 
-Desde una terminal y parados sobre el workspace de eclipse ejecutar el siguiente comando maven (previo asignar valores adecuados para groupId y artifactId)
+Desde el menú principal del Eclipse seleccionamos File > New... Project... Maven Project. En la primera pantalla del asistente
 
-`mvn archetype:create                      \`
-`    -DartifactId=basic-maven-example      \`
-`    -DgroupId=com.uqbar-project.edu       \`
-`    -DarchetypeArtifactId=???`
+* podemos elegir un [archetype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html), o bien chequear la opción "Create a simple project (skip archetype selection)" que es la opción por defecto que vamos a elegir.
 
-Lo importante acá es saber qué archetype quiero usar, por ejemplo: maven-archetype-webapp
+Al presionar Next, nos aparece el siguiente paso, donde debemos elegir
+
+* el **Group Id** refleja la organización para la que vamos a construir el proyecto (por lo general depende de la materia que estás cursando)
+
+* el **Artifact Id** que se asocia al nombre del proyecto
+
+* la versión, donde dejamos el valor por defecto
+
+![Creación de un proyecto Maven en Eclipse](/img/maven_create_1.png)
+
 
 ### Paso 2: Agregar bibliotecas necesarias al pom
 
-Luego de ejecutar eso tendremos el código generado en el directorio con el nombre indicado en el (en mi caso ). En ese directorio encontrarán el , si vamos a utilizar otras bibliotecas podemos agregarlas ya mismo, por ejemplo:
+En el archivo pom.xml del raíz del proyecto podemos agregar bibliotecas a nuestro proyecto en el nodo dependencies...
 
-`       `<dependency>
-`           `<groupId>`log4j`</groupId>
-`           `<artifactId>`log4j`</artifactId>
-`           `<version>`1.2.13`</version>
-`       `</dependency>
-`       `<dependency>
-`           `<groupId>`commons-collections`</groupId>
-`           `<artifactId>`commons-collections`</artifactId>
-`           `<version>`3.1`</version>
-`       `</dependency>
+```xml
 
-### Paso 3: Generación de la información para eclipse
+<dependencies>
+   <dependency>
+       <groupId>log4j</groupId>
+       <artifactId>log4j</artifactId>
+       <version>1.2.13</version>
+   </dependency>
+   <dependency>
+       <groupId>commons-collections</groupId>
+       <artifactId>commons-collections</artifactId>
+       <version>3.1</version>
+   </dependency>
+</dependencies>
 
-Luego, parados en la carpeta en donde está el debemos ejecutar:
+```
 
-`mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true`
+También podemos cambiar el groupId, artifactId, la versión o bien apuntar a un [parent project](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Project_Inheritance_vs_Project_Aggregation) (para mayor información consulte con el docente de su materia)
 
-Esto nos creará los archivos de configuración del eclipse: y . También se ocupará de bajar de Internet todas las bibliotecas que le indicamos (por eso hay que tener conexión a Internet para ejecutar estas cosas). F **Ojo:** En este punto es importante leer los warnings que tira el maven si no puede bajar las bibliotecas, para eso hay que leer todo lo que dice, no alcanza con quedarse con el final.
 
-### Paso 4: Importación de la información al eclipse y al tomcat
+### Paso 3: Importación de la información al entorno
 
-Luego, desde el eclipse se deberá importar el proyecto, utilizando la opción "Import" -&gt; "Existing projects into workspace".
+Cada vez que se modifique el archivo pom.xml, debemos actualizar nuestro entorno (Eclipse, IntelliJ o el que fuera) mediante un botón derecho sobre el proyecto Maven > Update project, o bien por línea de comando hacer:
 
-Publicarlo en en un repositorio
--------------------------------
+```bash
 
-[Publicar un proyecto en svn](publicar-un-proyecto-en-svn.html) TODO: Agregar links para git
+mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
 
-Agregar más referencias posteriormente
---------------------------------------
+```
 
-Para agregar dependencias posteriormente se debe realizar de la siguiente manera:
+Cómo encontrar bibliotecas
+--------------------------
 
--   Modificar el siguiendo las instrucciones en el paso 2.
--   Actualizar los archivos de configuración de eclipse (paso 3):
+Si no estamos seguros del nombre o la última versión de un componente, podemos hacer la correspondiente búsqueda en <http://search.maven.org>
 
-`mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true`
-
-\*: Si tienen dependencias con otros proyectos que estén en su workspace de eclipse, una idea útil es hacer que el maven genere referencias contra esos proyectos en lugar de contra jars en su repositorio local. Para eso deben agregar a la línea anterior:
-
-`-Dmaven.eclipse.workspace=`<path a su workspace de eclipse>
-
--   Refrescar el proyecto desde el eclipse (F5 sobre el proyecto o botón derecho -&gt; refresh)
 
 Definir repositorios adicionales
 --------------------------------
 
-Estas bibliotecas no se encuentran en el repositorio default del maven (repo1.maven.com), por lo tanto debemos agregar un repositorio adicional. Hay muchas formas de hacer esto, una sencilla es agregarlo en el pom, antes de las dependencias. Un repositorio posible para esta tarea es el de JBoss, para agregarlo pueden hacer:
+Si tenemos bibliotecas que no podamos encontrar en el repositorio default de maven (repo1.maven.com), debemos agregar un repositorio adicional. Hay muchas formas de hacer esto, una sencilla es agregarlo en el pom, antes de las dependencias. Un repositorio posible para esta tarea es el de JBoss, para agregarlo pueden hacer:
+
+```xml
 
 <repositories>
-`   `<repository>
-`       `<id>`jboss`</id>
-`       `<url>[`http://repository.jboss.org/maven2`](http://repository.jboss.org/maven2)</url>
-`   `</repository>
+   <repository>
+      <id>jboss</id>
+      <url>http://repository.jboss.org/maven2</url>
+   </repository>
 </repositories>
+
+```
 
 Links relacionados
 ------------------
 
--   Una vez creado el proyecto, en el caso (probable) que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [Checkoutear un proyecto maven de un repositorio svn](checkoutear-un-proyecto-maven-de-un-repositorio-svn.html).
+-   Una vez creado el proyecto, para que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [clonar un repositorio git](https://help.github.com/articles/cloning-a-repository/).
+(TODO: Hacer un artículo que describa paso a paso)
+
 -   [Temario Algoritmos III](algo3-temario.html)
 

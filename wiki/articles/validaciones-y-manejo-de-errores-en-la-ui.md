@@ -23,14 +23,15 @@ Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pens
 -   Lo que más nos gusta es marcar los errores con excepciones. Eso permite tener distintos tipos de error y también asociar un mensaje para el usuario:
 
 ```java
-   >>Empleado
-   public void validar() {
-      ...
-      if (!new Date().before(this.fechaNacimiento)) {
-          throw new UserException("La fecha de nacimiento tiene que ser anterior al día de hoy");
-      }
-      ...
+
+>>>Empleado
+public void validar() {
+   ...
+   if (!new Date().before(this.fechaNacimiento)) {
+       throw new UserException("La fecha de nacimiento tiene que ser anterior al día de hoy");
    }
+   ...
+}
 ```
 
 Para manejar las excepciones suele ser útil tener una excepción que sea base de todas las excepciones que contienen información para el usuario (en nuestro ejemplo la llamamos UserException). De esta forma siempre que la UI reciba una excepción de este tipo sabe que debe mostrar el mensaje de error al usuario y cualquier objeto de dominio que necesite informar un error lo puede hacer tirando una excepción de este tipo o alguna subclase. De esa manera la UI no conoce nada de la lógica que maneja el dominio y mantenemos bajo el acoplamiento entre ambos componentes.
