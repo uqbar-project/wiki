@@ -153,7 +153,7 @@ A las configuraciones generales del pom.xml (referenciar al parent-project y las
 
 Podés utilizar alguno de nuestros pom.xml como ejemplo.
 
-Importante, para correr cualquier aplicación de Arena
+Configurar launcher
 -----------------------------------------------------
 
 En Run &gt; Run Configurations... &gt; Java Application &gt; New launch configuration (buscá el botón de la toolbar que está a la izquierda) y en la solapa Arguments, tenés que indicarle en VM Arguments que use el Launcher propio de Arena:
