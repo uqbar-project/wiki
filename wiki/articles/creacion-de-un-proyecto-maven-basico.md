@@ -91,8 +91,8 @@ Si tenemos bibliotecas que no podamos encontrar en el repositorio default de mav
 Links relacionados
 ------------------
 
--   Una vez creado el proyecto, para que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [clonar un repositorio git](https://help.github.com/articles/cloning-a-repository/).
-(TODO: Hacer un artículo que describa paso a paso)
+-   Una vez creado el proyecto, para que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [descargar un repositorio git](/wiki/articles/bajar-un-proyecto-maven-de-un-repositorio-git.html).
+
 
 -   [Temario Algoritmos III](algo3-temario.html)
 
