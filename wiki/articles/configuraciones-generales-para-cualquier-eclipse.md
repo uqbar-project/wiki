@@ -43,17 +43,6 @@ Shortcuts
 
 En algunas distribuciones de Linux existe un shortcut por defecto que es Ctrl + Space, que colisiona con el shortcut del content assist de Eclipse . Para solucionar el problema, hay que deshabilitar el binding: en Ubuntu: System Settings -&gt; Keyboard-&gt; Shortcuts en Lubuntu: click en el logo que esta abajo a la izquierda -&gt; Preferencias -&gt; Metodos de entrada por Teclado y se cambia a "Disabled"
 
-Qué archivos no subir al repo
------------------------------
-Anteriormente esto se configuraba en Window &gt; Preferences &gt; Team &gt; Ignored Resources, actualmente al usar git hay que configurar un archivo .gitignore en cada proyecto. Pero viene bien saber que estos patrones deberíamos ignorarlos:
-
--   bin
--   target
--   generated-sources
--   .settings
--   settings
--   .classpath y .project (si vas a trabajar con Maven)
--   .svn
 
 Indices de Maven
 ----------------

@@ -69,7 +69,7 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 
 ### Documentación
 
-* [Documentación oficial](http://www.eclipse.org/xtend/documentation.html)
+* [Documentación oficial](http://www.eclipse.org/xtend/documentation/)
 
 ### Links útiles
 

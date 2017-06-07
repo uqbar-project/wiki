@@ -5,6 +5,7 @@ categories: [java, enviroment]
 featured: true
 ---
 
+<img src="/img/languages/Java_logo.png" width="30%" height="30%">
 
 # Introducción
 
