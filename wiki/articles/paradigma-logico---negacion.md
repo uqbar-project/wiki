@@ -130,7 +130,7 @@ Normalmente si usamos una variable no anónima, Prolog tratará de darnos *ejemp
 
 ```
 ?- esBueno(34).
-false.
+true.
 ```
 
 ### Solución
