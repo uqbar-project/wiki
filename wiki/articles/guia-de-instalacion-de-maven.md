@@ -12,10 +12,8 @@ Pueden seguir [estas instrucciones](http://maven.apache.org/download.cgi#Install
 ## Mediante apt-get
 
 ```bash
-
 $ sudo apt-get install maven
 $ sudo ln -s /usr/share/maven3/bin/mvn /usr/bin/mvn
-
 ```
 
 ## Manualmente
@@ -25,10 +23,8 @@ Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/mave
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
 
 ```bash
-
 $ tar -xzvf apache-maven-3.5.0-bin.tar.gz
 $ mv apache-maven-3.5.0 /home/john/programs/
-
 ```
 
 Agregar la siguiente línea al archivo **.bashrc**. Este archivo oculto (su nombre empieza con '.') contiene comandos que se ejecutan cuando se abre una terminal (consola). Se puede abrir con cualquier editor de textos (gedit, vim, emacs, notepad++, etc) y se encuentra en el directorio **home** del usuario.
@@ -48,7 +44,6 @@ $ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.5.0/bin' >> .bashrc
 Corroboramos que podemos usar Maven. El output sería algo parecido a éste:
 
 ```bash
-
 john@notebook:~$ mvn -v
 Apache Maven 3.5.0 (r...)
 Maven home: /home/john/programs/apache-maven-3.5.0
@@ -56,7 +51,6 @@ Java version: 1.8...
 Java home: /usr/lib/jvm/...
 Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"
-
 ```
 
 ## Configuración de Maven
@@ -117,9 +111,7 @@ Una vez instaladas todas las herramientas, se puede crear un proyecto en esta pl
 -   Creamos un proyecto Maven. Desde la consola
 
 ```bash
-
 $ mvn archetype:generate -DgroupId=ar.edu.demo -DartifactId=demo -DinteractiveMode=false
-
 ```
 
 A todas las opciones que nos pregunte le damos enter para aceptar las default.
@@ -131,7 +123,5 @@ A todas las opciones que nos pregunte le damos enter para aceptar las default.
 -   Probamos hacer una compilación e instalación local.
 
 ```bash
-
 $ mvn install
-
 ```

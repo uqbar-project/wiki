@@ -184,7 +184,6 @@ Revisá que Maven esté correctamente instalado en tu máquina y que tenés el s
 También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener un mensaje de error similar a éste:
 
 ```bash
-
 [INFO] Unable to initialise extensions
 Component descriptor role: 'com.jcraft.jsch.UIKeyboardInteractive', implementation: 'org.apache.maven.wagon.providers.ssh.jsch.interactive.PrompterUIKeyboardInteractive', role hint: 'default' has a hint, but there are other implementations that don't
 
@@ -212,7 +211,6 @@ Si te aparece como source folder sólo el src, o bien si no tenés source folder
 Revisá que tengas instalada una JDK (no JRE, tiene que ser JDK con las herramientas para desarrollar en Java como el compilador, debug, etc.) y que la versión de ese JDK sea 1.8 ó superior. Si querés usar una JDK 1.7 ó inferior te va a aparecer el siguiente mensaje de error
 
 ```bash
-
 java.lang.UnsupportedClassVersionError: ---aplicación de Arena--- : Unsupported major.minor version 51.0
 
 ```
@@ -224,7 +222,6 @@ porque Arena está compilado con una JDK 1.8
 Si te aparece un error similar a éste al correr un "launcher":
 
 ```bash
-
 Error: no se ha encontrado o cargado la clase principal org.uqbar.arena.examples.conversor.xtend.ConversorWindow
 
 ```
@@ -241,7 +238,6 @@ Revisá
 Si te aparece un error como éste al correr un launcher:
 
 ```bash
-
 Error occurred during initialization of VM
 java.lang.Error: java.lang.ClassNotFoundException: org.uqbar.arena.aop.ArenaClassLoader
    at java.lang.ClassLoader.initSystemClassLoader(Unknown Source)
@@ -271,7 +267,6 @@ entonces el problema puede darse porque no te descargó las dependencias de Mave
 Otro problema que te puede ocurrir cuando corras un launcher que te descargaste de nuestros ejemplos es que te aparezca un error de este tipo:
 
 ```bash
-
 Launch configuration references non-existing project celulares-ui-arena-scala
 
 ```
@@ -284,7 +279,6 @@ En este caso el problema es que te descargaste el proyecto del repositorio utili
 Si te aparece un error como el siguiente:
 
 ```bash
-
 groovy-all is loaded in version 2.0.6 and you are trying to load version 2.1.6
 
 ```

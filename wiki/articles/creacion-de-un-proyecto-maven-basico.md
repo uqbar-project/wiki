@@ -37,7 +37,6 @@ Al presionar Next, nos aparece el siguiente paso, donde debemos elegir
 En el archivo pom.xml del raíz del proyecto podemos agregar bibliotecas a nuestro proyecto en el nodo dependencies...
 
 ```xml
-
 <dependencies>
    <dependency>
        <groupId>log4j</groupId>
@@ -61,7 +60,6 @@ También podemos cambiar el groupId, artifactId, la versión o bien apuntar a un
 Cada vez que se modifique el archivo pom.xml, debemos actualizar nuestro entorno (Eclipse, IntelliJ o el que fuera) mediante un botón derecho sobre el proyecto Maven > Update project, o bien por línea de comando hacer:
 
 ```bash
-
 mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
 
 ```
@@ -78,7 +76,6 @@ Definir repositorios adicionales
 Si tenemos bibliotecas que no podamos encontrar en el repositorio default de maven (repo1.maven.com), debemos agregar un repositorio adicional. Hay muchas formas de hacer esto, una sencilla es agregarlo en el pom, antes de las dependencias. Un repositorio posible para esta tarea es el de JBoss, para agregarlo pueden hacer:
 
 ```xml
-
 <repositories>
    <repository>
       <id>jboss</id>

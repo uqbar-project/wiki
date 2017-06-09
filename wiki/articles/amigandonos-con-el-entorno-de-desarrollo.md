@@ -68,7 +68,6 @@ Eclipse
 Por ejemplo, en un proyecto completo tener paquetes para el “*dominio*”, “*controllers*” y “*vista*” (si correspondiese) es una convención común. Cada uno de éstos agrupa las clases que tienen un concepto afín. Se podría seguir ahondando en la definición de subpaquetes agrupando, por ejemplo, por componente:
 
 ```bash
-
 domain/
    ├── home
    ├── registration

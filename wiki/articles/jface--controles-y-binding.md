@@ -27,7 +27,6 @@ Podemos bindear la propiedad text de un control textbox contra un atributo Strin
 <!-- -->
 
 ```java
-
 new DataBindingContext().bindValue(
     SWTObservables.observeText(controlTextBoxEnCuestion, SWT.FocusOut), 
     BeansObservables.observeValue(objetoModelo, propiedadDelModeloContraElQueSeBindea), 
@@ -104,7 +103,6 @@ Para conocer cuál es el elemento seleccionado del combo enviamos el mensaje get
 <!-- -->
 
 ```java
-
 /**
  * 
  * Returns the zero-relative index of the item which is currently selected in the
@@ -124,7 +122,6 @@ El binding relaciona un String con la propiedad selection del combo cuando el us
 <!-- -->
 
 ```java
-
 Combo comboSocios = new Combo(formulario, SWT.LEFT | SWT.BORDER | SWT.SINGLE);
 comboSocios.setLayoutData(new GridData(150, SWT.DEFAULT));
 for (Socio socio : this.getSocios()) {
@@ -143,7 +140,6 @@ El binding no lo podemos hacer contra un socio en particular, necesitamos trabaj
 <!-- -->
 
 ```java
-
 public void setSocioSeleccionado(String nombreCompletoSocio) {
 `    ...
 }
@@ -170,7 +166,6 @@ El botón tiene listeners, cuando el usuario presiona el botón se dispara la no
 <!-- -->
 
 ```java
-
 Button botonAceptar = new Button(formulario, SWT.PUSH);
 botonAceptar.setText("Aceptar");
 botonAceptar.addSelectionListener(

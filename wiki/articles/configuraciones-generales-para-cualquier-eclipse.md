@@ -15,7 +15,6 @@ Para esto deben ir a Window Preferences &gt; Java &gt; Compiler &gt; y donde dic
 En caso contrario al bajar proyectos compilados en JDKs superiores aparecerán mensajes de error como estos:
 
 ```bash
-
 Syntax error, annotations are only available if source level is 1.5 or greater
 Syntax error, parameterized types are only available if source level is 1.5 or greater
 
@@ -64,7 +63,6 @@ Groovy, Java y Xtend comparten la forma de importar paquetes. En un JDK estánda
 Para eso, en Java &gt; Appearance &gt; Type Filters, agregar las siguientes expresiones:
 
 ```bash
-
 bash
 sun.*
 *.internal.*

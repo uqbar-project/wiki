@@ -23,7 +23,6 @@ Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pens
 -   Lo que más nos gusta es marcar los errores con excepciones. Eso permite tener distintos tipos de error y también asociar un mensaje para el usuario:
 
 ```java
-
 >>>Empleado
 public void validar() {
    ...
@@ -46,7 +45,6 @@ Para manejar las excepciones suele ser útil tener una excepción que sea base d
 Pero ¿dónde? Una buena regla es poner try/catch en los lugares en los que, de otra manera, la aplicación mostraría el stack trace al usuario. Nosotros no queremos que eso suceda, pero es preferible que el usuario llame por una pantalla rota a que el error quede escondido, como en estos típicos casos: <code>
 
 ```java
-
 >>>Código de pantalla
 public void buscarSocios() {
    try {
@@ -63,7 +61,6 @@ El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" bús
 Otro error común en el manejo de errores es encerrar sólo *parte* del código en un bloque try/catch (la instrucción que sabemos que puede fallar), loguear el error o incluso no manejarlo y permitir que el método siga ejecutándose, como lo muestra el siguiente ejemplo: <code>
 
 ```java
-
 >>>Código de pantalla
 public void buscarSocios() {
    Socio socio = null;
@@ -104,7 +101,6 @@ Por otra parte, necesitamos informar al usuario que cuando estábamos buscando l
 ## Un ejemplo genérico de manejo de errores en UI
 
 ```java
-
 >>>Código de pantalla
 public void agregarSocio() {
    try {

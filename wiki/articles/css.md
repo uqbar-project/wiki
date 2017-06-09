@@ -10,19 +10,21 @@ Sintaxis
 
 CSS tiene su propio lenguaje declarativo en el cual especificamos **reglas**. Una regla tiene la siguiente sintaxis:
 
-{% link_image css-rule.gif %}
+![css rule](/img/css-rule.gif)
 
-El **selector** es una expresión que nos permite matchear aquellos elementos a los que queremos aplicarle estos estilos. Luego el cuerpo de la regla contiene un conjunto de propiedades y valores para éstos.
+El **selector** nos permite aplicar el estilo a aquellos elementos que coincidan con dicha expresión. Luego el cuerpo de la regla contiene un conjunto de propiedades y valores para éstos.
 
 Algunas propiedades aplican solo a algunos tipos de tags. Sin embargo, no es un lenguaje que "compile" o que tire errores. Simplemente si una propiedad no aplica a un tag, el browser no le va a dar bola.
 
 Un primer ejemplo para entender la sintaxis
 
-`span {`
-`   text-align:center;`
-`}`
+```css
+span {
+   text-align:center;
+}
+```
 
-Aplica el valor "center" a la propiedad "text-align" de todos los tags de la página que sean de tipo &lt;span&gt;.
+Aplica el valor "center" a la propiedad "text-align" de todos los tags de la página que sean de tipo &lt;span&gt; (en otras palabras, alinea un texto en el centro de donde está contenido).
 
 Selectores Principales
 ----------------------
@@ -35,20 +37,26 @@ Básicamente lo primero que tenemos que saber sobre los selectores es que hay tr
 
 Ejemplo por tag (ya vimos otro arriba para &lt;span&gt;)
 
-`td {`
-`   text-align:center;`
-`   color:red;`
-`}`
+
+```css
+td {
+   text-align:center;
+   color:red;
+}
+```
 
 Aplica esas dos propiedades a todos los &lt;td&gt;
 
-`.filaImpar {`
-`   text-align:center;`
-`   color:red;`
-`}`
+```css
+.filaImpar {
+   text-align:center;
+   color:red;
+}
+```
 
 Este selector, que comienza con un punto, indica que va a matchear con cualquier tag (no importa el tipo de tag), siempre que éste tenga el valor **filaImpar** en su atributo **class**. Por ejemplo matchearía con estos tags:
 
+```html
      <p class="filaImpar">Hola Soy un P&aacute;rrafo<p>
 
      <span class="filaImpar importante">Hola Soy un Span<p>
@@ -56,21 +64,25 @@ Este selector, que comienza con un punto, indica que va a matchear con cualquier
      <tr class="conBordes fondoImportante filaImpar>
         <td>Hola, soy una Fila</td>
      <tr>
+```
 
 Como se ve acá, un tag **puede tener más de un class**. Así los classes no tienen nada que ver con las clases de un lenguaje orientado a objetos. Pueden pensarlos más bien como "labels" o "etiquetas" o marcas que que hago a los tags, para luego por CSS agregarle características visuales. Así eventualmente uno en un proyecto grande, se crearía su propia convención con un conjunto de "classes" que reutilizaría en todo su sitio. Por ejemplo "titulo" o "menu", "botonGrande", "botonMediano", etc. Es una buena forma de elevar el nivel del html con nuevos significados.
 
 El último ejemplo, matchear por id
 
-`#unElementoEspecifico {`
-`   text-align:center;`
-`   color:red;`
-`}`
+```css
+#unElementoEspecifico {
+   text-align:center;
+   color:red;
+}
+```
 
 Este selector es el más "puntual" o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por "id".
 
+```html
      <li id="opcionIrAAyuda">Ir a Ayuda</li>
-
      <button id="volver">Volver</button>
+```
 
 Algo importante para entender esto, es que en una página no deberían existir dos tags con el mismo id. No importa si están dentro de diferentes tags o en diferentes niveles. El "id" es único para todos los elementos de la página.
 
@@ -79,6 +91,7 @@ Uso de CSS desde HTML
 
 El html usa el css mediante una declaración en la sección **HEAD**.
 
+```html
       <html>
         <head>
           ...
@@ -86,12 +99,15 @@ El html usa el css mediante una declaración en la sección **HEAD**.
           ...
         </head>
       </html>
+```
 
 Donde "styles.css" sería mi archivo de estilos y estaría, en este caso en la misma carpeta en que se encuentra este html. También podríamos usar una URL absoluta:
 
+```html
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+```
 
-Existen otras formas de incluir estilos en un html, sin embargo la mejor es la que ya citamos. Las demás involucran ensuciar el html, y las pueden ver acá [1](http://www.w3schools.com/css/css_howto.asp)
+Existen otras formas de incluir estilos en un html, sin embargo la mejor es la que ya citamos. Las demás involucran ensuciar el html, y las pueden ver [en este link](http://www.w3schools.com/css/css_howto.asp)
 
 Cascada
 -------
@@ -103,19 +119,23 @@ Las reglas se aplican *en cascada*, esto significa dos cosas:
 
 Ejemplo de varias reglas aplicando al mismo tiempo sobre un tag.
 
-`tr {`
-`   text-align:center;`
-`}`
+```css
+tr {
+   text-align:center;
+}
 
-`.resaltar {`
-`   background-color: red;`
-`}`
+.resaltar {
+   background-color: red;
+}
+```
 
 Ambos reglas van a aplicar en este tag
 
+```html
         <tr class="resaltar">
             <td>Hola, soy una celda</td>
         </tr>
+```
 
 El texto se va a ver centrado y además con fondo rojo.
 
@@ -124,34 +144,40 @@ Combinando Selectores (OR)
 
 Es común que tengamos que aplicar los mismos estilos a diferentes tags. Para evitar duplicación de código las reglas se pueden combinar. Ej:
 
-`h1 {`
-`  text-align:center;`
-`  color:red;`
-`}`
-`h2 {`
-`  text-align:center;`
-`  color:red;`
-`}`
-`p {`
-`  text-align:center;`
-`  color:red;`
-`}`
+```css
+h1 {
+  text-align:center;
+  color:red;
+}
+h2 {
+  text-align:center;
+  color:red;
+}
+p {
+  text-align:center;
+  color:red;
+}
+```
 
 Se puede refactorizar a esto:
 
-`h1, h2, p {`
-`  text-align:center;`
-`  color:red;`
-`}`
+```css
+h1, h2, p {
+  text-align:center;
+  color:red;
+}
+```
 
 La sintaxis entonces es:
 
+```css
      selector1, selector2, ... selectorN {
          propiedad1: valor1;
          propiedad2: valor2;
          ...
          propiedadN: valorN;
      }
+```
 
 Se puede pensar como un **or**. Sería, si es un h1 **o** es un h2, **o** es un p.
 
