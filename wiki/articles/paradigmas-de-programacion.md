@@ -30,4 +30,4 @@ Conceptos Transversales
 Material de lectura extra
 -------------------------
 
-[Concepts, Techniques and Models of Computer Programming](http://www.epsa.org/forms/uploadFiles/3B6300000000.filename.booksingle.pdf)
+[Concepts, Techniques and Models of Computer Programming](http://aleteya.cs.buap.mx/~jlavalle/papers/books_on_line/MIT.Press.Concepts.Techniques.and.Models.of.Computer.Programming.eBook-DDU.pdf)

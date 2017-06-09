@@ -16,27 +16,17 @@ title: Preparacion de un entorno hbase
 
 Todo esto debe hacerse en un sistema operativo Linux (ya sea como sistema operativo principal de tu máquina o dentro de una VM)
 
-# Instalación Hadoop
 
-Descargar y seguir los pasos que se indican a continuación:
+# Instalación
 
-<http://hadoop.apache.org/docs/r2.5.0/hadoop-project-dist/hadoop-common/SingleCluster.html>
-
-# Instalación HBase
-
-## Download
+## Download y configuración
 
 Ingresar a esta URL
 
-<http://www.apache.org/dyn/closer.cgi/hbase/>
+<https://hbase.apache.org/book.html#quickstart>
 
-Elegir un mirror, recomendamos bajar el último release estable (directorio stable) que utilice *Hadoop 2*
+y seguir los pasos de instalación en modo Standalone.
 
-**Nota:** Al 19/02/2017 la URL es <http://apache.dattatec.com/hbase/stable/hbase-1.2.4-bin.tar.gz>
-
-## Configuración
-
-<http://hbase.apache.org/book/quickstart.html> (seguir los pasos de instalación en modo Standalone)
 
 # Instalación HUE
 
