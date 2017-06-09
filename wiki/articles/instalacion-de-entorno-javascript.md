@@ -1,15 +1,18 @@
 ---
 layout: article
 title: Instalacion de entorno javascript
+categories: [javascript, es6, entorno, ecmascript, instalacion]
+featured: true
 ---
 
-(Solo para Windows) Git Bash
-----------------------------
+<img src="/img/languages/ES6-ecmascript6-logo.jpg" width="30%" height="30%"/>
+
+# Prerrequisitos (Solo para Windows) Git Bash
+
 Si tenés una instalación de Windows te recomendamos previamente descargar [Git Bash](https://git-for-windows.github.io/)
 
 
-Manejo de dependencias, automatización de tareas
-------------------------------------------------
+# Manejo de dependencias, automatización de tareas
 
 Para ésta y otras tareas, vamos a utilizar la plataforma [Node](https://nodejs.org/), que también es un servidor web desarrollado en javascript.
 
@@ -23,12 +26,11 @@ o seguir las instrucciones oficiales que están [aquí](https://github.com/nodej
 
 Para cualquier sistema operativo en general podés descargar Node en <https://nodejs.org/download/>
 
-Entorno de desarrollo
----------------------
+# Entorno de desarrollo
 
 Las herramientas para esta tecnología todavía no están tan maduras, si estuviste trabajando en Eclipse o IntelliJ posiblemente vas a extrañar los refactors, la detección de imports automáticos, los quick fixes y muchas otras cosas que hacían más feliz el trabajo del día a día. No obstante hay entornos que van sumando funcionalidades y mejoras año tras año. 
 
-### Visual Studio Code (recomendado)
+## Visual Studio Code (recomendado)
 
 El **[Visual Studio Code](https://code.visualstudio.com/)** es un editor de texto basado en Sublime que cuenta con
 
@@ -41,7 +43,7 @@ El **[Visual Studio Code](https://code.visualstudio.com/)** es un editor de text
 Seguí los pasos de instalación que propone el sitio oficial.
 
 
-### Plugins de javascript para Eclipse
+## Plugins de javascript para Eclipse
 
 Si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript aunque las funcionalidades en este entorno están bastante más limitadas. A continuación te explicamos cómo agregar los plugins para trabajar con javascript:
 
@@ -52,7 +54,7 @@ Si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript 
     -   Eclipse Xml Editors and Tool, y
     -   JavaScript Development Tools
 
-### Otros editores de texto
+## Otros editores de texto
 
 - [**Sublime 3**](https://www.sublimetext.com/), al que luego tenés que agregarle paquetes para incorporarle funcionalidades
     - Si trabajás en ES6 chequeá cómo instalar [Intellisense](https://medium.com/beyond-the-manifesto/configuring-sublime-text-3-for-modern-es6-js-projects-6f3fd69e95de) y el [Linter (que hace los chequeos)](http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/), que en definitiva es llegar al mismo paso que con Visual Studio Code
@@ -62,16 +64,15 @@ Si te sentís cómodo con Eclipse podés incorporarle los plugins de javascript 
 
 
 
-Framework de testeo unitario
-----------------------------
+# Framework de testeo unitario
 
 Para hacer testeo unitario tenés varias opciones
 
-### Jasmine (recomendado)
+## Jasmine (recomendado)
 
 -   [Jasmine](http://jasmine.github.io/), que es la opción que te recomendamos. Para probarlo en el cliente, basta con descargar en <https://github.com/jasmine/jasmine/releases> el proyecto web standalone (**jasmine-standalone-x.y.z.zip** donde x, y, z es el último número de versión), integrarlo dentro de tu proyecto Javascript existente y luego editar el archivo SpecRunner.html, incorporando los archivos js de dominio y de test que quieras. Todo esto y bastante más está explicado en <https://jasmine.github.io/2.6/introduction> (o bueno, podés navegar el sitio y acceder a la última versión de la documentación)
 
-### Otras opciones
+## Otras opciones
 
 Te dejamos alternativas a Jasmine
 
@@ -81,3 +82,6 @@ Te dejamos alternativas a Jasmine
 -   [Ava](https://github.com/avajs/ava)
 -   Pueden ver un [interesante artículo sobre frameworks de testeo unitario](http://stateofjs.com/2016/testing/)
 
+# Links relacionados
+
+-  [Temario Algoritmos III](algo3-temario.html)

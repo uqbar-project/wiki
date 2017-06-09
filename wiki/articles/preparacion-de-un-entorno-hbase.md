@@ -31,3 +31,4 @@ y seguir los pasos de instalación en modo Standalone.
 # Instalación HUE
 
 <http://tutorialforlinux.com/2014/05/23/how-to-install-hue-hadoop-web-gui-on-ubuntu-14-04-trusty-lts-easy-guide/>
+

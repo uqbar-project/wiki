@@ -32,8 +32,6 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Entorno
 
--   [Preparacion de un entorno de desarrollo Web](preparacion-de-un-entorno-de-desarrollo-web.html)
-
 ## Artículos
 
 -   [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
@@ -54,6 +52,7 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Entorno
 
+-   [Preparacion de un entorno de desarrollo Web (Java)](preparacion-de-un-entorno-de-desarrollo-web.html)
 -   [Instalación de Entorno Web Grails](instalacion-de-entorno-web-grails.html)
 
 ## Articulos históricos
