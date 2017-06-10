@@ -119,5 +119,5 @@ repositories {
 Links
 -----
 
--   Volver a [Instalación\_de\_Entorno\_Web\_Grails](instalacion-de-entorno-web-grails.html)
-
+-   Volver a [Instalación de Entorno Web Grails](instalacion-de-entorno-web-grails.html)
+-   [Contenido de Algoritmos III](algo3_temario.html)
