@@ -23,7 +23,7 @@ Una vez avanzado sobre el asistente, se reinicia el entorno.
 
 # Configuraciones adicionales
 
-Además de las configuraciones [sugeridas para Grails](instalacion-de-entorno-web-grails.html), necesitás:
+Además de las configuraciones [sugeridas para Grails](instalacion-de-entorno-web-grails.html#tocAnchor-1-2-1), necesitás:
 
 -   especificar por default el directorio donde el compilador Xtend deja los .java generados, para que el framework Grails los pueda ver. Entonces en Window &gt; Preferences &gt; Xtend &gt; Compiler cambiamos el texto *directory* a "java" en lugar de "xtend-gen".
 
@@ -116,8 +116,9 @@ repositories {
 
 -   Ya se puede correr la aplicación con run-app
 
-Links
------
+<!-- -->
+
+# Links
 
 -   Volver a [Instalación de Entorno Web Grails](instalacion-de-entorno-web-grails.html)
 -   [Contenido de Algoritmos III](algo3_temario.html)
