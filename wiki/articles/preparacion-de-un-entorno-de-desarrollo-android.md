@@ -11,10 +11,15 @@ featured: true
 La instalación que nosotros recomendamos es la siguiente:
 
 -   [**Android Studio**](https://developer.android.com/sdk/index.html)
-    -   Si vas a trabajar con tu celular como dispositivo de pruebas (ver más abajo en Configuraciones)
-    -   Si no descargate la última versión
+    -   Al descargarlo para tu sistema operativo, se abre un asistente
+    -   En la presentación, dar Next (Siguiente)
+    -   Elegir el tipo de instalación Standard (por defecto) y presionar Next (Siguiente)
+    -   Se visualizan las opciones elegidas, presionamos Next (Siguiente)
+    -   y un último Finish hace las descargas necesarias (esperar pacientemente)
 
 -   **Android SDK**
+    -   Si vas a trabajar con tu celular como dispositivo de pruebas (ver más abajo en Configuraciones)
+    -   Si no descargate la última versión
     -   Seguir los pasos que se explican en la [URL de descarga](https://developer.android.com/studio/install.html) (se adapta al sistema operativo e idioma de la máquina)
     
 <!-- -->
@@ -65,24 +70,6 @@ Si aparece [ese error](http://stackoverflow.com/questions/22541681/fail-to-creat
 ## You can't combine swipe dismissal with ActionBar \#1
 
 Si al correr la aplicación aparece en el LogCat ese siguiente mensaje revisar si el device es Android Wear, porque no es compatible con los ejemplos.
-
-## Se cuelga el Android SDK Content Manager cuando levanta el Eclipse (0%)
-
-Si se [cuelga el Android SDK Content Manager](http://stackoverflow.com/questions/13489141/eclipse-hangs-at-the-android-sdk-content-loader), cerrar el entorno asegurándose de que no quedó ningún proceso levantado. Luego ingresar al %USER PROFILE%, ingresar a la carpeta .android y borrar
-
--   el directorio cache
--   y el archivo ddms.cfg
-
-Luego iniciar el Eclipse normalmente.
-
-<!-- -->
-
-## No veo la librería de Android en mi proyecto
-
-Si no aparece la librería de Android, botón derecho sobre el proyecto
-
--   en la solapa Android elegir un target (por ejemplo Android 4.4W)
--   y luego agregar la librería Android Classpath Container en el build path (Build path &gt; solapa Libraries &gt; Add... Android Classpath Container)
 
 <!-- -->
 
