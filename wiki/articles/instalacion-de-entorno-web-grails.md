@@ -4,7 +4,7 @@ title: Instalacion de entorno web grails
 featured: true
 ---
 
-<img src="/img/languages/grails-logo.jpg" width="50%" height="50%"/>
+<img src="/img/languages/grails-logo.jpg" width="30%" height="30%"/>
 
 # Pre-requisitos
 
