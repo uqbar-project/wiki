@@ -185,9 +185,9 @@ Para poder usar JSTL además del jar (que bajó el maven en el apartado anterior
 
 Descripción del tag library  
 
-En un archivo , por ejemplo el . Todos los archivos tld estándar ya los bajó el maven, pero hay que copiarlos a la carpeta WEB-INF, es decir:
+Todos los archivos tld estándar ya los bajó el maven, pero hay que copiarlos a la carpeta WEB-INF, es decir:
 
--   Buscar el jar de jstl que debería estar en
+-   Buscar el jar de jstl que debería estar en el directorio .m2 del componente JSTL (carpeta $HOME/.m2/repository/com/sun/java/jstl/version...)
 -   Dentro del jar hay una carpeta META-INF y están todos los tlds que necesitamos.
 -   Copiar el a la carpeta de nuestro proyecto web (es decir
 
@@ -204,13 +204,13 @@ Adicionalmente es necesario indicar en el qué tag libraries queremos utilizar, 
 
 Para usar EL:
 
-```
+```jsp
 <%@ page isELIgnored ="false" %> 
 ```
 
 Para usar JSTL:
 
-```
+```jsp
 <%@ page pageEncoding="UTF-8" %> 
 <%@ taglib uri="[http://java.sun.com/jstl/core](http://java.sun.com/jstl/core)" prefix="c" %>
 ```
