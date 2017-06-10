@@ -10,9 +10,9 @@ featured: true
 
 La instalación que nosotros recomendamos es la siguiente:
 
--   **Android Studio**
-    -   <https://developer.android.com/sdk/index.html> (descargar última versión que a Octubre 2016 es Nougat - la 24)
-
+-   [**Android Studio**](https://developer.android.com/sdk/index.html)
+    -   Si vas a trabajar con tu celular como dispositivo de pruebas (ver más abajo en Configuraciones)
+    -   Si no descargate la última versión
 
 -   **Android SDK**
     -   Seguir los pasos que se explican en la [URL de descarga](https://developer.android.com/studio/install.html) (se adapta al sistema operativo e idioma de la máquina)
