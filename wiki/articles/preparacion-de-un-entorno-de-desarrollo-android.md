@@ -48,7 +48,7 @@ Las configuraciones que te recomendamos son:
 Igualmente pueden configurar cualquier otro dispositivo (Phone o Tablet recomendado, no Wear porque tiene características muy diferentes)
 
 {% wiki_note_info %}
-**IMPORTANTE: ** Si usás tu celular como dispositivo de pruebas, tienen que coincidir la versión de tu celular con la que vas a configurar en el proyecto.
+IMPORTANTE: Si usás tu celular como dispositivo de pruebas, tienen que coincidir la versión de tu celular con la que vas a configurar en el proyecto.
 {% endwiki_note_info %}
 
 <!-- -->
