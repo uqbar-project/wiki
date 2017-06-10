@@ -36,9 +36,6 @@ El primer parámetro indica la aplicación o agrupador, la segunda es el valor a
 
 Leer [esta recomendación](http://stackoverflow.com/questions/7959263/android-log-v-log-d-log-i-log-w-log-e-when-to-use-each-one)
 
-## No veo la ventana LogCat
-
-Si no la ves en tu perspectiva Java: Window &gt; Show View &gt; Other &gt; escribimos LogCat y seleccionamos la que no está deprecada. También es buena opción subir el nivel de logging a warning o info para no perdernos en la maraña de mensajes que emite el emulador.
 
 # Notificaciones al usuario
 
