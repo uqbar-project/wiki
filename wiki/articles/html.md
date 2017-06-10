@@ -30,7 +30,9 @@ Un ejemplo básico:
 </html>
 ```
 
-#Elementos básicos de una página HTML
+<!-- -->
+
+# Elementos básicos de una página HTML
 
 ## Links
 
@@ -40,6 +42,8 @@ Se indican con el tag **a** y permiten vincular diferentes páginas HTML entre s
 
 La parte visible del link será dada por el cuerpo del link, por ejemplo:
 
-<a href="otraPag.html">`Este es el texto que se vería`</a>` `
+```html
+<a href="otraPag.html">Este es el texto que se vería</a>` `
+```
 
 ## Tablas
