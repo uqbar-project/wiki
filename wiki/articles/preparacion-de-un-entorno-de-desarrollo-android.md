@@ -4,6 +4,8 @@ title: Preparacion de un entorno de desarrollo android
 featured: true
 ---
 
+<img src="/img/languages/android-logo.png" height="20%" width="20%"/>
+
 # Download e instalación base
 
 La instalación que nosotros recomendamos es la siguiente:
