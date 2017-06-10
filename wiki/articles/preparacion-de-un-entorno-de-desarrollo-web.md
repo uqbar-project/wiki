@@ -89,3 +89,6 @@ Si estás trabajando en un lenguaje diferente a Java no te olvides de instalar l
 -   [Tutorial sobre html](http://www.w3schools.com/html/)
 -   [Manual de referencia para manejar la estética a través de los .css](http://www.w3schools.com/css/default.asp)
 
+# Links relacionados
+
+-  [Temario Algoritmos III](algo3-temario.html)
