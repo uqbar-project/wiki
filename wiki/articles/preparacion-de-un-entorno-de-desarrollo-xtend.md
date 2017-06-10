@@ -1,11 +1,13 @@
 ---
 layout: article
 title: Preparacion de un entorno de desarrollo xtend
+categories: [xtend, entorno, instalacion]
+featured: true
 ---
 
 <img src="/img/wiki/Xtend-logo.png" height="30%" width="30%">
 
-### Download e instalación base
+# Download e instalación base
 
 En el 2016, todos los ejemplos de uqbar estarán utilizando la versión 2.9.1 que se puede descargar en <http://www.eclipse.org/xtend/download.html> (con plugins tanto para Eclipse como para IntelliJ IDEA).
 
@@ -31,11 +33,13 @@ Para eso:
 
 * Reiniciar el Eclipse
 
-### Configuraciones default del eclipse
+<!-- -->
+
+# Configuraciones default del eclipse
 
 Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](configuraciones-generales-para-cualquier-eclipse.html)
 
-### ¿Cómo empezar?
+# ¿Cómo empezar?
 
 *  Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](guia-de-instalacion-de-maven.html)
     * en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
@@ -59,19 +63,27 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 * En src/main/java
 * En src/main/generated-sources vas a tener los archivos .java que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos .java. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.
 
-### Tips
+<!-- -->
+
+# Tips
 
 * Para que cuando hagas New > File te aparezcan las clases y las interfaces Xtend, Window > Customize Perspective... > solapa Menu Visibility > expandís File > New > y seleccionás las de Xtend (Xtend class, inteface, annotation y enum).
 
-### Problema con el menu de Eclipse en Ubuntu 13.10
+<!-- -->
+
+# Problema con el menu de Eclipse en Ubuntu 13.10
 
 * [Problema de Eclipse con Ubuntu 13.10](problema-de-eclipse-con-ubuntu-13-10.html)
 
-### Documentación
+<!-- -->
+
+# Documentación
 
 * [Documentación oficial](http://www.eclipse.org/xtend/documentation/)
 
-### Links útiles
+<!-- -->
+
+# Links útiles
 
 * Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
 

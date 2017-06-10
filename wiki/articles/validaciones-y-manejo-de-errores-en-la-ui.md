@@ -18,7 +18,7 @@ Algunos ejemplos:
 Una vez que tenemos validaciones que elegimos colocar en el dominio debemos pensar en qué forma el dominio informa los problemas a la interfaz de usuario, siendo que debe hacerlo en términos del dominio.
 
 -   Una opción es usar booleanos (true = el valor es válido, false = es inválido), es simple pero no permite que el dominio indique por qué el valor es inválido y nos obligará a colocar esa lógica en la UI.
--   Una extensión natural es usar un Enum, pero trae problemas similares: hay un alto [acoplamiento](conceptos-basicos-del-diseno-acoplamiento.html) entre la UI y el dominio.
+-   Una extensión natural es usar un Enum, pero trae problemas similares: hay un alto [acoplamiento](conceptos-basicos-del-diseno.html#tocAnchor-1-5) entre la UI y el dominio.
 -   Otra opción es usar códigos de retorno del lado del dominio: -2 significa que la fecha de nacimiento es mayor a la fecha de hoy, -3 es que la fecha de nacimiento es anterior a 1900, etc. Sigue habiendo un alto acoplamiento entre los errores que el negocio dispara y el mensaje que la UI debe mostrar.
 -   Lo que más nos gusta es marcar los errores con excepciones. Eso permite tener distintos tipos de error y también asociar un mensaje para el usuario:
 
@@ -53,7 +53,6 @@ public void buscarSocios() {
        e.printStackTrace();
    }
 }
-
 ```
 
 El usuario no va a reportar que la búsqueda tira error, sino que "ciertas" búsquedas no funcionan. A veces trae datos y a veces no. De esa manera la aplicación pierde robustez.
@@ -76,7 +75,6 @@ public void buscarSocios() {
    ...
    ...
 }
-
 ```
 
 Tenemos dos problemas que resolver:
@@ -114,7 +112,6 @@ public void agregarSocio() {
        this.messageError("Ocurrió un error al agregar el socio. Por favor consulte al administrador del sistema");
    }
 }
-
 ```
 
 Los métodos messageWarning y messageError, como dijimos antes, dependen de la tecnología a implementar, en nuestro caso asumimos que está en una superclase de Form de la cual hereda la pantalla de Alta de un Socio.

@@ -38,13 +38,13 @@ Nota: si hacemos un único proyecto con dominio + ui arena, podemos sólo depend
 
 Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomendamos) tenés que definir esta dependencia
 
-{% highlight xml %}
+```xml
 <dependency>
   <groupId>org.uqbar-project</groupId>
   <artifactId>uqbar-domain</artifactId>
   <version>3.6.1</version>
 </dependency>
-{% endhighlight %}
+```
 
 ## Dependencias para proyectos de UI
 
@@ -55,7 +55,7 @@ Agregar dos referencias en el pom
 
 Por ejemplo, las dependencias en nuestro pom podrían quedar así:
 
-{% highlight xml %}
+```xml
 <dependencies>
   <dependency>
     <groupId>org.uqbar-project</groupId>
@@ -68,18 +68,18 @@ Por ejemplo, las dependencias en nuestro pom podrían quedar así:
     <version>1.0.0-SNAPSHOT</version>
   </dependency>
 </dependencies>
-{% endhighlight %}
+```
 
 Las otras dependencias como JUnit se toman de la definición del parent project, en caso de ser necesario se debe agregar a mano:
 
-{% highlight xml %}
+```xml
 <dependency>
   <groupId>junit</groupId>
   <artifactId>junit</artifactId>
   <version>4.11</version>
   <scope>test</scope>
 </dependency>
-{% endhighlight %}
+```
 
 Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "arena-jface", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
 
@@ -91,13 +91,13 @@ Asumimos que además del entorno básico ya te instalaste Xtend según [este ins
 
 Si estás trabajando Arena-UI desde xtend, este parent contiene todas las dependencias que necesitás (JUnit, el compilador Xtend, Arena UI, Uqbar Domain, etc.):
 
-{% highlight xml %}
+```xml
 <parent>
   <groupId>org.uqbar-project</groupId>
   <artifactId>arena-xtend-parent</artifactId>
   <version>3.6.2</version>
 </parent>
-{% endhighlight %}
+```
 
 
 # Integración con Scala
@@ -123,7 +123,7 @@ A las configuraciones generales del pom.xml (referenciar al parent-project y las
 
 -   Dependencias: el plugin para groovy
 
-{% highlight xml %}
+```xml
 <dependencies>
   <dependency>
     <groupId>org.codehaus.mojo</groupId>
@@ -133,18 +133,18 @@ A las configuraciones generales del pom.xml (referenciar al parent-project y las
   <dependency>
     <groupId>uqbar</groupId>
     <artifactId>arena-jface</artifactId>
-...
+    ...
 </dependencies>
-{% endhighlight %}
+```
 
 -   Y definir el directorio donde están los fuentes como src/main/groovy en lugar de src/main/java que es el default para Maven:
 
-{% highlight xml %}
+```xml
 <build>
   <sourceDirectory>src/main/groovy</sourceDirectory>
   <testSourceDirectory>src/test/groovy</testSourceDirectory>
-...
-{% endhighlight %}
+  ...
+```
 
 Podés utilizar alguno de nuestros pom.xml como ejemplo.
 
@@ -152,17 +152,17 @@ Podés utilizar alguno de nuestros pom.xml como ejemplo.
 
 En Run &gt; Run Configurations... &gt; Java Application &gt; New launch configuration (buscá el botón de la toolbar que está a la izquierda) y en la solapa Arguments, tenés que indicarle en VM Arguments que use el Launcher propio de Arena:
 
-{% highlight bash %}
+```bash
 -Djava.system.class.loader=org.uqbar.apo.APOClassLoader
-{% endhighlight %}
+```
 
 de lo contrario te va a aparecer un mensaje de error:
 
-{% highlight bash %}
+```bash
 Exception in thread "main" java.lang.RuntimeException: Esta aplicación no está corriendo con el ClassLoader necesario. Corra  la aplicación con el siguiente parámetro para la VM: -Djava.system.class.loader=org.uqbar.apo.APOClassLoader. El ClassLoader actual es: sun.misc.Launcher$AppClassLoader@6fd3633c
    at org.uqbar.arena.Application.validateClassLoader(Application.java:32)
    at org.uqbar.arena.Application.`<init>`(Application.java:24)
-{% endhighlight %}
+```
 
 En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya cargada.
 

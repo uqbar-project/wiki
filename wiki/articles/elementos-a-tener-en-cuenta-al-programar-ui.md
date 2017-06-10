@@ -1,10 +1,10 @@
 ---
 layout: article
 title: Elementos a tener en cuenta al programar ui
+featured: true
 ---
 
-Objetivo
---------
+# Objetivo
 
 Al trabajar con interfaces de usuario, aparecen muchos problemas nuevos que no suelen estar presentes en otro tipo de programas. Con el objetivo de establecer una visión global de la problemática asociada a una interfaz de usuario, queremos determinar qué cosas deben tenerse en cuenta para producir una interfaz de usuario de calidad.
 
@@ -32,10 +32,11 @@ En forma transversal a este circuito básico se presenta un segundo conjunto de 
 -   Internacionalización
 -   Distintas formas de verificación
 
-Criterios de calidad
---------------------
+<!-- -->
 
-### Con respecto a la construcción
+# Criterios de calidad
+
+## Con respecto a la construcción
 
 -   Consistencia, robustez.
 -   Simplicidad, claridad.
@@ -43,7 +44,9 @@ Criterios de calidad
 -   Desacoplamiento entre lógica y tecnología
 -   Testeabilidad o verificabilidad.
 
-### Con respecto a la usabilidad
+<!-- -->
+
+## Con respecto a la usabilidad
 
 -   Claridad
 -   Consistencia.
@@ -52,8 +55,9 @@ Criterios de calidad
 -   Perfomance y percepción de performance.
 -   Intuitividad, autoaprendizaje.
 
-Links relacionados
-------------------
+<!-- -->
+
+# Links relacionados
 
 -   [Temario Algoritmos III](algo3-temario.html)
 

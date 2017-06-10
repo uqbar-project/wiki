@@ -1,21 +1,25 @@
 ---
 layout: article
 title: Formas de vincular una vista con el modelo de dominio
+featured: true
 ---
+
+# Interacciones entre vista y modelo
 
 Dado que el objetivo de la interfaz de usuario es permitir la interacción con el modelo de dominio, cada uno de los elementos que conforman la interfaz de usuario tendrá como tarea alguna parte de esta interacción, ya sea mostrar al usuario una porción del modelo de dominio, o bien permitirle realizar acciones que lo modifiquen.
 
-Una forma simple de ordenar una interfaz de usuario es considerar que cada vista (que puede ser una ventana, una página o bien una porción bien delimitada de una vista más grande) tiene como responsabilidad interactuar con un único objeto de dominio. A este objeto de dominio lo denonimaremos [modelo de la vista](modelo-de-la-vista.html).
+Una forma simple de ordenar una interfaz de usuario es considerar que cada vista (que puede ser una ventana, una página o bien una porción bien delimitada de una vista más grande) tiene como responsabilidad interactuar con un único objeto de dominio. A este objeto de dominio lo denonimaremos modelo de la vista.
 
-Desde esa premisa básica podemos imaginar que cada vez que haya un control editable en una vista, ese control estará editando algún atributo del modelo. Luego, las modificaciones que realicemos sobre estos controles editables, de alguna manera deberán ser *impactadas* sobre los atributos asociados. Al componente de software que toma la responsabilidad de impactar esos cambios lo denominamos [controller](controller.html).
+Desde esa premisa básica podemos imaginar que cada vez que haya un control editable en una vista, ese control estará editando algún atributo del modelo. Luego, las modificaciones que realicemos sobre estos controles editables, de alguna manera deberán ser *impactadas* sobre los atributos asociados. Al componente de software que toma la responsabilidad de impactar esos cambios lo denominamos controller.
 
 Los mecanismos para trasladar o impactar una modificación hecha por el usuario sobre cualquier control editable se pueden dividir en dos grandes grupos:
 
 -   Vinculación indirecta o manual
 -   Vinculación directa o automática (*binding*).
 
-Vinculación indirecta
----------------------
+<!-- -->
+
+# Vinculación indirecta
 
 En este tipo de estrategias los controles editables de la UI toman la responsabilidad de almacenar los valores que va ingresando el usuario a la espera de un evento que *dispare* la ejecución de la operación (en aplicaciones web este evento suele ser el *submit* de un formulario HTTP).
 
@@ -41,8 +45,9 @@ Por el otro, la lógica propia del dominio metida dentro de la interfaz de usuar
 
 Naturalmente todas estas restricciones hacen al código más complejo y más propenso a errores, lo que nos lleva a evaluar la siguiente alternativa.
 
-Binding
--------
+<!-- -->
+
+# Binding
 
 En este esquema, lo que se buscará es automatizar el pasaje de información entre la vista y el dominio. Es decir, se proveerá una descripción ([declarativa](declaratividad.html)) de la vinculación entre los componentes visuales y el modelo de dominio para que un componente genérico se ocupe de mantenerlos mutuamente sincronizados.
 
@@ -63,7 +68,9 @@ Adicionalmente esta fuerte vinculación entre la vista y el dominio nos puede pr
 
 Se necesitan entonces herramientas para manejar el nivel de acoplamiento entre la vista y el modelo de dominio, tanto por cuestiones de transaccionalidad como para poder asociar comportamiento no dependiente del dominio.
 
-### Binding transaccional
+<!-- -->
+
+## Binding transaccional
 
 Citamos a continuación algunos de los mecanismos utilizados para desvincular el dominio de la vista para proveer a nuestra aplicación de un comportamiento transaccional:
 
@@ -78,19 +85,20 @@ Existen dos variantes a esta estrategia. La primera de ellas es utilizar una cop
 La segunda variante es utilizar un wrapper u otro objeto que no sea de la misma clase que el original. Lo interesante de esta técnica es que provee un mayor desacoplamiento entre vista y modelo (ver *modelo de aplicación* en el apartado siguiente). La desventaja es que obliga a duplicar la información del objeto original en este nuevo objeto (Al menos en un lenguaje basado en clases, en lenguajes con mecanismos de herencia más flexibles esta problemática puede ser resuelta de otras maneras, como mixins o traits. Lamentablemente, la mayoría de los lenguajes más populares hoy en día no proveen este tipo de mecanismos.)
 
 Transaccionalidad a nivel de dominio  
-Otra posibilidad es permitir que los objetos de dominio manejen la transaccionalidad, es decir, permitir que sean modificados y, en caso de ser necesario, delegar en ellos mismos la responsabilidad de volver atrás los cambios cancelados por el usuario. Esto puede ser hecho manualmente (aunque puede resultar engorroso) o de forma automática, por ejemplo mediante aspectos. Para más información ver [objetos transaccionales](objetos-transaccionales.html).
+Otra posibilidad es permitir que los objetos de dominio manejen la transaccionalidad, es decir, permitir que sean modificados y, en caso de ser necesario, delegar en ellos mismos la responsabilidad de volver atrás los cambios cancelados por el usuario. Esto puede ser hecho manualmente (aunque puede resultar engorroso) o de forma automática, por ejemplo mediante aspectos.
 
-### Comportamiento a nivel de vista
+
+# Comportamiento a nivel de vista
 
 A veces es necesario tener comportamiento en la vista que no es atribuible a ningún objeto de dominio. En ese caso algunas de las estrategias posibles son:
 
-#### Modelo de aplicación  
+## Modelo de aplicación  
 
 Llamamos modelo de aplicación a un objeto que tiene lógica que no es atribuible a un objeto de dominio, sin embargo es independiente de la tecnología, por lo tanto podemos considerarlo modelo. Un objeto de estas características nos provee de un espacio en donde colocar lógica utilizando las mismas herramietas del dominio pero sin tener que restringirnos a las limitaciones que solemos establecer sobre los objetos de domino.
 
 Tipicamente los casos de uso complejos de una aplicación tendrán un modelo de este tipo que contemple la lógica necesaria para llevarlos a cabo. Pueden tener tanto lógica de navegación como de visualización, aunque en algunos casos también se decide separar ambos tipos de lógica.
 
-#### Value Models  
+## Value Models  
 
 Otra forma de desacoplar la vista y el modelo es proveyendo un almacenamiento intermedio para cada control, que guarda el valor manejado por el control hasta el momento del submit, en el cual será volcado al modelo de dominio. Al objeto que contiene el valor durante ese tiempo se lo denomina ValueModel y la principal diferencia con la estrategia anterior es que en ese caso se tenía un único intermediario para toda la vista, mientras que ahora tenemos un intermediario por cada control.
 
@@ -100,8 +108,9 @@ Por otro lado, la atomización de estos objetos dificulta la posibilidad de esta
 
 En los casos en que la relación entre la vista y el modelo de dominio es muy lejana, una solución posible es descartar el binding y pasar a una estrategia de interacción manual entre vista y dominio, aunque, claro, eso implica perder parte de las ventajas de automatizar este comportamiento.
 
-Links relacionados
-------------------
+<!-- -->
+
+# Links relacionados
 
 -   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
 -   [Temario Algoritmos III](algo3-temario.html)

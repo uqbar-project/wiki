@@ -1,20 +1,18 @@
 ---
 layout: article
 title: Conceptos basicos del diseno
+featured: true
 ---
 
-Modelo
-------
+# Modelo
 
 Un modelo es una simplificación. Es una interpretación de la realidad que abstrae los aspectos relevantes para la solución de un problema. (Definición extraída de [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) de Eric Evans.
 
-Dominio
--------
+# Dominio
 
 Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas "actividades" o "intereses" y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifiquen, seleccionen y estructuren el conocimiento de manera de enfocarlo en lo que necesitamos para solucionar el problema.
 
-Heurística
-----------
+# Heurística
 
 La heurística es una medida. No es una medida cuantitativa como una longitud o un peso, sino una medida que me permite establecer un valor de referencia de una característica cualitativa.
 
@@ -28,8 +26,7 @@ Es equivocado buscar que una heurística se convierta en un número medible, eso
 
 Por ejemplo un error común es hablar de complejidad en número de clases o número de métodos, de la misma manera que no podemos medir la complejidad de una solución por la cantidad de líneas de código involucradas. Estas medidas son apenas indicios pero es necesario analizar las clases, los métodos, el código para poder determinar si efectivamente esa solución resulta más compleja que otra.
 
-Cohesión
---------
+# Cohesión
 
 -   Una clase es cohesiva si podemos definirle un objetivo claro y puntual.
 -   Un método es cohesivo si tiene un único objetivo.
@@ -38,8 +35,7 @@ Emitir una factura y calcular el total de facturación está bueno que estén en
 
 Por eso mismo un Cliente representa todo lo que un cliente puede abstraer. Si hay una clase Empresa es porque representa para nosotros una abstracción importante en el sistema, no para que la Empresa tome decisiones que son del cliente. El cliente tiene atributos + comportamiento. Así aumentamos la cohesión de nuestro sistema. De lo contrario, la Empresa toma responsabilidades de un Cliente, de un Empleado, etc. y como hace muchas cosas a la vez, el objetivo que cumple es difuso y la consecuencia de esta menor cohesión es el impacto que tiene cualquier modificación de la estructura interna de un cliente, un empleado o una factura.
 
-Acoplamiento
-------------
+# Acoplamiento
 
 Es el grado en que los componentes de un sistema se conocen.
 
@@ -81,14 +77,13 @@ public BigDecimal getMontoTotal() {
 }
 ```
 
-### Acoplamiento explícito e implícito
+## Acoplamiento explícito e implícito
 
 En algunos casos, el acoplamiento entre dos entidades de software no es fácilmente detectable, por lo que se llaman acoplamientos **implícitos**. Esto se produce cuando una entidad de software para su funcionamiento depende de una característica de otra que no está visible en su interfaz pública y en cambio forma parte de su implementación interna. En algunos libros este concepto puede encontrarse mencionado como *Program to an interface, not to an implementation*.
 
 El acoplamiento entre dos entidades de software produce una dependencia: un cambio en una de ellas posiblemente produzca un cambio en la otra. Al modificar una entidad de software es importante poder conocer cuáles son todas las otras entidades que pudieran ser afectadas por este cambio. Por eso, en el caso en que tengamos un acoplamiento, siempre es preferible que lo explicitemos, ya que facilitará la mantenibilidad del sistema y nos dará una herramienta para asegurar la consistencia ante las modificaciones.
 
-Requerimientos y casos de uso
------------------------------
+# Requerimientos y casos de uso
 
 Un caso de uso es una secuencia de interacciones que se desarrollarán entre un sistema y sus actores en respuesta a un evento que inicia un actor principal sobre el propio sistema. Cuando hacemos especificaciones de los casos de uso definimos la interacción entre usuario y sistema, dejando claro el límite entre lo que debe proporcionar el usuario y lo que el sistema debe responder.
 
@@ -98,8 +93,7 @@ Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un
 
 [Más sobre requerimientos](conceptos-de-ingenieria-de-software-y-de-sistemas.html)
 
-Links relacionados
-------------------
+# Links relacionados
 
 -   [Volver a Diseño de Sistemas](design-temario.html)
 

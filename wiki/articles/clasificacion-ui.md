@@ -1,10 +1,11 @@
 ---
 layout: article
 title: Clasificacion ui
+categories: [arquitectura, ui, cliente, servidor]
+featured: true
 ---
 
-Concepto de cliente y servidor
-------------------------------
+# Concepto de cliente y servidor
 
 Una aplicación puede pensarse desde la óptica del
 
@@ -18,13 +19,14 @@ La separación puede ser:
 
 ¿Qué tipo de pedidos hace el cliente? Esto depende de la arquitectura sobre la cual trabajemos:
 
-Arquitectura de las UI
-----------------------
+<!-- -->
+
+# Arquitectura de las UI
 
 1.  Aplicación centralizada
 2.  Aplicación distribuida (Cliente/Servidor)
 
-### Aplicación centralizada
+## Aplicación centralizada
 
 El cliente tiene poca o nula inteligencia. El servidor tiene muchas responsabilidades, esto es:
 
@@ -37,7 +39,9 @@ Del lado del cliente casi no hay lógica, ni de presentación ni de negocio.
 
 Estos sistemas eran los preponderantes hasta mediados de los '80, la configuración tradicional era tener como clientes "terminales bobas" o programas que emulaban este comportamiento y un mainframe con grandes capacidades que actuaba como servidor.
 
-### Aplicaciones distribuidas
+<!-- -->
+
+## Aplicaciones distribuidas
 
 En este tipo de aplicaciones, se asume que
 
@@ -46,16 +50,18 @@ En este tipo de aplicaciones, se asume que
 -   las aplicaciones distribuidas son más complejas arquitecturalmente: se dividen en 2, 3 hasta n niveles
 -   como los clientes suelen estar en distintos puntos geográficos las actualizaciones de software suelen ser un dolor de cabeza
 
-Tipos de cliente
-----------------
+<!-- -->
+
+# Tipos de cliente
 
 La aplicación que corre en un cliente puede ser entonces:
 
 -   un browser, o navegador, que tiene capacidades limitadas por la tecnología: sabe "renderizar" -mostrar- controles HTML, ejecutar código en el cliente (javascript o algún lenguaje propietario del browser) y enviar peticiones al servidor, por ejemplo redirigir el control a otra página. El límite está demarcado por el lenguaje de hipertexto pensado para trabajar con información documental, no para aplicaciones de negocio.
 -   un programa específicamente designado para tal fin, construido como parte de un sistema integral (un ejecutable hecho para un sistema operativo, o un programa pre-compilado)
 
-RIA
----
+<!-- -->
+
+# RIA
 
 Como hemos visto, los clientes pueden tener más o menos capacidades de procesamiento local y de "oferta visual" en la generación de la interfaz de usuario. Esto los divide en clientes pesados y livianos, respectivamente.
 
@@ -66,8 +72,9 @@ En los últimos tiempos los clientes livianos fueron incorporando tecnologías y
 
 Entonces el cliente hace más que "mostrar en forma amistosa" el formulario... de hecho se acerca al formato cliente-servidor que hablábamos antes. Este híbrido de cliente liviano que incorpora funcionalidades propias de los clientes pesados generan las Rich Internet Applications, o RIA.
 
-Links relacionados
-------------------
+<!-- -->
+
+# Links relacionados
 
 -   [Temario Algoritmos III](algo3-temario.html)
 

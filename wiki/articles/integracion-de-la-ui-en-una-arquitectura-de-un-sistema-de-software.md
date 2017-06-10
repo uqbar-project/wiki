@@ -1,26 +1,24 @@
 ---
 layout: article
 title: Integracion de la ui en una arquitectura de un sistema de software
+featured: true
 ---
 
-Arquitectura usual de una aplicación de software
-------------------------------------------------
+# Arquitectura usual de una aplicación de software
 
 Para generar una aplicación, podemos dividir lógicamente los componentes según el rol que juegan dentro del sistema en sí mismo:
 
--   **Presentación**: son elementos que trabajan con la [interfaz de usuario](definiciones-iniciales-de-ui.html), dependientes de la tecnología
+-   **Presentación**: son elementos que trabajan con la [interfaz de usuario](definiciones-iniciales-de-ui.html#tocAnchor-1-1), dependientes de la tecnología
 
--   **[Dominio](definiciones-iniciales-de-ui.html)**: son las abstracciones que tienen significado para el que conoce el negocio (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
+-   **[Dominio](definiciones-iniciales-de-ui.html#tocAnchor-1-2)**: son las abstracciones que tienen significado para el que conoce el negocio (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
 
 -   **Persistencia**: son elementos que trabajan en almacenar y recuperar la información del sistema en un medio que persista en el tiempo (que no sea volátil).
 
-Formas de división de responsabilidades entre cada una de esas partes
----------------------------------------------------------------------
+# Formas de división de responsabilidades entre cada una de esas partes
 
 Esta división de responsabilidades se suele denotar como **capas** de una aplicación. Aquí preferimos utilizar el término **concern** o al menos aclarar que la división no implica separación física de los componentes. La clasificación en presentación, dominio y persistencia tiene que ver con el objetivo que cumple cada componente dentro de la aplicación.
 
-Interacción entre la UI y el dominio del sistema
-------------------------------------------------
+# Interacción entre la UI y el dominio del sistema
 
 Una idea bastante instalada en el mercado es abstraer la presentación del dominio tanto como sea posible. De hecho algunos piensan que lo mejor es que no se conozcan/ni se hablen.
 
@@ -33,15 +31,14 @@ Un ejemplo podría ser: en la actualización de un empleado se ingresan nombre, 
 -   el Empleado
 -   el EmpleadoDTO
 
-En definitiva pareciera que la vista no se mezcla con el negocio pero el [acoplamiento](conceptos-basicos-del-diseno.html) es claro: para saber cuándo fue la última vez que le pagué el sueldo necesito:
+En definitiva pareciera que la vista no se mezcla con el negocio pero el [acoplamiento](conceptos-basicos-del-diseno.html#tocAnchor-1-5) es claro: para saber cuándo fue la última vez que le pagué el sueldo necesito:
 
 1.  generar un nuevo método de negocio si no lo tengo, pero también
 2.  agregar un atributo al EmpleadoConsultaDTO para que la vista lo pueda mostrar
 
 Nuestra idea es que la presentación no solo hable con el dominio sino que le pida todo lo que le tenga que pedir: en el ejemplo anterior sería muy bueno que la vista le pregunte directamente al empleado cuál fue la última vez que le pagué.
 
-Links relacionados
-------------------
+# Links relacionados
 
 -   [Temario Algoritmos III](algo3-temario.html)
 

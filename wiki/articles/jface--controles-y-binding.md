@@ -6,8 +6,7 @@ title: JFace controles y binding
 **Nota:** el objetivo de esta página es comentar cómo se produce el binding entre controles de SWT/JFace y atributos de dominio. Si desea documentación para programar interfaces de usuario puede consultar [la página oficial de SWT](http://www.eclipse.org/swt/) y [el wiki de JFace](http://wiki.eclipse.org/index.php/JFace)
 
 
-Cómo se implementa el binding en JFace
---------------------------------------
+# Cómo se implementa el binding en JFace
 
 A través de la clase DataBindingContext que conoce a ambos observers: los interesados en los cambios del modelo (BeansObservables) pero también al modelo le interesa los cambios que hace el usuario a través de la vista (SWTObservables).
 
@@ -17,8 +16,7 @@ A través de la clase DataBindingContext que conoce a ambos observers: los inter
 -   Si se modifica el valor del atributo nombre de un socio (por afuera de la UI), debemos disparar la notificación al textbox. Esto se hace en el setter de nombre, enviando el mensaje firePropertyChange.
 -   Si el usuario escribe algo en el textbox, eso dispara automáticamente la actualización del modelo. Ejemplo: en el textbox del nombre escribimos "TARCISO", entonces se disparará el mensaje setNombre("TARCISO") al objeto Socio. El setNombre a su vez disparará un firePropertyChange, pero la lógica de notificación es inteligente y sabe cortar aquí el flujo de avisos para no entrar en loop.
 
-Control Textbox
----------------
+# Control Textbox
 
 En SWT el textbox está representado por la clase `org.eclipse.swt.widgets.Text`
 
@@ -32,7 +30,6 @@ new DataBindingContext().bindValue(
     BeansObservables.observeValue(objetoModelo, propiedadDelModeloContraElQueSeBindea), 
     null, 
     null);
-
 ```
 
 donde controlTextBoxEnCuestion es de tipo Text, objetoModelo es cualquier Object y propiedadDelModeloContraElQueSeBindea es un String.
@@ -64,8 +61,7 @@ Las siguientes propiedades no tienen binding bidireccional con un atributo del m
 -   **width:** el tamaño del control
 -   **size:** la cantidad de caracteres que permite cargar
 
-Control Checkbox
-----------------
+# Control Checkbox
 
 En SWT el checkbox está representado por la clase `org.eclipse.swt.widgets.Button` pasándole el parámetro SWT.CHECK al constructor.
 
@@ -83,8 +79,7 @@ new DataBindingContext().bindValue(
 
 También se puede bindear las propiedades visible, font, foreground y background, entre otras. No tiene sentido bindear la propiedad text, hacerlo resulta en error.
 
-Control Combo
--------------
+# Control Combo
 
 En SWT el combo está representado por la clase `org.eclipse.swt.widgets.Combo`
 
@@ -110,7 +105,6 @@ Para conocer cuál es el elemento seleccionado del combo enviamos el mensaje get
  *
  */
 public int getSelectionIndex() 
-
 ```
 
 Tener el selectionIndex como un entero refuerza la idea de que el orden en el combo es importante, si tengo los elementos en un Set no me serviría el selectionIndex.
@@ -132,7 +126,6 @@ new DataBindingContext()
                BeansObservables.observeValueEditarSocioModel, socioSeleccionado), 
                null,
                null);
-
 ```
 
 El binding no lo podemos hacer contra un socio en particular, necesitamos trabajar con un model que tenga comportamiento adicional. El EditarSocioModel define el método setSocioSeleccionado de la siguiente manera:
@@ -143,19 +136,16 @@ El binding no lo podemos hacer contra un socio en particular, necesitamos trabaj
 public void setSocioSeleccionado(String nombreCompletoSocio) {
 `    ...
 }
-
 ```
 
 Aquí entonces hay que convertir el nombre del socio (un String) al objeto Socio en cuestión si queremos enviarle algún mensaje.
 
-Control Grilla
---------------
+# Control Grilla
 
 En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Table`
 
 
-Control Botón
--------------
+# Control Botón
 
 En SWT la grilla se representa con la clase `org.eclipse.swt.widgets.Button` pasándole el parámetro SWT.PUSH al constructor.
 
@@ -184,12 +174,10 @@ botonAceptar.addSelectionListener(
 
 Las propiedades más interesantes de bindear son enabled (si el botón está habilitado) y visible (si está visible).
 
-Campos calculados
------------------
+
+# Campos calculados
 
 Podemos subclasificar la clase **ComputedValue** para vincular cualquier expresión que deseemos: sólo tenemos que redefinir el método 
-
-<!-- -->
 
 ```java
 protected Object calculate()
@@ -197,8 +185,8 @@ protected Object calculate()
 
 Pueden verse los siguientes ejemplos [&gt; ver ComputedValue](http://wiki.eclipse.org/JFace_Data_Binding/Snippets)
 
-Links relacionados
-------------------
+
+# Links relacionados
 
 -   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
 -   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
