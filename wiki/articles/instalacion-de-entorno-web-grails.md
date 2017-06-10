@@ -39,27 +39,20 @@ Allí seleccionás el entorno adecuado para tu sistema operativo.
 
 Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al GGTS:
 
-`GGTS -vm "/path donde está la JDK"`
+```bash
+GGTS -vm "/path donde está la JDK"
+```
 
 -   las comillas son importantes si en el path hay espacios en blanco, y
 -   tené en cuenta incluir el directorio bin del JDK en el path.
 
 Más información en <https://spring.io/tools/ggts>
 
-## Plugins
-
-Para instalar el plugin de SVN tenemos tres opciones: a partir de la ventana Dashboard, Help &gt; Eclipse Marketplace o manualmente como en Eclipse a partir del menú Help &gt; Install New Software. Allí seleccionan
-
--   Subclipse 1.10.x: es la integración de SVN con el IDE, para bajarte los ejemplos. Incluyan el SVNKit que es un componente opcional
--   en caso de que tengas una versión GGTS 3.5.1 ó inferior, el plugin Maven Integration for Eclipse 1.4. Para las versiones 3.6.0 en adelante ya viene instalado por defecto
-
-luego presionan el botón Install y reinician el entorno
-
-En algunas instalaciones recientes el Dashboard tira un mensaje de error, no es grave, sigan los pasos a partir del Marketplace (la opción siguiente).
+<!-- -->
 
 ## Web Server
 
-El IDE trae consigo un Web Server Tomcat (llamado vFabric tcServer) integrado con el entorno.
+El IDE trae consigo un Web Server Tomcat (llamado *vFabric tcServer*) integrado con el entorno.
 
 # Configuración del Workspace
 
@@ -67,15 +60,15 @@ Si estás en Windows te recomendamos que uses un directorio raíz: C:\\Workspace
 
 # Configuración del entorno Grails
 
--   Primero, seguir las configuraciones estándares para cualquier eclipse como se muestra en [este link](preparacion-de-un-entorno-de-desarrollo-java-configuraciones-adicionales.html)
+-   Primero, seguir las configuraciones estándares para cualquier eclipse como se muestra en [este link](preparacion-de-un-entorno-de-desarrollo-java.html#tocAnchor-1-7-1)
 
 <!-- -->
 
 -   Además, les recomendamos modificar Window &gt; Web Browser &gt; Default web browser para ejecutar las aplicaciones en un browser externo (si no el IDE se pone todavía más pesado)
 
-{% wiki_note_alert %}
+{% wiki_note_warning %}
   IMPORTANTE: Cómo configurar la versión default de Grails
-{% endwiki_note_alert %}
+{% endwiki_note_warning %}
  
 Ir a Window &gt; Preferences, y filtrar por la palabra "Grails". Seleccionar al nodo "Grails" (esto es: Groovy &gt; Grails), y en la grilla "Grails Installations", pueden pasar dos cosas:
 
@@ -109,7 +102,7 @@ Muy simple, New &gt; Grails project.
 # Cómo levanto las aplicaciones
 
 -   Ctrl + Shift + Alt + G &gt; run-app va a levantar el servidor en el proyecto sobre el cual están parados (eso se puede cambiar en la consola)
--   Una vez que aparezca un mensaje equivalente a
+-   Una vez que aparezca un mensaje con el link a la aplicación
 
 pueden copiar la URL e ir a un Browser y pegar esa dirección para probar la aplicación.
 
@@ -117,18 +110,24 @@ También pueden dar un click sobre la URL y eso los llevará por defecto a un br
 
 Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web. No obstante este server requiere una configuración adicional para asignarle un Tomcat en forma manual (no es el Tomcat interno que trae el entorno GGTS de Grails), por lo que por el momento recomendamos no utilizarlo.
 
+<!-- -->
+
 # Migrar a una version diferente de Grails
 
 En el caso en que quieras migrar de versión un proyecto,
 
 -   tenés que buscar el archivo application.properties, modificar la línea donde está la versión de Grails a la que corresponda
 
-`app.grails.version=2.3.8`
+```bash
+app.grails.version=2.3.8
+```
 
 -   modificar si es necesario en el BuildConfig.groovy las versiones de las dependencias (las versiones para un proyecto default las podés conocer creando un proyecto Grails vacío y revisando cómo se genera el BuildConfig)
 -   luego desde el menú Grails Tools &gt; Refresh Dependencies
 
 Con eso debería ser suficiente. De haber algún problema: hacer un grails clean (Ctrl + Alt + Shift + G &gt; clean) y un clean + refresh desde el GGTS
+
+<!-- -->
 
 # Troubleshooting
 
@@ -136,7 +135,9 @@ Con eso debería ser suficiente. De haber algún problema: hacer un grails clean
 
 Si te aparece un error en la consola como éste
 
-`java.lang.ClassNotFoundException: unable to locate the java compiler com.sun.tools.javac.Main, please change your classloader settings `
+```bash
+java.lang.ClassNotFoundException: unable to locate the java compiler com.sun.tools.javac.Main, please change your classloader settings
+```
 
 no estás apuntando en tu variable de entorno JAVA\_HOME a un JDK configurado en tu GGTS. Reapuntá alguno de los dos.
 
@@ -150,9 +151,11 @@ Al bajar ejemplos puede haber un problema con la versión del compilador ("Groov
 
 ## Integración con JDK
 
-Grails 2.2.2/2.2.3 y la versión 1.7.0\_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app
+Grails 2.2.2/2.2.3 y la versión 1.7.0_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app
 
-`Could not determine Hibernate dialect for database name [H2]!`
+```bash
+Could not determine Hibernate dialect for database name [H2]!
+```
 
 reemplazá la versión de tu JDK por una distinta.
 
@@ -160,17 +163,21 @@ reemplazá la versión de tu JDK por una distinta.
 
 Si al querer abrir la ventana de comandos (Ctrl + Shift + Alt + G) te aparece una ventana de error con el siguiente mensaje:
 
-`An internal error occurred during: "Retrieving available scripts".`
-`java.lang.NullPointerException`
+```bash
+An internal error occurred during: "Retrieving available scripts".
+java.lang.NullPointerException
+```
 
 es que estás trabajando en un proyecto que tiene una versión de Grails que no está instalada en tu máquina, las opciones son
 
 1.  Instalar esa versión de Grails en un directorio diferente (en <http://grails.org/download>)
 2.  O bien migrar el proyecto a la versión de Grails que tenés instalada en tu máquina como se explicó [anteriormente](instalacion-de-entorno-web-grails-migrar-a-una-version-diferente-de-grails.html)
 
+<!-- -->
+
 ## Problemas para levantar el IDE con proyectos pesados
 
-No debería ocurrir, ya que los ejemplos son didácticos y están pensados para levantar en entornos sin mayores problemas, pero si el IDE está ocupando mucha memoria al iniciar conviene chequear este link: <http://stackoverflow.com/questions/13515704/how-to-fix-groovy-grails-tool-suite-3-extreme-memory-usage>
+No debería ocurrir, ya que los ejemplos son didácticos y están pensados para levantar en entornos sin mayores problemas, pero si el IDE está ocupando mucha memoria al iniciar conviene chequear [este link]( http://stackoverflow.com/questions/13515704/how-to-fix-groovy-grails-tool-suite-3-extreme-memory-usage)
 
 ## Errores extraños en las annotations
 
@@ -180,12 +187,16 @@ Revisá que el compilador tenga seteada una compatibilidad a un JDK igual para t
 
 Esto puede ocurrir si estás trabajando con xtend, que utiliza guava como dependencia. Si al hacer run-app ves un mensaje de error similar al siguiente
 
-`ClassNotFoundException: com.google.common.base.Objects`
+```bash
+ClassNotFoundException: com.google.common.base.Objects
+```
 
 buscá el archivo BuildConfig.groovy de tu proyecto y comentá estas dos líneas de configuración:
 
-`grails.project.war.file `
-`grails.project.fork`
+```
+grails.project.war.file 
+grails.project.fork
+```
 
 # Integración con otros lenguajes de programación
 
