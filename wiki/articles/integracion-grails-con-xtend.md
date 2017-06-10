@@ -109,8 +109,8 @@ dependencies {
 
 ```gradle
 repositories {
-    mavenRepo "`[`http://uqbar-wiki.org/mvn/snapshots`](http://uqbar-wiki.org/mvn/snapshots)`"
-    mavenRepo "`[`http://uqbar-wiki.org/mvn/releases`](http://uqbar-wiki.org/mvn/releases)`"
+    mavenRepo "http://uqbar-wiki.org/mvn/snapshots"
+    mavenRepo "http://uqbar-wiki.org/mvn/releases"
     ...
 ```
 
