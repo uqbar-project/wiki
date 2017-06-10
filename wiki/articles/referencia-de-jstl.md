@@ -3,14 +3,19 @@ layout: article
 title: Referencia de jstl
 ---
 
-Para configurar JSTL pueden mirar: [Creación de un proyecto web basado en JSP y Servlets\#Cómo agregar bibliotecas adicionales](creacion-de-un-proyecto-web-basado-en-jsp-y-servlets-como-agregar-bibliotecas-adicionales.html)
+Para configurar JSTL pueden mirar: [Creación de un proyecto web basado en JSP y Servlets\#Cómo agregar bibliotecas adicionales](creacion-de-un-proyecto-web-basado-en-jsp-y-servlets.html)
 
 # Ejemplos
 
-El tag c:forEach de JSTL es uno de los más útiles tags para iterar sobre datos, uno de los usos más comunos es para que
-se pueda generar tablas HTML que contienen resultados de una query de SQL, o de otra bbdd no sql pero que se desee representar
-en forma de tabla. El siguiente ejemplo es uno sencillo que toma los datos de un bean llamado persona que wrappea una
-coleccion de objetos de personas. El forEach itera sobre cada objeto en la colección generando una fila por cada uno.
+En este ejemplo vemos cómo se genera una tabla o grilla de personas, en base a un conjunto de datos.
+
+-   El conjunto de datos se encuentra en el bean people, a partir de la colección people
+-   Cada uno de los elementos de la colección es un bean persona, que tiene como atributos
+    -   name: nombre
+    -   age: edad
+    -   height: peso
+
+El forEach itera sobre cada objeto en la colección generando una fila por cada uno.
  
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -58,7 +63,7 @@ más simple de visualizar.
             <c:set var="rowStyle" scope="page" value="even"/>
           </c:otherwise>
         </c:choose>
-        <tr class="ÃÂ${rowStyle}">
+        <tr class="${rowStyle}">
           <td>${person.name}</td>
           <td>${person.age}</td>
           <td>${person.height}</td>
@@ -69,9 +74,9 @@ más simple de visualizar.
 </html>
 ```
 
+<!-- -->
 
-Material de referencia
-----------------------
+# Material de referencia
 
 -   Tutorial de IBM: <http://www.ibm.com/developerworks/java/library/j-jstl0318/>
 -   Otros ejemplos: <http://javarevisited.blogspot.com.ar/2012/10/jstl-foreach-tag-example-in-jsp-looping.html>
