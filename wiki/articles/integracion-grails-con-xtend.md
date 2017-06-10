@@ -40,7 +40,7 @@ Además de las configuraciones [sugeridas para Grails](instalacion-de-entorno-we
 -   En cada proyecto, recomendamos crear un Source Folder específico para las clases Xtend (puede ser src/xtend).
 -   Obviamente, evitar que haya dos clases (una en Java/Groovy y otra en Xtend) con el mismo nombre (esto es, dentro de un mismo package, por más que estén en distintos source folders esto va a traer conflictos)
 -   Para compilar el proyecto en Eclipse, hay que hacer Project &gt; Properties, en Build Path &gt; solapa Libraries &gt; Add Library &gt; Xtend Library
--   En el archivo BuildConfig.groovy de cada proyecto, hay que incorporar la dependencia con las librerías propias de Xtend para que se incluya en la aplicación cuando se haga el deploy en el web server. Para esto hay que hacer dos cosas: 1) definir como repositorio maven "<http://repo.maven.apache.org/maven2>", y 2) agregar una dependencia a la versión de xtend que queramos.
+-   En el archivo BuildConfig.groovy de cada proyecto, hay que incorporar la dependencia con las librerías propias de Xtend para que se incluya en la aplicación cuando se haga el deploy en el web server. Para esto hay que hacer dos cosas: 1) definir como repositorio maven <http://repo.maven.apache.org/maven2>, y 2) agregar una dependencia a la versión de xtend que queramos.
 
 ```gradle
 repositories {
@@ -48,7 +48,7 @@ repositories {
     mavenLocal()
     mavenCentral()
     // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
-    mavenRepo "`[`http://repo.maven.apache.org/maven2/`](http://repo.maven.apache.org/maven2/)`"    // punto 1
+    mavenRepo "http://repo.maven.apache.org/maven2"    // punto 1
     ...
 }
 dependencies {
