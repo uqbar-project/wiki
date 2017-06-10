@@ -10,7 +10,8 @@ featured: true
 
 -   Bajar alguno de los ejemplos: <https://github.com/uqbar-project/eg-calculadora-wicket-xtend>
 -   Importarlo como Maven Project
--   
+
+<!-- -->
 
 # Incorporar la app al web server
 
@@ -25,3 +26,7 @@ Acceder desde el browser a la direccion
 ```html
 <http://localhost:8080/><aplicación web>/
 ```
+
+# Links relacionados
+
+-  [Temario Algoritmos III](algo3-temario.html)
