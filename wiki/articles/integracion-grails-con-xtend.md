@@ -27,6 +27,8 @@ Además de las configuraciones [sugeridas para Grails](instalacion-de-entorno-we
 
 -   especificar por default el directorio donde el compilador Xtend deja los .java generados, para que el framework Grails los pueda ver. Entonces en Window &gt; Preferences &gt; Xtend &gt; Compiler cambiamos el texto *directory* a "java" en lugar de "xtend-gen".
 
+![image](/img/wiki/ConfiguracionXtendParaGrails2.png)
+
 -   además si estamos usando GGTS 3.6.0, hay que asegurarse que el código xtend compile con compatibilidad a la JDK 1.7 o van a aparecer feos mensajes de error:
 
 (destildás la opción "Use source compatibility level from Java settings", y seleccionás entre las opciones Java 7)
