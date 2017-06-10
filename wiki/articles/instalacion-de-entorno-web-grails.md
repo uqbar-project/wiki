@@ -207,3 +207,6 @@ grails.project.fork
 -   [Integración Grails con Scala](integracion-grails-con-scala.html)
 -   Grails se integra naturalmente con Java, sólo hay que definir las clases Java en el source folder src/java y se incluyen con la aplicación web
 
+# Links relacionados
+
+-  [Temario Algoritmos III](algo3-temario.html)
