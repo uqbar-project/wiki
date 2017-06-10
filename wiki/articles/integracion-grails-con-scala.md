@@ -50,3 +50,10 @@ plugins {
 # Troubleshooting
 
 Si al correr la aplicación aparece un error "missing src/scala", "object scala not found." o "BuildException: Attribute 'srcdir' is not set.", la solución es generar un source folder nuevo que sea: "src/scala", que quede vacío. Luego volver a ejecutar run-app.
+
+<!-- -->
+
+# Links
+
+-   Volver a [Instalación de Entorno Web Grails](instalacion-de-entorno-web-grails.html)
+-   [Contenido de Algoritmos III](algo3_temario.html)
