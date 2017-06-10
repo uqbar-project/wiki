@@ -86,6 +86,6 @@ Si estás trabajando en un lenguaje diferente a Java no te olvides de instalar l
 
 # Cómo empezar
 
--   Tutorial sobre html: <http://www.w3schools.com/html/>
--   Manual de referencia para manejar la estética a través de los .css: <http://www.w3schools.com/css/default.asp>
+-   [Tutorial sobre html](http://www.w3schools.com/html/)
+-   [Manual de referencia para manejar la estética a través de los .css](http://www.w3schools.com/css/default.asp)
 
