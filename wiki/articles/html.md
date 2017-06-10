@@ -43,7 +43,7 @@ Se indican con el tag **a** y permiten vincular diferentes páginas HTML entre s
 La parte visible del link será dada por el cuerpo del link, por ejemplo:
 
 ```html
-<a href="otraPag.html">Este es el texto que se vería</a>` `
+<a href="otraPag.html">Este es el texto que se vería</a>
 ```
 
 ## Tablas
