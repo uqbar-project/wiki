@@ -4,6 +4,8 @@ title: Instalacion de entorno angular
 featured: true
 ---
 
+![angular](/img/languages/angularJS.png)
+
 # Pre-requisitos
 
 Asegurate primero de seguir los pasos de [Instalación de Entorno Javascript](instalacion-de-entorno-javascript.html)
