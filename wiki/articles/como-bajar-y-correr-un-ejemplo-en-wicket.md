@@ -8,7 +8,7 @@ featured: true
 
 # Primer proyecto con Wicket
 
--   Bajar alguno de los ejemplos: <https://github.com/uqbar-project/eg-calculadora-wicket-xtend>
+-   Bajar alguno de los ejemplos, por ejemplo [éste](https://github.com/uqbar-project/eg-calculadora-wicket-xtend)
 -   Importarlo como Maven Project
 
 <!-- -->
@@ -24,7 +24,7 @@ featured: true
 Acceder desde el browser a la direccion 
 
 ```html
-<http://localhost:8080/><aplicación web>/
+http://localhost:8080/aplicacion-web-en-cuestion/
 ```
 
 # Links relacionados
