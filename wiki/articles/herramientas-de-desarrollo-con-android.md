@@ -18,7 +18,7 @@ Log.e() // Error`
 
 y
 
-```
+```java
 Log.wtf
 ```
 
@@ -27,7 +27,7 @@ que muestran los errores por el LogCat, una consola especial de Android.
 ## Cómo usarlo
 
 ```java
-Log.w("Librex", libro.toString())
+Log.w("Librex", libro.toString());
 ```
 
 El primer parámetro indica la aplicación o agrupador, la segunda es el valor a mostrar
