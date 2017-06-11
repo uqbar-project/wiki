@@ -18,8 +18,8 @@ La instalación que nosotros recomendamos es la siguiente:
     -   y un último Finish hace las descargas necesarias (esperar pacientemente)
 
 -   **Android SDK**
-    -   Si vas a trabajar con tu celular como dispositivo de pruebas (ver más abajo en Configuraciones)
-    -   Si no descargate la última versión
+    -   Si vas a trabajar con tu celular como dispositivo de pruebas descargate entonces esa misma versión del SDK (ver más abajo en Configuraciones)
+    -   Si vas a trabajar con un emulador, descargate la última versión
     -   Seguir los pasos que se explican en la [URL de descarga](https://developer.android.com/studio/install.html) (se adapta al sistema operativo e idioma de la máquina)
     
 <!-- -->
@@ -29,11 +29,6 @@ La instalación que nosotros recomendamos es la siguiente:
 Las configuraciones que te recomendamos son:
 
 -   Si estás familiarizado con los shortcuts del Eclipse: File &gt; Settings &gt; Keymap y en el combo Keymaps seleccionar Eclipse
--   Para bajarte los ejemplos o bien usás la opción "Check out project from Version Control" y escribís la dirección de los ejemplos, o bien descargás el repositorio Git como un zip y lo descomprimís aparte, para luego hacer Import Project.
-
-<!-- -->
-
--   Luego reapuntar el SDK al directorio donde se instaló: Tools &gt; Android &gt; SDK Manager: ubican ese directorio Android SDK Location (el que estuvo en el paso $Android\_SDK\_Path). Además deben tener instalada alguna API (API Level xx, Revision x, Status: deben marcarla y luego seleccionar Apply). Una vez instalado reiniciar.
 
 <!-- -->
 
@@ -50,6 +45,16 @@ Igualmente pueden configurar cualquier otro dispositivo (Phone o Tablet recomend
 {% wiki_note_info %}
 IMPORTANTE: Si usás tu celular como dispositivo de pruebas, tienen que coincidir la versión de tu celular con la que vas a configurar en el proyecto.
 {% endwiki_note_info %}
+
+<!-- -->
+
+# Cómo bajarse los ejemplos
+
+-   Para bajarte los ejemplos o bien usás la opción "Check out project from Version Control" y escribís la dirección de los ejemplos, o bien descargás el repositorio Git como un zip y lo descomprimís aparte, para luego hacer Import Project.
+
+<!-- -->
+
+-   Luego reapuntar el SDK al directorio donde se instaló: Tools &gt; Android &gt; SDK Manager: ubican ese directorio Android SDK Location (el que estuvo en el paso $Android\_SDK\_Path). Además deben tener instalada alguna API (API Level xx, Revision x, Status: deben marcarla y luego seleccionar Apply). Una vez instalado reiniciar.
 
 <!-- -->
 
