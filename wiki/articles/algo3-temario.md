@@ -57,8 +57,6 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Articulos históricos
 
--   [Creación de un proyecto web basado en JSP y Servlets](creacion-de-un-proyecto-web-basado-en-jsp-y-servlets.html)
--   [Referencia de Expression Language](referencia-de-expression-language.html)
 -   [Referencia de JSTL](referencia-de-jstl.html)
 
 
