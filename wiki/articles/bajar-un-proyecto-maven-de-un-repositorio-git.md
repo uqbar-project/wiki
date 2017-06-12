@@ -81,8 +81,9 @@ Eso puede variar dependiendo del cliente, te dejamos algunos links
 -   [Source Tree](https://confluence.atlassian.com/sourcetreekb/clone-a-repository-into-sourcetree-780870050.html)
 -   [Git Kraken](https://support.gitkraken.com/repositories/remote)
 
+<!-- -->
 
-### Adaptar un proyecto maven para ser usado desde el Eclipse
+# Adaptar un proyecto maven para ser usado desde el Eclipse
 
 Si importaste el proyecto desde la consola o bien el cliente solo descargó el proyecto en un espacio de trabajo local, lo que faltaría hacer es File > Import... > Existing Maven projects...
 
@@ -92,6 +93,6 @@ Entonces nuestro proyecto toma la definición del pom.xml y se construye para se
 
 ![proyecto maven](/img/languages/project_maven.png)
 
-¡Ya podemos comenzar a trabajar!
+¡Y ya podemos comenzar a trabajar!
 
 
