@@ -196,7 +196,7 @@ ClassNotFoundException: com.google.common.base.Objects
 
 buscá el archivo BuildConfig.groovy de tu proyecto y comentá estas dos líneas de configuración:
 
-```
+```bash
 grails.project.war.file
 grails.project.fork
 ```
