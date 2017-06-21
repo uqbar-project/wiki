@@ -3,14 +3,12 @@ layout: article
 title: Paradigma logico   el forall
 ---
 
-Antes que nada
---------------
+# Antes que nada
 
 El forall es un predicado, o sea, no conviene pensar qué "hace", sino qué relaciona, y/o cuándo se verifica.
 El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.
 
-Definición
-----------
+# Definición
 
 El forall recibe dos parámetros, los dos deben ser consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de [orden superior](orden-superior.html), porque puede manejar predicados dentro de sus parámetros.
 
@@ -20,11 +18,11 @@ Dicho un poco más "en técnico", cuando todas las respuestas de la primer consu
 
 Entonces, en las situaciones donde decimos "a todos los que ...blah... les pasa ...bleh..." es probable que el forall nos venga bien.
 
-Un ejemplo
-----------
+# Un ejemplo
 
 partimos de estos hechos
 
+```prolog
     dulce(chocolate).
     dulce(caramelo).
     dulce(durazno).
@@ -48,14 +46,17 @@ partimos de estos hechos
     ciudadGrande(buenosAires).
     ciudadGrande(mendoza).
     % ... y así todas las ciudades grandes
+```
 
 y queremos definir esTierno/1, donde decimos que una persona es tierna si todas las cosas que le gustan son dulces.
 
 Estamos en un caso candidato a forall: "a todas las cosas que le gustan les tiene que pasar ser dulces". En Prolog:
 
-`   esTierno(P):- forall(leGusta(P,Alim), dulce(Alim)).`
+```prolog
+   esTierno(Persona):- forall(leGusta(Persona, Alimento), dulce(Alimento)).
+```   
 
-... P es tierno si ... todas las cosas que le gustan son dulces, exactamente lo que dijimos en castellano.
+... una Persona es tierna si ... todas las cosas que le gustan son dulces, exactamente lo que dijimos en castellano.
 
 Ahora quiero definir el predicado alimentoCurioso/1, un alimento es curioso si solamente le gusta a gente de pelo colorado.
 Para darme cuenta que el forall me puede servir, lo pienso en términos de "a todos los que ... les tiene que pasar ...". A veeer
@@ -65,35 +66,34 @@ Para darme cuenta que el forall me puede servir, lo pienso en términos de "a to
 
 Queda
 
-`   alimentoCurioso(A):- forall(leGusta(P,A), esColorado(P)).`
+```prolog
+   alimentoCurioso(Alimento):- forall(leGusta(Persona, Alimento), esColorado(Persona)).
+```
 
-Tener claro lo que se quiere decir
-----------------------------------
+# Tener claro lo que se quiere decir
 
 ¿Está bien si defino esTierno así?
 
-`   esTierno(P):- forall(dulce(Alim), leGusta(P,Alim)).`
+```prolog
+   esTierno(Persona):- forall(dulce(Alimento), leGusta(Persona, Alimento)).
+```
 
 Claramente no, porque estaría pidiendo que le gusten todos los alimentos dulces.
 
 Si programar va a consistir en definir condiciones, es relevante entender la diferencia entre
 
-  
-todos los alimentos que le gustan son dulces
+- todos los alimentos que le gustan son dulces, y
+- le gustan todos los alimentos dulces.
 
-y
-
-  
-le gustan todos los alimentos dulces.
-
-El forall en acción
--------------------
+# El forall en acción
 
 Supongamos que hacemos esta consulta:
 
-`   ?- esTierno(roque).`
+```prolog
+   ?- esTierno(roque).
+```
 
-La P de esTierno se liga con roque ... entonces el forall se va a verificar (ver la defi técnica) cuando
+La variable Persona de esTierno se liga con roque ... entonces el forall se va a verificar (ver la definición técnica) cuando
 
 -   todas las respuestas a la consulta
         leGusta(roque,Alim)
@@ -101,57 +101,65 @@ La P de esTierno se liga con roque ... entonces el forall se va a verificar (ver
 -   verifiquen la consulta
         dulce(Alim)
 
-Para cada respuesta a la consulta leGusta(roque,Alim), la variable Alim se va a ligar, en el ejemplo hay dos respuestas, una con chocolate y otra con cebada.
+Para cada respuesta a la consulta leGusta(roque,Alimento), la variable Alimento se va a ligar, en el ejemplo hay dos respuestas, una con chocolate y otra con cebada.
 La consulta correspondiente ya viene con esa variable ligada, o sea que las consultas que se tienen que verificar para que se verifique el forall son
 
-`   esDulce(chocolate).`
-`   esDulce(cebada).`
+```prolog
+   esDulce(chocolate).
+   esDulce(cebada).
+```
 
 Volvamos a la definición: el forall se verifica si todas las respuestas a la primer consulta son respuestas de la segunda. Mirando el ejemplo de recién debería cerrar el esquema.
 
-Qué pasa si no hay soluciones para el primer parámetro de forall?
------------------------------------------------------------------
+# ¿Qué pasa si no hay soluciones para el primer parámetro de forall?
 
-Qué pasa si consultamos si lucas es tierno y en nuestra base de conocimientos no hay nada que le guste?
+¿Qué pasa si consultamos si lucas es tierno y en nuestra base de conocimientos no hay nada que le guste?
 
-`   ?- esTierno(lucas).`
+```prolog
+   ?- esTierno(lucas).
+```
 
 Esta consulta va a ser cierta, porque si no le gusta nada, es cierto que todas las cosas que le gustan son dulces. Si nos interesa que sólo diga verdadero para las personas que les gusta algo, debemos agregar otra condición fuera del forall que lo asegure.
 
-Forall e inversibilidad
------------------------
+# Forall e inversibilidad
 
 Veamos qué pasa con las variables y la inversibilidad.
 ¿Será inversible el predicado esTierno/1? Hagamos la consulta con una variable en el argumento
 
-`   ?- esTierno(X).`
+```prolog
+   ?- esTierno(X).
+```
 
-En este caso la P llega sin ligar al forall. Entonces la primer consulta es
+En este caso la variable Persona llega sin ligar al forall. Entonces la primer consulta es
 
-`   leGusta(P,Alim).`
+```prolog
+   leGusta(Persona, Alimento).
+```
 
 Para cada una de las respuestas a esta consulta, se tiene que verificar
 
-`   esDulce(Alim) `
+```prolog
+   esDulce(Alimento)
+```
 
-donde Alim es lo que ligó la primer consulta.
+donde Alimento es lo que ligó la primer consulta.
 
 ¿Cuáles son las respuestas a la primer consulta? **Todos** los pares (persona,alimento) relacionados por leGusta.
 Entonces, el forall sólo se va a verificar si cualquier cosa que le guste **a alguien**, no importa a quién, es dulce.
 
-Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall mediante [ generación](paradigma-logico---generacion.html):
+Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable Persona llegue ligada al forall mediante [ generación](paradigma-logico---generacion.html):
 
-`   esTierno(P):- persona(P), forall(leGusta(P,Alim),esDulce(Alim)).`
+```prolog
+   esTierno(P):- persona(P), forall(leGusta(P,Alim),esDulce(Alim)).
+```   
 
 Una que no falla:
 
-  
 fíjense que siempre decimos "a todos los blah que les pasa la consulta 1, les tiene que pasar la consulta 2".
 
-Bueno, para ese "blah" va a haber una variable, que es Alim en el caso de esTierno (si todos **los alimentos** que le gustan ...) y P para alimentoCurioso (si todas **las personas** a quienes les gusta ...). Esa variable tiene que llegar al forall sin ligar. El resto de las variables por lo general deben llegar ligadas.
+Bueno, para ese "blah" va a haber una variable, que es Alimento en el caso de esTierno (si todos **los alimentos** que le gustan ...) y P para alimentoCurioso (si todas **las personas** a quienes les gusta ...). Esa variable tiene que llegar al forall sin ligar. El resto de las variables por lo general deben llegar ligadas.
 
-Varias condiciones
-------------------
+# Varias condiciones
 
 Qué pasa si se tienen que cumplir varias condiciones: digamos que un alimento es peculiar si todas las personas a las que le gusta son colorados y porteños ... nos queda
 
@@ -162,30 +170,36 @@ entonces la segunda consulta es un "y" entre dos condiciones.
 
 Si pongo
 
-`  esPeculiar(A):- forall(leGusta(P,A), colorDePelo(P,colorado), vive(P,buenosAires)).`
+```prolog
+  esPeculiar(Alimento):- forall(leGusta(Persona, Alimento), colorDePelo(Persona, colorado), vive(Persona,buenosAires)).
+```
 
 está mal, porque el forall lleva dos parámetros, no tres. Necesito agrupar colorDePelo(...) y vive(...), para eso los encierro entre paréntesis, queda
 
-`  esPeculiar(A):- forall(leGusta(P,A), (colorDePelo(P,colorado), vive(P,buenosAires))).`
+```prolog
+  esPeculiar(Alimento):- forall(leGusta(Persona, Alimento), (colorDePelo(Persona, colorado), vive(Persona, buenosAires))).
+```
 
 Pregunto: ¿está bien
 
-`  esPeculiar(A):- forall((leGusta(P,A), colorDePelo(P,colorado)), vive(P,buenosAires)).`
+```prolog
+  esPeculiar(Alimento):- forall((leGusta(Persona, Alimento), colorDePelo(Persona, colorado)), vive(Persona, buenosAires)).
+```
 
 ? No, porque estaría pidiendo que todos los colorados a los que les gusta el alimento vivan en Buenos Aires.
 
-Para pensar
------------
+# Para pensar
 
 Una que les queda para pensar: ahora tengo que decir que un alimento es marketinable si todas las personas a las que les gusta viven en ciudades grandes. No me interesa que el predicado sea inversible.
 
 Tiro tres opciones: elijan la correcta y piensen por qué eligieron esa.
 
-`   esMarketinable(A):- forall(leGusta(P,A), vive(P,C), ciudadGrande(C)).  % opción 1`
-`   esMarketinable(A):- forall((leGusta(P,A), vive(P,C)), ciudadGrande(C)).  % opción 2`
-`   esMarketinable(A):- forall(leGusta(P,A), (vive(P,C), ciudadGrande(C))).  % opción 3`
+```prolog
+   esMarketinable(Alimento):- forall(leGusta(Persona, Alimento), vive(Persona, Ciudad), ciudadGrande(Ciudad)).    % opción 1
+   esMarketinable(Alimento):- forall((leGusta(Persona, Alimento), vive(Persona, Ciudad)), ciudadGrande(Ciudad)).  % opción 2
+   esMarketinable(Alimento):- forall(leGusta(Persona, Alimento), (vive(Persona, Ciudad), ciudadGrande(Ciudad))).  % opción 3
+```
 
-Más sobre forall
-----------------
+# Más sobre forall
 
 Léanse [Paradigma Lógico - forall - no siempre con member](paradigma-logico---forall---no-siempre-con-member.html)
