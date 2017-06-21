@@ -96,10 +96,10 @@ Supongamos que hacemos esta consulta:
 La variable Persona de esTierno se liga con roque ... entonces el forall se va a verificar (ver la definición técnica) cuando
 
 -   todas las respuestas a la consulta
-        leGusta(roque,Alim)
+        leGusta(roque,Alimento)
 
 -   verifiquen la consulta
-        dulce(Alim)
+        dulce(Alimento)
 
 Para cada respuesta a la consulta leGusta(roque,Alimento), la variable Alimento se va a ligar, en el ejemplo hay dos respuestas, una con chocolate y otra con cebada.
 La consulta correspondiente ya viene con esa variable ligada, o sea que las consultas que se tienen que verificar para que se verifique el forall son
@@ -150,7 +150,7 @@ Entonces, el forall sólo se va a verificar si cualquier cosa que le guste **a a
 Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable Persona llegue ligada al forall mediante [ generación](paradigma-logico---generacion.html):
 
 ```prolog
-   esTierno(P):- persona(P), forall(leGusta(P,Alim),esDulce(Alim)).
+   esTierno(Persona):- persona(Persona), forall(leGusta(Persona, Alimento),esDulce(Alimento)).
 ```   
 
 Una que no falla:
