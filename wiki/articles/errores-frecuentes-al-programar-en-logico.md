@@ -11,7 +11,7 @@ title: Errores frecuentes al programar en logico
     -   [predicados con individuos](errores-comunes--usar-un-predicado-como-si-fuera-una-variable.html)
 -   Errores lógicos propiamente dichos:
     -   Confundir [**Y** con **O**](paradigma-logico---conjuncion-y-disyuncion.html)
-    -   [Mezclar antecedente y consecuente en un **forall**](paradigma-logico---el-forall-tener-claro-lo-que-se-quiere-decir.html)
+    -   [Mezclar antecedente y consecuente en un **forall**](paradigma-logico---el-forall.html)
     -   Confundir *existe* con *para todo* (forall).
 -   Estilos de programación no *lógicos*, por ejemplo:
     -   [Utilización innecesaria de listas](paradigma-logico---listas-errores-comunes--findall-y-member.html).
