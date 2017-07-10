@@ -21,6 +21,12 @@ $ npm install angular
 
 como sugiere <https://www.npmjs.com/package/angular>. De esta forma, se te va a descargar la librería angular en una carpeta `node_modules` en el directorio donde estés ubicado. Ahora podés encontrar ahí el archivo .js (original o [minificado](http://en.wikipedia.org/wiki/Minification_%28programming%29), el que prefieras) de angular para incluir en tu proyecto.
 
+# Solucionando problemas
+Si al realizar npm install angular sale error de no contar con el archivo package.json, se debe correr como administrador la siguiente instrucción estando ubicado en la carpeta de tu proyecto:
+```bash
+$ npm init
+```
+
 # Integración con editores de texto
 
 -    Visual Studio Code te permite trabajar sin problemas con AngularJS
