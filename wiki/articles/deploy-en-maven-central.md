@@ -41,7 +41,7 @@ Si no tiene configurado Travis, entonces tenés dos opciones:
 
 - Configurarlo vos :). No es difícil y tenemos una guía de cómo hacerlo en el blog de Uqbar (próximamente...).
 
-- Hacerlo a mano. Tené en cuenta que para esto tenés que tener una cuenta en Sonatype autorizada para subir artefactos de Uqbar y toda la configuración necesaria para que funcione ([firma GPG publicada](http://central.sonatype.org/pages/working-with-pgp-signatures.html), credenciales en el *settings.xml*, etc), lo cual te va a llevar más tiempo que configurar el CI.
+- Hacerlo a mano. Tené en cuenta que para esto tenés que tener una cuenta en Sonatype autorizada para subir artefactos de Uqbar y toda la configuración necesaria para que funcione ([tener una clave pública asociada a tu usuario](https://stackoverflow.com/questions/41832328/publishing-on-sonatype-no-public-key), [firma GPG publicada](http://central.sonatype.org/pages/working-with-pgp-signatures.html), credenciales en el *settings.xml*, etc), lo cual te va a llevar más tiempo que configurar el CI.
 
 Si igualmente querés hacerlo, los pasos son estos:
 
