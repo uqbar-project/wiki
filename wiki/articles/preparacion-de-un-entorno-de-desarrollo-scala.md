@@ -34,9 +34,9 @@ La configuración de un proyecto Scala para poder utilizar Maven es relativament
 
 ```xml
    <parent>
-       <groupId>`org.uqbar-project`</groupId>
-       <artifactId>`uqbar-scala-parent`</artifactId>
-       <version>`1.0`</version>
+       <groupId>org.uqbar-project</groupId>
+       <artifactId>uqbar-scala-parent</artifactId>
+       <version>1.0</version>
    </parent>
 ```
 
