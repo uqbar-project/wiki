@@ -3,8 +3,7 @@ layout: article
 title: Preparacion de un entorno de desarrollo scala
 ---
 
-Download e instalación base
----------------------------
+# Download e instalación base
 
 Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un IDE (solamente necesitamos el compilador). De todos modos acá vamos a explicar cómo se puede armar un ambiente de desarrollo usando Eclipse y Maven (para manejo de dependencias).
 
@@ -17,35 +16,29 @@ Lo podemos usar directamente como un plugin desde el eclipse
     -   Instalale el plugin para integrar scala con Maven ([m2eclipse-scala](https://github.com/sonatype/m2eclipse-scala)).
     -   Instalar uno o más plugins para los repositorios de código que uses (svn, mercurial, git). Si elegiste el Eclipse for Java Developers ya viene con el plugin de git.
 
-### Versiones
+# Versiones
 
-Al día 13 de agosto de 2013, una configuración posible es:
+Al día 13 de agosto de 2017, una configuración posible es:
 
--   Eclipse Kepler (v4.3) for Java Developers (incluye plugins para maven y git)
--   [Scala IDE 4.5](http://scala-ide.org/download/sdk.html) (para Scala 2.10.6 y 2.11.8 y Eclipse 4.6.1).
+-   Eclipse Neon (v4.6.3) for Java Developers (incluye plugins para maven y git)
+-   [Scala IDE](http://scala-ide.org/download/sdk.html) (para Scala 2.12 y 2.11).
 -   m2eclipse-scala del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site)
 
 Esta configuración tiene un bug que impide la utilización del visualizador de POMs que viene con el plugin de Maven. Un *workaround* para el problema del POM es abrirlo con el editor de XML.
 
-Aún así, recomendamos esa configuración. Otras configuraciones posibles son:
-
--   Utilizar [Scala IDE 4.0.0 (milestone para Scala 2.11-M4)](http://scala-ide.org/download/milestone.html). Esta versión no tiene el problema del POM pero presenta otros inconvenientes:
-    -   Tanto el Scala 2.11 como el Scala IDE 4.0.0 son versiones *milestone* es decir, sus propios desarrolladores aún no las consideran versiones finales.
-    -   Algunas librerías necesarias para Testear no están disponibles para Scala 2.11
--   Utilizar Eclipse Indigo (v3.7).
-
 Por favor si notás que esta información está desactualizada reportalo.
 
-Creación de un proyecto Maven con Scala
----------------------------------------
+# Creación de un proyecto Maven con Scala
 
 La configuración de un proyecto Scala para poder utilizar Maven es relativamente compleja y tiene varias sutilezas, principalmente para poder integrar ambas herramientas dentro del Eclipse. Por eso, recomendamos la utilización de este parent project que creamos con este objetivo específico:
 
-`   `<parent>
-`       `<groupId>`org.uqbar-project`</groupId>
-`       `<artifactId>`uqbar-scala-parent`</artifactId>
-`       `<version>`1.0`</version>
-`   `</parent>
+```xml
+   <parent>
+       <groupId>`org.uqbar-project`</groupId>
+       <artifactId>`uqbar-scala-parent`</artifactId>
+       <version>`1.0`</version>
+   </parent>
+```
 
 Para poder utilizar ese parent project necesario realizar previamente realizar las tareas indicadas en [Configuración de Maven para poder utilizar las herramientas de Uqbar](configuracion-de-maven-para-poder-utilizar-las-herramientas-de-uqbar.html)
 
@@ -56,26 +49,25 @@ Este parent project realiza varias configuraciones:
 -   Le indica al maven que utilice el compilador de Scala.
 -   Configura la integración con el Eclipse.
 
-Documentación
--------------
+# Documentación
 
 -   [Documentación oficial](http://www.scala-lang.org/node/197)
 -   [Manuales de referencia](http://www.scala-lang.org/node/198)
 -   [Scala by Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf#) escrito por Martin Odersky, el creador de Scala.
 -   [Effective Scala](http://twitter.github.io/effectivescala/)
 
-Errores posibles
-----------------
+# Errores posibles
 
 Si te aparece un mensaje de error
 
-`scalatest_2.9.1-1.6.1.jar is cross-compiled with an incompatible version of Scala (2.9.1). `
-`In case of errorneous report, this check can be disabled in the compiler preference page.`
+```bash
+scalatest_2.9.1-1.6.1.jar is cross-compiled with an incompatible version of Scala (2.9.1). 
+In case of errorneous report, this check can be disabled in the compiler preference page.
+```
 
 la solución es botón derecho sobre el proyecto &gt; Properties &gt; Scala Compiler &gt; solapa Build Manager y deschequear la opción withVersionClasspathValidator.
 
-Links de interés
-----------------
+# Links de interés
 
 -   [Página principal de Scala](http://www.scala-lang.org/)
 -   [Un tutorial de Scala](http://paco.uqbar-project.org/te/scala/introduccin-a-scala) de Javi Fernándes, miembro de Uqbar
