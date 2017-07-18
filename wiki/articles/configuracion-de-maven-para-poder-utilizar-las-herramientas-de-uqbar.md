@@ -7,28 +7,30 @@ Para poder utilizar los artefactos Maven desarrollados por Uqbar debemos agregar
 
 El contenido de este archivo debería quedar así:
 
-` `<settings xmlns="http://maven.apache.org/POM/4.0.0"  
+```xml
+ <settings xmlns="http://maven.apache.org/POM/4.0.0"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-`   `<profiles>
-`     `<profile>
-`       `<id>`uqbar-wiki`</id>
-`       `<repositories>
-`         `<repository>
-`           `<id>`uqbar-wiki.org-releases`</id>
-`           `<name>`uqbar-wiki.org-releases`</name>
-`           `<url>[`http://uqbar-wiki.org/mvn/releases`](http://uqbar-wiki.org/mvn/releases)</url>
-`         `</repository>
-`         `<repository>
-`           `<snapshots/>
-`           `<id>`uqbar-wiki.org-snapshots`</id>
-`           `<name>`uqbar-wiki.org-snapshots`</name>
-`           `<url>[`http://uqbar-wiki.org/mvn/snapshots`](http://uqbar-wiki.org/mvn/snapshots)</url>
-`         `</repository>
-`       `</repositories>
-`     `</profile>
-`   `</profiles>
-`   `<activeProfiles>
-`     `<activeProfile>`uqbar-wiki`</activeProfile>
-`   `</activeProfiles>
-` `</settings>
+   <profiles>
+     <profile>
+       <id>uqbar-wiki</id>
+       <repositories>
+         <repository>
+           <id>uqbar-wiki.org-releases</id>
+           <name>uqbar-wiki.org-releases</name>
+           <url>http://uqbar-wiki.org/mvn/releases</url>
+         </repository>
+         <repository>
+           <snapshots/>
+           <id>uqbar-wiki.org-snapshots</id>
+           <name>uqbar-wiki.org-snapshots</name>
+           <url>http://uqbar-wiki.org/mvn/snapshots</url>
+         </repository>
+       </repositories>
+     </profile>
+   </profiles>
+   <activeProfiles>
+     <activeProfile>`uqbar-wiki`</activeProfile>
+   </activeProfiles>
+ `</settings>
+```
