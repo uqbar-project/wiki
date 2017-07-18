@@ -30,7 +30,7 @@ El contenido de este archivo debería quedar así:
      </profile>
    </profiles>
    <activeProfiles>
-     <activeProfile>`uqbar-wiki`</activeProfile>
+     <activeProfile>uqbar-wiki</activeProfile>
    </activeProfiles>
- `</settings>
+ </settings>
 ```
