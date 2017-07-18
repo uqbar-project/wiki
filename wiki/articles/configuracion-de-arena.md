@@ -76,7 +76,7 @@ Las otras dependencias como JUnit se toman de la definición del parent project,
 <dependency>
   <groupId>junit</groupId>
   <artifactId>junit</artifactId>
-  <version>4.11</version>
+  <version>4.12</version>
   <scope>test</scope>
 </dependency>
 ```
@@ -172,7 +172,7 @@ En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya c
 
 ## Maven
 
-Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate en [el tutorial de instalación de Maven](preparacion-de-un-entorno-de-desarrollo-java-maven.html).
+Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate en [el tutorial de instalación de Maven](guia-de-instalacion-de-maven.html).
 
 También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener un mensaje de error similar a éste:
 
