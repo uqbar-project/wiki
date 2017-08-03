@@ -7,22 +7,21 @@ title: Preparacion de un entorno de desarrollo scala
 
 Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un IDE (solamente necesitamos el compilador). De todos modos acá vamos a explicar cómo se puede armar un ambiente de desarrollo usando Eclipse y Maven (para manejo de dependencias).
 
-Lo podemos usar directamente como un plugin desde el eclipse
+- La opción más recomendada es descargar la última versión [Scala IDE](http://scala-ide.org/download/sdk.html).
 
--   Bajar el [Eclipse](http://www.eclipse.org/downloads/) más te guste. Recomendamos Eclipse IDE for Java EE Developers. Fijate de elegir uno que se adapte al sistema operativo de tu PC y que sea de 32 o 64 bits según corresponda (esta es la única herramienta dependiente de la plataforma, las demás deberían servir tanto para diferentes sistemas operativos como para diferentes arquitecturas de procesador).
--   Instalale el plugin del [Scala IDE for Eclipse](http://scala-ide.org/download/current.html). Asegurate que coincida la versión del plugin con la versión de Eclipse que tengas instalado.
-    -   Para ejecutar y escribir tests en ScalaTest (una especie de JUnit para Scala), tenés que instalarle un plugin opcional, que se encuentra en la misma URL que usaste para instalar el ScalaIDE. Asegurate de checkear el item bajo "Scala IDE Plugins (incubation) -&gt; ScalaTests for ScalaIDE". Pueden ver [acá](http://www.scalatest.org/user_guide/using_scalatest_with_eclipse) un screenshot.
-    -   Instalale el plugin de Maven ([m2eclipse](http://www.sonatype.org/m2eclipse)). Si elegiste el Eclipse for Java Developers ya viene con este plugin.
-    -   Instalale el plugin para integrar scala con Maven ([m2eclipse-scala](https://github.com/sonatype/m2eclipse-scala)).
-    -   Instalar uno o más plugins para los repositorios de código que uses (svn, mercurial, git). Si elegiste el Eclipse for Java Developers ya viene con el plugin de git.
+-   También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site), solamente te va a proponer instalar el componente m2e-slf4j, ya que los otros vienen con la instalación default. Aceptalo y ¡ya tenés tu entorno listo! 
 
-# Versiones
+## Alternativa - Combinación Eclipse - Scala - Plugins
 
-Al día 13 de agosto de 2017, una configuración posible es:
+Otra opción es combinar una instalación de
 
--   Eclipse Neon (v4.6.3) for Java Developers (incluye plugins para maven y git)
--   [Scala IDE](http://scala-ide.org/download/sdk.html) (para Scala 2.12 y 2.11).
--   m2eclipse-scala del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site)
+- [Eclipse](http://www.eclipse.org/downloads/) 
+
+- con el plugin del [Scala IDE for Eclipse](http://scala-ide.org/download/current.html). **Asegurate que coincida la versión del plugin con la versión de Eclipse que tengas instalado.**  
+
+- Para ejecutar y escribir tests en ScalaTest (una especie de JUnit para Scala), tenés que instalarle un plugin opcional, que se encuentra en la misma URL que usaste para instalar el ScalaIDE. Asegurate de checkear el item bajo "Scala IDE Plugins (incubation) -&gt; ScalaTests for ScalaIDE". Pueden ver [acá](http://www.scalatest.org/user_guide/using_scalatest_with_eclipse) un screenshot.
+
+-   También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site)
 
 Esta configuración tiene un bug que impide la utilización del visualizador de POMs que viene con el plugin de Maven. Un *workaround* para el problema del POM es abrirlo con el editor de XML.
 
@@ -36,7 +35,7 @@ La configuración de un proyecto Scala para poder utilizar Maven es relativament
    <parent>
        <groupId>org.uqbar-project</groupId>
        <artifactId>uqbar-scala-parent</artifactId>
-       <version>1.0</version>
+       <version>1.3</version>
    </parent>
 ```
 
