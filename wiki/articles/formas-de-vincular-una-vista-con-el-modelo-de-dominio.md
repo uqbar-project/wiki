@@ -8,7 +8,7 @@ featured: true
 
 Dado que el objetivo de la interfaz de usuario es permitir la interacción con el modelo de dominio, cada uno de los elementos que conforman la interfaz de usuario tendrá como tarea alguna parte de esta interacción, ya sea mostrar al usuario una porción del modelo de dominio, o bien permitirle realizar acciones que lo modifiquen.
 
-Una forma simple de ordenar una interfaz de usuario es considerar que cada vista (que puede ser una ventana, una página o bien una porción bien delimitada de una vista más grande) tiene como responsabilidad interactuar con un único objeto de dominio. A este objeto de dominio lo denonimaremos modelo de la vista.
+Una forma simple de ordenar una interfaz de usuario es considerar que cada vista (que puede ser una ventana, una página o bien una porción bien delimitada de una vista más grande) tiene como responsabilidad interactuar con un único objeto de dominio. A este objeto de dominio lo denominaremos modelo de la vista.
 
 Desde esa premisa básica podemos imaginar que cada vez que haya un control editable en una vista, ese control estará editando algún atributo del modelo. Luego, las modificaciones que realicemos sobre estos controles editables, de alguna manera deberán ser *impactadas* sobre los atributos asociados. Al componente de software que toma la responsabilidad de impactar esos cambios lo denominamos controller.
 
@@ -74,17 +74,20 @@ Se necesitan entonces herramientas para manejar el nivel de acoplamiento entre l
 
 Citamos a continuación algunos de los mecanismos utilizados para desvincular el dominio de la vista para proveer a nuestra aplicación de un comportamiento transaccional:
 
-Aprovechamiento de la transaccionalidad de la persistencia  
+### Aprovechamiento de la transaccionalidad de la persistencia
+
 Es frecuente encontrar aplicaciones donde la transaccionalidad está delegada en el mecanismo persistente, con frecuencia una base de datos relacional. Si el modelo de dominio de la aplicación es persistido en un mecanismo con soporte transaccional y además el ciclo de vida de los componentes de dominio está dominado por la persistencia (es decir, el objeto de dominio dura en memoria sólo durante una transacción y luego es descartado), entonces simplemente cancelando la transacción de persistencia se logra descartar los cambios realizados al modelo de dominio. Esta estrategia es muchas veces la más simple, y si bien tiene algunas limitaciones técnicas, es una de las más utilizadas.
 
-Postergación del binding mediante copias o wrappers  
+###  Postergación del binding mediante copias o wrappers
+
 Esta estrategia se basa en bindear la vista contra un objeto que no sea exactamente el dominio, para luego volcar los datos sobre el dominio en un paso posterior (probablemente en el submit). Esto permite garantizar que el dominio no se verá modificado hasta finalizar la acción del usuario, al mismo tiempo que trabajar el comportamiento dinámico de la vista sobre un objeto independiente de la tecnología de presentación. De esta manera, esta estrategia presenta una alternativa intermedia entre una vinculación manual y una automática.
 
 Existen dos variantes a esta estrategia. La primera de ellas es utilizar una copia del objeto de dominio a editarse, que luego deberá reemplazar al original en el dominio o bien trasvasar la información de un objeto a otro. La ventaja de esta estrategia es que permite reutilizar toda la lógica propia del objeto de dominio. El problema es que cuando se editan varios objetos relacionados desde la misma vista, impactar luego los cambios en el dominio puede resultar complejo.
 
 La segunda variante es utilizar un wrapper u otro objeto que no sea de la misma clase que el original. Lo interesante de esta técnica es que provee un mayor desacoplamiento entre vista y modelo (ver *modelo de aplicación* en el apartado siguiente). La desventaja es que obliga a duplicar la información del objeto original en este nuevo objeto (Al menos en un lenguaje basado en clases, en lenguajes con mecanismos de herencia más flexibles esta problemática puede ser resuelta de otras maneras, como mixins o traits. Lamentablemente, la mayoría de los lenguajes más populares hoy en día no proveen este tipo de mecanismos.)
 
-Transaccionalidad a nivel de dominio  
+### Transaccionalidad a nivel de dominio  
+
 Otra posibilidad es permitir que los objetos de dominio manejen la transaccionalidad, es decir, permitir que sean modificados y, en caso de ser necesario, delegar en ellos mismos la responsabilidad de volver atrás los cambios cancelados por el usuario. Esto puede ser hecho manualmente (aunque puede resultar engorroso) o de forma automática, por ejemplo mediante aspectos.
 
 
@@ -94,9 +97,9 @@ A veces es necesario tener comportamiento en la vista que no es atribuible a nin
 
 ## Modelo de aplicación  
 
-Llamamos modelo de aplicación a un objeto que tiene lógica que no es atribuible a un objeto de dominio, sin embargo es independiente de la tecnología, por lo tanto podemos considerarlo modelo. Un objeto de estas características nos provee de un espacio en donde colocar lógica utilizando las mismas herramietas del dominio pero sin tener que restringirnos a las limitaciones que solemos establecer sobre los objetos de domino.
+Llamamos modelo de aplicación a un objeto que tiene lógica que no es atribuible a un objeto de dominio, sin embargo es independiente de la tecnología, por lo tanto podemos considerarlo modelo. Un objeto de estas características nos provee de un espacio en donde colocar lógica utilizando las mismas herramientas del dominio pero sin tener que restringirnos a las limitaciones que solemos establecer sobre los objetos de domino.
 
-Tipicamente los casos de uso complejos de una aplicación tendrán un modelo de este tipo que contemple la lógica necesaria para llevarlos a cabo. Pueden tener tanto lógica de navegación como de visualización, aunque en algunos casos también se decide separar ambos tipos de lógica.
+Típicamente los casos de uso complejos de una aplicación tendrán un modelo de este tipo que contemple la lógica necesaria para llevarlos a cabo. Pueden tener tanto lógica de navegación como de visualización, aunque en algunos casos también se decide separar ambos tipos de lógica.
 
 ## Value Models  
 
