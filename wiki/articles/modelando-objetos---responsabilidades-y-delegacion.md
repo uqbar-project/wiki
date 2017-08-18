@@ -24,37 +24,48 @@ Cuando tenemos bien repartidas las responsabilidades entre nuestros objetos, pro
 
 Supongamos que queremos que un tanque que dispara misiles térmicos le dispare a otro tanque. El daño que hace un misil térmico es 10 veces la cantidad de ocupantes del tanque al que es disparado. El tanque enemigo tiene una coraza que va decrementando a medida que recibe daño (el mismo es destruído cuando la coraza llega a 0) y debe ser manejado por 3 personas. Una solución bien delegada podría ser:
 
-**`Smalltalk:`**
-`tanqueDeMisiles >> dispararA: otroTanque `
-`   otroTanque recibirDaño: (misil cuantoDañoPara: enemigo).`
-`tanqueEnemigo >> recibirDaño: cant`
-`  coraza := (coraza - cant) max: 0`
-`tanqueEnemigo >> cantidadOcupantes `
-`  ^ 3`
-`misilTermico >> cuantoDanioPara: unTanque`
-`  ^ unTanque cantidadOcupantes * 10`
+```
+object tanqueDeMisiles {
+  var misil = misilTermico
+  method dispararA(otroTanque){
+    otroTanque.recibirDanio(misil.cuantoDanioPara(otroTanque))
+  }
+}
 
-**`Wollok:`**
-`object tanqueDeMisiles {`
-`  var misil = misilTermico`
-`  method dispararA(otroTanque){`
-`    otroTanque.recibirDanio(misil.cuantoDanioPara(otroTanque))`
-`  }`
-`}`
-`object tanqueEnemigo {`
-`  var coraza = 100`
-`  method recibirDanio(cant) {`
-`    coraza = (coraza - cant).max(0)`
-`  }`
-` `
-`  method cantidadOcupantes(){`
-`    return 3`
-`  }`
-`}`
-`object misilTermico {`
-`  method cuantoDanioPara(unTanque){`
-`    return unTanque.cantidadOcupantes()*10`
-`  }`
-`}`
+object tanqueEnemigo {
+  var coraza = 100
+  method recibirDanio(cant) {
+    coraza = (coraza - cant).max(0)
+  }
+ 
+  method cantidadOcupantes(){
+    return 3
+  }
+}
+
+object misilTermico {
+  method cuantoDanioPara(unTanque){
+    return unTanque.cantidadOcupantes()*10
+  }
+}
+```
 
 Es particularmente importante que la forma de recibir daño esté delegada en el tanque enemigo, ya que no hay ningún motivo para que el tanque de misiles sepa de la existencia de una coraza del enemigo (mejor en términos de [encapsulamiento](encapsulamiento.html)).
+
+El mismo ejemplo en Smalltalk:
+
+```
+#tanqueDeMisiles 
+>> dispararA: otroTanque 
+   otroTanque recibirDaño: (misil cuantoDañoPara: enemigo).
+   
+#tanqueEnemigo 
+>> recibirDaño: cant
+  coraza := (coraza - cant) max: 0
+>> cantidadOcupantes 
+  ^ 3
+
+#misilTermico 
+>> cuantoDanioPara: unTanque
+  ^ unTanque cantidadOcupantes * 10
+```
