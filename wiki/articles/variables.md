@@ -2,78 +2,79 @@
 layout: article
 title: Variables
 ---
-# Introducción
+# Referencias
 
-Muchachos, no olvidar: en objetos una variable es una **referencia** a un objeto.
+En objetos una variable es una **referencia** a un objeto. La mayoría de las referencias pueden ser reapuntadas a otros objetos mediante la operación de [asignación](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html). Al hacerlo eso no modifica al objeto previamente referenciado.
 
-En Smalltalk, cuando una variable no ha sido inicializada aún, la misma referencia al objeto nil que representa la nada misma (y entiende muy poquitos mensajes, porque no hay muchas cosas que uno quiera hacer con la nada).
+Hay distintos tipos de referencias, dependiendo del contexto en el cual son declaradas:
+- atributos: se usan para que el objeto mantenga un estado propio.
+- locales: se declaran dentro de un método, sólo son visibles desde el mismo, y no sobreviven a su ejecución.
+- parámetros: forman parte de la firma del método, no pueden ser reapuntadas a otros objetos dentro del método.
 
-En Wollok, la nada no está representada con un objeto, sino con un valor primitivo llamado null. Si en algún momento ven que al ejecutar su programa, el mismo arroja un error que dice "wollok.lang.Exception: Cannot send message <nombre del mensaje> to null", significa que trataron de mandar un mensaje a algo que esperaban que fuera un objeto, pero era null, con lo cual deberían revisar que las variables involucradas en dicha operación se encuentren inicializadas correctamente.
+## Asignación de variables
 
-# Asignación
-
-La [asignación](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html) de variables se logra de la siguiente forma:
-
-## En Smalltalk
-
-```smalltalk
-  variable := expresion-que-devuelve-un-objeto
-```
-
-## En Wollok
+La asignación de variables se logra de la siguiente forma:
 
 ```
-  variable = expresion-que-devuelve-un-objeto
+variable = expresion-que-devuelve-un-objeto
 ```
 
 y debe interpretarse que cuando se evalúa esta línea, la variable referencia al objeto resultado de la expresión de la derecha.
 
-# Asignación de variables
+Entonces, al asignar una variable **no estoy creando ningún objeto** ni estoy cambiando al objeto referenciado anteriormente por dicha variable, sólo se cambia cuál es el objeto al que está apuntando esa referencia.
 
-Entonces, al asignar una variable **no estoy creando ningún objeto** ni estoy cambiando al objeto referenciado anteriormente por dicha variable, sólo se cambia el objeto al que está apuntando esa referencia. O sea, si yo tengo esto:
+En Wollok, las referencias pueden declararse como variables (con la palabra reservada var) o como constantes (con la palabra reservada const). Las constantes están pensadas para ser usadas siempre que no se espere que la referencia pueda cambiar de valor, con lo cual intentar asignar una constante luego de su inicialización no está permitido.
 
-## En Smalltalk
+## Inicialización
 
-```smalltalk
-#pepita  (que tiene un atributo energia definido)
->> energia: cantidad
-    energia := cantidad
-(y luego le mando)
-pepita energia: 100.
-pepita energia: 50.
-```
+Un problema común que suele darse con atributos de los objetos es olvidarse de inicializarlos.
 
-## En Wollok:
+Lo que sucede cuando una variable no ha sido inicializada puede variar de un lenguaje a otro: algunos (por ejemplo Smalltalk) tienen un objeto especial para representar la nada que entienden muy poquitos mensajes, otros (como Java o Wollok) directamente usan un valor primitivo. Pero lo importante es que para poder usar una variable de forma razonable, la misma debería referenciar a un objeto que entienda los mensajes que esperamos mandarle, de lo contrario se generará un error.
+
+¿Cuál es el momento adecuado para inicializar un atributo? Si bien podrían darse situaciones en las cuales se quiera o necesite postergar la inicialización de un atributo, lo más común es querer inicializar los atributos al momento de la creación del objeto, de esa forma nunca se llegará a un estado en el cual el se le mande un mensaje al objeto y el mismo falle porque no se haya inicializado un atributo previamente.
+
+En Wollok podemos inicializar las variables al momento de declararlas. Eso en general es suficiente para trabajar con objetos bien conocidos (como en el ejemplo que se muestra más adelante). En caso de trabajar con objetos instanciados a partir de [clases](clases.html), es posible inicializar los atributos con valores distintos para cada instancia usando [constructores](constructores.html) (o [métodos de clase](variables-y-metodos-de-clase.html) como sucede en Smalltalk).
+
+## Ejemplo completo
+
+Dado el siguiente código Wollok:
 
 ```
 object pepita {
-  var energia
+  var energia = 100
   
   method energia(cantidad){
     energia = cantidad
   }
 }
-(y luego le mando)
-pepita.energia(100)
+```
+
+... y luego le mando el mensaje...
+
+```
 pepita.energia(50)
 ```
 
-# Envio de mensajes
-
-Al mandar el mensaje para settear la energía a pepita por primera vez (asumiendo que no había sido inicializada antes su energía), el atributo energia que tiene pepita pasa de apuntar a nil a apuntar a 100, y luego de mandar el segundo mensaje pasa de apuntar a 100 a apuntar a 50. O sea que sólo cambia a quién conoce pepita mediante la referencia energia.
+Cuando el objeto se crea, la variable energía se inicializa apuntando al objeto 100. Al mandar el mensaje para settearle la energía, el atributo energia que tiene pepita pasa de apuntar a 100 a apuntar a 50. O sea que sólo cambia a quién conoce pepita mediante la referencia energia.
 
 SIEMPRE lo que se encuentre a la izquierda de la asignación debe ser una variable, no se puede asignar un objeto (y por el mismo motivo no se puede asignar un envío de mensajes). Las siguientes expresiones son inválidas:
 
 ```
- 3 := 5.   <--- 3 es un objeto, no una referencia!!!
- pepita energia := 10.   <--- pepita energia es un envío de mensajes, no una referencia!!!
-```
-
-Los mismos ejemplos en Wollok serían:
-
-```
-3 = 5 <--- Ojo que no se está consultando por igualdad, si eso es lo que querés tenés que usar ==
-pepita.energia() = 10
+3 = 5 <--- 3 es un objeto, no una referencia!!!
+pepita.energia() = 10 <--- pepita.energia() es un envío de mensajes, no una referencia!!!
 ```
 
 En ningún caso vamos a poder modificar desde fuera del objeto que tiene una referencia el valor de la misma, siempre hay que mandarle un mensaje a ese objeto para que la cambie. Esto está relacionado con la idea de [encapsulamiento](encapsulamiento.html), que es una de las bases del paradigma de objetos.
+
+# Atributos: errores comunes
+
+Los atributos son obviamente muy útiles, ya que permiten que un objeto recuerde toda la información que necesita para poder usarla en cualquier momento. Sin embargo, hay que ser criteriosos respecto a cuándo usarlos, ya que pueden ser el motivo de inconsistencias y dificultad para mantener nuestros programas.
+
+Los siguientes son los algunos errores comunes de ver respecto al uso de atributos:
+- Atributos redundantes: si cierta pieza de información puede ser calculada a partir de otra, no uses un atributo que tenga que ser mantenido consistente, usá un método que calcule lo que necesitás a partir de la otra información disponible.
+- Atributos innecesarios: no hay que perder de vista que nuestro programa es un **modelo**, y por ende no hace falta que el objeto recuerde información que luego no va a ser usada.
+- Uso de atributos en vez de locales: si necesitamos recordar cierta información sólo dentro de la ejecución de un método, lo correcto es usar una local, no un atributo.
+
+Como regla general para evitar estos problemas, preguntate: ¿hay alguna forma de no usar un atributo para lo que estás haciendo? si la hay, ***no uses un atributo***.
+
+¿Y las referencias circulares? Es perfectamente válido que dos objetos se conozcan entre ellos, en el caso de que sea necesario obviamente, las reglas anteriores valen también para esto. El único recaudo que hay que tener es asegurar la consistencia del estado de ambos objetos, lo cual puede simplificarse asegurando que esas referencias se modifiquen dentro de una misma operación, y no de forma independiente.
