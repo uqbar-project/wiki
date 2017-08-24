@@ -129,7 +129,8 @@ tr {
 }
 ```
 
-Ambos reglas van a aplicar en este tag
+
+Ambas reglas van a aplicar en este tag
 
 ```html
         <tr class="resaltar">
@@ -188,7 +189,7 @@ La separación de concerns (layout vs. configuración estética) permite dos cos
 
 -   Configurar y personalizar el estilo que se muestre por usuario/región/dispositivo
 
-y preservar el OAOO (Once and only once) / DRY (Don't repeat yourself), la página HTML aumenta su expresividad (es más fácil de entender) los diseñadores gráficos se concentran el look & feel, decorando los botones, las tablas (grillas), el tipo de letra, los títulos y también los logos, isotipos e imágenes que la aplicación va a tener. Por lo general reciben un "esqueleto" de las páginas con datos de prueba escritos en forma manual
+y preservar el lema DRY (Don't repeat yourself), la página HTML aumenta su expresividad (es más fácil de entender) los diseñadores gráficos se concentran el look & feel, decorando los botones, las tablas (grillas), el tipo de letra, los títulos y también los logos, isotipos e imágenes que la aplicación va a tener. Por lo general reciben un "esqueleto" de las páginas con datos de prueba escritos en forma manual
 
 -   Por otra parte, los programadores se concentran en la lógica de presentación y en la facilidad de uso por parte del usuario
 
