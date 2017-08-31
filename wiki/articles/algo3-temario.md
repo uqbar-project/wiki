@@ -35,6 +35,7 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 ## Artículos
 
 -   [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
+-   [Responsiveness](responsiveness.html)
 -   [Referencia de HTML](html.html)
 -   [Referencia de CSS](css.html)
 

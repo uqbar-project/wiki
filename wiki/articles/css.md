@@ -61,12 +61,12 @@ Este selector, que comienza con un punto, indica que va a matchear con cualquier
 
      <span class="filaImpar importante">Hola Soy un Span<p>
 
-     <tr class="conBordes fondoImportante filaImpar>
+     <tr class="conBordes fondoImportante filaImpar">
         <td>Hola, soy una Fila</td>
      <tr>
 ```
 
-Como se ve acá, un tag **puede tener más de un class**. Así los classes no tienen nada que ver con las clases de un lenguaje orientado a objetos. Pueden pensarlos más bien como "labels" o "etiquetas" o marcas que que hago a los tags, para luego por CSS agregarle características visuales. Así eventualmente uno en un proyecto grande, se crearía su propia convención con un conjunto de "classes" que reutilizaría en todo su sitio. Por ejemplo "titulo" o "menu", "botonGrande", "botonMediano", etc. Es una buena forma de elevar el nivel del html con nuevos significados.
+Como se ve en el ejemplo anterior, un tag **puede tener más de un class**. Así los classes no tienen nada que ver con las clases de un lenguaje orientado a objetos. Pueden pensarlos más bien como "labels" o "etiquetas" o marcas que que hago a los tags, para luego por CSS agregarle características visuales. Así eventualmente uno en un proyecto grande, se crearía su propia convención con un conjunto de "classes" que reutilizaría en todo su sitio. Por ejemplo "titulo" o "menu", "botonGrande", "botonMediano", etc. Es una buena forma de elevar el nivel del html con nuevos significados.
 
 El último ejemplo, matchear por id
 
