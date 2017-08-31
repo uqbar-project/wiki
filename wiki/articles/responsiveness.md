@@ -11,9 +11,14 @@ Esto se relaciona con el concepto de usabilidad: el contenido debe adaptarse par
 
 Algunos frameworks de presentación web que trabajan sobre esta idea son:
 
-- [Twitter Bootstrap](getbootstrap.com)
+- [Twitter Bootstrap](https://getbootstrap.com)
 - [Material Design](https://material.io/)
 - [Foundation](http://foundation.zurb.com/)
 - [Skeleton](http://getskeleton.com/)
 
 entre otros.
+
+# Links relacionados
+
+-   [Temario Algoritmos III](algo3-temario.html)
+
