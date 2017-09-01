@@ -18,14 +18,16 @@ Si no definimos ningún constructor, por defecto la clase viene con un construct
 
 Supongamos que queremos construir golondrinas con una cantidad de energía que nosotros elijamos como valor inicial, podríamos definir:
 
-`class Golondrina {`
-`  var energia`
-`  `
-`  `**`constructor`**`(_energia){`
-`    energia = _energia`
-`  }`
-`  // ... todos los otros métodos para las golondrinas, `
-`  // entre los cuales habrán muchos que trabajen con la energía asumiendo que está inicializada con algún valor numérico`
-`}`
+```Wollok
+class Golondrina {
+  var energia
+  
+  constructor(_energia){
+    energia = _energia
+  }
+  // ... todos los otros métodos para las golondrinas, 
+  // entre los cuales habrán muchos que trabajen con la energía asumiendo que está inicializada con algún valor numérico
+}
+```
 
 Al definir ese constructor, el constructor vacío por defecto ya no estará disponible para instanciar objetos, de esa forma sólo podremos crear objetos con un estado interno válido en base al constructor particular que hayamos definido.
