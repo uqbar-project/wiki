@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Primeros pasos en javascript
-categories: [javascript, es6, entorno, ecmascript, instalacion]
+categories: [javascript, es6, entorno, ecmascript, instalacion, pasos, primeros, proyecto]
 featured: true
 ---
 
