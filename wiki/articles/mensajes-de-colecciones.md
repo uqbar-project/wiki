@@ -14,31 +14,37 @@ Estos mensajes alteran a la colección que recibe el mensaje. Si no quiero perde
 
 ### Agregarle objetos
 
-**`Smalltalk`**
-`pajaros add: pepita. `
-`usuarios add: usuario23. `
+**Smalltalk**
+```
+pajaros add: pepita.
+```
 
-**`Wollok`**
-`pajaros.add(pepita)`
-`usuarios.add(usuario23)`
+**Wollok**
+```
+pajaros.add(pepita)
+```
 
 También existe el mensaje addAll: en Smalltalk y addAll(conjunto) en Wollok que recibe otra colección y agrega todos los elementos del parámetro a la colección receptora.
 
-**`Smalltalk`**
+**Smalltalk**
+
 `pajaros addAll: picaflores`
 
-**`Wollok`**
+**Wollok**
+
 `pajaros.addAll(picaflores)`
 
 ### Quitarle objetos
 
-**`Smalltalk`**
-`pajaros remove: pepita. `
-`usuarios remove: usuario23. `
+**Smalltalk**
+````
+pajaros remove: pepita. 
+```
 
-**`Wollok`**
-`pajaros.remove(pepita)`
-`usuarios.remove(usuario23) `
+**Wollok**
+```
+pajaros.remove(pepita)
+```
 
 Análogamente al addAll:/addAll(conjunto), existe el removeAll:/removeAll(conjunto) que le quita a la receptora todos los que estén en la colección parametrizada.
 
@@ -49,42 +55,46 @@ Estos mensajes se pueden mandar tantas veces como queramos sin miedo de alterar 
 
 ### Saber cuántos objetos tiene
 
-**`Smalltalk`**
+**Smalltalk**
+
 `pajaros size.`
 
-**`Wollok`**
+**Wollok**
+
 `pajaros.size()`
 
 ¿Que me devuelve? Un objeto número con la cantidad de objetos que conoce.
 
 ### Preguntarle si tiene un objeto
 
-**`Smalltalk`**
-`pajaros includes: pepita. `
-`usuarios includes: usuario23. `
+**Smalltalk**
 
-**`Wollok`**
+`pajaros includes: pepita. `
+
+**Wollok**
+
 `pajaros.contains(pepita)`
-`usuarios.contains(usuario23)`
 
 ¿Que me devuelve? Un objeto booleano, true o false
 
 ### Unirlo o intersectarlo con otro conjunto
 
-**`Smalltalk`**
-`golondrinas union: picaflores.`
-`mujeres union: hombres.`
+**Smalltalk**
 
-**`Wollok`**
+`golondrinas union: picaflores.`
+
+**Wollok**
+
 `golondrinas.union(picaflores)`
-`mujeres.union(hombres)`
 
 ¿Que me devuelve? Una nueva colección con la unión de ambas.
 
-**`Smalltalk`**
+**Smalltalk**
+
 `aves intersection: voladores.`
 
-**`Wollok`**
+**Wollok**
+
 `aves.intersection(voladores)`
 
 ¿Que me devuelve? Una nueva colección con la intersección de ambas.
@@ -99,69 +109,75 @@ Que retorna la concatenación de ambos conjuntos, retornando una colección del 
 
 ### Seleccionar los elementos que cumplen con un criterio
 
-**`Smalltalk`**
+**Smalltalk**
+
 `pajaros select: [:unPajaro | unPajaro estaDebil ].`
+
 `usuarios select: [:unUsuario | unUsuario deuda > 1000].`
 
-**`Wollok`**
+**Wollok**
+
 `pajaros.filter({unPajaro => unPajaro.estaDebil()})`
+
 `usuarios.filter({unUsuario => unUsuario.deuda() > 1000})`
 
 ¿Que me devuelve? Una nueva colección con los objetos que cuando se los evalúa con el bloque, dan true.
 
 ### Buscar algún elementos que cumpla con un criterio
 
-**`Smalltalk`**
-`pajaros detect: [:unPajaro | unPajaro estaDebil ].`
-`usuarios detect: [:unUsuario | unUsuario deuda > 1000].`
+**Smalltalk**
 
-**`Wollok`**
+`pajaros detect: [:unPajaro | unPajaro estaDebil ].`
+
+**Wollok**
+
 `pajaros.find({unPajaro => unPajaro.estaDebil()})`
-`usuarios.find({unUsuario => unUsuario.deuda() > 1000})`
 
 ¿Que me devuelve? Un objeto de la colección que cuando se lo evalúe con el bloque, de true.
 
 ¿Qué pasa si no hay ningún objeto que cumpla la condición? Explota, lo cual tiene sentido porque no sabe qué hacer si no lo tiene. Por eso existe otra versión en la cual podemos decirle qué devolvernos si no hay ninguno.
 
-**`Smalltalk`**
+**Smalltalk**
+
 `pajaros detect: [:unPajaro | unPajaro estaDebil ] ifNone: [ pajaros anyOne ].`
 
-**`Wollok`**
+**Wollok**
+
 `pajaros.findOrElse({unPajaro => unPajaro.estaDebil()}, { pajaros.anyOne() })`
 
 ### Recolectar el resultado de hacer algo con cada elemento
 
-**`Smalltalk`**
+**Smalltalk**
+
 `pajaros collect: [:unPajaro | unPajaro ultimoLugarDondeFue].`
-`usuarios collect: [:unUsuario | unUsuario nombre].`
 
-**`Wollok`**
+**Wollok**
+
 `pajaros.map({unPajaro => unPajaro.ultimoLugarDondeFue()})`
-`usuarios.map({unUsuario => unUsuario.nombre()})`
 
-¿Que me devuelve? Una nueva colección con los objetos que devuelve el bloque.
+¿Que me devuelve? Una nueva colección con los objetos que devuelve el bloque al aplicarlo con cada elemento.
 
 ### Verificar si todos los elementos de la colección cumplen con un criterio
 
-**`Smalltalk`**
-`pajaros allSatisfy: [:unPajaro | unPajaro estaDebil].`
-`usuarios allSatisfy: [:unUsuario | unUsuario gastaMucho].`
+**Smalltalk**
 
-**`Wollok`**
+`pajaros allSatisfy: [:unPajaro | unPajaro estaDebil].`
+
+**Wollok**
+
 `pajaros.all({unPajaro => unPajaro.estaDebil()})`
-`usuarios.all({unUsuario=> unUsuario.gastaMucho()})`
 
 ¿Que me devuelve? un booleano que indique si todos los objetos de la colección dan true al evaluarlos con el bloque.
 
 ### Verificar si algún elemento de la colección cumple con un criterio
 
-**`Smalltalk`**
-`pajaros anySatisfy: [:unPajaro | unPajaro estaDebil].`
-`usuarios anySatisfy: [:unUsuario | unUsuario gastaMucho].`
+**Smalltalk**
 
-**`Wollok`**
+`pajaros anySatisfy: [:unPajaro | unPajaro estaDebil].`
+
+**Wollok**
+
 `pajaros.any({unPajaro => unPajaro.estaDebil()})`
-`usuarios.any({unUsuario=> unUsuario.gastaMucho()})`
 
 ¿Que me devuelve? un booleano que indique si alguno de los objetos de la colección da true al evaluarlo con el bloque.
 
@@ -169,15 +185,19 @@ Que retorna la concatenación de ambos conjuntos, retornando una colección del 
 
 Si queremos evaluar un bloque de dos parámetros con cada elemento de la colección, usando como primer parámetro la evaluación previa, y como segundo parámetro ese elemento (o sea, lo que en funcional vimos como [fold](fold.html))
 
-**`Smalltalk`**
-`pajaros inject: 0 into: [:inicial :unPajaro | inicial + unPajaro peso].  "sumatoria de pesos"`
-`pajaros inject: (pajaros anyOne) into: [:masFuerte :unPajaro | `
-`  (unPajaro energia < masFuerte energia) ifTrue: [unPajaro] ifFalse: [masFuerte]] "maximo segun energia"`
+**Smalltalk**
+```
+pajaros inject: 0 into: [:inicial :unPajaro | inicial + unPajaro peso].  "sumatoria de pesos"
+pajaros inject: (pajaros anyOne) into: [:masFuerte :unPajaro | 
+  (unPajaro energia < masFuerte energia) ifTrue: [unPajaro] ifFalse: [masFuerte]] "maximo segun energia"
+```
 
-**`Wollok`**
-`pajaros.fold(0, {inicial, unPajaro => inicial + unPajaro.peso()}) // sumatoria de pesos`
-`pajaros.fold(pajaros.anyOne(), {masFuerte, unPajaro => `
-`  if(unPajaro.energia() < masFuerte.energia()) unPajaro else masFuerte }) // maximo segun energia`
+**Wollok**
+```
+pajaros.fold(0, {inicial, unPajaro => inicial + unPajaro.peso()}) // sumatoria de pesos
+pajaros.fold(pajaros.anyOne(), {masFuerte, unPajaro => 
+  if(unPajaro.energia() < masFuerte.energia()) unPajaro else masFuerte }) // maximo segun energia
+```
 
 ¿Que me devuelve? La ultima evaluación del bloque.
 
@@ -194,19 +214,23 @@ En **Smalltalk** existen los mensajes asSet, asBag, asOrderedCollection y asSort
 
 `usuarios.asSortedCollection: [:unUsuairo :otroUsuario | unUsuairo edad < otroUsuario edad ]`
 
-En **Wollok**, al sólo haber sets y listas, lo que ambas entienden son asSet() y asList(). Las listas ordenadas por un criterio pueden obtenerse mediante el mensaje sortedBy(criterio), que retorna una nueva colección con los elementos de la receptora ordenadas según el bloque recibido.
+En **Wollok**, al sólo haber sets y listas, lo que ambas entienden son `asSet()` y `asList()`. Las listas ordenadas por un criterio pueden obtenerse mediante el mensaje `sortedBy(criterio)`, que retorna una nueva colección con los elementos de la receptora ordenadas según el bloque recibido.
 
 `usuarios.sortedBy({ unUsuairo, otroUsuario => unUsuairo.edad() < otroUsuario.edad() })`
+
+A su vez en Wollok también existe el mensaje `sortBy(criterio)` que se diferencia en que en vez de retornar una nueva colección ordenada de esa forma, modifica la colección receptora para quedar ordenada así. O sea, **produce un efecto colateral**.
 
 ¿Y la iteración?
 ----------------
 
-El mensaje do: en Smalltalk, forEach(bloque) en Wollok, sirve para hacer algo con cada objeto de la colección. Este mensaje en sí mismo no tiene efecto colateral, pero tampoco tiene un valor de retorno que pueda interesarnos. Entonces, ¿cuándo se usa? Sólo tiene sentido usar este mensaje cuando lo que queremos hacer sobre cada elemento (o sea, el bloque) sí produce un efecto.
+El mensaje do: en Smalltalk o forEach(bloque) en Wollok, sirve para hacer algo con cada objeto de la colección. Este mensaje en sí mismo no tiene efecto colateral, pero tampoco tiene un valor de retorno que pueda interesarnos. Entonces, ¿cuándo se usa? Sólo tiene sentido usar este mensaje cuando lo que queremos hacer sobre cada elemento (o sea, el bloque) sí produce un efecto.
 
-**`Smalltalk`**
+**Smalltalk**
+
 `pajaros do: [:unPajaro | unPajaro vola: 100 ].`
 
-**`Wollok`**
+**Wollok**
+
 `pajaros.forEach({unPajaro => unPajaro.vola(100)})`
 
 Yo no pretendo recolectar resultados, sólo quiero que pasen cosas con cada elemento.
