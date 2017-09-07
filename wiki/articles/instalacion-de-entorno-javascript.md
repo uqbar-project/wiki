@@ -47,6 +47,7 @@ Una vez instalado, te recomendamos que actives estas extensiones (Ctrl + Shift +
 ![image](/img/wiki/extensionesSublime.png)
 
 - **ESLint** (muy importante): valida el código ES6 que escribas (integrado con el editor)
+- **Eclipse Keymap**: para tener los mismos shortcuts del Eclipse
 - **Beautify**: Permite formatear el código adecuadamente
 - **HTML Class suggestions**: para ofrecer autocomplete en el HTML de los class que tu css define.
 - **Debugger for Chrome**: Integra el debugger de Chrome en el editor

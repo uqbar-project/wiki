@@ -1,3 +1,9 @@
+---
+layout: article
+title: Primeros pasos en javascript
+categories: [javascript, es6, entorno, ecmascript, instalacion]
+featured: true
+---
 
 # Instalar extensiones para nuestro editor
 
