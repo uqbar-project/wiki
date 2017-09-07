@@ -104,4 +104,5 @@ Te dejamos alternativas a Jasmine
 
 # Links relacionados
 
+-  [Primeros pasos con javascript - ES6](primeros-pasos-con-es6.html)
 -  [Temario Algoritmos III](algo3-temario.html)
