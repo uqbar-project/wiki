@@ -18,12 +18,12 @@ Para tratar de responder esta pregunta no es necesario estar familiarizado con l
 
 Entonces ¿que haríamos nosotros con una colección? Pensemos en una colección de estampillas. Podemos:
 
--   Mirarlas -&gt; recorrer la colección y hacer algo con cada elemento
--   Encuadernarlas por fecha -&gt; ordenar la colección
--   Conseguir nuevas estampillas -&gt; agregar elementos a la colección
--   Regalar una estampilla -&gt; quitar elementos de la colección.
--   Quedarme con las estampillas de Brasil -&gt; hacer un filtro o selección de los elementos según un criterio.
--   Saber si tengo una determinada estampilla -&gt; preguntarle a una colección si incluye o no un determinado objeto como elemento.
+-   Mirarlas -> recorrer la colección y hacer algo con cada elemento
+-   Encuadernarlas por fecha -> ordenar la colección
+-   Conseguir nuevas estampillas -> agregar elementos a la colección
+-   Regalar una estampilla -> quitar elementos de la colección.
+-   Quedarme con las estampillas de Brasil -> hacer un filtro o selección de los elementos según un criterio.
+-   Saber si tengo una determinada estampilla -> preguntarle a una colección si incluye o no un determinado objeto como elemento.
 
 ¿Qué otra colección podemos modelar del mundo real? ¡¡Un carrito del supermercado!!
 
@@ -31,19 +31,14 @@ Mientras vamos de góndola a góndola del super vamos agregándole elementos (re
 
 ¿Ahora, como podemos modelar todas estas situaciones en objetos?... ¡Enviando mensajes a colecciones! Recordemos que en el paradigma de objetos todo programa es un conjunto de objetos enviándose mensajes para concretar un objetivo en común. Bien, en este caso los objetos serán las distintas colecciones y sus elementos. Los mensajes que puede recibir una colección serán dependientes del lenguaje, claramente, pero la idea detrás es básicamente la misma.
 
-Un ejemplo rápido: En este ejemplo vamos a usar un tipo de colección al que llamamos Set. Supongamos que tenemos 4 objetos distintos que son estampillas (nos interesa que nos sepan decir su origen y su superficie, no importa cómo lo hacen), agreguemos algunas a la colección.
+Un ejemplo rápido en Wollok: En este ejemplo vamos a usar un tipo de colección al que llamamos Set. Supongamos que tenemos 4 objetos distintos que son estampillas (nos interesa que nos sepan decir su origen y su superficie, no importa cómo lo hacen), agreguemos algunas a la colección.
 
-**`Smalltalk`**
-`coleccionEstampillas := Set new.  (disclaimer, en Ozono crear un nuevo conjunto desde Referencias para usarlo directo en el workspace)`
-`coleccionEstampillas add: estampillaBrasileraGrande . `
-`coleccionEstampillas add: estampillaAlemana . `
-`coleccionEstampillas add: estampillaBrasileraMediana . `
-
-**`Wollok`**
-`var coleccionEstampillas = #{}`
-`coleccionEstampillas.add(estampillaBrasileraGrande)`
-`coleccionEstampillas.add(estampillaAlemana)`
-`coleccionEstampillas.add(estampillaBrasileraMediana)`
+```
+var coleccionEstampillas = #{}
+coleccionEstampillas.add(estampillaBrasileraGrande)
+coleccionEstampillas.add(estampillaAlemana)
+coleccionEstampillas.add(estampillaBrasileraMediana)
+```
 
 Alternativamente, si ya conozco los elementos que va a tener inicialmente, usando el set literal de Wollok podemos crear directamente la colección con esos elementos.
 
@@ -51,15 +46,11 @@ Alternativamente, si ya conozco los elementos que va a tener inicialmente, usand
 
 A esta colección de estampillas ya le puedo hacer algunas preguntas
 
-**`Smalltalk`**
-`coleccionEstampillas size. "devuelve 3"`
-`coleccionEstampillas includes: estampillaAlemana . "devuelve true"`
-`coleccionEstampillas includes: estampillaBrasileraChica . "devuelve false"`
-
-**`Wollok`**
-`coleccionEstampillas.size() // devuelve 3`
-`coleccionEstampillas.contains(estampillaAlemana) // devuelve true`
-`coleccionEstampillas.contains(estampillaBrasileraChica) // devuelve false`
+```
+coleccionEstampillas.size() // devuelve 3
+coleccionEstampillas.contains(estampillaAlemana) // devuelve true
+coleccionEstampillas.contains(estampillaBrasileraChica) // devuelve false
+```
 
 Claro que para que la colección me sea realmente útil, me debe permitir interactuar con sus elementos, poder hablarle (p.ej.) a estampillaAlemana a través de la colección. Antes de ver cómo hacer esto, clarifiquemos un poco la relación entre una colección y sus elementos.
 
@@ -86,7 +77,7 @@ Ahora hay un objeto que tiene 3 referencias:
 
 3. es la estampilla preferida de pedro
 
-Ya podemos ver un poco más en detalle la relación entre una colección y sus elementos. La colección maneja referencias a los elementos que le voy agregando (p.ej. enviándole el mensaje add: / add(elemento) ), análogas a las referencias de las variables de instancia de otros objetos. Hay dos diferencias entre las referencias que mantiene una colección y las que mantienen nuestros objetos p.ej. pedro:
+Ya podemos ver un poco más en detalle la relación entre una colección y sus elementos. La colección maneja referencias a los elementos que le voy agregando (p.ej. enviándole el mensaje `add(elemento)` ), análogas a las referencias de las variables de instancia de otros objetos. Hay dos diferencias entre las referencias que mantiene una colección y las que mantienen nuestros objetos p.ej. pedro:
 
 -   Las referencia que usan nuestros objetos tienen un nombre, que es el nombre que luego usará para hablarle al objeto referenciado; las de la colección son anónimas.
 -   Nuestros objetos tienen una cantidad fija de referencias (en este caso pedro tiene una única referencia, estampillaPreferida), una colección puede tener una cantidad arbitraria, que puede crecer a medida que le agrego elementos.
@@ -108,16 +99,12 @@ Por lo tanto, para resolver mi problema necesito que actúen tanto la colección
 
 ¿A qué objeto le voy a pedir esto? A la colección.
 
-El selector (nombre del mensaje) es select: en Smalltalk y filter(algo) en Wollok...
+El mensaje es `filter(algo)` en Wollok...
 
 ... o sea que necesita un parámetro. Este parámetro va a representar una condición para el filtrado, que es un código que la colección debería evaluar sobre cada elemento, y debe devolver true o false para que la colección sepa si debería o no estar en la colección nueva a devolver.
 
 Los objetos que representan "cachos de código" son los [Bloques](bloques.html), en este caso un bloque con un parámetro
 
-**`Smalltalk`**
-`coleccionEstampillas select: [:estampilla | estampilla superficie > 10] `
-
-**`Wollok`**
 `coleccionEstampillas.filter({estampilla => estampilla.superficie() > 10})`
 
 Mientras que todos los elementos de la colección entiendan el mensaje superficie y al recibirlo retornen un número, el filtrado va a funcionar correctamente.
