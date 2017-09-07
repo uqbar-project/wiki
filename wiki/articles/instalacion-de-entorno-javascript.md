@@ -42,6 +42,25 @@ El **[Visual Studio Code](https://code.visualstudio.com/)** es un editor de text
   
 Seguí los pasos de instalación que propone el sitio oficial.
 
+Una vez instalado, te recomendamos que actives estas extensiones (Ctrl + Shift + X):
+
+![image](/img/wiki/extensionesSublime.png)
+
+- **ESLint** (muy importante): valida el código ES6 que escribas (integrado con el editor)
+- **Beautify**: Permite formatear el código adecuadamente
+- **HTML Class suggestions**: para ofrecer autocomplete en el HTML de los class que tu css define.
+- **Debugger for Chrome**: Integra el debugger de Chrome en el editor
+- **npm**: integra la herramienta npm con el editor
+- **npm Intellisense**: autocompletado para ejecutar instrucciones desde el npm
+- EditorConfig for VSCode
+- **Git project manager**: logra una integración entre el editor y los comandos de git
+- Git History (git log)
+
+El ESLint requiere una instalación mediante npm:
+
+```bash
+# sudo npm install -g eslint 
+```
 
 ## Plugins de javascript para Eclipse
 
