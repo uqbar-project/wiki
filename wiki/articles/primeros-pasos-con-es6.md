@@ -71,6 +71,8 @@ Hay que cambiar estos atributos:
 - keywords
 - repository, y dentro la url
 
+<br>
+
 ## Bajar dependencias
 
 Por el momento solo tenemos la cáscara, vamos a bajar las dependencias necesarias para nuestro proyecto escribiendo
@@ -104,6 +106,7 @@ class Cliente {
 	}
 }
 ```
+<br>
 
 ## Escribir el primer test
 
@@ -123,6 +126,8 @@ describe('clientes', () => {
   })
 ```
 
+<br>
+
 ## Estado de nuestro proyecto
 
 La estructura resultante debería ser:
@@ -139,9 +144,11 @@ La estructura resultante debería ser:
   - .travis.yml
 ```
 
+<br>
+
 ## Script de prueba
 
-Para probarlo, podemos hacerlo desde la consola Linux, por git bash o desde el Visual Studio Code utilizando la consola integrada (View | Integrated Terminal o el shortcut "Ctrl" + "\`")
+Para probarlo, podemos hacerlo desde la consola Linux, por git bash o desde el Visual Studio Code utilizando la consola integrada (View > Integrated Terminal o el shortcut Ctrl + \`)
 
 ```bash
 $ npm test
