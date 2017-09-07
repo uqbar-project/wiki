@@ -15,14 +15,12 @@ Estos mensajes alteran a la colección que recibe el mensaje. Si no quiero perde
 ### Agregarle objetos
 
 **Smalltalk**
-```
-pajaros add: pepita.
-```
+
+`pajaros add: pepita.`
 
 **Wollok**
-```
-pajaros.add(pepita)
-```
+
+`pajaros.add(pepita)`
 
 También existe el mensaje addAll: en Smalltalk y addAll(conjunto) en Wollok que recibe otra colección y agrega todos los elementos del parámetro a la colección receptora.
 
@@ -37,14 +35,12 @@ También existe el mensaje addAll: en Smalltalk y addAll(conjunto) en Wollok que
 ### Quitarle objetos
 
 **Smalltalk**
-````
-pajaros remove: pepita. 
-```
+
+`pajaros remove: pepita.`
 
 **Wollok**
-```
-pajaros.remove(pepita)
-```
+
+`pajaros.remove(pepita)`
 
 Análogamente al addAll:/addAll(conjunto), existe el removeAll:/removeAll(conjunto) que le quita a la receptora todos los que estén en la colección parametrizada.
 
@@ -212,11 +208,11 @@ Por ejemplo, en Wollok podríamos haber hecho directamente:
 
 En **Smalltalk** existen los mensajes asSet, asBag, asOrderedCollection y asSortedCollection: que retornan una colección nueva a partir de la receptora que tiene otras características (ver [sabores de colecciones](sabores-de-colecciones.html)). En particular asSet y asSortedCollection: son de uso más común para quitar repetidos u ordenar en base a un criterio respectivamente.
 
-`usuarios.asSortedCollection: [:unUsuairo :otroUsuario | unUsuairo edad < otroUsuario edad ]`
+`usuarios.asSortedCollection: [:usuarioJoven :usuarioViejo | usuarioJoven edad < usuarioViejo edad ]`
 
 En **Wollok**, al sólo haber sets y listas, lo que ambas entienden son `asSet()` y `asList()`. Las listas ordenadas por un criterio pueden obtenerse mediante el mensaje `sortedBy(criterio)`, que retorna una nueva colección con los elementos de la receptora ordenadas según el bloque recibido.
 
-`usuarios.sortedBy({ unUsuairo, otroUsuario => unUsuairo.edad() < otroUsuario.edad() })`
+`usuarios.sortedBy({ usuarioJoven, usuarioViejo => usuarioJoven.edad() < usuarioViejo.edad() })`
 
 A su vez en Wollok también existe el mensaje `sortBy(criterio)` que se diferencia en que en vez de retornar una nueva colección ordenada de esa forma, modifica la colección receptora para quedar ordenada así. O sea, **produce un efecto colateral**.
 
