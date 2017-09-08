@@ -37,26 +37,13 @@ Teoría
 -   [Herencia](herencia.html)
 -   [Method lookup](method-lookup.html)
 -   [Redefinición](redefinicion.html)
--   [Variables y métodos de clase](variables-y-metodos-de-clase.html)
+-   [Composición (OOP)](composicion--OOP-.html)
+-   [Constructores](constructores.html) vs. [Variables y métodos de clase](variables-y-metodos-de-clase.html) 
 -   [igual o idéntico - = vs ==](igual-o-identico-----vs---.html)
 -   [Inmutabilidad](inmutabilidad.html)
--   [Composición (OOP)](Composición_(OOP) "wikilink")
 -   [Garbage collector](garbage-collector.html)
-
-Sintaxis
---------
-
--   [Sintaxis de Smalltalk](sintaxis-de-smalltalk.html)
--   [Tipos de mensajes en Smalltalk](tipos-de-mensajes-en-smalltalk.html)
--   [Variables locales en métodos](variables-locales-en-metodos.html)
--   [Precedencia de Mensajes](precedencia-de-mensajes.html)
-
-Objetos básicos
----------------
-
--   [Manejo de booleanos](manejo-de-booleanos.html)
--   [min: y max:](min--y-max-.html)
 -   [Bloques](bloques.html)
+
 
 Colecciones
 -----------
@@ -64,9 +51,6 @@ Colecciones
 -   [Intro a colecciones](intro-a-colecciones.html)
 -   [Sabores de colecciones](sabores-de-colecciones.html)
 -   [Mensajes de colecciones](mensajes-de-colecciones.html)
--   [Errores comunes con select: y collect:](errores-comunes-con-select--y-collect-.html)
--   <inject:into:>
--   [Arrays literales en Smalltalk](arrays-literales-en-smalltalk.html)
 -   [Diccionarios](diccionarios.html)
 
 Cosas que pueden servir para pensar en cómo modelar un enunciado
@@ -78,9 +62,18 @@ Cosas que pueden servir para pensar en cómo modelar un enunciado
 -   [Cuestiones básicas para resolver el parcial de objetos](cuestiones-basicas-para-resolver-el-parcial-de-objetos.html)
 -   [Puntos de entrada](puntos-de-entrada.html)
 
-Cosas que pueden servir para el TP
-----------------------------------
 
+Un poco más sobre Smalltalk
+--------
+
+-   [Sintaxis de Smalltalk](sintaxis-de-smalltalk.html)
+-   [Tipos de mensajes en Smalltalk](tipos-de-mensajes-en-smalltalk.html)
+-   [Variables locales en métodos](variables-locales-en-metodos.html)
+-   [Precedencia de Mensajes](precedencia-de-mensajes.html)
+-   [Manejo de booleanos](manejo-de-booleanos.html)
+-   [min: y max:](min--y-max-.html)
+-   [Variables y métodos de clase](variables-y-metodos-de-clase.html)
+-   [Arrays literales en Smalltalk](arrays-literales-en-smalltalk.html)
 -   [Preguntas Frecuentes](preguntas-frecuentes.html)
 -   [Métodos de clase para crear objetos inicializados](metodos-de-clase-para-crear-objetos-inicializados.html)
 -   [Cómo hacer para que de un objeto muestre lo que yo quiero](como-hacer-para-que-de-un-objeto-muestre-lo-que-yo-quiero.html)
@@ -93,7 +86,7 @@ Cosas que pueden servir para el TP
 Miscelánea
 ----------
 
--   [Máquina\_Virtual](maquina-virtual.html)
+-   [Máquina Virtual](maquina-virtual.html)
 -   [Diagrama de clases](diagrama-de-clases.html)
 -   [Lenguajes](lenguajes.html)
-
+-   [Wollok](http://www.wollok.org/)
