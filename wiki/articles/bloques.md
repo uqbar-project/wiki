@@ -6,7 +6,7 @@ title: Bloques
 ¿Qué es un bloque?
 ------------------
 
-Un bloque es un objeto, y por lo tanto podemos hacer con él lo mismo que hacíamos con los demás objetos esto es:
+Un bloque (también conocido como closure) es un objeto, y por lo tanto podemos hacer con él lo mismo que hacíamos con los demás objetos esto es:
 
 -   Enviarle mensajes
 -   Pasarlo como parámetro de algún mensaje
@@ -31,6 +31,37 @@ var x = 0
 ```
 
 Ahora sí, después de ejecutar esas 2 líneas de código la variable x va a apuntar al objeto uno (1). Es importante darse cuenta que apply() es un mensaje que le llega al objeto bloque. Este mensaje hace que se ejecute el código que está dentro del bloque y que se retorne el objeto devuelto por la última sentencia del bloque.
+
+Conocimiento del contexto
+----------------------
+
+Algo que se pone en evidencia en este ejemplo introductorio es que los bloques tienen una noción del contexto en el cual fueron definidos, y por eso es que tienen acceso a las referencias disponibles en dicho contexto. Es por eso que es posible usar la variable x que había sido definida fuera del bloque.
+
+Si tuviéramos el siguiente código:
+
+```
+object pepita {
+  var energia = 100
+  
+  method volar(metros) {
+    energia -= 10 - metros
+  }
+  
+  method irYVolverNVeces(metros, veces){
+    veces.times({ self.volar(metros * 2) })
+  }
+}
+```
+
+Y luego evaluamos: `pepita.irYVolverNVeces(5, 3)`
+
+El mensaje `times(algoParaHacer)` que se le manda al número 3 con el bloque que construímos en ese momento se encargará de mandarle el mensaje `apply()` al bloque que le pasamos, en este caso, 3 veces. Dado que la referencia metros existía en el contexto en el cual ese bloque fue creado (era un parámetro del método), es válido usar esa referencia dentro de la lógica del bloque y va a apuntar al objeto 5, como es de esperarse.
+
+Otra pregunta interesante es: **¿quién es [self](self---pseudovariable.html) dentro del bloque?**
+
+Cuando usamos self dentro de un bloque, estamos referenciando al mismo objeto que recibió el mensaje dentro del cual se creó el bloque, lo cual es muy convieniente ya que hace que no necesitemos parametrizar a self si necesitamos mandarle mensajes o parametrizarlo a otro mensaje dentro del código del bloque.
+
+Entonces el resultado de la operación será que la energía de pepita se habrá decrementado en 60.
 
 Bloques como funciones
 ----------------------
