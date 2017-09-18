@@ -37,7 +37,7 @@ Teoría
 -   [Herencia](herencia.html)
 -   [Method lookup](method-lookup.html)
 -   [Redefinición](redefinicion.html)
--   [Composición (OOP)](composicion--OOP-.html)
+-   [Composición (OOP)](composicion--oop-.html)
 -   [Constructores](constructores.html) vs. [Variables y métodos de clase](variables-y-metodos-de-clase.html) 
 -   [igual o idéntico - = vs ==](igual-o-identico-----vs---.html)
 -   [Inmutabilidad](inmutabilidad.html)
