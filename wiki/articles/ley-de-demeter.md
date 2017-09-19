@@ -128,4 +128,4 @@ object pepita {
 }
 ```
 
-(puedo hablar con `buenosAires`, que es un WKO)
+(puedo hablar con `buenosAires`, aunque no sea ni un parámetro ni un atributo, ya que es un WKO)
