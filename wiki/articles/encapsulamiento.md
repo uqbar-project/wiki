@@ -8,7 +8,7 @@ title: Encapsulamiento
 
 Quien usa un objeto sólo ve lo que necesita para poder interactuar con él, que es el comportamiento que exhibe. Los detalles internos quedan encapsulados en el objeto. Así quedan acotadas y explicitadas las formas posibles de interactuar con un objeto.
 
-El ocultamiento de detalles de implementación como ser los atributos de un objeto permite separar mejor las responsabilidades y evitar efectos inesperados como resultado de la modificación del valor de las variables por entidades externas.
+El ocultamiento de detalles de implementación, como ser los atributos de un objeto, permite separar mejor las responsabilidades y evitar efectos inesperados como resultado de la modificación del valor de las variables por entidades externas.
 
 El uso de setters y getters (mensajes para modificar y conocer el valor de un atributo respectivamente), también conocidos como accessors, es importante para que el objeto que tiene esos atributos pueda controlar el uso de los mismos y para que los que usan al objeto que los tiene no sufran un impacto muy grande si la implementación del mismo cambia.
 
