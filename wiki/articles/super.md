@@ -10,7 +10,7 @@ title: Super
 Problema que resuelve
 ---------------------
 
-Sin la existencia de super tendríamos problemas para resolver ciertos problemas, por ejemplo si tenemos la siguiente jerarquía de clases `A` `<|-` `B`:
+Sin la existencia de super tendríamos problemas para resolver ciertos problemas, por ejemplo si tenemos la siguiente jerarquía de clases `A ⇽ B`:
 
 ```Smalltalk
 #A >> m
@@ -34,7 +34,7 @@ Si a una instancia de B le mandamos el mensaje m ejecutará el método m definid
 
 Cuando en un método se manda un mensaje a super el method lookup se ve modificado empezando la búsqueda del método correspondiente a ese mensaje en la clase inmediatamente superior a donde está definido ese método, en vez de en la clase de la cual es instancia el objeto. De esta forma podemos [redefinir](redefinicion.html) un método de la superclase para agregar lógica nueva y a su vez reutilizar el comportamiento heredado.
 
-Supongamos que tenemos la siguiente jerarquía de clases `A` `<|-` `B` `<|-` `C` que definen:
+Supongamos que tenemos la siguiente jerarquía de clases `A ⇽ B ⇽ C` que definen:
 
 ```Smalltalk
 #A >> m
@@ -76,7 +76,7 @@ Malos usos de super
 
 ### Caso 1
 
-Supongamos que tenemos este código para la jerarquía `A` `<|-` `B` (O sea B es subclase de A)
+Supongamos que tenemos este código para la jerarquía `A ⇽ B` (O sea B es subclase de A)
 
 Código erróneo:
 
