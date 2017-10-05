@@ -161,5 +161,3 @@ Estrategias para manejar excepciones
 -   Atraparla, hacer algo y continuar con el flujo normal de ejecución.
 -   Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer volviendo a usar `throw` en Wollok o en Smalltalk mandando `signal` a la excepcion atrapada en el bloque que maneja el problema.
 -   Atraparla y lanzar otra más adecuada agregando más información del problema.
-
-Pueden leer un poquito más sobre este tema [acá](manejo-de-errores.html) (los ejemplos están en Java)
