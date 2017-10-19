@@ -9,34 +9,83 @@ Queremos que un cliente nos pueda decir cuánto paga en total (propina + lo que 
 
 Sería posible resolver toda esta lógica (y la que esté por venir más adelante) con muchos ifs en el cliente, pero es posible modelarlo de otra forma: los diferentes humores del cliente podrían ser otros objetos separados que le ayuden a saber cuánta propina poner, y por su puesto ser polimórficos para que el cliente pueda delegar en ellos esta funcionalidad sin importar cuál sea su humor actual (objeto al cual referencia con algún atributo propio, como ser humor).
 
-`#Cliente`
-`>> cuantoPaga: importeTotal `
-`  ^importeTotal +  self cuantoDePropina: importeTotal `
-`>> cuantoDePropina: importeTotal `
-`  ^humor cuantoDePropina: importeTotal `
+#### Smalltalk
 
-`#Feliz`
-`>> cuantoDePropina: importeTotal `
-`  ^importeTotal * 1.25 `
+```Smalltalk
+#Cliente
+>> cuantoPaga: importeTotal 
+  ^importeTotal +  self cuantoDePropina: importeTotal 
+>> cuantoDePropina: importeTotal 
+  ^humor cuantoDePropina: importeTotal 
 
-`#Enojado`
-`>> cuantoDePropina: importeTotal `
-`  ^0 `
+#Feliz
+>> cuantoDePropina: importeTotal 
+  ^importeTotal * 1.25 
 
-`#Indiferente`
-`>> cuantoDePropina: importeTotal`
-`  ^plataDelBolsillo `
+#Enojado
+>> cuantoDePropina: importeTotal 
+  ^0 
 
-Nota: en este ejemplo se ubicó la variable “plataDelBolsillo” en la estrategia Indiferente. Esto implica que cada vez que el cliente cambie de humor a indiferente, hay que indicarle cuánta plata en el bolsillo tiene.
+#Indiferente
+>> cuantoDePropina: importeTotal
+  ^plataDelBolsillo
+```
 
-Otra opción podría haber sido poner la plataDelBolsillo en el cliente y para que la estrategia Indiferente resuelva cuánto tiene que devolver al recibir el mensaje \#cuantoDePropina: hay dos opciones:
+#### Wollok
 
--   Que la instancia del objeto Indiferente conozca al Cliente y le pida su \#plataDelBolsillo
+```Wollok
+class Cliente {
+  var humor
+  method cuantoPaga(importeTotal){
+    return importeTotal + self.cuantoDePropina(importeTotal)
+  }
+  method cuantoDePropina(importeTotal){ 
+    return humor.cuantoDePropina(importeTotal)
+  }
+}
+  
+class Feliz {
+  method cuantoDePropina(importeTotal){
+    return importeTotal * 1.25
+  }
+
+class Enojado {
+  method cuantoDePropina(importeTotal){
+    return 0
+  }
+}
+
+class Indiferente {
+  method cuantoDePropina(importeTotal)
+    return plataDelBolsillo
+  }
+}
+```
+
+Nota: en este ejemplo se ubicó la variable `plataDelBolsillo` en la estrategia Indiferente. Esto implica que cada vez que el cliente cambie de humor a indiferente, hay que indicarle cuánta plata en el bolsillo tiene.
+
+Otra opción podría haber sido poner la `plataDelBolsillo` en el cliente y para que la estrategia Indiferente resuelva cuánto tiene que devolver al recibir el mensaje `cuantoDePropina` hay dos opciones:
+
+-   Que la instancia del objeto Indiferente conozca al Cliente y le pida su `plataDelBolsillo`
 -   Que el cliente se pase por parámetro al pedirle a la estrategia cuánta propina pone, modificando el método para recibir dos parámetros, por ejemplo:
 
-`#Cliente`
-`>> cuantoDePropina: importeTotal `
-`  ^humor cuantoDePropina: importeTotal para: self`
+#### Smalltalk
+
+```Smalltalk
+#Cliente
+>> cuantoDePropina: importeTotal 
+  ^humor cuantoDePropina: importeTotal para: self
+```
+
+#### Wollok
+
+```Wollok
+class Cliente {
+  method cuantoDePropina(importeTotal){
+    return humor.cuantoDePropinaPara(importeTotal,self)
+  }
+}
+```
 
 Ante la necesidad de poder cambiar el humor de la persona, separamos a la Persona (que intuitivamente iba a ser un concepto entero abarcando a su estado de humor) de su Humor en un concepto aparte. Los objetos Humor deben ser polimórficos para la persona, ya que debo poder intercambiar los distintos humores y la persona debería hablarle de la misma forma a cualquiera.
 
@@ -61,39 +110,99 @@ Avanzando en el relevamiento, nos dicen lo siguiente:
 
 La codificación propuesta en el enunciado es:
 
-[Diagrama de clases propuesto](http://yuml.me/0dd23abc)
+![Diagrama de clases propuesto](http://yuml.me/0dd23abc)
 
-`#VendedorEspecialista`
-` >>premio`
-`   ^ self class premio`
+#### Smalltalk
 
-`#VendedorSalon`
-` >>premio`
-`   ^ premio`
+```Smalltalk
+#VendedorEspecialista
+ >>premio
+   ^ self class premio
 
-`#VendedorSalonSenior`
-` >>premio`
-`   ^ super premio + self adicionalJunior`
-` >>adicionalJunior`
-`   ^ junior totalVentas * 0.03.`
+#VendedorSalon
+ >>premio
+   ^ premio
 
-`#VendedorSalonJunior`
-` >>totalVentas`
-`   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].`
-` >>premio`
-`   ^ super premio * (1- self descuento)`
+#VendedorSalonSenior
+ >>premio
+   ^ super premio + self adicionalJunior
+ >>adicionalJunior
+   ^ junior totalVentas * 0.03.
 
-`#VendedorEspecialistaSenior`
-` >>premio`
-`   ^ super premio + self adicionalJunior.`
-` >>adicionalJunior`
-`   ^ junior totalVentas * 0.03.`
+#VendedorSalonJunior
+ >>totalVentas
+   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
+ >>premio
+   ^ super premio * (1- self descuento)
 
-`#VendedorEspecialistaJunior`
-` >>totalVentas`
-`   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].`
-` >>premio`
-`   ^ super premio * (1- self descuento)`
+#VendedorEspecialistaSenior
+ >>premio
+   ^ super premio + self adicionalJunior.
+ >>adicionalJunior
+   ^ junior totalVentas * 0.03.
+
+#VendedorEspecialistaJunior
+ >>totalVentas
+   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
+ >>premio
+   ^ super premio * (1- self descuento)
+```
+
+#### Wollok
+
+```Wollok
+class VendedorEspecialista {
+  const premio = 100
+  method premio(){
+    return premio
+  }
+}
+
+class VendedorSalon {
+  var premio
+  method premio(){
+    return premio
+  }
+}
+
+class VendedorSalonSenior inherits VendedorSalon {
+  var junior
+  method premio(){
+    return super() + self.adicionalJunior()
+  }
+  method adicionalJunior(){
+    return junior.totalVentas() * 0.03
+  }
+}
+
+class VendedorSalonJunior inherits VendedorSalon {
+  method totalVentas(){
+    return ventas.sum({ venta => venta.monto() })
+  }
+  method premio(){
+    return super() * (1 - self.descuento())
+  }
+}
+
+class VendedorEspecialistaSenior inherits VendedorEspecialista {
+  var junior
+  method premio(){
+    return super() + self.adicionalJunior()
+  }
+  method adicionalJunior(){
+    return junior.totalVentas() * 0.03
+  }
+}
+
+class VendedorEspecialistaJunior inherits VendedorEspecialista {
+  method totalVentas(){
+    return ventas.sum({ venta => venta.monto() })
+  }
+  method premio(){
+    return super() * (1 - self.descuento())
+  }
+}
+```
 
 La solución propuesta tiene problemas que surgen por el mal uso de herencia. Los que podemos destacar son:
 
@@ -102,31 +211,79 @@ La solución propuesta tiene problemas que surgen por el mal uso de herencia. Lo
 
 **¿Cómo se soluciona este problema?** Si cambiamos el modelo para que la categoría (Junior o Senior) sea un objeto aparte que el vendedor conozca y delegamos en este objeto todo aquello que corresponda a ser senior o junior solucionamos ambos problemas a la vez, ya que el valor de las referencias sí puede ser cambiado en tiempo de ejecución, es sólo settear un atributo. Veamos cómo queda la nueva solución:
 
-[Diagrama de la nueva solución](http://yuml.me/b266b1e2)
+![Diagrama de la nueva solución](http://yuml.me/b266b1e2)
 
-`#Vendedor`
-` >>premio`
-`   ^ self categoria premioPara: self`
-` >>totalVentas`
-`   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].`
+#### Smalltalk
 
-`#Senior`
-` >>premioPara: unVendedor`
-`   ^ unVendedor premioBase + self adicionalJuniorPara: unVendedor`
-` >>adicionalJuniorPara: unVendedor`
-`   ^ junior totalVentas * 0.03.`
+```Smalltalk
+#Vendedor
+ >>premio
+   ^ self categoria premioPara: self
+ >>totalVentas
+   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
 
-`#Junior`
-` >>premioPara: unVendedor`
-`   ^ unVendedor premioBase * (1- self descuento)`
+#Senior
+ >>premioPara: unVendedor
+   ^ unVendedor premioBase + self adicionalJuniorPara: unVendedor
+ >>adicionalJuniorPara: unVendedor
+   ^ junior totalVentas * 0.03.
 
-`#VendedorEspecialista`
-` >>premioBase`
-`   ^ self class premioBase`
+#Junior
+ >>premioPara: unVendedor
+   ^ unVendedor premioBase * (1- self descuento)
 
-`#VendedorSalon`
-` >>premioBase`
-`   ^ premioBase`
+#VendedorEspecialista
+ >>premioBase
+   ^ self class premioBase
+
+#VendedorSalon
+ >>premioBase
+   ^ premioBase
+```
+
+#### Wollok
+
+```Wollok
+class Vendedor {
+  var categoria
+  method premio(){
+    return categoria.premioPara(self)
+  }
+  method totalVentas(){
+    return ventas.sum({ venta => venta.monto() })
+  }
+}
+
+class Senior {
+  var junior
+  method premioPara(unVendedor{
+    return unVendedor.premioBase() + self.adicionalJuniorPara(unVendedor)
+  }
+  method adicionalJuniorPara(unVendedor){
+    return junior.totalVentas() * 0.03.
+  }
+}
+
+class Junior {
+  method premioPara(unVendedor){
+    return unVendedor.premioBase() * (1 - self.descuento())
+  }
+}
+
+class VendedorEspecialista {
+  const premioBase = 100
+  method premioBase(){
+    return premioBase
+  }
+}
+
+class VendedorSalon {
+  var premioBase
+  method premioBase(){
+    return premioBase
+  }
+}
+```
 
 **Disclaimer:** el mensaje \#totalVentas fue a parar al vendedor porque tenía sentido para todos, no sólo para los juniors, y era más simple pero para que fuera totalmente análoga podríamos tenerlo definido en \#Junior y delegar en la categoría. En caso de dudas siempre vale preguntar.
 
