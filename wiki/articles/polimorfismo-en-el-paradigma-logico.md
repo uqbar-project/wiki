@@ -115,3 +115,57 @@ precio(munieco(Precio),Precio).
 precio(peluche(Tamanio),Precio):-
      Precio is Tamanio / 2.
 ```
+
+### Intento poner una variable en el nombre del functor
+
+Supongamos que tenemos la siguiente base de conocimiento:
+
+```Prolog
+vehiculo(opp564, camion(mercedes,2014)).
+vehiculo(agt445, auto(504,1995)).
+vehiculo(mmr444, camion(scania,2010)).
+```
+
+Lo siguiente es **incorrecto**:
+
+```Prolog
+esViejo(Patente):-
+   vehiculo(Patente,Tipo(_,Anio)),
+   Anio < 2000.
+```
+
+¿Por qué es incorrecto? Primero, Prolog **no me deja usar el nombre del functor como un dato**, que yo pueda poner en una variable ú operar. Además, lo siguiente no sería posible:
+
+```Prolog
+vehiculo(ppt666, moto(2010)). % No respeta la aridad
+vehiculo(ert434, lancha(2017,yamaha)). % El orden es otro
+vehiculo(dfg345, karting(rojo)). % ¡Y puede ser que no incluya la información del año y haya que hacer otra cosa!
+```
+
+La siguiente solución sería la correcta, porque arregla todos los problemas mencionados arriba:
+
+```Prolog
+esViejo(Patente):-
+   vehiculo(Patente,Vehiculo),
+   anio(Vehiculo,Anio),
+   Anio < 2000.
+   
+anio(camion(_,Anio),Anio).
+anio(auto(_,Anio),Anio).
+anio(moto(Anio),Anio).
+anio(lancha(Anio,_),Anio).
+anio(karting(Color),Anio):- colorDelAnio(Color,Anio).
+
+colorDelAnio(rojo,2010).
+colorDelAnio(verde,1990).
+colorDelAnio(azul,2015).
+```
+
+De esta forma puedo meter **los functores con la forma que yo quiera** , y aún así mi predicado `esViejo` **no cambia**. Esa es la gran ventaja del polimorfismo. Lo único que tengo que hacer es definir el predicado `anio` para ese nuevo tipo de functor, y ya todo anda sin modificar código existente.
+
+```Prolog
+esViejo(Patente):-
+   vehiculo(Patente,Vehiculo),
+   anio(Vehiculo,Anio),
+   Anio < 2000.
+```
