@@ -9,29 +9,32 @@ featured: true
 
 # Download e instalación base
 
-En el 2016, todos los ejemplos de uqbar estarán utilizando la versión 2.9.1 que se puede descargar en <http://www.eclipse.org/xtend/download.html> (con plugins tanto para Eclipse como para IntelliJ IDEA).
+## JDK
 
-Como es posible que el equipo de desarrollo de Xtend saque nuevas versiones durante el año, dejamos una alternativa para poder instalar la versión 2.9.1 cuando ya no sea la última versión. El lector se preguntará, ¿no podría yo utilizar el plugin de las versiones 2.9.2 ó 2.9.3? Es posible, pero ya hemos experimentado problemas de retrocompatibilidad graves que impedían ejecutar los ejemplos de uqbar correctamente. Entonces nuestra recomendación es utilizar 2.9.1 como versión de tu entorno de desarrollo xtend.
+Descargar la última versión de la JDK 1.8 desde [esta dirección](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 
-Para eso:
+> Asegurate de bajar una JDK que viene con el compilador. La versión debe ser Java 1.8 (todavía no tenemos un entorno estable para Java 1.9)
 
-* Ingresar a <https://www.eclipse.org/modeling/tmf/downloads/>
+## Eclipse Oxygen
 
-<!-- -->
+Ingresá a [esta dirección](https://www.eclipse.org/oxygen/) y descargá el Eclipse Oxygen for Java Developers (hay un botón Download).
 
--   Buscar la versión **2.9.1** y descargar el link "All-In-One Update Site". Elegir cualquier mirror y descargarlo en cualquier directorio en el que se tengan permisos
+## Maven
 
-<!-- -->
+Sigan los pasos de instalación de [esta página](http://localhost:4000/wiki/articles/guia-de-instalacion-de-maven.html)
 
-* Iniciar el Eclipse, hacer Help &gt; Install New Software ... botón Add, Archive y seleccionar el archivo que se descargaron
+## Plugin Xtend 
 
-<!-- -->
+Instalaremos el plugin de Xtend desde el Update Site, siguiendo estos pasos:
 
-* Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
+- En el menú de Eclipse, Help &gt; Install New Software ... botón Add
+- En la ventana de diálogo Add Repository, en el nombre escribir algo como "Xtend Plugin" y en Location anotar http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/
+- A partir del 2018 se estará usando la versión 2.13.0 que es la última, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software"
+- Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
 
 <img src="/img/wiki/Xtend-installation.png" height="60%" width="60%">
 
-* Reiniciar el Eclipse
+- Reiniciar el Eclipse
 
 <!-- -->
 
@@ -52,7 +55,7 @@ Para que compile el código xtend dentro de un proyecto hace falta tener una lib
 <parent>
      <groupId>org.uqbar-project</groupId>
      <artifactId>uqbar-xtend-parent</artifactId>
-     <version>2.9.1</version>
+     <version>2.13.2</version>
 </parent>
 ```
 
@@ -68,12 +71,6 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 # Tips
 
 * Para que cuando hagas New > File te aparezcan las clases y las interfaces Xtend, Window > Customize Perspective... > solapa Menu Visibility > expandís File > New > y seleccionás las de Xtend (Xtend class, inteface, annotation y enum).
-
-<!-- -->
-
-# Problema con el menu de Eclipse en Ubuntu 13.10
-
-* [Problema de Eclipse con Ubuntu 13.10](problema-de-eclipse-con-ubuntu-13-10.html)
 
 <!-- -->
 
