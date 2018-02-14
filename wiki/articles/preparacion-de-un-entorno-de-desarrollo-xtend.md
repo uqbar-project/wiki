@@ -11,7 +11,7 @@ featured: true
 
 ## JDK
 
-Descargar la última versión de la JDK 1.8 desde [esta dirección](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
+Descargá la última versión de la JDK 1.8 desde [esta dirección](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 
 > Asegurate de bajar una JDK que viene con el compilador. La versión debe ser Java 1.8 (todavía no tenemos un entorno estable para Java 1.9)
 
@@ -21,15 +21,15 @@ Ingresá a [esta dirección](https://www.eclipse.org/oxygen/) y descargá el Ecl
 
 ## Maven
 
-Sigan los pasos de instalación de [esta página](http://localhost:4000/wiki/articles/guia-de-instalacion-de-maven.html)
+Seguí los pasos de instalación de [esta página](http://localhost:4000/wiki/articles/guia-de-instalacion-de-maven.html)
 
 ## Plugin Xtend 
 
-Instalaremos el plugin de Xtend desde el Update Site, siguiendo estos pasos:
+Instalá el plugin de Xtend desde el Update Site, siguiendo estos pasos:
 
 - En el menú de Eclipse, Help &gt; Install New Software ... botón Add
 - En la ventana de diálogo Add Repository, en el nombre escribir algo como "Xtend Plugin" y en Location anotar http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/
-- A partir del 2018 se estará usando la versión 2.13.0 que es la última, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software"
+- A partir del 2018 se estará usando la versión 2.13.0 que es la última, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software" (más abajo está resaltado en la imagen)
 - Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
 
 <img src="/img/wiki/Xtend-installation.png" height="60%" width="60%">
