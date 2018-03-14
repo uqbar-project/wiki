@@ -30,7 +30,6 @@ De esta forma, cualquier validación o modificación dinámica de los valores en
 -   Validaciones realizadas a medida que se cargan los datos en un formulario
 -   Valores que dependen unos de otros (un caso típico: combos anidados).
 -   Controles que se habilitan o deshabilitan dependiendo de los demás valores ingresados.
--   ... entre otros.
 
 La principal desventaja de este esquema radica en la no-intervención del modelo de dominio durante la interacción con el usuario, lo que impide aprovechar toda la lógica que contenga este objeto, que deberá tomar uno de dos caminos:
 
@@ -116,5 +115,4 @@ En los casos en que la relación entre la vista y el modelo de dominio es muy le
 # Links relacionados
 
 -   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
--   [Temario Algoritmos III](algo3-temario.html)
 
