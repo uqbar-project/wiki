@@ -21,7 +21,7 @@ Ingresá a [esta dirección](https://www.eclipse.org/oxygen/) y descargá el Ecl
 
 ## Maven
 
-Seguí los pasos de instalación de [esta página](http://localhost:4000/wiki/articles/guia-de-instalacion-de-maven.html)
+Seguí los pasos de instalación de [esta página](guia-de-instalacion-de-maven.html)
 
 ## Plugin Xtend 
 
