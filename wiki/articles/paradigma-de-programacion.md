@@ -19,7 +19,7 @@ Para definir programa es necesario analizarlo desde dos diferentes perspectivas.
 
 El otro punto de vista es el de aquel que tenga que construir o modificar ese programa (programador), a quien interesará también la forma en que está construido. Desde esta perspectiva no hay una única definición al concepto de programa ya que cada paradigma ofrece una respuesta distinta a esta pregunta.
 
-[Paradigma Estructurado](paradigma-estructurado.html)  
+[Paradigma Estructurado](https://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada)  
 Secuencia ordenada de instrucciones que manipulan un espacio de memoria.
 
 <!-- -->
