@@ -21,7 +21,7 @@ En particular, las funciones son relaciones que presentan las siguientes caracte
 -   para toda entrada aceptable (su dominio), existe un único resultado (imagen), lo cual se conoce como unicidad.
 -   para toda entrada del dominio, existe un resultado, lo que se conoce como existencia.
 
-### Función desde un punto de vista imperativo
+### Función desde un punto de vista procedural
 
 Al llevar los conceptos de función matemática al mundo computacional, la transparencia referencial implica que las funciones, comparadas contra los procedimientos imperativos, no tienen [efecto](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html), su aplicación no afecta al contexto, o, cuando menos, no es visible para el observador que evalua la expresión.
 
@@ -39,23 +39,8 @@ Las funciones [currificadas](currificacion.html), en tanto valores, pueden ser t
 
 ### Función desde el cálculo lambda
 
-Desde el punto de vista del [cálculo lambda](http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda), la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son [expresiones lambda](expresiones-lambda.html). Por lo que la función `siguiente`, que en Haskell normalmente escribiríamos:
+Desde el punto de vista del [cálculo lambda](http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda), la función es LA primitiva del lenguaje, y todas las funciones son anónimas, es decir, son [expresiones lambda](expresiones-lambda.html). Todo, hasta los números, pueden ser expresados con una función con suficiente imaginación.
 
-```haskell
-siguiente x = x + 1
-```
-
-En cálculo lambda no tipado la escribiríamos:
-
-```
-siguiente = 𝛌x.sum x one
-```
-
-Equivalente a la siguiente definición Haskell:
-
-```haskell
-siguiente = \x -> x + 1
-```
 ### Funciones en Haskell
 
 Las funciones en Haskell presentan todas las carecterísticas mencionadas anteriormente. A modo de resumen, decimos que:
@@ -68,5 +53,3 @@ Las funciones en Haskell presentan todas las carecterísticas mencionadas anteri
 -   La operación primitiva de la función es la aplicación, por la cual se evalúa una función pasandole sus argumentos y obteniendo un resultado
 -   El mecanismo de la evaluación de las funciones es la reducción (reducción 𝛃)
 -   Dado que la única operación primitiva del tipo función es la aplicación, sólo es función aquello todo y sólo lo que pueda ser aplicado. Moraleja: no tiene sentido hablar de funciones de cero argumentos, ya que no pueden ser aplicadas
--   La [estrategia de reducción](estrategias-de-evaluacion.html) empleada por Haskell es no estricta (≅ call-by-name), lo cual no es lo mismo que evaluación diferida, que significa que las expresiones son evaluadas a medida que son necesarias. Sin embargo, en la práctica, una lleva normalmente a la otra, por lo que podremos decir sin excesivo rigor que Haskell presenta evaluación diferida.
-
