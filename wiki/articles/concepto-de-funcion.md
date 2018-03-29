@@ -47,7 +47,7 @@ Las funciones en Haskell presentan todas las carecterísticas mencionadas anteri
 
 -   Las funciones son transformaciones matemáticas, que presentan transparencia referencial, y por tanto libres de efecto
 -   Las funciones son valores
--   Las funciones tienen [tipo función](tipos-de-haskell-funciones.html) ((-&gt;) a b), que está determinado por su dominio e imagen. Una función de enteros en booleanos tiene tipo `Int` `->` `Bool`
+-   Las funciones tienen [tipo función](tipos-de-haskell.html) ((-&gt;) a b), que está determinado por su dominio e imagen. Una función de enteros en booleanos tiene tipo `Int` `->` `Bool`
 -   Las funciones son un caso particular de las relaciones, que presentan unicidad y existencia para todo su dominio.
 -   Las funciones están currificadas, por lo que no existen funciones de más de un argumento realmente, sino que se emulan a partir de funciones de un argumento que devuelven otra función que toma los parámetros restantes.
 -   La operación primitiva de la función es la aplicación, por la cual se evalúa una función pasandole sus argumentos y obteniendo un resultado
