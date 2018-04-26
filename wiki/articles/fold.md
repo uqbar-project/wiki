@@ -33,7 +33,10 @@ concatenar (x:xs) = (++) x (concatenar xs)
 
 Si vemos las diferencias entre estas funciones notamos que sólo cambia la operación a realizar y el valor inicial, por ende si queremos hacer una función que nos generalice el algoritmo tenemos que recibirlos como parámetro.
 
-En términos generales… ¿cómo la paso a una función de orden superior? Necesitamos • una función que opera con dos parámetros • un valor inicial • una lista
+En términos generales… ¿cómo la paso a una función de orden superior? Necesitamos:
+- una función que opera con dos parámetros
+- un valor inicial
+- una lista
 
 ```Haskell
 foldr :: (a -> b -> b) -> b -> [a] -> b 
