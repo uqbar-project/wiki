@@ -48,7 +48,18 @@ length [] = 0
 length (x:xs) = 1 + length xs
 ```
 
-Usamos el patrón de lista vacía \[\] para el caso base, ya que la segunda definición indefectiblemente nos llevará a ella, y el patrón de cabeza y cola para poder avanzar de a un paso por la estructura y poder procesarla fácilmente. En este caso particular no importa el orden de las definiciones, ya que la lista con al menos un elemento no matchea con la lista vacía y viceversa.
+![length recursion example](/img/wiki/RecursionExampleLength.gif)
+
+Veamos ahora la función reverse.
+
+```Haskell
+reverse [] = []
+reverse (x:xs) = reverse xs ++ [x]
+```
+
+![reverse recursion example](/img/wiki/RecursionExampleReverse.gif)
+
+Usamos el patrón de lista vacía \[\] para el caso base, ya que la segunda definición indefectiblemente nos llevará a ella, y el patrón de cabeza y cola para poder avanzar de a un paso por la estructura y poder procesarla fácilmente. En estos casos en particular no importa el orden de las definiciones, ya que la lista con al menos un elemento no matchea con la lista vacía y viceversa.
 
 Loops infinitos
 ---------------
