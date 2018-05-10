@@ -8,62 +8,57 @@ categories: [haskell]
 
 Dado que el haskell es un lenguaje con [Inferencia de tipos](inferencia-de-tipos.html), no es necesario indicar el tipo de las funciones que construimos. A pesar de ello (o tal vez precisamente *por* ello) los tipos juegan un rol fundamental al programar en un lenguaje funcional (en particular en Haskell).
 
-Esto se debe a varios motivos:
+El sistema de tipos de Haskell es muy estricto, bastante más de lo que estamos acostumbrados los que venimos de la programación orientada a objetos. Si bien en algunos casos puede ser molesto porque un tipado tan estricto como el de Haskell complica algunas operaciones sencillas como suele pasar con el [cálculo de un promedio](problemas-comunes-con-los-tipos-numericos-de-haskell.html), en la amplia mayoría de los casos es bueno porque nos ayuda a detectar errores más tempranamente. 
 
-El sistema de tipos  
-El sistema de tipos de Haskell es muy estricto, bastante más de lo que estamos acostumbrados los que venimos de la programación orientada a objetos. Eso muchas veces puede ser bueno porque nos ayuda a detectar errores más tempranamente (por ejemplo no es posible hacer casteos en Haskell).
+Esto obliga al programador a ser más atento con los tipos de cada una de las funciones que programa o que utiliza. Los siguientes aspectos de tipado son importantes a tener en cuenta a la hora de entender de qué tipo son las funciones que definimos:
 
-En otros casos puede ser molesto porque el tipado tan estricto complica algunas operaciones sencillas.
-
-Ambas situaciones obligan al programador a ser más atento con los tipos de cada una de las funciones que programa o que utiliza.
-
-<!-- -->
-
-La construcción de funciones a partir de funciones  
+## La construcción de funciones a partir de funciones  
 El paradigma funcional tiene como uno de sus pilares la posibilidad de construir funciones complejas a partir de combinar funciones más simples (utilizando composición, aplicación parcial, orden superior, etc); para poder utilizar cualquiera de esas herramientas es necesario tener presente el tipo de las funciones que quiero combinar, por ejemplo:
 
--   Si quiero componer dos funciones: es necesario que la imagen de f esté incluida en el dominio de g (tal como aprendimos en matemática).
--   Al aplicar una función de orden superior es necesario que *matcheen* los tipos de ambas funciones.
+- Si quiero componer dos funciones `f` y `g`: es necesario que la imagen de `f` esté incluida en el dominio de `g` (tal como aprendimos en matemática).
+- Al aplicar una función de orden superior es necesario que *matcheen* los tipos de la función esperada con la función recibida.
 
-<!-- -->
+## El polimorfismo paramétrico y las type classes  
+Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, eso también es algo a tener en cuenta.
 
-El polimorfismo paramétrico y las type classes  
-Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, eso también es algo a tener en cuenta. Por ejemplo la función puede en principio procesar cualquier tipo; en cambio una vez que yo le aplico el primer parámetro (el criterio de selección) ese tipo se restringe, la función sólo va a servir para listas de valores numéricos: combinar filter con even restringe el tipo de ambas.
+Por ejemplo la función `filter` puede en principio procesar listas de cualquier tipo; en cambio una vez que yo le aplico el primer parámetro (el criterio de selección) ese tipo se restringe. Si el criterio fuera `even`, ese filtrado sólo va a servir para listas de valores numéricos, porque `even` restringe el tipo de los elementos de la lista a el tipo de lo que espera recibir, que es un número.
 
 A continuación se describen paso a paso los ejemplos que permiten comprender el mecanismo de inferencia utilizado en el lenguaje Haskell.
 
-# Antes de empezar: cómo leer el tipo de una función en Haskell
+# Ahora sí: ¿cómo inferimos el tipo de una función?
 
-Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos posibles de Haskell, eso está explicado en el artículo sobre [Tipos de Haskell](tipos-de-haskell.html)
-
-# Aplicación
-
-si x es Bool, entonces 
-
-```haskell
-{{code|not x}} 
-```
-
-también es de tipo Bool
+Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos posibles de Haskell, eso está explicado en el artículo sobre [Tipos de Haskell](tipos-de-haskell.html), y entender la regla básica de tipado para una aplicación: si `x` es Bool, entonces `not x` también es de tipo Bool, porque `not :: Bool -> Bool`; si `x` es de cualquier otro tipo `not x` no tipa.
 
 ## Funciones Simples
 
-Al intentar calcular el tipo de una función, lo primero que tenemos que hacer es mirar las funciones que se usan dentro de su definición. Por ejemplo:
+Al intentar calcular el tipo de una función, lo primero que tenemos que hacer es mirar las funciones que se usan dentro de su definición y asegurarnos de saber de qué tipo son esas funciones. Luego las preguntas importantes son:
+1. ¿Cuántos parámetros recibe? Esto ayuda a ordenarnos, para saber cuántos huecos tenemos que llenar, que es esa cantidad + 1, por el tipo de retorno.
+2. ¿De qué tipo son esos parámetros? Esto se deduce en base al uso de los mismos en la definición.
+3. ¿De qué tipo es lo que retorna? Esto se deduce en base a lo que retorna la función principal que es la "de más afuera" o menor precedencia.
+
+Por ejemplo:
 
 ```haskell
 none x y = not x && not y
+
+-- Sabemos que:
+-- not :: Bool -> Bool
+-- (&&) :: Bool -> Bool -> Bool
 ```
 
-Para determinar el tipo de la función none podemos seguir los siguientes pasos:
+Luego, para determinar el tipo de la función `none` podemos seguir los siguientes pasos:
 
-1.  Sabemos que tiene dos parámetros (x e y), entonces podemos decir que su tipo tiene que tener la forma , luego deberemos calcular cuáles son a, b y c.
-2.  Si x es utilizado como parámetro de la función , entonces su tipo deberá ser compatible con el de not. El tipo de not es: ; es decir: recibe un booleano y devuelve otro booleano. Por lo tanto x deberá ser un booleano.
-3.  Un razonamiento análogo nos lleva a deducir que y también debe ser un valor booleano. Entonces sabemos que el tipo de la función tiene la forma , es decir: recibe dos Booleanos y nos falta saber qué devuelve.
-4.  Finalmente, para saber el tipo de retorno podemos mirar que si x es Bool, entonces también es de tipo Bool, al igual que . Por otro lado la función tiene el tipo (recibe dos booleanos y devuelve también un booleano), entonces el valor de retorno también es un booleano.
+1. Vemos que tiene dos parámetros (`x` e `y`), entonces podemos decir que su tipo tiene que tener la forma `none :: ?? -> ?? -> ??`, luego tendremos que calcular cuáles son esas incógnitas.
+2. Analizamos el tipo de los parámetros:
+  - Si `x` es utilizado como parámetro de la función `not`, podemos deducir que `x` no admite valores de cualquier tipo, sólo pueden ser booleanos. Por ende: `none :: Bool -> ?? -> ??`.
+  - Un razonamiento análogo nos lleva a deducir que `y` también debe ser un valor booleano. Luego: `none :: Bool -> Bool -> ??`.
+3. Finalmente, para saber el tipo de retorno:
+  - Dado que `x` es Bool, entonces `not x` también es de tipo Bool, al igual que `not y`, lo cual es compatible con lo que espera el `(&&)` (o sea que la expresión `not x && not y` tipa).
+  - Lo que retorna la función `(&&)` al estar totalmente aplicada es Bool, y esa es la función principal, así que podemos afirmar que: `none :: Bool -> Bool -> Bool`.
 
-En el último paso podemos ver que en realidad para saber el tipo de no sería necesario mirar los parámetros de , con saber su tipo de retorno sería suficiente. Sin embargo el análisis es útil para asegurarnos de que la función es correcta.
+En el último paso podemos ver que en realidad para saber el tipo de no sería necesario mirar los parámetros de `(&&)`, con saber su tipo de retorno sería suficiente. Sin embargo el análisis es útil para asegurarnos de que la función es correcta, y en caso de incurrir en errores de tipos, entender la causa.
 
-Por otro lado, en ejemplos más complejos analizar los parámetros será indispensable para poder saber el tipo de retorno (por ejemplo en la presencia de polimorfismo).
+Por otro lado, en ejemplos más complejos analizar los parámetros de las funciones usadas en la definición será indispensable para poder saber el tipo de retorno (por ejemplo en la presencia de polimorfismo).
 
 ## Ejemplo un poco mas heavy
 
@@ -73,74 +68,59 @@ Siendo
 f x y z = (head y) > (map (\n -> n x) z)
 ```
 
-Vamos a intentar hacer la inferencia de tipos
+Vamos a intentar hacer la inferencia de tipos. Primero tenemos que ver qué es `f`? f es una función que tiene 3 parámetros
 
-**Por donde empezamos?**
-
-Primero tenemos que ver qué es **f** ? f es una función que tiene 3 parámetros
-
-Ponemos 3 flechitas -&gt;
+Ponemos 3 flechitas simples: ->
 
 ```
-f :: esto es el tipo de **x** -> esto es el tipo de **y** -> esto es el tipo de **z** -> esto es el tipo de lo que devuelve **f**
+f :: esto es el tipo de x -> esto es el tipo de y -> esto es el tipo de z -> esto es el tipo de lo que devuelve f
 ```
 
-Como head se aplica a una lista **y** tiene que ser una lista
+Como `head :: [a] -> a`, `y` tiene que ser una lista
 
 ```
-f :: esto es el tipo de `**`x`**` -> [???] -> esto es el tipo de `**`z`**` -> esto es el tipo de lo que devuelve `**`f`**
+f :: esto es el tipo de x -> [???] -> esto es el tipo de z -> esto es el tipo de lo que devuelve f
 ```
 
-Como map recibe como segundo parámetro una lista, **z** tiene q ser una lista
+Como `map :: (a -> b) -> [a] -> [b]`, `z` tiene q ser una lista porque se usa como su segundo parámetro
 
 ```
-f :: esto es el tipo de `**`x`**` -> [???] -> [???] -> esto es el tipo de lo que devuelve `**`f`**
+f :: esto es el tipo de x -> [???] -> [???] -> esto es el tipo de lo que devuelve f
 ```
 
-La función que es primer parámetro del map **(\\n -&gt; n x)** recibe como parámetro cada elemento de la lista **z**, cada uno de esos elementos va a ser **n**
-
-Como **n** se está aplicando a **x** podemos inferir que **n** es una función, por lo que **z** es una lista de funciones
+La función `(\n -> n x)` que es primer parámetro del `map` recibe como parámetro cada elemento de la lista `z`, cada uno de esos elementos va a ser `n`. Y como `n` se está aplicando a `x` podemos inferir que `n` es una función, por lo que `z` es una lista de funciones
 
 ```
-f :: esto es el tipo de `**`x`**` -> [???] -> `**`[Dominio` `->` `Imagen]`**` -> esto es el tipo de lo que devuelve `**`f`**
+f :: esto es el tipo de x -> [???] -> [??? -> ???] -> esto es el tipo de lo que devuelve f
 ```
 
-Como **x** es el parámetro de **n** podemos inferir que **x** pertenece al dominio de **n**, por ende si el **Dominio** es de tipo **a** entonces **x** es de tipo **a**
+Como `x` es el parámetro de `n` podemos inferir que `x` pertenece al dominio de `n`, por ende si el su dominio es de tipo **a** entonces `x` es de tipo **a**
 
 ```
-f :: `**`a`**` -> [???] -> [`**`a`**` -> Imagen] -> esto es el tipo de lo que devuelve `**`f`**
+f :: a -> [???] -> [a -> ???] -> esto es el tipo de lo que devuelve f
 ```
 
-Respiremos profundo... Asumimos que Imagen es de tipo **b**
+Respiremos profundo... Asumimos que la imagen de las funciones de la lista es de tipo **b**, porque sólo a partir de `map (\n -> n x) z` no vemos nada que lo restrinja a tipos concretos, ni que deba ser del mismo tipo que su dominio al cual denominamos **a**
 
 ```
-f :: a -> [???] -> [a -> `**`b`**`] -> esto es el tipo de lo que devuelve `**`f`**
+f :: a -> [???] -> [a -> b] -> esto es el tipo de lo que devuelve f
 ```
 
-Ahora pensemos en los parámetros de la función **(&gt;)** que son **(head y)** y **(map (\\n -&gt; n x) z)**
-
-Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo
-
-El map me da una lista de lo que devuelve (\\n -&gt; n x) sabemos que la imagen de (\\n -&gt; n x) es b entonces **(map (\\n -&gt; n x) z)** es de tipo **\[b\]**
-
-Por ende **(head y)** también es de tipo **\[b\]**
-
-Para que **(head y)** sea de tipo **\[b\]** **y** tiene que tener el tipo \[ **\[ b \]** \]
+Ahora pensemos en los parámetros de la función `(>) :: Ord a => a -> a -> a` que son `(head y)` y `(map (\n -> n x) z)`:
+- Para poder comparar estas 2 cosas, ambas expresiones tienen que ser del mismo tipo
+- El `map` me da una lista de lo que devuelve `(\n -> n x)` sabemos que la imagen de `(\n -> n x)` es b entonces `map (\n -> n x) z` es de tipo **\[b\]**
+- Por ende `(head y)` también es de tipo **\[b\]**
+- Para que `(head y)` sea de tipo **\[b\]**, `y` tiene que tener el tipo **\[\[b\]\]**
+- A su vez **b** debe pertenecer a la typeclass Ord (por la restricción impuesta por la función `(>)`)
 
 ```
-f :: a -> [ `**`[` `b` `]`**` ] -> [a -> b] -> esto es el tipo de lo que devuelve `**`f`**
+f :: Ord b => a -> [[b]] -> [a -> b] -> esto es el tipo de lo que devuelve f
 ```
 
-La última función que se hace en **f** es **(&gt;)**, como la imagen de **(&gt;)** es **Bool** la imagen de **f** es **Bool**
+La función principal de `f` es `(>)`, como la imagen de `(>)` al estar totalmente aplicado es **Bool** la imagen de `f` es **Bool**
 
 ```
-f :: a -> [ [ b ] ] -> [a -> b] -> `**`Bool`**
-```
-
-Nos queda un pequeño detalle, el **(&gt;)** solo puede laburar con listas ordenables entonces **\[b\]** no puede ser cualquier lista, sus elementos tienen que tener la restricción **Ord**
-
-```
-f :: `**`Ord` `b`**` => a -> [ [ b ] ] -> [a -> b] -> Bool`
+f :: Ord b => a -> [[ b ]] -> [a -> b] -> Bool
 ```
 
 ## Ejemplo de parcial para pensar
@@ -159,4 +139,4 @@ Y sabemos que:
 maximoSegun :: Ord a1 => (a -> a1) -> [a] -> a
 ```
 
-Cuál es el tipo de f? Ayudita: nótese que al map se le está aplicando sólo un parámetro ;)
+Cuál es el tipo de f? Ayudita: pensar cuál es la función principal en este ejemplo. Si no sabés bien qué está pasando, te recomendamos leer sobre [notación point-free](notacion-point-free.html).
