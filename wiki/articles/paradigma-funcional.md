@@ -17,7 +17,7 @@ Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las p
 -   [Orden Superior](orden-superior.html)
 -   [Currificación](currificacion.html)
 -   [Funciones por Partes](funciones-por-partes.html)
--   [Lazy Evaluation](estrategias-de-evaluacion-lazy-evaluation.html)
+-   [Lazy Evaluation](estrategias-de-evaluacion.html)
 -   [Recursividad en Haskell](recursividad-en-haskell.html)
 
 # Tipos
@@ -31,7 +31,7 @@ Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las p
 
 # Extras simpáticos
 
--   [Definiciones locales (where)](Definiciones_locales_(where) "wikilink")
+-   [Definiciones locales (where)](definiciones-locales--where-.html)
 -   [Expresiones lambda](expresiones-lambda.html)
 -   [Listas por comprensión](listas-por-comprension.html)
 
@@ -57,6 +57,5 @@ Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las p
 
 Acá hay algunas cosas interesantes que escapan al nivel de funcional que se espera que aprendan para Paradigmas, si te interesa profundizar en el tema es muy interesante!
 
--   [Append como "foldr f a"](Append_como_"foldr_f_a" "wikilink")
 -   Mónadas, Monadas, y Functores en Haskell: [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 
