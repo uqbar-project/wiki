@@ -11,7 +11,6 @@ Introducción: Silogismos
 ¿Cómo describir un problema usando la lógica? ¿Qué tipo de problema podemos describir?
 
 Comencemos con un ejemplo simple, seguramente muchos de ustedes lo habrán escuchado alguna vez:
-
   
 *Sócrates es hombre*
 
@@ -19,24 +18,21 @@ Comencemos con un ejemplo simple, seguramente muchos de ustedes lo habrán escuc
 
 Luego... ¿qué podemos deducir de esto? Claro adivinaste, que Sócrates es mortal. De eso se trata la programación lógica, vamos a describir nuestro conocimiento en formas de reglas y vamos a permitir que otra cosa (el [motor](declaratividad-elementos-en-un-programa-declarativo.html)) se ocupe de procesar ese conocimiento y sacar conclusiones al respecto.
 
-¿Y solito se da cuenta de las cosas? Más o menos, en realidad no podemos pedirle al motor que solamente se ponga a deducir y que nos diga a qué conclusión llega, hay que hacerle preguntas más concretas. Por ejemplo podemos preguntarle
-
-  
-si socrates es mortal, y nos va a decir que sí
-
-qué mortales conoce, y nos va a decir que socrates es mortal
+¿Y solito se da cuenta de las cosas? Más o menos, en realidad no podemos pedirle al motor que solamente se ponga a deducir y que nos diga a qué conclusión llega, hay que hacerle preguntas más concretas. Por ejemplo podemos preguntarle:
+- si socrates es mortal, y nos va a decir que sí
+- qué mortales conoce, y nos va a decir que socrates es mortal
 
 Esos son los dos tipos de preguntas básicas que el motor va a saber contestar, después vamos a bajar en detalle sobre esto.
 
 ¿Cómo lo bajamos a código?
 --------------------------
 
-Programemos este mismo ejemplo en Prolog, en realidad es bastante simple: <code>
-
-    hombre(socrates).
-    mortal(X):-hombre(X).
-
-</code>
+Programemos este mismo ejemplo en Prolog, en realidad es bastante simple:
+```
+hombre(socrates).
+mortal(X):-
+  hombre(X).
+```
 
 ¿Qué quiere decir esto?
 
@@ -66,11 +62,9 @@ Estos son los conceptos principales de los que se compone un programa Prolog. Pa
 Universo Cerrado
 ----------------
 
-*¿Qué pasa si ahora quiero preguntar si Aristóteles es mortal?* <code>
+*¿Qué pasa si ahora quiero preguntar si Aristóteles es mortal?* 
 
-    ?- mortal(aristoteles).
-
-</code>
+`?- mortal(aristoteles).`
 
 Al ejecutar esa consulta, la secuencia de pasos del motor (simplificada) es la siguiente:
 
@@ -86,8 +80,8 @@ Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares
 
 *¿Cómo solucionar el problema?*
 
-Agregando el hecho que indica que Aristóteles es un hombre: <code>
+Agregando el hecho que indica que Aristóteles es un hombre:
 
-    hombre(aristoteles).
+`hombre(aristoteles).`
 
-</code> Si volvemos a hacer la misma consulta ahora vamos a tener el resultado esperado.
+Si volvemos a hacer la misma consulta ahora vamos a tener el resultado esperado.
