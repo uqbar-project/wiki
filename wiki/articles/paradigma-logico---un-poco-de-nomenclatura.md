@@ -27,22 +27,26 @@ Resumen
     -   Existencial
 
 == Base de conocimiento = programa de ejemplo ==
-
-` hombre(socrates).`
-` hombre(solon).`
-` hombre(pericles).`
-` hombre(arquimedes).`
-` mortal(X):-hombre(X).`
-` ciudad(atenas).`
-` ciudad(siracusa).`
-` vive(socrates,atenas).`
-` vive(solon,atenas).`
-` vive(pericles,atenas).`
-` vive(arquimedes,siracusa).`
-` nacio(solon,-634).`
-` nacio(pericles,-495).`
-` nacio(arquimedes,-287).`
-` sonConciudadanos(P1,P2):- vive(P1,C), vive(P2,C).`
+```
+hombre(socrates).
+hombre(solon).
+hombre(pericles).
+hombre(arquimedes).
+mortal(X):-
+  hombre(X).
+ciudad(atenas).
+ciudad(siracusa).
+vive(socrates,atenas).
+vive(solon,atenas).
+vive(pericles,atenas).
+vive(arquimedes,siracusa).
+nacio(solon,-634).
+nacio(pericles,-495).
+nacio(arquimedes,-287).
+sonConciudadanos(P1,P2):- 
+  vive(P1,C), 
+  vive(P2,C).
+```
 
 Individuos
 ----------
