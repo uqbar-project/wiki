@@ -3,25 +3,27 @@ layout: article
 title: Aritmetica en prolog
 ---
 
-El predicado "is"
------------------
+## El predicado "is"
 
 En Prolog no pasa como en Haskell que tengo funciones que me devuelven cosas, sino que tengo predicados que relacionan individuos ¿Entonces qué sucede cuando quiero hacer cuentas? ¿Y como me puedo “guardar” el resultado de una cuenta? Recordemos que en Prolog no existe el concepto de asignación.
 
 Bueno, para esos casos, existe el predicado is. Es un predicado un poco especial (ya que no se escribe como todos los demás). Una consulta que podemos hacer usando is podría ser:
+
 ```
 ?- 3 is 2 + 1.
 Yes
 ```
+
 A la derecha del is se escribe una operación aritmética. A la izquierda del is se escribe el resultado de esa operación aritmética.
 
 El is **sólo es inversible por el primer parámetro**
+
 ```
 ?- X is 6 / 2.
 X = 3
 ```
-Errores comunes con el is
--------------------------
+
+## Errores comunes con el is
 
 Acá vienen una serie de warnings que deben tener MUY en cuenta:
 
