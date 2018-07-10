@@ -37,6 +37,8 @@ Si bien funciona, debemos usar las herramientas para lo que corresponde. Cuando 
 
 La razón por la que `Variable = 5 * 3.` no funciona es que el `=` es "tonto", se fija que a izquierda y a derecha haya _exactamente lo mismo_. Ver [aritmética en prolog](aritmetica-en-prolog.html).
 
+La razón por la que `factorial(N+1,Fac).` no funciona es que la unificación que realiza prolog de valor con variable es igual de "tonta" que el `=`. Salvo que yo ponga un `is`, no se va a resolver ninguna cuenta.
+
 **Entonces:**
 
 -   **Sí** vale `Resultado is Variable + 1.` (Siempre que `Variable` venga unificada).
