@@ -109,7 +109,7 @@ En consecuencia, decir `Tipo = cuerda` es *exactamente lo mismo* que escribir `c
 
 ```Prolog
 suenaLindo(Instrumento):-
-    tipo(Instrumento,`**`cuerda`**`),
+    tipo(Instrumento,`cuerda`),
     estaAfinado(Instrumento).
 ```
 
