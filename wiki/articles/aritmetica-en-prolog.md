@@ -100,7 +100,9 @@ edad(juan,Edad) :- 
 ```
 La manera correcta de hacerlo es aprovechando que al hacer pattern matching, prolog *verifica que el valor sea ese*, sin usar el igual ó el is:
 
-`edad(juan,10).`
+```Prolog
+edad(juan,10).
+```
 
 ¡Y listo!
 
