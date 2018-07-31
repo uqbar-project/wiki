@@ -361,7 +361,10 @@ Una forma más rápida de definir este tipo de funciones es usando **la sintaxis
 
 En vez de definir sólo los tipos de los valores que van a estar en la película, también agregamos en la definición el nombre de la función por el cual queremos obtener dicho valor. 
 
-Al utilizar la notación de registro hay que encerrar la definición de los campos entre llaves { } y separar cada campo por comas.
+Al utilizar la notación de registro hay que definir los campos que lo componen de una forma distinta, tenemos que:
+- encerrar la definición de los campos entre llaves { }
+- separar cada campo usando comas
+- indicar el nombre y de qué tipo es cada campo
 
 ```Haskell
 data Pelicula = 
@@ -446,6 +449,17 @@ instance Ord Pelicula where
 Por lo general es suficiente con derivar typclasses en nuestros data, pero es importante recordar que para poder hacer esto, todos los componentes del data a su vez deben pertenecer al typeclass que estamos derivando. Y si en algún momento nos pasa que tenemos un data que se compone, entre otras cosas, por alguna función, ya no vamos a poder derivar así como así Show y Eq que son las más usuales, porque las funciones no son ni Show ni Eq.
 
 En esos casos podemos o bien optar porque nuestro data no sea Show o Eq, o bien definir un instance para esta typeclass que se corresponda con nuestro tipo de dato y así determinar nuestra propia solución a ese problema.
+
+Supongamos que queremos mostrar a nuestros alumnos de una forma distinta, que nos muestre el nombre, las notas y además nos diga el estado de cursada (si aprobó o no en base a sus notas). Necesitamos agregar un instance para Show Alumno en vez de derivar Show. Por ejemplo:
+
+```
+instance Show Alumno where
+  show (UnAlumno nombre notas) = show nombre ++ ": " ++ estadoDeCursada notas ++ " con " ++ show notas
+ 
+estadoDeCursada notas
+  | all aprobada notas = "CURSADA APROBADA"
+  | otherwise = "CURSADA DESAPROBADA"
+```
 
 # Múltiples constructores por tipo
 
