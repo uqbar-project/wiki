@@ -389,7 +389,7 @@ O bien podemos usar la siguiente notación que sólo es válida para datas defin
 
 ```Haskell
 pulp = 
-  Pelicula{
+  UnaPelicula {
     tituloPelicula = "Pulp Fiction",
     directorPelicula = "Quentin Tarantino",
     anioEstreno = 1994,
@@ -400,6 +400,18 @@ pulp = 
 Esto ayuda mucho a la expresividad, pero también es más verboso. Uno tiene que evaluar cuándo vale la pena y cuándo no.
 
 Otra cosa simpática de definir el data con sintaxis de registro es que que si el tipo deriva la typeclass Show, lo que se imprima en la consola cuando la expresión evaluada retorna algo de nuestro tipo (Pelicula en este caso) será más fácil de entender, porque mostrará cada valor asociado al nombre del campo en vez de uno al lado del otro, independientemente de qué notación se use para crear la película en cuestión.
+
+Finalmente algo más que nos da esta forma de definir el data es un azúcar sintáctico para facilitar el **copiado** de datos, lo cual es particularmente útil para trabajar de forma [inmutable](inmutabilidad.html). Las siguientes definiciones son equivalentes:
+```Haskell
+agregarPuntaje nuevoPuntaje (UnaPelicula titulo director anio puntajes actores)
+  = UnaPelicula titulo director anio (nuevoPuntaje : puntajes) actores
+  
+agregarPuntaje' nuevoPuntaje pelicula = pelicula { puntajesPelicula = nuevoPuntaje : puntajesPelicula pelicula }
+```
+
+En ambos casos lo que se está haciendo es crear una nueva película que tiene la misma información que la que se recibió por parámetro, excepto por los puntajes donde indicamos cuáles deberían ser los puntajes de la nueva película. De ninguna forma se modificarán los puntajes de pulp si consultamos `agregarPuntaje' 10 pulp`.
+
+**IMPORTANTE! Tengan en cuenta al usar este feature de ser cuidadosos y no abusar (al igual que no debería abusarse del pattern matching) porque un uso demasiado extendido atenta contra las abstracciones pequeñas y reutilizables. Funciones chiquitas y reutilizables matan sintaxis cheta.**
 
 # Cómo instanciar una typeclass
 
