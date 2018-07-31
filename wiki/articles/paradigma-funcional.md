@@ -16,6 +16,7 @@ Este paradigma se basa en un conjunto de funciones (relaciones que cumplen las p
 -   [Aplicación Parcial](aplicacion-parcial.html)
 -   [Orden Superior](orden-superior.html)
 -   [Currificación](currificacion.html)
+-   [Inmutabilidad](inmutabilidad.html)
 -   [Funciones por Partes](funciones-por-partes.html)
 -   [Lazy Evaluation](estrategias-de-evaluacion.html)
 -   [Recursividad en Haskell](recursividad-en-haskell.html)
