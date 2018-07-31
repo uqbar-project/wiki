@@ -411,7 +411,7 @@ agregarPuntaje' nuevoPuntaje pelicula = pelicula { puntajesPelicula = nuevoPunta
 
 En ambos casos lo que se está haciendo es crear una nueva película que tiene la misma información que la que se recibió por parámetro, excepto por los puntajes donde indicamos cuáles deberían ser los puntajes de la nueva película. De ninguna forma se modificarán los puntajes de pulp si consultamos `agregarPuntaje' 10 pulp`.
 
-**IMPORTANTE! Tengan en cuenta al usar este feature de ser cuidadosos y no abusar (al igual que no debería abusarse del pattern matching) porque un uso demasiado extendido atenta contra las abstracciones pequeñas y reutilizables. Funciones chiquitas y reutilizables matan sintaxis cheta.**
+**IMPORTANTE! Tengan en cuenta al usar este feature de copiado de ser cuidadosos y no abusar (al igual que no debería abusarse del pattern matching) porque un uso demasiado extendido atenta contra las abstracciones pequeñas y reutilizables. Funciones chiquitas y reutilizables matan sintaxis cheta.**
 
 # Cómo instanciar una typeclass
 
