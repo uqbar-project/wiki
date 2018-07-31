@@ -452,7 +452,7 @@ En esos casos podemos o bien optar porque nuestro data no sea Show o Eq, o bien 
 
 Supongamos que queremos mostrar a nuestros alumnos de una forma distinta, que nos muestre el nombre, las notas y además nos diga el estado de cursada (si aprobó o no en base a sus notas). Necesitamos agregar un instance para Show Alumno en vez de derivar Show. Por ejemplo:
 
-```
+```Haskell
 instance Show Alumno where
   show (UnAlumno nombre notas) = show nombre ++ ": " ++ estadoDeCursada notas ++ " con " ++ show notas
  
