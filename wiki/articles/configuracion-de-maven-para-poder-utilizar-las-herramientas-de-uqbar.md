@@ -6,7 +6,7 @@ title: Configuracion de maven para poder utilizar las herramientas de uqbar
 Para poder utilizar los artefactos Maven desarrollados por Uqbar debemos agregar los repositorios de donde bajar los artefactos de [Uqbar](http://www.uqbar-project.org) a la configuración de Maven. Esta configuración se debe indicar en el archivo _settings.xml_, que se ubica en:
 
 - **Windows**: tu directorio de usuario + ".m2\settings.xml". Por ejemplo, si tu usuario es Juana, e instalaste Windows en el disco C:, debería estar en "C:\Users\Juana\.m2\settings.xml"
-- **Linux**: tu directorio de usuario (~) + ".m2/settings.xml". Por ejemplo, si tu usuario es juana, debería estar en "~/.m2/settings.xml" o "/home/juana/.m2/settings.xml"
+- **Linux**: tu directorio de usuario (`~`) + ".m2/settings.xml". Por ejemplo, si tu usuario es juana, debería estar en "~/.m2/settings.xml" o "/home/juana/.m2/settings.xml"
 
 Dado que .m2 es un directorio oculto, debés activar la configuración para verlos. Te dejamos las instrucciones para [Windows](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10) y [Linux](https://askubuntu.com/questions/470837/how-to-show-hidden-folders-in-ubuntu-14-04) 
 
