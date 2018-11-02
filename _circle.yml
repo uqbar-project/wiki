@@ -1,0 +1,37 @@
+machine:
+  timezone:
+    America/Argentina/Buenos_Aires
+  ruby:
+    version: 2.3.1
+
+general:
+  branches:
+    ignore:
+    - gh-pages
+
+checkout:
+  pre:
+  - git config --global user.email "bot@uqbar.org"
+  - git config --global user.name "UqbarBot"
+  - npm install -g bower
+
+database:
+  override:
+    - echo "Skipping DB section."
+
+dependencies:
+  override:
+   - gem install rake
+   - bundle install --jobs=10 --retry=3
+   - bower install
+
+test:
+  override:
+   - bundle exec jekyll build
+#   - bundle exec rake test >> $CIRCLE_ARTIFACTS/failed_urls.txt 2>&1
+
+deployment:
+  publish:
+    branch: master
+    commands:
+      - rake publish
