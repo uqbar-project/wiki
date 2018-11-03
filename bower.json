@@ -17,7 +17,7 @@
   "dependencies": {
     "fastclick": "1.0.6",
     "foundation": "5.5.2",
-    "gist-async": "1.0.1",
+    "gist-async": "2.0.2",
     "headjs": "1.0.3",
     "highlightjs": "8.8.0",
     "modernizr": "2.8.3",
