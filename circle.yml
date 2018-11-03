@@ -1,7 +1,8 @@
 version: 2
 jobs:
   build:
-    machine: true
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
     environment:
       TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
     paralelism: 2
@@ -18,7 +19,7 @@ jobs:
     - run:
         name: Setup nvm and npm
         command: |
-          npm install -g bower
+          sudo npm install -g bower
           bower install
     - run:
         name: Install Rake
