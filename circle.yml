@@ -19,8 +19,8 @@ jobs:
     - run:
         name: Setup nvm and npm
         command: |
-          sudo npm install -g bower
-          bower install
+          sudo npm install -g yarn
+          yarn
     - run:
         name: Install Rake
         command: gem install rake

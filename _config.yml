@@ -49,7 +49,7 @@ assets:
     - _assets/images
     - _assets/javascripts
     - _assets/stylesheets
-    - bower_components
+    - node_modules
   compress:
     css: sass
     js: uglifier
