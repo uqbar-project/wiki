@@ -26,4 +26,4 @@ gem 'jekyll-scholar'
 
 gem "sass"
 gem 'html-proofer'
-gem 'rouge'
+gem 'rouge', '2.2.1'

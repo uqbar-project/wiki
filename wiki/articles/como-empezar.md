@@ -102,7 +102,7 @@ Esto genera:
 Se puede citar referencias mediante la sintaxis
 
 ```ruby
-    cite <nombre de cita>
+    cite "nombre de cita"
 ```
 esto genera:
 
@@ -145,8 +145,8 @@ El resaltado no funciona si no hay un idioma especificado.
 
 Ejemplo:
 ```ruby
-    class Bleh:
-        def a(b):
+    class Bleh
+        def a(b)
             b + 1
         end
     end
@@ -180,12 +180,14 @@ Hay distinto tipos de alertas:
 Cada tipo de alerta tiene un color distinto, la sintaxis es la siguiente:
 
 ```ruby
-  {{ "{% wiki_note_<kind> " }}%}
-    <your text>
-  {{ "{% endwiki_note_secondary " }}%}
+  "{% wiki_note_secondary %}"
+    your text
+  "{% endwiki_note_secondary %}"
 ```
 
 Donde `<kind>` puede ser "secondary", "info", "success ", "warning" or
 "alert".
+
+Se agrega ahora el readme de jekyll-scholar con las referencias
 
 {% remote_markdown https://raw.githubusercontent.com/inukshuk/jekyll-scholar/master/README.md %}

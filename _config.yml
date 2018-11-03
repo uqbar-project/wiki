@@ -31,7 +31,7 @@ exclude:
 livereload:
   port: 35729
 
-gems:
+plugins:
   - json
   - jekyll-assets
   - coffee_script
@@ -40,6 +40,7 @@ gems:
   - jekyll-redirect-from
   - jekyll/scholar
   - jekyll-sitemap
+  - rouge
 
 # Jekyll::AssetsPlugin options.
 assets:
