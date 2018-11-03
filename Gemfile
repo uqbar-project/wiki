@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+ruby '~> 2.5.0'
 # Development dependencies
 gem 'rake', '~> 12.0.0'
 gem 'guard-livereload'
