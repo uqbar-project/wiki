@@ -43,5 +43,5 @@ El concepto *toast* permite enviar al frente un mensaje al usuario sin la incomo
 
 Para más información
 
--   <http://developer.android.com/guide/topics/ui/notifiers/toasts.html>
+* <http://developer.android.com/guide/topics/ui/notifiers/toasts.html>
 
