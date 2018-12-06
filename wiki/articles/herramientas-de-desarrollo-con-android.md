@@ -9,17 +9,17 @@ featured: true
 Para poder mostrar información en consola, hay que reemplazar los println por
 
 ```java
-Log.v() // Verbose`
-Log.d() // Debug`
-Log.i() // Info`
-Log.w() // Warning`
-Log.e() // Error`
+   Log.v() // Verbose`
+   Log.d() // Debug`
+   Log.i() // Info`
+   Log.w() // Warning`
+   Log.e() // Error`
 ```
 
 y
 
 ```java
-Log.wtf
+   Log.wtf
 ```
 
 que muestran los errores por el LogCat, una consola especial de Android.
