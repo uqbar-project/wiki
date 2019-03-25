@@ -105,7 +105,7 @@ desaprueba nota = not (estaAprobada nota)
 pierdePromocion nota = estaAprobada nota && nota < 8
 ```
 
-Ese código es el correcto. Comprobamos así:
+Ese código es el correcto. Comprobamos así que funcionan igual:
 
 ```Haskell
 > estaAprobada 7 == True
@@ -117,3 +117,7 @@ True
 > not (estaAprobada 3)
 True
 ```
+
+Además, algo muy importante, es más **expresivo** usar el `not`, ya que se lee: "desaprueba una nota cuando no está aprobada" `desaprueba nota = not (estaAprobada nota)` .
+
+Y por último, estoy ocultando un poquito el _cómo_ . Es decir, nos concentramos en la idea de "negación", más que en comparar booleanos por `==True` o `==False`. Como dice Fidel, un profe de la Universidad Nacional de Quilmes: _¡No le tengamos miedo al booleano!_
