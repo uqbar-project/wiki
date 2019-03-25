@@ -89,7 +89,7 @@ False
 
 -   En [Funciones\_por\_Partes\#Errores\_Comunes](funciones-por-partes.html) hay algunos errores comunes.
 
-#### Mal Uso de Booleanos (algo == True)
+#### Mal Uso de Booleanos (algo == True, etc.)
 
 Una variante de los problemas con Guardas es lo siguiente:
 
@@ -108,12 +108,12 @@ pierdePromocion nota = estaAprobada nota && nota < 8
 Ese código es el correcto. Comprobamos así:
 
 ```Haskell
-> estaAprobada 7 == False
-True
-> not (estaAprobada 7)
-True
 > estaAprobada 7 == True
 True
-> estaAprobada 7
+> estaAprobada 7
+True
+> estaAprobada 3 == False
+True
+> not (estaAprobada 3)
 True
 ```
