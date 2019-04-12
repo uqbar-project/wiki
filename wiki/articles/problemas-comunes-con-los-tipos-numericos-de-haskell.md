@@ -145,7 +145,7 @@ que es el tipo que buscamos.
 
 Lamentablemente, cuando intenta inferir un tipo automáticamente para la función `suma`, `Haskell` le asigna un tipo *monomórfico*, defaulteando en el tipo `Integer`. La forma de evitar esta restricción es haciendo explícita nuestra intención de que la función suma sea *polmórfica*, esto se logra asociando a la función una indicación del tipo esperado.
 
-El tipo esperado no es otro que el de la expresión `foldr` `(+)` `0`, es decir, `Num` `a` `=>` `[a]` `->` `a`. La definición de la función quedaría así:
+El tipo esperado no es otro que el de la expresión `foldr (+) 0`, es decir, `Num a => [a] -> a`. La definición de la función quedaría así:
 
 ```hs
 suma :: Num a => [a] -> a
@@ -155,5 +155,8 @@ suma = foldr (+) 0
 Al hacer ese cambio la siguiente definición pasa a estar correctamente tipada:
 
 ```hs
+// con GHCi
 div2  xs = suma xs / fromIntegral (length xs) 
+// con pdepreludat y stack ghci
+div2  xs = suma xs / toFloat (length xs) 
 ```
