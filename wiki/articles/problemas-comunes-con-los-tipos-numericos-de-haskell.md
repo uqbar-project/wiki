@@ -155,8 +155,8 @@ suma = foldr (+) 0
 Al hacer ese cambio la siguiente definición pasa a estar correctamente tipada:
 
 ```hs
-// con GHCi
+-- con GHCi
 div2  xs = suma xs / fromIntegral (length xs) 
-// con pdepreludat y stack ghci
+-- con pdepreludat y stack ghci
 div2  xs = suma xs / toFloat (length xs) 
 ```
