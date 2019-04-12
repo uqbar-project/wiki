@@ -8,7 +8,7 @@ Para salir del paso...
 
 Al programar en `Haskell` suele pasar que *muy* frecuentemente tenemos problemas con los tipos numéricos, en particular suele ocurrir al intentar hacer divisiones. Por ejemplo en el siguiente programa, la función `promedio`
 
-```hs
+```haskell
 promedio xs = sum xs / length xs
 ```
 
