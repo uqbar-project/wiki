@@ -5,12 +5,16 @@ title: Desafio  find con notacion point free
 
 Se desea definir la función find, que dado un criterio y una lista encuentra al primero que lo cumple:
 
-`Main> find even [1,35,36,9]`
-`36`
+```Haskell
+Main> find even [1,35,36,9]
+36
+```
 
 El objetivo es definirla así:
 
-`find = .........`
+```Haskell
+find = .........
+```
 
 O sea,
 
