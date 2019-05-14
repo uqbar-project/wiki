@@ -31,7 +31,9 @@ Las typeclasses tienen como primer consecuencia que funciones como squares, que 
 
 `squares :: Num a, Num b, Num c => (a,b,c) -> (a,b,c)`
 
-Donde Num es un typeclass que indica que a es un tipo concreto (como Int o Float) que cumple con ese contrato, y lo mismo para b y c.
+Donde Num es un typeclass que indica que **a** es un tipo concreto (como Int o Float) que cumple con ese contrato, y lo mismo para b y c.
+
+Es importante que quede claro que una typeclass **no es un tipo concreto**, sino una restricción sobre una variable de tipo (que puede tomar como valores posibles por ejemplo Int o Float, que sí son tipos concretos).
 
 # Las typeclasses de Haskell más usadas
 
