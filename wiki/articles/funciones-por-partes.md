@@ -114,7 +114,7 @@ longitud [] = 0
 longitud (_:resto) = 1 + longitud resto
 ```
 
-#### Ejemplo 4: Repetición de código
+#### Ejemplo 4: "Hacer la guarda antes de tiempo" (Repetición de código)
 
 Cuando se repite código a ambos lados de la guarda, ésto es un problema:
 
@@ -130,6 +130,8 @@ f a = fAux a + 5 * g a
 fAux a | a < 3 = 2
        | otherwise = 1
 ```
+
+Nahuel Palumbo (El Rasta) denominó este tipo de repetición "Hacer el if antes de tiempo", y sucede también en otros paradigmas y lenguajes.
 
 #### Ejemplo 5: Repetición de código más rebuscada
 
