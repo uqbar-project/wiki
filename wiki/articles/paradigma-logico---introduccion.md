@@ -16,7 +16,7 @@ Comencemos con un ejemplo simple, seguramente muchos de ustedes lo habrán escuc
 
 *Todos los hombres son mortales*
 
-Luego... ¿qué podemos deducir de esto? Claro adivinaste, que Sócrates es mortal. De eso se trata la programación lógica, vamos a describir nuestro conocimiento en formas de reglas y vamos a permitir que otra cosa (el [motor](declaratividad-elementos-en-un-programa-declarativo.html)) se ocupe de procesar ese conocimiento y sacar conclusiones al respecto.
+Luego... ¿qué podemos deducir de esto? Claro adivinaste, que Sócrates es mortal. De eso se trata la programación lógica, vamos a describir nuestro conocimiento en formas de reglas y vamos a permitir que otra cosa (el [motor](backtracking.html)) se ocupe de procesar ese conocimiento y sacar conclusiones al respecto.
 
 ¿Y solito se da cuenta de las cosas? Más o menos, en realidad no podemos pedirle al motor que solamente se ponga a deducir y que nos diga a qué conclusión llega, hay que hacerle preguntas más concretas. Por ejemplo podemos preguntarle:
 - si socrates es mortal, y nos va a decir que sí
@@ -28,7 +28,7 @@ Esos son los dos tipos de preguntas básicas que el motor va a saber contestar, 
 --------------------------
 
 Programemos este mismo ejemplo en Prolog, en realidad es bastante simple:
-```
+```prolog
 hombre(socrates).
 mortal(X):-
   hombre(X).
@@ -50,14 +50,12 @@ Los hechos me permiten definir **por extensión** el conjunto de individuos que 
 Un poco de teoría
 -----------------
 
-Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada,
+Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada:
 
--   la base de conocimiento se compone de **cláusulas** que definen **predicados** partiendo de los **individuos** de los que queremos hablar.
--   un programa Prolog es una base de conocimiento
+-   La base de conocimiento se compone de **cláusulas** que definen **predicados** partiendo de los **individuos** de los que queremos hablar (para más detalles sobre estos términos, podemos pasar a ver algunas [definiciones](paradigma-logico---un-poco-de-nomenclatura.html)).
+-   Un programa Prolog es una base de conocimiento.
 
-Con esto claro, podemos pasar a ver algunas [definiciones](paradigma-logico---un-poco-de-nomenclatura.html)
-
-Estos son los conceptos principales de los que se compone un programa Prolog. Para obtener resultados a partir de un programa, hacemos [consultas](paradigma-logico---un-poco-de-nomenclatura-consultas.html).
+Para obtener resultados a partir de un programa, hacemos [consultas individuales y existenciales](paradigma-logico---un-poco-de-nomenclatura.html).
 
 Universo Cerrado
 ----------------
