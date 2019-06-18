@@ -25,10 +25,9 @@ Cuando describimos los elementos de un programa en lógico (ya sea para su defin
     -   Individual
     -   Existencial
     
-A continuación mostramos un programa sencillo como para tener de referencia e identificar cuándo usamos cada uno de estos términos.
+A continuación mostramos un programa sencillo (la **base de conocimiento**) como para tener de referencia e identificar cuándo usamos cada uno de estos términos.
 
-## Base de conocimiento = programa de ejemplo
-```
+```prolog
 hombre(socrates).
 hombre(solon).
 hombre(pericles).
