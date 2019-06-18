@@ -90,7 +90,7 @@ Una **regla** define una implicación, es decir que define que si se cumplen cie
 
 La cláusula `mortal(X):- hombre(X).` sirve para determinar de forma general (por comprensión, no por extensión) si un cierto X es mortal. Esta definición indica que si se cumple la condición `hombre(X)` entonces el predicado `mortal/1` se cumple para ese mismo X. Una regla se compone de una **cabeza** (`mortal(X)`) y un **cuerpo** (en este caso es solamente `hombre(X)`), unidos por el símbolo :- que denominamos **cuello**. Si vemos una regla como una implicación con antecedente y consecuente, está invertida respecto a lo que se vio al estudiar lógica: la cabeza es el consecuente, el cuerpo es el antecedente.
 
-El predicado `sonConciudadanos/2` también se define con una regla, sólo que un poco más compleja porque depende de una conjunción entre dos condiciones más sencillas.
+El predicado `sonConciudadanos/2` también se define con una regla, sólo que un poco más compleja porque depende de una [conjunción](paradigma-logico---conjuncion-y-disyuncion.html) entre dos condiciones más sencillas.
 
 Consultas
 ---------
