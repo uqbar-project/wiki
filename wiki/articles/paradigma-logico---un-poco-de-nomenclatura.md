@@ -3,8 +3,6 @@ layout: article
 title: Paradigma logico   un poco de nomenclatura
 ---
 
-# Nomenclatura
-
 Cuando describimos los elementos de un programa en lógico (ya sea para su definición como su uso) vamos a usar los siguientes términos:
 
 1.  Individuo
