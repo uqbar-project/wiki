@@ -52,7 +52,9 @@ La aplicación, entonces es una función de orden superior ya que recibe una fun
 
 ### Paradigma Lógico
 
-Decimos que un predicado es de Orden Superior si este recibe como argumento otro predicado. Algunos ejemplos son [not](paradigma-logico---negacion.html), [findall](paradigma-logico---listas--como-obtener-todas-las-respuestas--juntas--.html) y [forall](paradigma-logico---el-forall.html). Hacer nuestros propios predicados de orden superior no es tan natural como resulta en funcional, sin embargo Prolog nos permite hacerlo mediante el predicado [call](como-hacer-predicados-de-orden-superior.html).
+Decimos que un predicado es de Orden Superior si este recibe como argumento una consulta a otro/s predicado/s. Algunos ejemplos son [not](paradigma-logico---negacion.html), [findall](paradigma-logico---listas--como-obtener-todas-las-respuestas--juntas--.html) y [forall](paradigma-logico---el-forall.html).
+
+Hacer nuestros propios predicados de orden superior en Prolog no es tan natural como resulta en Haskell, lo cual se desprende de que los predicados y consultas no son valores, sin embargo Prolog nos permite hacerlo mediante el predicado [call](como-hacer-predicados-de-orden-superior.html).
 
 ### Paradigma Estructurado
 
