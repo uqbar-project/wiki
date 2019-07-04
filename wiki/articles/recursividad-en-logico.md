@@ -10,7 +10,7 @@ Recursividad Sin Listas
 
 Un primer ejemplo es el predicado `ancestro/2` que relaciona a una persona con otra si la primera cumple con ser su padre o ser ancestro de su padre. Teniendo un predicado `padre(Padre, Hijo)` podemos hacer:
 
-```
+```Prolog
 ancestro(Ancestro, Descendiente):-
   padre(Ancestro, Descendiente).
   
@@ -25,9 +25,9 @@ Algo que puede parecer complejo es analizar la [inversibilidad](paradigma-logico
 
 Una cosa interesante para pensar en este ejemplo es que el predicado `ancestro/2` define una relación que cumple con la propiedad transitiva. Recordando un poco la teoría detrás de esto: "Una relación R es transitiva si: a R b y b R c => se cumple a R c".
 
-Otro ejemplo típico es el factorial:
+Otro ejemplo típico de predicado recursivo es `factorial/2`, que relaciona a un número con su factorial sabiendo que para el 0 es 1 y para los otros números es el factorial del número anterior multiplicado por sí mismo. Una primer aproximación en base a esto podría ser:
 
-```
+```Prolog
 factorial(0,1).
 factorial(N,F):- 
   Anterior is N-1,
@@ -35,9 +35,9 @@ factorial(N,F):- 
   F is F2*N.
 ```
 
-Esta definición resuelve el problema, pero no hay que olvidarse que en el paradigma lógico la búsqueda de soluciones es exhaustiva. Si consultamos por el factorial de 1, la primer respuesta será 1 ya que el factorial de 0 también es 1. Pero siendo que 0 también matchea con la variable N entrará en un loop infinito al segundo intento. Por ese motivo, una definición correcta sería:
+Esta definición parece que resuelve el problema, pero no hay que olvidarse que en el paradigma lógico la búsqueda de soluciones es exhaustiva. Si consultamos por el factorial de 1, la primer respuesta será 1 ya que el factorial de 0 es 1, y 1 * 1 da 1. Pero siendo que 0 también matchea con la variable N entrará en un loop infinito al segundo intento. Por ese motivo, una definición correcta sería:
 
-```
+```Prolog
 factorial(0,1).
 factorial(N,F):- N > 0,
  Anterior is N-1,
@@ -47,17 +47,13 @@ factorial(N,F):- N > 0,
 
 De esa forma, ambos casos son excluyentes entre sí y el 0 sólo puede tener como respuesta al 1.
 
-¿Y la inversibilidad? Algo que salta a la vista es que para consultar el factorial del anterior necesitamos calcular el anterior, y también necesitamos validar que N > 0, y eso impone restricciones porque los predicados > e is necesitan que N esté ligada con un valor concreto. O sea que esta consulta no va a funcionar:
+¿Y la inversibilidad? Algo que salta a la vista es que para consultar el factorial del anterior necesitamos calcular el anterior, y también necesitamos validar que N > 0, y eso impone restricciones porque los predicados (>)/2 e [is/2](aritmetica-en-prolog.html) necesitan que N esté ligada con un valor concreto. O sea que esta consulta no va a funcionar: `factorial(N, 6).`
 
-`?- factorial(N, 6).`
-
-Analicemos la inversibilidad para la segunda aridad. ¿Esta otra consulta, funcionaría?
-
-`?- factorial(3, Factorial).`
+Analicemos la inversibilidad para la segunda aridad. Esta otra consulta: `factorial(3, Factorial).` ¿funcionaría?
 
 La variable F aparece recién al final, a la izquierda del is, con lo cual no habría problema por ese lado.
 
-De hecho, si no fuera inversible para la segunda aridad la consulta recursiva no se podría resolver, porque se está usando una variable F2 que no tiene chances de estar ligada previamente como para que sea una consulta individual. Al igual que para el primer ejemplo, que esa consulta recursiva funciona gracias a que tiende al caso base que es inversible.
+De hecho, si no fuera inversible para la segunda aridad la consulta recursiva no se podría resolver tampoco, porque se está usando una variable F2 que no tiene chances de estar ligada previamente como para que sea una consulta individual. Al igual que para el primer ejemplo, esa consulta recursiva funciona gracias a que tiende al caso base que es inversible.
 
 Recursividad Con Listas
 -----------------------
@@ -67,7 +63,7 @@ Las [listas](paradigma-logico---listas.html) son indiviuos compuestos cuya natur
 ### Sumatoria
 
 La cola de una sumatoria ¿qué tiene que ver con la sumatoria de la lista entera? Y, la sumatoria de la cola es casi todo el problema resuelto, sólo le falta agregar un detallito que implica trabajar con el elemento que tenemos disponible:
-```
+```Prolog
 sumatoria([Cabeza|Cola], S):-
        sumatoria(Cola,SCola), % Esto ya es casi todo el problema resuelto! Solo falta sumar la cabeza:
        S is SCola + Cabeza.
@@ -81,7 +77,7 @@ Y por supuesto que necesitamos un caso base. El caso base se piensa generalmente
 
 A ver, el último de una lista... ¡Es el mismo último de la cola!:
 
-```
+```Prolog
 ultimo([Cabeza|Cola],Ultimo):-
           ultimo(Cola,Ultimo).
 ```
@@ -92,7 +88,7 @@ Caso base, una lista con un elemento (la lista vacía no tiene último, sería e
 
 Completito:
 
-```
+```Prolog
 ultimo([_|Cola],Ultimo):-
           ultimo(Cola,Ultimo).
 ultimo([E],E).
@@ -105,7 +101,7 @@ Ahora, el principio de la lista (todos menos el último). Éste es loquito, porq
 `principio([Cabeza|Cola],[Cabeza|PrincipioDeLaCola]):-`
 
 Y claro, porque la cabeza es la misma en la lista original que en su principio. Pero hay que relacionar Cola y PrincipioDeLaCola.....
-```
+```Prolog
 principio([Cabeza|Cola],[Cabeza|PrincipioDeLaCola]):- 
         principio(Cola,PrincipioDeLaCola).
 principio([E],[]).
@@ -122,14 +118,14 @@ Uf, pero hay que ver de dónde sale eso! Y, la llamada recursiva la conocemos:
 `reverse(PrincipioDeLaLista,PrincipioAlReves),`
 
 Y listo, ahora hay que poner antes y después de esa condición cosas para que ligue las variables correspondientes; Ligamos PrincipioDeLaLista, antes de la llamada recursiva:
-```
+```Prolog
 reverse(ListaOriginal,[Ultimo|PrincipioAlReves]):-
             principio(ListaOriginal,PrincipioDeLaLista),
             reverse(PrincipioDeLaLista,PrincipioAlReves), ...
 ```
 
 Y ahora nos falta saber de dónde sacamos el último:
-```
+```Prolog
 reverse(ListaOriginal,[Ultimo|PrincipioAlReves]):-
             principio(ListaOriginal,PrincipioDeLaLista),
             reverse(PrincipioDeLaLista,PrincipioAlReves),
@@ -142,7 +138,7 @@ Les dejo el caso base a ustedes.
 ¿Cómo se hace el subconjunto de una lista? (sin permutaciones)
 
 Así tiene que funcionar:
-```
+```Prolog
 `?- subconjunto([1,2,3],Sub).`
 Sub = [];
 Sub = [2];
