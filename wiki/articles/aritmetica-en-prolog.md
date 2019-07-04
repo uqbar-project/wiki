@@ -5,9 +5,25 @@ title: Aritmetica en prolog
 
 ## El predicado "is"
 
-En Prolog no pasa como en Haskell que tengo funciones que me devuelven cosas, sino que tengo predicados que relacionan individuos ¿Entonces qué sucede cuando quiero hacer cuentas? ¿Y como me puedo “guardar” el resultado de una cuenta? Recordemos que en Prolog no existe el concepto de asignación.
+En Prolog no pasa como en Haskell que tengo funciones que me devuelven cosas, sino que tengo predicados que relacionan individuos ¿Entonces qué sucede cuando quiero hacer cuentas? Si probamos esto en el intérprete de Prolog, que está pensado para evaluar predicados, vamos a ver que falla:
 
-Bueno, para esos casos, existe el predicado is. Es un predicado un poco especial (ya que no se escribe como todos los demás). Una consulta que podemos hacer usando is podría ser:
+```Prolog
+?- 2+2.
+ERROR: Undefined procedure: (+)/2 (DWIM could not correct goal)
+```
+
+Eso no es porque no sea posible sumar números, sino que el + no es un predicado. De hecho, si probamos esto otro, sí funciona:
+
+```Prolog
+?- 2+2 > 1.
+Yes
+```
+
+Eso demuestra que la suma anda, y que el predicado (>)/2 se encargó de reducir esa expresión y compararla con el 1, lo cual dio un resultado booleano como hubiéramos esperado.
+
+¿Y como me puedo saber cuál es el resultado de una cuenta? ¿O si una cuenta da un determinado resultado?
+
+Bueno, para esos casos, existe el predicado is, que es un predicado de aridad 2 que se puede escribir de forma infija. Al ser un predicado, sabemos que podemos hacer consultas individuales como la siguiente, para saber si es cierto que se verifica que una cuenta da un determinado resultado:
 
 ```Prolog
 ?- 5 is 2 + 3.
@@ -23,7 +39,7 @@ No.
 
 A la derecha del is se escribe una operación aritmética. A la izquierda del is se escribe el resultado de esa operación aritmética.
 
-El is **sólo es inversible por el primer parámetro**
+Luego podemos ver qué tan inversible es para determinar qué otros usos se le puede dar. El is **sólo es inversible por el primer parámetro**
 
 Esto funciona:
 
@@ -45,7 +61,7 @@ Acá vienen una serie de warnings que deben tener MUY en cuenta:
 
 ### Error: usar = en vez de is
 
-En general en la materia nunca vamos a usar el = ya que preferimos el uso de pattern matching y usarlo para resolver operaciones aritméticas no es correcto. ¿Por qué no se puede usar = para aritmética? Veamos un ejemplo:
+Usar = para resolver operaciones aritméticas no es correcto. ¿Por qué no se puede usar = para aritmética? Veamos un ejemplo:
 
 ```Prolog
 ?- 3+5 = 2+6.
@@ -65,28 +81,21 @@ Yes
 
 Muy... "útil", ¿no? :P
 
+En general en la materia no vamos a usar el = ya que preferimos el uso de pattern matching y consultas individuales cuando eso nos sirva para resolver el problema que tenemos.
+
 ### Error: tratar de acumular
 
-Como ya saben, en lógico no hay asignación, una vez que las variables se ligan, permanecen ligadas hasta que termine la consulta, por ende no hay que pensar al is como un mecanismo para asignar. Es decir, no vale preguntar algo como:
+Como ya saben, en lógico no hay asignación sino unificación; una vez que las variables se ligan, permanecen ligadas hasta que termine la consulta, por ende no hay que pensar al is como un mecanismo para asignar. Es decir, no vale preguntar algo como:
 
 ```Prolog
 ?- edad(pepe,E), E is E + 1.
 No
 ```
 
-No existe ningún número E que sea igual a E + 1. Es equivalente a preguntar si:
+No existe ningún número E que sea igual a E + 1. Supongamos que la edad de pepe era 15, el motivo por el cual es falso es porque 15 no es 16. Básicamente lo que estaría pasando es esto:
 
 ```Prolog
-?- edad(pepe,E), E = E + 1.
-No
-```
-
-Básicamente lo que estaría pasando es esto:
-
-```Prolog
-?- 3 is 3 + 1.
-No
-?- 0 is 0 + 1.
+?- 15 is 15 + 1.
 No
 ```
 
