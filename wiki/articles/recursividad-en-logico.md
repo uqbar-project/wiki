@@ -23,6 +23,8 @@ Acá se ve que `ancestro/2` tiene dos cláusulas: una que se invoca al mismo pre
 
 Algo que puede parecer complejo es analizar la [inversibilidad](paradigma-logico---inversibilidad.html) de este predicado. Teniendo en cuenta que el predicado `padre/2` es inversible, el caso base es inversible, pero ¿qué pasa con el caso recursivo? Las variable Descendiente se va a ligar gracias a `padre/2`, y la variable Ancestro aparece por primera vez al consultar el mismo predicado que estamos definiendo... Bueno, gracias a que el caso base es inversible, podemos confiar que eventualmente se va a ligar, por ende `ancestro/2` se hace inversible a sí mismo.
 
+Una cosa interesante para pensar en este ejemplo es que el predicado `ancestro/2` define una relación que cumple con la propiedad transitiva. Recordando un poco la teoría detrás de esto: "Una relación R es transitiva si: a R b y b R c => se cumple a R c".
+
 Otro ejemplo típico es el factorial:
 
 ```
