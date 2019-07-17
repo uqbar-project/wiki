@@ -13,6 +13,7 @@ En muchos cursos de docentes Uqbar se acostumbra dejar "desafíos café con lech
 ### Prolog
 
 -   [Desafío: Pirámide de números](desafio--piramide-de-numeros.html)
+-   [Desafío: Triada Uqbariana](desafio--triada-uqbariana.html)
 
 ### Smalltalk
 
