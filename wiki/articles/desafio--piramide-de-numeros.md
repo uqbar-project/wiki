@@ -16,4 +16,4 @@ Un ejemplo chiquito podría ser:
 #### El desafío consiste en encontrar _todas las soluciones_ posibles para acomodar los números del 1 al 9 en la pirámide.
 
 
-_Ayuda: Existe el predicado `between(Inicio, Fin,  Numero)` el cual dado un número Inicio y un número Fin relaciona algún Numero que se encuentra entre esos los otros dos._
+_Ayuda: Existe el predicado `between(Inicio, Fin,  Numero)` el cual dado un número Inicio y un número Fin relaciona algún Numero que se encuentra entre esos otros dos._
