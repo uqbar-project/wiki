@@ -13,7 +13,7 @@ code[class*="language-"] {
     text-shadow: 0 1px white;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
-    //white-space: pre;
+    padding: 1rem;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
@@ -29,9 +29,12 @@ code[class*="language-"] {
 
 pre[class*="language-"] {
     color: black;
-    border-style: ridge;
-    border-radius: 6px;
+    border-color: grey;
     padding: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 1rem;
     background: none;
     text-shadow: 0 1px white;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
