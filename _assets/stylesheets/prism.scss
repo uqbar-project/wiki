@@ -7,18 +7,20 @@
 
 code[class*="language-"] {
     color: black;
+    padding-left: 0;
+    padding-right: 0;
     background: none;
     text-shadow: 0 1px white;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
-    white-space: pre;
+    //white-space: pre;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
+    line-height: unset;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -27,18 +29,22 @@ code[class*="language-"] {
 
 pre[class*="language-"] {
     color: black;
+    border-style: ridge;
+    border-radius: 6px;
+    padding: 0.5rem;
     background: none;
     text-shadow: 0 1px white;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
-    white-space: pre;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
+    display: flex;
+    // white-space: pre;
+    line-height: normal;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -59,7 +65,7 @@ code[class*="language-"] {
 pre[class*="language-"] {
 &::selection, ::selection {
      text-shadow: none;
-     background: #b3d4fc;
+     background:#b3d4fc;
  }
 }
 
@@ -79,9 +85,9 @@ code[class*="language-"] {
 /* Code blocks */
 
 pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
+    padding: 0.2em;
+    margin: 0.2em 0;
+    overflow: hidden;
 }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {

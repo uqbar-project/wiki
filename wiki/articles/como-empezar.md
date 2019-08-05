@@ -28,29 +28,26 @@ Para testear localmente se necesitan los siguientes requerimientos previos.
 
 Para instalar las dependencias de ruby adicionales ejecutar:
 
-```
+```bash
 bundle install
 ```
 
 Este proyecto utiliza [Jekyll](http://jekyllrb.com/), para levantar una instancia local una vez instaladas las dependencias habrá que instalar
 las dependencias adicionales mediante bower:
 
-```
-bower install
-```
-
-Una vez ya resueltas todas las dependencias se puede ya levantar el entorno mediante:
-
-```
-jekyll s
+```bash
+yarn install
 ```
 
-Esto armar un build local y una vez completado este proceso levanta localmente la instancia. 
-De aqui en más se podrá hacer modificaciones localmente, pudiendo ver las modificaciones previo a enviar estos cambios
-al repositorio de github. 
+Una vez ya resueltas todas las dependencias se puede levantar el entorno mediante:
 
-Tener en cuenta que ante cualquier modificacion fuera de los articulos, como los plugins, se necesitará ejecutar un 
-nuevo build de jekyll. (El servidor se levantará por default en `localhost:4000`)
+```
+jekyll s --i
+```
+
+Esto arma un build local y una vez completado este proceso levanta localmente la instancia. De aquí en más se podrá hacer modificaciones localmente, y el servidor actualizará los cambios automáticamente (es lo que hace el flag `--i` de incremental).
+
+Tener en cuenta que ante cualquier modificación fuera de los artículos, como los plugins, se necesitará ejecutar un nuevo build de jekyll. (El servidor se levantará por default en `localhost:4000`)
 
 ## Modificando
 

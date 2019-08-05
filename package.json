@@ -1,9 +1,8 @@
 {
-  "scripts": {
-  },
+  "scripts": {},
   "private": true,
   "devDependencies": {
-    "bower": "^1.5.2"
+    "bower": "^1.8.8"
   },
   "dependencies": {
     "fastclick": "ftlabs/fastclick#1.0.6",
