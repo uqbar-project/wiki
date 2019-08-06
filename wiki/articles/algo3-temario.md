@@ -5,28 +5,24 @@ title: Temario de Algoritmos III
 
 El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
-
 # Unidad 1 - Introducción a las UI
 
+- [Definiciones Iniciales de UI](definiciones-iniciales-de-ui.html)
+- [Clasificación UI](clasificacion-ui.html)
+- [Integración de la UI en una arquitectura de un sistema de software](integracion-de-la-ui-en-una-arquitectura-de-un-sistema-de-software.html)
+- [Elementos a tener en cuenta al programar UI](elementos-a-tener-en-cuenta-al-programar-ui.html)
 
--   [Definiciones Iniciales de UI](definiciones-iniciales-de-ui.html)
--   [Clasificación UI](clasificacion-ui.html)
--   [Integración de la UI en una arquitectura de un sistema de software](integracion-de-la-ui-en-una-arquitectura-de-un-sistema-de-software.html)
--   [Elementos a tener en cuenta al programar UI](elementos-a-tener-en-cuenta-al-programar-ui.html)
-
-# Unidad 2 - Diseño de UI. MVC.
+# Unidad 2 - Cliente pesado. MVC.
 
 ## Entorno
 
--   [Configuración de Arena](configuracion-de-arena.html)
+- [Instalación del entorno Arena](arena-instalacion.html)
+- [Configuración de Arena](arena-configuracion.html)
 
 ## Artículos
 
--   [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
--   [Ejemplos de Binding entre vista y modelo](ejemplos-de-binding-entre-vista-y-modelo.html)
--   [JFace: Controles y binding](jface--controles-y-binding.html)
--   [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
-
+- [Formas de vincular una vista con el modelo de dominio](formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
+- [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
 
 # Unidad 3 - Web Básico
 
@@ -34,44 +30,41 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Artículos
 
--   [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
--   [Responsiveness](responsiveness.html)
--   [Referencia de HTML](html.html)
--   [Referencia de CSS](css.html)
+- [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
+- [Responsiveness](responsiveness.html)
+- [Referencia de HTML](html.html)
+- [Referencia de CSS](css.html)
 
-# Unidad 4 - Web Client Side
+# Unidad 4 - Web Client Side MVC.
 
 ## Entorno
 
--   [Instalación de Entorno Javascript](instalacion-de-entorno-javascript.html)
--   [Instalación de Entorno Angular](instalacion-de-entorno-angular.html)
+- [Instalación de Entorno Javascript](instalacion-de-entorno-javascript.html)
+- [Instalación de Entorno Angular](instalacion-de-entorno-angular.html)
 
 ## Artículos 
 
 
-# Unidad 5 - Web Server Side
+# Unidad 5 - Web Client Side FRP.
 
 ## Entorno
 
--   [Preparacion de un entorno de desarrollo Web (Java)](preparacion-de-un-entorno-de-desarrollo-web.html)
--   [Instalación de Entorno Web Grails](instalacion-de-entorno-web-grails.html)
 
 ## Articulos históricos
 
--   [Referencia de JSTL](referencia-de-jstl.html)
+- [Referencia de JSTL](referencia-de-jstl.html)
 
 
 # Unidad 6 - Aplicaciones móviles
 
 ## Entorno 
 
--   [Preparacion de un entorno de desarrollo Android](preparacion-de-un-entorno-de-desarrollo-android.html)
--   [Herramientas de desarrollo con Android](herramientas-de-desarrollo-con-android.html)
+- [Preparacion de un entorno de desarrollo Android](preparacion-de-un-entorno-de-desarrollo-android.html)
+- [Herramientas de desarrollo con Android](herramientas-de-desarrollo-con-android.html)
 
 # Unidad 7 - Cierre y temas BONUS
 
-## Wicket
+## Material histórico
 
--   [Como bajar y correr un ejemplo en Wicket](como-bajar-y-correr-un-ejemplo-en-wicket.html)
--   [Resumen de Wicket: pros y contras](resumen-de-wicket--pros-y-contras.html)
-
+- [Grails](instalacion-de-entorno-web-grails.html)
+- [Wicket](como-bajar-y-correr-un-ejemplo-en-wicket.html) [(resumen pros y contras)](resumen-de-wicket--pros-y-contras.html)
