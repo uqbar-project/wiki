@@ -49,12 +49,6 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Entorno
 
-
-## Articulos históricos
-
-- [Referencia de JSTL](referencia-de-jstl.html)
-
-
 # Unidad 6 - Aplicaciones móviles
 
 ## Entorno 

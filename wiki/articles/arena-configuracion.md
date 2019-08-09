@@ -85,14 +85,67 @@ Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2c
 
 ## Crear un proyecto de Arena en Xtend
 
-Si estás trabajando Arena-UI desde xtend, este parent contiene todas las dependencias que necesitás (JUnit, el compilador Xtend, Arena UI, Uqbar Domain, etc.):
+Si estás trabajando Arena-UI desde xtend, esta configuración contiene todas las dependencias que necesitás (JUnit, el compilador Xtend, Arena UI, Uqbar Domain, etc.):
 
 ```xml
-<parent>
-  <groupId>org.uqbar-project</groupId>
-  <artifactId>arena-xtend-parent</artifactId>
-  <version>3.6.3</version>
-</parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>****ACA PONES EL NOMBRE DE TU PROYECTO****</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>****UNA VEZ MAS EL NOMBRE DE TU PROYECTO****</name>
+	<description>****DESCRIPCION DE TU PROYECTO****</description>
+
+	<parent>
+		<groupId>org.uqbar-project</groupId>
+		<artifactId>arena-xtend-parent</artifactId>
+		<version>3.6.3</version>
+	</parent>
+
+  <!-- Si tenés dependencias con tu proyecto de dominio -->
+	<dependencies>
+		<dependency>
+			<groupId>GRUPO-PROYECTO-DE-DOMINIO</groupId>
+			<artifactId>NOMBRE-PROYECTO-DE-DOMINIO</artifactId>
+			<version>VERSION-ACTUAL-PROYECTO-DE-DOMINIO</version>
+		</dependency>
+	</dependencies>
+  <!-- fin de dependencias con proyecto de dominio -->
+
+	<repositories>
+		<repository>
+			<id>uqbar-wiki.org-releases</id>
+			<name>uqbar-wiki.org-releases</name>
+			<url>http://maven.uqbar.org/releases</url>
+		</repository>
+		<repository>
+			<snapshots />
+			<id>uqbar-wiki.org-snapshots</id>
+			<name>uqbar-wiki.org-snapshots</name>
+			<url>http://maven.uqbar.org/snapshots</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>2.19.0.M1</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
 ```
 
 
