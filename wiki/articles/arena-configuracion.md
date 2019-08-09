@@ -184,7 +184,13 @@ Maven tiene un solo gran inconveniente: si al tratar de descargar una dependenci
 La solución es ir a tu carpeta `C:\users\tuUsuario\.m2` (o `~/.m2` de Linux/Mac), verificar la carpeta del componente que te dice que no puede bajar, verificar que no hay un archivo .jar y borrar la carpeta padre. Por ejemplo, nos aparece este mensaje:
 
 ```maven
-CoreException: Could not get the value for parameter compilerId for plugin execution default-testCompile: PluginResolutionException: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.5.1 or one of its dependencies could not be resolved: Failure to transfer org.codehaus.plexus:plexus-component-annotations:jar:1.5.5 from https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer artifact org.codehaus.plexus:plexus-component-annotations:jar:1.5.5 from/to central (https://repo.maven.apache.org/maven2): The operation was cancelled.    pom.xml    /2    line 46    Maven Project Build Lifecycle Mapping Problem
+CoreException: Could not get the value for parameter compilerId for plugin execution default-testCompile: PluginResolutionException: 
+Plugin org.apache.maven.plugins:maven-compiler-plugin:3.5.1 or one of its dependencies could not be resolved:
+Failure to transfer org.codehaus.plexus:plexus-component-annotations:jar:1.5.5 from https://repo.maven.apache.org/maven2 was cached in the local repository, 
+resolution will not be reattempted until the update interval of central has elapsed or updates are forced.
+
+Original error: Could not transfer artifact org.codehaus.plexus:plexus-component-annotations:jar:1.5.5 from/to central (https://repo.maven.apache.org/maven2): The operation was cancelled.    
+    pom.xml    /2    line 46    Maven Project Build Lifecycle Mapping Problem
 ```
 
 Eso está en la carpeta
