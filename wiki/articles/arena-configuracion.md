@@ -30,7 +30,7 @@ Nota: si hacemos un único proyecto con dominio + ui arena, podemos sólo depend
 
 # Lo que deben tener tus pom.xml
 
-## Dependencias para proyectos de dominio
+## Dependencias para proyectos de UI - Xtend
 
 Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomendamos) tenés que definir esta dependencia
 
@@ -41,47 +41,6 @@ Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomend
   <version>3.6.3</version>
 </dependency>
 ```
-
-
-
-## Dependencias para proyectos de UI
-
-Agregar dos referencias en el pom
-
-- al framework Arena (consideramos Arena = Arena-JFace como predeterminado)
-- al proyecto de dominio (asumimos que vamos a tener dos proyectos separados, uno para el dominio y otro para la ui).
-
-Por ejemplo, las dependencias en nuestro pom podrían quedar así:
-
-```xml
-<dependencies>
-  <dependency>
-    <groupId>org.uqbar-project</groupId>
-    <artifactId>arena-jface</artifactId>
-    <version>3.6.3</version>
-  </dependency>
-  <dependency>
-    <groupId>uqbar-project.org</groupId>
-    <artifactId>videoclub-domain</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </dependency>
-</dependencies>
-```
-
-
-
-Las otras dependencias como JUnit se toman de la definición del parent project, en caso de ser necesario se debe agregar a mano:
-
-```xml
-<dependency>
-  <groupId>junit</groupId>
-  <artifactId>junit</artifactId>
-  <version>4.12</version>
-  <scope>test</scope>
-</dependency>
-```
-
-Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "arena-jface", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
 
 ## Crear un proyecto de Arena en Xtend
 
@@ -148,6 +107,42 @@ Si estás trabajando Arena-UI desde xtend, esta configuración contiene todas la
 </project>
 ```
 
+## Dependencias para proyectos de UI - Java
+
+Agregar dos referencias en el pom
+
+- al framework Arena (consideramos Arena = Arena-JFace como predeterminado)
+- al proyecto de dominio (asumimos que vamos a tener dos proyectos separados, uno para el dominio y otro para la ui).
+
+Por ejemplo, las dependencias en nuestro pom podrían quedar así:
+
+```xml
+<dependencies>
+  <dependency>
+    <groupId>org.uqbar-project</groupId>
+    <artifactId>arena-jface</artifactId>
+    <version>3.6.3</version>
+  </dependency>
+  <dependency>
+    <groupId>uqbar-project.org</groupId>
+    <artifactId>videoclub-domain</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </dependency>
+</dependencies>
+```
+
+Las otras dependencias como JUnit se toman de la definición del parent project, en caso de ser necesario se debe agregar a mano:
+
+```xml
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.12</version>
+  <scope>test</scope>
+</dependency>
+```
+
+Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás "arena" y tiene que aparecer "arena-jface", buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.
 
 # Configurar launcher
 
