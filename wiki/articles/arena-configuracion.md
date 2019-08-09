@@ -166,7 +166,7 @@ En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya c
 
 ¿Qué hacer cuando nos bajamos ejemplos (o desarrollamos uno nuevo) y no nos andan? Chequear esta lista...
 
-## Maven
+## Maven - versión
 
 Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate en [el tutorial de instalación de Maven](guia-de-instalacion-de-maven.html).
 
@@ -177,15 +177,37 @@ También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener
 Component descriptor role: 'com.jcraft.jsch.UIKeyboardInteractive', implementation: 'org.apache.maven.wagon.providers.ssh.jsch.interactive.PrompterUIKeyboardInteractive', role hint: 'default' has a hint, but there are other implementations that don't
 ```
   
+## Maven - error de dependencias
+
+Maven tiene un solo gran inconveniente: si al tratar de descargar una dependencia tenés un problema de conexión, después de una cierta cantidad de reintentos queda el archivo de la dependencia corrupto y tu entorno no va a funcionar. Las palabras que hay que buscar en la solapa Problems es `resolution will not be reattempted until the update interval of central has elapsed or updates are forced`.
+
+La solución es ir a tu carpeta `C:\users\tuUsuario\.m2` (o `~/.m2` de Linux/Mac), verificar la carpeta del componente que te dice que no puede bajar, verificar que no hay un archivo .jar y borrar la carpeta padre. Por ejemplo, nos aparece este mensaje:
+
+```maven
+CoreException: Could not get the value for parameter compilerId for plugin execution default-testCompile: PluginResolutionException: Plugin org.apache.maven.plugins:maven-compiler-plugin:3.5.1 or one of its dependencies could not be resolved: Failure to transfer org.codehaus.plexus:plexus-component-annotations:jar:1.5.5 from https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer artifact org.codehaus.plexus:plexus-component-annotations:jar:1.5.5 from/to central (https://repo.maven.apache.org/maven2): The operation was cancelled.    pom.xml    /2    line 46    Maven Project Build Lifecycle Mapping Problem
+```
+
+Eso está en la carpeta
+
+```c
+C:\users\tuUsuario\.m2\
+    org\
+       codehaus\
+           plexus\
+              plexus-component-annotations
+```
+
+Y adentro seguro que falta un jar, debe haber un archivo con extension `.lastUpdated` que indica el momento en el que intentó bajarse la dependencia y falló. Lo mismo hay que hacer con cada uno de los componentes que marque el error.
+
+Borrar todos los hijos de .m2 es lo más fácil, pero también les va a llevar infinito tiempo y si la conexión de Internet es mala, les puede volver a pasar el mismo error con distintos componentes.
+
+> **Moraleja:** cuando uno se baja dependencias (con Maven o cualquier otra herramienta), hay que asegurarse de tener buena conexión de Internet.
+
 ## Source folders del proyecto
 
 Los source folders de los proyectos (que tienen maven como estructura central del proyecto) deben ser
+`src/main/java` y `src/test/java` (para proyectos Xtend o Java)
 
-- para proyectos Java o Xtend: src/main/java y src/test/java
-- para proyectos Groovy: src/main/groovy y src/test/groovy
-- y para proyectos Scala es src/main/scala y src/test/scala.
-  
-  
 Si te aparece como source folder sólo el src, o bien si no tenés source folders:
 
 1. corré el plugin de maven: botón derecho sobre el proyecto &gt; Configure &gt; Maven project (o mvn compile)
