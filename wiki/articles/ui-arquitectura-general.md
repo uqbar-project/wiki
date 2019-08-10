@@ -8,11 +8,11 @@ featured: true
 
 Para generar una aplicación, podemos dividir lógicamente los componentes según el rol que juegan dentro del sistema en sí mismo:
 
--   **Presentación**: son elementos que trabajan con la [interfaz de usuario](definiciones-iniciales-de-ui.html#tocAnchor-1-1), dependientes de la tecnología
+- **Presentación**: son elementos que trabajan con la [interfaz de usuario](definiciones-iniciales-de-ui.html#tocAnchor-1-1), dependientes de la tecnología
 
--   **[Dominio](definiciones-iniciales-de-ui.html#tocAnchor-1-2)**: son las abstracciones que tienen significado para el que conoce el negocio (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
+- **[Dominio](definiciones-iniciales-de-ui.html#tocAnchor-1-2)**: son las abstracciones que tienen significado para el que conoce el negocio (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
 
--   **Persistencia**: son elementos que trabajan en almacenar y recuperar la información del sistema en un medio que persista en el tiempo (que no sea volátil).
+- **Persistencia**: son elementos que trabajan en almacenar y recuperar la información del sistema en un medio que persista en el tiempo (que no sea volátil).
 
 # Formas de división de responsabilidades entre cada una de esas partes
 
@@ -28,8 +28,8 @@ Un ejemplo podría ser: en la actualización de un empleado se ingresan nombre, 
 
 **Pero al separar la presentación y el negocio de esta manera poco feliz estoy metiendo una solución que para comunicar dos ambientes OO descarta las principales ideas del paradigma** (el objeto como un ente que agrupa atributos y comportamiento). Incluso es un problema porque tenemos varios objetos que están representando a un empleado:
 
--   el Empleado
--   el EmpleadoDTO
+- el Empleado
+- el EmpleadoDTO
 
 En definitiva pareciera que la vista no se mezcla con el negocio pero el [acoplamiento](conceptos-basicos-del-diseno.html#tocAnchor-1-5) es claro: para saber cuándo fue la última vez que le pagué el sueldo necesito:
 
@@ -40,5 +40,5 @@ Nuestra idea es que la presentación no solo hable con el dominio sino que le pi
 
 # Links relacionados
 
--   [Temario Algoritmos III](algo3-temario.html)
+- [Temario Algoritmos III](algo3-temario.html)
 

@@ -7,10 +7,10 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 # Unidad 1 - Introducción a las UI
 
-- [Definiciones Iniciales de UI](definiciones-iniciales-de-ui.html)
-- [Clasificación UI](clasificacion-ui.html)
-- [Integración de la UI en una arquitectura de un sistema de software](integracion-de-la-ui-en-una-arquitectura-de-un-sistema-de-software.html)
-- [Elementos a tener en cuenta al programar UI](elementos-a-tener-en-cuenta-al-programar-ui.html)
+- [Definiciones Iniciales sobre interfaces de usuario](ui-definiciones-iniciales.html)
+- [Clasificación](ui-clasificacion.html)
+- [Integración de la UI en una arquitectura de un sistema de software](ui-arquitectura-general.html)
+- [Elementos a tener en cuenta al programar una UI](elementos-a-tener-en-cuenta-al-programar-ui.html)
 
 # Unidad 2 - Cliente pesado. MVC.
 

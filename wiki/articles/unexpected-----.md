@@ -5,8 +5,10 @@ title:  unexpected
 
 Un error que puede aparecer al programar en haskell es:
 
-`ERROR `[`file:.\tp1`](file:.\tp1)` funcional:6 - Syntax error in expression (unexpected`
-`` `;', possibly due to bad layout) ``
+```scala
+ERROR [file:.\tp1](file:.\tp1) funcional:6 - Syntax error in expression (unexpected
+ ;', possibly due to bad layout)
+```
 
 ¡Pero yo no puse ningún punto y coma! ¿Qué onda?
 
@@ -17,14 +19,16 @@ Indentación
 
 El haskell usa una sintaxis "bidimensional" (no se asusten), eso quiere decir que si vos "indentás" algo, eso tiene un significado. Entonces antes de continuar hay que entender el concepto de indentación. Indentar algo es dejar espacios o tabs adelante del código, generalmente uno lo hace para que se lea mejor, por ejemplo
 
+```pascal
 function fact(n: integer): longint; begin
 
-`   if (n = 0) then`
-`       fact := 1`
-`   else`
-`       fact := n * fact(n - 1);`
+   if (n = 0) then
+       fact := 1
+   else
+       fact := n * fact(n - 1);
 
 end;
+```
 
 Podemos ver que el programador dejó algunos espacios antes de las palabras if y then, entonces visualmente es claro que todo eso queda dentro del bloque definido por begin/end. De la misma manera las líneas de código que están dentro del if y del else tienen aún más espacios ("más indentación").
 
@@ -35,15 +39,19 @@ Como dijimos, el haskell utiliza una sintaxis bidimensional, es decir, en pascal
 
 Entonces la función que en C se escribiría:
 
-`int suma(int a, int b)`
-`{`
-`   return a + b;`
-`}`
+```c
+int suma(int a, int b)
+{
+   return a + b;
+}
+```
 
 En haskell no necesita de las llaves, porque se da cuenta a partir de la indentación:
 
-`suma a b =`
-`   a + b`
+```haskell
+suma a b =
+   a + b
+```
 
 Tampoco son necesarios los tipos ni el return, pero eso es otro tema, lo que nos interesa acá es que no son necesarias las llaves ni el punto y coma, porque con la indentación y el fin de línea es suficiente para que el compilador entienda dónde empieza y termina la función. (En este caso sería aún más simple poner todo en una sola línea, pero algunas funciones complejas tienen más de una línea.)
 
@@ -54,9 +62,11 @@ En resumen, si vos indentás mal es análogo a olvidarse una llave o un o un ';'
 
 Se puede entender como que el haskell a partir de la sintaxis bidimensional "completa" los demarcadores de comando y de bloque, de una forma similar al C, quedando algo parecido a:
 
-`suma a b = {`
-`   a + b;`
-`}`
+```haskell
+suma a b = {
+   a + b;
+}
+```
 
 De hecho, es posible escribir la función de esa manera si uno prefiere... pasa que obviamente uno prefiere la sintaxis con menos chirimbolos.
 
