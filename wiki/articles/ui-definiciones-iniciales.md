@@ -61,7 +61,7 @@ O sea,
 
 Pongamos por caso esta interfaz conocida de Twitter:
 
-![twitter](../../_site/img/wiki/ui-twitter.gif)
+![twitter](/img/wiki/ui-twitter.gif)
 
 El caso de uso "Twittear" parecería no tener una UI tan compleja, aun así, la página chequea todo el tiempo la cantidad de caracteres que escribo y en una forma gráfica está mostrando el estado de mi tweet, e incluso debe deshabilitar el botón de "Enviar tweet" si excedo el máximo permitido.
 
