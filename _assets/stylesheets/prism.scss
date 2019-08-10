@@ -154,3 +154,11 @@ pre[class*="language-"] {
      cursor: help;
  }
 }
+
+.highlighter-rouge:not([class^="language-"]) {
+    color: crimson;
+    font-size: 90%;
+    background-color: #f8f9fa;
+    border-radius: .25rem;
+    padding: .2rem .4rem;
+}
