@@ -75,7 +75,7 @@ que debería incorporar ese nuevo tweet a la colección (la persistencia requier
 
 En general, la lógica de la presentación **suele ser siempre mucho más compleja** que la del negocio, aun cuando el negocio pueda (y debería) ayudar a la UI a agregar funcionalidades que mejoren la experiencia de usuario. 
 
-> Corolario: no es verdad que si el dominio está bien construido la presentación se hace sola, y deberíamos considerar que la gente con más experiencia en un proyecto debería estar a cargo de la interfaz de usuario (algo que lamentablemente no siempre sucede)
+> **Corolario**: no es verdad que si el dominio está bien construido la presentación se hace sola, y la implementación de la presentación debería estar a cargo de la gente con más experiencia, algo que lamentablemente no siempre sucede
 
 # ¿Qué objetivos nos proponemos al programar una interfaz de usuario?
 
@@ -84,6 +84,8 @@ Por supuesto que ande, pero además vamos a priorizar ciertas cualidades de dise
 - porque no quiero que mi dominio se vea afectado por cuestiones tecnológicas.
 - porque eso me lleva a perder cohesión en los objetos de presentación, que además de encargarse de mostrar la información tienen que atacar cuestiones de negocio. Entonces en dos pantallas distintas tengo que repetir la misma validación o el mismo comportamiento.
 - porque tengo más restricciones a nivel usuario y tecnológicos del lado de la UI (es la parte más compleja y la menos madura, cuesta encontrar buenas abstracciones)
+
+<!-- -->
 
 Volviendo al ejemplo de Twitter,
 
