@@ -8,9 +8,9 @@ featured: true
 
 Para generar una aplicación, podemos dividir lógicamente los componentes según el rol que juegan dentro del sistema en sí mismo:
 
-- **Presentación**: son elementos que trabajan con la [interfaz de usuario](definiciones-iniciales-de-ui.html#tocAnchor-1-1), dependientes de la tecnología
+- **Presentación**: son elementos que trabajan con la [interfaz de usuario](ui-definiciones-iniciales.html#tocAnchor-1-1), dependientes de la tecnología
 
-- **[Dominio](definiciones-iniciales-de-ui.html#tocAnchor-1-2)**: son las abstracciones que tienen significado para el que conoce el negocio (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
+- **[Dominio](ui-definiciones-iniciales.html#tocAnchor-1-2)**: son las abstracciones que tienen significado para el que conoce el negocio (una factura, un alumno, un proveedor, una encuesta de satisfacción de servicio, etc.)
 
 - **Persistencia**: son elementos que trabajan en almacenar y recuperar la información del sistema en un medio que persista en el tiempo (que no sea volátil).
 
@@ -33,12 +33,11 @@ Un ejemplo podría ser: en la actualización de un empleado se ingresan nombre, 
 
 En definitiva pareciera que la vista no se mezcla con el negocio pero el [acoplamiento](conceptos-basicos-del-diseno.html#tocAnchor-1-5) es claro: para saber cuándo fue la última vez que le pagué el sueldo necesito:
 
-1.  generar un nuevo método de negocio si no lo tengo, pero también
-2.  agregar un atributo al EmpleadoConsultaDTO para que la vista lo pueda mostrar
+1. generar un nuevo método de negocio si no lo tengo, pero también
+2. agregar un atributo al EmpleadoConsultaDTO para que la vista lo pueda mostrar
 
 Nuestra idea es que la presentación no solo hable con el dominio sino que le pida todo lo que le tenga que pedir: en el ejemplo anterior sería muy bueno que la vista le pregunte directamente al empleado cuál fue la última vez que le pagué.
 
 # Links relacionados
 
 - [Temario Algoritmos III](algo3-temario.html)
-

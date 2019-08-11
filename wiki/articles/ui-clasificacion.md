@@ -95,3 +95,4 @@ Ejemplos de aplicaciones peer to peer son Skype, eMule, μTorrent, entre otras.
 # Links relacionados
 
 - [Temario Algoritmos III](algo3-temario.html)
+- [Magic Ink - Information Software and the graphical interface](http://worrydream.com/MagicInk/)
