@@ -1,11 +1,11 @@
 ---
 layout: article
-title: Instalacion de arena
+title: Instalacion de ReactJS
 categories: [arena, entorno, instalacion]
 featured: true
 ---
 
-<img src="/img/languages/uqbar-arena-logo.png" height="30%" width="30%"/>
+<img src="/img/languages/React-logo.png" height="30%" width="30%"/>
 
 ## Pasos previos
 

@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Clasificacion ui
+title: Clasificacion de las UI
 categories: [arquitectura, ui, cliente, servidor]
 featured: true
 ---
