@@ -32,20 +32,36 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Artículos
 
-- [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
+- [Introducción a la arquitectura web](https://sites.google.com/site/programacionui/temario/03-web-basico/web-intro-web?authuser=0) TODO: Incorporar al apunte lo que está en [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
+
+- Formulario HTML básico (TODO: Bajar de [HTML](https://sites.google.com/site/programacionui/temario/03-web-basico/web-html-css?authuser=0))
+- [Taller de maquetado web](https://docs.google.com/document/d/1UoEb9bzut-nMmB6wxDUVND3V8EymNFgOsw7Hka6EEkc/edit#) (incorporar lo que esté en [Referencia de HTML](html.html))
+  - [CSS](css.html)
+  - [Introducción a SASS](https://docs.google.com/document/d/1FX4pum1j4uq6s5nHhJRKitt7sYbLtKyBMmsifYkvGxc/edit?usp=sharing)
 - [Responsiveness](responsiveness.html)
-- [Referencia de HTML](html.html)
-- [Referencia de CSS](css.html)
+
+## Material de Internet
+
+- [Guía de tags HTML](https://www.w3.org/MarkUp/Guide/)
+- [Less](http://lesscss.org/), [Tutorial de Less](https://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive/)
+- [Sass](https://sass-lang.com/)
+  
+## Ejemplos
+
+- [Formulario web](https://github.com/uqbar-project/eg-formulario-web)
+- [Hombre lobo - Bootstrap Twitter](https://github.com/uqbar-project/eg-hombrelobo-web)
+- [Lista de amigos - taller CSS / Bootstrap Twitter](https://github.com/uqbar-project/eg-amigos-web)
+- [Pantalla de Login - SASS](https://github.com/uqbar-project/eg-login-web)
 
 # Unidad 4 - Web Client Side MVC.
 
 ## Entorno
 
-- [Instalación de Entorno Javascript](instalacion-de-entorno-javascript.html)
-- [Instalación de Entorno Angular](instalacion-de-entorno-angular.html)
+- [Instalación de Entorno Angular](angular-instalacion.html)
 
 ## Artículos 
 
+- [Diapositivas Angular](https://docs.google.com/presentation/d/1vWYZMAuiGz2FwKA83lD9E-JUia2Sh6EQjbZqrBU6GAw/edit#slide=id.gaeb93a84c_0_95)
 
 # Unidad 5 - Web Client Side FRP.
 
@@ -94,5 +110,4 @@ Te dejamos para que te bajes una serie de ejemplos que sirven como guía para in
 
 ## Material histórico
 
-- [Grails](instalacion-de-entorno-web-grails.html)
 - [Wicket](como-bajar-y-correr-un-ejemplo-en-wicket.html) [(resumen pros y contras)](resumen-de-wicket--pros-y-contras.html)
