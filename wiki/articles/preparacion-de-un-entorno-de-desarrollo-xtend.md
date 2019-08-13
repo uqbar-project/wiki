@@ -19,8 +19,6 @@ Si estás en Mac o Linux, podés saltear este paso.
 
 Primero instalaremos el compilador de Java. Ingresamos a [esta dirección](https://www.oracle.com/technetwork/java/javase/downloads/index.html), y descargamos la versión **Java SE 8u201 / Java SE 8u202**
 
-![image](/img/languages/JDK-install.png)
-
 Si querés descargarte la **Java SE 11.0.2(LTS)** (la JDK 1.11), podés hacerlo en tu entorno local aunque el resto de las herramientas trabajarán con Java 8.
 
 ### Pasos de instalación
@@ -50,17 +48,9 @@ Nuestro entorno integrado de desarrollo (IDE) permite que en una misma herramien
 
 Tenés que descargarlo desde [esta página](https://www.eclipse.org/downloads/) utilizando el link **Get Eclipse IDE 2018‑12**
 
-![image](/img/languages/eclipseDownload.png)
-
 > **NOTA:** si tu intención es descargar el Eclipse IDE 2018-12 y en la página principal lo han reemplazado por otro entorno que tu profesor descartó, podés visitar [la página histórica de descarga de Eclipses anteriores](https://wiki.eclipse.org/Older_Versions_Of_Eclipse)
 
-Eso te descarga un eclipse-installer, que es el primer paso. Lo abrís con un doble click, y luego seleccionás "Eclipse for Java Developers", seleccionando la carpeta de destino:
-
-![image](/img/languages/eclipse-installer-1.png)
-
-![image](/img/languages/eclipse-installer-2.png)
-
-![image](/img/languages/eclipse-installer-4.png)
+Eso te descarga un eclipse-installer, que es el primer paso. Lo abrís con un doble click, y luego seleccionás "Eclipse for Java Developers", seleccionando la carpeta de destino.
 
 ### Chequeos de instalación
 
@@ -97,13 +87,7 @@ Instalá el plugin de Xtend desde el Update Site, siguiendo estos pasos:
 - A partir del 2019 se estará usando la versión 2.17.0 que es la última al 01/03, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software" (más abajo está resaltado en la imagen)
 - Seleccionar el check Xtext, y luego Xtend IDE, hacer click en Next y luego en Finish
 
-![image](/img/languages/xtend-install-1.png)
-
-![image](/img/languages/xtend-install-2.png)
-
-![image](/img/languages/xtend-install-3.png)
-
-![image](/img/languages/xtend-install-4.png)
+![image](/img/languages/xtend-install.png)
 
 - Reiniciar el Eclipse
 
@@ -154,4 +138,3 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 # Links útiles
 
 - Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
-
