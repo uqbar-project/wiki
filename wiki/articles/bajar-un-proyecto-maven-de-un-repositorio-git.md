@@ -13,8 +13,8 @@ El proceso tiene los siguientes pasos, que se detallan a continuación:
 
 ![Git](/img/languages/git_clone3.png)
 
--   Clonar el proyecto desde el repositorio remoto y alojarlo en nuestro espacio de trabajo local.
--   Adaptar el proyecto maven para ser utilizado dentro del entorno Eclipse.
+- Clonar el proyecto desde el repositorio remoto y alojarlo en nuestro espacio de trabajo local.
+- Adaptar el proyecto maven para ser utilizado dentro del entorno Eclipse.
 
 # Descarga (clone) 
 
@@ -53,33 +53,30 @@ $ git checkout dev
 
 En caso de hacerlo desde el eclipse, la forma de hacerlo es:
 
--   Copiar en el portapapeles la URL del repositorio al que queremos apuntar
--   Ir a la perspectiva "Git"
--   En la solapa "Git Repositories" hacer click derecho sobre algún espacio en blanco y ahí elegir la opción "Paste Repository Path or URI", luego botón "Next"...
+- Copiar en el portapapeles la URL del repositorio al que queremos apuntar
+- Ir a la perspectiva "Git"
+- En la solapa "Git Repositories" hacer click derecho sobre algún espacio en blanco y ahí elegir la opción "Paste Repository Path or URI", luego botón "Next"...
 
 ![Step 1 Git clone](/img/languages/git_clone_step1.png)
 
 ![Step 2 Git clone](/img/languages/git_clone_step2.png)
 
--   Elegir una rama o branch para descargar (master por defecto), luego botón Next...
+- Elegir una rama o branch para descargar (master por defecto), luego botón Next...
 
 ![Step 3 Git clone](/img/languages/git_clone_step3.png)
 
--   Seleccionar la carpeta del destino
+- Seleccionar la carpeta del destino
 
 ![Step 4 Git clone](/img/languages/git_clone_step4.png)
 
--   Chequear la opción "Import all Eclipse projects after clone finishes"
-
-
+- Chequear la opción "Import all Eclipse projects after clone finishes"
 
 ## Descarga de un proyecto desde un cliente git
 
 Eso puede variar dependiendo del cliente, te dejamos algunos links
 
--   [Smartgit](http://www.syntevo.com/doc/display/SG/Check+Out)
--   [Source Tree](https://confluence.atlassian.com/sourcetreekb/clone-a-repository-into-sourcetree-780870050.html)
--   [Git Kraken](https://support.gitkraken.com/repositories/remote)
+- [Smartgit](http://www.syntevo.com/doc/display/SG/Check+Out)
+- [Source Tree](https://confluence.atlassian.com/sourcetreekb/clone-a-repository-into-sourcetree-780870050.html)
 
 <!-- -->
 
@@ -94,5 +91,3 @@ Entonces nuestro proyecto toma la definición del pom.xml y se construye para se
 ![proyecto maven](/img/languages/project_maven.png)
 
 ¡Y ya podemos comenzar a trabajar!
-
-

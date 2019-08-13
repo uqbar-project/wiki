@@ -5,10 +5,10 @@ title: Creacion de un proyecto maven basico
 
 El objetivo de este tutorial es crear una aplicación base utilizando las siguientes tecnologías:
 
--   Java
--   Eclipse
--   Git
--   Maven
+- Java
+- Eclipse
+- Git
+- Maven
 
 Se asume la presencia de un entorno con todas esas herramientas configuradas adecuadamente. En caso de duda recomendamos ir [al siguiente link](/wiki/articles/preparacion-de-un-entorno-de-desarrollo-java.html).
 
@@ -49,7 +49,6 @@ En el archivo pom.xml del raíz del proyecto podemos agregar bibliotecas a nuest
        <version>3.1</version>
    </dependency>
 </dependencies>
-
 ```
 
 También podemos cambiar el groupId, artifactId, la versión o bien apuntar a un [parent project](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Project_Inheritance_vs_Project_Aggregation) (para mayor información consulte con el docente de su materia)
@@ -61,14 +60,12 @@ Cada vez que se modifique el archivo pom.xml, debemos actualizar nuestro entorno
 
 ```bash
 mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
-
 ```
 
 Cómo encontrar bibliotecas
 --------------------------
 
 Si no estamos seguros del nombre o la última versión de un componente, podemos hacer la correspondiente búsqueda en <http://search.maven.org>
-
 
 Definir repositorios adicionales
 --------------------------------
@@ -82,14 +79,12 @@ Si tenemos bibliotecas que no podamos encontrar en el repositorio default de mav
       <url>http://repository.jboss.org/maven2</url>
    </repository>
 </repositories>
-
 ```
 
 Links relacionados
 ------------------
 
--   Una vez creado el proyecto, para que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [descargar un repositorio git](/wiki/articles/bajar-un-proyecto-maven-de-un-repositorio-git.html).
+- Una vez creado el proyecto, para que otras personas quieran tenerlo en su propio entorno de trabajo, conviene mirar las instrucciones para [descargar un repositorio git](/wiki/articles/bajar-un-proyecto-maven-de-un-repositorio-git.html).
 
 
--   [Temario Algoritmos III](algo3-temario.html)
-
+- [Temario Algoritmos III](algo3-temario.html)
