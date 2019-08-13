@@ -5,18 +5,15 @@ categories: [xtend, lenguaje, guia]
 featured: true
 ---
 
-![image](../../img/wiki/Xtend-logo.png)
-
 # Guía rápida de Xtend
 
 La siguiente es una guía de _syntactic sugars_ de Xtend, algunos de los cuales trabajan conceptos más profundos que veremos a lo largo de la materia.
-___
 
 ## Definición de una clase
 
 No tenemos objetos en Xtend, sólo clases. Aquí dejamos un ejemplo
 
-```xtend
+```scala
 class Ave {
     static int ENERGIA_MINIMA = 10
     @Accessors int energia = 0
@@ -163,7 +160,7 @@ Xtend cuenta con inferencia de tipos, lo que permite
 
 Vemos un ejemplo en vivo, mostrando cómo cambia la solapa "Outline" cuando modificamos el código:
 
-![image](../images/xtendTypeInference.gif)
+![image](/img/languages/xtendTypeInference.gif)
 
 Aquí vemos que incluso Xtend detecta expresiones que no tienen sentido, como cuando hicimos:
 
@@ -243,7 +240,7 @@ golondrina.resetearEnergia
 
 A continuación vemos cómo definir dos subclases de Ave: Golondrina y Torcaza.
 
-![image](../images/xtendInheritanceShort.gif)
+![image](/img/languages/xtendInheritanceShort.gif)
 
 ```xtend
 @Accessors
@@ -279,7 +276,7 @@ Aquí vemos que
 
 Podemos definir a Ave como clase abstracta, esto producirá que no podamos instanciar objetos Ave. Una clase abstracta puede definir solo la interfaz de un método, lo que se conoce como método abstracto. Veamos el siguiente ejemplo:
 
-![image](../images/xtendAbstractClassesAndMethods.gif)
+![image](/img/languages/xtendAbstractClassesAndMethods.gif)
 
 En el ejemplo:
 
@@ -366,7 +363,7 @@ alumnos.filter [ it.estudioso ]
 alumnos.filter [ estudioso ]
 ```
 
-![image](../images/xtendItImplicitVariable.png)
+![image](/img/languages/xtendItImplicitVariable.png)
 
 ## Manejo de nulls
 
@@ -467,7 +464,7 @@ class NumberUtils {
 
 Y ahora, desde el archivo Negocio.xtend, vamos a importar el método como `static extension`:
 
-![image](../images/xtendExtensionMethod.gif)
+![image](/img/languages/xtendExtensionMethod.gif)
 
 El código a agregar es
 

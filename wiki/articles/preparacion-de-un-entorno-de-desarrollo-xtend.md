@@ -9,30 +9,101 @@ featured: true
 
 # Download e instalación base
 
-## JDK
+## Git Bash (sólo para Windows)
 
-Descargá la última versión de la JDK 1.8 desde [esta dirección](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
+Para simplificar el uso de Git en entornos Windows, existe la herramienta **Git Bash** que podés descargar a partir de [esta página](https://gitforwindows.org/), haciendo click en el link "Download".
 
-> Asegurate de bajar una JDK que viene con el compilador. La versión debe ser Java 1.8 (todavía no tenemos un entorno estable para Java 1.9)
+Si estás en Mac o Linux, podés saltear este paso.
 
-## Eclipse Oxygen
+## JDK: Java Development Kit
 
-Ingresá a [esta dirección](https://www.eclipse.org/oxygen/) y descargá el Eclipse Oxygen for Java Developers (hay un botón Download).
+Primero instalaremos el compilador de Java. Ingresamos a [esta dirección](https://www.oracle.com/technetwork/java/javase/downloads/index.html), y descargamos la versión **Java SE 8u201 / Java SE 8u202**
+
+![image](/img/languages/JDK-install.png)
+
+Si querés descargarte la **Java SE 11.0.2(LTS)** (la JDK 1.11), podés hacerlo en tu entorno local aunque el resto de las herramientas trabajarán con Java 8.
+
+### Pasos de instalación
+
+El tutorial más completo para instalarlo en tu sistema operativo está en [esta página](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html). Utilizá en tu caso el número de la versión de Java que hayas descargado.
+
+### Chequeos posteriores a la instalación
+
+- Dentro de las variables de entorno de tu sistema operativo debe estar JAVA_HOME asignada. En Linux / Mac esto es `env | grep JAVA_HOME`, y en Windows `SET JAVA_HOME`. **Si la variable no está seteada, eso significa que te salteaste un paso, lo mismo si la carpeta que muestra JAVA_HOME no es la que contiene la versión que vos descargaste**. En ese caso volvé al punto anterior y seguí nuevamente las instrucciones para encontrar lo que está faltando. 
+- En una ventana de línea de comandos, verificar la versión de java instalada con `java -version`, y el compilador mediante `javac -version`. En ambos casos mostrará la versión por defecto para tu máquina. **Si no aparece la versión que descargaste, el sistema operativo asume por defecto otra instalación, que podría ser incluso de una JRE (ver más abajo)**. En ese caso, revisá el link del punto anterior para ver qué puede estar faltando y repetí los pasos.
+
+### JDK sí, JRE no
+
+> **IMPORTANTE:** tenés que instalar una JDK, no una JRE (Java Runtime Environment) que solo te permite ejecutar programas Java ya compilados
+
+Para saber si tenés una JDK, deberías ir al directorio de instalación y en la carpeta `bin` debe estar un programa llamado `javac`, que es el compilador de Java.
+
+![image](/img/languages/jdkVsJre.png)
+
+Si no tenés ese programa, no vas a pasar tus objetos a código ejecutable en el entorno Xtend: la solución es muy simple, descargá e instalá una JDK.
+
+## Eclipse
+
+Nuestro entorno integrado de desarrollo (IDE) permite que en una misma herramienta editemos nuestro código fuente, compilemos, hagamos pruebas, y muchas cosas más. En Algoritmos 1 ya conociste Eclipse, con un entorno modificado especialmente para soportar el lenguaje Wollok. Aquí lo utilizaremos con diferentes plugins, pero seguramente te resultará familiar la forma de trabajar.
+
+### Pasos de instalación
+
+Tenés que descargarlo desde [esta página](https://www.eclipse.org/downloads/) utilizando el link **Get Eclipse IDE 2018‑12**
+
+![image](/img/languages/eclipseDownload.png)
+
+> **NOTA:** si tu intención es descargar el Eclipse IDE 2018-12 y en la página principal lo han reemplazado por otro entorno que tu profesor descartó, podés visitar [la página histórica de descarga de Eclipses anteriores](https://wiki.eclipse.org/Older_Versions_Of_Eclipse)
+
+Eso te descarga un eclipse-installer, que es el primer paso. Lo abrís con un doble click, y luego seleccionás "Eclipse for Java Developers", seleccionando la carpeta de destino:
+
+![image](/img/languages/eclipse-installer-1.png)
+
+![image](/img/languages/eclipse-installer-2.png)
+
+![image](/img/languages/eclipse-installer-4.png)
+
+### Chequeos de instalación
+
+Una vez que lo hayas descomprimido en una carpeta, podés hacer un acceso directo al `eclipse` o `eclipse.exe` y ejecutarlo con doble click. Necesitarás definir un espacio de trabajo o _workspace_, que es la carpeta donde vas a ubicar todos tus proyectos.
+
+### Configuraciones adicionales
+
+Por lo general no es necesario hacer nada más, pero en caso de necesitarlo, en la carpeta raíz donde descargaste el Eclipse vas a encontrar un archivo `eclipse.ini` que permite configurar
+
+- la memoria inicial con la que levanta Eclipse: `Xms`
+- la memoria máxima que puede ser utilizada para Eclipse, que corre en una Virtual Machine de Java propia: `Xmx`. Por defecto viene con 1GB y para las necesidades de la materia no deberías tener que subirlo, pero en todo caso charlalo con tu docente favorito.
+- cuál es la versión de Java requerida (por defecto es 1.8 y no debería ser necesario modificarla)
+- cuál es la ubicación donde está el ejecutable de Java: es importante que apunte a una JDK y no a una JRE, como hemos comentado en la instalación de la JDK. Si por defecto instalaste una JRE, tu Eclipse no será capaz de compilar, recomendamos volver a la página JDK y reinstalar Java. De la misma manera, una JDK 1.9 ó superior si tu intención es usar la 1.8 causará conflictos extraños. Asegurate de que estén sincronizadas la JDK 1.8 que instalaste y la que Eclipse quiere usar.
+
+```ini
+-vm
+/usr/lib/jvm/java-8-oracle/jre/bin
+-vmargs
+-Dosgi.requiredJavaVersion=1.8
+-Xms256m
+-Xmx1024m
+```
 
 ## Maven
 
 Seguí los pasos de instalación de [esta página](guia-de-instalacion-de-maven.html)
 
-## Plugin Xtend 
+## Plugin Xtend
 
 Instalá el plugin de Xtend desde el Update Site, siguiendo estos pasos:
 
 - En el menú de Eclipse, Help &gt; Install New Software ... botón Add
-- En la ventana de diálogo Add Repository, en el nombre escribir algo como "Xtend Plugin" y en Location anotar http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/
-- A partir del 2018 se estará usando la versión 2.13.0 que es la última, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software" (más abajo está resaltado en la imagen)
-- Seleccionar el check Xtend IDE, hacer click en Next y luego en Finish
+- En la ventana de diálogo Add Repository, en el nombre escribir algo como "Xtend Plugin" y en Location copiar esta URL: http://download.eclipse.org/modeling/tmf/xtext/updates/releases/
+- A partir del 2019 se estará usando la versión 2.17.0 que es la última al 01/03, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software" (más abajo está resaltado en la imagen)
+- Seleccionar el check Xtext, y luego Xtend IDE, hacer click en Next y luego en Finish
 
-<img src="/img/wiki/Xtend-installation.png" height="60%" width="60%">
+![image](/img/languages/xtend-install-1.png)
+
+![image](/img/languages/xtend-install-2.png)
+
+![image](/img/languages/xtend-install-3.png)
+
+![image](/img/languages/xtend-install-4.png)
 
 - Reiniciar el Eclipse
 
@@ -44,10 +115,10 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 # ¿Cómo empezar?
 
-*  Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](guia-de-instalacion-de-maven.html)
-    * en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
-    * definir un groupId, que puede ser el edu.*materia* . Ej: edu.dds, edu.algo2, etc.
-    * definir un artifactId, que se asocia al nombre de tu proyecto
+- Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](guia-de-instalacion-de-maven.html)
+  - en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
+  - definir un groupId, que puede ser el edu.*materia* . Ej: edu.dds, edu.algo2, etc.
+  - definir un artifactId, que se asocia al nombre de tu proyecto
 
 Para que compile el código xtend dentro de un proyecto hace falta tener una librería (en cada proyecto). La "famosa" *org.eclipse.xtext.xbase.lib*. En ese caso lo más fácil es que heredes de un pom de uqbar que ya hace el laburo por vos (ya declara las dependencias)
 
@@ -63,24 +134,24 @@ Esto lo podés hacer en la misma ventana del wizard que crea el proyecto Maven o
 
 ¿Dónde van las clases xtend?
 
-* En src/main/java
-* En src/main/generated-sources vas a tener los archivos .java que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos .java. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.
+- En src/main/java
+- En src/main/generated-sources vas a tener los archivos .java que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos .java. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.
 
 <!-- -->
 
 # Tips
 
-* Para que cuando hagas New > File te aparezcan las clases y las interfaces Xtend, Window > Customize Perspective... > solapa Menu Visibility > expandís File > New > y seleccionás las de Xtend (Xtend class, inteface, annotation y enum).
+- Para que cuando hagas New > File te aparezcan las clases y las interfaces Xtend, Window > Customize Perspective... > solapa Menu Visibility > expandís File > New > y seleccionás las de Xtend (Xtend class, inteface, annotation y enum).
 
 <!-- -->
 
 # Documentación
 
-* [Documentación oficial](http://www.eclipse.org/xtend/documentation/)
+- [Documentación oficial](http://www.eclipse.org/xtend/documentation/)
 
 <!-- -->
 
 # Links útiles
 
-* Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
+- Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
 
