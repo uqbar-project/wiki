@@ -1,15 +1,13 @@
 ---
 layout: article
-title: Xtend - Guía rápida
-categories: [xtend, lenguaje, guia]
+title: Guia rapida de Xtend
+categories: [xtend, lenguaje, guia, referencia]
 featured: true
 ---
 
-# Guía rápida de Xtend
-
 La siguiente es una guía de _syntactic sugars_ de Xtend, algunos de los cuales trabajan conceptos más profundos que veremos a lo largo de la materia.
 
-## Definición de una clase
+# Definición de una clase
 
 No tenemos objetos en Xtend, sólo clases. Aquí dejamos un ejemplo
 
@@ -34,45 +32,45 @@ class Ave {
 * no es necesaria la palabra `return` al final de cada método, pero en algunos casos veremos que es necesaria
 * no siempre es necesario hacer anotaciones de tipo sobre los métodos, como veremos más adelante
 
-## Referencias variables y valores
+# Referencias variables y valores
 
 En Xtend, al igual que muchos otros lenguajes, se diferencian las referencias como
 
 * **Variables**: son referencias que pueden inicializarse apuntando a un objeto, y luego reasignarse a otro. Justamente "varían":
 
-```xtend
+```scala
 var String unString = "Pepito"
 unString = "Otro String"
 ```
 
 * **Constantes**: son referencias que nacen apuntando a un valor y no pueden ser modificadas para apuntar a otro objeto. Serían como "constantes".
 
-```xtend
+```scala
 val String constante = "Constante"
 constante = "Otro"  // <----- NO COMPILA !
 ```
 
 ¡Ojo! no confundir el hecho de que no se pueda modificar la "referencia" de la mutabilidad/inmutabilidad del objeto al que apunta. Puedo tener un "val" apuntando a una colección, que es mutable.
 
-```xtend
+```scala
 val List miLista = unaLista
 miLista = otraLista  // <----- NO COMPILA: no puedo modificar la referencia
 miLista.add(23)      // <---- SI COMPILA: puedo mandarle mensajes al objeto lista y agregarle elementos
 ```
 
-### Cuándo debería usar val y cuándo var
+## Cuándo debería usar val y cuándo var
 
 * las variables de instancia siempre son variables, de lo contrario no tiene sentido definirlas como tal
 * los valores constantes se suelen definir como variables de clase o static
 * respecto a las variables locales, en la cursada las usaremos pocas veces: primero intentaremos definirlas como `val` y de no ser posible, como `var`. El motivo principal es acotar el efecto en nuestros programas, **mientras menor sea el efecto, más fácil es controlar nuestro software, y más fácil será testearlo**.
 
-## Tipos de datos
+# Tipos de datos
 
-### Strings
+## Strings
 
 Un string se encierra entre dobles comillas, o bien podemos aprovechar para escribir un texto largo con enters con triples comillas simples, e insertar en el medio código Xtend mediante
 
-```xtend
+```scala
 class Cliente {
     var nombre = "Juan" // definición con comillas dobles
 
@@ -87,7 +85,7 @@ class Cliente {
 
 > **Tip**: para que te aparezcan los símbolos `«»` que son difíciles de encontrar en el teclado, simplemente utilizá las teclas `Ctrl` + `Espacio` dentro de la definición del string y aparecerán solas
 
-### Números
+## Números
 
 Existen muchos tipos de datos diferentes para números:
 
@@ -96,7 +94,7 @@ Existen muchos tipos de datos diferentes para números:
 * **BigDecimal**: es el tipo de dato que conviene utilizar ya que no produce errores de redondeo (permite trabajar con una cantidad exacta de decimales y truncarlos o redondearlos en caso de ser necesario)
 * También existen las variantes "objetosas" de int, double y float que son Integer, Double y Float. La principal ventaja es que son objetos, y podemos enviarle mensajes (concretamente más mensajes) que a las versiones en minúscula, que son _tipos primitivos_. Es posible "envolver" en una variable Integer cualquier int, la conversión se da automáticamente por el compilador de Java y se llama "autoboxing":
 
-```xtend
+```scala
 var i = 0                         // int
 var pi = 3.14d                    // double
 var saldo = new BigDecimal(1500)  // BigDecimal
@@ -104,11 +102,11 @@ var Integer otroI = i             // otroI es un entero
 otroI.bitwiseNot                  // puedo enviar un mensajes
 ```
 
-### Colecciones
+## Colecciones
 
 Existen literales para definir listas, conjuntos y mapas (dictionaries):
 
-```xtend
+```scala
 // Lista inmutable:
 val myList = #['Hello', 'World']
 // Set inmutable
@@ -123,11 +121,11 @@ Recordemos que
 * **conjuntos**: no tienen orden y tampoco admiten duplicados. Dos objetos son iguales en base a la definición de equals() y hashCode().
 * **mapas**: también llamados dictionaries, son un conjunto de pares clave/valor. Se acceden por clave.
 
-### Range
+## Range
 
 Es posible generar un rango de números, por ejemplo para iterar una cantidad de veces:
 
-```xtend
+```scala
 #[1 .. 10].forEach [ ... ]      // [1..10] genera la lista de 1 a 10
 #[1 ..< 10].forEach [ ... ]     // [1..<10] genera la lista de 1 a 9
 #[1 >.. 10].forEach [ ... ]     // [1>..10] genera la lista de 2 a 10
@@ -135,15 +133,15 @@ Es posible generar un rango de números, por ejemplo para iterar una cantidad de
 
 `..<` es útil cuando necesitás iterar una lista de Java, que comienza en 0 y termina en (longitud - 1):
 
-```xtend
+```scala
 #[0 ..< lista.size].forEach [ i | println(i) ]
 ```
 
-### Literales para lista, conjunto, etc.
+## Literales para lista, conjunto, etc.
 
 Xtend trae shortcuts para definir diferentes tipos de colecciones:
 
-```xtend
+```scala
 List<Factura> facturas = newArrayList
 Set<Domicilio> domicilios = newHashSet
 List<String> nombres = newArrayList("nahuel", "rodrigo", "marina")
@@ -151,7 +149,7 @@ List<String> nombres = newArrayList("nahuel", "rodrigo", "marina")
 
 Podés utilizar `newLinkedList`, `emptyList`, `emptySet`, `emptyMap`, `newInmutableMap`, `newImmutableSet`, `newImmutableList`, `newLinkedHashSet`, `newTreeSet`, `newHashMap`, `newLinkedHashMap`, `newTreeMap`. La ventaja que tienen es que permiten pasarle parámetros variables (tantos como elementos necesites) y trae implementaciones por defecto para algunas colecciones que necesitan comparators (tenés que estudiar más a fondo [**Colecciones en Xtend**](https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing))
 
-### Inferencia de tipos
+## Inferencia de tipos
 
 Xtend cuenta con inferencia de tipos, lo que permite
 
@@ -164,7 +162,7 @@ Vemos un ejemplo en vivo, mostrando cómo cambia la solapa "Outline" cuando modi
 
 Aquí vemos que incluso Xtend detecta expresiones que no tienen sentido, como cuando hicimos:
 
-```xtend
+```scala
 def esFeliz() {
     energia > ENERGIA_MINIMA
     "si"
@@ -175,29 +173,29 @@ El hecho de generar una expresión `energia > ENERGIA_MINIMA` no causa efecto en
 
 Volviendo a la inferencia de tipos, es fundamental poder contar con un lenguaje que tenga chequeo de tipos para detectar errores en forma temprana pero **que no me obligue a definir los tipos todo el tiempo**. La definición de tipos es obligatoria para las variables de instancia y de clase de los objetos, y en algunos casos cuando la definición de métodos polimórficos puede resultar ambigua para Xtend. En cualquiera de esos casos vas a ver un mensaje de error o de advertencia para que definas el tipo que mejor se ajuste.
 
-### Casteos
+## Casteos
 
 Si bien toda expresión tiene un tipo y Xtend suele inferirlo bastante bien, a veces es necesario hacer _downcasting_ o forzar que una expresión pase por un tipo de datos:
 
-```xtend
+```scala
 (42 as Integer)
 (cliente as Cliente)
 ```
 
 En general la expresión es, entre paréntesis: (`valor/variable` as `tipo`)
 
-## Definición de propiedades
+# Definición de propiedades
 
 La anotación @Accessors puede hacerse sobre una variable, como hemos visto antes:
 
-```xtend
+```scala
 class Ave {
     @Accessors int energia = 0
 ```
 
 En este caso se crean getters y setters para energia, **transformándolo en una propiedad**.
 
-```xtend
+```scala
 class Ave {
     @Accessors(PUBLIC_GETTER) int energia = 0
 ```
@@ -206,7 +204,7 @@ En este caso se crea un getter público para la variable energia. Otras variante
 
 Por último, podemos anotar la clase con @Accessors
 
-```xtend
+```scala
 @Accessors
 class Ave {
     int energia = 0
@@ -215,11 +213,11 @@ class Ave {
 
 en este caso, se crean getters y setters para todas las variables de dicha clase.
 
-## Shortcut para acceder a propiedades
+# Shortcut para acceder a propiedades
 
 Cuando usamos un objeto que tiene propiedades (par getter y setter), podemos cambiar un poco la sintaxis para que se vea más simple. En el ejemplo anterior del Ave:
 
-```xtend
+```scala
 val pepita = new Ave()
 pepita.energia = 100    // <-- equivale a pepita.setEnergia(100)
 pepita.energia          // <-- equivale a pepita.getEnergia()
@@ -227,22 +225,22 @@ pepita.energia          // <-- equivale a pepita.getEnergia()
 
 ¡Ojo! si bien parece que estamos accediendo diréctamente a la variable de instancia, no es así. Xtend simplemente traduce esa sintaxis a la anterior. Es decir que en ambos casos estamos igualmente llamando al getter y al setter. Pueden probar eliminando la anotación @Accessors y recibiremos un mensaje "The field energia is not visible".
 
-## Paréntesis en el envío de mensajes
+# Paréntesis en el envío de mensajes
 
 No es necesario utilizar paréntesis, ni en la creación de objetos, ni en el envío de mensajes sin parámetros:
 
-```xtend
+```scala
 val golondrina = new Ave
 golondrina.resetearEnergia
 ```
 
-## Herencia y redefinición de métodos
+# Herencia y redefinición de métodos
 
 A continuación vemos cómo definir dos subclases de Ave: Golondrina y Torcaza.
 
 ![image](/img/languages/xtendInheritanceShort.gif)
 
-```xtend
+```scala
 @Accessors
 class Ave {
     int energia = 0
@@ -272,7 +270,7 @@ Aquí vemos que
 * Golondrina **redefine** el comportamiento de esFeliz, lo pisa, y esto requiere la palabra clave `override` (no funciona si intentamos definirlo con `def`)
 * Torcaza también lo redefine, pero fuerza a llamar al comportamiento de la superclase mediante la palabra clave `super`, indicando luego el mensaje a aplicar. Como regla general solo deben utilizar `super` cuando no puedan utilizar `self`, como en este caso (entrarían en loop infinito)
 
-## Clases y métodos abstractos
+# Clases y métodos abstractos
 
 Podemos definir a Ave como clase abstracta, esto producirá que no podamos instanciar objetos Ave. Una clase abstracta puede definir solo la interfaz de un método, lo que se conoce como método abstracto. Veamos el siguiente ejemplo:
 
@@ -289,11 +287,11 @@ En el ejemplo:
 
 y finalmente todo compila.
 
-## Constructores
+# Constructores
 
 Un constructor se define con la palabra reservada `new` (equivalente al `constructor` de Wollok):
 
-```xtend
+```scala
 @Accessors
 class Golondrina {
     int energia
@@ -312,11 +310,11 @@ class Golondrina {
 * Cuando definimos constructores sobre una clase, se pierde el constructor por defecto
 * **Los constructores de Xtend no se heredan**
 
-## Bloques
+# Bloques
 
 Un bloque permite definir una porción de código, también llamada expresión lambda:
 
-```xtend
+```scala
 val cuadrado = [ int num | num ** 2 ]
 cuadrado.apply(5)
 ```
@@ -325,29 +323,29 @@ De esta manera podemos enviar bloques como parámetros, algo muy útil para trab
 
 La sintaxis general es
 
-```xtend
+```scala
 [ | ... ]                // bloque sin parámetros
 [ elem | ... ]           // bloque con un parámetro
 [ int a, int b | a + b ] // bloque con dos parámetros
 ```
 
-### Variable implícita it
+## Variable implícita it
 
 De la misma manera que cuando estamos dentro de una clase, podemos acceder a una variable de instancia con `this`
 
-```xtend
+```scala
 this.energia
 ```
 
 o sin él:
 
-```xtend
+```scala
 energia
 ```
 
 también podemos usar una variable implícita `it` dentro de un método.
 
-```xtend
+```scala
 val it = new Ave()
 volar       // equivale a it.volar()
 comer(2)    // equivale a it.comer(2)
@@ -355,7 +353,7 @@ comer(2)    // equivale a it.comer(2)
 
 Dentro de una expresión lambda, `it` es la variable implícita del primer parámetro, por lo tanto todas estas expresiones son equivalentes:
 
-```xtend
+```scala
 alumnos.filter [ alumno | alumno.estudioso() ]
 alumnos.filter [ it | it.estudioso() ]
 alumnos.filter [ it.estudioso() ]
@@ -365,25 +363,25 @@ alumnos.filter [ estudioso ]
 
 ![image](/img/languages/xtendItImplicitVariable.png)
 
-## Manejo de nulls
+# Manejo de nulls
 
 Los valores nulos son siempre un dolor de cabeza, Xtend tiene algunos trucos para facilitar un poco más el trabajo con ellos.
 
-### Elvis operator
+## Elvis operator
 
 Parece un emoticón, pero `?:` es un shortcut para utilizar un valor por defecto cuando una expresión pueda ser nula:
 
-```xtend
+```scala
 val nombre = person.firstName ?: 'You'
 ```
 
 Si la expresión que está a la izquierda se evalúa como null, `nombre` se asigna a la segunda expresión.
 
-### Null safe operator
+## Null safe operator
 
 También podemos resolver envíos de mensajes a referencias que potencialmente podrían ser nulas:
 
-```xtend
+```scala
 val mejorAlumno = alumnos.find [ ... ]
 ...
 mejorAlumno?.felicitar()
@@ -391,11 +389,11 @@ mejorAlumno?.felicitar()
 
 En este caso, el operador `?.` es equivalente a preguntar `if (mejorAlumno) mejorAlumno.felicitar()`
 
-### Comparar referencias
+## Comparar referencias
 
 Después de varios cambios, Xtend dejó las cosas como la mayoría de los lenguajes. Tenemos dos formas de comparar referencias:
 
-```xtend
+```scala
 ref1 == ref2     // compara por igualdad, esto significa que son iguales si son las referencias
                  // apuntan al mismo objeto o bien, en base a la definición del método equals
                  // en la clase ref1 (sabiendo que ref1 no es nulo)
@@ -406,13 +404,13 @@ ref1 === ref2    // compara por identidad, esto significa que son iguales si las
 
 **Tener especial atención a los strings**, ya que dos strings con el mismo contenido pueden ser iguales pero no idénticos, dependiendo de las estrategias de optimización de la VM. Siempre es conveniente utilizar ==, que además se puede modificar.
 
-## Métodos avanzados
+# Métodos avanzados
 
-### Obligatoriedad del return en métodos
+## Obligatoriedad del return en métodos
 
 Por lo general, los métodos devuelven la última expresión que contienen. Pero a veces es necesario cortar el flujo de envío de mensajes, como por ejemplo aquí:
 
-```xtend
+```scala
 def gradoDeFelicidad() {
     if (!esFeliz) {
        return 0
@@ -425,7 +423,7 @@ Para determinar el grado de felicidad de alguien, tenemos como precondición que
 
 En el caso de un método que solo busque producir un efecto (`void`), es necesario utilizar `return;` con punto y coma...
 
-```xtend
+```scala
 def metodoConEfecto() {
     ... cambios ...
     if (!situacion) {
@@ -437,11 +435,11 @@ def metodoConEfecto() {
 
 Igualmente, siempre es preferible tratar de extraer métodos más pequeños para simplificar la lógica.
 
-### Extension methods
+## Extension methods
 
 Una de las herramientas más poderosas consiste en definir **extension methods**. Supongamos que un negocio tiene un horario de apertura y de cierre y queremos saber, dada una hora, si está abierto.
 
-```xtend
+```scala
 class Negocio {
     int horarioApertura
     int horarioCierre
@@ -454,7 +452,7 @@ class Negocio {
 
 Por supuesto, no compila. No existe el método between asociado a los enteros. Pero en otro archivo vamos a definir un método estático (no asociado a un objeto):
 
-```xtend
+```scala
 class NumberUtils {
     static def between(int num, int from, int to) {
         num >= from && num <= to
@@ -468,7 +466,7 @@ Y ahora, desde el archivo Negocio.xtend, vamos a importar el método como `stati
 
 El código a agregar es
 
-```xtend
+```scala
 // después de la definición de package
 import static extension ar.edu.unsam.prueba.NumberUtils.*
 ```
@@ -477,11 +475,11 @@ Esto produce que automáticamente, el compilador Xtend marque en naranja el mét
 
 Los métodos `map`, `filter`, `fold`, `length`, `any`, etc. son todos extension methods de Collections.
 
-### Dispatch methods
+## Dispatch methods
 
 Xtend permite trabajar con **multimethods**, más adelante tendremos [este ejercicio para contarlo con más profundidad](https://docs.google.com/document/d/1XWq9azqchoJZ7h8-hLcpA1Zj5T1UtvFtDKbpzxoQ-dw/edit?usp=sharing)
 
-## @Data
+# @Data
 
 Para definir un objeto inmutable, debemos:
 
@@ -491,7 +489,7 @@ Para definir un objeto inmutable, debemos:
 
 Xtend provee la anotación @Data para lograr eso:
 
-```xtend
+```scala
 @Data
 class Point {
     int x
@@ -501,7 +499,7 @@ class Point {
 
 Esto equivale a definir el constructor con dos parámetros (x, y) y los getters para los atributos x e y, sin setters (dado que queremos únicamente representar un valor). Por lo tanto, esta definición compila perfectamente:
 
-```xtend
+```scala
 class TestPoint {
     def test() {
         new Point(2, 4).x
@@ -511,17 +509,17 @@ class TestPoint {
 
 Si por el contrario intentamos asignar el valor de `x`:
 
-```xtend
+```scala
 new Point(2, 4).x = 2
 ```
 
 nos dirá `The field x is not visible`.
 
-## With operator
+# With operator
 
 Otro syntactic sugar muy interesante de Xtend es la posibilidad de enviar múltiples mensajes al mismo objeto, mediante el operador with `=>`, algo muy útil cuando estamos instanciando objetos:
 
-```xtend
+```scala
 val ventaNacional = new Venta => [
     cantidadKilos = 12
     fechaVenta = new Date
@@ -532,7 +530,7 @@ val ventaNacional = new Venta => [
 
 De esta manera, todos los mensajes se apuntan al objeto que resulta de evaluar la expresión `new Venta`, y simplifica el envío de mensajes: 
 
-```xtend
+```scala
 ventaNacional.cantidadKilos = 12
 ventaNacional.fechaVenta = new Date
 ventaNacional....
