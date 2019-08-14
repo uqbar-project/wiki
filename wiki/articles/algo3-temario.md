@@ -64,6 +64,10 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
 - [Lista de amigos - taller CSS / Bootstrap Twitter](https://github.com/uqbar-project/eg-amigos-web)
 - [Pantalla de Login - SASS](https://github.com/uqbar-project/eg-login-web)
 
+## Tutoriales
+
+- [Flexbox Froggy](https://flexboxfroggy.com/#es), un tutorial para aprender css y en particular el layout `display: flexbox`
+
 # Unidad 4 - Web Client Side MVC.
 
 ## Entorno
@@ -87,7 +91,7 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
 
 ## Ejemplos guía
 
-Te dejamos para que te bajes una serie de ejemplos que sirven como guía para introducir diferentes conceptos:
+Te dejamos para que te bajes una serie de ejemplos que sirven como guía para introducir los principales conceptos de Angular:
 
 - [Hola-mundo](https://github.com/uqbar-project/eg-hola-mundo-react/): el primer ejemplo en React, contiene dos componentes
   - un contador al que podemos sumarle o restarle uno
