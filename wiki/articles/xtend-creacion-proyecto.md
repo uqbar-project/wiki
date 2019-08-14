@@ -5,11 +5,9 @@ categories: [xtend, nuevo proyecto, maven]
 featured: true
 ---
 
-# Cómo generar un proyecto Xtend nuevo
-
 Para realizar las prácticas, vas a crear un proyecto desde cero. Como ahora hay muchas más opciones, te dejamos una guía simple de cómo iniciarte.
 
-## Crear proyecto Maven
+# Crear proyecto Maven
 
 Todos los ejemplos que vas a descargar de la materia, así como los proyectos en los que vas a trabajar, se basan en la tecnología Maven. Para crear un proyecto Maven, te dejamos esta animación:
 
@@ -20,7 +18,7 @@ Todos los ejemplos que vas a descargar de la materia, así como los proyectos en
 - En la siguiente pantalla, escribimos cualquier cosa en "groupId", que es un valor que luego borraremos, pero que si lo dejamos vacío Eclipse nos mostrará un error. Y el nombre de nuestro proyecto o `artifactId`, éste sí es importante, seguimos la nomenclatura de paquetes de Java, para que no haya confusiones en los nombres: `ar.edu.unsam.prueba` identifica nuestro proyecto en todo el mundo
 - cuando finalizamos, se genera un proyecto con un archivo pom.xml, que es fundamental para que Eclipse regenere el proyecto en otra máquina y descargue las dependencias
 
-## Actualizando el parent project
+# Actualizando el parent project
 
 - si descargamos previamente algún otro proyecto, podemos copiar el **parent project**, o bien podés copiarlo aquí
 
@@ -41,11 +39,11 @@ El parent project permite reutilizar definiciones comunes entre varios proyectos
 
 Lo podés encontrar buscando en esta URL: https://search.maven.org/, más concretamente https://search.maven.org/search?q=uqbar-xtend. Es un componente que hemos puesto en la nube de los repositorios de Maven para simplificarle un poco la tarea inicial a ustedes.
 
-## Sincronización entre Eclipse y Maven
+# Sincronización entre Eclipse y Maven
 
 Cada vez que hagamos un cambio en el archivo `pom.xml`, nos aparecerá un mensaje de error en la solapa **Problems**, que se soluciona forzando la sincronización entre Eclipse y Maven (dado que cada uno maneja su propia estructura de proyectos Java). Como regla general, **siempre que necesitemos agregar alguna biblioteca, o dependencia, debemos hacerlo en el archivo pom y no desde las opciones que ofrece el Eclipse, porque nuestros compañeros o los docentes no tendrán esa biblioteca**. Para sincronizar Maven y Eclipse, nos paramos en el proyecto y con un botón derecho elegimos "Maven > Update Project".
 
-## Primeros pasos
+# Primeros pasos
 
 ![image](/img/languages/firstClass.gif)
 
@@ -56,7 +54,7 @@ Ahora solo nos queda eliminar la línea groupId (con Ctrl + D), formatear el pom
 
 Por eso, nos ubicamos en `src/main/java` y con un botón derecho, New > Xtend Class (es importante que hayas configurado el Eclipse para que no esté escondida esta opción). 
 
-## Recomendaciones
+# Recomendaciones
 
 A continuación te dejamos algunas recomendaciones para que tu estadía en Eclipse + Xtend sea más feliz:
 
@@ -82,5 +80,5 @@ proyecto
 De esta manera, logramos mayor granularidad en la organización de nuestras clases.
 ____
 
-* [Sobre el control de versiones](amigandonosGit.md)
-* [Volver al menú principal del entorno Xtend](entornoXtend.md)
+* [Sobre el control de versiones](xtend-amigandonos-git.html)
+* [Volver al menú principal del entorno Xtend](xtend-principal.html)
