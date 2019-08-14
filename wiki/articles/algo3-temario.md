@@ -14,18 +14,28 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 # Unidad 2 - Cliente pesado. MVC.
 
+## Contenidos
+
+En esta unidad se verán los conceptos principales que permiten organizar el diseño de una interfaz de usuario. Estos conceptos pueden resumirse en:
+
+- [Introducción a UI: componentes, organización espacial de la vista (layout), patrón MVC, binding](ui-mvcpesado-intro-mvc.html)
+- [Introducción a la navegación. Relación entre la navegación y los casos de uso del sistema.](ui-mvcpesado-navegacion.html)
+- TODO: http://algo3.uqbar-project.org/temario/02-disenio-UI/arena-validacion-y-manejo-de-errores, combinar con [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
+
+## Material de lectura
+
+- Notas sobre MVC. El patrón MVC tiene multiples interpretaciones, de ellas la que nos parece más interesante es la que contempla el concepto de Application Model, también llamado [MMVC](http://c2.com/cgi/wiki?ModelModelViewController), [Presentation Model](https://martinfowler.com/eaaDev/PresentationModel.html) de Martin Fowler, MVVM o MVB (Model-View-Binder). Otras lecturas recomendadas son:
+  - Discusión sobre las [múltiples interpretaciones y variantes](http://c2.com/cgi/wiki?ModelViewController) del patrón.
+  - [Historia del patrón MVC](http://c2.com/cgi/wiki?ModelViewControllerHistory)
+  - Finalmente una discusión sobre el elemento más controversial del patrón: [el controller](http://c2.com/cgi/wiki?WhatsaControllerAnyway).
+- [Binding: Vinculación entre la vista y el modelo]([Formas de vincular una vista con el modelo de dominio](ui-mvnpesado-formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
+)
+
 ## Entorno
 
-- [Instalación del entorno Arena](arena-instalacion.html)
-- [Configuración de Arena](arena-configuracion.html)
-
-## Artículos
-
-- [Introducción: qué necesitamos para construir una UI. Intro a MVC.](ui-mvcpesado-intro-mvc.html)
-- [Navegación](ui-mvcpesado-navegacion.html)
 - [Página principal de Arena](https://sites.google.com/site/programacionui/herramientas/arena?authuser=0) donde se explican los conceptos principales, y podés descargarte una gran cantidad de ejemplos
-- [Formas de vincular una vista con el modelo de dominio](ui-mvnpesado-formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
-- [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
+  - [Instalación del entorno Arena](arena-instalacion.html)
+  - [Configuración de Arena](arena-configuracion.html)
 
 # Unidad 3 - Web Básico
 
