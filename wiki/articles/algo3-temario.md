@@ -21,7 +21,7 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Artículos
 
-- Introducción: qué necesitamos para construir una UI. Intro a MVC.
+- [Introducción: qué necesitamos para construir una UI. Intro a MVC.](ui-mvnpesado-intro-mvc.html)
 - [Página principal de Arena](https://sites.google.com/site/programacionui/herramientas/arena?authuser=0) donde se explican los conceptos principales, y podés descargarte una gran cantidad de ejemplos
 - [Formas de vincular una vista con el modelo de dominio](ui-mvnpesado-formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
 - [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
