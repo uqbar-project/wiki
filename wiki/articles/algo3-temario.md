@@ -10,7 +10,7 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 - [Definiciones Iniciales sobre interfaces de usuario](ui-definiciones-iniciales.html)
 - [Clasificación](ui-clasificacion.html)
 - [Integración de la UI en una arquitectura de un sistema de software](ui-arquitectura-general.html)
-- [Elementos a tener en cuenta al programar una UI](elementos-a-tener-en-cuenta-al-programar-ui.html)
+- [Elementos a tener en cuenta al programar una UI](ui-elementos-a-tener-en-cuenta-al-programar-ui.html)
 
 # Unidad 2 - Cliente pesado. MVC.
 
