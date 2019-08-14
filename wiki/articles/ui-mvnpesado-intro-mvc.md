@@ -79,6 +79,6 @@ O sea: vista y negocio están sincronizados todo el tiempo, cada uno sabe qué t
 - el negocio sabe su lógica
 - la vista sabe cómo mostrar la información del negocio.
 
-## Links relacionados
+# Links relacionados
 
 - [Temario Algoritmos III](algo3-temario.html)
