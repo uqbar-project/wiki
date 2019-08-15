@@ -14,15 +14,17 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 # Unidad 2 - Cliente pesado. MVC.
 
-## Contenidos
+## Contenidos principales
 
 En esta unidad se verán los conceptos principales que permiten organizar el diseño de una interfaz de usuario. Estos conceptos pueden resumirse en:
 
 - [Introducción a UI: componentes, organización espacial de la vista (layout), patrón MVC, binding](ui-mvcpesado-intro-mvc.html)
 - [Introducción a la navegación. Relación entre la navegación y los casos de uso del sistema.](ui-mvcpesado-navegacion.html)
+- [Taller inicial de Arena (hands-on interactivo)](https://docs.google.com/document/d/17EvP3IGEbdzhC-da-V2iV3OB6yU4qYXbMNbycu3maPo/edit?usp=sharing), a partir de dos ejemplos se cuenta cómo se implementa el layout, algunos componentes visuales y el binding bidireccional.
+- Application model. Extendiendo el MVC  (TODO: Pasarlo de Página: Arena - Application model. Extendiendo el MVC.)
 - TODO: http://algo3.uqbar-project.org/temario/02-disenio-UI/arena-validacion-y-manejo-de-errores, combinar con [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
 
-## Material de lectura
+## Material de lectura complementario
 
 - Notas sobre MVC. El patrón MVC tiene multiples interpretaciones, de ellas la que nos parece más interesante es la que contempla el concepto de Application Model, también llamado [MMVC](http://c2.com/cgi/wiki?ModelModelViewController), [Presentation Model](https://martinfowler.com/eaaDev/PresentationModel.html) de Martin Fowler, MVVM o MVB (Model-View-Binder). Otras lecturas recomendadas son:
   - Discusión sobre las [múltiples interpretaciones y variantes](http://c2.com/cgi/wiki?ModelViewController) del patrón.

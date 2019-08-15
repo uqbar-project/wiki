@@ -34,7 +34,7 @@ Eso suele generar código por abajo que está pensado en píxeles x@y (un punto)
 
 De la misma manera cada vez que me siento a diseñar una pantalla nueva tengo que tener en cuenta todas estas definiciones que no están escritas (o pueden estar en un documento que yo me tengo que encargar de respetar: estilos de fuente, disposición de controles, orden de la botonera: Cancelar primero y Aceptar después, o al revés, etc.) Esto ocurre aun cuando las herramientas visuales me generen código en Java (o bien generen código propietario que luego se interpreta para armar la parte visual), porque el proceso de creación de la pantalla queda en la cabeza del que la desarrolla... 
 
-## ** layout definido en forma programática**
+## layout definido en forma programática
 
 Cuando en lugar de tener una herramienta visual lo codifico me puede pasar lo mismo si no encuentro formas de decir:
 
