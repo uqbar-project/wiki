@@ -19,9 +19,9 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 En esta unidad se verán los conceptos principales que permiten organizar el diseño de una interfaz de usuario. Estos conceptos pueden resumirse en:
 
 - [Introducción a UI: componentes, organización espacial de la vista (layout), patrón MVC, binding](ui-mvcpesado-intro-mvc.html)
-- [Introducción a la navegación. Relación entre la navegación y los casos de uso del sistema.](ui-mvcpesado-navegacion.html)
+- [Navegación. Relación entre la navegación y los casos de uso del sistema.](ui-mvcpesado-navegacion.html)
 - [Taller inicial de Arena (hands-on interactivo)](https://docs.google.com/document/d/17EvP3IGEbdzhC-da-V2iV3OB6yU4qYXbMNbycu3maPo/edit?usp=sharing), a partir de dos ejemplos se cuenta cómo se implementa el layout, algunos componentes visuales y el binding bidireccional.
-- Application model. Extendiendo el MVC  (TODO: Pasarlo de Página: Arena - Application model. Extendiendo el MVC.)
+- [Application model. Extendiendo el MVC](ui-mvcpesado-mmvc.html)
 - TODO: http://algo3.uqbar-project.org/temario/02-disenio-UI/arena-validacion-y-manejo-de-errores, combinar con [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
 
 ## Material de lectura complementario
@@ -38,6 +38,9 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
 - [Página principal de Arena](https://sites.google.com/site/programacionui/herramientas/arena?authuser=0) donde se explican los conceptos principales, y podés descargarte una gran cantidad de ejemplos
   - [Instalación del entorno Arena](arena-instalacion.html)
   - [Configuración de Arena](arena-configuracion.html)
+  - TODO: Agregar 1) Introducción a Arena , 2) Arena en Xtend, 3) Binding avanzado, 4) Guía de Componentes. Bindings y demás controllers. 5) Layouts, 6) Navegación y manejo del estado. 
+  - MVC en arena: eventos, binding --> deprecar?
+  - Qué pasa cuando no tenemos binding 
 
 # Unidad 3 - Web Básico
 
