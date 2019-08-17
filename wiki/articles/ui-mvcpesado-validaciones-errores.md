@@ -50,7 +50,8 @@ new TextBox(form)
     .withFilter(new TextFilter {
         public boolean accept(TextInputEvent event) {
             return StringUtils.isNumeric(event.getPotentialTextResult());
-        }})
+        }
+    })
     .bindValueToProperty(Celular.NUMERO);
 ```
 
@@ -85,7 +86,7 @@ new NumericField(form) => [
 
 Internamente está utilizando un Filter, lo importante es que tenemos una abstracción de alto nivel que está diciendo "quiero un control donde sólo se puedan cargar números".
 
-Entonces la primera variante es impedir cualquier ingreso inválido por parte del usuario: Esto tiene como ventaja ser fail fast, evita ingresos incorrectos y esto para el usuario es más beneficioso. 
+Entonces la primera variante es impedir cualquier ingreso inválido por parte del usuario: Esto tiene como ventaja ser fail fast, evita ingresos incorrectos y esto para el usuario es más beneficioso.
 
 ## Otras formas de evitar acciones incorrectas
 
