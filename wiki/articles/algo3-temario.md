@@ -20,9 +20,9 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
 
 - [Introducción a UI: componentes, organización espacial de la vista (layout), patrón MVC, binding](ui-mvcpesado-intro-mvc.html)
 - [Navegación. Relación entre la navegación y los casos de uso del sistema.](ui-mvcpesado-navegacion.html)
-- [Taller inicial de Arena (hands-on interactivo)](https://docs.google.com/document/d/17EvP3IGEbdzhC-da-V2iV3OB6yU4qYXbMNbycu3maPo/edit?usp=sharing), a partir de dos ejemplos se cuenta cómo se implementa el layout, algunos componentes visuales y el binding bidireccional.
+- [Taller inicial de Arena (hands-on interactivo)](https://docs.google.com/document/d/17EvP3IGEbdzhC-da-V2iV3OB6yU4qYXbMNbycu3maPo/edit?usp=sharing), a partir de dos ejemplos se cuenta cómo se implementa el layout, algunos componentes visuales y el binding bidireccional, además del esquema MVC.
 - [Application model. Extendiendo el MVC](ui-mvcpesado-mmvc.html)
-- TODO: http://algo3.uqbar-project.org/temario/02-disenio-UI/arena-validacion-y-manejo-de-errores, combinar con [Validaciones y manejo de errores en la UI](validaciones-y-manejo-de-errores-en-la-ui.html)
+- [Validaciones y manejo de errores en la UI](ui-mvcpesado-validaciones-errores.html)
 
 ## Material de lectura complementario
 
