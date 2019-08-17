@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Validaciones y manejo de errores en la ui
+title: Validaciones y manejo de errores en la UI
 categories: [arena, validaciones, errores]
 featured: true
 ---
@@ -66,7 +66,7 @@ new TextBox(form) => [
 
 ¿Qué es el TextFilter dentro del MVC? El TextFilter es un **controller**, porque se comunica con el dominio _(le manda un mensaje al modelo - en el caso de estar ok el input)_ y actúa sobre la vista _(en la pantalla puede no aparecer ese caracter)_.
 
-## Opción 2: Utilizamos un control específico para ingresar números
+### Opción 2: Utilizamos un control específico para ingresar números
 
 Desde Arena 3.6.1 tenemos un control NumericField que se encarga de filtrar los caracteres alfabéticos:
 
