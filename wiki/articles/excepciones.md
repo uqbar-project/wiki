@@ -12,9 +12,9 @@ Lo más seguro es fallar, es decir, abortar el flujo de ejecución para impedir 
 
 En general cada método desarrollado debería seguir las siguientes pautas:
 
--   Tener un nombre descriptivo, ya que dicho nombre nos dice qué esperar, es una promesa al usuario de lo que debería suceder luego de mandar el mensaje
--   Hacer todo y sólo lo que el nombre indica
--   Si por algún motivo no se puede cumplir con lo prometido por el nombre del método, explotar de la forma más prolija posible
+- Tener un nombre descriptivo, ya que dicho nombre nos dice qué esperar, es una promesa al usuario de lo que debería suceder luego de mandar el mensaje
+- Hacer todo y sólo lo que el nombre indica
+- Si por algún motivo no se puede cumplir con lo prometido por el nombre del método, explotar de la forma más prolija posible
 
 Es importante que aquellas cosas que puedan ser validadas para saber si no se podrá cumplir con lo prometido, se validen previamente a producir efectos colaterales, de esa forma podemos evitar algunas posibles inconsistencias en caso de poder seguir adelante manejando el problema de alguna forma.
 
@@ -171,7 +171,7 @@ Al usar `throwsExceptionWithType` o `should:raise:` el test va a dar verde exclu
 Estrategias para manejar excepciones
 ------------------------------------
 
--   La forma por excelencia de lidiar con una excepción es **no hacer nada!!**. La mayoría de las veces no tenemos la capacidad de recuperarnos del problema en el mismo lugar donde se produce, lo más sano es dejarla burbujear hasta el punto en donde sí haya algo para hacer al respecto.
--   Atraparla, hacer algo y continuar con el flujo normal de ejecución.
--   Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer volviendo a usar `throw` en Wollok o en Smalltalk mandando `signal` a la excepcion atrapada en el bloque que maneja el problema.
--   Atraparla y lanzar otra más adecuada agregando más información del problema.
+- La forma por excelencia de lidiar con una excepción es **no hacer nada!!**. La mayoría de las veces no tenemos la capacidad de recuperarnos del problema en el mismo lugar donde se produce, lo más sano es dejarla burbujear hasta el punto en donde sí haya algo para hacer al respecto.
+- Atraparla, hacer algo y continuar con el flujo normal de ejecución.
+- Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer volviendo a usar `throw` en Wollok o en Smalltalk mandando `signal` a la excepcion atrapada en el bloque que maneja el problema.
+- Atraparla y lanzar otra más adecuada agregando más información del problema.

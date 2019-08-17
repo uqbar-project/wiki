@@ -5,6 +5,8 @@ categories: [arena, validaciones, errores]
 featured: true
 ---
 
+Podemos ver un repaso del tema excepciones en [esta página](excepciones-avanzadas.html)
+
 # Introducción
 
 Consideremos el ejemplo de los clientes de una empresa de celulares, donde tenemos un formulario que permite ingresar
