@@ -103,7 +103,7 @@ findall(UnIndividuo,Consulta,Conjunto)
 
 Donde:
 
--   normalmente es una variable que se usa en la
+-   normalmente es una variable que se usa en la Consulta
 
 -   es una lista con todos los individuos que se encontraron al consultar la Consulta
 
