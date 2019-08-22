@@ -65,7 +65,7 @@ new TextBox(form) => [
 ]
 ```
 
-¿Qué es el TextFilter dentro del MVC? El TextFilter es un **controller**, porque se comunica con el dominio _(le manda un mensaje al modelo - en el caso de estar ok el input)_ y actúa sobre la vista _(en la pantalla puede no aparecer ese caracter)_.
+¿Qué es el TextFilter dentro del MVC? El TextFilter es un **controller**, porque se comunica con el dominio _(le manda un mensaje al modelo - en el caso de estar ok el input)_ y actúa sobre la vista _(en la pantalla no aparece ese caracter, se filtra)_.
 
 ### Opción 2: Utilizamos un control específico para ingresar números
 
@@ -101,7 +101,7 @@ Aquí vemos que esta estrategia tiene un límite: en ciertos casos las validacio
 ¿El responsable es el celular? sí, si lo pensamos como un dato obligatorio, pero claramente participan
 
 1. la UI que guía al usuario mostrándole un combo con las opciones válidas, el usuario no puede elegir un modelo inexistente, a lo sumo puede dejarlo vacío
-1. si yo permito que el combo quede vacío, el dominio (el objeto celular) debería validar que el celular no deje en blanco el campo modelo. El form builder permite en sus opciones decirle "este combo no tiene la opción vacía".
+2. si yo permito que el combo quede vacío, el dominio (el objeto celular) debería validar que el celular no deje en blanco el campo modelo. El form builder permite en sus opciones decirle "este combo no tiene la opción vacía".
 
 ```java
 // Java
@@ -149,8 +149,6 @@ Eso tiene que estar del lado de la tecnología de presentación: en la vista o m
 
 - si ocurre un error de usuario/negocio, el mensaje contiene información importante para el usuario. Entonces hay que mostrarle un cartel (o dejar una parte específica del panel para mostrar errores) con lo que contenga la propiedad message de la excepción de usuario/negocio
 - por el contrario, si el error se da dentro del programa, mostrar el mensaje de error al usuario le genera confusión: lo mejor que uno puede hacer es advertirle al usuario que hubo un error, que la operación que solicitó no va a poder completarse y sobre todo, registrar el problema para que un desarrollador lo analice luego.
-
-En [este artículo](http://www.google.com/url?q=http%3A%2F%2Fwiki.uqbar.org%2Fwiki%2Farticles%2Fvalidaciones-y-manejo-de-errores-en-la-ui.html&sa=D&sntz=1&usg=AFQjCNEloVJhOBmEdc5DLJxg8nutWCj7uw) podés profundizar algunas cuestiones.
 
 ## Los números de celular deben ser mayores a 1000
 
@@ -209,7 +207,7 @@ el efecto que tiene es que pude ingresar números menores a 1000 en la búsqueda
 O sea, cuando yo tuve que poner esta validación, dudé entre ponerlo en:
 
 1. el setter del atributo número
-1. el método validar de celular, que se dispara al presionar el botón aceptar.
+2. el método validar de celular, que se dispara al presionar el botón aceptar.
 
 Ahora, validar que el nombre y el número no sean nulos claramente no está bueno incorporarlo en el setter porque entonces la búsqueda me fuerza a escribir algo tanto en el nombre como en el número. Nuevamente aparece una tensión de fuerzas: la filosofía fail fast me dice que debería tirar error tan pronto como sea posible, eso tiene como consecuencia que a medida que estoy ingresando una fecha o un rango de valores estoy recibiendo continuos mensajes de error que distraen mi foco de atención. Por otra parte esperar a que un formulario con muchos campos se complete para validar produce una sensación frustrante al querer aceptar: "Falta xxx", "Debe completar yyy", "La fecha es inválida", etc.
 
@@ -261,7 +259,7 @@ override validateCreate(Celular celular) {
  
 def void validarClientesDuplicados(Celular celular) {
     val numero = celular.numero
-    if (this.search(numero).isEmpty) {
+    if (!this.search(numero).isEmpty) {
         throw new UserException("Ya existe otro cliente con el mismo número")
     }
 }
@@ -340,7 +338,7 @@ new Button(actions)
 
 - cada control de arena tiene un realidad abajo un builder que crea finalmente los objetos de la tecnología. En nuestro caso objetos swt + jface
 - por ejemplo, al crear un SimpleWindow nosotros estamos utilizando (sin saberlo) un JFaceWindowBuilder que le construye el ErrorViewer (esto no ocurre si nuestra ventana hereda de Window solamente)
-- Cuando se crea un botón, por ejemplo, y le seteamos un Action en el onClick, esta capa de arena le agrega un listener (un observer) que envuelve el command que nosotros construimos incorporándole el manejo de errores:
+- Cuando se crea un botón, por ejemplo, y le seteamos un Action en el onClick, esta capa de Arena le agrega un listener (un observer) que envuelve el command que nosotros construimos incorporándole el manejo de errores:
 
 ```java
 @Override
@@ -359,7 +357,7 @@ public void widgetSelected(SelectionEvent event) {
 El bloque catch puede variar dependiendo de la versión de Arena que estén usando. Pero más allá de algunos detalles de implementación que pueden ver ustedes, lo importante es ver qué sucede con los dos tipos de excepción:
 
 - errores de usuario/negocio: mostramos el error en una ventana de diálogo. ¿Qué dice el mensaje de error? A la ventana no le interesa, sabe que cualquier acción que disparemos puede dar este tipo de error, y que el mensaje contiene información importante para el usuario. Pero no acoplamos la UI al resto de los componentes del sistema: nos da lo mismo si el número de celular debe comenzar con 15, si ya existe otro alumno con el mismo legajo o si no podemos cargar una fecha de nacimiento futura para los empleados.
-- los errores de programa los catcheamos después, porque RuntimeException es más general que UserException. Hay una decisión de diseño de no envolver las excepciones chequeadas, para respetar así a quienes quieran trabajar con este tipo de excepciones. 
+- los errores de programa los catcheamos después, porque RuntimeException es más general que UserException. Hay una decisión de diseño de no envolver las excepciones chequeadas, para respetar así a quienes quieran trabajar con este tipo de excepciones.
 - mientras que la excepción de programa se "loguea" (haciendo un printStackTrace), las excepciones de negocio no tiene sentido registrarlas. Las excepciones de programa las leen los programadores, las de negocio le sirven al usuario para comprender que está tratando de usar el sistema de manera incorrecta, el mensaje de error le debe aportar una ayuda para solucionar este inconveniente y seguir adelante.
 - el log default hace un printStackTrace(), esto deja en el archivo standard output la pila de mensajes donde ocurrió el error. Este archivo puede ser voluminoso, entonces
   - se suele particionar los errores por aplicación (y a veces por módulo también)
