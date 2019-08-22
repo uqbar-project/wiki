@@ -40,10 +40,14 @@ Cuando tengo un requerimiento específico como:
 
 - **Nunca catchear una exception para no hacer nada**. No hacer nada también incluye el "loggearla". Es decir, catchear para loggear y seguir adelante, debería sonar muy raro. Tal vez tenga sentido eso como requerimiento en un único lugar de la arquitectura, para que no se caiga completamente la aplicación. Pero en el 99% de las veces es una hackeada.
 - En general **wrappear para agregar información de contexto** (qué estaba haciendo este método al encontrar un error en otro al que llama)
-  - Así al momento de fallar una operación de negocio no terminamos con un solo mensaje puntual muy específico que será dificil de comprender para el usuario/administrador/programador, como "No me pude conectar al host 12.23.22.12", si no una jerarquía de mensajes desde lo más general a lo más específico como: 
+  - Así al momento de fallar una operación de negocio no terminamos con un solo mensaje puntual muy específico que será dificil de comprender para el usuario/administrador/programador, como "No me pude conectar al host 12.23.22.12", si no una jerarquía de mensajes desde lo más general a lo más específico como:
 
 ```bash
-"Error al ejecutar el ciclo de facturación -> Error al facturarle al usuario numero 5963472 -> Error al enviar el resumen mensual -> Error al enviar el mail -> No me pude conectar al host 12.23.22.12"
+Error al ejecutar el ciclo de facturación
+  -> Error al facturarle al usuario numero 5963472
+     -> Error al enviar el resumen mensual
+        -> Error al enviar el mail
+           -> No me pude conectar al host 12.23.22.12
 ```
 
 No olvidar de pasar la causa original del error al wrappear (en nuestro ejemplo, la referencia a través de la variable _e_)
@@ -55,7 +59,7 @@ No olvidar de pasar la causa original del error al wrappear (en nuestro ejemplo,
 método() {
     try {
         logica
-    } catch 
+    } catch
 }
 ```
 
