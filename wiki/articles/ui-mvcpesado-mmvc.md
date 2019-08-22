@@ -7,9 +7,7 @@ featured: true
 
 # Introducción
 
-En Arena cada vista requiere un modelo. Esto implica encontrar una abstracción que pueda cumplir esa responsabilidad. Algunas pantallas pueden utilizar un objeto de dominio como modelo (ej: en el ejemplo de las apuestas), aunque en algunos casos es necesario modificar el modelo de algunos controles.
-
-Pero cuando la complejidad de la interacción con el usuario crece, no nos alcanza con tratar de resolverlo con un objeto de dominio como Celular, Socio o Película.
+En Arena cada vista requiere un modelo. Esto implica encontrar una abstracción que pueda cumplir esa responsabilidad. Algunas pantallas como el conversor de millas a kilómetros utilizan un objeto de dominio como modelo; pero cuando la complejidad de la interacción con el usuario crece, no nos alcanza con tratar de resolverlo con un objeto de dominio como Celular, Socio o Película.
 
 Entonces nuestro objetivo es tener un objeto que sea totalmente independiente de la tecnología, pero que tenga todo el comportamiento necesario de la aplicación. Es la representación del comportamiento global de la aplicación sin la componente tecnológica.
 
@@ -49,7 +47,7 @@ Podemos encontrar dos diferencias importantes:
 El objeto Application Model da origen al esquema MMVC [1]:
 
 - V - Vista: la pantalla `*Window`
-- C - Controller: adapta la vista con el modelo, en este caso con el application model, es el encargado de resolver el binding
+- C - Controller: adapta la vista con el modelo, en el caso de Arena son muchos objetos con responsabilidades bien definidas que se relacionan con el application model: binders, transformers, filters, etc.
 - M - Modelo de la vista/modelo de aplicación/application model: modela al caso de uso, mantiene simple el binding con la vista
 - M - Modelo de dominio
 
