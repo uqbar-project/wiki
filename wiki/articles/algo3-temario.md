@@ -76,9 +76,6 @@ Solo necesitás un editor de texto (nosotros te recomendamos Visual Studio Code)
 - [Flexbox Froggy](https://flexboxfroggy.com/#es), un tutorial para aprender css y en particular el layout `display: flexbox`
 - [Referencia completa de CSS](http://www.w3schools.com/css/default.asp)
 - [Sass](https://sass-lang.com/)
-
-## Material complementario
-
 - [Less](http://lesscss.org/), [Tutorial de Less](https://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive/)
 
 ## Ejemplos
