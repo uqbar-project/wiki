@@ -38,18 +38,22 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
 - [Página principal de Arena](https://sites.google.com/site/programacionui/herramientas/arena?authuser=0) donde se explican los conceptos principales, y podés descargarte una gran cantidad de ejemplos
   - [Instalación del entorno Arena](arena-instalacion.html)
   - [Configuración de Arena](arena-configuracion.html)
-  - TODO: Agregar 1) Introducción a Arena , 2) Arena en Xtend, 3) Binding avanzado, 4) Guía de Componentes. Bindings y demás controllers. 5) Layouts, 6) Navegación y manejo del estado. 
-  - MVC en arena: eventos, binding --> deprecar?
-  - Qué pasa cuando no tenemos binding 
+  - Introducción a Arena
+  - Guía de Componentes
+  - Bindings y demás controllers. Binding avanzado
+  - Layouts
+  - Navegación y manejo del estado
+  - Qué pasa cuando no tenemos binding
 
-# Unidad 3 - Web Básico
+# Unidad 3 - Web Estático
 
 ## Entorno
+
+Solo necesitás un editor de texto (nosotros te recomendamos Visual Studio Code) y un navegador (el que vos prefieras)
 
 ## Artículos
 
 - [Introducción a la arquitectura web](https://sites.google.com/site/programacionui/temario/03-web-basico/web-intro-web?authuser=0) TODO: Incorporar al apunte lo que está en [Descripción global de la arquitectura web](descripcion-global-de-la-arquitectura-web.html)
-
 - Formulario HTML básico (TODO: Bajar de [HTML](https://sites.google.com/site/programacionui/temario/03-web-basico/web-html-css?authuser=0))
 - [Taller de maquetado web](https://docs.google.com/document/d/1UoEb9bzut-nMmB6wxDUVND3V8EymNFgOsw7Hka6EEkc/edit#) (incorporar lo que esté en [Referencia de HTML](html.html))
   - [CSS](css.html)
@@ -58,20 +62,31 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
 
 ## Material de Internet
 
+### HTML
+
 - [Guía de tags HTML](https://www.w3.org/MarkUp/Guide/)
-- [Less](http://lesscss.org/), [Tutorial de Less](https://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive/)
+- [Referencia rápida de HTML](https://www.w3schools.com/html/default.asp)
+- [Tutorial de HTML](https://www.htmlquick.com/es/tutorials.html), en español, para aprender lo básico
+
+### Estilos
+
+- [Página principal del W3C CSS](http://www.w3.org/Style/CSS/)
+- [Tutorial de Estilos (CSS)](http://www.w3.org/Style/CSS/learning)
+- [Tutorial layouts con CSS](http://www.subcide.com/articles/creating-a-css-layout-from-scratch/P2/)
+- [Flexbox Froggy](https://flexboxfroggy.com/#es), un tutorial para aprender css y en particular el layout `display: flexbox`
+- [Referencia completa de CSS](http://www.w3schools.com/css/default.asp)
 - [Sass](https://sass-lang.com/)
-  
+
+## Material complementario
+
+- [Less](http://lesscss.org/), [Tutorial de Less](https://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive/)
+
 ## Ejemplos
 
 - [Formulario web](https://github.com/uqbar-project/eg-formulario-web)
 - [Hombre lobo - Bootstrap Twitter](https://github.com/uqbar-project/eg-hombrelobo-web)
 - [Lista de amigos - taller CSS / Bootstrap Twitter](https://github.com/uqbar-project/eg-amigos-web)
 - [Pantalla de Login - SASS](https://github.com/uqbar-project/eg-login-web)
-
-## Tutoriales
-
-- [Flexbox Froggy](https://flexboxfroggy.com/#es), un tutorial para aprender css y en particular el layout `display: flexbox`
 
 # Unidad 4 - Web Client Side MVC.
 
