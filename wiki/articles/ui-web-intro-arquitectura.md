@@ -39,7 +39,7 @@ Lo que pasa es que en un sistema con objetos no pongo restricciones: cualquiera 
 
 El cliente dice: "necesito x". Esto se traduce en una dirección de una página en particular, esa dirección recibe el nombre de **URL** (Uniforme Resource Locator, o forma de encontrar un recurso en el servidor):
 
-```bash
+```url
 http://localhost:8080/html-css/index.html
 ```
 
@@ -86,7 +86,7 @@ Más adelante volveremos sobre esto al estudiar REST. Ahora veremos la diferenci
 
 Aquí los parámetros viajan dentro de la URL como par `clave=valor`: 
 
-```
+```url
 http://www.appdomain.com/users?size=20&page=5
 ```
 
