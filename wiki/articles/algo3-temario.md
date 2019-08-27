@@ -53,7 +53,7 @@ Solo necesitás un editor de texto (nosotros te recomendamos Visual Studio Code)
 
 ## Artículos
 
-- [Introducción a la arquitectura web](https://sites.google.com/site/programacionui/temario/03-web-basico/web-intro-web?authuser=0) TODO: Incorporar al apunte lo que está en [Descripción global de la arquitectura web](ui-web-intro-arquitectura.html)
+- [Introducción a la arquitectura web](ui-web-intro-arquitectura.html)
 - Formulario HTML básico (TODO: Bajar de [HTML](https://sites.google.com/site/programacionui/temario/03-web-basico/web-html-css?authuser=0))
 - [Taller de maquetado web](https://docs.google.com/document/d/1UoEb9bzut-nMmB6wxDUVND3V8EymNFgOsw7Hka6EEkc/edit#) (incorporar lo que esté en [Referencia de HTML](html.html))
   - [CSS](css.html)
