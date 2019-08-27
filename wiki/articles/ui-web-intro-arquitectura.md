@@ -39,7 +39,7 @@ Lo que pasa es que en un sistema con objetos no pongo restricciones: cualquiera 
 
 El cliente dice: "necesito x". Esto se traduce en una dirección de una página en particular, esa dirección recibe el nombre de **URL** (Uniforme Resource Locator, o forma de encontrar un recurso en el servidor):
 
-```url
+```bash
 http://localhost:8080/html-css/index.html
 ```
 
@@ -110,9 +110,9 @@ La [recomendación W3C](https://www.w3.org/TR/html4/interact/forms.html#submit-f
 
 # El camino de un pedido http
 
-1. el browser se conecta con el servidor a partir del dominio o IP (localhost = 127.0.0.1) y puerto
-1. se envía la petición al servidor en base a dirección, método, parámetros, etc.
-1. el servidor responde a ese pedido: esa respuesta es una nueva página con un código de estado HTTP:
+- el browser se conecta con el servidor a partir del dominio o IP (localhost = 127.0.0.1) y puerto
+- se envía la petición al servidor en base a dirección, método, parámetros, etc.
+- el servidor responde a ese pedido: esa respuesta es una nueva página con un código de estado HTTP:
 
   - 200 : OK
   - 401 : Unauthorized
@@ -123,7 +123,7 @@ La [recomendación W3C](https://www.w3.org/TR/html4/interact/forms.html#submit-f
 
 El lector puede buscar la lista de [códigos de error HTTP](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP) (las especificaciones [RFC 2616](https://tools.ietf.org/html/rfc2616) y [RFC 4918](https://tools.ietf.org/html/rfc4918)) y formas de resolverlos.
 
-1. la aplicación cliente o _user agent_ se desconecta del servidor una vez procesada la respuesta
+- la aplicación cliente o _user agent_ se desconecta del servidor una vez procesada la respuesta
 
 # Consecuencias del mensaje http para las aplicaciones web
 
@@ -144,7 +144,9 @@ El servidor contesta con un string que tiene
 
 ![](/img/wiki/ui-web-architecture-http-response.gif)
 
+<br>
 Arriba vemos la respuesta del navegador al buscar "Cuarteto de Nos" y abajo cómo procesa la consulta el cliente Postman.
+<br>
 
 ![](/img/wiki/ui-web-architecture-http-response2.gif)
 
