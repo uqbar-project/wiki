@@ -31,7 +31,7 @@ entonces
 -   A los objetos que conocidos mediante atributos
 -   A los objetos que me pasan por parámetro
 -   A mí mismo usando [self](self---pseudovariable.html)
--   A los objetos bien conocidos (incluyendo a los literales y las clases)
+-   A los objetos bien conocidos (incluyendo a los literales)
 
 Importante no olvidar
 ---------------------
