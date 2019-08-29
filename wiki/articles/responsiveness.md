@@ -5,7 +5,7 @@ title: Responsiveness
 
 # Aplicaciones responsive
 
-![responsiveness](/img/Responsiveness.jpg)
+![responsiveness](/img/wiki/Responsiveness.jpg)
 
 Hacer que una aplicación sea *responsive* implica optimizar el contenido y la interacción de la interfaz de usuario en base al tamaño y resolución de la pantalla.
 
@@ -20,7 +20,8 @@ Algunos frameworks de presentación web que trabajan sobre esta idea son:
 
 entre otros.
 
+Manualmente, el css permite especificar estilos condicionales mediante el uso de [media queries](https://developer.mozilla.org/es/docs/CSS/Media_queries). Podés ver [un ejemplo que discrimina css para desktops, tablets, teléfonos grandes y pequeños](https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488).
+
 # Links relacionados
 
--   [Temario Algoritmos III](algo3-temario.html)
-
+- [Temario Algoritmos III](algo3-temario.html)
