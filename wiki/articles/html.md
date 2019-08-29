@@ -89,7 +89,7 @@ Un ejemplo posible de estructuración del body de una página puede ser:
 
 Esto permite que haya plugins como el [HTML 5 Outliner](https://chrome.google.com/webstore/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo) que pueda ordenar los elementos según su orden de importancia (la jerarquía la define el nivel de anidamiento dentro de HTML pero también el tag le dice semánticamente a qué corresponde cada contenido).
 
-![html5Outliner](html5)
+![html5Outliner](/img/wiki/html5Outliner.gif)
 
 Aquí vemos que algunas páginas están semánticamente mejor ordenadas que otras: a veces no hay un título que identifique la sección, o no se respeta bien el orden jerárquico de los contenidos.
 
