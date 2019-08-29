@@ -167,3 +167,4 @@ Arriba vemos la respuesta del navegador al buscar "Cuarteto de Nos" y abajo cóm
 
 - [Temario Algoritmos III](algo3-temario.html)
 - [W3 - Web Architecture](https://www.w3.org/standards/webarch/)
+- [HTML](html.html)
