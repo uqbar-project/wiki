@@ -30,7 +30,7 @@ La notación inline permite abrir y cerrar el tag en un mismo paso:
 <hr/>
 ```
 
-Si bien muchos browsers relajan la sintaxis de apertura y cierre de tags (como en los casos de <ul> y <br>) es una buena práctica respetar esta idea, lo que permite definir [XHTML](https://en.wikipedia.org/wiki/XHTML) o HTMLs "bien formados".
+Si bien muchos browsers relajan la sintaxis de apertura y cierre de tags (como en los casos de `<ul>` y `<br>`) es una buena práctica respetar esta idea, lo que permite definir [XHTML](https://en.wikipedia.org/wiki/XHTML) o HTMLs "bien formados".
 
 ## Tag HTML
 
@@ -67,21 +67,21 @@ Un ejemplo posible de estructuración del body de una página puede ser:
 
 ```html
 <section>
-  <h1>El pato</h1>    
-  <section>     
-    <h1>Introducción</h1>     
-    <p>En esta sección, ampliaremos nuestro concepto del pato.
-  </section>   
-  <section>     
+  <h1>El pato</h1>
+  <section>
+    <h1>Introducción</h1>
+    <p>En esta sección, ampliaremos nuestro concepto del pato.</p>
+  </section>
+  <section>
     <h1>Hábitat</h1>
-    <p>Esta especie de animal llegó en tiempos remotos, traídos en diversas expediciones desde Europa y China, se fueron expandiendo por todo el mundo rápidamente y debido a su temperamento fueron criados como animales domésticos para el consumo de su carne y huevos, así como para mascotas en muchos hogares.
+    <p>Esta especie de animal llegó en tiempos remotos, traídos en diversas expediciones desde Europa y China, se fueron expandiendo por todo el mundo rápidamente y debido a su temperamento fueron criados como animales domésticos para el consumo de su carne y huevos, así como para mascotas en muchos hogares.</p>
   </section>
    <aside>
-    <p>otros estudiosos del pato
+    <p>otros estudiosos del pato</p>
   </aside>
 </section>
 <footer>
-  <p>(c) 2010 The Example company
+  <p>(c) 2010 The Example company</p>
 </footer>
 ```
 
