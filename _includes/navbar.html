@@ -1,11 +1,22 @@
 <nav class="top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
-            <div id="pagetitle"><a id="pagetitle" href="{{ site.baseurl }}/">{{ site.name }}</a></div>
+            <div id="pagetitle">
+                <img src="/img/Uqbar-celeste.svg" height="100px" width="100px" />
+                <!-- <a id="pagetitle" href="{{ site.baseurl }}/">{{ site.name }}</a> -->
+            </div>
         </li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
+
+    <div class="top-bar-section">
+        <ul class="right">
+            <li>
+                {% include jekyll_search.html %}
+            </li>
+        </ul>
+    </div>
 
     <div class="top-bar-section">
         <!-- Right Nav Section -->
@@ -14,7 +25,8 @@
                 <a href="#">Ayuda</a>
                 <ul class="dropdown">
                     <li>{% link_article FAQ %}</li>
-                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/como-empezar.html">Cómo colaborar</a></li>
+                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/como-empezar.html">Cómo
+                            colaborar</a></li>
                 </ul>
             </li>
         </ul>
@@ -24,10 +36,15 @@
             <li class="has-dropdown">
                 <a href="#">Navegación</a>
                 <ul class="dropdown">
-                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas de programación</a></li>
-                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño - Algoritmos II</a></li>
-                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas avanzadas de programación</a></li>
-                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos III</a></li>
+                    <li class="link article_link" role="menuitem"><a
+                            href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas de programación</a></li>
+                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño -
+                            Algoritmos II</a></li>
+                    <li class="link article_link" role="menuitem"><a
+                            href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas avanzadas de
+                            programación</a></li>
+                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                            III</a></li>
                 </ul>
             </li>
         </ul>
