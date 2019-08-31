@@ -43,6 +43,7 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
   - Bindings y demás controllers. Binding avanzado
   - Layouts
   - Navegación y manejo del estado
+  - [Manejo de Transacciones](ui-mvcpesado-transaccion.html)
   - Qué pasa cuando no tenemos binding
 
 # Unidad 3 - Web Estático
@@ -54,10 +55,10 @@ Solo necesitás un editor de texto (nosotros te recomendamos Visual Studio Code)
 ## Artículos
 
 - [Introducción a la arquitectura web](ui-web-intro-arquitectura.html)
-- Formulario HTML básico (TODO: Bajar de [HTML](https://sites.google.com/site/programacionui/temario/03-web-basico/web-html-css?authuser=0))
-- [Taller de maquetado web](https://docs.google.com/document/d/1UoEb9bzut-nMmB6wxDUVND3V8EymNFgOsw7Hka6EEkc/edit#) (incorporar lo que esté en [Referencia de HTML](html.html))
-  - [CSS](css.html)
-  - [Introducción a SASS](https://docs.google.com/document/d/1FX4pum1j4uq6s5nHhJRKitt7sYbLtKyBMmsifYkvGxc/edit?usp=sharing)
+- [HTML](html.html)
+- [CSS](css.html)
+- [Taller de maquetado web](https://docs.google.com/document/d/1UoEb9bzut-nMmB6wxDUVND3V8EymNFgOsw7Hka6EEkc/edit#)
+- [Introducción a SASS](https://docs.google.com/document/d/1FX4pum1j4uq6s5nHhJRKitt7sYbLtKyBMmsifYkvGxc/edit?usp=sharing)
 - [Responsiveness](responsiveness.html)
 
 ## Material de Internet

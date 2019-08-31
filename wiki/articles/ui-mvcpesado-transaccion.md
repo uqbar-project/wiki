@@ -51,3 +51,7 @@ Arena propone un esquema para no tener que resolver esto manualmente:
 Y con esto nos alcanza, Arena utiliza la vista para delimitar el alcance de una transacción: cuando el usuario presiona el botón Aceptar se finaliza (`commit`). En caso de error, o de presionar el botón Cancelar, la transacción se deshace (`rollback`), y los cambios se pierden.
 
 El lector interesado puede consultar [el ejemplo de los celulares](https://github.com/uqbar-project/eg-celulares-ui-arena-xtend) que trabaja automáticamente la transacción.
+
+# Links relacionados
+
+- [Temario Algoritmos III](algo3-temario.html)
