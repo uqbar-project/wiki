@@ -1,6 +1,8 @@
 ---
 layout: article
 title: Responsiveness
+categories: [responsiveness]
+featured: true
 ---
 
 # Aplicaciones responsive

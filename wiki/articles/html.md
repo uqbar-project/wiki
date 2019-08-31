@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Html
+categories: [web, html, introduccion]
 featured: true
 ---
 
