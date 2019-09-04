@@ -21,7 +21,7 @@ Otra opción es combinar una instalación de
 
 - Para ejecutar y escribir tests en ScalaTest (una especie de JUnit para Scala), tenés que instalarle un plugin opcional, que se encuentra en la misma URL que usaste para instalar el ScalaIDE. Asegurate de checkear el item bajo "Scala IDE Plugins (incubation) -&gt; ScalaTests for ScalaIDE". Pueden ver [acá](http://www.scalatest.org/user_guide/using_scalatest_with_eclipse) un screenshot.
 
--   También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site)
+- También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site)
 
 Esta configuración tiene un bug que impide la utilización del visualizador de POMs que viene con el plugin de Maven. Un *workaround* para el problema del POM es abrirlo con el editor de XML.
 
@@ -43,17 +43,17 @@ Para poder utilizar ese parent project necesario realizar previamente realizar l
 
 Este parent project realiza varias configuraciones:
 
--   Agrega las dependencias con Scala y ScalaTest
--   Define src/main/scala como directorio default donde están los fuentes (y src/test/scala donde están los tests).
--   Le indica al maven que utilice el compilador de Scala.
--   Configura la integración con el Eclipse.
+- Agrega las dependencias con Scala y ScalaTest
+- Define src/main/scala como directorio default donde están los fuentes (y src/test/scala donde están los tests).
+- Le indica al maven que utilice el compilador de Scala.
+- Configura la integración con el Eclipse.
 
 # Documentación
 
--   [Documentación oficial](http://www.scala-lang.org/node/197)
--   [Manuales de referencia](http://www.scala-lang.org/node/198)
--   [Scala by Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf#) escrito por Martin Odersky, el creador de Scala.
--   [Effective Scala](http://twitter.github.io/effectivescala/)
+- [Documentación oficial](http://www.scala-lang.org/node/197)
+- [Manuales de referencia](http://www.scala-lang.org/node/198)
+- [Scala by Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf#) escrito por Martin Odersky, el creador de Scala.
+- [Effective Scala](http://twitter.github.io/effectivescala/)
 
 # Errores posibles
 
@@ -68,7 +68,5 @@ la solución es Window &gt; Preferences &gt; Scala Compiler &gt; solapa Build Ma
 
 # Links de interés
 
--   [Página principal de Scala](http://www.scala-lang.org/)
--   [Un tutorial de Scala](http://paco.uqbar-project.org/te/scala/introduccin-a-scala) de Javi Fernándes, miembro de Uqbar
--   [Groovy vs Scala](groovy-vs-scala.html)
-
+- [Página principal de Scala](http://www.scala-lang.org/)
+- [Un tutorial de Scala](http://paco.uqbar-project.org/te/scala/introduccin-a-scala) de Javi Fernándes, miembro de Uqbar

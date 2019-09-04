@@ -21,6 +21,7 @@ Recomendamos seguir [este tutorial](https://www.mkyong.com/maven/how-to-install-
 $ sudo apt-get install maven
 $ sudo ln -s /usr/share/maven3/bin/mvn /usr/bin/mvn
 ```
+
 Vale la pena aclarar que si bien este método es ms simple, generalmente las versiones de repositorio de Ubuntu suelen estar  atrás de las vigentes. Igualmente no les va a traer problemas.
 
 ## Manualmente
@@ -60,11 +61,6 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"
 ```
 
-## Más tutoriales
-
-- [Guía de referencia rápida](https://maven.apache.org/guides/MavenQuickReferenceCard.pdf)
-- [Manual completo de Maven](http://books.sonatype.com/mvnref-book/reference/)
-
 ## Configuración de Maven
 
 Por defecto no necesitás hacer nada, la configuración por defecto está bien para comenzar a trabajar. Pero en caso de ser necesario algunos ajustes, tenés que mirar el archivo `settings.xml`, que por defecto se ubica en
@@ -90,5 +86,3 @@ Una configuración más que puede ser útil para encontrar versiones nuevas de a
 # Material
 
 - [Guía de referencia rápida](https://maven.apache.org/guides/MavenQuickReferenceCard.pdf)
-- [Manual completo de Maven](http://books.sonatype.com/mvnref-book/reference/)
-
