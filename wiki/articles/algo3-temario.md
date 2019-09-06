@@ -30,7 +30,7 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
   - Discusión sobre las [múltiples interpretaciones y variantes](http://c2.com/cgi/wiki?ModelViewController) del patrón.
   - [Historia del patrón MVC](http://c2.com/cgi/wiki?ModelViewControllerHistory)
   - Finalmente una discusión sobre el elemento más controversial del patrón: [el controller](http://c2.com/cgi/wiki?WhatsaControllerAnyway).
-- [Binding: Vinculación entre la vista y el modelo]([Formas de vincular una vista con el modelo de dominio](ui-mvnpesado-formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
+- [Binding: Vinculación entre la vista y el modelo]([Formas de vincular una vista con el modelo de dominio](ui-mvcpesado-formas-de-vincular-una-vista-con-el-modelo-de-dominio.html)
 )
 
 ## Entorno
