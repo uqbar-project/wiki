@@ -51,7 +51,6 @@ Para el que busca algo que vaya más allá de lo visto en las clases aquí hay u
 - [Portal del investigador]({{site.baseurl}}/wiki/articles/portal-del-investigador.html)
 - [Tips para Concursos Docentes]({{site.baseurl}}/wiki/articles/tips-para-concursos-docentes.html)
 - [Coeficiente de Felicidad Docente]({{site.baseurl}}/wiki/articles/coeficiente-de-felicidad-docente.html)
-- [AST-Abstract Syntax Tree]({{site.baseurl}}/wiki/articles/ast-abstract-syntax-tree.html)
 
 <br>
 <br>

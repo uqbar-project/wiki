@@ -9,6 +9,11 @@ div#quoteada {
     padding: 1rem;
 }
 
+div[class="highlight"] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 code[class*="language-"] {
     color: black;
     padding-left: 0;
@@ -47,7 +52,6 @@ pre[class*="language-"] {
     word-break: normal;
     word-wrap: normal;
     display: flex;
-    // white-space: pre;
     line-height: normal;
     -moz-tab-size: 2;
     -o-tab-size: 2;
