@@ -9,7 +9,7 @@ Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un I
 
 - La opción más recomendada es descargar la última versión [Scala IDE](http://scala-ide.org/download/sdk.html).
 
--   También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site), solamente te va a proponer instalar el componente m2e-slf4j, ya que los otros vienen con la instalación default. Aceptalo y ¡ya tenés tu entorno listo! 
+- También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site), solamente te va a proponer instalar el componente m2e-slf4j, ya que los otros vienen con la instalación default. Aceptalo y ¡ya tenés tu entorno listo! 
 
 ## Alternativa - Combinación Eclipse - Scala - Plugins
 
@@ -52,7 +52,7 @@ Este parent project realiza varias configuraciones:
 
 - [Documentación oficial](http://www.scala-lang.org/node/197)
 - [Manuales de referencia](http://www.scala-lang.org/node/198)
-- [Scala by Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf#) escrito por Martin Odersky, el creador de Scala.
+- [Scala by Example](https://www.scala-lang.org/old/sites/default/files/linuxsoft_archives/docu/files/ScalaByExample.pdf) escrito por Martin Odersky, el creador de Scala.
 - [Effective Scala](http://twitter.github.io/effectivescala/)
 
 # Errores posibles
@@ -60,7 +60,7 @@ Este parent project realiza varias configuraciones:
 Si te aparece un mensaje de error
 
 ```bash
-scalatest_2.9.1-1.6.1.jar is cross-compiled with an incompatible version of Scala (2.9.1). 
+scalatest_2.9.1-1.6.1.jar is cross-compiled with an incompatible version of Scala (2.9.1).
 In case of errorneous report, this check can be disabled in the compiler preference page.
 ```
 

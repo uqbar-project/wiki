@@ -24,9 +24,9 @@ Explicación: varias herramientas y bibliotecas de Ruby necesitan bajar contenid
 
 ### 2. Instalar RBENV
 
-Seguir las instrucciones aquí: <https://github.com/fesplugas/rbenv-installer>. El resumen es:
+Seguir las instrucciones en el [repositorio de github de rbenv-installer](https://github.com/rbenv/rbenv-installer). El resumen es:
 
-`curl `[`https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer`](https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer)` | bash`
+`curl `[`https://github.com/rbenv/rbenv-installer`](https://github.com/rbenv/rbenv-installer)` | bash`
 `echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile`
 `echo 'eval "$(rbenv init -)"' >> ~/.bash_profile`
 

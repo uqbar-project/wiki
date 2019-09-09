@@ -3,12 +3,9 @@
         <li class="name">
             <div id="pagetitle"><img src="{{site.baseurl}}/img/Uqbar-celeste.svg" height="100px" width="100px" /></div>
         </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-
-    <div class="mobile">
-        <ul class="left">
+    <ul class="left">
+        <div class="mobile">
             <div class="navbar-buttons">
                 <div class="navbar-icon-link">
                     <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/img/wiki/home-2.png" height="25px"
@@ -19,21 +16,6 @@
                             width="25px" title="Artículos" /></a>
                 </div>
             </div>
-        </ul>
-    </div>
-
-    <div class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-            <li class="has-dropdown">
-                <a href="#">Ayuda</a>
-                <ul class="dropdown">
-                    <li>{% link_article FAQ %}</li>
-                    <li class="link article_link" role="menuitem"><a href="/wiki/articles/como-empezar.html">Cómo
-                            colaborar</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
+        </div>
+    </ul>
 </nav>

@@ -11,6 +11,8 @@ disqus: uqbar-wiki
 
 # Uncomment below to enable pagination.
 paginate: 10
+pagination:
+  enabled: true
 
 #debug in build
 debug: false
@@ -27,6 +29,7 @@ exclude:
   - bower.json
   - node_modules
   - vendor
+  - .history
 
 livereload:
   port: 35729
