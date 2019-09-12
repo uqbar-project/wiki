@@ -42,7 +42,7 @@ Typescript es el lenguaje de programación base para Angular. Tranquilo, es muy 
 En la consola Git Bash o bien desde una terminal de Linux hacemos
 
 ```bash
- ng new nombre-de-tu-app
+ng new nombre-de-tu-app
 cd nombre-de-tu-app
 ng serve -open  # o bien, la versión corta es ng s -o
 ```
