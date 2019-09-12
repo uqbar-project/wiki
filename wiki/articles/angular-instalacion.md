@@ -4,7 +4,7 @@ title: Instalacion de Entorno Angular
 featured: true
 ---
 
-![angular](/img/languages/angular.png)
+![angular](/img/languages/angular1.png)
 
 # Entorno
 
