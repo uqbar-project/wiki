@@ -23,21 +23,22 @@ npm install -g @angular/cli
 
 ## Visual Studio Code
 
-- El editor de texto que vamos a soportar en la cursada es [**Visual Studio Code**](https://code.visualstudio.com/) (hay [una versión portable](https://sourceforge.net/projects/vscode-portable/) si estás en una máquina sin privilegios de administrador). 
+- El editor de texto que vamos a soportar en la cursada es [**Visual Studio Code**](https://code.visualstudio.com/) (hay [una versión portable](https://sourceforge.net/projects/vscode-portable/) si estás en una máquina sin privilegios de administrador).
 
 Otra opción es utilizar [Web Storm](https://www.jetbrains.com/webstorm/) (de la suite de IntelliJ), si tienen una cuenta de la facultad pueden solicitar una licencia educativa. Solo que como no vamos a aprovechar todas las herramientas de este IDE poderoso quizás convenga ir por el Visual Studio Code.
 
-- Los plugins del Visual Studio Code que te recomendamos al 2018 son:
+- Los plugins del Visual Studio Code que te recomendamos al 2019 son:
   - **TypeScript Hero**: herramientas generales para programar en Typescript
-  - **Angular 6 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout**: autocompletado de templates de Angular
+  - **Angular 8 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout**: autocompletado de templates de Angular
   - **Angular Files**: permite generar desde el menú de visual studio code componentes, pipes, servicios, etc.
-  - y como chiche extra: **VSCode simpler Icons with Angular** para tener íconos diferentes (hay que seguir los pasos de instalación de la página del plugin)
+  - como chiche extra: **VSCode simpler Icons with Angular** para tener íconos diferentes (hay que seguir los pasos de instalación de la página del plugin)
+  - si estás acostumbrado a los shortcuts de Eclipse, **Eclipse Keymap**
 
 ## Configuraciones
 
-![no-semicolon](../../img/wiki/VSCsemicolonTS.gif)
-
 A continuación te dejamos un video para mostrarte cómo configurar los plugins para que no exijan puntos y coma (`;`) al final de cada sentencia, algo que recomendamos.
+
+![no-semicolon](../../img/wiki/VSCsemicolonTS.gif)
 
 # Aprendiendo Typescript
 
