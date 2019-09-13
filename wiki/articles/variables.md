@@ -33,7 +33,7 @@ Lo que sucede cuando una variable no ha sido inicializada puede variar de un len
 
 ¿Cuál es el momento adecuado para inicializar un atributo? Si bien podrían darse situaciones en las cuales se quiera o necesite postergar la inicialización de un atributo, lo más común es querer inicializar los atributos al momento de la creación del objeto, de esa forma nunca se llegará a un estado en el cual el se le mande un mensaje al objeto y el mismo falle porque no se haya inicializado un atributo previamente.
 
-En Wollok podemos inicializar las variables al momento de declararlas. Eso en general es suficiente para trabajar con objetos bien conocidos (como en el ejemplo que se muestra más adelante). En caso de trabajar con objetos instanciados a partir de [clases](clases.html), es posible inicializar los atributos con valores distintos para cada instancia usando [constructores](constructores.html) (o [métodos de clase](variables-y-metodos-de-clase.html) como sucede en Smalltalk).
+En Wollok podemos inicializar las variables al momento de declararlas. Eso en general es suficiente para trabajar con objetos bien conocidos (como en el ejemplo que se muestra más adelante). En caso de trabajar con objetos instanciados a partir de [clases](clases.html), es posible inicializar los atributos con valores distintos para cada instancia usando las [herramientas de instanciación](herramientas-de-instanciacion.html) disponibles (en otros lenguajes en los cuales las clases son objetos, como Smalltalk, esto se logra mediante mensajes a las clases).
 
 ## Ejemplo completo
 
