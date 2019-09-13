@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Igual o identico     vs   
+title: Igualdad vs. Identidad
 ---
 
 Definiciones
