@@ -62,7 +62,7 @@ mufasa := Leon new.
 simba tuPapaEs: mufasa.
 ```
 
-En otros lenguajes, como en Wollok o Java, las clases no son objetos y para crear instancias se utiliza un [constructor](constructores.html). Por ejemplo:
+En otros lenguajes, como en Wollok o Java, las clases no son objetos y para crear instancias se utilizan [herramientas específicas para la construcción de objetos](herramientas-de-instanciacion.html). Por ejemplo:
 
 ```Wollok
 var simba = new Leon()
@@ -83,8 +83,6 @@ Si una instancia no es referenciada desde ningún lado, la misma ya no podrá se
 
 Una clase sirve de **fábrica** de objetos. Modela las **abstracciones** de mi dominio (los *conceptos* que nos interesan), permitiéndome definir el **comportamiento** y los **atributos** de las instancias.
 
-Dependiendo del lenguaje las clases pueden ser un objeto más que entiende mensajes pensados para ellas (este es el caso de Smalltalk, ver [Variables y métodos de clase](variables-y-metodos-de-clase.html)) o una construcción distinta del lenguaje que sólo existe para declarar el comportamiento de los objetos y darnos una forma de obtener nuevas instancias mediante el uso de [constructores](constructores.html) (no envíos de mensajes) como sucede en Wollok.
+Dependiendo del lenguaje las clases pueden ser un objeto más que entiende mensajes pensados para ellas (este es el caso de Smalltalk, ver [Variables y métodos de clase](variables-y-metodos-de-clase.html)) o una construcción distinta del lenguaje que sólo existe para declarar el comportamiento de los objetos y darnos una forma de obtener nuevas instancias mediante el uso de [herramientas de instanciación](herramientas-de-instanciacion.html) (no envíos de mensajes) como sucede en Wollok.
 
 Lo importante de todo esto es que las clases no son construcciones centrales como sí son los objetos, ya que impactan sólo a la definición y creación de los mismo, pero para el uso general del sistema, trabajamos de la misma forma que si las clases no estuvieran ahí. Es por eso que es en estos puntos en donde más difieren los lenguajes existentes, sin embargo la idea de objeto - mensaje se mantiene.
-
-Ver también [Diagrama de clases](diagrama-de-clases.html)
