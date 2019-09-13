@@ -39,7 +39,7 @@ Teoría
 - [Redefinición](redefinicion.html)
 - [Composición (OOP)](composicion--oop-.html)
 - [Constructores](constructores.html) vs. [Variables y métodos de clase](variables-y-metodos-de-clase.html) 
-- [igual o idéntico - = vs ==](igual-o-identico-----vs---.html)
+- [Igualdad vs Identidad](igual-o-identico-----vs---.html)
 - [Inmutabilidad](inmutabilidad.html)
 - [Garbage collector](garbage-collector.html)
 - [Bloques](bloques.html)
