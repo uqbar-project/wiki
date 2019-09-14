@@ -19,7 +19,7 @@ Decimos que un objeto es inmutable si no puede cambiar su estado interno (su con
 
 Los Strings son un ejemplo de objetos inmutables, cualquier operación que hagan sobre un string (concatenación, cambiar a mayúscula o minúscula, etc) sólo retorna otro string, el receptor nunca se modifica.
 
-Si la interfaz del objeto tiene una forma de inicializar sus variables, pero no exhibe el comportamiento para settear sus atributos, sus usuarios no podrán alterar su estado interno más adelante. Para construir un objeto ya inicializado solemos usar [métodos de clase](variables-y-metodos-de-clase.html) o [constructores](constructores.html), de esa forma no será necesario usar setters para configurar un estado que no sería esperable que cambie luego de la construcción del objeto.
+Si la interfaz del objeto tiene una forma de inicializar sus variables, pero no exhibe el comportamiento para settear sus atributos, sus usuarios no podrán alterar su estado interno más adelante. Para construir un objeto ya inicializado solemos usar [métodos de clase](variables-y-metodos-de-clase.html) u otras [herramientas de instanciación](herramientas-de-instanciacion.html), de esa forma no será necesario usar setters para configurar un estado que no sería esperable que cambie luego de la construcción del objeto.
 
 Que un objeto sea inmutable permite que pueda ser compartido por varios objetos sin que puedan afectarse entre sí, ya que no hay nada que puedan hacer sobre ese objeto compartido que produzca un cambio visible para el otro objeto que lo conoce.
 

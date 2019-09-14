@@ -1,63 +1,47 @@
 ---
 layout: article
-title: Igual o identico     vs   
+title: Igualdad vs. Identidad
 ---
 
 Definiciones
 ------------
 
-**Identidad:** decimos que dos objetos son idénticos si son el mismo objeto. Dentro del ambiente podemos tener dos referencias diferentes al mismo objeto.
+**Identidad:** decimos que dos objetos son idénticos si son el mismo objeto. Dentro del ambiente podemos tener dos referencias diferentes al mismo objeto. En Wollok el operador usado para comparar dos objetos por identidad es `===`.
 
-**Igualdad:** (o **equivalencia**) *por defecto dos* objetos son iguales si son el mismo objeto (en Object se define el mensaje = como self == anObject). La igualdad puede ser redefinida (Ver [Redefinición](redefinicion.html)) si el problema lo amerita.
+**Igualdad:** (o **equivalencia**) *por defecto* dos objetos son iguales si son idénticos, o sea si son el mismo objeto. A diferencia de la identidad, la igualdad puede ser [redefinida](redefinicion.html) con una implementación específica si el problema lo amerita. En Wollok el operador usado para comparar dos objetos por igualdad es `==`.
 
 Ejemplos
 --------
 
-Algunos objetos literales como los números y los símbolos (son como los strings pero arrancan con \#) son únicos en el sistema, por ese motivo evaluar \#hola == \#hola da true.
+Algunos objetos literales como los números o los booleanos son únicos en el sistema, por ese motivo evaluar `3 === 3` da true al igual que `3 == 3`.
 
-Sin embargo, lo normal es hacer las comparaciones con `=` y no con `==`.
+Sin embargo, lo normal es hacer las comparaciones con `==` y no con `===`, ya que en general lo que interesa saber es si dos objetos son iguales desde el punto de vista de dominio. Un ejemplo muy común son los strings: supongamos que queremos saber si el resultado de concatenar "hola" con "mundo" es el string "holamundo". No es relevante si el resultado de esa concatenación fue exactamente el mismo objeto que se puede obtener al escribir el literal "holamundo", de hecho, es normal que no lo sea:
 
-La razón contada muy rápido: imaginate que por alguna razón en la imagen de Smalltalk (o de cualquier lenguaje que trabaja con objetos) en un momento hay dos String "hola", que están apuntados por las variables str1 y str2. La comparación
+```wollok
+> "hola" + "mundo" == "holamundo"
+=> true
+> "hola" + "mundo" === "holamundo"
+=> false
+```
 
-`   str1 = str2`
+Dando un paso más, ¿en qué casos podría ser útil redefinir la igualdad? Hay algunos objetos que tienen como principal objetivo representar datos más allá de los literales que ya conocemos, como ser las fechas. Si yo evaluamos esto en una consola:
 
-da true, porque representan al mismo ente. Pero la comparación
+```wollok
+> const fecha1 = new Date(day = 24, month = 11, year = 2017)
+> const fecha2 = new Date(day = 24, month = 11, year = 2017)
+```
 
-`   str1 == str2`
+Luego podemos confirmar que la igualdad para las fechas está definida en términos de los datos, la identidad no es relevante:
 
-da false, porque no son exactamente el mismo objeto, la imagen los reconoce como distintos.
+```wollok
+> fecha1 == fecha2
+=> true
+> fecha1 === fecha2
+=> false
+```
 
-Dando un paso más, en qué casos podría ser útil redefinir el =? Hay algunos objetos que tienen como principal objetivo representar datos más allá de los literales que ya conocemos, como ser las fechas. Si yo evalúo esto en un workspace:
+**Importante** Sólo debería redefinirse la igualdad basado en valores que no vayan a cambiar. Por ejemplo si quisiéramos modelar una dirección que tiene como atributos la calle y la numeración y nos interesara definir la igualdad en esos términos, es importante que una vez construido el objeto dirección con la calle y la numeración, no sea posible cambiar esas referencias, ya que la relación de igualdad entre dos objetos debería mantenerse a lo largo del tiempo. O sea, el objeto no necesita ser totalmente [inmutable](inmutabilidad.html) pero sí debemos garantizar que mínimamente lo sea respecto a los valores usados para la igualdad.
 
-`d1 := Date newDay: 22 month: 10 year: 1987. `
-`d2 := Date newDay: 22 month: 10 year: 1987. `
+Otra cosa a tener en cuenta si se redefine la igualdad es que existen otros objetos del sistema (como las colecciones) que se basan en otro mensaje (suele llamarse *hash* o *hashCode*) para encontrar rápidamente objetos que son (o podrían ser) iguales al receptor de dicho mensaje, es común que se use para algoritmos de búsqueda. Su particularidad es que, en vez de recibir otro objeto por parámetro para poder compararlo, no recibe parámetros y retorna un número al que se denomina *código de hash*. En general si la igualdad se define de una forma particular y se mantiene la forma de calcular el código de hash predefinida, eventualmente surgirán comportamientos inesperados. Por eso, independientemente de la tecnología que uses, asegurate de averiguar cúal es la forma más adecuada de implementar ese mensaje.
 
-`d1 = d2.`
-`d1 == d2.`
-
-Esperaría que la consulta de igualdad sea cierta pero no la de identidad. Si vemos la implementación de Pharo que se encuentra en Timespan (superclase de Date) encontramos esto:
-
-`= comparand`
-` ^ self class = comparand class `
-`    and: [ self start = comparand start `
-`     and: [ self duration = comparand duration ]]`
-
-De la misma forma podríamos redefinir la igualdad en alguna clase propia, como ser Direccion que tiene una calle y una numeración.
-
-`#Direccion`
-`= otraDireccion`
-` ^ self class = otraDireccion class `
-`      and: [ self calle = otraDireccion calle`
-`        and: [ self numeracion = otraDireccion numeracion]]`
-
-**Importante** Sólo debería redefinirse la igualdad basado en valores que no vayan a cambiar, en nuestro ejemplo una vez construido el objeto dirección con la calle y la numeración, no debería poder cambiar esas referencias, ya que la relación de igualdad entre dos objetos debería mantenerse a lo largo del tiempo. O sea, el objeto no necesita ser totalmente [inmutable](inmutabilidad.html) pero sí debemos garantizar que lo sea respecto a los valores usados para la igualdad.
-
-Cuando redefinimos el = hay que redefinir también el método hash que es usado, por ejemplo, por las colecciones. De esa forma si queremos tener un Set de direcciones funcione como esperamos de modo que no hayan dos direcciones iguales. El hash (no sólo en objetos) es una función que retorna un número para un determinado elemento y se usa para algoritmos bien conocidos, y normalmente está definida en función del hash de otros objetos para simplificar la generación de una buena clave para dichos algoritmos.
-
-Por ejemplo para las direcciones:
-
-`#Direccion`
-`hash`
-` ^ self calle hash + self numeracion hash`
-
-Es importante que el hash se defina en función de los mismos atributos que se usaron para la igualdad para que aquellos que trabajan usando el hash se comporten de forma esperada.
+En el caso del ejemplo planteado de las direcciones, podría ser razonable que la igualdad se defina preguntando si la calle de la dirección que recibió el mensaje es igual a la calle de la otra dirección y además la numeración de esa dirección también es igual a la numeración de la otra dirección. Luego el código de hash podría obtenerse mediante un cálculo que involucre tanto al código de hash de la calle de la dirección que recibió el mensaje y también al código de hash de su numeración.
