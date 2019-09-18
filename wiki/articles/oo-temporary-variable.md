@@ -5,8 +5,6 @@ categories: [oo, bad smells, buenas prácticas, variables, temporales, efecto]
 featured: true
 ---
 
-# Temporary variable
-
 ## Introducción: persona instruída
 
 Supongamos que tenemos que conocer si Helmut es una persona instruida, esto ocurre cuando leyó más de 20 libros y conoce más de 3 idiomas.
@@ -61,7 +59,7 @@ object helmut {
 }
 ```
 
-Por supuesto, podemos extraer un método aparte, eso no quita que estamos enviando el mismo mensaje en ambos lugares:
+Por supuesto, podemos extraer un método aparte, igualmente estaremos enviando el mismo mensaje en ambos casos:
 
 ```scala
 object helmut {
@@ -102,6 +100,7 @@ lo cual agrega más desventajas:
 
 - la variable `instruido` da lo mismo si es una variable de instancia (atributo) o una variable local del método `esInstruido`, solo se asigna para ser retornada
 - métodos que representan acciones como leer el libro o conocer idioma, llaman a una aparente pregunta (esInstruido) solo para actualizar el estado, se confunde así métodos que tienen efecto y que no lo tienen
+- si hay más atributos cuyos valores dependen de otros, puede no resultar trivial el momento de actualizar el estado del objeto sin que quede momentáneamente inconsistente (o puede resultar en errores si no respetamos el orden en que actualizamos dichos atributos)
 
 ## Una alternativa más simple
 
@@ -121,3 +120,10 @@ Aquí vemos cómo tenemos
 
 - métodos que producen efecto (acciones): `leerLibro`, `conocerIdioma`
 - y métodos que no tienen efecto (contestan preguntas): `esInstruido`
+
+## Heurística para tener atributos que pudieran ser calculables
+
+- si el cálculo lleva tiempo (o implica acceder a recursos externos costosos, como un archivo o un servicio web)
+- si la tasa de actualización es poco frecuente pero necesitamos conocer esa información una gran cantidad de veces al día
+
+son señales en los que tener un cálculo como atributo es justificable, algo que es improbable que ocurra en cursos iniciales de programación OO.
