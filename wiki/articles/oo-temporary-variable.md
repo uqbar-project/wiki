@@ -14,7 +14,7 @@ Tenemos esta implementación:
 ```scala
 object helmut {
   var librosLeidos = 0
-  var idiomasQueConoce = []
+  const idiomasQueConoce = []
   method leerLibro() { librosLeidos = librosLeidos + 1 }
   method conocerIdioma(idioma) { idiomasQueConoce.add(idioma) }
   method esInstruido() ...
@@ -43,7 +43,7 @@ Para mantener consistente el estado de Helmut, deberíamos codificar su comporta
 ```scala
 object helmut {
   var librosLeidos = 0
-  var idiomasQueConoce = []
+  const idiomasQueConoce = []
   var instruido = false
   method leerLibro() {
     librosLeidos = librosLeidos + 1
@@ -109,7 +109,7 @@ La alternativa más sencilla es descartar todos los atributos que pueden calcula
 ```scala
 object helmut {
   var librosLeidos = 0
-  var idiomasQueConoce = []
+  const idiomasQueConoce = []
   method leerLibro() { librosLeidos = librosLeidos + 1 }
   method conocerIdioma(idioma) { idiomasQueConoce.add(idioma) }
   method esInstruido() = librosLeidos > 20 && idiomasQueConoce.size() > 3
