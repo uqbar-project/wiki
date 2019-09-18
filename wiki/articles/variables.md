@@ -2,11 +2,13 @@
 layout: article
 title: Variables
 ---
+
 # Referencias
 
 En objetos una variable es una **referencia** a un objeto. La mayoría de las referencias pueden ser reapuntadas a otros objetos mediante la operación de [asignación](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html). Al hacerlo eso no modifica al objeto previamente referenciado.
 
 Hay distintos tipos de referencias, dependiendo del contexto en el cual son declaradas:
+
 - atributos: se usan para que el objeto mantenga un estado propio.
 - locales: se declaran dentro de un método, sólo son visibles desde el mismo, y no sobreviven a su ejecución.
 - parámetros: forman parte de la firma del método, no pueden ser reapuntadas a otros objetos dentro del método.
@@ -15,7 +17,7 @@ Hay distintos tipos de referencias, dependiendo del contexto en el cual son decl
 
 La asignación de variables se logra de la siguiente forma:
 
-```
+```scala
 variable = expresion-que-devuelve-un-objeto
 ```
 
@@ -39,11 +41,11 @@ En Wollok podemos inicializar las variables al momento de declararlas. Eso en ge
 
 Dado el siguiente código Wollok:
 
-```
+```scala
 object pepita {
   var energia = 100
   
-  method energia(cantidad){
+  method energia(cantidad) {
     energia = cantidad
   }
 }
@@ -51,7 +53,7 @@ object pepita {
 
 ... y luego le mando el mensaje...
 
-```
+```scala
 pepita.energia(50)
 ```
 
@@ -59,9 +61,9 @@ Cuando el objeto se crea, la variable energía se inicializa apuntando al objeto
 
 SIEMPRE lo que se encuentre a la izquierda de la asignación debe ser una variable, no se puede asignar un objeto (y por el mismo motivo no se puede asignar un envío de mensajes). Las siguientes expresiones son inválidas:
 
-```
-3 = 5 <--- 3 es un objeto, no una referencia!!!
-pepita.energia() = 10 <--- pepita.energia() es un envío de mensajes, no una referencia!!!
+```scala
+3 = 5                 // <--- 3 es un objeto, no una referencia!!!
+pepita.energia() = 10 // <--- pepita.energia() es un envío de mensajes, no una referencia!!!
 ```
 
 En ningún caso vamos a poder modificar desde fuera del objeto que tiene una referencia el valor de la misma, siempre hay que mandarle un mensaje a ese objeto para que la cambie. Esto está relacionado con la idea de [encapsulamiento](encapsulamiento.html), que es una de las bases del paradigma de objetos.
@@ -71,7 +73,8 @@ En ningún caso vamos a poder modificar desde fuera del objeto que tiene una ref
 Los atributos son obviamente muy útiles, ya que permiten que un objeto recuerde toda la información que necesita para poder usarla en cualquier momento. Sin embargo, hay que ser criteriosos respecto a cuándo usarlos, ya que pueden ser el motivo de inconsistencias y dificultad para mantener nuestros programas.
 
 Los siguientes son los algunos errores comunes de ver respecto al uso de atributos:
-- Atributos redundantes: si cierta pieza de información puede ser calculada a partir de otra, no uses un atributo que tenga que ser mantenido consistente, usá un método que calcule lo que necesitás a partir de la otra información disponible.
+
+- Atributos redundantes: si cierta pieza de información puede ser calculada a partir de otra, no uses un atributo que tenga que ser mantenido consistente, usá un método que calcule lo que necesitás a partir de la otra información disponible. Para más información podés leer [este artículo](oo-temporary-variable.html)
 - Atributos innecesarios: no hay que perder de vista que nuestro programa es un **modelo**, y por ende no hace falta que el objeto recuerde información que luego no va a ser usada.
 - Uso de atributos en vez de locales: si necesitamos recordar cierta información sólo dentro de la ejecución de un método, lo correcto es usar una local, no un atributo.
 

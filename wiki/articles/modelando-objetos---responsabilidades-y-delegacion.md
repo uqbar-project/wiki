@@ -24,10 +24,10 @@ Cuando tenemos bien repartidas las responsabilidades entre nuestros objetos, pro
 
 Supongamos que queremos que un tanque que dispara misiles térmicos le dispare a otro tanque. El daño que hace un misil térmico es 10 veces la cantidad de ocupantes del tanque al que es disparado. El tanque enemigo tiene una coraza que va decrementando a medida que recibe daño (el mismo es destruído cuando la coraza llega a 0) y debe ser manejado por 3 personas. Una solución bien delegada podría ser:
 
-```
+```scala
 object tanqueDeMisiles {
   var misil = misilTermico
-  method dispararA(otroTanque){
+  method dispararA(otroTanque) {
     otroTanque.recibirDanio(misil.cuantoDanioPara(otroTanque))
   }
 }
@@ -37,8 +37,8 @@ object tanqueEnemigo {
   method recibirDanio(cant) {
     coraza = (coraza - cant).max(0)
   }
- 
-  method cantidadOcupantes(){
+
+  method cantidadOcupantes() {
     return 3
   }
 }
@@ -54,18 +54,19 @@ Es particularmente importante que la forma de recibir daño esté delegada en el
 
 El mismo ejemplo en Smalltalk:
 
-```
-#tanqueDeMisiles 
->> dispararA: otroTanque 
+```smalltalk
+#TanqueDeMisiles
+>> dispararA: otroTanque
    otroTanque recibirDaño: (misil cuantoDañoPara: enemigo).
-   
-#tanqueEnemigo 
+
+#TanqueEnemigo
 >> recibirDaño: cant
   coraza := (coraza - cant) max: 0
->> cantidadOcupantes 
+
+>> cantidadOcupantes
   ^ 3
 
-#misilTermico 
+#MisilTermico
 >> cuantoDanioPara: unTanque
   ^ unTanque cantidadOcupantes * 10
 ```
