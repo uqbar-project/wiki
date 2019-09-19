@@ -34,6 +34,7 @@ Otra opción es utilizar [Web Storm](https://www.jetbrains.com/webstorm/) (de la
   - **Angular Files**: permite generar desde el menú de visual studio code componentes, pipes, servicios, etc.
   - como chiche extra: **VSCode simpler Icons with Angular** para tener íconos diferentes (hay que seguir los pasos de instalación de la página del plugin)
   - si estás acostumbrado a los shortcuts de Eclipse, **Eclipse Keymap**
+  - **Git Lens**, para ver el historial de Git integrado con tu Visual Studio Code
 
 ## Configuraciones
 
