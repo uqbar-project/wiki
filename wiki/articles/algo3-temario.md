@@ -91,6 +91,7 @@ Solo necesitás un editor de texto (nosotros te recomendamos Visual Studio Code)
 ## Entorno
 
 - [Instalación de Entorno Angular](angular-instalacion.html)
+- [Manejo de dependencias con NPM](npm-dependencias.html)
 
 ## Artículos 
 
