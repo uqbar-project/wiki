@@ -13,6 +13,7 @@ Es necesario que instales las siguientes herramientas, en este orden:
 - Si estás en entorno Windows te recomendamos instalarte [Git Bash](https://gitforwindows.org/)
 - Seguimos con [NodeJS](https://nodejs.org/en/), preferentemente la última versión.
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
+  - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)  
 - El [Angular CLI (Command line interface)](https://github.com/angular/angular-cli/blob/master/packages/angular/cli/README.md) se instala con npm:
 
 ```bash
