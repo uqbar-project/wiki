@@ -26,7 +26,7 @@ Para respetar el versionado semántico, al liberar una nueva versión tenemos qu
 
 El Node Package Manager (NPM) almacena las dependencias de nuestro proyecto (entre otras configuraciones) en el archivo `package.json`, por ejemplo:
 
-```json
+```js
   "dependencies": {
     "@angular/animations": "^8.2.7",
     "@angular/common": "^8.2.7",
