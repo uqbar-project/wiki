@@ -2,6 +2,7 @@
 layout: article
 title: Instalacion de Entorno Angular
 featured: true
+categories: [web, angular, ui, configuracion, entorno, spa]
 ---
 
 ![angular](/img/languages/angular1.png)
@@ -42,6 +43,15 @@ A continuación te dejamos un video para mostrarte cómo configurar los plugins 
 
 ![no-semicolon](../../img/wiki/VSCsemicolonTS.gif)
 
+Además, en tu proyecto, en el directorio raíz, vas a encontrar un archivo `tslint.json`, asegurate que tenga esta configuración:
+
+```js
+"semicolon": [
+  false,
+  "never"
+],
+```
+
 # Aprendiendo Typescript
 
 Typescript es el lenguaje de programación base para Angular. Tranquilo, es muy similar a los lenguajes orientados a objetos en los que ya trabajaste. Para iniciarte o para hacer consultas te dejamos estos links:
@@ -68,3 +78,35 @@ Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y 
 ```bash
 ng test --watch --sourceMap=false
 ```
+
+# Ejemplo de un archivo Travis
+
+El siguiente es un ejemplo posible de un archivo `.travis.yml` para una aplicación Angular 8 (válido a octubre 2019):
+
+```yml
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - '10.12'
+
+addons:
+apt:
+  sources:
+    - google-chrome
+  packages:
+    - google-chrome-stable
+    - google-chrome-beta
+
+before_install:
+  - npm install -g npm@latest
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+before_script:
+
+script: ng test --sourceMap=false --watch=false
+```
+
+Lo importante es que la versión de node que uses sea superior a 10.1
