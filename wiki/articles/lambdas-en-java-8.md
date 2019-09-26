@@ -14,10 +14,10 @@ Uso básico
 
 En una primera aproximación, una lambda es cualquier objeto que implementa algunas de las siguientes interfaces:
 
--   **Function:** una función que toma un sólo argumento
--   **Predicate:** una función que toma un sólo argumento pero que devuelve exclusivamente booleanos
--   **Consumer:** una función que toma un sólo argumento y no devuelve nada, probablemente porque produce un [efecto](efecto.html). Es decir, los Consumers normalmente NO son computaciones puras.
--   Para otras variantes, ver: <http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>
+- **Function:** una función que toma un sólo argumento
+- **Predicate:** una función que toma un sólo argumento pero que devuelve exclusivamente booleanos
+- **Consumer:** una función que toma un sólo argumento y no devuelve nada, probablemente porque produce un [efecto](efecto.html). Es decir, los Consumers normalmente NO son computaciones puras.
+- Para otras variantes, ver: <http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>
 
 Si queremos recibirlas por parámetro, debemos simplemente tipar al parámetro de nuestro método con alguna de estas interfaces.
 
@@ -25,7 +25,7 @@ Ejemplo:
 
 ``` java
 Persona primerPersonasQueCumple(Predicate<Persona> predicado) {
-   for(Persona persona : personas) 
+   for(Persona persona : personas)
       if (predicado.test(persona))
          return persona;
    throw new PersonaNoExisteException();
@@ -33,14 +33,14 @@ Persona primerPersonasQueCumple(Predicate<Persona> predicado) {
 ```
 
 Para pasarlas por parámetro, la sintaxis es la siguiente:
- 
-``` java
+
+```java
 (TipoParametro parametro) -> cuerpo
 ```
 
 que es análogo al siguiente bloque en Smalltalk (recordar que en Smalltalk las variables no se tipan explícitamente):
 
-``` smalltalk
+```smalltalk
  [ :parametro | cuerpo  ]
 ```
 
@@ -70,13 +70,13 @@ Interfaces de un sólo mensaje
 
 Por motivos de retrocompatibilidad, en realidad, cualquier interface que defina un sólo mensaje puede ser usada con la sintaxis de lambda. Ejemplo:
 
-``` java
+```java
 interface ChequeadorDePersona {
    boolean chequear(Persona p);
 }
 ```
 
-``` java
+```java
 Persona primerPersonasQueCumple(ChequeadorDePersona predicado) {
    for(Persona persona : personas) 
       if (predicado.chequear(persona))
@@ -94,9 +94,9 @@ Una de las principales utilidades de las lambdas es el manejo de colecciones. Ja
 
 La forma de trabajar siempre es la misma: cuando tengamos una colecciones, le enviaremos el mensaje stream() para obtener una secuencia potencialmente infinita (análoga a las listas de Haskell), al cual le podemos enviar mensajes para filtrar, mapear, etc. Cuando hayamos terminado, y si queremos reconvertir nuestro Stream a una colección (como una List, Set, o Collection), le enviaremos el mensaje collect, indicandole a que tipo de colección queremos convertirlo:
 
--   collect(toList()) (análogo al asOrderedCollection de ST)
--   collect(toSet()) (análogo al asSet de ST)
--   entre otros. Ver <http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html>
+- collect(toList()) (análogo al asOrderedCollection de ST)
+- collect(toSet()) (análogo al asSet de ST)
+- entre otros. Ver <http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html>
 
 Ejemplo:
 
@@ -111,7 +111,7 @@ Set<Persona> nombresDeDocentesSinRepetidos = personas
 
 Lo cual es análogo al siguiente código Smalltalk:
 
-``` smalltalk
+```smalltalk
  personas := { jose. pedro. maria. anabela }
  nombresDeDocentesSinRepetidos := 
      ((personas select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet
@@ -127,33 +127,33 @@ public class Foo {
    private String bar;
    private int baz;
    // y sus getters y constructor
-} 
+}
 ```
 
 Cuando quieran tener algo ordenado según un criterio, antes o después, necesitarán un Comparator: es un objeto que nos dice si un objeto es "menor" que otro (precede a otro, dirían en discreta). La buena noticia es que normalmente no tendrán que declarar una clase que implemente esta interfaz, sino que podrán definirlo usando una lambda. Por ejemplo, si quieren crear una priorirty queue que esté ordenada según bar, pueden hacer:
 
-``` java
+```java
 PriorityQueue<Foo> foos = 
     new PriorityQueue<>((x, y) -> x.getBar().compareTo(y.getBar()));
 ```
 
 En general ni siquiera es necesario hacer la comparación a mano. Si quieren ordenar por una propiedad (como en este caso) pueden utilizar Comparator.comparing:
 
-``` java
+```java
 PriorityQueue<Foo> foos = 
     new PriorityQueue<>(Comparator.comparing(foo -> foo.getBar()));
 ```
 
 o lo que es lo mismo:
 
-``` java
+```java
 PriorityQueue<Foo> foos = 
     new PriorityQueue<>(Comparator.comparing(Foo::getBar));
 ```
 
 Si tienen que ordenar por multiples propiedades, pueden utilizar el mensaje thenComparing. Ejemplo de creación de un TreeSet que ordene segun bar y luego segun baz:
 
-``` java
+```java
 Set<Foo> foos = 
     new TreeSet<>(
         Comparator.comparing(Foo::getBar).thenComparing(Foo::getBaz)
@@ -162,7 +162,7 @@ Set<Foo> foos = 
 
 Finalmente, si tienen que ordenar al revés del orden de precedencia, pueden usar el mensaje reversed. Por ejemplo, acá se está obteniendo un stream ordenado por baz, de mayor a menor:
 
-``` java
+```java
 Arrays.asList(new Foo("hola", 2), 
               new Foo("hello", 9))
         .stream()
@@ -185,6 +185,5 @@ Más información
 
 Para más información consultar:
 
--   <http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html>
--   <http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>
-
+- <http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html>
+- <http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>

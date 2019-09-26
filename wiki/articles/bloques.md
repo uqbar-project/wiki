@@ -8,15 +8,15 @@ title: Bloques
 
 Un bloque (también conocido como closure) es un objeto, y por lo tanto podemos hacer con él lo mismo que hacíamos con los demás objetos esto es:
 
--   Enviarle mensajes
--   Pasarlo como parámetro de algún mensaje
--   Hacer que una variable lo referencie
+- Enviarle mensajes
+- Pasarlo como parámetro de algún mensaje
+- Hacer que una variable lo referencie
 
 Un objeto bloque representa un cacho de código que no se ejecutó, ese código solo se ejecutará si alguien le manda un mensaje que le indique hacerlo. Veamos algunos ejemplos en el lenguaje Wollok:
 
 Si ejecutamos las siguientes instrucciones:
 
-```
+```java
 var x = 0
 { x = x + 1 }
 ```
@@ -25,7 +25,7 @@ var x = 0
 
 Para que la variable x apunte al objeto uno (1) tenemos que decirle al bloque que se ejecute.
 
-```
+```java
 var x = 0
 { x = x + 1 }.apply()
 ```
@@ -39,7 +39,7 @@ Algo que se pone en evidencia en este ejemplo introductorio es que los bloques t
 
 Si tuviéramos el siguiente código:
 
-```
+```scala
 object pepita {
   var energia = 100
   
@@ -97,13 +97,15 @@ Para pensar: ¿Los mensajes que esperan por parámetro un bloque, podrán recibi
 ¿Cómo funciona el \#ifTrue: y el \#ifFalse: de **Smalltalk**?
 ---------------------------------------------------------
 
-En el caso de Smalltalk, el uso de bloques es aún más generalizado, ya que al no existir estructuras de control y tener una sintaxis completamente basada en mensajes a objetos, los bloques se usan por ejemplo para poder saber qué hacer en un condicional cuando la condición se cumple o no se cumple. Esto se logra mediante ditintos mensajes que entienden los booleanos que representan la condición sobre la cual queremos decidir. 
+En el caso de Smalltalk, el uso de bloques es aún más generalizado, ya que al no existir estructuras de control y tener una sintaxis completamente basada en mensajes a objetos, los bloques se usan por ejemplo para poder saber qué hacer en un condicional cuando la condición se cumple o no se cumple. Esto se logra mediante ditintos mensajes que entienden los booleanos que representan la condición sobre la cual queremos decidir.
 
 Si en un workspace escribimos
 
-`pepita energia > 0 ifTrue: [ pepita come: 30 ]`
+```smalltalk
+pepita energia > 0 ifTrue: [ pepita come: 30 ]
+```
 
-Pensando en términos de objeto y mensaje (mensaje = selector + parámetros) qué está pasando acá???
+Pensando en términos de objeto y mensaje (mensaje = selector + parámetros), ¿qué está pasando acá?
 
 El objeto receptor del mensaje `ifTrue:` es el objeto que me devuelve `pepita energia > 0`, ese objeto puede ser true o false.
 
@@ -113,14 +115,15 @@ Entonces el objeto que tiene la responsabilidad de saber si el bloque debe o no 
 
 Siendo false la única instancia de la clase False y true la única instancia de la clase True, la implementación del método `ifTrue:` en cada una de las clases es
 
-```
+```smalltalk
 True >> ifTrue: unBloque
   "self apunta a true entonces queremos que se ejecute el bloque"
-  ^unBloque value 
+  ^unBloque value
   
 False >> ifTrue: unBloque
   "self apunta a false entonces NO queremos que se ejecute el bloque"
   ^nil
 ```
 
-O sea que las estructuras de control a las que estábamos acostumbrados por el paradigma estructurado, no son más que mensajes polimórficos :D Todo sigue las mismas reglas, objetos y mensajes
+O sea que las estructuras de control a las que estábamos acostumbrados por el paradigma estructurado, no son más que mensajes polimórficos :smile:. Todo sigue las mismas reglas, objetos y mensajes.
+
