@@ -18,14 +18,17 @@ Conceptos Transversales
 -   [Abstracción](abstraccion.html)
 -   [Declaratividad](declaratividad.html)
 -   [Expresividad](expresividad.html)
--   [Declaratividad vs. Expresividad](declaratividad-vs--expresividad.html)
 -   [Orden Superior](orden-superior.html)
 -   [Transparencia Referencial, Efecto de Lado y Asignación Destructiva](transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html)
--   [Diferencias entre polimorfismo, abstracción y encapsulamiento](diferencias-entre-polimorfismo--abstraccion-y-encapsulamiento.html)
+-   [Polimorfismo](polimorfismo.html)
 -   [Representación de información](representacion-de-informacion.html)
 -   [Estrategias de Evaluación](estrategias-de-evaluacion.html)
 -   [Esquemas de Tipado](esquemas-de-tipado.html)
 -   [Máquina Virtual](maquina-virtual.html)
+
+Y algunas discusiones interesantes que surgieron alrededor de estas ideas:
+-   [Declaratividad vs. Expresividad](declaratividad-vs--expresividad.html)
+-   [Diferencias entre polimorfismo, abstracción y encapsulamiento](diferencias-entre-polimorfismo--abstraccion-y-encapsulamiento.html)
 
 Material de lectura extra
 -------------------------
