@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Objetos factory: instanciando objetos
+title: Objetos factory - instanciando objetos
 featured: true
 categories: [oo, factory, instanciación, construcción, creación]
 ---
