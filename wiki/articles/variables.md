@@ -25,7 +25,32 @@ y debe interpretarse que cuando se evalúa esta línea, la variable referencia a
 
 Entonces, al asignar una variable **no estoy creando ningún objeto** ni estoy cambiando al objeto referenciado anteriormente por dicha variable, sólo se cambia cuál es el objeto al que está apuntando esa referencia.
 
-En Wollok, las referencias pueden declararse como variables (con la palabra reservada var) o como constantes (con la palabra reservada const). Las constantes están pensadas para ser usadas siempre que no se espere que la referencia pueda cambiar de valor, con lo cual intentar asignar una constante luego de su inicialización no está permitido.
+### var y const
+En Wollok, las referencias pueden declararse como variables (con la palabra reservada `var`) o como constantes (con la palabra reservada `const`). Las constantes están pensadas para ser usadas siempre que no se espere que la referencia pueda cambiar de valor, con lo cual intentar asignar una constante luego de su inicialización no está permitido.
+
+```scala
+var edad = 15
+const iva = 21
+edad = 16 // esto anda perfecto
+iva = 19 // esto tira error en tiempo de compilación
+```
+
+Error común: ¿qué significa "cambiar un objeto"? 
+- ¿Lo cambio **por otro**?
+- ¿O le cambio **sus atributos**?
+
+Miremos el siguiente ejemplo:
+```scala
+const laPreferida = pepita // atentos al const
+laPreferida.volar() // ¿Qué sucede en este caso? ¿Da error? 
+laPreferida = pepona // ¿Y en este caso?
+```
+
+`laPreferida.volar()` no da error. Esto es porque al enviar el mensaje `volar()`, `laPreferida` (que apunta al mismo objeto que `pepita`) está cambiando su **estado interno**, su energía. ¡Pero la **flecha** `laPreferida` no se modifica! Se modifica sólo la energía de pepita al volar.
+
+En cambio, en `laPreferida = pepona` sí hay un error de compilación. Estoy intentando modificar a dónde apunta `laPreferida`, pero como esa referencia es `const` nunca podrá dejar de apuntar a pepita.
+
+Es importante entender que `const laPreferida` **no significa que el objeto no pueda modificar su estado interno, sino que no puedo hacer que la flecha laPreferida apunte a otro objeto**.
 
 ## Inicialización
 
