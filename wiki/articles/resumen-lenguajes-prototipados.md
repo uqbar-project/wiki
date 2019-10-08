@@ -5,8 +5,6 @@ featured: true
 categories: [oo, prototipos, self, ioke, javascript, js, ecmascript]
 ---
 
-# Resumen Lenguajes OO Prototyped-based
-
 > **Advertencia:** esto puede ser un poco fumado.
 
 Hemos trabajado hasta aquí la noción de objeto como la primera forma de definir conceptos, agrupar comportamiento y encapsular estado.
