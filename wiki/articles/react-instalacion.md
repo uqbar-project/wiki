@@ -18,9 +18,19 @@ Si ya estuviste trabajando con Angular estos pasos no son necesarios, pero convi
 
 ## Específicos de React
 
+### npx
+
+npx permite ejecutar paquetes binarios de npm mediante un command-line interface, y se instala con npm
+
+```bash
+npm install -g npx
+```
+
+### Plugins Visual Studio Code
+
 Dentro de Visual Studio Code, los plugins que recomendamos para trabajar con React son:
 
-- **ESLint**: dbaeumer.vscode-eslint. En todos los proyectos deberías tener en el directorio raíz el archivo .eslintrc.json con la siguiente configuración
+- [**ESLint**: dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). En todos los proyectos deberías tener en el directorio raíz el archivo .eslintrc.json con la siguiente configuración
 
 ```json
 {
@@ -39,12 +49,11 @@ Dentro de Visual Studio Code, los plugins que recomendamos para trabajar con Rea
 }
 ```
 
-- VS Code ES7 React/Redux/React-Native/JS snippets, o cualquier conjunto de comandos rápidos para Visualt Studio Code
-- npx, que se instala con npm
+- VS Code ES7 React/Redux/React-Native/JS snippets, o cualquier conjunto de comandos rápidos para Visual Studio Code
 
-```bash
-npm install -g npx
-```
+- [JEST](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest): que permite integrar en VSC los test unitarios que vamos a ejecutar con Jest.
+
+- [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner): para ejecutar o debuggear tests unitarios contra la terminal (cuando tengamos muchos tests y el primer plugin resulte engorroso).
 
 ## Crear un proyecto React de cero
 
