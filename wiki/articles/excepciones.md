@@ -50,7 +50,7 @@ Otros errores surgen del uso del programa, ya que pueden darse situaciones que l
 Lanzando Excepciones
 --------------------
 
-En Wollok la forma más fácil de lanzar una excepción es mediante un mensaje a self (en este caso `error(mensaje)`) que todos los objetos entienden. Por ejemplo:
+En Wollok la forma más fácil de lanzar una excepción es mediante un mensaje a self (en este caso `error(descripcion)`) que todos los objetos entienden. Por ejemplo:
 
 ```Wollok
 object pepita {
@@ -120,7 +120,7 @@ Acá entra en juego nuevamente la jerarquía de clases de excepción. En vez de 
 class EnergiaInsuficienteException inherits DomainException {}
 ```
 
-...y luego hacer algo así en Wollok `throw new EnergiaInsuficienteException(message = "Energía insuficiente para volar los kilómetros requeridos")`.
+...y luego hacer algo así en el método `vola(kms)` de pepita: `throw new EnergiaInsuficienteException(message = "Energía insuficiente para volar los kilómetros requeridos")`.
 
 Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe. Por ejemplo:
 
@@ -147,3 +147,12 @@ Estrategias para manejar excepciones
 - Atraparla, hacer algo y continuar con el flujo normal de ejecución.
 - Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer volviendo a usar `throw` usando la excepcion atrapada en el bloque que maneja el problema.
 - Atraparla y lanzar otra más adecuada agregando más información del problema. Las excepciones además de un mensaje descriptivo pueden tener asociada una *causa* que es otra excepción y sirve justamente para los casos en los cuales se usa esta estrategia. Si vemos stacktrace completo de una excepción que tiene una instancia de otra excepción como causa, podremos notar que se incluye la información de ambas excepciones, sin perder información por el camino.
+
+¿Donde es común atrapar excepciones?
+------------------------------------
+
+Lo más usual es que las excepciones no se atrapen en el código de nuestros objetos de dominio, sino mucho más lejos, en unos pocos lugares puntuales. Por ejemplo, si tenemos un sistema con una interfaz gráfica que es la que el usuario final usa para interactual, vamos a querer que en esa interfaz se muestre un mensaje razonable para que el usuario vea. Por ejemplo, si el problema está relacionado con alguna acción incorrecta por parte del usuario, lo ideal sería comunicársela de modo que pueda entender el problema y corregirlo; si en cambio es un problema inesperado sobre el cual el usuario no puede hacer nada (un problema del programa en sí, no del uso), se le podría mostrar otro tipo de mensaje para que sepa que hubo un problema y también informar del problema a los desarrolladores para que puedan analizarlo y trabajar sobre la causa.
+
+En las herramientas de testeo que **usan** nuestro código también de seguro se están atrapando las excepciones que se lancen al ejecutar nuestra lógica, lo cual lleva a que se reporte adecuadamente si las pruebas pasaron, si falló una aserción o si hubo un error inesperado, y la información de esas excepciones que se atraparon debería poder ser vista por quien corre las pruebas.
+
+Eso no quiere decir que nunca se atrapen excepciones dentro del modelo, sin embargo hay que entender que no es tan común, y es importante no abusar de estas herramientas, ya que podrían traer más problemas que soluciones.
