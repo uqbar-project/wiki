@@ -30,7 +30,7 @@ object prueba {
   }
   
   method msj2(){
-    error.throwWithMessage("Todo mal!")
+    self.error("Todo mal!")
     return "Esto no se va a ejecutar nunca"
   }
   
@@ -50,57 +50,35 @@ Otros errores surgen del uso del programa, ya que pueden darse situaciones que l
 Lanzando Excepciones
 --------------------
 
-En Wollok la forma más fácil de lanzar una excepción (de tipo Exception) es usando el WKO error como se mostró en el ejemplo anterior. Otra estrategia típica, que podemos encontrar en Smalltalk, es mediante un mensaje a self (en este caso `error:`) que está definido en Object y por ende todos los objetos entienden. Por ejemplo:
-
-**Wollok**
+En Wollok la forma más fácil de lanzar una excepción es mediante un mensaje a self (en este caso `error(mensaje)`) que todos los objetos entienden. Por ejemplo:
 
 ```Wollok
 object pepita {
   var energia = 100
   method vola(unosKms){
     if(energia < unosKms){
-      error.throwWithMessage("No me da la nafta")
+      self.error("Energía insuficiente para volar los kilómetros requeridos")
     }
     energia = energia - unosKms
   }
 }
 ```
 
-**Smalltalk**
-
-```Smalltalk
-pepita >> vola: unosKms
-  energia < unosKms
-    ifTrue: [self error: 'No me da la nafta'].
-  energia := energia - unosKms 
-```
-
 En el ejemplo vemos que si la energía de pepita es menor a la cantidad de kilómetros pasados por parámetro, la operación no debería realizarse porque quedaría con energía negativa. Para evitar que eso pase se lanza el error con una descripción simpática para que el usuario o el desarrollador (dependiendo de si debería o no llegarse a esa situación) entienda qué fue lo que pasó. Lo interesante es que la línea que modifica la energía sólo llega a ejecutarse si energia >= unosKms.
 
-Otra forma de lanzar excepciones es usando clases pertenecientes a una jerarquía particular, que son de tipo excepción. Los ejemplos anteriores podrían reescribirse de la siguiente forma:
-
-**Wollok**
+Otra forma de lanzar excepciones es usando clases pertenecientes a una jerarquía particular, que son de tipo excepción. El ejemplo anterior podría reescribirse de la siguiente forma, usando `DomainException` que es el mismo tipo de excepción que usa el mensaje error por atrás y hereda de la clase `Exception`:
 
 ```Wollok
 object pepita {
   var energia = 100
   method vola(unosKms){
     if(energia < unosKms){
-      throw new Exception("No me da la nafta")  // se usa la palabra reservada throw con la excepción a lanzar
+      throw new DomainException(message = "Energía insuficiente para volar los kilómetros requeridos")  // se usa la palabra reservada throw con la excepción a lanzar
     }
     energia = energia - unosKms
   }
   ...
 }
-```
-
-**Smalltalk**
-
-```Smalltalk
-pepita >> vola: unosKms
-  energia < unosKms
-    ifTrue: [Error signal: 'No me da la nafta']. "se le manda un mensaje a la clase que se encarga de romper"
-  energia := energia - unosKms 
 ```
 
 Esto así como está no tiene ninguna ventaja sobre lo anterior, que era bastante más bonito y simple. Para que tenga sentido, tenemos que pensar en este problema en un contexto más amplio...
@@ -110,68 +88,62 @@ Esto así como está no tiene ninguna ventaja sobre lo anterior, que era bastant
 
 Algunos errores pueden evitarse realizando validaciones previas, pero no siempre es posible o deseable usar este enfoque. Entonces, una vez que se produce el error tenemos que tener una forma de recuperarnos del mismo para que el programa no termine con excepción.
 
-Lo que deberíamos hacer en aquellos lugares en donde sabemos qué hacer ante un problema (que idealmente son muy pocos) es atrapar la excepción que causó el problema y evaluar un determinado código para seguir adelante de forma correcta. Para eso primero tenemos que saber qué parte del código a ejecutar es el que podría terminar en excepción, luego qué tipo de error queremos tratar y finalmente qué se debería hacer al respecto. El siguiente código va a pedirle a pepita que vuele, que puede romperse y supongamos que la forma de reaccionar ante ese problema según el requerimiento sea darle de comer para que no se muera:
+Lo que deberíamos hacer en aquellos lugares en donde sabemos qué hacer ante un problema (que idealmente son muy pocos) es atrapar la excepción que causó el problema y evaluar un determinado código para seguir adelante de forma correcta. Para eso primero tenemos que saber qué parte del código a ejecutar es el que podría terminar en excepción, luego qué tipo de error queremos tratar y finalmente qué se debería hacer al respecto.
 
-**Wollok**
+El siguiente código va a pedirle a pepita que vuele, que puede romperse y supongamos que la forma de reaccionar ante alguna excepción según el requerimiento sea darle de comer para que no se muera:
 
 ```Wollok
 try {
   pepita.vola(100)
-} catch e:Exception {
+} catch e : Exception {
   pepita.come(50)
 }
 ```
 
-**Smalltalk**
+Un problema que tiene esta solución es que para cualquier problema se le va a dar de comer a pepita, si la energía de pepita no estuviera inicializada y el error surge de intentar tratar a la nada como un número, o si pepita no entiende el mensaje para volar, también resolvería el problema con el bloque que le da de comer en vez de romperse, de modo que sepamos que el problema existe. Eso lógicamente no es correcto.
 
-```Smalltalk
-[ pepita vola: 100 ] 
-  on: Error do: [:error | pepita come: 50 ]
+Considerando que el mensaje `self.error(descripcion)` lanza una excepción más particular que Exception, una primer mejora que se puede hacer es acotar ante qué tipo de error queremos darle de comer a pepita:
+
+```Wollok
+try {
+  pepita.vola(100)
+} catch e : DomainException {
+  pepita.come(50)
+}
 ```
 
-Un problema que tiene esta solución es que para cualquier problema se le va a dar de comer a pepita, si la energía de pepita no estuviera inicializada y el error surge de intentar tratar a la nada como un número, o si pepita no entiende el mensaje para volar, también resolvería el problema con el bloque que le da de comer en vez de romperse, de modo que sepamos que el problema existe. Y si quiero hacer cosas distintas ante problemas distintos?
+Eso va a evitar que nos recuperemos incorrectamente de errores como ser mensajes no entendidos, ya que no son de tipo DomainException, sin embargo sería interesante poder refinarlo un poco más, para tener la certeza de que sólo vamos a estar manejando con este mecanismo las excepciones que surjan por tener energía insuficiente.
 
-Acá entra en juego lo de las clases de la jerarquía de excepción en vez de simplemente usar `self error: "..."` o el WKO `error`. Yo puedo tener clases propias que hereden de la clase de error genérica, que sean particulares del dominio en el que estoy trabajando y luego hacer algo así en Wollok `throw new NoSePuedeVolarError`, o en Smalltalk `NoSePuedeVolarError signal: 'No tengo suficiente energía para volar'`.
+Acá entra en juego nuevamente la jerarquía de clases de excepción. En vez de simplemente usar `self.error(descripcion)`, podríamos tener clases propias que hereden de la clase de excepción más apropiada (en este caso `DomainException` podría tener sentido):
+
+```Wollok
+class EnergiaInsuficienteException inherits DomainException {}
+```
+
+...y luego hacer algo así en Wollok `throw new EnergiaInsuficienteException(message = "Energía insuficiente para volar los kilómetros requeridos")`.
 
 Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe. Por ejemplo:
 
-**Wollok**
-
 ```Wollok
 try {
   pepita.vola(100)
-} catch e:NoSePuedeVolarError {
+} catch e:EnergiaInsuficienteException {
   pepita.come(50)
 }
-```
-
-**Smalltalk**
-
-```Smalltalk
-[ pepita vola: 100 ] 
-  on: NoSePuedeVolarError do: [:error | pepita come: 50 ]
 ```
 
 También, si estamos testeando podemos verificar que el resultado de ejecutar algo sea no poder volar:
 
-**Wollok**
-
 ```Wollok
-assert.throwsExceptionWithType(new NoSePuedeVolarError(), {pepita.vola(100)})
+assert.throwsExceptionWithType(new EnergiaInsuficienteException(), {pepita.vola(100)})
 ```
 
-**Smalltalk**
-
-```Smalltalk
-self should: [ pepita vola: 100] raise: NoSePuedeVolarError
-```
-
-Al usar `throwsExceptionWithType` o `should:raise:` el test va a dar verde exclusivamente si el bloque al ejecutarse lanza una excepcion cuya clase sea NoSePuedeVolarError o alguna subclase de la misma. Si el error que lanza ejecutar ese bloque es por ejemplo que un objeto no entendió un mensaje como se explicó antes, el test daría rojo :D
+Al usar `throwsExceptionWithType` el test va a dar verde exclusivamente cuando el bloque al ejecutarse lanza una excepcion cuya clase sea `EnergiaInsuficienteException` o alguna subclase de la misma. Si el error que lanza ejecutar ese bloque es por ejemplo que un objeto no entendió un mensaje como se explicó antes, el test no va a dar verde, y es exactamente lo que necesitamos.
 
 Estrategias para manejar excepciones
 ------------------------------------
 
 - La forma por excelencia de lidiar con una excepción es **no hacer nada!!**. La mayoría de las veces no tenemos la capacidad de recuperarnos del problema en el mismo lugar donde se produce, lo más sano es dejarla burbujear hasta el punto en donde sí haya algo para hacer al respecto.
 - Atraparla, hacer algo y continuar con el flujo normal de ejecución.
-- Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer volviendo a usar `throw` en Wollok o en Smalltalk mandando `signal` a la excepcion atrapada en el bloque que maneja el problema.
-- Atraparla y lanzar otra más adecuada agregando más información del problema.
+- Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer volviendo a usar `throw` usando la excepcion atrapada en el bloque que maneja el problema.
+- Atraparla y lanzar otra más adecuada agregando más información del problema. Las excepciones además de un mensaje descriptivo pueden tener asociada una *causa* que es otra excepción y sirve justamente para los casos en los cuales se usa esta estrategia. Si vemos stacktrace completo de una excepción que tiene una instancia de otra excepción como causa, podremos notar que se incluye la información de ambas excepciones, sin perder información por el camino.
