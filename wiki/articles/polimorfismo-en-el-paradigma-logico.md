@@ -61,15 +61,22 @@ Con esto podemos realizar la consulta que queríamos de esta forma:
 ?- forall(vehiculo(Vehiculo), esViejo(Vehiculo)).
 ```
 
-Podemos decir entonces que el predicado polimórfico es esViejo/1, porque funciona con distintos tipos de vehiculos, y quien lo aprovecha es la consulta del forall que no necesita hacer distinciones sobre los tipos de vehículos.
+Podemos decir entonces que el predicado polimórfico es esViejo/1, porque funciona con distintos tipos de vehiculos, y quien lo aprovecha es la consulta del forall que no necesita hacer distinciones sobre los tipos de vehículos, unificando toda la estructura con la variable `Vehiculo`.
 
-Es importante notar que modelar a los vehículos con functores nos permite tener individuos más complejos que si sólo ponemos
+Es importante notar que modelar los vehículos con functores nos permite tener individuos más complejos a que si tuviéramos directamente los datos en el predicado:
 
 ```Prolog
 vehiculo(auto,"A2000").
 ```
 
-Y además nos permite usar el mismo predicado (vehiculo/1 en este caso) para todos los tipos de vehículos, lo cual se aprovecha principalmente con el camión que tiene año y kilometraje, y al tener distinta cantidad de valores afectaría directamente a la aridad del predicado (por más que se llamen igual, si la cantidad de parámetros es distinta, es otro predicado, ya que no hay forma de consultarlos a la vez).
+Y además nos permite usar el mismo predicado (vehiculo/1 en este caso) para todos los tipos de vehículos, lo cual se aprovecha principalmente con el camión que tiene año y kilometraje:
+
+```Prolog
+vehiculo(auto,"A2000").            % vehiculo/2
+vehiculo(camion, 12000, 2005).     % vehiculo/3
+```
+
+Al tener distinta cantidad de valores afecta directamente a la aridad. Eso nos llevaría a trabajar con más de un predicado para la misma relación, que era el problema original. (Por más que se llamen igual, si la cantidad de parámetros es distinta, es otro predicado, ya que no hay forma de consultarlos a la vez).
 
 ## Errores comunes
 
@@ -118,7 +125,7 @@ precio(peluche(Tamanio),Precio):-
 
 ### Intento poner una variable en el nombre del functor
 
-Supongamos que tenemos la siguiente base de conocimiento:
+Supongamos que tenemos un predicado que relaciona una patente con un vehículo, como la siguiente base de conocimiento:
 
 ```Prolog
 vehiculo(opp564, camion(mercedes,2014)).
@@ -126,11 +133,11 @@ vehiculo(agt445, auto(504,1995)).
 vehiculo(mmr444, camion(scania,2010)).
 ```
 
-Lo siguiente es **incorrecto**:
+Y quisiéramos _saber las patentes de los autos anteriores al 2000_. Lo siguiente es **incorrecto**:
 
 ```Prolog
-esViejo(Patente):-
-   vehiculo(Patente,Tipo(_,Anio)),
+patenteDeAutoInteresante(Patente):-
+   vehiculo(Patente, Tipo(_,Anio)),
    Anio < 2000.
 ```
 
@@ -142,30 +149,56 @@ vehiculo(ert434, lancha(2017,yamaha)). % El orden es otro
 vehiculo(dfg345, karting(rojo)). % ¡Y puede ser que no incluya la información del año y haya que hacer otra cosa!
 ```
 
-La siguiente solución sería la correcta, porque arregla todos los problemas mencionados arriba:
+Por lo tanto, lo que deberíamos hacer es obtener el dato de año de alguna otra manera...
+
+#### Relaciones que repiten lógica
+
+... una forma podría ser relacionando el año con la patente:
 
 ```Prolog
-esViejo(Patente):-
+patenteDeAutoInteresante(Patente):-
+   anioPatente(Patente, Anio),
+   Anio < 2000.
+```
+
+El problema está en que estamos obligados a relacionar la patente con el vehículo para saber el año, repetida en cada cláusula de `anioPatente/2`:
+
+```Prolog
+anioPatente(Patente, Anio):-
+   vehiculo(Patente, moto(Anio)).
+
+anioPatente(Patente, Anio):-
+   vehiculo(Patente, camion(_, Anio)).
+   
+anioPatente(Patente, Anio):-
+   vehiculo(Patente, lancha(Anio, _)).
+```
+
+El problema está en que estamos relacionando la patente con un año, cuando eso _depende del vehículo_.
+
+![relaciones](https://user-images.githubusercontent.com/4098184/67187242-2c0f9580-f3c0-11e9-8bec-888d4b2280dd.png)
+
+#### Una posible solución
+
+La siguiente solución arregla todos los problemas mencionados arriba:
+
+```Prolog
+patenteDeAutoInteresante(Patente):-
    vehiculo(Patente,Vehiculo),
-   anio(Vehiculo,Anio),
+   anioVehiculo(Vehiculo,Anio),
    Anio < 2000.
    
-anio(camion(_,Anio),Anio).
-anio(auto(_,Anio),Anio).
-anio(moto(Anio),Anio).
-anio(lancha(Anio,_),Anio).
-anio(karting(Color),Anio):- colorDelAnio(Color,Anio).
+anioVehiculo(camion(_,Anio),Anio).
+anioVehiculo(auto(_,Anio),Anio).
+anioVehiculo(moto(Anio),Anio).
+anioVehiculo(lancha(Anio,_),Anio).
+anioVehiculo(karting(Color),Anio):- colorDelAnio(Color,Anio).
 
 colorDelAnio(rojo,2010).
 colorDelAnio(verde,1990).
 colorDelAnio(azul,2015).
 ```
 
-De esta forma puedo meter **los functores con la forma que yo quiera** , y aún así mi predicado `esViejo` **no cambia**. Esa es la gran ventaja del polimorfismo. Lo único que tengo que hacer es definir el predicado `anio` para ese nuevo tipo de functor, y ya todo anda sin modificar código existente.
+De esta forma se evita repetir lógica creando relaciones acordes a los datos de los individuos, aprovechando el polimorfismo en `patenteDeAutoInteresante/1` al unificar toda la estructura con `Vehiculo` (sin iportar su forma) y recién haciendo pattern matching cuando es necesario, en `anioVehiculo/2`. 
 
-```Prolog
-esViejo(Patente):-
-   vehiculo(Patente,Vehiculo),
-   anio(Vehiculo,Anio),
-   Anio < 2000.
-```
+Así puedo meter **los functores con la forma que yo quiera** , y aún así mi predicado `patenteDeAutoInteresante/1` **no cambia**. Esa es la gran ventaja del polimorfismo. Lo único que tengo que hacer es definir el predicado `anioVehiculo/2` para ese nuevo tipo de functor, y ya todo anda ;)
