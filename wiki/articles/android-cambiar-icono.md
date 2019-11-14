@@ -31,7 +31,7 @@ La actividad principal define una toolbar
 
 El id/toolbar se asigna en el método onCreate() al heredar de AppCompatActivity:
 
-```kt
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState)
   setContentView(R.layout.activity_pelicula_app_bar)
@@ -61,7 +61,7 @@ Primero lo más sencillo: cambiaremos el nombre de la aplicación.
 
 ```xml
 <resources>
-  <string name="app_name">Conversor de medidas</string> 
+  <string name="app_name">Conversor de medidas</string>
 ```
 
 Otra opción es definir una nueva constante y apuntar la propiedad android:label de la activity principal de nuestra aplicación hacia esta constante, en todo caso dejamos esta tarea al lector.
@@ -120,7 +120,7 @@ Ejecutamos la aplicación y nos aparece un mensaje de error en el LogCat:
 
 Ajustamos entonces el método onCreate, para asignar manualmente el valor del textview (_ConversorActivity.java_):
 
-```kt
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState)
   setContentView(R.layout.activity_pelicula_app_bar)
