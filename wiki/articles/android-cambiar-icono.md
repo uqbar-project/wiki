@@ -46,6 +46,7 @@ En nuestro AndroidManifest.xml definimos el label de la aplicación, mediante un
 <activity
   android:name=".ConversorActivity"
   android:label="@string/app_name"
+  >
 ```
 
 Esa constante entonces, debemos verla en el archivo _res/values/strings.xml_:
