@@ -150,10 +150,10 @@ Te dejamos para que te bajes una serie de ejemplos que sirven como guía para in
 
 - [Conversor básico de millas a kilómetros](https://github.com/uqbar-project/eg-conversor-android-studio): primera activity y binding manual
   - [versión con Data Binding](https://github.com/uqbar-project/eg-conversor-binding-kotlin)
-- Listado de películas básico (hay un branch específico por si querés ver cómo se trabajaba hasta la SDK 26 Oreo)
-  - y la versión REST (hay otro branch para ver cómo se trabajaba en REST hasta la SDK 26 Oreo)
-- Primer ejemplo básico de un servicio REST
-- Préstamos de libros (y de cosas) en base a los contactos del celular
+- [Listado de películas básico](https://github.com/uqbar-project/eg-peliculas-android-kotlin)
+  - y [la versión REST](https://github.com/uqbar-project/eg-peliculas-android-kotlin/tree/rest) (hay otro branch para ver cómo se trabajaba en REST hasta la SDK 26 Oreo)
+- [Primer ejemplo básico de un servicio REST](https://github.com/uqbar-project/eg-hola-mundo-android-kotlin)
+- [Préstamos de libros (y de cosas)](https://github.com/uqbar-project/eg-prestamos-android-kotlin) en base a los contactos del celular
 
 ### Java
 
