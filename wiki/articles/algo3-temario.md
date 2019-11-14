@@ -143,6 +143,7 @@ Te dejamos para que te bajes una serie de ejemplos que sirven como guía para in
 ## Material
 
 - [Introducción al desarrollo con Android](android-introduccion.md)
+- [Ciclo de vida de una actividad Android](android-ciclo-de-vida.md)
 
 ## Ejemplos
 
@@ -163,6 +164,13 @@ Podés hacer [esta búsqueda](https://github.com/uqbar-project?utf8=%E2%9C%93&q=
 
 - [Carga de Productos](https://github.com/algo3-unsam/eg-productos-ionic): se integra con el reconocedor de código de barras del celular.
 - [TODO List](https://github.com/uqbar-project/eg-todolist-ui-ionic) o lista de cosas para hacer, versión histórica en Ionic 1
+
+### Ejemplos de Internet
+
+- [Ejemplos de la página Developer Android](https://developer.android.com/samples)
+- [Catálogo de aplicaciones Android de Java2S](http://www.java2s.com/Code/Android/CatalogAndroid.htm)
+- [Ejemplos de Google](https://code.google.com/archive/p/apps-for-android/)
+- [Repositorios con ejemplos en Googlesource de Android](https://android.googlesource.com/)
 
 # Unidad 7 - Cierre y temas BONUS
 
