@@ -79,7 +79,7 @@ Por otro lado, tiene las ventajas conocidas de las aplicaciones web: administrac
 
 ### Desarrollo nativo
 
-En el desarrollo nativo se trabaja utilizando la misma tecnología que provee el dispositivo en el cual se trabaja, esto incluye no sólo iOS | Blackberry | Windows Phone | Android sino diferentes tipos de dispositivo y versiones de sistema operativo.
+En el desarrollo nativo se trabaja utilizando la misma tecnología que provee el dispositivo en el cual se trabaja, esto incluye no sólo iOS, Windows Phone, Android sino diferentes tipos de dispositivo y versiones de sistema operativo.
 
 Mientras que esto acopla la aplicación a la plataforma utilizada, y requiere de un desarrollador especializado en esa tecnología, hay dos grandes ventajas al respecto:
 

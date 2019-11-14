@@ -144,6 +144,26 @@ Te dejamos para que te bajes una serie de ejemplos que sirven como guía para in
 
 - [Introducción al desarrollo con Android](android-introduccion.md)
 
+## Ejemplos
+
+### Kotlin
+
+- [Conversor básico de millas a kilómetros](https://github.com/uqbar-project/eg-conversor-android-studio): primera activity y binding manual
+  - [versión con Data Binding](https://github.com/uqbar-project/eg-conversor-binding-kotlin)
+- Listado de películas básico (hay un branch específico por si querés ver cómo se trabajaba hasta la SDK 26 Oreo)
+  - y la versión REST (hay otro branch para ver cómo se trabajaba en REST hasta la SDK 26 Oreo)
+- Primer ejemplo básico de un servicio REST
+- Préstamos de libros (y de cosas) en base a los contactos del celular
+
+### Java
+
+Podés hacer [esta búsqueda](https://github.com/uqbar-project?utf8=%E2%9C%93&q=android&type=&language=java) en los repositorios de la organización Uqbar
+
+### Ionic
+
+- [Carga de Productos](https://github.com/algo3-unsam/eg-productos-ionic): se integra con el reconocedor de código de barras del celular.
+- [TODO List](https://github.com/uqbar-project/eg-todolist-ui-ionic) o lista de cosas para hacer, versión histórica en Ionic 1
+
 # Unidad 7 - Cierre y temas BONUS
 
 ## Material histórico
