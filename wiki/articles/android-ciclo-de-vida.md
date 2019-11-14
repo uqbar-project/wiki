@@ -10,6 +10,8 @@ Si hablamos del ciclo de vida de las activities de una aplicación Android, tene
 
 [Fuente](http://www.linuxtopia.org/online_books/android/devguide/guide/topics/fundamentals.html)
 
+___
+
 ![Ciclo de vida secuencial](../../img/wiki/android_life_cycle_2.png)
 
 [Fuente](http://www.tutorialspoint.com/android/android_acitivities.htm)
