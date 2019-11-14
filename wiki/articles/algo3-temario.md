@@ -143,7 +143,8 @@ Te dejamos para que te bajes una serie de ejemplos que sirven como guía para in
 ## Material
 
 - [Introducción al desarrollo con Android](android-introduccion.md)
-- [Ciclo de vida de una actividad Android](android-ciclo-de-vida.md)
+- [Cambiando el ícono / título de la app](android-cambiar-icono.md)
+- [Ciclo de vida de las actividades](android-ciclo-de-vida.md)
 
 ## Ejemplos
 
