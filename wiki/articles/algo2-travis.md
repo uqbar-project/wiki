@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Travis
+title: Travis para Algoritmos 2
 categories: [travis, ci, integracion, continua]
 featured: true
 ---
