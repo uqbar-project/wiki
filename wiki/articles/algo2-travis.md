@@ -1,6 +1,8 @@
 ---
 layout: article
-title: Travis para Algoritmos II
+title: Travis
+categories: [travis, ci, integracion, continua]
+featured: true
 ---
 
 ## Integración continua con Travis
