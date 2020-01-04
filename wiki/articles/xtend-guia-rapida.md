@@ -535,3 +535,10 @@ ventaNacional.cantidadKilos = 12
 ventaNacional.fechaVenta = new Date
 ventaNacional....
 ```
+
+## Links relacionados
+
+* [Colecciones](https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing)
+* [Intro a manejo de errores con excepciones](https://docs.google.com/document/d/1G0a9j-OA0rIEA5cdvEhIMbztJVo86ssvZKBK8HL9akg/edit?usp=sharing)
+* [Ejercicio del Monedero](https://docs.google.com/document/d/1vVW91adl0p-NxGNpe8fqmC_5YmBkrxaLDFKyZ0xZb9Y/edit?usp=sharing) para ver cómo interactúan la UI y el dominio a partir de errores del dominio y del sistema
+* [Testing](https://docs.google.com/document/d/11mVR-4wEZhlQMDEqrfQeYLypEsrSqXv98dr78SA0Oq4/edit?usp=sharing)

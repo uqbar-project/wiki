@@ -80,5 +80,5 @@ proyecto
 De esta manera, logramos mayor granularidad en la organización de nuestras clases.
 ____
 
-* [Sobre el control de versiones](xtend-amigandonos-git.html)
+* [Siguiente paso: Sobre el control de versiones](xtend-amigandonos-git.html)
 * [Volver al menú principal del entorno Xtend](xtend-principal.html)
