@@ -16,12 +16,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install build-essential patch
           sudo apt-get install ruby-dev zlib1g-dev liblzma-dev libgmp-dev cmake
-    # no longer necessary
-    # - run:
-    #     name: Setup nvm and npm
-    #     command: |
-    #       sudo npm install -g yarn
-    #       yarn
+    - run:
+        name: Setup nvm and npm
+        command: |
+          yarn install
     - run:
         name: Install Rake
         command: gem install rake
