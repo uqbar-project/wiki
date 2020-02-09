@@ -9,33 +9,11 @@ Queremos que un cliente nos pueda decir cuánto paga en total (propina + lo que 
 
 Sería posible resolver toda esta lógica (y la que esté por venir más adelante) con muchos ifs en el cliente, pero es posible modelarlo de otra forma: los diferentes humores del cliente podrían ser otros objetos separados que le ayuden a saber cuánta propina poner, y por su puesto ser polimórficos para que el cliente pueda delegar en ellos esta funcionalidad sin importar cuál sea su humor actual (objeto al cual referencia con algún atributo propio, como ser humor).
 
-#### Smalltalk
-
-```Smalltalk
-#Cliente
->> cuantoPaga: importeTotal 
-  ^importeTotal +  self cuantoDePropina: importeTotal 
->> cuantoDePropina: importeTotal 
-  ^humor cuantoDePropina: importeTotal 
-
-#Feliz
->> cuantoDePropina: importeTotal 
-  ^importeTotal * 1.25 
-
-#Enojado
->> cuantoDePropina: importeTotal 
-  ^0
-
-#Indiferente
->> cuantoDePropina: importeTotal
-  ^plataDelBolsillo
-```
-
 #### Wollok
 
-```scala
+```wollok
 class Cliente {
-  var humor
+  var property humor
   method cuantoPaga(importeTotal){
     return importeTotal + self.cuantoDePropina(importeTotal)
   }
@@ -56,6 +34,7 @@ class Enojado {
 }
 
 class Indiferente {
+  var property plataDelBolsillo
   method cuantoDePropina(importeTotal)
     return plataDelBolsillo
   }
@@ -69,17 +48,9 @@ Otra opción podría haber sido poner la `plataDelBolsillo` en el cliente y para
 - Que la instancia del objeto Indiferente conozca al Cliente y le pida su `plataDelBolsillo`
 - Que el cliente se pase por parámetro al pedirle a la estrategia cuánta propina pone, modificando el método para recibir dos parámetros, por ejemplo:
 
-#### Smalltalk
-
-```Smalltalk
-#Cliente
->> cuantoDePropina: importeTotal 
-  ^humor cuantoDePropina: importeTotal para: self
-```
-
 #### Wollok
 
-```scala
+```wollok
 class Cliente {
   method cuantoDePropina(importeTotal){
     return humor.cuantoDePropinaPara(importeTotal,self)
@@ -91,7 +62,7 @@ Ante la necesidad de poder cambiar el humor de la persona, separamos a la Person
 
 Entonces en vez de tener un objeto que resuelve todo el problema tenemos un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración del cliente y el uso de [polimorfismo](polimorfismo.html).
 
-Es importante notar que **no sería válido modelar una solución a este problema basada en herencia** teniendo personas felices, indiferentes y enojadas, ya que una vez que la persona es instanciada como feliz no es posible cambiarla a indiferente o enojada, ya que implica cambiar su clase que no se puede hacer.
+Es importante notar que **no sería válido modelar una solución a este problema basada en herencia** teniendo personas felices, indiferentes y enojadas, ya que una vez que la persona es instanciada como feliz no es posible cambiarla a indiferente o enojada, ya que implicaría cambiar su clase que **no se puede hacer**.
 
 Entonces, la composición en objetos es simplemente una relación de conocimiento entre dos objetos (por ejemplo, el cliente conoce a su humor) donde el objeto conocido puede cambiarse por otro que sea polimórfico para el que los conoce.
 
@@ -110,45 +81,9 @@ Avanzando en el relevamiento, nos dicen lo siguiente:
 
 La codificación propuesta en el enunciado es:
 
-#### Smalltalk
-
-```Smalltalk
-#VendedorEspecialista
- >>premio
-   ^ self class premio
-
-#VendedorSalon
- >>premio
-   ^ premio
-
-#VendedorSalonSenior
- >>premio
-   ^ super premio + self adicionalJunior
- >>adicionalJunior
-   ^ junior totalVentas * 0.03.
-
-#VendedorSalonJunior
- >>totalVentas
-   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
- >>premio
-   ^ super premio * (1- self descuento)
-
-#VendedorEspecialistaSenior
- >>premio
-   ^ super premio + self adicionalJunior.
- >>adicionalJunior
-   ^ junior totalVentas * 0.03.
-
-#VendedorEspecialistaJunior
- >>totalVentas
-   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
- >>premio
-   ^ super premio * (1- self descuento)
-```
-
 #### Wollok
 
-```scala
+```wollok
 class VendedorEspecialista {
   const premio = 100
   method premio(){
@@ -209,37 +144,9 @@ La solución propuesta tiene problemas que surgen por el mal uso de herencia. Lo
 
 **¿Cómo se soluciona este problema?** Si cambiamos el modelo para que la categoría (Junior o Senior) sea un objeto aparte que el vendedor conozca y delegamos en este objeto todo aquello que corresponda a ser senior o junior solucionamos ambos problemas a la vez, ya que el valor de las referencias sí puede ser cambiado en tiempo de ejecución, es sólo settear un atributo. Veamos cómo queda la nueva solución:
 
-#### Smalltalk
-
-```Smalltalk
-#Vendedor
- >>premio
-   ^ self categoria premioPara: self
- >>totalVentas
-   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
-
-#Senior
- >>premioPara: unVendedor
-   ^ unVendedor premioBase + self adicionalJuniorPara: unVendedor
- >>adicionalJuniorPara: unVendedor
-   ^ junior totalVentas * 0.03.
-
-#Junior
- >>premioPara: unVendedor
-   ^ unVendedor premioBase * (1- self descuento)
-
-#VendedorEspecialista
- >>premioBase
-   ^ self class premioBase
-
-#VendedorSalon
- >>premioBase
-   ^ premioBase
-```
-
 #### Wollok
 
-```scala
+```wollok
 class Vendedor {
   var categoria
   method premio(){
