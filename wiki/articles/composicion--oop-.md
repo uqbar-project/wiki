@@ -73,11 +73,11 @@ Cambiando herencia por composición
 
 El uso de composición en ocasiones es una solución muy elegante para problemas aparejados por el concepto de [Herencia](herencia.html), que pueden verse en el siguiente ejemplo tomado de un final de Paradigmas de Programación:
 
-El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio (todos los especialistas cobran el mismo monto) por cada venta mayor a 500 pesos. Los vendedores de salón cobran un premio (diferente para cada vendedor) si hacen más de 50 ventas "
-
-Avanzando en el relevamiento, nos dicen lo siguiente:
-
-"Para motivar las ventas en el equipo, decidimos incorporar un cambio: categorías senior y junior. Un vendedor senior tendrá a cargo a un junior. Un vendedor senior recibe como parte del premio un adicional correspondiente al 3% de la las ventas realizadas por la persona que tiene a cargo. Un Junior tiene un porcentaje de descuento en su premio, diferente para cada uno. Por otra parte, si un vendedor junior hace bien las cosas, con el tiempo puede pasar a ser senior" "
+> El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio de 100 pesos por cada venta mayor a 500 pesos. Los vendedores de salón cobran un premio (diferente para cada vendedor) si hacen más de 50 ventas "
+>
+> Avanzando en el relevamiento, nos dicen lo siguiente:
+>
+> "Para motivar las ventas en el equipo, decidimos incorporar un cambio: categorías senior y junior. Un vendedor senior tendrá a cargo a un junior. Un vendedor senior recibe como parte del premio un adicional correspondiente al 3% de la las ventas realizadas por la persona que tiene a cargo. Un Junior tiene un porcentaje de descuento en su premio, diferente para cada uno. Por otra parte, si un vendedor junior hace bien las cosas, con el tiempo puede pasar a ser senior" 
 
 La codificación propuesta en el enunciado es:
 
@@ -85,13 +85,14 @@ La codificación propuesta en el enunciado es:
 
 ```wollok
 class VendedorEspecialista {
-  const premio = 100
+  const ventas = []
   method premio(){
-    return premio
+    return 100
   }
 }
 
 class VendedorSalon {
+  const ventas = []
   var premio
   method premio(){
     return premio
@@ -109,6 +110,7 @@ class VendedorSalonSenior inherits VendedorSalon {
 }
 
 class VendedorSalonJunior inherits VendedorSalon {
+  var descuento
   method totalVentas(){
     return ventas.sum({ venta => venta.monto() })
   }
@@ -128,6 +130,7 @@ class VendedorEspecialistaSenior inherits VendedorEspecialista {
 }
 
 class VendedorEspecialistaJunior inherits VendedorEspecialista {
+  var descuento
   method totalVentas(){
     return ventas.sum({ venta => venta.monto() })
   }
@@ -148,12 +151,27 @@ La solución propuesta tiene problemas que surgen por el mal uso de herencia. Lo
 
 ```wollok
 class Vendedor {
+  const ventas = []
   var categoria
+  
   method premio(){
     return categoria.premioPara(self)
   }
   method totalVentas(){
     return ventas.sum({ venta => venta.monto() })
+  }
+}
+
+class VendedorEspecialista inherits Vendedor {
+  method premioBase(){
+    return 100
+  }
+}
+
+class VendedorSalon inherits Vendedor {
+  var premioBase
+  method premioBase(){
+    return premioBase
   }
 }
 
@@ -168,27 +186,14 @@ class Senior {
 }
 
 class Junior {
+  var descuento
   method premioPara(unVendedor){
     return unVendedor.premioBase() * (1 - self.descuento())
   }
 }
-
-class VendedorEspecialista {
-  const premioBase = 100
-  method premioBase(){
-    return premioBase
-  }
-}
-
-class VendedorSalon {
-  var premioBase
-  method premioBase(){
-    return premioBase
-  }
-}
 ```
 
-**Disclaimer:** el mensaje \#totalVentas fue a parar al vendedor porque tenía sentido para todos, no sólo para los juniors, y era más simple pero para que fuera totalmente análoga podríamos tenerlo definido en \#Junior y delegar en la categoría. En caso de dudas siempre vale preguntar.
+**Disclaimer:** el método `totalVentas` se termina definiendo en la clase Vendedor porque tenía sentido para todos en este dominio, no sólo para los juniors. Para que fuera totalmente análoga podríamos tenerlo definido en Junior y delegar en la categoría, pero siendo que no es inválido que los vendedores lo definan, era más sencillo resolverlo de esta forma. En caso de dudas de dominio, siempre vale preguntar.
 
 Como se puede ver en el diagrama de clases de la solución con composición, para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una **[complejidad](atributos-de-calidad.html)** extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor **[flexibilidad](atributos-de-calidad.html)** del modelo.
 
