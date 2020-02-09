@@ -73,11 +73,11 @@ Cambiando herencia por composición
 
 El uso de composición en ocasiones es una solución muy elegante para problemas aparejados por el concepto de [Herencia](herencia.html), que pueden verse en el siguiente ejemplo tomado de un final de Paradigmas de Programación:
 
-> El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio de 100 pesos por cada venta mayor a 500 pesos. Los vendedores de salón cobran un premio (diferente para cada vendedor) si hacen más de 50 ventas "
+> El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio de 100 pesos por cada venta. Los vendedores de salón cobran un premio que se indica para cada vendedor."
 >
 > Avanzando en el relevamiento, nos dicen lo siguiente:
 >
-> "Para motivar las ventas en el equipo, decidimos incorporar un cambio: categorías senior y junior. Un vendedor senior tendrá a cargo a un junior. Un vendedor senior recibe como parte del premio un adicional correspondiente al 3% de la las ventas realizadas por la persona que tiene a cargo. Un Junior tiene un porcentaje de descuento en su premio, diferente para cada uno. Por otra parte, si un vendedor junior hace bien las cosas, con el tiempo puede pasar a ser senior" 
+> "Para motivar las ventas en el equipo, decidimos incorporar un cambio: categorías senior y junior. Un vendedor senior tendrá a cargo a un junior. Un vendedor senior recibe como parte del premio un adicional correspondiente al 3% de las ventas realizadas por la persona que tiene a cargo. Un Junior tiene un porcentaje de descuento en su premio. Por otra parte, si un vendedor junior hace bien las cosas, con el tiempo puede pasar a ser senior" 
 
 La codificación propuesta en el enunciado es:
 
@@ -87,7 +87,7 @@ La codificación propuesta en el enunciado es:
 class VendedorEspecialista {
   const ventas = []
   method premio(){
-    return 100
+    return 100 * ventas.length()
   }
 }
 
@@ -164,7 +164,7 @@ class Vendedor {
 
 class VendedorEspecialista inherits Vendedor {
   method premioBase(){
-    return 100
+    return 100 * ventas.length()
   }
 }
 
