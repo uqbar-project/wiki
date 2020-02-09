@@ -177,7 +177,7 @@ class VendedorSalon inherits Vendedor {
 
 class Senior {
   var junior
-  method premioPara(unVendedor{
+  method premioPara(unVendedor){
     return unVendedor.premioBase() + self.adicionalJuniorPara(unVendedor)
   }
   method adicionalJuniorPara(unVendedor){
@@ -195,7 +195,7 @@ class Junior {
 
 **Disclaimer:** el método `totalVentas` se termina definiendo en la clase Vendedor porque tenía sentido para todos en este dominio, no sólo para los juniors. Para que fuera totalmente análoga podríamos tenerlo definido en Junior y delegar en la categoría, pero siendo que no es inválido que los vendedores lo definan, era más sencillo resolverlo de esta forma. En caso de dudas de dominio, siempre vale preguntar.
 
-Como se puede ver en el diagrama de clases de la solución con composición, para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una **[complejidad](atributos-de-calidad.html)** extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor **[flexibilidad](atributos-de-calidad.html)** del modelo.
+Como se puede ver en el [diagrama de clases de la solución con composición](https://yuml.me/ba4c2042.png), para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una **[complejidad](atributos-de-calidad.html)** extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor **[flexibilidad](atributos-de-calidad.html)** del modelo.
 
 A modo de resumen rápido:
 
