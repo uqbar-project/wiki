@@ -11,7 +11,7 @@ Sería posible resolver toda esta lógica (y la que esté por venir más adelant
 
 #### Wollok
 
-```wollok
+```scala
 class Cliente {
   var property humor
   method cuantoPaga(importeTotal){
@@ -50,7 +50,7 @@ Otra opción podría haber sido poner la `plataDelBolsillo` en el cliente y para
 
 #### Wollok
 
-```wollok
+```scala
 class Cliente {
   method cuantoDePropina(importeTotal){
     return humor.cuantoDePropinaPara(importeTotal,self)
@@ -83,7 +83,7 @@ La codificación propuesta en el enunciado es:
 
 #### Wollok
 
-```wollok
+```scala
 class VendedorEspecialista {
   const ventas = []
   method premio(){
@@ -149,7 +149,7 @@ La solución propuesta tiene problemas que surgen por el mal uso de herencia. Lo
 
 #### Wollok
 
-```wollok
+```scala
 class Vendedor {
   const ventas = []
   var categoria
