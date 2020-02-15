@@ -9,33 +9,11 @@ Queremos que un cliente nos pueda decir cuánto paga en total (propina + lo que 
 
 Sería posible resolver toda esta lógica (y la que esté por venir más adelante) con muchos ifs en el cliente, pero es posible modelarlo de otra forma: los diferentes humores del cliente podrían ser otros objetos separados que le ayuden a saber cuánta propina poner, y por su puesto ser polimórficos para que el cliente pueda delegar en ellos esta funcionalidad sin importar cuál sea su humor actual (objeto al cual referencia con algún atributo propio, como ser humor).
 
-#### Smalltalk
-
-```Smalltalk
-#Cliente
->> cuantoPaga: importeTotal 
-  ^importeTotal +  self cuantoDePropina: importeTotal 
->> cuantoDePropina: importeTotal 
-  ^humor cuantoDePropina: importeTotal 
-
-#Feliz
->> cuantoDePropina: importeTotal 
-  ^importeTotal * 1.25 
-
-#Enojado
->> cuantoDePropina: importeTotal 
-  ^0
-
-#Indiferente
->> cuantoDePropina: importeTotal
-  ^plataDelBolsillo
-```
-
 #### Wollok
 
 ```scala
 class Cliente {
-  var humor
+  var property humor
   method cuantoPaga(importeTotal){
     return importeTotal + self.cuantoDePropina(importeTotal)
   }
@@ -56,6 +34,7 @@ class Enojado {
 }
 
 class Indiferente {
+  var property plataDelBolsillo
   method cuantoDePropina(importeTotal)
     return plataDelBolsillo
   }
@@ -68,14 +47,6 @@ Otra opción podría haber sido poner la `plataDelBolsillo` en el cliente y para
 
 - Que la instancia del objeto Indiferente conozca al Cliente y le pida su `plataDelBolsillo`
 - Que el cliente se pase por parámetro al pedirle a la estrategia cuánta propina pone, modificando el método para recibir dos parámetros, por ejemplo:
-
-#### Smalltalk
-
-```Smalltalk
-#Cliente
->> cuantoDePropina: importeTotal 
-  ^humor cuantoDePropina: importeTotal para: self
-```
 
 #### Wollok
 
@@ -91,7 +62,7 @@ Ante la necesidad de poder cambiar el humor de la persona, separamos a la Person
 
 Entonces en vez de tener un objeto que resuelve todo el problema tenemos un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración del cliente y el uso de [polimorfismo](polimorfismo.html).
 
-Es importante notar que **no sería válido modelar una solución a este problema basada en herencia** teniendo personas felices, indiferentes y enojadas, ya que una vez que la persona es instanciada como feliz no es posible cambiarla a indiferente o enojada, ya que implica cambiar su clase que no se puede hacer.
+Es importante notar que **no sería válido modelar una solución a este problema basada en herencia** teniendo personas felices, indiferentes y enojadas, ya que una vez que la persona es instanciada como feliz no es posible cambiarla a indiferente o enojada, ya que implicaría cambiar su clase que **no se puede hacer**.
 
 Entonces, la composición en objetos es simplemente una relación de conocimiento entre dos objetos (por ejemplo, el cliente conoce a su humor) donde el objeto conocido puede cambiarse por otro que sea polimórfico para el que los conoce.
 
@@ -102,61 +73,26 @@ Cambiando herencia por composición
 
 El uso de composición en ocasiones es una solución muy elegante para problemas aparejados por el concepto de [Herencia](herencia.html), que pueden verse en el siguiente ejemplo tomado de un final de Paradigmas de Programación:
 
-El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio (todos los especialistas cobran el mismo monto) por cada venta mayor a 500 pesos. Los vendedores de salón cobran un premio (diferente para cada vendedor) si hacen más de 50 ventas "
-
-Avanzando en el relevamiento, nos dicen lo siguiente:
-
-"Para motivar las ventas en el equipo, decidimos incorporar un cambio: categorías senior y junior. Un vendedor senior tendrá a cargo a un junior. Un vendedor senior recibe como parte del premio un adicional correspondiente al 3% de la las ventas realizadas por la persona que tiene a cargo. Un Junior tiene un porcentaje de descuento en su premio, diferente para cada uno. Por otra parte, si un vendedor junior hace bien las cosas, con el tiempo puede pasar a ser senior" "
+> El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio de 100 pesos por cada venta. Los vendedores de salón cobran un premio que se indica para cada vendedor."
+>
+> Avanzando en el relevamiento, nos dicen lo siguiente:
+>
+> "Para motivar las ventas en el equipo, decidimos incorporar un cambio: categorías senior y junior. Un vendedor senior tendrá a cargo a un junior. Un vendedor senior recibe como parte del premio un adicional correspondiente al 3% de las ventas realizadas por la persona que tiene a cargo. Un Junior tiene un porcentaje de descuento en su premio. Por otra parte, si un vendedor junior hace bien las cosas, con el tiempo puede pasar a ser senior" 
 
 La codificación propuesta en el enunciado es:
-
-#### Smalltalk
-
-```Smalltalk
-#VendedorEspecialista
- >>premio
-   ^ self class premio
-
-#VendedorSalon
- >>premio
-   ^ premio
-
-#VendedorSalonSenior
- >>premio
-   ^ super premio + self adicionalJunior
- >>adicionalJunior
-   ^ junior totalVentas * 0.03.
-
-#VendedorSalonJunior
- >>totalVentas
-   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
- >>premio
-   ^ super premio * (1- self descuento)
-
-#VendedorEspecialistaSenior
- >>premio
-   ^ super premio + self adicionalJunior.
- >>adicionalJunior
-   ^ junior totalVentas * 0.03.
-
-#VendedorEspecialistaJunior
- >>totalVentas
-   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
- >>premio
-   ^ super premio * (1- self descuento)
-```
 
 #### Wollok
 
 ```scala
 class VendedorEspecialista {
-  const premio = 100
+  const ventas = []
   method premio(){
-    return premio
+    return 100 * ventas.length()
   }
 }
 
 class VendedorSalon {
+  const ventas = []
   var premio
   method premio(){
     return premio
@@ -174,6 +110,7 @@ class VendedorSalonSenior inherits VendedorSalon {
 }
 
 class VendedorSalonJunior inherits VendedorSalon {
+  var descuento
   method totalVentas(){
     return ventas.sum({ venta => venta.monto() })
   }
@@ -193,6 +130,7 @@ class VendedorEspecialistaSenior inherits VendedorEspecialista {
 }
 
 class VendedorEspecialistaJunior inherits VendedorEspecialista {
+  var descuento
   method totalVentas(){
     return ventas.sum({ venta => venta.monto() })
   }
@@ -209,39 +147,13 @@ La solución propuesta tiene problemas que surgen por el mal uso de herencia. Lo
 
 **¿Cómo se soluciona este problema?** Si cambiamos el modelo para que la categoría (Junior o Senior) sea un objeto aparte que el vendedor conozca y delegamos en este objeto todo aquello que corresponda a ser senior o junior solucionamos ambos problemas a la vez, ya que el valor de las referencias sí puede ser cambiado en tiempo de ejecución, es sólo settear un atributo. Veamos cómo queda la nueva solución:
 
-#### Smalltalk
-
-```Smalltalk
-#Vendedor
- >>premio
-   ^ self categoria premioPara: self
- >>totalVentas
-   ^ ventas inject: 0 into: [ :total :venta | total + venta monto ].
-
-#Senior
- >>premioPara: unVendedor
-   ^ unVendedor premioBase + self adicionalJuniorPara: unVendedor
- >>adicionalJuniorPara: unVendedor
-   ^ junior totalVentas * 0.03.
-
-#Junior
- >>premioPara: unVendedor
-   ^ unVendedor premioBase * (1- self descuento)
-
-#VendedorEspecialista
- >>premioBase
-   ^ self class premioBase
-
-#VendedorSalon
- >>premioBase
-   ^ premioBase
-```
-
 #### Wollok
 
 ```scala
 class Vendedor {
+  const ventas = []
   var categoria
+  
   method premio(){
     return categoria.premioPara(self)
   }
@@ -250,9 +162,22 @@ class Vendedor {
   }
 }
 
+class VendedorEspecialista inherits Vendedor {
+  method premioBase(){
+    return 100 * ventas.length()
+  }
+}
+
+class VendedorSalon inherits Vendedor {
+  var premioBase
+  method premioBase(){
+    return premioBase
+  }
+}
+
 class Senior {
   var junior
-  method premioPara(unVendedor{
+  method premioPara(unVendedor){
     return unVendedor.premioBase() + self.adicionalJuniorPara(unVendedor)
   }
   method adicionalJuniorPara(unVendedor){
@@ -261,29 +186,16 @@ class Senior {
 }
 
 class Junior {
+  var descuento
   method premioPara(unVendedor){
     return unVendedor.premioBase() * (1 - self.descuento())
   }
 }
-
-class VendedorEspecialista {
-  const premioBase = 100
-  method premioBase(){
-    return premioBase
-  }
-}
-
-class VendedorSalon {
-  var premioBase
-  method premioBase(){
-    return premioBase
-  }
-}
 ```
 
-**Disclaimer:** el mensaje \#totalVentas fue a parar al vendedor porque tenía sentido para todos, no sólo para los juniors, y era más simple pero para que fuera totalmente análoga podríamos tenerlo definido en \#Junior y delegar en la categoría. En caso de dudas siempre vale preguntar.
+**Disclaimer:** el método `totalVentas` se termina definiendo en la clase Vendedor porque tenía sentido para todos en este dominio, no sólo para los juniors. Para que fuera totalmente análoga podríamos tenerlo definido en Junior y delegar en la categoría, pero siendo que no es inválido que los vendedores lo definan, era más sencillo resolverlo de esta forma. En caso de dudas de dominio, siempre vale preguntar.
 
-Como se puede ver en el diagrama de clases de la solución con composición, para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una **[complejidad](atributos-de-calidad.html)** extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor **[flexibilidad](atributos-de-calidad.html)** del modelo.
+Como se puede ver en el [diagrama de clases de la solución con composición](https://yuml.me/ba4c2042.png), para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una **[complejidad](atributos-de-calidad.html)** extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor **[flexibilidad](atributos-de-calidad.html)** del modelo.
 
 A modo de resumen rápido:
 
