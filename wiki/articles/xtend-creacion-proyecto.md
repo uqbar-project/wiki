@@ -25,14 +25,24 @@ El acrónimo POM es por "Project Object Model". El archivo `pom.xml` es el core 
 ## Pom, pom, pom, pom...
 
 Para comenzar a escribir la configuración del proyecto en un archivo `pom.xml` existen algunas opciones:
+
 - Inicializar un proyecto maven desde 0 desde la terminal con el comando `mvn archetype:generate`. Al hacer esto maven nos pedirá los datos iniciales para inicializar el proyecto (artifactId, groupId, etc) y nos dejará un `pom.xml` creado y listo para usar/modificar.
-- Copiarse un `pom.xml` de un proyecto maven existente y adecuar los valores de los campos que identifican el proyecto.
 - Crear un proyecto maven desde eclipse u algún otro IDE.
-- Escribirlo a mano desde 0 (no recomendable, la sintaxis xml es bastante dolorosa).
+- Copiarse un `pom.xml` de un proyecto maven existente y adecuar los valores de los campos que identifican el proyecto.
+
+Te dejamos entonces el modelo de proyecto Maven por defecto para la cursada 2020 de Algoritmos 2 (UNSAM): [pom.xml 2020 de ejemplo](pom-algo2-2020.xml). Luego tendrás que
+
+- renombrar el archivo a `pom.xml`
+- copiarlo dentro del directorio raíz de tu proyecto ya creado
+- actualizar en base a los nombres de tu proyecto (el _artifactId_ y _groupId_)
+- revisar las dependencias
+
+Para profundizar un poco más sobre lo que contiene un archivo de Maven, te recomendamos que sigas leyendo este artículo.
 
 ## Yendo pom partes
 
 ### ID, please
+
 Veamos lo que sería un `pom.xml` más minimalista posible:
 
 ```xml
