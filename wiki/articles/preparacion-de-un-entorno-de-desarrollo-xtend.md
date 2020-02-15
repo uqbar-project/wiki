@@ -124,7 +124,7 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
   - definir un groupId, que puede ser el edu.*materia* . Ej: edu.dds, edu.algo2, etc.
   - definir un artifactId, que se asocia al nombre de tu proyecto
 
-- Para definir el archivo `pom.xml` de Maven con el que vas a configurar tu proyecto, podés basarte en el modelo de ejemplo de [esta página](xtend-creacion-proyecto.md) 
+- Para definir el archivo `pom.xml` de Maven con el que vas a configurar tu proyecto, podés basarte en el modelo de ejemplo de [esta página](xtend-creacion-proyecto.html) 
 
 <!-- -->
 
