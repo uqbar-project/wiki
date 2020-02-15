@@ -115,6 +115,10 @@ Ahora solo nos queda eliminar la línea groupId (con Ctrl + D), formatear el pom
 
 Por eso, nos ubicamos en `src/main/java` y con un botón derecho, New > Xtend Class (es importante que hayas configurado el Eclipse para que no esté escondida esta opción).
 
+## Generación de archivos .java
+
+En `src/main/generated-sources` vas a tener los archivos `.java` que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos `.java`. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.
+
 # Recomendaciones
 
 A continuación te dejamos algunas recomendaciones para que tu estadía en Eclipse + Xtend sea más feliz:
