@@ -1,3 +1,8 @@
+---
+layout: article
+title: Testeo unitario avanzado
+---
+
 
 ## Testeo unitario avanzado
 
@@ -89,9 +94,11 @@ Es importante que no haya demasiados detalles de implementación en los nombres:
 Queremos expresar lo más claramente posible la intención de la clase: qué clase de equivalencia está testeando. El nombre ayuda, pero JUnit 5 nos permite incorporar la anotación `@DisplayName`:
 
 ```java
-@DisplayName("Dada una flota con muchos autos")
+@DisplayName("Dado un cliente de flota con muchos autos")
 class FlotaMuchosAutosTest {
 ```
 
 recordando que las clases agrupan los tests en forma jerárquica, más adelante veremos cómo juega a favor este encabezado escrito en lenguaje natural.
+
+## Variables en el test
 
