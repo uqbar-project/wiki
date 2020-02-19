@@ -4,8 +4,6 @@ title: Testeo unitario avanzado
 ---
 
 
-## Testeo unitario avanzado
-
 Este artículo presenta algunas guías para desarrollar los casos de prueba, considerando que ya tienen una base de testeo unitario automatizado. Los puntos a tener en cuenta son:
 
 - elegir los escenarios posibles (las clases de equivalencia)
