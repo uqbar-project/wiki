@@ -154,7 +154,7 @@ Al fallar la condición tenemos que bucear en el código y extraer este dato par
 
 ### Una segunda oportunidad
 
-Vamos a mejorar la semántica del test, renombrando la variable `pereyra`, agregando la anotación `@DisplayName` para el test y definiendo un mensaje de error adicional en el assert:
+Vamos a mejorar la semántica del test, renombrando la variable `pereyra` por un nombre más representativo de la clase de equivalencia que estamos modelando, agregando la anotación `@DisplayName` para el test y definiendo un mensaje de error adicional en el assert:
 
 ```java
 class FlotaMuchosAutosTest {
@@ -184,11 +184,49 @@ Ahora al fallar el test sabemos más cosas:
 
 - el test con su stack trace, pero también
 - qué es lo que estamos testeando, tratando de no entrar en detalles para no duplicar lo que dice el código
-- qué se esperaba que pasara y no pasó
+- qué se esperaba que pasara y no pasó, en un formato legible para un usuario: "Dado un cliente de flota con muchos autos, si tiene una deuda grande no puede cobrar un siniestro"
 
 <!-- -->
 <br/>
 
+## AAA Pattern
+
+Los tests suelen estructurarse según el patrón AAA: Arrange, Act y Assert.
+
+- **A**rrange: donde instanciamos los objetos a testear, con sus colaboradores: en el ejemplo son la flota y sus autos. Cuando los contextos son compartidos, los frameworks basados en xUnit (JUnit5 es uno de ellos) nos permiten ubicarlo en un método `setup` (`@BeforeEach`). La desventaja de esta técnica es que para tener una idea general de los elementos que participan en el test debemos mirar el test y el setup, por eso una alternativa suele ser tener objetos específicos que se encargan de crear una flota, separados del test:
+
+```java
+	@Test
+	def void sinDeudaPuedeCobrarSiniestro() {
+		val flotaConMuchosAutos = FlotaFactory.crearFlotaConAutos(6) // cantidad de autos
+		assertTrue(flotaConMuchosAutos.puedeCobrarSiniestro)
+	}
+```
+
+En el ejemplo tenemos un objeto FlotaFactory que permite crear un objeto Flota pasándole la cantidad de autos a crear. De esa manera la configuración de una flota ocurre en una sola línea y se puede incluir dentro del test mismo.
+
+- **A**ct: son las operaciones que tienen efecto. En el caso de la flota que tiene una deuda abultada, enviamos el mensaje que le genera la deuda.
+
+- **A**ssert: qué esperamos que pase, generalmente asociado a las respuestas que da el envío de un mensaje al objeto testeado.
+
+### "One assert per test"
+
+Hay ciertas controversias respecto a si [podemos tener varios asserts en el mismo test](https://softwareengineering.stackexchange.com/questions/7823/is-it-ok-to-have-multiple-asserts-in-a-single-unit-test), ya que cuando el primer assert falla los siguientes no se siguen evaluando. En realidad, si seguimos la recomendación de que **los tests deben fallar por exactamente un solo motivo**, esto relaja esa restricción. Es decir, lo importante no es tener un solo assert, sino que todos los asserts estén relacionados con la misma funcionalidad. El lector puede profundizar con estos artículos:
+
+- [Multiple Asserts Are OK](https://www.industriallogic.com/blog/multiple-asserts-are-ok/)
+- [Good Unit Test - One Assert](https://mfranc.com/unit-testing/good-unit-test-one-assert/)
+
+## TL;DR
+
+Este es el resumen de buenas prácticas a la hora de definir tus tests:
+
+- armá los escenarios que generalmente definen las clases de tests
+- utilizá anotaciones `@DisplayName` para la clase de test y para cada test, de manera de entender **qué** estamos testeando. El cómo se ve en el código, **evitá duplicidades** entre el texto que explica y el código escrito
+- evitá que una clase de test tenga muchos escenarios juntos, es más difícil seguirlos (por ese motivo preferimos no explicar el anidamiento de tests en JUnit5)
+- los nombres de las variables deben reflejar la clase de equivalencia que están resolviendo, y no casos particulares que no revelan la intención de lo que estamos modelando (sí `flotaConPocosAutos`, no `flotinha` o `miFlota`)
+- los tests se suelen estructurar utilizando las tres A: Arrange (el setup), Act (operaciones con efecto cuando corresponde) y Assert (las aserciones que deben testear el mismo concepto en cada test)
+
 ## Links relacionados
 
+- Si venís del mundo de Ruby, te recomendamos [Better specs](http://www.betterspecs.org/)
 - [Página principal de Algoritmos 2](algo2-temario.html)
