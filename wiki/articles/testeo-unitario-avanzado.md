@@ -54,19 +54,20 @@ dado un cliente de flota con 5 autos (caso borde)
 
 ## Definiendo las clases y las variables de los tests
 
-Si necesitamos
+Necesitamos
 
-- un cliente normal moroso
-- otro cliente normal que no deba nada
+- un cliente normal
 - una flota de 6 autos
 - otra flota de 5 autos
 - otra flota de 3 autos
 
-Podemos seguir algunas recomendaciones:
+a los que podemos configurar diferentes grados de deuda. Podemos seguir algunas recomendaciones adicionales:
 
 ### Agrupar los escenarios en clases
 
 ¿Cuántas clases necesitamos para implementar los casos de prueba? Podríamos considerar una clase sola para todos los tests, o bien tener dos clases: una para clientes normales y otra para clientes de flota, o bien podríamos tener una clase para cada uno de los escenarios que planteamos más arriba (cliente normal moroso, cliente que no debe nada, flota de 6 autos, etc.)
+
+<!-- -->
 
 Tengamos en consideración que tener en una sola clase todos los tests no resulta ser una buena práctica, porque
 
@@ -74,13 +75,16 @@ Tengamos en consideración que tener en una sola clase todos los tests no result
 - cada vez que corre el setup debemos instanciar un cliente normal moroso, otro que no debe nada, una flota con 6 autos, otra con 5 y otra con 3, penalizando así a los tests que se concentran en una sola de estas clases de equivalencia
 - la clase a testear pierde cohesión, está cubriendo todos los casos de prueba
 
+<!-- -->
+<br/>
 Volviendo al ejemplo, hay varias opciones posibles:
 
 - tener una clase para clientes normales y otra para clientes de flota
-- tener una clase para clientes normales, y luego una clase para cada una de las 3 clases de equivalencia de flota (muchos autos, pocos autos, caso borde con 5 autos)
-- incluso podríamos discriminar los clientes normales morosos y los que no deben + las 3 clases de equivalencia de flota y llegar así a las 5 clases
+- tener una clase para clientes normales, y una clase para cada una de las 3 clases de equivalencia de flota (muchos autos, pocos autos, caso borde con 5 autos)
 
-Vamos a elegir la opción intermedia, teniendo cuatro clases de test:
+<!-- -->
+<br/>
+Crearemos entonces cuatro clases de test:
 
 - ClienteNormalTest
 - FlotaPocosAutosTest
@@ -100,5 +104,91 @@ class FlotaMuchosAutosTest {
 
 recordando que las clases agrupan los tests en forma jerárquica, más adelante veremos cómo juega a favor este encabezado escrito en lenguaje natural.
 
-## Variables en el test
+## Expresividad en los tests
 
+### Un primer approach
+
+Para crear nuestro fixture de una flota con muchos autos, los enunciados suelen traer ejemplos: "Lidia Pereyra tiene una flota con 6 autos". Podríamos sentirnos tentados a escribir un test como el siguiente:
+
+```java
+	Flota pereyra
+	
+	@BeforeEach
+	def void init() {
+		pereyra = new Flota => [
+			agregarAuto(new Auto("ab028122", 2008))
+      // ... se agregan más autos ... //
+		]
+	}
+
+	@Test
+	def void pereyraNoPuedeCobrarSiniestro() {
+		pereyra.generarDeuda(15000)
+		assertFalse(pereyra.puedeCobrarSiniestro)
+	}
+```
+
+Pero ¿qué pasa si hay un error en el código de negocio? Supongamos esta implementación, donde la clase Cliente tiene la definición de la deuda como un entero:
+
+```java
+class Flota extends Cliente {
+	List<Auto> autos = newArrayList
+	
+	override puedeCobrarSiniestro() {
+		this.deuda < this.montoMaximoDeuda
+	}
+	
+	def montoMaximoDeuda() {
+		if (autos.size > 5) 20000 else 5000 // debería ser 10.000 y no 20.000
+	}
+```
+
+Cuando ejecutamos el test tenemos muy poca información relevante:
+
+![mal nombre de variable](/img/wiki/testeo_mal_nombre_variable.png)
+
+- la variable `pereyra` no está revelando que es un cliente de flota con muchos autos
+- y tampoco está claro por qué no puede cobrar el siniestro el cliente. 
+
+Al fallar la condición tenemos que bucear en el código y extraer este dato para determinar si el error está en el test o en el código de negocio. 
+
+### Una segunda oportunidad
+
+Vamos a mejorar la semántica del test, renombrando la variable `pereyra`, agregando la anotación `@DisplayName` para el test y definiendo un mensaje de error adicional en el assert:
+
+```java
+class FlotaMuchosAutosTest {
+	
+	Flota flotaConMuchosAutos
+	
+	@BeforeEach
+	def void init() {
+		flotaConMuchosAutos = new Flota => [
+			agregarAuto(new Auto("ab028122", 2008))
+      // ... agregamos más autos ... //
+		]
+	}
+
+	@Test
+	@DisplayName("si tiene una deuda grande no puede cobrar un siniestro")
+	def void pereyraNoPuedeCobrarSiniestro() {
+		flotaConMuchosAutos.generarDeuda(15000)
+		assertFalse(flotaConMuchosAutos.puedeCobrarSiniestro, 
+      "una flota que tiene una deuda abultada no puede cobrar un siniestro")
+	}
+```
+
+Ahora al fallar el test sabemos más cosas:
+
+![mas expresividad en los tests](/img/wiki/testeo_mas_expresivo.png)
+
+- el test con su stack trace, pero también
+- qué es lo que estamos testeando, tratando de no entrar en detalles para no duplicar lo que dice el código
+- qué se esperaba que pasara y no pasó
+
+<!-- -->
+<br/>
+
+## Links relacionados
+
+- [Página principal de Algoritmos 2](algo2-temario.html)
