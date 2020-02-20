@@ -42,7 +42,7 @@ Te dejamos [un video que explica cómo hacerlo para Windows](https://www.youtube
 
 ![image](/img/languages/jdkVsJre.png)
 
-Si no tenés ese programa, no vas a pasar tus objetos a código ejecutable en el entorno Xtend: la solución es muy simple, descargá e instalá una JDK.
+Si no tenés ese programa, no vas a poder pasar tus objetos a código ejecutable en el entorno Xtend: la solución es muy simple, descargá e instalá una JDK. Para más información te recomendamos [esta página](jdkVsJre.html)
 
 ## Eclipse
 
