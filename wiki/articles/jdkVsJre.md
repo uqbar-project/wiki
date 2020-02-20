@@ -3,6 +3,8 @@ layout: article
 title: JDK vs. JRE
 ---
 
+![jdk set of tools](/img/wiki/JDKandJREandJVM.png)
+
 Cuando nos piden "instalar Java" (a secas) en nuestra máquina, es importante tener en claro la diferencia entre:
 
 - **JRE** o _Java Runtime Environment_: un conjunto de herramientas que permite ejecutar código compilado en Java. La noción de _environment_ o ambiente donde viven los objetos está dado por la JVM (_Java Virtual Machine_).
