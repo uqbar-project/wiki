@@ -12,6 +12,7 @@ title: Temario de Algoritmos II
 ## Páginas
 
 - [Testeo unitario avanzado](testeo-unitario-avanzado.html)
+- [Cómo corregir un error en runtime](https://github.com/uqbar-project/eg-seguros-xtend), a partir de un ejemplo en github
 
 ## Links
 
