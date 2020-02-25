@@ -7,7 +7,7 @@ title: Guia de instalacion de maven
 
 # Introducción
 
-Maven es una herramienta que permite automatizar tareas de los desarrolladores, y facilitar el manejo de dependencias, la configuración de entornos de trabajos locales, entre muchas otras cosas. Por defecto, al instalar Eclipse también viene el plugin para utilizar Maven, pero a veces es necesario ejecutar instrucciones adicionales por consola y para eso son estas instrucciones.
+[Maven](maven.html) es una herramienta que permite automatizar tareas de los desarrolladores, y facilitar el manejo de dependencias, la configuración de entornos de trabajos locales, entre muchas otras cosas. Por defecto, al instalar Eclipse también viene el plugin para utilizar Maven, pero a veces es necesario ejecutar instrucciones adicionales por consola y para eso son estas instrucciones.
 
 ## Instalación en Windows
 
@@ -22,7 +22,7 @@ $ sudo apt-get install maven
 $ sudo ln -s /usr/share/maven3/bin/mvn /usr/bin/mvn
 ```
 
-Vale la pena aclarar que si bien este método es ms simple, generalmente las versiones de repositorio de Ubuntu suelen estar  atrás de las vigentes. Igualmente no les va a traer problemas.
+Vale la pena aclarar que si bien este método es ms simple, generalmente las versiones de repositorio de Ubuntu suelen estar atrás de las vigentes. Igualmente no les va a traer problemas.
 
 ## Manualmente
 
