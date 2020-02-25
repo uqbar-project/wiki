@@ -111,7 +111,7 @@ Lo recomendable en cada caso es siempre revisar la documentación oficial del pr
    └── settings.xml
 ```
 
-![maven architecture](/img/wiki/Maven.png)
+![maven architecture](/img/wiki/Maven2.png)
 
 ## Documentación oficial
 
