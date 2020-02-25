@@ -5,8 +5,9 @@ title: Temario de Algoritmos II
 
 ## Software
 
-- [Entorno Xtend](xtend-principal.html)
+- [Entorno Xtend (en Eclipse)](xtend-principal.html)
 - [JDK vs. JRE](jdkVsJre.html)
+- [Maven](maven.html)
 - [Cómo trabajar con Travis](algo2-travis.html)
 
 ## Páginas
