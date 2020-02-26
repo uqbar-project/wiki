@@ -50,7 +50,7 @@ A continuación un ejemplo básico.
 
 ## Repositorios Maven
 
-Cuando instalamos Maven, se crea un repositorio Maven local en una carpeta que por defecto suele ser `HOME/.m2`. Si queremos ubicar al componente cuyo identificador es `org.eclipse.xtend:org.eclipse.xtend.core:2.21.0.M1` podremos encontrarlo localmente en
+Un repositorio Maven es básicamente un lugar donde están los artefactos maven, estructurados en cierta forma estándar para hacer las descargas de las dependencias. Cuando instalamos Maven, se crea un repositorio Maven local en una carpeta que por defecto suele ser `HOME/.m2`. Si queremos ubicar al componente cuyo identificador es `org.eclipse.xtend:org.eclipse.xtend.core:2.21.0.M1` podremos encontrarlo localmente en
 
 ```bash
 %M2_HOME%/repository
@@ -129,7 +129,7 @@ El parent project permite reutilizar definiciones comunes entre varios proyectos
 
 ### Plugins
 
-Los plugins de Maven no solo permiten reutilizar lógica sino que además ejecutan acciones cuando son descargados. Así funciona el núcleo central de Maven: uno de los plugins más conocidos es `clean`, que elimina el directorio de destino (en el caso de Xtend, donde están los archivos Java y los .class que se generan a partir de los fuentes originales).
+Los plugins de Maven no solo permiten reutilizar lógica sino que además ejecutan acciones cuando son descargados. Así funciona el núcleo central de Maven: uno de los plugins más conocidos es `clean`, que elimina el directorio de destino (en el caso de Xtend, donde están los archivos Java y los .class que se generan a partir de los fuentes originales). Otro plugin conocido es `Surefire`, que ejecuta los tests de un proyecto basado en JDK.
 
 <br/>
 Distintos proyectos maven requieren/ofrecen distintos settings al ser referenciados como plugins. Veamos un ejemplo de la configuración del plugin de `xtend`:
@@ -218,13 +218,61 @@ A continuación mostraremos el algoritmo que utiliza Maven para encontrar las de
 
 ## Ejecutando maven desde la consola
 
-Una alternativa a ejecutar Maven desde Eclipse es trabajar directamente con Maven desde la consola, algo que puede ser útil para automatizar tareas (como cuando trabajemos con herramientas de integración continua).
+Una alternativa a ejecutar Maven desde Eclipse es trabajar directamente con Maven desde la consola, algo que puede ser útil para automatizar tareas (como cuando trabajemos con herramientas de integración continua). Podemos ejecutar:
 
-TODO
+```bash
+mvn clean compile
+```
+
+esto ejecuta varios plugins en forma sincronizada:
+
+- por un lado borra los directorios de destino, como hemos contado en el párrafo plugins
+- y luego compila los fuentes del proyecto, lo cual implica descargarse las dependencias, y en el caso del plugin de Xtend, convertir los archivos `.xtend` a `.java` (y luego generar los `.class`)
+
+Si queremos ver el árbol de dependencias transitivas, podemos escribir
+
+```bash
+mvn dependency:tree
+```
 
 ## Ciclos de build
 
-TODO
+Maven está pensado para todo el ciclo de vida del proyecto. Lo vamos a usar para compilar, para generar código (de ser necesario), para correr los tests, para empaquetar, y hasta para publicar nuestros artefactos generando releases con trazabilidad.
+
+Maven define un conjunto de etapas en la construcción (build) de nuestro proyecto. Resumimos algunas acá:
+
+- **generate-sources**: generar código, previo a compilación.
+- **compile**: compila el código fuente.
+- **test**: ejecuta los test cases
+- **package**: genera un paquete con el código (.jar por ejemplo)
+- **install**: hace público el paquete en nuestro repositorio local (ver repositorios locales en las siguiente sección)
+- **deploy**: publica el artefacto en un repositorio remoto (ver repositorios locales en las siguiente sección)
+
+Podemos indicar a Maven que ejecute hasta cierta fase.
+
+Por ejemplo:
+
+```bash
+mvn compile
+```
+
+Va a ejecutar las dos primeras fases.
+
+```bash
+mvn test
+```
+
+Las tres primeras. Es decir es igual a mvn compile + correr los tests. De la misma manera podemos trabajar en Eclipse con el plugin M2:
+
+![maven m2 build](/img/wiki/maven-m2-build.gif)
+
+### Relación entre plugins y ciclos del build
+
+A continuación dejamos un diagrama básico que muestra la relación entre plugin y el ciclo de vida del build:
+
+![Maven Plugin and Build Lifecycle](/img/wiki/maven-plugin-lifecycle.png)
+
+El gráfico no incluye plugins que estamos usando en Algoritmos 2: Xtend, cobertura de tests, etc. pero sirve como referencia para entender qué goals se ejecutarán en base al comando Maven pedido.
 
 ## Resumen general de la arquitectura Maven
 
