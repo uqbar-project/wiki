@@ -159,6 +159,7 @@ Aquí le estamos indicando a maven las características de la ejecución del plu
 - los goals (metas/capacidades del plugin). Este es un plugin de compilación por lo que indica los valores `compile` y `testCompile`.
 - la configuración de las rutas del filesystem para los archivos java compilados.
 
+<br/>
 Lo recomendable en cada caso es siempre revisar la documentación oficial del proyecto maven que queremos referenciar, para entender qué settings son requeridos o convenientes para nuestro proyecto.
 
 ## Dependencias transitivas
@@ -173,6 +174,7 @@ Por ejemplo:
 
 Al resolver las dependencias, el proyectoA necesitará descargar los componentes B, C, D, E y F. Incluso podríamos requerir diferentes versiones de los mismos componentes.
 
+<br/>
 Noten que un proyecto comercial "normal" o mediano, puede incluir decenas y hasta cientos de dependencias. Eclipse permite integrar todas las definiciones de un pom junto con sus parents en la solapa `Effective POM`:
 
 ![effective POM](/img/wiki/effective-pom.gif)
@@ -183,7 +185,9 @@ La pregunta que puede hacerse el lector es: ¿desde dónde se descargan los comp
 
 Cuando tenemos dudas sobre las versiones de algún componente, podemos hacer una búsqueda en
 
+```http
 http://search.maven.org
+```
 
 por ejemplo, podemos buscar el componente uqbar-domain, que direcciona a https://search.maven.org/search?q=uqbar-domain. Allí tenemos todos los releases, con sus fechas correspondientes:
 
@@ -248,9 +252,7 @@ Maven define un conjunto de etapas en la construcción (build) de nuestro proyec
 - **install**: hace público el paquete en nuestro repositorio local (ver repositorios locales en las siguiente sección)
 - **deploy**: publica el artefacto en un repositorio remoto (ver repositorios locales en las siguiente sección)
 
-Podemos indicar a Maven que ejecute hasta cierta fase.
-
-Por ejemplo:
+Podemos indicar a Maven que ejecute hasta cierta fase. Por ejemplo:
 
 ```bash
 mvn compile
@@ -285,6 +287,7 @@ Para más información recomendamos leer la documentación oficial del proyecto 
 - [POM reference](https://maven.apache.org/pom.html)
 - [Introduction to the POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
 
+<br/>
 Y estos links:
 
 - [Maven in 5 minutes](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
