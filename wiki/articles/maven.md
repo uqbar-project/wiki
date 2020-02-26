@@ -12,11 +12,10 @@ Maven cumple con las siguientes funciones principales que vamos a explicar en la
 - Reificación de Proyecto / Artefacto en forma standard, declarativa y extensible
 - Manejo de Dependencias
 - Manejo del Ciclo de Vida del Artefacto, incluyendo releases
-- Documentación y Comunicación
 
 ## Reificación de Proyecto/Artefacto
 
-Java no trabaja la idea de proyecto, no lo representa como concepto. Entonces, cada uno de los IDEs pensados para Java agregan la idea de proyecto: en el caso de Eclipse tenemos
+Java no trabaja la idea de proyecto, no lo representa como concepto. Entonces, cada uno de los IDEs pensados para Java agregan su propia forma de definirlo: en el caso de Eclipse tenemos
 
 - el archivo `.classpath` que define los directorios donde compilar y las dependencias que necesita
 - el archivo `.project` que contiene el nombre del proyecto, entre otras cosas
@@ -27,9 +26,9 @@ Si nosotros trabajamos con otro IDE (como IntelliJ IDEA o NetBeans) tenemos que 
 
 En el archivo pom se declaran, entre otras cosas, un identificador único de nuestro proyecto/artefacto, que resulta de la unión de tres identificadores:
 
-- **groupId**: representa la organización autora/dueña del artefacto. Por ejemplo, los proyectos relacionados a las cátedras de Algoritmos 2 suelen usar el groupId `org.uqbar`.
-- **artifactId**: este campo define el nombre por el que se conoce al proyecto en sí mismo. Ejemplo: commons-collections, eg-seguros-xtend, tp-futbol5-grupo01, etc.
-- **versión**: es el último componente del nombre-rompecabezas, dado que groupId:artifactId denota un único proyecto pero no alcanza para definir en qué versión del proyecto nos estamos parando, se agrega un número de versión para completar la información que maven necesita para generar una identificación unívoca. Conviene seguir las reglas de [**versionado semántico**](https://semver.org/), para liberar versiones productivas. A veces se suele acompañar de un sufijo `RELEASE` (para versiones estables) o `SNAPSHOT` (para versiones intermedias que pueden estar sujetas a cambios)
+- **groupId**: representa la organización autora/dueña del artefacto. Por ejemplo, los proyectos de Algoritmos 2 suelen usar el groupId `org.uqbar`.
+- **artifactId**: este campo define el nombre por el que se conoce al proyecto en sí mismo. Algunos ejemplos: `commons-collections`, `eg-seguros-xtend`, `tp-futbol5-grupo01`, etc.
+- **versión**: es el último componente del nombre-rompecabezas, dado que groupId:artifactId denota un único proyecto pero no alcanza para definir en qué versión del proyecto nos estamos parando. Se agrega entonces un número de versión para completar la información que Maven necesita para generar una identificación unívoca. Conviene seguir las reglas de [**versionado semántico**](https://semver.org/), para liberar versiones productivas. A veces se suele acompañar de un sufijo `RELEASE` (para versiones estables) o `SNAPSHOT` (para versiones intermedias que pueden estar sujetas a cambios)
 
 A continuación un ejemplo básico.
 
@@ -64,10 +63,10 @@ Un repositorio Maven es básicamente un lugar donde están los artefactos maven,
 
 - recordemos que el identificador de un componente se arma a partir del groupId + el artifactId + la versión
 - se suele exportar como variable la carpeta `HOME/.m2` con el nombre `M2_HOME`
-- dentro de HOME puede haber opcionalmente un archivo `settings.xml` que veremos más adelante
-- en la subcarpeta `repository` están todos los componentes que descargamos en nuestro repositorio local
+- en `M2_HOME` puede haber opcionalmente un archivo `settings.xml` que veremos más adelante
+- en la subcarpeta `repository` están todos los componentes que descargamos localmente
 
-Vemos un video de ejemplo, en una máquina Linux. El comportamiento en una máquina Windows es exactamente igual, hay que explorar los directorios mostrando los que son ocultos, y navegar a partir de la carpeta de usuario\.m2:
+Vemos un video de ejemplo, en una máquina Linux. El comportamiento en una máquina Windows es exactamente igual, hay que explorar los directorios incluyendo los que son ocultos, y navegar a partir de la carpeta de usuario\.m2:
 
 ![repo maven local](/img/wiki/maven_local_repo.gif)
 
@@ -135,23 +134,25 @@ Los plugins de Maven no solo permiten reutilizar lógica sino que además ejecut
 Distintos proyectos maven requieren/ofrecen distintos settings al ser referenciados como plugins. Veamos un ejemplo de la configuración del plugin de `xtend`:
 
 ```xml
+  <plugins>
 		<plugin>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>xtend-maven-plugin</artifactId>
-				<version>2.20.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>testCompile</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/xtend-gen/main</outputDirectory>
-							<testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+      <groupId>org.eclipse.xtend</groupId>
+      <artifactId>xtend-maven-plugin</artifactId>
+      <version>2.20.0</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>compile</goal>
+            <goal>testCompile</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${project.build.directory}/xtend-gen/main</outputDirectory>
+            <testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>
+          </configuration>
+        </execution>
+      </executions>
+		</plugin>
+  </plugins>
 ```
 
 Aquí le estamos indicando a maven las características de la ejecución del plugin, es decir:
@@ -193,7 +194,7 @@ por ejemplo, podemos buscar el componente uqbar-domain, que direcciona a https:/
 
 ![search maven](/img/wiki/search-maven.gif)
 
-Para publicar un componente en el repositorio Sonatype que está relacionado con Maven Central, hay que cumplir algunas reglas. En particular, para los componentes Uqbar hay que seguir [estas instrucciones](deploy-en-maven-central.html)
+Para publicar un componente en el repositorio Sonatype que está relacionado con Maven Central, hay que cumplir algunas reglas. En particular, para los componentes Uqbar hay que seguir [estas instrucciones.](deploy-en-maven-central.html)
 
 ### Definiendo repositorios remotos
 
@@ -222,13 +223,13 @@ A continuación mostraremos el algoritmo que utiliza Maven para encontrar las de
 
 ## Ejecutando maven desde la consola
 
-Una alternativa a ejecutar Maven desde Eclipse es trabajar directamente con Maven desde la consola, algo que puede ser útil para automatizar tareas (como cuando trabajemos con herramientas de integración continua). Podemos ejecutar:
+Una alternativa es trabajar directamente con Maven desde la consola, algo que puede ser útil para automatizar tareas, como cuando trabajemos con herramientas de integración continua.
 
 ```bash
 mvn clean compile
 ```
 
-esto ejecuta varios plugins en forma sincronizada:
+Esto ejecuta varios plugins en forma sincronizada:
 
 - por un lado borra los directorios de destino, como hemos contado en el párrafo plugins
 - y luego compila los fuentes del proyecto, lo cual implica descargarse las dependencias, y en el caso del plugin de Xtend, convertir los archivos `.xtend` a `.java` (y luego generar los `.class`)
@@ -238,6 +239,8 @@ Si queremos ver el árbol de dependencias transitivas, podemos escribir
 ```bash
 mvn dependency:tree
 ```
+
+Pero ¿cómo sabemos qué comando debemos ejecutar? Para eso hay que entender el ciclo de vida de un build de Maven.
 
 ## Ciclos de build
 
@@ -264,7 +267,10 @@ Va a ejecutar las dos primeras fases.
 mvn test
 ```
 
-Las tres primeras. Es decir es igual a mvn compile + correr los tests. De la misma manera podemos trabajar en Eclipse con el plugin M2:
+Las tres primeras. Es decir es igual a mvn compile + correr los tests. 
+
+<br/>
+De la misma manera podemos trabajar en Eclipse con el plugin M2:
 
 ![maven m2 build](/img/wiki/maven-m2-build.gif)
 
