@@ -5,7 +5,7 @@ title: Introducción a Maven
 
 Maven es una herramienta que ayuda a desarrollar un proyecto basado en el entorno de una JDK (Java, Xtend, Scala, Groovy, etc.)
 
-### Funcionalidades
+## Funcionalidades
 
 Maven cumple con las siguientes funciones principales que vamos a explicar en las siguientes secciones:
 
@@ -14,7 +14,7 @@ Maven cumple con las siguientes funciones principales que vamos a explicar en la
 - Manejo del Ciclo de Vida del Artefacto, incluyendo releases
 - Documentación y Comunicación
 
-### Reificación de Proyecto/Artefacto
+## Reificación de Proyecto/Artefacto
 
 Java no trabaja la idea de proyecto, no lo representa como concepto. Entonces, cada uno de los IDEs pensados para Java agregan la idea de proyecto: en el caso de Eclipse tenemos
 
@@ -46,28 +46,93 @@ A continuación un ejemplo básico.
 </project>
 ```
 
+> Cuando se publica un componente, se empaquetan todas las clases compiladas (`.class`) en un archivo comprimido que tiene la extensión `.jar` (de Java Archive). Opcionalmente podemos tener un archivo comprimido extra con los fuentes.
+
 ## Repositorios Maven
 
-Para entender dónde se publican esos componentes presentaremos el concepto de repositorio Maven.
+Cuando instalamos Maven, se crea un repositorio Maven local en una carpeta que por defecto suele ser `HOME/.m2`. Si queremos ubicar al componente cuyo identificador es `org.eclipse.xtend:org.eclipse.xtend.core:2.21.0.M1` podremos encontrarlo localmente en
+
+```bash
+%M2_HOME%/repository
+   ├── org
+   │   └── eclipse
+   │         └── xtend
+   │               └── org.eclipse.xtend.core
+   │                      ├─ 2.19.0 (otra versión)
+   │                      └─ 2.21.0.M1 --> dentro de esta carpeta estará el .jar y los fuentes
+   └── settings.xml
+```
+
+- recordemos que el identificador de un componente se arma a partir del groupId + el artifactId + la versión
+- se suele exportar como variable la carpeta `HOME/.m2` con el nombre `M2_HOME`
+- dentro de HOME puede haber opcionalmente un archivo `settings.xml` que veremos más adelante
+- en la subcarpeta `repository` están todos los componentes que descargamos en nuestro repositorio local
+
+Vemos un video de ejemplo, en una máquina Linux. El comportamiento en una máquina Windows es exactamente igual, hay que explorar los directorios mostrando los que son ocultos, y navegar a partir de la carpeta de usuario\.m2:
+
+![repo maven local](/img/wiki/maven_local_repo.gif)
 
 
+## Relacionando proyectos maven desde el POM
 
+Es posible referenciar a otros proyectos maven desde un POM, esto es muy útil para cuando necesitamos 
 
+- declarar dependencias, 
+- definir un proyecto padre, 
+- agregar plugins
 
+a la hora de compilar nuestro proyecto.
 
- En el caso del groupId `org.uqbar-project` este grupo 'vivirá' en el directorio $M2_REPO/org/uqbar-project.
+### Dependencias
 
+Las dependencias se definen dentro de un tag `<dependencies>`:
 
+```xml
+<project ...>
+	<...>
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>5.5.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+```
 
+En este caso, estamos definiendo que nuestro proyecto tiene como pre-requisito el componente junit-jupiter-params asociado a org.junit.jupiter. Si trabajamos integrado a Eclipse:
 
-### Relacionando proyectos maven desde el POM
+- agregamos la dependencia en el pom, 
+- actualizamos el proyecto (`Maven > Update project`)
+- y eso dispara la descarga del componente al repositorio Maven local como vemos en el video
 
-Es posible referenciar a otros proyectos maven desde un POM, esto es muy útil para cuando necesitamos declarar dependencias, definir un proyecto padre, agregar plugins.
+![descarga componente local](/img/wiki/downloading-maven-component.gif)
 
-Al usar estos tags (`<dependencies>`, `<parent>`, `<plugins>`) debemos tener presentes algunas cosas:
-- Para referenciar un proyecto maven siempre tenemos que indicar las coordenadas (los atributos `groupId:artifactId:version`).
-- Al agregar una dependencia a un proyecto es posible especificar el `type` (por ej., `jar`), el `scope` (por ejemplo: test), y si es o no `optional`,
-- Distintos proyectos maven requieren/ofrecen distintos settings al ser referenciados como plugins. Veamos un ejemplo de la configuración del plugin de `xtend`:
+Al agregar una dependencia a un proyecto es posible especificar el `type` (por ej., `jar`), el `scope` (por ejemplo: test), y si es o no `optional`.
+
+### Parent project
+
+Otra variante es utilizar un proyecto padre mediante el tag `<parent>`, como ocurría en versiones anteriores de los ejemplos de Uqbar hasta 2019:
+
+```xml
+<parent>
+    <groupId>org.uqbar-project</groupId>
+    <artifactId>uqbar-xtend-parent</artifactId>
+    <version>2.17.1</version>
+</parent>
+```
+
+El parent project permite reutilizar definiciones comunes entre varios proyectos. En este caso particular, uqbar-xtend-parent (el nombre que le dimos a este artefacto) sirve para definir
+
+- que utilizaremos la versión 2.17.0 de Xtend
+- con una dependencia para correr tests unitarios
+- compilando a JDK 1.8
+
+### Plugins
+
+Los plugins de Maven no solo permiten reutilizar lógica sino que además ejecutan acciones cuando son descargados. Así funciona el núcleo central de Maven: uno de los plugins más conocidos es `clean`, que elimina el directorio de destino (en el caso de Xtend, donde están los archivos Java y los .class que se generan a partir de los fuentes originales).
+
+Distintos proyectos maven requieren/ofrecen distintos settings al ser referenciados como plugins. Veamos un ejemplo de la configuración del plugin de `xtend`:
 
 ```xml
 		<plugin>
@@ -89,41 +154,63 @@ Al usar estos tags (`<dependencies>`, `<parent>`, `<plugins>`) debemos tener pre
 			</plugin>
 ```
 
-
 Aquí le estamos indicando a maven las características de la ejecución del plugin, es decir:
+
 - Los goals (metas/capacidades del plugin). Este es un plugin de compilación por lo que indica los valores `compile` y `testCompile`.
 - La configuración de las rutas del filesystem para los archivos java compilados.
 
 Lo recomendable en cada caso es siempre revisar la documentación oficial del proyecto maven que queremos referenciar, para entender qué settings son requeridos o convenientes para nuestro proyecto.
 
+## Dependencias transitivas
+
+> Un detalle no menor de la resolución de dependencias de maven es que también funciona para las dependencias transitivas.
+
+Por ejemplo:
+
+- proyectoA --> proyectoB
+- proyectoB --> proyectoC
+- proyectoC --> proyectoD, proyectoE, proyectoF
+
+Al resolver las dependencias, el proyectoA necesitará descargar los componentes B, C, D, E y F. Incluso podríamos requerir diferentes versiones de los mismos componentes.
+
+Noten que un proyecto comercial "normal" o mediano, puede incluir decenas y hasta cientos de dependencias.
+
+Eclipse permite integrar todas las definiciones de un pom junto con sus parents en la solapa `Effective POM`:
+
+![effective POM](/img/wiki/effective-pom.gif)
+
+## Repositorios remotos
+
+TODO
+
+### Definiendo repositorios remotos
+
+TODO
+
+## Ejecutando maven desde la consola
+
+TODO
+
+## Ciclos de build
+
+TODO
 
 ## Resumen general de la arquitectura Maven
-
-```
-%M2_HOME%
-   ├── org
-   │   ├── uqbar
-   │   └── apache
-   │         └── commons
-   │               └── commons-lang3
-   │                      ├─ 3.3.2
-   │                      └─ 3.8.1
-   └── settings.xml
-```
 
 ![maven architecture](/img/wiki/Maven2.png)
 
 ## Documentación oficial
 
 Para más información recomendamos leer la documentación oficial del proyecto Maven:
+
 - [POM reference](https://maven.apache.org/pom.html)
 - [Introduction to the POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
 
+Y estos links:
+
+- [Maven in 5 minutes](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+- [Simple Explanation of Maven - video de la Universidad de Cincinnati](https://www.youtube.com/watch?v=KNGQ9JBQWhQ)
 
 ## Links relacionados
 
 - [Página principal de Algoritmos 2](algo2-temario.html)
-
-
-
-
