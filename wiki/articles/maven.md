@@ -54,13 +54,12 @@ Cuando instalamos Maven, se crea un repositorio Maven local en una carpeta que p
 
 ```bash
 %M2_HOME%/repository
-   ├── org
-   │   └── eclipse
-   │         └── xtend
-   │               └── org.eclipse.xtend.core
-   │                      ├─ 2.19.0 (otra versión)
-   │                      └─ 2.21.0.M1 --> dentro de esta carpeta estará el .jar y los fuentes
-   └── settings.xml
+   └── org
+       └── eclipse
+             └── xtend
+                  └── org.eclipse.xtend.core
+                         ├─ 2.19.0 (otra versión)
+                         └─ 2.21.0.M1 --> dentro de esta carpeta estará el .jar
 ```
 
 - recordemos que el identificador de un componente se arma a partir del groupId + el artifactId + la versión
@@ -100,7 +99,7 @@ Las dependencias se definen dentro de un tag `<dependencies>`:
 	</dependencies>
 ```
 
-En este caso, estamos definiendo que nuestro proyecto tiene como pre-requisito el componente junit-jupiter-params asociado a org.junit.jupiter. Si trabajamos integrado a Eclipse:
+En este caso, estamos definiendo que nuestro proyecto tiene como pre-requisito el componente `junit-jupiter-params` asociado a `org.junit.jupiter`. Si utilizamos Maven como un plugin de Eclipse
 
 - agregamos la dependencia en el pom, 
 - actualizamos el proyecto (`Maven > Update project`)
@@ -132,6 +131,7 @@ El parent project permite reutilizar definiciones comunes entre varios proyectos
 
 Los plugins de Maven no solo permiten reutilizar lógica sino que además ejecutan acciones cuando son descargados. Así funciona el núcleo central de Maven: uno de los plugins más conocidos es `clean`, que elimina el directorio de destino (en el caso de Xtend, donde están los archivos Java y los .class que se generan a partir de los fuentes originales).
 
+<br/>
 Distintos proyectos maven requieren/ofrecen distintos settings al ser referenciados como plugins. Veamos un ejemplo de la configuración del plugin de `xtend`:
 
 ```xml
@@ -156,14 +156,14 @@ Distintos proyectos maven requieren/ofrecen distintos settings al ser referencia
 
 Aquí le estamos indicando a maven las características de la ejecución del plugin, es decir:
 
-- Los goals (metas/capacidades del plugin). Este es un plugin de compilación por lo que indica los valores `compile` y `testCompile`.
-- La configuración de las rutas del filesystem para los archivos java compilados.
+- los goals (metas/capacidades del plugin). Este es un plugin de compilación por lo que indica los valores `compile` y `testCompile`.
+- la configuración de las rutas del filesystem para los archivos java compilados.
 
 Lo recomendable en cada caso es siempre revisar la documentación oficial del proyecto maven que queremos referenciar, para entender qué settings son requeridos o convenientes para nuestro proyecto.
 
 ## Dependencias transitivas
 
-> Un detalle no menor de la resolución de dependencias de maven es que también funciona para las dependencias transitivas.
+Un detalle no menor de la resolución de dependencias de maven es que también funciona para las dependencias transitivas.
 
 Por ejemplo:
 
@@ -173,21 +173,52 @@ Por ejemplo:
 
 Al resolver las dependencias, el proyectoA necesitará descargar los componentes B, C, D, E y F. Incluso podríamos requerir diferentes versiones de los mismos componentes.
 
-Noten que un proyecto comercial "normal" o mediano, puede incluir decenas y hasta cientos de dependencias.
-
-Eclipse permite integrar todas las definiciones de un pom junto con sus parents en la solapa `Effective POM`:
+Noten que un proyecto comercial "normal" o mediano, puede incluir decenas y hasta cientos de dependencias. Eclipse permite integrar todas las definiciones de un pom junto con sus parents en la solapa `Effective POM`:
 
 ![effective POM](/img/wiki/effective-pom.gif)
 
 ## Repositorios remotos
 
-TODO
+La pregunta que puede hacerse el lector es: ¿desde dónde se descargan los componentes la primera vez? ¿Cómo es que Maven sabe dónde ubicarlos, y cómo saber a qué versión apuntar? Por defecto, Maven apunta a un repositorio central donde se suben todos los componentes que utiliza la comunidad que trabaja con la JDK: https://repo.maven.apache.org/maven2/
+
+Cuando tenemos dudas sobre las versiones de algún componente, podemos hacer una búsqueda en
+
+http://search.maven.org
+
+por ejemplo, podemos buscar el componente uqbar-domain, que direcciona a https://search.maven.org/search?q=uqbar-domain. Allí tenemos todos los releases, con sus fechas correspondientes:
+
+![search maven](/img/wiki/search-maven.gif)
+
+Para publicar un componente en el repositorio Sonatype que está relacionado con Maven Central, hay que cumplir algunas reglas. En particular, para los componentes Uqbar hay que seguir [estas instrucciones](deploy-en-maven-central.html)
 
 ### Definiendo repositorios remotos
 
-TODO
+En nuestro pom.xml podemos definir repositorios adicionales donde encontrar componentes de Maven: 
+
+```xml
+<project>
+  ...
+  <repositories>
+    <repository>
+      <id>my-internal-site</id>
+      <url>http://myserver/repo</url>
+    </repository>
+  </repositories>
+  ...
+</project>
+```
+
+Otra opción es escribir esto en el archivo `settings.xml` del directorio raíz de nuestro M2, como cuenta [este artículo](configuracion-de-maven-para-poder-utilizar-las-herramientas-de-uqbar.html).
+
+### Flujo general de descarga de componentes
+
+A continuación mostraremos el algoritmo que utiliza Maven para encontrar las dependencias de nuestro proyecto: si no lo tenemos en nuestro repositorio local, lo irá a buscar al repositorio Maven Central, y en última instancia, en los repositorios adicionales definidos por nuestro proyecto o la configuración general de Maven (el archivo `settings.xml`).
+
+![flujo general de descarga de componentes Maven](/img/wiki/maven-flow.png)
 
 ## Ejecutando maven desde la consola
+
+Una alternativa a ejecutar Maven desde Eclipse es trabajar directamente con Maven desde la consola, algo que puede ser útil para automatizar tareas (como cuando trabajemos con herramientas de integración continua).
 
 TODO
 
