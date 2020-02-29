@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby '~> 2.5.0'
 # Development dependencies
-gem 'rake', '~> 12.0.0'
+gem 'rake', '~> 12.3.3'
 gem 'guard-livereload'
 
 # Jekyll
