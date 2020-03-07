@@ -3,16 +3,13 @@ layout: article
 title: Programacion con herramientas modernas
 ---
 
--   [¿Qué entendemos por Programación Orientada a Objetos?](-que-entendemos-por-programacion-orientada-a-objetos-.html)
+## Software
 
-Unidad 1 - Esquemas de Tipado
------------------------------
+- [Entorno Xtend (en Eclipse)](xtend-principal.html)
+- [JDK vs. JRE](jdkVsJre.html)
+- [Maven](maven.html)
+- [Cómo trabajar con Travis](algo2-travis.html)
 
--   [Esquemas de Tipado](esquemas-de-tipado.html)
--   [Binding, polimorfismo y sobrecarga](binding--polimorfismo-y-sobrecarga.html)
+## Links
 
-Unidad 2 - Modelos alternativos del Paradigma de Objetos
---------------------------------------------------------
-
--   [Programación Orientada a Aspectos](programacion-orientada-a-aspectos.html)
-
+- [Sitio oficial de la materia](https://phm.uqbar-project.org)

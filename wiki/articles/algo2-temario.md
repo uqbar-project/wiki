@@ -17,5 +17,5 @@ title: Temario de Algoritmos II
 
 ## Links
 
-- [Sitio oficial de la materia](https://sites.google.com/site/algoritmos2unsam)
+- [Sitio oficial de la materia](https://algo2.uqbar-project.org)
 
