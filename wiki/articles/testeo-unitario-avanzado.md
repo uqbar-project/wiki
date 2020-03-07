@@ -10,7 +10,7 @@ Este artículo presenta algunas guías para desarrollar los casos de prueba, con
 
 ## Ejemplo
 
-Un sistema de seguros de automotor define cuándo pagar un siniestro, las condiciones pueden variar:
+Un sistema de seguros de automotor define en qué casos se puede pagar un siniestro:
 
 - para los clientes normales, si no son morosos (la deuda debe ser 0)
 - para las flotas de autos, se soporta una deuda de hasta $ 10.000 si el cliente tiene más de 5 vehículos ó hasta $ 5.000 en caso contrario
@@ -23,7 +23,8 @@ En base al ejemplo anterior, podemos considerar los siguientes escenarios:
 - un cliente normal que debe $1 (caso borde) => está en la misma [clase de equivalencia](https://es.wikipedia.org/wiki/Clase_de_equivalencia) que el que debe más de $ 1
 - una flota con menos de 5 autos => serían "pocos" autos
 - una flota con más de 5 autos => serían "muchos" autos
-- adicionalmente, podemos pensar el caso borde, una flota con 5 autos
+
+El valor de cuántos autos se elige de la siguiente manera: como a partir de los seis autos se considera mucho y menos de 6 son "pocos" autos, 6 es el valor de una flota con muchos autos, 5 es el valor de una flota con pocos autos.
 
 ## Estructura de los tests
 
@@ -33,16 +34,15 @@ La estructura que tienen los tests en base a los escenarios propuestos podría s
 dado un cliente normal
   ├── que es moroso: no puede cobrar un siniestro
   └── que no es moroso: puede cobrar un siniestro
-dado un cliente de flota con muchos autos (supongamos 6, que es más de 5)
+dado un cliente de flota con muchos autos (6 autos)
   ├── si el cliente debe más de $ 10.000 no puede cobrar un siniestro
   ├── si el cliente debe $ 10.000 puede cobrar un siniestro (caso borde)
   └── si el cliente debe menos de $ 10.000, puede cobrar un siniestro
-dado un cliente de flota con pocos autos (supongamos 3, que es menos de 5)
+dado un cliente de flota con pocos autos (5 autos)
   ├── si el cliente debe más de $ 5.000 no puede cobrar un siniestro
-  ├── si el cliente debe $ 5.000 puede cobrar un siniestro (caso borde)
+  ├── si el cliente debe $ 5.000 puede cobrar un siniestro (caso borde de deuda - positivo)
+  ├── si el cliente debe $ 5.001 no puede cobrar un siniestro (caso borde de deuda - negativo)
   └── si el cliente debe menos de $ 5.000 puede cobrar un siniestro
-dado un cliente de flota con 5 autos (caso borde)
-  └── si el cliente debe $ 5.001 no puede cobrar un siniestro
 ```
 
 ## Definiendo las clases y las variables de los tests
@@ -52,7 +52,6 @@ Necesitamos
 - un cliente normal
 - una flota de 6 autos
 - otra flota de 5 autos
-- otra flota de 3 autos
 
 a los que podemos configurar diferentes grados de deuda. Podemos seguir algunas recomendaciones adicionales:
 
@@ -65,7 +64,7 @@ a los que podemos configurar diferentes grados de deuda. Podemos seguir algunas 
 Tener en una sola clase todos los tests no resulta ser una buena práctica, porque
 
 - dificulta diferenciar los escenarios, estarán todas las variables de los tests mezcladas
-- si construimos un fixture con cada uno de los tipos de cliente en el setup, estamos penalizando a cada uno de los tests por lo que necesitan los demás: ¿tiene sentido crear un cliente de flota con 3 autos si estoy testeando un cliente que tiene 6?
+- si construimos un fixture con cada uno de los tipos de cliente en el setup, estamos penalizando a cada uno de los tests por lo que necesitan los demás: ¿tiene sentido crear un cliente de flota con 5 autos si estoy testeando un cliente que tiene 6?
 - la clase a testear pierde cohesión, está cubriendo todos los casos de prueba
 
 <!-- -->
@@ -73,7 +72,7 @@ Tener en una sola clase todos los tests no resulta ser una buena práctica, porq
 Volviendo al ejemplo, hay varias opciones posibles:
 
 - tener una clase para clientes normales y otra para clientes de flota
-- tener una clase para clientes normales, y una clase para cada una de las 3 clases de equivalencia de flota (muchos autos, pocos autos, caso borde con 5 autos)
+- tener una clase para clientes normales, y una clase para cada una de las dos clases de equivalencia de flota (muchos y pocos autos)
 
 <!-- -->
 <br/>
@@ -82,26 +81,25 @@ Crearemos entonces cuatro clases de test:
 - ClienteNormalTest
 - FlotaPocosAutosTest
 - FlotaMuchosAutosTest
-- FlotaCasoBordeTest
 
-Es importante que no haya demasiados detalles de implementación en los nombres: FlotaCon3AutosTest o FlotaCon5AutosTest está sujeto a que cualquier cambio del negocio respecto a lo que son "muchos" o "pocos" autos necesite modificar el nombre de la clase.
+Es importante que no haya demasiados detalles de implementación en los nombres: FlotaCon5AutosTest o FlotaCon6AutosTest está sujeto a que cualquier cambio del negocio respecto a lo que son "muchos" o "pocos" autos necesite modificar el nombre de la clase.
 
 ### Intention revealing - parte 1
 
-Queremos expresar lo más claramente posible la intención de la clase: qué clase de equivalencia está testeando. El nombre ayuda, e incluso JUnit 5 nos permite incorporar la anotación `@DisplayName`:
+Queremos expresar lo más claramente posible la intención de la clase: qué clase de equivalencia está testeando. El nombre ayuda, e incluso JUnit 5 nos permite incorporar la anotación `@DisplayName` para describir el escenario en lenguaje castellano:
 
 ```java
 @DisplayName("Dado un cliente de flota con muchos autos")
 class FlotaMuchosAutosTest {
 ```
 
-recordando que las clases agrupan los tests en forma jerárquica, más adelante veremos cómo juega a favor este encabezado escrito en lenguaje natural. Una vez más recordamos: "muchos autos" es mejor que decir "6 autos".
+recordando que las clases agrupan los tests, más adelante veremos cómo juega a favor este encabezado escrito en lenguaje natural. Una vez más recordamos: "muchos autos" es mejor que decir "6 autos". En otras palabras: explicitar el caso de prueba y no el dato de prueba: en el ejemplo 6 autos es un dato concreto, pero lo que representa es el caso de prueba de una flota con muchos autos.
 
 ## Expresividad en los tests
 
 ### Un primer approach
 
-Para crear nuestro fixture de una flota con muchos autos, los enunciados suelen traer ejemplos como: "El cliente Lidia Pereyra tiene una flota con 6 autos". Es tentador escribir un test como el siguiente:
+Para crear nuestro fixture de una flota con muchos autos, los enunciados suelen traer ejemplos como: "Lidia Pereyra tiene una flota con 6 autos". Es tentador escribir un test como el siguiente:
 
 ```java
 	Flota pereyra
@@ -192,7 +190,7 @@ Los tests suelen estructurarse según el patrón AAA: Arrange, Act y Assert.
 	@Test
 	def void conDeudaGrandeNoPuedeCobrarSiniestro() {
     // Arrange
-		val flotaConMuchosAutos = FlotaFactory.crearFlotaDeAutos(6)
+		val flotaConMuchosAutos = this.crearFlotaDeAutos(6)
 
     // Act
     flotaConMuchosAutos.generarDeuda(15000)
@@ -202,9 +200,9 @@ Los tests suelen estructurarse según el patrón AAA: Arrange, Act y Assert.
 	}
 ```
 
-En el ejemplo tenemos un objeto FlotaFactory que permite crear un objeto Flota pasándole la cantidad de autos a crear. De esa manera la configuración de una flota ocurre en una sola línea y se puede incluir dentro del test mismo.
+En el ejemplo tenemos un método _helper_ del test que permite crear un objeto Flota pasándole la cantidad de autos a crear. De esa manera la configuración de una flota ocurre en una sola línea y se puede incluir dentro del test mismo.
 
-> Una heurística posible sobre el setup del test es tratar de mantenerlo simple y de alto nivel (más cercano al lenguaje del dominio que con detalles de implementación, algo que logramos en el ejemplo de arriba con objetos que se encargan de instanciar objetos de dominio y que esconden la complejidad de conocer la colaboración entre la flota y sus autos).
+> Una heurística posible sobre el setup del test es tratar de mantenerlo simple y de alto nivel, más cercano al lenguaje del dominio que con detalles de implementación. En el ejemplo de arriba se logra con mensajes que se encargan de instanciar objetos de dominio y que esconden la complejidad de conocer la colaboración entre la flota y sus autos). Una alternativa a tener métodos en el test puede ser crear un objeto específico que construya otro objeto, algo que dejaremos para más adelante.
 
 - **A**ct: son las operaciones que tienen efecto. En el caso de la flota que tiene una deuda abultada, enviamos el mensaje que le genera la deuda.
 
@@ -212,7 +210,23 @@ En el ejemplo tenemos un objeto FlotaFactory que permite crear un objeto Flota p
 
 ### "One assert per test"
 
-Hay ciertas controversias respecto a si [podemos tener varios asserts en el mismo test](https://softwareengineering.stackexchange.com/questions/7823/is-it-ok-to-have-multiple-asserts-in-a-single-unit-test), ya que cuando el primer assert falla los siguientes no se siguen evaluando. En realidad, si seguimos la recomendación de que **los tests deben fallar por exactamente un solo motivo**, esto relaja esa restricción. Es decir, lo importante no es tener un solo assert, sino que todos los asserts estén relacionados con la misma funcionalidad. El lector puede profundizar con estos artículos:
+Hay ciertas controversias respecto a si [podemos tener varios asserts en el mismo test](https://softwareengineering.stackexchange.com/questions/7823/is-it-ok-to-have-multiple-asserts-in-a-single-unit-test), ya que cuando el primer assert falla los siguientes no se siguen evaluando: es en realidad una cuestión de implementación del _runner__ o programa que ejecuta los tests, algunos frameworks como RSpec permiten modificar el comportamiento ante un assert fallido. 
+
+En verdad, la heurística que nos interesa recomendar es: **los tests deben fallar por exactamente un solo motivo**, esto relaja esa restricción. Es decir, lo importante no es tener un solo assert, sino que todos los asserts estén relacionados con la misma funcionalidad. Dejamos un ejemplo concreto:
+
+```java
+@Test
+@DisplayName("el parser obtiene correctamente la parte numérica de la patente del auto vieja")
+def parsearNumerosPatenteVieja() {
+	val lista = patenteParser(crearAuto("ABC257"))
+	assertEquals(3, lista.size)
+	assertEquals(2, lista.head)
+	assertEquals(5, lista.get(1))
+	assertEquals(7, lista.get(2))
+}
+```
+
+El lector puede profundizar con estos artículos:
 
 - [Multiple Asserts Are OK](https://www.industriallogic.com/blog/multiple-asserts-are-ok/)
 - [Good Unit Test - One Assert](https://mfranc.com/unit-testing/good-unit-test-one-assert/)
@@ -223,7 +237,7 @@ Este es el resumen de buenas prácticas a la hora de definir tus tests:
 
 - armá los escenarios que generalmente definen las clases de tests
 - utilizá anotaciones `@DisplayName` para la clase de test y para cada test, de manera de entender **qué** estamos testeando. El cómo se ve en el código, **evitá duplicidades** entre el texto que explica y el código escrito
-- evitá que una clase de test tenga muchos escenarios juntos, es más difícil seguirlos (por ese motivo preferimos no explicar el anidamiento de tests en JUnit5)
+- evitá que una clase de test tenga muchos escenarios juntos, es más difícil seguirlos
 - los nombres de las variables deben reflejar la clase de equivalencia que están resolviendo, y no casos particulares que no revelan la intención de lo que estamos modelando (sí `flotaConPocosAutos`, no `flotinha` o `miFlota`)
 - los tests se suelen estructurar utilizando las tres A: Arrange (el setup que conviene mantenerlo simple), Act (operaciones con efecto cuando corresponde) y Assert (las aserciones que deben testear el mismo concepto en cada test)
 
