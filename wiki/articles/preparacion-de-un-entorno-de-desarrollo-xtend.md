@@ -17,9 +17,19 @@ Si estás en Mac o Linux, podés saltear este paso.
 
 ## JDK: Java Development Kit
 
-Primero instalaremos el compilador de Java. Ingresamos a [esta dirección](https://jdk.java.net/java-se-ri/11), y descargamos la **Open JDK 11**, que a partir del 2020 es la versión oficial que vamos a manejar y cuya licencia es [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License). 
+Primero instalaremos el compilador de Java, que puede ser diferente para cada materia.
+
+### Algoritmos 2 - JDK 11
+
+Ingresamos a [esta dirección](https://jdk.java.net/java-se-ri/11), y descargamos la **Open JDK 11**, que a partir del 2020 es la versión oficial que vamos a manejar y cuya licencia es [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License). 
 
 Como alternativa, en caso de tener algún inconveniente, tenés [este sitio de descarga](https://www.oracle.com/technetwork/java/javase/downloads/index.html) de la versión **Java SE 11 (LTS)**, pero hay que tener en cuenta que no es un software libre, sino propiedad de Oracle.
+
+### Programación con Herramientas Modernas - JDK 8
+
+Ingresamos a [esta dirección](https://www.oracle.com/technetwork/java/javase/downloads/index.html), y descargamos la versión **Java SE 8u241**.
+
+> No podés instalar JDK superior a 1.8 porque no es compatible con los ejemplos de Arena. Si tu TP va a tener un frontend web, podés usar la versión 11 de Java.
 
 ### Pasos de instalación
 
