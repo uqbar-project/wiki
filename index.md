@@ -31,7 +31,7 @@ Si sos un estudiante en busca del material de una materia, tal vez te convenga i
 
 - [Algoritmos II]({{site.baseurl}}/wiki/articles/algo2-temario.html)
 - [Algoritmos III]({{site.baseurl}}/wiki/articles/algo3-temario.html)
-- [Programación con Herramientas Modernas]({{site.baseurl}}/wiki/articles/programacion-con-herramientas-modernas.html)
+- [Programación con Herramientas Modernas]({{site.baseurl}}/wiki/articles/phm-temario.html)
 
 ## Material adicional
 

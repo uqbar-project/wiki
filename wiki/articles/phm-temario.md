@@ -10,6 +10,11 @@ title: Programacion con herramientas modernas
 - [Maven](maven.html)
 - [Cómo trabajar con Travis](algo2-travis.html)
 
+## Páginas
+
+- [Script Mapeo manual Objetos / Relacional](phm-script-mapeo-manual-or.html)
+- [Script MongoDB](phm-script-mongodb.html)
+
 ## Links
 
 - [Sitio oficial de la materia](https://phm.uqbar-project.org)

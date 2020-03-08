@@ -1,0 +1,41 @@
+---
+layout: article
+title: Script mapeo manual Objetos / Relacional
+---
+
+- Presentación del ejercicio de los partidos de fútbol
+  - modelo de objetos
+  - traslación al modelo relacional
+- Creamos las tablas (DDL: Data Definition Language) 
+- Insertamos valores desde el modelo relacional (mediante scripts de manipulación de datos o DML)
+  - ¿O -> R o R -> O?
+  - Crear Juego de datos en alguna de las dos tecnologías
+- Intro a JDBC. _Driver_ o controlador como el componente que permite a nuestra aplicación (en este caso JDK) interactuar con un motor de base de datos.
+  - Conexión
+    - Externalización a un archivo / Encriptación
+    - Pool de conexiones
+  - Statement
+    - Statement de consulta que devuelve Resultsets
+    - Statement de inserción, eliminación o actualización que sólo implica ejecución
+  - Prepared Statement
+- Mapeo manual
+  - Diseñar objetos que modelen sólo la estructura (ej: EJB 2.x) vs. usar los objetos de dominio
+    - No hay razón para mantener una doble jerarquía de objetos sin comportamiento
+  - Hidratación del grafo de objetos, se segmenta por caso de uso
+    - cuando quiero saber quién ganó, no necesito saber los que jugaron, sólo el resultado
+    - cuando quiero saber si un jugador estuvo en un partido, tengo que bajar el grafo de objetos de Equipo, Resultado, Formación hasta los jugadores relacionados con la formación
+  - Ventajas
+    - mayor control sobre el algoritmo
+    - podemos armar queries específicos (manipular SQL puro)
+  - Contras
+    - hay que encargarse de todo: es tedioso y repetitivo
+    - dificulta la reutilización de ideas
+  - Tests unitarios
+    - el juego de datos se instancia "por afuera"
+      - esto implica una dependencia que sale del ambiente de objetos
+      - si alguien se olvida de correr el script en la base de datos, no funcionan los tests
+      - si alguien cambia el juego de datos, no funcionan los tests
+      - mientras nadie modifique la base, los tests funcionan
+      - claro, no hay efecto colateral: los tests sólo son de lectura. 
+    - Más adelante veremos técnicas para que los tests puedan seguir manteniendo unitariedad (e - independencia entre sí).
+- Resumen
