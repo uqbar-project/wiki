@@ -19,12 +19,11 @@ Un sistema de seguros de automotor define en qué casos se puede pagar un sinies
 
 En base al ejemplo anterior, podemos considerar los siguientes escenarios:
 
-- un cliente normal moroso
-- un cliente normal que debe $1 (caso borde) => está en la misma [clase de equivalencia](https://es.wikipedia.org/wiki/Clase_de_equivalencia) que el que debe más de $ 1
+- un cliente normal moroso: si debe $ 1 ó $ 50.000 no nos importa, porque está en la misma [clase de equivalencia](https://es.wikipedia.org/wiki/Clase_de_equivalencia)
 - una flota con menos de 5 autos => serían "pocos" autos
 - una flota con más de 5 autos => serían "muchos" autos
 
-El valor de cuántos autos se elige de la siguiente manera: como a partir de los seis autos se considera mucho y menos de 6 son "pocos" autos, 6 es el valor de una flota con muchos autos, 5 es el valor de una flota con pocos autos.
+Elegimos cuántos autos en base al **valor límite**: como a partir de los seis autos se considera mucho y menos de 6 son "pocos" autos, 6 es el valor de una flota con muchos autos, 5 es el valor de una flota con pocos autos.
 
 ## Estructura de los tests
 
@@ -36,12 +35,9 @@ dado un cliente normal
   └── que no es moroso: puede cobrar un siniestro
 dado un cliente de flota con muchos autos (6 autos)
   ├── si el cliente debe más de $ 10.000 no puede cobrar un siniestro
-  ├── si el cliente debe $ 10.000 puede cobrar un siniestro (caso borde)
   └── si el cliente debe menos de $ 10.000, puede cobrar un siniestro
 dado un cliente de flota con pocos autos (5 autos)
   ├── si el cliente debe más de $ 5.000 no puede cobrar un siniestro
-  ├── si el cliente debe $ 5.000 puede cobrar un siniestro (caso borde de deuda - positivo)
-  ├── si el cliente debe $ 5.001 no puede cobrar un siniestro (caso borde de deuda - negativo)
   └── si el cliente debe menos de $ 5.000 puede cobrar un siniestro
 ```
 
@@ -72,11 +68,11 @@ Tener en una sola clase todos los tests no resulta ser una buena práctica, porq
 Volviendo al ejemplo, hay varias opciones posibles:
 
 - tener una clase para clientes normales y otra para clientes de flota
-- tener una clase para clientes normales, y una clase para cada una de las dos clases de equivalencia de flota (muchos y pocos autos)
+- tener una clase para clientes normales, otra para flota con pocos autos y otra para flota con muchos autos
 
 <!-- -->
 <br/>
-Crearemos entonces cuatro clases de test:
+Crearemos entonces estas clases de test:
 
 - ClienteNormalTest
 - FlotaPocosAutosTest
@@ -93,7 +89,7 @@ Queremos expresar lo más claramente posible la intención de la clase: qué cla
 class FlotaMuchosAutosTest {
 ```
 
-recordando que las clases agrupan los tests, más adelante veremos cómo juega a favor este encabezado escrito en lenguaje natural. Una vez más recordamos: "muchos autos" es mejor que decir "6 autos". En otras palabras: explicitar el caso de prueba y no el dato de prueba: en el ejemplo 6 autos es un dato concreto, pero lo que representa es el caso de prueba de una flota con muchos autos.
+recordando que las clases agrupan los tests, más adelante veremos cómo juega a favor este encabezado escrito en lenguaje natural. Una vez más recordamos: "muchos autos" es mejor que decir "6 autos". En otras palabras, explicitar el caso de prueba y no el dato de prueba: 6 autos es un dato concreto, pero lo que representa es el caso de prueba de una flota con muchos autos.
 
 ## Expresividad en los tests
 
@@ -184,7 +180,7 @@ Ahora al fallar el test sabemos más cosas:
 
 Los tests suelen estructurarse según el patrón AAA: Arrange, Act y Assert.
 
-- **A**rrange: donde instanciamos los objetos a testear, con sus colaboradores: en el ejemplo son la flota y sus autos. Cuando los contextos son compartidos, los frameworks basados en xUnit (JUnit5 es uno de ellos) nos permiten ubicarlo en un método `setup` (`@BeforeEach`). La desventaja de esta técnica es que para tener una idea general de los elementos que participan en el test debemos mirar el test **y** el setup, por eso una alternativa suele ser tener objetos específicos que se encargan de crear una flota, separados del test:
+- **A**rrange: donde instanciamos los objetos a testear, con sus colaboradores: en el ejemplo son la flota y sus autos. Cuando los contextos son compartidos, los frameworks basados en xUnit (JUnit5 es uno de ellos) nos permiten ubicarlo en un método `setup` (`@BeforeEach`). La desventaja de esta técnica es que para tener una idea general de los elementos que participan en el test debemos mirar el test **y** el setup, por eso una alternativa suele ser tener métodos en el test que construyen el escenario que se necesita:
 
 ```java
 	@Test
@@ -204,23 +200,25 @@ En el ejemplo tenemos un método _helper_ del test que permite crear un objeto F
 
 > Una heurística posible sobre el setup del test es tratar de mantenerlo simple y de alto nivel, más cercano al lenguaje del dominio que con detalles de implementación. En el ejemplo de arriba se logra con mensajes que se encargan de instanciar objetos de dominio y que esconden la complejidad de conocer la colaboración entre la flota y sus autos). Una alternativa a tener métodos en el test puede ser crear un objeto específico que construya otro objeto, algo que dejaremos para más adelante.
 
-- **A**ct: son las operaciones que tienen efecto. En el caso de la flota que tiene una deuda abultada, enviamos el mensaje que le genera la deuda.
+<br>
+
+- **A**ct: son las operaciones que tienen efecto. En el caso de la flota que tiene una deuda abultada, enviamos el mensaje que le genera la deuda. Hay tests que quizás no necesiten disparar acciones, y está bien que eso ocurra.
 
 - **A**ssert: qué esperamos que pase, generalmente asociado a las respuestas que da el envío de un mensaje al objeto testeado.
 
 ### "One assert per test"
 
-Hay ciertas controversias respecto a si [podemos tener varios asserts en el mismo test](https://softwareengineering.stackexchange.com/questions/7823/is-it-ok-to-have-multiple-asserts-in-a-single-unit-test), ya que cuando el primer assert falla los siguientes no se siguen evaluando: es en realidad una cuestión de implementación del _runner__ o programa que ejecuta los tests, algunos frameworks como RSpec permiten modificar el comportamiento ante un assert fallido. 
+Hay ciertas controversias respecto a si [podemos tener varios asserts en el mismo test](https://softwareengineering.stackexchange.com/questions/7823/is-it-ok-to-have-multiple-asserts-in-a-single-unit-test), ya que cuando el primer assert falla los siguientes no se siguen evaluando: esto en realidad depende del __runner__ de xUnit, podríamos eventualmente trabajar con un framework que continue buscando asserts y discrimine cuáles anduvieron y cuáles no (RSpec, framework de testeo para Ruby, hace ésto). 
 
-En verdad, la heurística que nos interesa recomendar es: **los tests deben fallar por exactamente un solo motivo**, esto relaja esa restricción. Es decir, lo importante no es tener un solo assert, sino que todos los asserts estén relacionados con la misma funcionalidad. Dejamos un ejemplo concreto:
+En verdad, la heurística que nos interesa recomendar es: **los tests deben fallar por exactamente un solo motivo**, esto relaja esa restricción. Lo importante no es tener un solo assert, sino que todos los asserts estén relacionados con la misma funcionalidad. Dejamos un ejemplo concreto:
 
 ```java
 @Test
 @DisplayName("el parser obtiene correctamente la parte numérica de la patente del auto vieja")
 def parsearNumerosPatenteVieja() {
-	val lista = patenteParser(crearAuto("ABC257"))
+	val lista = new PatenteParser("ABC257").parsearNumeros()
 	assertEquals(3, lista.size)
-	assertEquals(2, lista.head)
+	assertEquals(2, lista.get(0))
 	assertEquals(5, lista.get(1))
 	assertEquals(7, lista.get(2))
 }
@@ -236,7 +234,7 @@ El lector puede profundizar con estos artículos:
 Este es el resumen de buenas prácticas a la hora de definir tus tests:
 
 - armá los escenarios que generalmente definen las clases de tests
-- utilizá anotaciones `@DisplayName` para la clase de test y para cada test, de manera de entender **qué** estamos testeando. El cómo se ve en el código, **evitá duplicidades** entre el texto que explica y el código escrito
+- utilizá anotaciones `@DisplayName` para la clase de test y para cada test, de manera de entender **qué** estamos testeando. El cómo lo terminás de ver en el código, **evitá duplicidades** entre el texto que explica y el código escrito
 - evitá que una clase de test tenga muchos escenarios juntos, es más difícil seguirlos
 - los nombres de las variables deben reflejar la clase de equivalencia que están resolviendo, y no casos particulares que no revelan la intención de lo que estamos modelando (sí `flotaConPocosAutos`, no `flotinha` o `miFlota`)
 - los tests se suelen estructurar utilizando las tres A: Arrange (el setup que conviene mantenerlo simple), Act (operaciones con efecto cuando corresponde) y Assert (las aserciones que deben testear el mismo concepto en cada test)
