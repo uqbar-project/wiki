@@ -11,7 +11,7 @@ Hay varias cosas que es útil configurar en Eclipse, independientemente del leng
 
 ![image](/img/languages/installedJREConfigEclipse.png)
 
-Una de las configuraciones más importantes, es el compilador que estará usando Eclipse para nuestro código Xtend. En el ejemplo de arriba, hemos configurado un compilador de Java 1.11 (aunque nosotros recomendamos que utilicen el 1.8). Es preciso recalcar que **deben apuntar a una JDK (con el compilador) y no a una JRE o no podrán ejecutar ningún programa Xtend, ni Java**.
+Una de las configuraciones más importantes, es el compilador que estará usando Eclipse para nuestro código Xtend. En el ejemplo de arriba, hemos configurado un compilador de Java 1.11 (consultá con tus docentes qué versión de JDK hay que usar). Es preciso recalcar que **deben apuntar a una JDK (con el compilador) y no a una JRE o no podrán ejecutar ningún programa Xtend, ni Java**.
 
 A continuación te dejamos una animación que muestra cómo configurar otra JDK, para lo cual hay que pasar el directorio raíz (no el `bin` donde residen el compilador y los demás programas de Java).
 
@@ -27,7 +27,9 @@ Para que cuando hagas New > File te aparezcan las clases y las interfaces Xtend,
 
 Algunas versiones de Eclipse utilizan por defecto compatibilidad con el compilador Java 1.4, algo que no es conveniente si vamos a trabajar con herramientas como Generics o Annotations que vienen a partir del JDK 1.5.
 
-Para esto deben ir a Window Preferences &gt; Java &gt; Compiler &gt; y donde dice JDK Compliance subir la propiedad "Compiler compliance level" de 1.4 a una superior (1.8 ó superior)
+Para esto deben ir a Window Preferences &gt; Java &gt; Compiler &gt; y donde dice JDK Compliance subir la propiedad "Compiler compliance level" de 1.4 a una superior.
+
+![java compiler configuration in eclipse](/img/wiki/Compiler-Java-Eclipse.png)
 
 En caso contrario al bajar proyectos compilados en JDKs superiores aparecerán mensajes de error como estos:
 
