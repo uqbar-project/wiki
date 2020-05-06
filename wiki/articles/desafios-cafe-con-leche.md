@@ -9,6 +9,8 @@ En muchos cursos de docentes Uqbar se acostumbra dejar "desafíos café con lech
 
 -   [Desafío: find con notación point-free](desafio--find-con-notacion-point-free.html)
 -   [Desafío: Hacer que un data propio sea Enum](desafio--hacer-que-un-data-propio-sea-enum.html)
+-   [Desafío: Construir esta sucesión](desafio--construir-esta-sucesion.html)
+-   [Desafío: Ordenar con arbol B](desafio--ordenar-con-arbol-b.html)
 
 ### Prolog
 
