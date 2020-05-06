@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Desafio: Construir esta sucesión
+title: Desafio  Construir esta sucesión
 ---
 
 Utilizando recursividad en Haskell, obtener la siguiente secuencia:
