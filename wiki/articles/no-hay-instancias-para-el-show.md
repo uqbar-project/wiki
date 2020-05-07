@@ -5,7 +5,7 @@ title: No hay instancias para el Show
 
 A muchos probablemente les haya sucedido encontrarse con el error `No instance for Show`. 
 Esto, contrario a lo que muchos creen, no significa que nos quedamos sin show por falta de instancias.
-Lo que significa es, en criollo, _"Macho, no sé mostrar esto en la consola"_
+Lo que significa es, en criollo, _"ARRRGH, no sé mostrar esto en la consola"_
 
 Sólo que lo dice aproximadamente así:
 
