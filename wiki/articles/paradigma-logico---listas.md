@@ -299,6 +299,12 @@ Recuerden:
 - puntaje es un predicado no un functor
 - Tabla es una lista de functores ptos que verifican la consulta que está como segundo parámetro del findall  
 
+Sacando los repetidos con distinct
+----------------------------------
+
+- Ver [Distinct](distinct.html)
+
+
 Recursividad Con Listas
 -----------------------
 
