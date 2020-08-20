@@ -42,6 +42,7 @@ Predicados de Orden Superior
 -   [not](paradigma-logico---negacion.html)
 -   [forall](paradigma-logico---el-forall.html)
 -   [findall](paradigma-logico---listas.html)
+-   [distinct](distinct.html)
 -   [Cómo hacer predicados de orden superior](como-hacer-predicados-de-orden-superior.html)
 
 Errores y preguntas frecuentes
