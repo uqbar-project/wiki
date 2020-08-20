@@ -31,7 +31,7 @@ Y querés que te dé 2 (pepe y juan), no 5.
 
 Bueno, en ese caso, podés utilizar el predicado de orden superior `distinct/2`, de esta forma:
 ```Prolog
-?- distinct(Picaro,esPicaro(Quien)).
+?- distinct(Quien,esPicaro(Quien)).
 Quien=pepe,
 Quien=juan.
 ```
