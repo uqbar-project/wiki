@@ -14,7 +14,7 @@ title: Errores frecuentes al programar en logico
     -   [Mezclar antecedente y consecuente en un **forall**](paradigma-logico---el-forall.html)
     -   Confundir *existe* con *para todo* (forall).
 -   Estilos de programación no *lógicos*, por ejemplo:
-    -   [Utilización innecesaria de listas](paradigma-logico---listas-errores-comunes--findall-y-member.html).
+    -   [Utilización innecesaria de listas (ver errores comunes)](paradigma-logico---listas.html).
     -   Estrategias algorítmicas.
 -   Programación "con efectos colaterales", por ejemplo intentos de "asignar" más de una vez un valor una misma variable.
 -   Falta de abstracción, que puede verse reflejada en:
