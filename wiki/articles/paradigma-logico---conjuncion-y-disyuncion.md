@@ -42,3 +42,42 @@ Codifiquemos los predicados hermano/2 y hermanastro/2:
 ```
 
 La conjunción en Prolog se logra con la coma, mientras que la disyunción la conseguimos mediante la definición de varias cláusulas para el mismo predicado. Podemos ver a partir del predicado hermanastro que la búsqueda de soluciones que realiza el motor de Prolog es exhaustiva, ya que si bien jose y luis no cumplen la condición de tener la misma madre, el resultado a la consulta hermanastro(jose,luis) es verdadero, dado que continúa la evaluación con las otras alternativas para poder satisfacer la relación.
+
+### Error común: Hacer el "O" antes de tiempo
+
+Vamos a suponer que tenemos la siguiente lógica "una pc es gamer si tiene un disco ssd, un procesador multinúcleo, y una placa de video shifors 6 o una reidion 8"
+El siguiente código está mal, porque **repite lógica**:
+
+```prolog
+esGamer(PC):-
+  tieneDiscoSSD(PC),
+  tieneMultiNucleo(PC),
+  placa(PC,shifors6).
+  
+esGamer(PC):-
+  tieneDiscoSSD(PC),
+  tieneMultiNucleo(PC),
+  placa(PC,reidion8).
+  
+ % ¡REPITE LÓGICA!
+```
+
+La definición de una pc gamer **debe ser única**, es decir, tiene que tener _una sola cláusula_. ¡Hay una sola forma de que una pc sea gamer, no dos! 
+¿Cómo? ¡Nos falta una **abstracción**! La abstracción `tienePlacaBuena`. Implícitamente esa idea está, pero nos falta en nuestro código. Veamos cómo agregando esa abstracción evitamos la repetición de lógica: 
+
+> "una pc es gamer si tiene un disco ssd, un procesador multinúcleo, y **una buena placa de video**"
+
+```prolog
+esGamer(PC):-
+  tieneDiscoSSD(PC),
+  tieneMultiNucleo(PC),
+  tienePlacaBuena(PC).
+  
+tienePlacaBuena(PC):-
+  placa(PC,shifors6).
+  
+tienePlacaBuena(PC):-
+  placa(PC,reidion8).
+
+% No repite lógica: la definición de "esGamer" es única, delega en otro predicado "tienePlacaBuena" los detalles.
+```
