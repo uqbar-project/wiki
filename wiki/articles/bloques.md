@@ -48,20 +48,22 @@ object pepita {
   }
   
   method irYVolverNVeces(metros, veces){
-    veces.times({ self.volar(metros * 2) })
+    veces.times({n => self.volar(metros * 2) })
   }
 }
 ```
 
 Y luego evaluamos: `pepita.irYVolverNVeces(5, 3)`
 
-El mensaje `times(algoParaHacer)` que se le manda al número 3 con el bloque que construímos en ese momento se encargará de mandarle el mensaje `apply()` al bloque que le pasamos, en este caso, 3 veces. Dado que la referencia metros existía en el contexto en el cual ese bloque fue creado (era un parámetro del método), es válido usar esa referencia dentro de la lógica del bloque y va a apuntar al objeto 5, como es de esperarse.
+El mensaje `times(algoParaHacer)` que se le manda al número 3 con el bloque que construímos en ese momento se encargará de mandarle el mensaje `apply(valor)` al bloque que le pasamos, en este caso, 3 veces. Dado que la referencia metros existía en el contexto en el cual ese bloque fue creado (era un parámetro del método), es válido usar esa referencia dentro de la lógica del bloque y va a apuntar al objeto 5, como es de esperarse.
+
+> El parámetro que se usa para aplicar el bloque será primero 1, luego 2 y finalmente 3. Esta información es irrelevante para el ejemplo, pero el bloque debe recibir un parámetro para que entienda el mensaje que recibirá cuando se evalúe el método `times`.
 
 Otra pregunta interesante es: **¿quién es [self](self---pseudovariable.html) dentro del bloque?**
 
-Cuando usamos self dentro de un bloque, estamos referenciando al mismo objeto que recibió el mensaje dentro del cual se creó el bloque, lo cual es muy convieniente ya que hace que no necesitemos parametrizar a self si necesitamos mandarle mensajes o parametrizarlo a otro mensaje dentro del código del bloque.
+Cuando usamos self dentro de un bloque, estamos referenciando al mismo objeto que recibió el mensaje dentro del cual se creó el bloque (o sea, **pepita**), lo cual es muy convieniente ya que hace que no necesitemos parametrizar a self si necesitamos mandarle mensajes o parametrizarlo a otro mensaje dentro del código del bloque.
 
-Entonces el resultado de la operación será que la energía de pepita se habrá decrementado en 60.
+Finalmente, el resultado de la operación será que la energía de pepita se habrá decrementado en 60.
 
 Bloques como funciones
 ----------------------
