@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Temporary variables
-categories: [oo, bad smells, buenas prácticas, variables, temporales, efecto]
+categories: [oo, bad smells, buenas prácticas, variables, temporales, efecto, precalculo, precalcular]
 featured: true
 ---
 
@@ -101,6 +101,7 @@ lo cual agrega más desventajas:
 - la variable `instruido` da lo mismo si es una variable de instancia (atributo) o una variable local del método `esInstruido`, solo se asigna para ser retornada
 - métodos que representan acciones como leer el libro o conocer idioma, llaman a una aparente pregunta (esInstruido) solo para actualizar el estado, se confunde así métodos que tienen efecto y que no lo tienen
 - si hay más atributos cuyos valores dependen de otros, puede no resultar trivial el momento de actualizar el estado del objeto sin que quede momentáneamente inconsistente (o puede resultar en errores si no respetamos el orden en que actualizamos dichos atributos)
+- En general, intentar guardarse cosas que pueden ser calculadas es un smell, conocido también como "precalcular", término popularizado por [Maese Rasta](https://github.com/PalumboN).
 
 ## Una alternativa más simple
 
@@ -122,6 +123,10 @@ Aquí vemos cómo tenemos
 - y métodos que no tienen efecto (contestan preguntas): `esInstruido`
 
 ## Heurística para tener atributos que pudieran ser calculables
+
+En general, intentar guardarse cosas de antemano para "optimizar" es un smell. Como dijo Donald Knuth, [_premature optimization is the root of all evil_](https://en.wikiquote.org/wiki/Donald_Knuth).
+
+Sin embargo, **sí hay ocasiones donde guardarse un resultado de antemano es aceptable**:
 
 - si el cálculo lleva tiempo (o implica acceder a recursos externos costosos, como un archivo o un servicio web)
 - si la tasa de actualización es poco frecuente pero necesitamos conocer esa información una gran cantidad de veces al día
