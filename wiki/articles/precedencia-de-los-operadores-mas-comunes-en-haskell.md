@@ -27,7 +27,7 @@ infixr 5  ++
 infix  4  ==, /=, <, <=, >=, >, `elem`, `notElem`
 infixr 3  &&
 infixr 2  ||
-infixr 0 $
+infixr 0  $
 ```
 
 Bonus: Asociatividad
