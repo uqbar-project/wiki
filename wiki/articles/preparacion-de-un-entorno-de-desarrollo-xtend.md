@@ -17,19 +17,10 @@ Si estás en Mac o Linux, podés saltear este paso.
 
 ## JDK: Java Development Kit
 
-Primero instalaremos el compilador de Java, que puede ser diferente para cada materia.
+Primero instalaremos el compilador de Java.
 
-### Algoritmos 2 - JDK 11
+Ingresamos a [esta dirección](https://jdk.java.net/java-se-ri/11), y descargamos la **Open JDK 11**, que es la versión oficial que manejamos desde 2020 y cuya licencia es [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License). 
 
-Ingresamos a [esta dirección](https://jdk.java.net/java-se-ri/11), y descargamos la **Open JDK 11**, que a partir del 2020 es la versión oficial que vamos a manejar y cuya licencia es [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License). 
-
-Como alternativa, en caso de tener algún inconveniente, tenés [este sitio de descarga](https://www.oracle.com/technetwork/java/javase/downloads/index.html) de la versión **Java SE 11 (LTS)**, pero hay que tener en cuenta que no es un software libre, sino propiedad de Oracle.
-
-### Programación con Herramientas Modernas - JDK 8
-
-Ingresamos a [esta dirección](https://www.oracle.com/technetwork/java/javase/downloads/index.html), y descargamos la versión **Java SE 8u241**.
-
-> No podés instalar JDK superior a 1.8 porque no es compatible con los ejemplos de Arena. Si tu TP va a tener un frontend web, podés usar la versión 11 de Java.
 
 ### Pasos de instalación
 
@@ -60,9 +51,9 @@ Nuestro entorno integrado de desarrollo (IDE) permite que en una misma herramien
 
 ### Pasos de instalación
 
-Tenés que descargarlo desde [esta página](https://www.eclipse.org/downloads/) utilizando el link **Get Eclipse IDE 2019‑12**
+Tenés que descargarlo desde [esta página](https://www.eclipse.org/downloads/) utilizando el link más reciente de Eclipse (al 01/03 es **Get Eclipse IDE 2020‑12**)
 
-> **NOTA:** si tu intención es descargar el Eclipse IDE 2018-12 y en la página principal lo han reemplazado por otro entorno que tu profesor descartó, podés visitar [la página histórica de descarga de Eclipses anteriores](https://wiki.eclipse.org/Older_Versions_Of_Eclipse)
+> **NOTA:** podés visitar [la página histórica de descarga de Eclipses anteriores](https://wiki.eclipse.org/Older_Versions_Of_Eclipse) por si hay versiones más nuevas y te interesa usar la versión 2020-12 que es con la que desarrollamos los ejemplos. Normalmente las actualizaciones de Eclipse siguen funcionando sin mayores problemas con el plugin de Xtend, Java y Maven.
 
 Eso te descarga un eclipse-installer, que es el primer paso. Lo abrís con un doble click, y luego seleccionás "Eclipse for Java Developers", seleccionando la carpeta de destino.
 
@@ -111,10 +102,10 @@ Seguí los pasos de instalación de [esta página](guia-de-instalacion-de-maven.
 
 Instalá el plugin de Xtend desde el Update Site, siguiendo estos pasos:
 
-- En el menú de Eclipse, Help &gt; Install New Software ... botón Add
+- En el menú de Eclipse, Help > Install New Software ... botón Add
 - En la ventana de diálogo Add Repository, en el nombre escribir algo como "Xtend Plugin" y en Location copiar esta URL: [http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/](http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/)
 
-- A partir del 2020 se estará usando la versión **2.21**, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software" (más abajo está resaltado en la imagen). En caso de duda sobre qué versión instalar, aconsejamos consultar por la lista de difusión al docente responsable.
+- A partir del 2021 se estará usando la versión **2.25**, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción "Show only the latest versions of available software" (más abajo está resaltado en la imagen). En caso de duda sobre qué versión instalar, aconsejamos consultar por la lista de difusión al docente responsable.
 - Seleccionar el check Xtext, y luego Xtend IDE, hacer click en Next y luego en Finish
 
 ![image](/img/wiki/Xtend-installation-2020-2.png)
@@ -131,7 +122,7 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 - Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere [aquí](guia-de-instalacion-de-maven.html)
   - en la primera ventana, clickear en la opción "Create a simple project (Skip archetype selection)", luego Next...
-  - definir un groupId, que puede ser el edu.*materia* . Ej: edu.dds, edu.algo2, etc.
+  - definir un groupId, que puede ser el *materia* . Ej: algo2, phm, etc.
   - definir un artifactId, que se asocia al nombre de tu proyecto
 
 - Para definir el archivo `pom.xml` de Maven con el que vas a configurar tu proyecto, podés basarte en el modelo de ejemplo de [esta página](xtend-creacion-proyecto.html) 
