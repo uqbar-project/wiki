@@ -55,7 +55,10 @@ Tenés que descargarlo desde [esta página](https://www.eclipse.org/downloads/) 
 
 > **NOTA:** podés visitar [la página histórica de descarga de Eclipses anteriores](https://wiki.eclipse.org/Older_Versions_Of_Eclipse) por si hay versiones más nuevas y te interesa usar la versión 2020-12 que es con la que desarrollamos los ejemplos. Normalmente las actualizaciones de Eclipse siguen funcionando sin mayores problemas con el plugin de Xtend, Java y Maven.
 
-Eso te descarga un eclipse-installer, que es el primer paso. Lo abrís con un doble click, y luego seleccionás "Eclipse for Java Developers", seleccionando la carpeta de destino.
+Eso te descarga un eclipse-installer, que es el primer paso. Lo abrís con un doble click, y luego seleccionás
+
+- si estás cursando Programación con Herramientas Modernas: "Eclipse IDE for Enterprise Java Developers"
+- cualquier otra cursada: "Eclipse for Java Developers", seleccionando la carpeta de destino.
 
 ### Chequeos de instalación
 
