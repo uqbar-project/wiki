@@ -72,7 +72,7 @@ snd . (head . filter even).
 También puede notarse que todos los operadores tienen menor precedencia que la aplicación funcional, es decir que al ejemplo anterior podríamos definirlo completamente si agregamos los paréntesis alrededor de `.`:
 
 ```
-snd . (head . (filter even)).
+snd . (head . (filter even))
 ```
 
 Los operadores definidos como `infix` no son asociativos, por ejemplo el operador de igualdad `==`. Por lo tanto la expresión:
