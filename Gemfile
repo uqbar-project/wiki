@@ -27,3 +27,4 @@ gem 'jekyll-scholar'
 gem "sass"
 gem 'html-proofer'
 gem 'rouge', '2.2.1'
+gem 'kramdown-parser-gfm'
