@@ -66,7 +66,7 @@ snd . head . filter even
 Debe leerse como:
 
 ```
-snd . (head . filter even).
+snd . (head . filter even)
 ```
 
 También puede notarse que todos los operadores tienen menor precedencia que la aplicación funcional, es decir que al ejemplo anterior podríamos definirlo completamente si agregamos los paréntesis alrededor de `.`:
