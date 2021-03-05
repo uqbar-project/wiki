@@ -30,7 +30,7 @@ Para comenzar a escribir la configuración del proyecto en un archivo `pom.xml` 
 - Crear un proyecto maven desde eclipse u algún otro IDE.
 - Copiarse un `pom.xml` de un proyecto maven existente y adecuar los valores de los campos que identifican el proyecto.
 
-Te dejamos entonces el modelo de proyecto Maven por defecto para la cursada 2020 de Algoritmos 2 (UNSAM): [pom.xml 2020 de ejemplo](pom-algo2-2020.xml). Luego tendrás que
+Te dejamos entonces el modelo de proyecto Maven por defecto para la cursada de Algoritmos 2 (UNSAM) del aǹo 2021: [pom.xml de ejemplo](pom-algo2.xml). Luego tendrás que
 
 - renombrar el archivo a `pom.xml`
 - copiarlo dentro del directorio raíz de tu proyecto ya creado
