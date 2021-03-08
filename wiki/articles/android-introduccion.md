@@ -90,7 +90,7 @@ Más adelante hablaremos de la forma de distribuir las aplicaciones.
 
 ### Desarrollo híbrido
 
-En este tipo de desarrollo se trabaja en parte web y en parte con desarrollo nativo. También suelen incluirse en esta categoría los desarrollos generados con productos que soportan varias plataformas móviles (como [SAP Fiori](https://www.sap.com/products/fiori.trial.html#trial) y [Adobe PhoneGap](https://phonegap.com/) que son pagos, [Apache Córdova](https://cordova.apache.org/), o [Appcelerator](https://www.appcelerator.com/) que son libres y open source). Estos productos limitan los features a utilizar a favor de tener una única aplicación global para todas las plataformas.
+En este tipo de desarrollo se trabaja en parte web y en parte con desarrollo nativo. También suelen incluirse en esta categoría los desarrollos generados con productos que soportan varias plataformas móviles (como [SAP Fiori](https://www.sap.com/products/fiori.trial.html#trial) y [Adobe PhoneGap](https://build.phonegap.com/) que son pagos, [Apache Córdova](https://cordova.apache.org/), o [Appcelerator](https://www.appcelerator.com/) que son libres y open source). Estos productos limitan los features a utilizar a favor de tener una única aplicación global para todas las plataformas.
 
 ![Comparación de Desarrollos Android](../../img/wiki/android_comparacion_desarrollos.png)
 
