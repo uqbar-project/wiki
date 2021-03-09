@@ -112,7 +112,7 @@ Si quieren chusmear más pueden profundizar sobre
 
 ## Ioke
 
-[Ioke](https://en.wikipedia.org/wiki/Ioke_(programming_language)) (06/11/2008) fue un proyecto basado en la VM de Java que proponía trabajar con prototipos, intercalando lenguajes como Io, Ruby y Lisp. Vemos la misma implementación de pepita en Ioke:
+[Ioke](https://ioke.org/) (06/11/2008) fue un proyecto basado en la VM de Java que proponía trabajar con prototipos, intercalando lenguajes como Io, Ruby y Lisp. Vemos la misma implementación de pepita en Ioke:
 
 ```ioke
 pepita = Origin mimic do(

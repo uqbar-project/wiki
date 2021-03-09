@@ -44,7 +44,7 @@ El Node Package Manager (NPM) almacena las dependencias de nuestro proyecto (ent
 
 Por ejemplo, "~3.6.3" implica que podemos subir hasta una versión minor (3.7.x), pero no más (no a la 3.8.1 por ejemplo). El modificador "^8.2.7", implica que podemos subir todas las versiones minor y patch que necesitemos, pero no actualizaremos la versión major a "9.0.0" por ejemplo.
 
-Para más información pueden leer [el componente de node que trabaja el _versionado semántico_](https://docs.npmjs.com/misc/semver). 
+Para más información pueden leer [el componente de node que trabaja el _versionado semántico_](https://www.npmjs.com/package/semver). 
 
 ## package-lock.json
 
