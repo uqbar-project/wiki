@@ -28,7 +28,7 @@ En el archivo pom se declaran, entre otras cosas, un identificador único de nue
 
 - **groupId**: representa la organización autora/dueña del artefacto. Por ejemplo, los proyectos de Algoritmos 2 suelen usar el groupId `org.uqbar`.
 - **artifactId**: este campo define el nombre por el que se conoce al proyecto en sí mismo. Algunos ejemplos: `commons-collections`, `eg-seguros-xtend`, `tp-futbol5-grupo01`, etc.
-- **versión**: es el último componente del nombre-rompecabezas, dado que groupId:artifactId denota un único proyecto pero no alcanza para definir en qué versión del proyecto nos estamos parando. Se agrega entonces un número de versión para completar la información que Maven necesita para generar una identificación unívoca. Conviene seguir las reglas de [**versionado semántico**](https://semver.org/), para liberar versiones productivas. A veces se suele acompañar de un sufijo `RELEASE` (para versiones estables) o `SNAPSHOT` (para versiones intermedias que pueden estar sujetas a cambios)
+- **versión**: es el último componente del rompecabezas, dado que groupId:artifactId denota un único proyecto pero no alcanza para definir en qué versión del proyecto nos estamos parando. Se agrega entonces un número de versión para completar la información que Maven necesita para generar una identificación unívoca. Conviene seguir las reglas de [**versionado semántico**](https://semver.org/), para liberar versiones productivas. A veces se suele acompañar de un sufijo `RELEASE` (para versiones estables) o `SNAPSHOT` (para versiones intermedias que pueden estar sujetas a cambios)
 
 A continuación un ejemplo básico.
 
@@ -49,7 +49,7 @@ A continuación un ejemplo básico.
 
 ## Repositorios Maven
 
-Un repositorio Maven es básicamente un lugar donde están los artefactos maven, estructurados en cierta forma estándar para hacer las descargas de las dependencias. Cuando instalamos Maven, se crea un repositorio Maven local en una carpeta que por defecto suele ser `HOME/.m2`. Si queremos ubicar al componente cuyo identificador es `org.eclipse.xtend:org.eclipse.xtend.core:2.21.0.M1` podremos encontrarlo localmente en
+Un repositorio Maven es **un lugar donde están los artefactos Maven**, estructurados en cierta forma estándar para hacer las descargas de las dependencias. Cuando instalamos Maven, se crea un repositorio Maven local en una carpeta que por defecto suele ser `HOME/.m2`. Si queremos ubicar al componente cuyo identificador es `org.eclipse.xtend:org.eclipse.xtend.core:2.21.0.M1` podremos encontrarlo localmente en
 
 ```bash
 %M2_HOME%/repository
