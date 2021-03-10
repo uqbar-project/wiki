@@ -7,7 +7,7 @@ title: JDK vs. JRE
 
 Cuando nos piden "instalar Java" (a secas) en nuestra máquina, es importante tener en claro la diferencia entre:
 
-- **JRE** o _Java Runtime Environment_: un conjunto de herramientas que permite ejecutar código compilado en Java. La noción de _environment_ o ambiente donde viven los objetos está dado por la JVM (_Java Virtual Machine_).
+- **JRE** o _Java Runtime Environment_: un conjunto de herramientas que permite ejecutar código compilado en Java. El _environment_ o ambiente donde viven los objetos se implementa con la JVM (_Java Virtual Machine_).
 - **JDK** o _Java Development Kit_: incluye al JRE y además le agrega herramientas propias para desarrollar en Java: el compilador (`javac`), el generador de documentación html para las clases (`javadoc`), el debugger (`jdb`), entre otros.
 
 Para tener el listado completo de las herramientas que trae OpenJDK, recomendamos ingresar a [esta página](https://openjdk.java.net/tools/index.html).
@@ -20,7 +20,7 @@ En este diagrama vemos el proceso de desarrollo de un programa Java desde que lo
 ![proceso de JDK](/img/wiki/JDKvsJRE.png)
 <br/>
 
-Eclipse integra todas estas herramientas de manera que al grabar realiza la compilación para generar el `.class` y poder ejecutarlo desde el mismo entorno (de ahí su nombre IDE, o _Integrated Development Environment_).
+Eclipse integra todas estas herramientas de manera que cada vez que grabás un archivo Java realiza la compilación para generar el `.class` y ejecutarlo desde el mismo entorno. Por eso Eclipse es un IDE, o _Integrated Development Environment_.
 
 ## Desarrollo en Xtend
 
