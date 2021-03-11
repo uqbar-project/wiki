@@ -6,7 +6,7 @@ title: Testeo unitario avanzado
 
 Este artículo presenta algunas guías para desarrollar los casos de prueba, considerando que ya tienen una base de testeo unitario automatizado. Si estás buscando un apunte, te recomendamos:
 
-- [Apunte de Testing - Xtend](https://docs.google.com/document/d/11mVR-4wEZhlQMDEqrfQeYLypEsrSqXv98dr78SA0Oq4/edit?usp=sharing)
+- [Apunte de Testing - Xtend](https://docs.google.com/document/d/1zj-H_qPbUDvWsWhV2YLaPsnrI0MIkCuoeK_ilzSnxVI/edit?usp=sharing)
 
 ## Ejemplo
 
