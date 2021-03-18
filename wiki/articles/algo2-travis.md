@@ -43,8 +43,8 @@ A partir de aquí, cada vez que hagas un push, [Travis](https://www.travis-ci.co
 
 ### Agregando el Badge al README
 
-El _badge_ es un indicador visual de cómo resultó el último build, que ubicaremos en el archivo README para rápidamente darnos cuenta de si anduvo todo bien. Para eso, ingresamos a Travis en https://www.travis-ci.com/ (**ojo, no es travis-ci.org** porque eso es para repositorios públicos), elegimos nuestro repositorio, a la derecha tenemos el badge con el status. Le damos click en la imagen y nos aparecerá una ventana, cambiamos la segunda opción para que aparezca `Markdown` y a continuación copiamos el texto que se visualiza abajo. 
+El _badge_ es un indicador visual de cómo resultó el último build, que ubicaremos en el archivo README para rápidamente darnos cuenta de si anduvo todo bien. Para eso, ingresamos a Travis en https://www.travis-ci.com/, elegimos nuestro repositorio, a la derecha tenemos el badge con el status. Le damos click en la imagen y nos aparecerá una ventana, cambiamos la segunda opción para que aparezca `Markdown` y a continuación copiamos el texto que se visualiza abajo.
 
 ![](/img/wiki/travisStatusBadge2.gif)
 
-Vamos al editor, pegamos el texto en el README y pusheamos al repo.
+Vamos al editor, pegamos el texto en el README y pusheamos al repositorio.
