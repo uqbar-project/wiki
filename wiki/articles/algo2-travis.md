@@ -14,7 +14,10 @@ Create un archivo `.travis.yml` en el directorio raíz del proyecto que tenga es
 ```yml
 language: java
 jdk:
-  - oraclejdk8
+  - oraclejdk11
+
+script:
+  - mvn -e -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean install jacoco:report coveralls:report
 
 notifications:
   email:
