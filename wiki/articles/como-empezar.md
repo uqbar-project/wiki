@@ -18,12 +18,11 @@ La carpeta wiki/articles contiene todos los articulos de la wiki, incluyendo est
 
 Para testear localmente se necesitan los siguientes requerimientos previos.
 
-* Ruby 2.2.0
+* Ruby 2.5.0
 * Bundler
-* bower
+* yarn
 * imagemagick
 * python
-* pygments
 
 
 Para instalar las dependencias de ruby adicionales ejecutar:
@@ -33,7 +32,7 @@ bundle install
 ```
 
 Este proyecto utiliza [Jekyll](http://jekyllrb.com/), para levantar una instancia local una vez instaladas las dependencias habrá que instalar
-las dependencias adicionales mediante bower:
+las dependencias adicionales mediante yarn:
 
 ```bash
 yarn install

@@ -34,11 +34,6 @@ En esta unidad se verán los conceptos principales que permiten organizar el dis
 )
 
 ## Entorno
-
-- [Página principal de Arena](https://sites.google.com/site/programacionui/herramientas/arena?authuser=0) donde se explican los conceptos principales, y podés descargarte una gran cantidad de ejemplos
-  - [Instalación del entorno Arena](arena-instalacion.html)
-  - [Configuración de Arena](arena-configuracion.html)
-  - Introducción a Arena
   - Guía de Componentes
   - Bindings y demás controllers. Binding avanzado
   - Layouts
