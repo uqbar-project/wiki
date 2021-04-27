@@ -19,7 +19,7 @@ Para testear localmente se necesitan los siguientes requerimientos previos.
 - yarn
 - python
 
-### Instalando y levnatando la wiki localmente
+### Instalando y levantando la wiki localmente
 
 Para instalar las dependencias de ruby adicionales ejecutar:
 
