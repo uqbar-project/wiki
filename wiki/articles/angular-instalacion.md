@@ -12,7 +12,7 @@ categories: [web, angular, ui, configuracion, entorno, spa]
 Es necesario que instales las siguientes herramientas, en este orden:
 
 - Si estás en entorno Windows te recomendamos instalarte [Git Bash](https://gitforwindows.org/)
-- Seguimos con [NodeJS](https://nodejs.org/en/), preferentemente la última versión.
+- Seguimos con [NodeJS](https://nodejs.org/en/), puede ser `lts/fermium -> v14.15.2` o la última que haya salido. Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm)
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
   - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)  
 - El [Angular CLI (Command line interface)](https://github.com/angular/angular-cli/blob/master/packages/angular/cli/README.md) se instala con npm:
@@ -27,17 +27,26 @@ npm install -g @angular/cli
 
 - El editor de texto que vamos a soportar en la cursada es [**Visual Studio Code**](https://code.visualstudio.com/) (hay [una versión portable](https://sourceforge.net/projects/vscode-portable/) si estás en una máquina sin privilegios de administrador).
 
-Otra opción es utilizar [Web Storm](https://www.jetbrains.com/webstorm/) (de la suite de IntelliJ), si tienen una cuenta de la facultad pueden solicitar una licencia educativa. Solo que como no vamos a aprovechar todas las herramientas de este IDE poderoso quizás convenga ir por el Visual Studio Code.
+Los plugins del Visual Studio Code que te recomendamos al 2021 son:
 
-- Los plugins del Visual Studio Code que te recomendamos al 2019 son:
-  - **TypeScript Hero**: herramientas generales para programar en Typescript
-  - **Angular 8 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout**: autocompletado de templates de Angular
-  - **Angular Files**: permite generar desde el menú de visual studio code componentes, pipes, servicios, etc.
-  - como chiche extra: **VSCode simpler Icons with Angular** para tener íconos diferentes (hay que seguir los pasos de instalación de la página del plugin)
-  - si estás acostumbrado a los shortcuts de Eclipse, **Eclipse Keymap**
-  - **Git Lens**, para ver el historial de Git integrado con tu Visual Studio Code
+### Necesarios ###
 
-## Configuraciones
+- Path Intellisense (Christian Kohler): autocompletado para archivos de tu file system
+- Auto Import (steoates): ayuda y autocompletado para importar componentes de JS
+- Angular Files (Alexander Ivanichev): agrega un menú contextual para crear elementos de Angular
+- JSON to TS (MariusAlchimavicius): te construye una interfaz de TS en base a la información de un JSON
+- Angular Language Service (Angular): autocompletado dentro del template html
+- Material Icon Theme (Philipp Kief)
+- **Git Lens**, para ver el historial de Git integrado con tu Visual Studio Code
+
+### Opcionales ###
+
+- Import Cost (Wix): permite calcular cuántos KB pesa cada import
+- Angular2-Switcher: agrega shortcuts para navegar entre .ts, .css, .html
+- Angular2 Inline: syntax highlighting y autocompletado de código para componentes Angular inline (que tienen embebido html y css)
+- REST Client: para hacer pedidos http desde Visual Studio Code directamente (podés usar POSTMAN, Insomnia o Swagger + navegador también)
+
+### Configuraciones
 
 A continuación te dejamos un video para mostrarte cómo configurar los plugins para que no exijan puntos y coma (`;`) al final de cada sentencia, algo que recomendamos.
 
@@ -51,6 +60,10 @@ Además, en tu proyecto, en el directorio raíz, vas a encontrar un archivo `tsl
   "never"
 ],
 ```
+
+## Alternativa a Visual Studio Code
+
+Otra opción es utilizar [Web Storm](https://www.jetbrains.com/webstorm/) (de la suite de IntelliJ), si tienen una cuenta de la facultad pueden solicitar una licencia educativa. Solo que como no vamos a aprovechar todas las herramientas de este IDE poderoso quizás convenga ir por el Visual Studio Code.
 
 # Aprendiendo Typescript
 
