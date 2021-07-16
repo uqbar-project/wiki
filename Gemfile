@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-ruby '~> 2.5.0'
+ruby '~> 2.7.2'
 # Development dependencies
-gem 'rake', '~> 12.0.0'
+gem 'rake', '~> 12.3.3'
 gem 'guard-livereload'
 
 # Jekyll
@@ -27,3 +27,4 @@ gem 'jekyll-scholar'
 gem "sass"
 gem 'html-proofer'
 gem 'rouge', '2.2.1'
+gem 'kramdown-parser-gfm'

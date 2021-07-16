@@ -11,6 +11,7 @@ En muchos cursos de docentes Uqbar se acostumbra dejar "desafíos café con lech
 -   [Desafío: Hacer que un data propio sea Enum](desafio--hacer-que-un-data-propio-sea-enum.html)
 -   [Desafío: Construir esta sucesión](desafio--construir-esta-sucesion.html)
 -   [Desafío: Ordenar con arbol B](desafio--ordenar-con-arbol-b.html)
+-   [Desafío: sumaPar](desafio--suma-par.html)
 
 ### Prolog
 
