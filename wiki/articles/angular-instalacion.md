@@ -111,6 +111,24 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
   }
 }
 ```
+
+# Cambios al package.json
+
+Dentro del archivo `package.json` del raíz de tu proyecto debés tener estos scripts:
+
+```json
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "eslint \"**/*.{ts,tsx}\" ",
+    "build:prod": "ng build --prod",
+    "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage"
+  },
+```
+
 # Ejemplo de .gitignore
 
 Te recomendamos que configures tu archivo .gitignore de la siguiente manera:
