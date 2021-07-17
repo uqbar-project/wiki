@@ -86,7 +86,7 @@ ng test
 
 Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un archivo `settings.json` que tenga este contenido:
 
-```json
+```js
 {
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
@@ -116,7 +116,7 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 
 Dentro del archivo `package.json` del raíz de tu proyecto debés tener estos scripts:
 
-```json
+```js
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
