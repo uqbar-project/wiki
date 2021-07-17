@@ -12,7 +12,9 @@ categories: [web, angular, ui, configuracion, entorno, spa]
 Es necesario que instales las siguientes herramientas, en este orden:
 
 - Si estás en entorno Windows te recomendamos instalarte [Git Bash](https://gitforwindows.org/)
-- Seguimos con [NodeJS](https://nodejs.org/en/), puede ser `lts/fermium -> v14.15.2` o la última que haya salido. Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm)
+- Seguimos con [NodeJS](https://nodejs.org/en/).
+  - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales esta versión: `nvm install lts/fermium -> v14.15.2`
+  - Si estás en Windows instalate la versión actual
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
   - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)  
 - El [Angular CLI (Command line interface)](https://github.com/angular/angular-cli/blob/master/packages/angular/cli/README.md) se instala con npm:
@@ -31,35 +33,20 @@ Los plugins del Visual Studio Code que te recomendamos al 2021 son:
 
 ### Necesarios ###
 
-- Path Intellisense (Christian Kohler): autocompletado para archivos de tu file system
-- Auto Import (steoates): ayuda y autocompletado para importar componentes de JS
-- Angular Files (Alexander Ivanichev): agrega un menú contextual para crear elementos de Angular
-- JSON to TS (MariusAlchimavicius): te construye una interfaz de TS en base a la información de un JSON
-- Angular Language Service (Angular): autocompletado dentro del template html
-- Material Icon Theme (Philipp Kief)
+- **Path Intellisense (Christian Kohler)**: autocompletado para archivos de tu file system
+- **Auto Import (steoates)**: ayuda y autocompletado para importar componentes de JS
+- **Angular Files (Alexander Ivanichev)**: agrega un menú contextual para crear elementos de Angular
+- **JSON to TS (MariusAlchimavicius)**: te construye una interfaz de TS en base a la información de un JSON
+- **Angular Language Service (Angular)**: autocompletado dentro del template html
+- **Material Icon Theme (Philipp Kief)**
 - **Git Lens**, para ver el historial de Git integrado con tu Visual Studio Code
 
 ### Opcionales ###
 
-- Import Cost (Wix): permite calcular cuántos KB pesa cada import
-- Angular2-Switcher: agrega shortcuts para navegar entre .ts, .css, .html
-- Angular2 Inline: syntax highlighting y autocompletado de código para componentes Angular inline (que tienen embebido html y css)
-- REST Client: para hacer pedidos http desde Visual Studio Code directamente (podés usar POSTMAN, Insomnia o Swagger + navegador también)
-
-### Configuraciones
-
-A continuación te dejamos un video para mostrarte cómo configurar los plugins para que no exijan puntos y coma (`;`) al final de cada sentencia, algo que recomendamos.
-
-![no-semicolon](../../img/wiki/VSCsemicolonTS.gif)
-
-Además, en tu proyecto, en el directorio raíz, vas a encontrar un archivo `tslint.json`, asegurate que tenga esta configuración:
-
-```js
-"semicolon": [
-  false,
-  "never"
-],
-```
+- **Import Cost (Wix)**: permite calcular cuántos KB pesa cada import
+- **Angular2-Switcher**: agrega shortcuts para navegar entre .ts, .css, .html
+- **Angular2 Inline**: syntax highlighting y autocompletado de código para componentes Angular inline (que tienen embebido html y css)
+- **REST Client**: para hacer pedidos http desde Visual Studio Code directamente (podés usar POSTMAN, Insomnia o Swagger + navegador también)
 
 ## Alternativa a Visual Studio Code
 
@@ -92,19 +79,172 @@ ng serve -open  # o bien, la versión corta es ng s -o
 Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y ejecutás desde la consola
 
 ```bash
-ng test --watch --sourceMap=false
+ng test
 ```
 
-# Ejemplo de un archivo Travis
+# Archivo de configuración para Visual Studio Code
 
-El siguiente es un ejemplo posible de un archivo `.travis.yml` para una aplicación Angular 8 (válido a octubre 2019):
+Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un archivo `settings.json` que tenga este contenido:
+
+```json
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": false
+  }
+}
+```
+# Ejemplo de .gitignore
+
+Te recomendamos que configures tu archivo .gitignore de la siguiente manera:
+
+```bash
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+```
+
+# Configuración del archivo de test
+
+Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la opción para que genere el porcentaje de cobertura en formato `json` también:
+
+```js
+    coverageReporter: {
+      dir: require('path').join(__dirname, './coverage/eg-conversor-angular'),
+      subdir: '.',
+      reporters: [
+        { type: 'html' },
+        { type: 'text-summary' },
+        // línea a agregar
+        { type: 'json-summary' }
+        // fin línea a agregar
+      ]
+    },
+```
+
+# Otros archivos útiles
+
+Podés descargarte `.htmlhintrc` y `.prettierrc.json` de alguno de los ejemplos. TODO: ver si es necesario.
+
+# Ejemplo de un archivo para Github Actions
+
+Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
+
+Este es un archivo de ejemplo que tenés que guardar en `.github/workflows/build.yml`:
+
+```yml
+name: Build
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run tests & linter
+        run: |
+          npm ci
+          npm run test:prod
+          npm run lint
+      - name: Coverage badge
+        uses: demyanets/angular-coverage-badges-action@v1
+        with:
+          coverage-summary-path: coverage/XXXXXXXXX/coverage-summary.json
+          protected-branches: '["master"]'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+# Ejemplo de un archivo Travis (deprecado)
+
+El siguiente es un ejemplo posible de un archivo `.travis.yml` para una aplicación Angular 8 ó superior. **Si estás cursando Algoritmos III podés ignorar este paso**:
 
 ```yml
 sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '10.12'
+  - '10.12'  # posiblemente haya que subirle la versión de Node
 
 addons:
 apt:
