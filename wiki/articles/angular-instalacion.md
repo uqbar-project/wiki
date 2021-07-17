@@ -253,6 +253,18 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+
+# Cómo configurar los badges en tu README
+
+- Para agregar el badge del build de Github Actions, seguí [estas instrucciones](https://docs.github.com/es/actions/managing-workflow-runs/adding-a-workflow-status-badge)
+
+- Para agregar el badge del porcentaje de cobertura, tenés que agregar la imagen que genera el mismo build de Github Actions (reemplazando `XXXXXXX` por el nombre de la carpeta donde está tu proyecto):
+
+```md
+![Coverage](./badges/XXXXXXX/coverage.svg)
+```
+
+
 # Ejemplo de un archivo Travis (deprecado)
 
 El siguiente es un ejemplo posible de un archivo `.travis.yml` para una aplicación Angular 8 ó superior. **Si estás cursando Algoritmos III podés ignorar este paso**:
