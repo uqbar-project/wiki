@@ -129,6 +129,21 @@ Dentro del archivo `package.json` del raíz de tu proyecto debés tener estos sc
   },
 ```
 
+## Agregando Dependencias
+
+Instalaremos algunas dependencias adicionales:
+
+```bash
+# Installar ESLint
+npm install --save-dev eslint
+
+# Instalar plugins adicionales
+npm install --save-dev @typescript-eslint/eslint-plugin eslint-plugin-prettier
+
+# Instalar Prettier y sus dependencias
+npm install --save-dev prettier prettier-eslint eslint-config-prettier
+```
+
 # Ejemplo de .gitignore
 
 Te recomendamos que configures tu archivo .gitignore de la siguiente manera:
