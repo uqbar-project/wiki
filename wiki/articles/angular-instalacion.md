@@ -196,6 +196,32 @@ testem.log
 Thumbs.db
 ```
 
+# Configuración del linter
+
+El linter es el proceso que genera advertencias o errores en base a la sintaxis y semántica de nuestros componentes. Lo interesante es que podemos configurar, por ejemplo, que escribir `console.log` o `debugger` no es código que queremos que esté en el ambiente productivo, pero sí podríamos admitirlo en desarrollo. También se puede configurar validaciones como el uso de let en lugar de const, variables sin utilizar, etc. Te dejamos la configuración recomendada en el archivo `.eslintrc.json` que debe estar en el directorio raíz:
+
+```js
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": [
+      2,
+      "never"
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": ["off"],
+    "@typescript-eslint/no-var-requires": "off"
+  }
+}
+```
+
 # Configuración del archivo de test
 
 Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la opción para que genere el porcentaje de cobertura en formato `json` también:
