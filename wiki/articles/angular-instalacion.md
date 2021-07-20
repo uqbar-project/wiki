@@ -135,7 +135,7 @@ Instalaremos algunas dependencias adicionales:
 
 ```bash
 # Installar ESLint
-npm install --save-dev eslint
+npm install --save-dev eslint @typescript-eslint/parser
 
 # Instalar plugins adicionales
 npm install --save-dev @typescript-eslint/eslint-plugin eslint-plugin-prettier
