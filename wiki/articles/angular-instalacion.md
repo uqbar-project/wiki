@@ -206,10 +206,8 @@ Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'text-summary' },
-        // línea a agregar
-        { type: 'json-summary' }
-        // fin línea a agregar
+        { type: 'text-summary' }, // <-- agregar una coma al final
+        { type: 'json-summary' }  // <-- agregar esta línea
       ]
     },
 ```
