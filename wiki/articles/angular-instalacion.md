@@ -227,7 +227,7 @@ En la carpeta raíz creá los siguientes archivos
 }
 ```
 
-- `.prettierrc.json`
+- `.prettierrc.json` (configuración de Prettier para eliminar puntos y coma, definir tab de 2 espacios, utilizar single quote, etc.) Es importante que tod@s tengan esta configuración para que no haya un montón de conflictos en git a la hora de pushear.
 
 ```js
 {
