@@ -216,7 +216,28 @@ Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la
 
 # Otros archivos útiles
 
-Podés descargarte `.htmlhintrc` y `.prettierrc.json` de alguno de los ejemplos. TODO: ver si es necesario.
+En la carpeta raíz creá los siguientes archivos 
+
+- `.htmlhintrc` (configuración del Linter para HTML), con el siguiente contenido
+
+```js
+{
+    "tagname-lowercase": false,
+    "attr-lowercase": false
+}
+```
+
+- `.prettierrc.json`
+
+```js
+{
+  "singleQuote": true,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "tabWidth": 2,
+  "semi": false
+}
+```
 
 # Ejemplo de un archivo para Github Actions
 
