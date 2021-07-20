@@ -222,6 +222,14 @@ El linter es el proceso que genera advertencias o errores en base a la sintaxis 
 }
 ```
 
+Para ejecutar el linter desde la línea de comandos, podés escribir
+
+```bash
+npm run lint
+```
+
+con el archivo `package.json` que contenga los scripts que arriba te dejamos. Es importante hacerlo **ya que el CI de Github Actions lo va a ejecutar para pasar el build**.
+
 # Configuración del archivo de test
 
 Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la opción para que genere el porcentaje de cobertura en formato `json` también:
