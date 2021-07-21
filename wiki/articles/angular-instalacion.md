@@ -317,7 +317,6 @@ jobs:
         uses: demyanets/angular-coverage-badges-action@v1
         with:
           coverage-summary-path: coverage/XXXXXXXXX/coverage-summary.json
-          protected-branches: '["master"]'
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
