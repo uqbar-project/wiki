@@ -282,7 +282,7 @@ Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la c
 
 Este es un archivo de ejemplo que tenés que guardar en `.github/workflows/build.yml`:
 
-```yml
+```bash
 name: Build
 on:
   push:
