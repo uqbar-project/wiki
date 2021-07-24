@@ -280,50 +280,7 @@ En la carpeta raíz creá los siguientes archivos
 
 Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
-Este es un archivo de ejemplo que tenés que guardar en `.github/workflows/build.yml`:
-
-```
-name: Build
-on:
-  push:
-  pull_request:
-    branches:
-      - master
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Run tests & linter
-        run: |
-          npm ci
-          npm run test:prod
-          npm run lint
-      - name: Coverage badge
-        uses: demyanets/angular-coverage-badges-action@v1
-        with:
-          coverage-summary-path: coverage/XXXXXXXXX/coverage-summary.json
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-```
+Este es un archivo de ejemplo que tenés que guardar en [`.github/workflows/build.yml`](./build.yml). Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
 
 # Cómo configurar los badges en tu README
