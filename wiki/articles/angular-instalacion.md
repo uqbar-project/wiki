@@ -124,6 +124,7 @@ Dentro del archivo `package.json` del raíz de tu proyecto debés tener estos sc
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "eslint \"**/*.{ts,tsx}\" ",
+    "lint:fix": "eslint --fix \"**/*.{ts,tsx}\" ",
     "build:prod": "ng build --prod",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage"
   },
@@ -228,7 +229,11 @@ Para ejecutar el linter desde la línea de comandos, podés escribir
 npm run lint
 ```
 
-con el archivo `package.json` que contenga los scripts que arriba te dejamos. Es importante hacerlo **ya que el CI de Github Actions lo va a ejecutar para pasar el build** (te recomendamos que elimines los `;` de los archivos `test.ts`, `polyfill.ts`, etc. de tu proyecto para que pase el build).
+con el archivo `package.json` que contenga los scripts que arriba te dejamos. Es importante hacerlo **ya que el CI de Github Actions lo va a ejecutar para pasar el build**, para arreglar automáticamente todos los problemas que detecta el linter podés hacer
+
+```bash
+npm run lint:fix
+```
 
 # Configuración del archivo de test
 
