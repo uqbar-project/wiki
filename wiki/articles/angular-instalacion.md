@@ -276,6 +276,14 @@ En la carpeta raíz creá los siguientes archivos
 }
 ```
 
+# Ajustes para el % de cobertura
+
+Para tener información más precisa sobre el porcentaje de cobertura de tus tests, en el archivo `app.component.spec.ts` de tu directorio `src/app` tenés que agregar este import:
+
+```ts
+import './app.module'
+```
+
 # Ejemplo de un archivo para Github Actions
 
 Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
