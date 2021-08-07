@@ -83,18 +83,25 @@ El archivo `.eslintrc.json` debe tener la siguiente configuración:
         }
     },
     "rules": {
-        "semi": [ "error", "never" ]
+        "semi": [ "error", "never" ],
+        "prefer-const": ["warn", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+        }]
     }
 }
 ```
-
-Esto requiere entrar a los archivos `setupTests.js`, `index.js`, `reportWebVitals.js` y grabarlos para activar las reglas del Linter y **que pase el build**.
 
 ## Configuración del proyecto
 
 Al archivo `package.json` le vamos a configurar JEST (el framework de testeo unitario) para tener un coverage más exacto:
 
 ```js
+  "scripts": {
+    ...,
+    "eject": "react-scripts eject", // se agrega una coma
+    "lint": "eslint . --fix"        // línea a agregar
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -113,6 +120,14 @@ Al archivo `package.json` le vamos a configurar JEST (el framework de testeo uni
     ]
   },
 ```
+
+Luego ejecutá por la línea de comando
+
+```bash
+yarn run lint
+```
+
+para que el linter corrija los errores y advertencias automáticamente.
 
 ## .gitignore
 
