@@ -7,7 +7,7 @@ featured: true
 
 <img src="/img/languages/React-logo.png" height="30%" width="30%"/>
 
-## Pasos previos
+# Pasos previos
 
 Si ya estuviste trabajando con Angular estos pasos no son necesarios, pero conviene verificar que ya estén instalados.
 
@@ -16,9 +16,9 @@ Si ya estuviste trabajando con Angular estos pasos no son necesarios, pero convi
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
 - El editor de texto que vamos a soportar en la cursada es [Visual Studio Code](https://code.visualstudio.com/) (hay una versión portable si estás en una máquina sin privilegios de administrador).
 
-## Específicos de React
+# Específicos de React
 
-### npx
+## npx
 
 npx permite ejecutar paquetes binarios de npm mediante un command-line interface, y se instala con npm
 
@@ -26,13 +26,49 @@ npx permite ejecutar paquetes binarios de npm mediante un command-line interface
 npm install -g npx
 ```
 
-### Plugins Visual Studio Code
+## yarn
 
-Dentro de Visual Studio Code, los plugins que recomendamos para trabajar con React son:
+Yarn es un manejador de paquetes similar a npm, se instala globalmente desde la consola:
 
-- [**ESLint**: dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). En todos los proyectos deberías tener en el directorio raíz el archivo .eslintrc.json con la siguiente configuración
+```bash
+npm install --global yarn
+```
 
-```json
+# Plugins Visual Studio Code
+
+Dentro de Visual Studio Code, las extensiones que recomendamos para trabajar con React son:
+
+- verificá que tengas descargadas
+  - **ESLint - Dirk Baeumer**
+  - **Prettier - Code formatter - Prettier**
+  - **Prettier - ESLint - Rebecca Vest**
+- a las que agregaremos
+  - [JEST](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest): que permite integrar en VSC los test unitarios que vamos a ejecutar con Jest.
+  - [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner): para ejecutar o debuggear tests unitarios contra la terminal (cuando tengamos muchos tests y el primer plugin resulte engorroso).
+
+Opcionalmente podés instalar la extensión _ES7 React/Redux/GraphQL/React-Native snippets_ de _dsznajder_.
+
+# Crear un proyecto React de cero
+
+Para crear un proyecto React desde la consola Git Bash o bien desde una terminal Linux escribimos:
+
+```bash
+npx create-react-app nombre-de-tu-app
+cd nombre-de-tu-app
+yarn start
+```
+
+Por defecto la aplicación cliente levantará en el puerto 3000. Como suele quedarse levantada aun cuando canceles la línea de comando y el navegador, te dejamos este link que te dice [cómo bajar el proceso del sistema operativo](https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt) para correr otro ejemplo.
+
+# Configuraciones adicionales para Algoritmos III
+
+Una vez creado el proyecto, te recomendamos que agregues estas configuraciones.
+
+## Linter para javascript
+
+El archivo `.eslintrc.json` debe tener la siguiente configuración:
+
+```js
 {
     "parser": "babel-eslint",
     "extends": "",
@@ -45,27 +81,78 @@ Dentro de Visual Studio Code, los plugins que recomendamos para trabajar con Rea
         "ecmaFeatures": {
             "jsx": true
         }
+    },
+    "rules": {
+        "semi": [ "error", "never" ]
     }
 }
 ```
 
-- VS Code ES7 React/Redux/React-Native/JS snippets, o cualquier conjunto de comandos rápidos para Visual Studio Code
+Esto requiere entrar a los archivos `setupTests.js`, `index.js`, `reportWebVitals.js` y grabarlos para activar las reglas del Linter y **que pase el build**.
 
-- [JEST](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest): que permite integrar en VSC los test unitarios que vamos a ejecutar con Jest.
+## Configuración del proyecto
 
-- [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner): para ejecutar o debuggear tests unitarios contra la terminal (cuando tengamos muchos tests y el primer plugin resulte engorroso).
+Al archivo `package.json` le vamos a configurar JEST (el framework de testeo unitario) para tener un coverage más exacto:
 
-## Crear un proyecto React de cero
-
-Para crear un proyecto React desde la consola Git Bash o bien desde una terminal Linux escribimos:
-
-```bash
-npx create-react-app nombre-de-tu-app
-cd nombre-de-tu-app
-npm start
+```json
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [ "html", "text-summary", "json-summary"],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/reportWebVitals.js",
+      "!**/index.js",
+      "!**/setupTests.js",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
+  },
 ```
 
-Por defecto la aplicación cliente levantará en el puerto 3000. Como suele quedarse levantada aun cuando canceles la línea de comando y el navegador, te dejamos este link que te dice [cómo bajar el proceso del sistema operativo](https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt) para correr otro ejemplo.
+## .gitignore
+
+Al archivo .gitignore se le pueden incorporar estas líneas:
+
+```bash
+# VSC - Git Lens
+.history
+
+```
+
+## Prettier
+
+El archivo `.prettierrc` nos sirve para configurar la extensión Prettier, el popular formateador de Visual Studio Code:
+
+```js
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true
+}
+```
+
+# Ejemplo de un archivo para Github Actions
+
+Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
+
+Te dejamos [este archivo de ejemplo](./build_react.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
+
+
+# Cómo configurar los badges en tu README
+
+- Para agregar el badge del build de Github Actions, seguí [estas instrucciones](https://docs.github.com/es/actions/managing-workflow-runs/adding-a-workflow-status-badge)
+
+- Para agregar el badge del porcentaje de cobertura, tenés que agregar la imagen que genera el mismo build de Github Actions (reemplazando `XXXXXXX` por el nombre de la carpeta donde está tu proyecto):
+
+```md
+![Coverage](./badges/XXXXXXX/coverage.svg)
+```
 
 ## Links relacionados
 

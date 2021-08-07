@@ -288,7 +288,7 @@ import './app.module'
 
 Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
-Te dejamos [este archivo de ejemplo](./build.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
+Te dejamos [este archivo de ejemplo](./build_angular.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
 
 # Cómo configurar los badges en tu README
