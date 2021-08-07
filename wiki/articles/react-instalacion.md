@@ -94,7 +94,7 @@ Esto requiere entrar a los archivos `setupTests.js`, `index.js`, `reportWebVital
 
 Al archivo `package.json` le vamos a configurar JEST (el framework de testeo unitario) para tener un coverage más exacto:
 
-```json
+```js
   "eslintConfig": {
     "extends": [
       "react-app",
