@@ -36,13 +36,13 @@ npm install --global yarn
 
 # Plugins Visual Studio Code
 
-Dentro de Visual Studio Code, las extensiones que recomendamos para trabajar con React son:
+Dentro de Visual Studio Code, las extensiones que recomendamos para trabajar con React deberían ser:
 
-- verificá que tengas descargadas
+- compartidas con el entorno de Angular
   - **ESLint - Dirk Baeumer**
   - **Prettier - Code formatter - Prettier**
   - **Prettier - ESLint - Rebecca Vest**
-- a las que agregaremos
+- compartidas con el entorno de Typescript
   - [JEST](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest): que permite integrar en VSC los test unitarios que vamos a ejecutar con Jest.
   - [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner): para ejecutar o debuggear tests unitarios contra la terminal (cuando tengamos muchos tests y el primer plugin resulte engorroso).
 
@@ -70,6 +70,31 @@ Agregamos una dependencia
 
 ```bash
 yarn add eslint-plugin-react -D
+```
+
+## Archivos útiles
+
+En la carpeta raíz creá los siguientes archivos 
+
+- `markdownlint.json` (configuración del Linter para archivos con extensión `.md`), con el siguiente contenido
+
+```js
+{
+  "MD013": false,
+  "MD024": false,
+  "MD025": false
+}
+```
+
+- `.prettierrc.json` (configuración de Prettier para eliminar puntos y coma, definir tab de 2 espacios, utilizar single quote, etc.) Es importante que tod@s tengan esta configuración para que no haya un montón de conflictos en git a la hora de pushear.
+
+```js
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true
+}
 ```
 
 ## Linter para javascript
