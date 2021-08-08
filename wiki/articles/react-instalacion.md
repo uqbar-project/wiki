@@ -175,19 +175,17 @@ El archivo `.eslintrc.json` debe tener la siguiente configuración:
 
 ## Configuración del proyecto
 
-Al archivo `package.json` le vamos a configurar JEST (el framework de testeo unitario) para tener un coverage más exacto:
+Al archivo `package.json` le vamos a configurar JEST (el framework de testeo unitario) para tener un coverage más exacto (borrale los comentarios porque no están permitidos en `json`):
 
 ```js
   "scripts": {
     ...,
     "eject": "react-scripts eject", // se agrega una coma
-    "lint": "eslint . --fix"        // línea a agregar
+    "lint": "eslint .",             // línea a agregar para ejecutar el linter
+    "lint:fix": "eslint . --fix"    // línea a agregar para ejecutar el fix del linter
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    // dejar la configuración de eslintConfig tal cual está
   },
   "jest": {
     "coverageReporters": [ "html", "text-summary", "json-summary"],
@@ -205,7 +203,7 @@ Al archivo `package.json` le vamos a configurar JEST (el framework de testeo uni
 Luego ejecutá por la línea de comando
 
 ```bash
-yarn run lint
+yarn run lint:fix
 ```
 
 para que el linter corrija los errores y advertencias automáticamente.
@@ -217,37 +215,20 @@ Al archivo .gitignore se le pueden incorporar estas líneas:
 ```bash
 # VSC - Git Lens
 .history
-
-```
-
-## Prettier
-
-El archivo `.prettierrc` nos sirve para configurar la extensión Prettier, el popular formateador de Visual Studio Code:
-
-```js
-{
-  "trailingComma": "all",
-  "tabWidth": 2,
-  "semi": false,
-  "singleQuote": true
-}
 ```
 
 # Ejemplo de un archivo para Github Actions
 
-Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
-
-Te dejamos [este archivo de ejemplo](./build_react.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
-
+Te dejamos [este archivo de ejemplo](./build_react.yml) que tenés que guardar en `.github/workflows/build.yml`. No hay que hacer ningún cambio.
 
 # Cómo configurar los badges en tu README
 
 - Para agregar el badge del build de Github Actions, seguí [estas instrucciones](https://docs.github.com/es/actions/managing-workflow-runs/adding-a-workflow-status-badge)
 
-- Para agregar el badge del porcentaje de cobertura, tenés que agregar la imagen que genera el mismo build de Github Actions (reemplazando `XXXXXXX` por el nombre de la carpeta donde está tu proyecto):
+- Para agregar el badge del porcentaje de cobertura, tenés que agregar la imagen que genera el mismo build de Github Actions (tal cual está escrito):
 
 ```md
-![Coverage](./badges/XXXXXXX/coverage.svg)
+![coverage](./badges/coverage/coverage.svg)
 ```
 
 ## Links relacionados

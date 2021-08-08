@@ -237,7 +237,7 @@ npm run lint:fix
 
 # Configuración del archivo de test
 
-Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la opción para que genere el porcentaje de cobertura en formato `json` también:
+Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la opción para que genere el porcentaje de cobertura en formato `json` también (borrale los comentarios porque no están permitidos en `json`):
 
 ```js
     coverageReporter: {
