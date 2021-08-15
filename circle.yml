@@ -13,6 +13,7 @@ jobs:
     - run:
         name: APT Installs
         command: |
+          sudo apt-get --allow-releaseinfo-change update
           sudo apt-get update
           sudo apt-get install build-essential patch
           sudo apt-get install ruby-dev zlib1g-dev liblzma-dev libgmp-dev cmake
