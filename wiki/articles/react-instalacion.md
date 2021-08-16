@@ -76,7 +76,7 @@ yarn add eslint-plugin-react -D
 
 En la carpeta raíz creá los siguientes archivos 
 
-- `markdownlint.json` (configuración del Linter para archivos con extensión `.md`), con el siguiente contenido
+- `.markdownlint.json` (configuración del Linter para archivos con extensión `.md`), con el siguiente contenido
 
 ```js
 {
@@ -86,7 +86,7 @@ En la carpeta raíz creá los siguientes archivos
 }
 ```
 
-- `.prettierrc.json` (configuración de Prettier para eliminar puntos y coma, definir tab de 2 espacios, utilizar single quote, etc.) Es importante que tod@s tengan esta configuración para que no haya un montón de conflictos en git a la hora de pushear.
+- `.prettierrc` (configuración de Prettier para eliminar puntos y coma, definir tab de 2 espacios, utilizar single quote, etc.) Es importante que tod@s tengan esta configuración para que no haya un montón de conflictos en git a la hora de pushear.
 
 ```js
 {
