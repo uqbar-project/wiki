@@ -112,6 +112,11 @@ El archivo `.eslintrc.json` debe tener la siguiente configuración:
     "plugins": [
         "react"
     ],
+    "settings": {
+        "react": {
+        "version": "detect"
+        }
+    },
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
