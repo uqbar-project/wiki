@@ -260,7 +260,15 @@ En la carpeta raíz creá los siguientes archivos
 ```js
 {
     "tagname-lowercase": false,
-    "attr-lowercase": false
+    "attr-lowercase": false,
+    "attr-value-double-quotes": true,
+    "doctype-first": false,
+    "tag-pair": true,
+    "spec-char-escape": true,
+    "id-unique": true,
+    "src-not-empty": true,
+    "attr-no-duplication": true,
+    "title-require": true
 }
 ```
 
