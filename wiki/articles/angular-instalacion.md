@@ -88,19 +88,20 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 
 ```js
 {
+  "prettier.semi": false,
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[json]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
@@ -108,6 +109,9 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
       "source.fixAll.eslint": true
     },
     "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   }
 }
 ```
