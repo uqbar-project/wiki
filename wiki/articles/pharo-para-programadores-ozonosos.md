@@ -21,17 +21,17 @@ Para comenzar vamos a necesitar una imagen de Pharo, cualquier imagen nos va a s
 
 Nuestro principal amigo en el desarrollo con Pharo va a ser el *System Browser*. Este lo encontramos dentro del menú principal de Pharo.
 
-![](PharoParaOzonosos-World.png "PharoParaOzonosos-World.png")
+![](/img/wiki/PharoParaOzonosos-World.png "PharoParaOzonosos-World.png")
 
 Esto nos va a abrir la siguiente ventana (es bastante compleja para decirle ventanita).
 
-![](PharoParaOzonosos-SystemBrowser.png "PharoParaOzonosos-SystemBrowser.png")
+![](/img/wiki/PharoParaOzonosos-SystemBrowser.png "PharoParaOzonosos-SystemBrowser.png")
 
 ### Secciones del System Browser
 
 Esta ventana se divide en distintas secciones, esta ventana es central, presenta mucha mucha mucha información por eso vamos a analizarla por secciones.
 
-![](PharoParaOzonosos-SystemBrowserSections.png "PharoParaOzonosos-SystemBrowserSections.png")
+![](/img/wiki/PharoParaOzonosos-SystemBrowserSections.png "PharoParaOzonosos-SystemBrowserSections.png")
 
 Estas Secciones son:
 
@@ -64,7 +64,7 @@ Bueno, bueno, todo muy bonito pero a mi me gustaba enviar mensajes a mis objetos
 
 La forma de enviar mensajes y probar nuestro programa van a ser nuestros bonitos workspace (después vamos a hablar de tests, pero eso es otra versión mucho más cheta aunque menos interactiva).
 
-![](PharoParaOzonosos-Workspace.png "PharoParaOzonosos-Workspace.png")
+![](/img/wiki/PharoParaOzonosos-Workspace.png "PharoParaOzonosos-Workspace.png")
 
 Para crear un workspace lo hacemos desde el menú principal de Pharo, es el mismo que usamos inicialmente.
 
@@ -76,7 +76,7 @@ Atención, los workspace no se van a guardar solitos como en Ozono, tenemos que 
 
 Los workspace se guardan como archivos de texto con extensión *.ws*, para poder guardar y cargar estos archivos tenemos que usar la flechita que esta a la derecha y arriba del workspace.
 
-![](PharoParaOzonosos-Workspace-Menu.png "PharoParaOzonosos-Workspace-Menu.png")
+![](/img/wiki/PharoParaOzonosos-Workspace-Menu.png "PharoParaOzonosos-Workspace-Menu.png")
 
 Un ejemplo Paso a Paso
 ----------------------
@@ -87,7 +87,7 @@ Vamos a tener que construir un sistema para administrar camiones en una empresa 
 
 Al analizar y plantear una solución al problema, identificamos que todos los objetos camiones tienen el mismo comportamiento; por lo que extrajimos la siguiente clase:
 
-![](PharoParaOzonosos-Camion.png "PharoParaOzonosos-Camion.png")
+![](/img/wiki/PharoParaOzonosos-Camion.png "PharoParaOzonosos-Camion.png")
 
 Tenemos que recordar que la solución se da con los objetos que representan los camiones, las clases sirven para crear muchos camiones iguales, o sea se comportan todos juntos.
 
@@ -109,7 +109,7 @@ Una aclaración importante, es que aunque es probable que Pharo se banque nombre
 
 Cuando creamos el paquete nos debería quedar algo así:
 
-![](PharoParaOzonosos-PaqueteCreado.png "PharoParaOzonosos-PaqueteCreado.png")
+![](/img/wiki/PharoParaOzonosos-PaqueteCreado.png "PharoParaOzonosos-PaqueteCreado.png")
 
 ### Creación de Clases
 
@@ -125,17 +125,21 @@ Para crear una clase tenemos que hacer las siguientes operaciones:
 
 Las clases en cualquier ambiente de Smalltalk se definen a partir de un envió de mensaje. Nadie en la vida se acuerda este mensaje que hay que mandar a la clase Object, pero al hacer click sobre un paquete la herramienta ya nos propone un template:
 
-`  Object subclass: #NameOfSubclass`
-`         instanceVariableNames: ''`
-`         classVariableNames: ''`
-`         category: 'Logistica'`
+```Smalltalk
+  Object subclass: #NameOfSubclass
+         instanceVariableNames: ''
+         classVariableNames: ''
+         category: 'Logistica'
+```
 
 La definición de nuestra clase Camion es la siguiente:
 
-`  Object subclass: #LgCamion`
-`         instanceVariableNames: 'capacidad carga'`
-`         classVariableNames: ''`
-`         category: 'Logistica'`
+```Smalltalk
+  Object subclass: #LgCamion
+         instanceVariableNames: 'capacidad carga'
+         classVariableNames: ''
+         category: 'Logistica'
+```
 
 Si se fijan no es tan tan loca.
 
@@ -158,7 +162,7 @@ Si estamos muy muy muy seguros que no existe otra clase que se llame Camion, pod
 
 Después de crear la clase nos debería quedar algo así:
 
-![](PharoParaOzonosos-ClaseCreada.png "PharoParaOzonosos-ClaseCreada.png")
+![](/img/wiki/PharoParaOzonosos-ClaseCreada.png "PharoParaOzonosos-ClaseCreada.png")
 
 Atención, no nos preocupemos por ese signo de admiración rojo. Ya lo dijimos, pero lo recuerdo, es un indicativo que la clase no esta documentada. Nada importante, por ahora, es algo que nos debería importar.
 
@@ -170,18 +174,20 @@ Para poder agregar un método a una clase, tenemos que tener seleccionada la cla
 
 Cuando hacemos esto la sección de edición de código nos va a ofrecer el template, esto no es solo necesario para que nos muestre el template, sino que lo tengo que hacer para que Pharo sepa donde voy a meter el método.
 
-![](PharoParaOzonosos-CreandoUnMetodo.png "PharoParaOzonosos-CreandoUnMetodo.png")
+![](/img/wiki/PharoParaOzonosos-CreandoUnMetodo.png "PharoParaOzonosos-CreandoUnMetodo.png")
 
 Entonces vamos a escribir el código de nuestro primer método, lo que vamos a hacer es un mensaje para que el camión nos devuelva su capacidad:
 
-`      capacidad`
-`          ^ capacidad`
+```Smalltalk
+      capacidad
+          ^ capacidad
+```
 
 Para guardar el método creado, tenemos que hacer CTRL+s o botón derecho y elegir la opción **Accept**.
 
 Cuando hacemos esto, nos queda el siguiente resultado.
 
-![](PharoParaOzonosos-MetodoCreado.png "PharoParaOzonosos-MetodoCreado.png")
+![](/img/wiki/PharoParaOzonosos-MetodoCreado.png "PharoParaOzonosos-MetodoCreado.png")
 
 #### Probando nuestros Objetos
 
@@ -189,8 +195,10 @@ Ya tenemos creada nuestra clase, ahora probemos los objetos que creamos. Para po
 
 En un nuevo workspace vamos a escribir el siguiente código.
 
-`      unCamion := LgCamion new.`
-`      unCamion capacidad.`
+```Smalltalk
+      unCamion := LgCamion new.
+      unCamion capacidad.
+```
 
 Podemos ir ejecutando línea a línea. La primera nos conviene ejecutarla con un Do-It (o haciendo Ctrl+d), ya que es una línea que tiene efecto de lado. Esta línea crea un nuevo objeto a partir de la clase **LgCamion** y lo asigna a la variable local **unCamion**.
 
@@ -198,32 +206,42 @@ La 2da línea la vamos a ejecutar con un Print-It (o haciendo Ctrl+p), ya que es
 
 Dando como resultado lo siguiente:
 
-![](PharoScreenshot.7.png "PharoScreenshot.7.png")
+![](/img/wiki/PharoScreenshot.7.png "PharoScreenshot.7.png")
 
 Pero porque cuando evaluamos la 2da expresión nos devuelve **nil**? Bueno, porque todas los atributos de un objeto arrancan en nil.
 
 Por eso debemos agregarle el método para poder establecer los valores de los objetos. Vamos a agregar los siguientes métodos a la clase **LgCamion**:
 
-`     capacidad: unValor.`
-`       capacidad := unValor.`
+```Smalltalk
+     capacidad: unValor.
+       capacidad := unValor.
+```
 
-`     carga`
-`       ^ carga.`
+```Smalltalk
+     carga
+       ^ carga.
+```
 
-`     carga: unValor`
-`       carga:=unValor.`
+```Smalltalk
+     carga: unValor
+       carga:=unValor.
+```
 
 Además vamos a definir el método para responder al mensaje **estasLleno**.
 
-`     estasLleno.`
-`       ^ capacidad = carga.`
+```Smalltalk
+     estasLleno.
+       ^ capacidad = carga.
+```
 
 Entonces una vez que tenemos este mensaje podemos hacer una prueba más interesante con el siguiente workspace.
 
-`     unCamion := LgCamion new.`
-`     unCamion capacidad:1000. `
-`     unCamion carga:1000.`
-`     unCamion estasLleno.`
+```Smalltalk
+     unCamion := LgCamion new.
+     unCamion capacidad:1000. 
+     unCamion carga:1000.
+     unCamion estasLleno.
+```
 
 Este workspace ya nos permite probar una variante, que podemos ir modificando para probar nuestros objetos. Una alternativa interesante para esto, es poder crear tests unitarios.
 
