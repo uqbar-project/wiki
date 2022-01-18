@@ -68,9 +68,7 @@ Una vez que lo hayas descomprimido en una carpeta, podés hacer un acceso direct
 
 Por lo general no es necesario hacer nada más, pero en caso de necesitarlo, en la carpeta raíz donde descargaste el Eclipse vas a encontrar un archivo `eclipse.ini` que permite configurar
 
-- la memoria inicial con la que levanta Eclipse: `Xms`
-- la memoria máxima que puede ser utilizada para Eclipse, que corre en una Virtual Machine de Java propia: `Xmx`. Por defecto viene con 1GB y para las necesidades de la materia no deberías tener que subirlo, pero en todo caso charlalo con tu docente favorito.
-- cuál es la versión de Java requerida (por defecto es 1.11 y no debería ser necesario modificarla)
+f- cuál es la versión de Java requerida (por defecto es 1.11 y no debería ser necesario modificarla)
 - cuál es la ubicación donde está el ejecutable de Java: es importante que apunte a una JDK y no a una JRE, como hemos comentado en la instalación de la JDK. Si por defecto instalaste una JRE, tu Eclipse no será capaz de compilar, recomendamos volver a la página JDK y reinstalar Java. De la misma manera, la JDK a la que apunte Eclipse debería ser la misma que vos instalaste: asegurate de que estén sincronizadas.
 
 A continuación te dejamos un archivo `.ini` de ejemplo, ignorando las primeras líneas:

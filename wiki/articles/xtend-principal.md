@@ -9,7 +9,7 @@ featured: true
 
 A continuación te vamos a dejar los pasos de instalación del entorno Xtend para las materias Algoritmos 2, Algoritmos 3 y Programación con Herramientas Modernas. Seguí metódicamente los puntos y no saltees las verificaciones para asegurarte que en tu máquina tengas todas las herramientas necesarias para trabajar.
 
-* [Instalación del entorno base](preparacion-de-un-entorno-de-desarrollo-xtend.html)
+* [Instalación del entorno base](xtend-preparacion-de-un-entorno-de-desarrollo.html)
 * Configuración del entorno
   * [Configuraciones default de Eclipse](configuraciones-generales-para-cualquier-eclipse.html)
 * Recomendaciones para trabajar en la materia
