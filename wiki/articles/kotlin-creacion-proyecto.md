@@ -106,9 +106,11 @@ Presionando la tecla `F2` te podés mover al siguiente lugar del archivo donde h
 
 ___
 
-- Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad y lo mejor es pedirle al IDE que lo haga mediante `Ctrl` + `Alt` + `L` o bien con `Ctrl` + `Alt` + `Shift` + `L`. 
+- Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad y lo mejor es pedirle al IDE que lo haga mediante `Ctrl` + `Alt` + `L` o bien con `Ctrl` + `Alt` + `Shift` + `L` (te abre una ventana de diálogo con más opciones). 
 
-<img src="/img/wiki/intellij-formatting.gif" alt="Formateando un archivo Kotlin" height="100%" width="100%">
+<img src="/img/wiki/intellij-formatting2.gif" alt="Formateando un archivo Kotlin" height="100%" width="100%">
+
+**Tip**: si estás trabajando en una distribución de Linux que utiliza KDE, el shortcut `Ctrl` + `Alt` + `L` es tomado por el sistema como la acción para bloquear la pantalla. Para desactivarlo seguí [estas instrucciones](https://stackoverflow.com/questions/211043/disable-global-ctrl-alt-l-hotkey-in-kde).
 
 La configuración base se puede definir mediante `File` > `Settings` y luego: `Editor` > `Code Style` > `Kotlin`, aunque **te recomendamos que dejes los valores por defecto, así como todas las personas deben tener la misma configuración**.
 
