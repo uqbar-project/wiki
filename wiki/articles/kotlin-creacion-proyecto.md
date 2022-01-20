@@ -55,9 +55,10 @@ Esto permite detectar inconsistencias entre diferentes estaciones de trabajo, o 
 Por el momento, lo que necesitás es únicamente copiar [este archivo](./algo2.build.yml) en la siguiente estructura que **hay que crear**
 
 ```bash
-.github
-   └── workflows
-       └── build.yml
+<directorio raíz>
+└── .github
+    └── workflows
+        └── build.yml
 ```
 
 
@@ -70,7 +71,7 @@ Vamos a crear nuestra primera clase Perro. Es importante notar que tendremos dos
 
 Por eso, nos ubicamos en `src/main/kotlin` y con un botón derecho, `New > Kotlin Class/File`.
 
-<img src="/img/wiki/kotlin-nueva-clase.gif" alt="Creando una nueva clase Kotlin en IntelliJ" height="100%" width="100%">
+<img src="/img/wiki/kotlin-nueva-clase2.gif" alt="Creando una nueva clase Kotlin en IntelliJ" height="100%" width="100%">
 
 
 ## Shortcuts de IntelliJ
