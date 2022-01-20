@@ -16,11 +16,11 @@ Desde IntelliJ tenemos dos opciones:
 
 Eso abre la siguiente ventana de diálogo:
 
-![image](/img/wiki/kotlin-nuevo-proyecto.png)
+<img src="/img/wiki/kotlin-nuevo-proyecto.png" alt="Creación de un nuevo proyecto en Kotlin" height="50%" width="50%">
 
 - el nombre del proyecto no debe contener espacios ni caracteres especiales (IntelliJ te va a avisar)
 - Todos los ejemplos que vas a descargar de la materia, así como los proyectos en los que vas a trabajar, se basan en la tecnología **Gradle**. Asegurate que tengas seleccionada la opción `Gradle Kotlin`.
-- Revisamos que la opción en `Project JDK` por defecto sea la **JDK 14**, en caso contrario debemos ir a [configurar la versión por defecto de Java](./kotlin-preparacion-de-un-entorno-de-desarrollo.html)
+- Revisamos que la opción en `Project JDK` por defecto sea la **JDK 14**, en caso contrario debemos ir a [configurar la versión de Java](./kotlin-preparacion-de-un-entorno-de-desarrollo.html)
 - Te recomendamos que el group id sea `ar.edu.zzzz.xxx` donde `zzzz` sea la universidad y `xxx` sea la materia que estás cursando. Por ejemplo `ar.edu.unsam.algo2` para la materia Algoritmos 2 de UNSAM.
 - El nombre del artefacto (Artifact ID) es el nombre de tu proyecto
 
@@ -37,7 +37,7 @@ Te dejamos entonces un archivo con las dependencias base para la cursada de Algo
 
 Una vez que actualicemos ese archivo, desde IntelliJ nos aparecerán dos íconos para indicarnos que debemos sincronizar las definiciones de Gradle con las de nuestro IDE:
 
-![image](/img/languages/kotlin-actualizar-gradle.gif)
+<img src="/img/wiki/kotlin-actualizar-gradle.gif" alt="IntelliJ te avisa para sincronizar tu proyecto con la definición del archivo de Gradle" height="50%" width="50%">
 
 Al hacer click automáticamente se actualizarán las dependencias. Este proceso es muy importante ya que de otra manera podremos experimentar problemas como imports que no funcionan, o métodos inexistentes (por estar usando versiones diferentes a las que queremos realmente).
 
@@ -64,7 +64,7 @@ Vamos a crear nuestra primera clase Perro. Es importante notar que tendremos dos
 
 Por eso, nos ubicamos en `src/main/kotlin` y con un botón derecho, `New > Kotlin Class/File`.
 
-![image](/img/wiki/kotlin-nueva-clase.gif)
+<img src="/img/wiki/kotlin-nueva-clase.gif" alt="Creando una nueva clase Kotlin en IntelliJ" height="50%" width="50%">
 
 
 ## Shortcuts de IntelliJ
@@ -73,11 +73,11 @@ A continuación te dejamos algunas recomendaciones para que tu estadía en Intel
 
 - "Cómo era para...?" Lo mejor es preguntarle al propio IDE, **presionando dos veces `Shift`, `Shift`**
 
-![image](/img/wiki/intellij-shiftShift.gif)
+<img src="/img/wiki/intellij-shiftShift.gif" alt="Presionando Shift dos veces tenés acceso al menú contextual para buscar cualquier opción" height="50%" width="50%">
 
 - Presionar dos veces `Ctrl` + `Ctrl` te permite ejecutar cualquier comando válido desde el componente donde estés ubicado.
 
-![image](/img/wiki/intellij-ctrlCtrl.gif)
+<img src="/img/wiki/intellij-ctrlCtrl.gif" alt="Presionando Ctrl dos veces tenés acceso al menú contextual para ejecutar test, programas, etc." height="50%" width="50%">
 
 - `Alt` + `Enter` activa sugerencias tanto para errores como para cosas que se pueden mejorar (_warnings_)
 
