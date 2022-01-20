@@ -16,7 +16,7 @@ Desde IntelliJ tenemos dos opciones:
 
 Eso abre la siguiente ventana de diálogo:
 
-<img src="/img/wiki/kotlin-nuevo-proyecto.png" alt="Creación de un nuevo proyecto en Kotlin" height="80%" width="80%">
+<img src="/img/wiki/kotlin-nuevo-proyecto.png" alt="Creación de un nuevo proyecto en Kotlin" height="100%" width="100%">
 
 - el nombre del proyecto no debe contener espacios ni caracteres especiales (IntelliJ te va a avisar)
 - Todos los ejemplos que vas a descargar de la materia, así como los proyectos en los que vas a trabajar, se basan en la tecnología **Gradle**. Asegurate que tengas seleccionada la opción `Gradle Kotlin`.
@@ -37,7 +37,7 @@ Te dejamos entonces un archivo con las dependencias base para la cursada de Algo
 
 Una vez que actualicemos ese archivo, desde IntelliJ nos aparecerán dos íconos para indicarnos que debemos sincronizar las definiciones de Gradle con las de nuestro IDE:
 
-<img src="/img/wiki/kotlin-actualizar-gradle.gif" alt="IntelliJ te avisa para sincronizar tu proyecto con la definición del archivo de Gradle" height="80%" width="80%">
+<img src="/img/wiki/kotlin-actualizar-gradle.gif" alt="IntelliJ te avisa para sincronizar tu proyecto con la definición del archivo de Gradle" height="100%" width="100%">
 
 Al hacer click automáticamente se actualizarán las dependencias. Este proceso es muy importante ya que de otra manera podremos experimentar problemas como imports que no funcionan, o métodos inexistentes (por estar usando versiones diferentes a las que queremos realmente).
 
@@ -52,7 +52,13 @@ Otra herramienta que vamos a incorporar en la cursada es la integración continu
 
 Esto permite detectar inconsistencias entre diferentes estaciones de trabajo, o errores más básicos como "algo no compila" o "estos 3 tests se rompieron".
 
-Por el momento, lo que necesitás es únicamente copiar [este archivo](./algo2.build.yml) al nuevo directorio `.github/workflows` de tu proyecto, con el nombre `build.yml`. No hace falta configurar nada más.
+Por el momento, lo que necesitás es únicamente copiar [este archivo](./algo2.build.yml) en la siguiente estructura que **hay que crear**
+
+```bash
+.github
+   └── workflows
+       └── build.yml
+```
 
 
 ## Primeros pasos
@@ -64,7 +70,7 @@ Vamos a crear nuestra primera clase Perro. Es importante notar que tendremos dos
 
 Por eso, nos ubicamos en `src/main/kotlin` y con un botón derecho, `New > Kotlin Class/File`.
 
-<img src="/img/wiki/kotlin-nueva-clase.gif" alt="Creando una nueva clase Kotlin en IntelliJ" height="80%" width="80%">
+<img src="/img/wiki/kotlin-nueva-clase.gif" alt="Creando una nueva clase Kotlin en IntelliJ" height="100%" width="100%">
 
 
 ## Shortcuts de IntelliJ
@@ -73,13 +79,13 @@ A continuación te dejamos algunas recomendaciones para que tu estadía en Intel
 
 - "Cómo era para...?" Lo mejor es preguntarle al propio IDE, **presionando dos veces `Shift`, `Shift`**
 
-<img src="/img/wiki/intellij-shiftShift.gif" alt="Presionando Shift dos veces tenés acceso al menú contextual para buscar cualquier opción" height="80%" width="80%">
+<img src="/img/wiki/intellij-shiftShift.gif" alt="Presionando Shift dos veces tenés acceso al menú contextual para buscar cualquier opción" height="100%" width="100%">
 
 <!-- -->
 
 - Presionar dos veces `Ctrl` + `Ctrl` te permite ejecutar cualquier comando válido desde el componente donde estés ubicado.
 
-<img src="/img/wiki/intellij-ctrlCtrl.gif" alt="Presionando Ctrl dos veces tenés acceso al menú contextual para ejecutar test, programas, etc." height="80%" width="80%">
+<img src="/img/wiki/intellij-ctrlCtrl.gif" alt="Presionando Ctrl dos veces tenés acceso al menú contextual para ejecutar test, programas, etc." height="100%" width="100%">
 
 <!-- -->
 
