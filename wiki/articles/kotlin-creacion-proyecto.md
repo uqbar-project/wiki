@@ -106,27 +106,30 @@ ___
 
 <img src="/img/wiki/intellij-formatting.gif" alt="Formateando un archivo Kotlin" height="100%" width="100%">
 
-La configuración base se puede ver
+La configuración base se puede definir mediante `File` > `Settings` y luego: `Editor` > `Code Style` > `Kotlin`:
 
+<img src="/img/wiki/intellij-formatting-options.gif" alt="Configurar las opciones de formateo para Kotlin" height="100%" width="100%">
+
+<!-- -->
 ___
 
 Para más información podés ver [este artículo](https://blog.jetbrains.com/idea/2020/03/top-15-intellij-idea-shortcuts/).
 
 ## Packages para agrupar código común
 
-- Utilización de packages (paquetes). Es una buena práctica agrupar las clases afines en paquetes para organizar semánticamente el código. No hay una guía firme a seguir con respecto a cómo organizar nuestro código, ya que suele depender del contexto en el cual estamos trabajando, pero a medida que veas nuestros ejemplos y vayas haciendo las prácticas notarás que hay clases que se pueden agrupar en contextos similares. Te dejamos un ejemplo
+- Utilización de packages (paquetes). Es una buena práctica agrupar las clases afines en paquetes para organizar semánticamente el código. No hay una guía firme a seguir con respecto a cómo organizar nuestros archivos, ya que suele depender del contexto en el cual estamos trabajando, pero a medida que veas nuestros ejemplos y vayas haciendo las prácticas notarás que hay clases que se pueden agrupar en contextos similares. Te dejamos un ejemplo
 
 ```bash
 proyecto
    ├── home
    ├── registration
-   │   ├── Profile.xtend
-   │   └── User.xtend
+   │   ├── Profile.kt
+   │   └── User.kt
    └── settings
-       ├── CustomPrivacy.xtend
-       ├── DefaultPrivacy.xtend
-       ├── Privacy.xtend
-       └── Setting.xtend
+       ├── CustomPrivacy.kt
+       ├── DefaultPrivacy.kt
+       ├── Privacy.kt
+       └── Setting.kt
 ```
 
 De esta manera, logramos mayor granularidad en la organización de nuestras clases.
