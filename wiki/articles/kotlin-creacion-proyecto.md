@@ -102,9 +102,13 @@ ___
 
 ___
 
-- Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad y lo mejor es pedirle al IDE que lo haga mediante `Ctrl` + `Alt` + `L`. 
+- Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad y lo mejor es pedirle al IDE que lo haga mediante `Ctrl` + `Alt` + `L` o bien con `Ctrl` + `Alt` + `Shift` + `L`. 
 
-Cómo configurarlo.
+<img src="/img/wiki/intellij-formatting.gif" alt="Formateando un archivo Kotlin" height="100%" width="100%">
+
+La configuración base se puede ver
+
+___
 
 Para más información podés ver [este artículo](https://blog.jetbrains.com/idea/2020/03/top-15-intellij-idea-shortcuts/).
 
