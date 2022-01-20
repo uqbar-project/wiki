@@ -84,19 +84,27 @@ A continuación te dejamos algunas recomendaciones para que tu estadía en Intel
 
 <!-- -->
 
+___
+
 - Presionar dos veces `Ctrl` + `Ctrl` te permite ejecutar cualquier comando válido desde el componente donde estés ubicado.
 
 <img src="/img/wiki/intellij-ctrlCtrl.gif" alt="Presionando Ctrl dos veces tenés acceso al menú contextual para ejecutar test, programas, etc." height="100%" width="100%">
 
 <!-- -->
 
+___
+
 - `Alt` + `Enter` activa sugerencias tanto para errores como para cosas que se pueden mejorar (_warnings_)
+
+<img src="/img/wiki/intellij-altEnter.gif" alt="Presionando Alt + Enter sobre un error o warning, el IDE nos ofrece diferentes formas de resolverlos" height="100%" width="100%">
+
+<!-- -->
+
+___
 
 - Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad y lo mejor es pedirle al IDE que lo haga mediante `Ctrl` + `Alt` + `L`. 
 
 Cómo configurarlo.
-
-![image](/img/languages/formattingCode.gif)
 
 Para más información podés ver [este artículo](https://blog.jetbrains.com/idea/2020/03/top-15-intellij-idea-shortcuts/).
 
