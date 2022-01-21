@@ -78,7 +78,7 @@ Por eso, nos ubicamos en `src/main/kotlin` y con un botón derecho, seleccionare
 
 A continuación te dejamos algunas recomendaciones para que tu estadía en IntelliJ + Kotlin sea más feliz:
 
-- "Cómo era para...?" Lo mejor es preguntarle al propio IDE, **presionando dos veces `Shift`, `Shift`**. Desde esa ventana de diálogo podés buscar cualquier palabra clave, como "New", "Save", "Run", "Select".
+- "Cómo era para...?" Lo mejor es preguntarle al propio IDE, **presionando dos veces `Shift` + `Shift`**. Desde esa ventana de diálogo podés buscar cualquier palabra clave, como "New", "Save", "Run", "Select".
 
 <img src="/img/wiki/intellij-shiftShift.gif" alt="Presionando Shift dos veces tenés acceso al menú contextual para buscar cualquier opción" height="100%" width="100%">
 
