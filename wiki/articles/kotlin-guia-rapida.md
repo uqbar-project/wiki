@@ -11,7 +11,7 @@ La siguiente es una guía de _syntactic sugars_ de Kotlin, algunos de los cuales
 
 Una clase necesita un nombre, atributos a los cuales referencia y métodos, definidos mediante el prefijo `fun`.
 
-```kt
+```kotlin
 val ENERGIA_MINIMA = 10
 
 class Ave {
@@ -127,7 +127,7 @@ Existen muchos tipos de datos diferentes para números:
 
 ```kt
 fun main() {
-    val a: Double = 0.02
+	val a: Double = 0.02
 	val b: Double = 0.03
 	val c: Double = b - a
 	System.out.println(c)  // 0.009999999999999998
@@ -138,7 +138,7 @@ fun main() {
 
 ```kt
 fun main() {
-    val a: BigDecimal = BigDecimal("0.02")
+	val a: BigDecimal = BigDecimal("0.02")
 	val b: BigDecimal = BigDecimal("0.03")
 	val c: BigDecimal = b - a
 	System.out.println(c)    // 0.01
