@@ -34,36 +34,47 @@ class Ave {
 * la variable energia **es una variable de instancia** porque cada objeto Ave tiene su propio valor.
 * las variables tienen un tipo que se infiere en base al valor: en el caso de la energia es un número (`Int`) porque se asocia al valor `0` aunque podemos explicitarla nosotros de la siguiente manera: 
 
-```kt
+```kotlin
 var energia: Int = 0
+// la variable energia 
+//    tiene el tipo Int y el valor por defecto 0
 ```
 
 * Kotlin automáticamente define getters y setters para la variable `energia` (no es necesario hacer nada, mientras no especifiquemos la visibilidad del atributo a privada, de la siguiente manera: `private var energia = 0`)
+* La manera de invocar al getter es: `objeto.atributo` y la manera de invocar al setter es `objeto.atributo = valor`:
+
+```kotlin
+pepita.energia = 100    // <-- equivale a pepita.setEnergia(100)
+pepita.energia          // <-- equivale a pepita.getEnergia()
+```
+
+¡Ojo! si bien parece que estamos accediendo diréctamente a la variable de instancia, no es así. Xtend simplemente traduce esa sintaxis a la anterior. Es decir que en ambos casos estamos igualmente llamando al getter y al setter. Pueden probar definiendo la variable `energia` como privada y el IDE mostrará un mensaje de error "Cannot access 'energia': it is private in 'Ave'".
+
 
 ## Métodos
 
 * respecto a los métodos, algunos producen efecto (volar y comer) y otros simplemente devuelven un valor (esFeliz). 
 * en el caso de los métodos con efecto, se delimitan con llaves. Por defecto los métodos que no devuelven nada no tienen ninguna anotación de tipo, se dice que son `void` o `Unit`.
 
-```kt
+```kotlin
 fun volar() { energia = energia - 10 }
 ```
 
 * los métodos que solo devuelven valores y tienen una sola línea se definen con el símbolo `=`:
 
-```kt
+```kotlin
 fun esFeliz() = energia > ENERGIA_MINIMA
 ```
 
-* también es posible definir un método que devuelve un valor mediante las llaves:
+* también es posible definir un método que devuelve un valor mediante las llaves, definiendo una anotación de tipo para el método:
 
-```kt
+```kotlin
 fun esFeliz(): Boolean { 
     return energia > ENERGIA_MINIMA
 }
 ```
 
-Si el método tiene varias líneas es necesario utilizar este formato en lugar del `=`.
+En este caso el tipo de retorno del método es Boolean. Si el método tiene varias líneas es necesario utilizar este formato en lugar del `=`.
 
 # Referencias variables y valores
 
@@ -71,21 +82,21 @@ En Kotlin, al igual que muchos otros lenguajes, se diferencian las referencias c
 
 * **Variables**: son referencias que pueden inicializarse apuntando a un objeto, y luego reasignarse a otro:
 
-```kt
+```kotlin
 var unString = "Pepito"
 unString = "Otro String"
 ```
 
 * **Constantes**: son referencias que nacen apuntando a un valor y no pueden ser modificadas para apuntar a otro objeto. Serían como "constantes".
 
-```kt
+```kotlin
 val constante = "Constante"
 constante = "Otro"  // <----- NO COMPILA !
 ```
 
 ¡Ojo! no confundir el hecho de que no se pueda modificar la "referencia" de la mutabilidad/inmutabilidad del objeto al que apunta. Puedo tener un "val" apuntando a un elemento que sí mute.
 
-```kt
+```kotlin
 val perro = Perro()
 perro.nombre("Juan")
 perro = Perro()        // <----- NO COMPILA: no puedo modificar la referencia
@@ -94,8 +105,32 @@ perro.nombre("Carlos") // <---- SI COMPILA y puedo mutar la referencia nombre de
 
 ## Cuándo debería usar val y cuándo var
 
-* por defecto definí tus variables como `val`, a menos de que necesites modificar las referencias. _Por ejemplo_: la edad de una persona debería poder modificarse, en cuanto al nombre puede ser que no necesites modificarlo o sí, eso dependerá de las reglas de negocio.
-* El motivo principal es acotar el efecto en nuestros programas, **mientras menor sea el efecto, más fácil es controlar nuestro software, y más fácil será testearlo**.
+Por defecto definí tus variables como `val`, a menos de que necesites modificar las referencias. _Por ejemplo_: la edad de una persona debería poder modificarse, en cuanto al nombre puede ser que no necesites modificarlo o sí, eso dependerá de las reglas de negocio. El motivo principal es acotar el efecto en nuestros programas, **mientras menor sea el efecto, más fácil es controlar nuestro software, y más fácil será testearlo**.
+
+# Objetos singleton
+
+Kotlin provee la capacidad de definir objetos:
+
+```kotlin
+object Pepita {
+    var energia = 100
+    fun volar(minutos: Int) {
+        energia -= minutos * 2 + 10
+    }
+    fun comer(gramos: Int) {
+        energia += gramos * 4
+    }
+}
+
+fun main() {
+    Pepita.energia = 150
+    Pepita.volar(5)
+    Pepita.comer(2)
+    System.out.println("La energia de pepita es ${Pepita.energia}")  // "La energia de pepita es 88"
+}
+```
+
+Pepita es una instancia que se puede acceder globalmente, representa una implementación _thread safe_ del **Singleton** que es más trabajosa de implementar en Java (podés investigar más en [este artículo](https://devexperto.com/object-kotlin-singleton/)). Si trabajaste en **Wollok** (o **Scala**) el concepto es exactamente similar, solo que el nombre debe comenzar con mayúscula.
 
 # Tipos de datos
 
@@ -103,7 +138,7 @@ perro.nombre("Carlos") // <---- SI COMPILA y puedo mutar la referencia nombre de
 
 Un string se encierra entre dobles comillas, o bien podemos aprovechar para escribir un texto largo con triples comillas dobles (lo que nos permite incluso utilizar enters). Podemos interpolar referencias de Kotlin mediante `$` o bien utilizar código ejecutable usando `${zzz}` donde zzz es código Kotlin.
 
-```kt
+```kotlin
 class Cliente {
     var nombre = "Juan" // string simple
 
@@ -125,169 +160,184 @@ Existen muchos tipos de datos diferentes para números:
 * **Int**: es un número entero que admite negativos pero sin decimales
 * **Double**, **Float**: son números reales que admiten decimales pero con errores en las operaciones, es por ello que no debemos usarlo para operaciones sensibles (como transacciones bancarias o que requieran cálculos exactos). ¿Por qué? Por este código que podés probar en [este REPL](https://play.kotlinlang.org/)
 
-```kt
+```kotlin
 fun main() {
-	val a: Double = 0.02
-	val b: Double = 0.03
-	val c: Double = b - a
-	System.out.println(c)  // 0.009999999999999998
+    val a: Double = 0.02
+    val b: Double = 0.03
+    val c: Double = b - a
+    System.out.println(c)  // 0.009999999999999998
 }
 ```
 
 * **BigDecimal**: es el tipo de dato que conviene utilizar ya que no produce errores de redondeo (permite trabajar con una cantidad exacta de decimales y truncarlos o redondearlos en caso de ser necesario)
 
-```kt
+```kotlin
+import java.math.BigDecimal
+
 fun main() {
-	val a: BigDecimal = BigDecimal("0.02")
-	val b: BigDecimal = BigDecimal("0.03")
-	val c: BigDecimal = b - a
-	System.out.println(c)    // 0.01
+    val a: BigDecimal = BigDecimal("0.02")
+    val b: BigDecimal = BigDecimal("0.03")
+    val c: BigDecimal = b - a
+    System.out.println(c)    // 0.01
 }
 ```
 
-* También existen las variantes "objetosas" de int, double y float que son Integer, Double y Float. La principal ventaja es que son objetos, y podemos enviarle mensajes (concretamente más mensajes) que a las versiones en minúscula, que son _tipos primitivos_. Es posible "envolver" en una variable Integer cualquier int, la conversión se da automáticamente por el compilador de Java y se llama "autoboxing":
+Tanto Int, como Double como BigDecimal representan objetos a los que podés enviarle mensajes:
 
-```scala
-var i = 0                         // int
-var pi = 3.14d                    // double
-var saldo = new BigDecimal(1500)  // BigDecimal
-var Integer otroI = i             // otroI es un entero
-otroI.bitwiseNot                  // puedo enviar un mensajes
+```kotlin
+fun main() {
+    val numero: Double = 10.0
+    System.out.println(numero.inc())   // 11.0
+    System.out.println(numero.rem(3))  // 1.0
+}
 ```
 
 Para más información pueden ver [esta página](https://kotlinlang.org/docs/basic-types.htm).
 
-## Colecciones
+## Colecciones mutables e inmutables
+
+En Kotlin, todas las colecciones vienen en dos "sabores": mutables e inmutables. Las primeras soportan modificar sus elementos (agregar, quitar, actualizar), mientras que las segundas solo permiten acceder a sus elementos. Queda a criterio de quien programa cuál utilizar en cada caso, prefiriendo desde este espacio las inmutables (porque algo que no se puede modificar es menos propenso a errores).
 
 Existen literales para definir listas, conjuntos y mapas (dictionaries):
 
-```scala
-// Lista inmutable:
-val myList = #['Hello', 'World']
-// Set inmutable
-val mySet = #{'Hello', 'World'}
-// Mapa/Diccionario inmutable
-val myMap = #{'a' -> 1 , 'b' ->2}
+```kotlin
+fun main() {
+    // Lista inmutable
+    val myList = listOf("Hello", "World")
+    myList.size
+    // ERROR, no puedo agregar un elemento a una lista inmutable
+    // └ myList.add("Goodbye")
+    
+    // Lista mutable
+    val myMutableList = mutableListOf("Hello", "World")
+    myMutableList.add("Goodbye")
+    System.out.println("${myMutableList[1]}")  // "World"
+
+    // Set inmutable
+    val mySet = setOf("Hello", "World")
+    // ERROR, no puedo agregar un elemento a un set inmutable
+    // └ mySet.add("Goodbye")
+
+    // Set mutable
+    val myMutableSet = mutableSetOf("Hello", "World")
+    myMutableSet.add("Goodbye")
+    myMutableSet.add("Hello")  // no tiene efecto porque ya hay un elemento "Hello"
+    System.out.println("${myMutableSet.size}")  // 3
+
+    // Mapa/Diccionario inmutable
+    val myMap = mapOf("a" to 1 , "b" to 2)
+    // ERROR, no puedo agregar un elemento a un set inmutable
+    // └ myMap.set("c", 3)
+    
+    val myMutableMap = mutableMapOf("a" to 1 , "b" to 2)
+    myMutableMap.set("c", 3)
+    System.out.println("${myMutableMap.size}")  // 3
+}
 ```
 
 Recordemos que
 
 * **listas**: respetan el orden en el que se agregan (como una fila) y admiten duplicados.
 * **conjuntos**: no tienen orden y tampoco admiten duplicados. Dos objetos son iguales en base a la definición de equals() y hashCode().
-* **mapas**: también llamados dictionaries, son un conjunto de pares clave/valor. Se acceden por clave.
+* **mapas**: son un conjunto de pares clave/valor. Se acceden por clave.
 
-## Range
+> Ojo 👀: no hay que mezclar las ideas de `val` y `var` con la (in)mutabilidad de las colecciones. Por ejemplo, una colección inmutable podría estar referenciada con var, mientras que una mutable podría ser val.
 
-Es posible generar un rango de números, por ejemplo para iterar una cantidad de veces:
+## Rangos con arrays
 
-```scala
-#[1 .. 10].forEach [ ... ]      // [1..10] genera la lista de 1 a 10
-#[1 ..< 10].forEach [ ... ]     // [1..<10] genera la lista de 1 a 9
-#[1 >.. 10].forEach [ ... ]     // [1>..10] genera la lista de 2 a 10
+Es posible generar un rango de números:
+
+```kotlin
+// Array de enteros con valores [0, 0, 0, 0, 0]
+val arrZeros = IntArray(5)
+
+// Array de enteros de tamaño 5 con valores [42, 42, 42, 42, 42]
+val arrConstants = IntArray(5) { 42 }
+
+// Podemos utilizar una lambda para inicializar un array: [0, 1, 2, 3, 4]
+var arrLambda = IntArray(5) { it }
+// ... o [1, 2, 3, 4, 5]
+var arrLambda = IntArray(5) { it + 1 }
 ```
 
-`..<` es útil cuando necesitás iterar una lista de Java, que comienza en 0 y termina en (longitud - 1):
-
-```scala
-#[0 ..< lista.size].forEach [ i | println(i) ]
-```
-
-## Literales para lista, conjunto, etc.
-
-Xtend trae shortcuts para definir diferentes tipos de colecciones:
-
-```scala
-List<Factura> facturas = newArrayList
-Set<Domicilio> domicilios = newHashSet
-List<String> nombres = newArrayList("nahuel", "rodrigo", "marina")
-```
-
-Podés utilizar `newLinkedList`, `emptyList`, `emptySet`, `emptyMap`, `newInmutableMap`, `newImmutableSet`, `newImmutableList`, `newLinkedHashSet`, `newTreeSet`, `newHashMap`, `newLinkedHashMap`, `newTreeMap`. La ventaja que tienen es que permiten pasarle parámetros variables (tantos como elementos necesites) y trae implementaciones por defecto para algunas colecciones que necesitan comparators (tenés que estudiar más a fondo [**Colecciones en Xtend**](https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing))
+Más abajo explicamos definición de bloques o lambdas.
 
 ## Inferencia de tipos
 
-Xtend cuenta con inferencia de tipos, lo que permite
+Kotlin cuenta con inferencia de tipos, lo que permite
 
-* que existan chequeo de tipos
-* pero que la mayoría de las veces no sea necesario definir los tipos de las expresiones
+* que exista chequeo de tipos
+* pero que muchas veces no sea necesario definir los tipos de las expresiones
 
-Vemos un ejemplo en vivo, mostrando cómo cambia la solapa "Outline" cuando modificamos el código:
+Vemos un ejemplo en vivo, mostrando cómo cambia la solapa "Structure" (disponible mediante `Alt`+ `7`) cuando modificamos el código:
 
-![image](/img/languages/xtendTypeInference.gif)
+![Kotlin Type Inference](/img/wiki/kotlin-typeInference.gif)
 
-Aquí vemos que incluso Xtend detecta expresiones que no tienen sentido, como cuando hicimos:
+Volviendo a la inferencia de tipos, es fundamental poder contar con un lenguaje que tenga chequeo de tipos para detectar errores en forma temprana pero **que no me obligue a definir los tipos todo el tiempo**. La definición de tipos es obligatoria cuando la definición pueda resultar ambigua para Kotlin, por ejemplo cuando definas un método que retorna un valor pero no lo anotes en la definición:
 
-```scala
-def esFeliz() {
-    energia > ENERGIA_MINIMA
-    "si"
+```kotlin
+fun resetearEnergia() {
+    energia = 0
+    return true   // ERROR: la definición del método conflictúa con este return
 }
 ```
 
-El hecho de generar una expresión `energia > ENERGIA_MINIMA` no causa efecto en el objeto y tampoco se devuelve (porque se pisa por la expresión "si" que es devuelta como retorno del método).
+En ese caso el IDE te mostrará un error y lo podés solucionar fácilmente indicando el tipo del valor a retornar (o bien eliminando la instrucción `return`):
 
-Volviendo a la inferencia de tipos, es fundamental poder contar con un lenguaje que tenga chequeo de tipos para detectar errores en forma temprana pero **que no me obligue a definir los tipos todo el tiempo**. La definición de tipos es obligatoria para las variables de instancia y de clase de los objetos, y en algunos casos cuando la definición de métodos polimórficos puede resultar ambigua para Xtend. En cualquiera de esos casos vas a ver un mensaje de error o de advertencia para que definas el tipo que mejor se ajuste.
+![Kotlin Fix method return](/img/wiki/kotlin-fixMethodReturn.gif)
 
-## Casteos
 
-Si bien toda expresión tiene un tipo y Xtend suele inferirlo bastante bien, a veces es necesario hacer _downcasting_ o forzar que una expresión pase por un tipo de datos:
+# Instanciación y constructores
 
-```scala
-(42 as Integer)
-(cliente as Cliente)
+## Instanciación por defecto
+
+Para instanciar un objeto, Kotlin no utiliza la palabra `new`, simplemente se invoca mediante el nombre de la clase y paréntesis:
+
+```kotlin
+class Entrenador {
+    val ave = Ave()
 ```
 
-En general la expresión es, entre paréntesis: (`valor/variable` as `tipo`)
+## Definiendo constructores
 
-# Definición de propiedades
+Adicionalmente, podemos definir parámetros en la construcción de una clase (lo que en otros lenguajes se conoce como constructor):
 
-La anotación @Accessors puede hacerse sobre una variable, como hemos visto antes:
-
-```scala
-class Ave {
-    @Accessors int energia = 0
+```kotlin
+class Ave(var energia: Int = 0) {
+    ...
+}
 ```
 
-En este caso se crean getters y setters para energia, **transformándolo en una propiedad**.
+El valor por defecto indica que podemos crear un ave sin pasar parámetros, en cuyo caso el valor de su energía será 0:
 
-```scala
-class Ave {
-    @Accessors(PUBLIC_GETTER) int energia = 0
+```kotlin
+val pepita = Ave() // un ave con energia = 0
 ```
 
-En este caso se crea un getter público para la variable energia. Otras variantes son: crear sólo un setter público o crear getters o setters con diferentes visibilidad.
+Pero también podemos pasar un valor:
 
-Por último, podemos anotar la clase con @Accessors
-
-```scala
-@Accessors
-class Ave {
-    int energia = 0
-    int vecesQueVolo = 0
+```kotlin
+val pepita = Ave(energia = 150) // un ave con energia = 150
 ```
 
-en este caso, se crean getters y setters para todas las variables de dicha clase.
+Si en cambio no definimos un valor por defecto para energia
 
-# Shortcut para acceder a propiedades
-
-Cuando usamos un objeto que tiene propiedades (par getter y setter), podemos cambiar un poco la sintaxis para que se vea más simple. En el ejemplo anterior del Ave:
-
-```scala
-val pepita = new Ave()
-pepita.energia = 100    // <-- equivale a pepita.setEnergia(100)
-pepita.energia          // <-- equivale a pepita.getEnergia()
+```kotlin
+class Ave(var energia: Int) {
+    ...
 ```
 
-¡Ojo! si bien parece que estamos accediendo diréctamente a la variable de instancia, no es así. Xtend simplemente traduce esa sintaxis a la anterior. Es decir que en ambos casos estamos igualmente llamando al getter y al setter. Pueden probar eliminando la anotación @Accessors y recibiremos un mensaje "The field energia is not visible".
+es obligatorio pasarle un valor para energía:
 
-# Paréntesis en el envío de mensajes
-
-No es necesario utilizar paréntesis, ni en la creación de objetos, ni en el envío de mensajes sin parámetros:
-
-```scala
-val golondrina = new Ave
-golondrina.resetearEnergia
+```kotlin
+val ave = Ave()              // ERROR: No value passed for parameter 'energia'
+val ave = Ave(energia = 200) // OK
 ```
+
+## Constructores secundarios
+
+Por lo general solo es necesario definir un constructor por defecto, pero en caso de que lo necesites te dejamos [este artículo que explica cómo escribirlos](https://kotlinlang.org/docs/classes.html#secondary-constructors).
+
 
 # Herencia y redefinición de métodos
 

@@ -23,21 +23,20 @@ Para testear localmente se necesitan los siguientes requerimientos previos.
 
 Para instalar las dependencias de ruby adicionales ejecutar:
 
-```
+```bash
 bundle install
 ```
 
 Este proyecto utiliza Jekyll, para levantar una instancia local una vez instaladas las dependencias habrá que instalar las dependencias adicionales mediante yarn:
 
-```
+```bash
 yarn install
-
 ```
 
 Una vez ya resueltas todas las dependencias se puede levantar el entorno mediante:
 
 ```
-  jekyll s --i
+jekyll s --i
 ```
     
 Esto arma un build local y una vez completado este proceso levanta localmente la instancia. De aquí en más se podrá hacer modificaciones localmente, y el servidor actualizará los cambios automáticamente (es lo que hace el flag --i de incremental).
