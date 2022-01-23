@@ -336,86 +336,133 @@ val ave = Ave(energia = 200) // OK
 
 ## Constructores secundarios
 
-Por lo general solo es necesario definir un constructor por defecto, pero en caso de que lo necesites te dejamos [este artículo que explica cómo escribirlos](https://kotlinlang.org/docs/classes.html#secondary-constructors).
+Por lo general solo es necesario definir un constructor por defecto, pero en caso de que lo necesites te dejamos [este artículo que explica cómo escribir constructores secundarios](https://kotlinlang.org/docs/classes.html#secondary-constructors).
 
 
 # Herencia y redefinición de métodos
 
-A continuación vemos cómo definir dos subclases de Ave: Golondrina y Torcaza.
+A continuación vemos cómo definir Golondrina como subclase de Ave.
 
-![image](/img/languages/xtendInheritanceShort.gif)
+![image](/img/wiki/kotlin-inheritance.gif)
 
-```scala
-@Accessors
-class Ave {
-    int energia = 0
-    static int ENERGIA_MINIMA = 10
-    def volar() { energia = energia - 10 }
-    def comer(int cuanto) { energia = energia + (cuanto * 2) }
-    def esFeliz() { energia > ENERGIA_MINIMA }
+```kotlin
+open class Ave() {
+    ...
+    open fun esFeliz() = energia < ENERGIA_MINIMA
 }
 
-class Golondrina extends Ave {
-    override esFeliz() { true }
-}
 
-class Torcaza extends Ave {
-    int vecesQueVolo = 0
-
-    override volar() {
-        super.volar()
-        vecesQueVolo++
-    }
+class Golondrina : Ave() {
+    override fun esFeliz() = true
 }
 ```
 
 Aquí vemos que
 
-* Golondrina y Torcaza heredan de Ave, indicado mediante la palabra clave `extends`
-* Golondrina **redefine** el comportamiento de esFeliz, lo pisa, y esto requiere la palabra clave `override` (no funciona si intentamos definirlo con `def`)
-* Torcaza también lo redefine, pero fuerza a llamar al comportamiento de la superclase mediante la palabra clave `super`, indicando luego el mensaje a aplicar. Como regla general solo deben utilizar `super` cuando no puedan utilizar `self`, como en este caso (entrarían en loop infinito)
+* Golondrina hereda de Ave, indicado mediante el símbolo `:`
+* Golondrina debe llamar al constructor de Ave, que al no tener parámetros se indica por el momento con paréntesis vacíos: `class Golondrina : Ave()`
+* Golondrina **redefine** el comportamiento de esFeliz, lo pisa, y esto requiere la palabra clave `override`, de lo contrario el IDE mostrará un mensaje de error
+* Para que una clase pueda subclasificarse Kotlin obliga a utilizar la palabra clave `open`. Una segunda variante es que la clase sea abstracta en cuyo caso automáticamente es abierta.
+* La misma operatoria debe seguir un método: debe marcarse con la palabra clave `open` (como en el caso `esFeliz`) para poder redefinirse en las subclases, a menos de que el método sea abstracto. Esto es un poco burocrático y extraño para el objetivo general que suele tener Kotlin, pero por el momento es así.
+
+## Torcaza: This y super
+
+Si queremos definir una clase Torcaza que redefina el comportamiento de volar pero que además delegue el comportamiento en la superclase, debemos utilizar la palabra clave `super` junto con el mensaje a enviar:
+
+```kotlin
+class Torcaza : Ave() {
+    var vecesQueVolo = 0
+    override fun volar() {
+        super.volar()
+        vecesQueVolo++
+    } 
+}
+```
+
+Como regla general solo deben utilizar `super` cuando no puedan utilizar `this`, como en este caso: de lo contrario entrarían en loop infinito si invocaran a `this.volar()`.
+
+## Constructores delegado
+
+Si la clase Ave se definiera de la siguiente manera:
+
+```kotlin
+open class Ave(var energia: Int = 0) {
+```
+
+eso no produciría ningún cambio en las definiciones de Golondrina y Torcaza ya que en cada invocación tomaría el valor por defecto de energía:
+
+```kotlin
+class Torcaza : Ave() { // considera energia = 0
+```
+
+Ahora bien, si la definición del constructor en Ave no tuviera valor por defecto:
+
+```kotlin
+open class Ave(var energia: Int) {
+```
+
+Entonces es necesario redefinir el constructor por defecto para Golondrina y Torcaza y pasarle ese valor al constructor de Ave. Esto se hace de la siguiente manera:
+
+```kotlin
+class Golondrina(energia: Int) : Ave(energia) {
+```
+
+Si bien esto puede convertirse en algo tedioso, veremos que el IDE nos simplifica bastante esta tarea, utilizando `Alt` + `Enter` para aceptar la sugerencia:
+
+![Kotlin - Delegación de constructores](/img/wiki/kotlin-constructorInheritance.gif)
 
 # Clases y métodos abstractos
 
 Podemos definir a Ave como clase abstracta, esto producirá que no podamos instanciar objetos Ave. Una clase abstracta puede definir solo la interfaz de un método, lo que se conoce como método abstracto. Veamos el siguiente ejemplo:
 
-![image](/img/languages/xtendAbstractClassesAndMethods.gif)
+![image](/img/wiki/kotlin-abstractClass.gif)
 
 En el ejemplo:
 
 * primero definimos Ave como abstracta
-* eso provoca que el compilador Xtend tire un error cuando queremos instanciar un Ave en la clase Ornitologo
+* eso provoca que el compilador tire un error cuando queremos instanciar un Ave en la clase Ornitologo
 * lo corregimos instanciando una Golondrina
-* luego, queremos definir un método abstracto: esFeliz. Para ello reemplazamos la definición por una cáscara que solo dice que esFeliz debe devolver un booleano. Dado que no hay código Xtend nos fuerza a definir el tipo de retorno del método (y de sus parámetros) porque no puede inferirlo.
-* todos los métodos abstractos deben estar implementados en las subclases: el compilador nos avisa que falta la definición de esFeliz() en Torcaza. Con un botón derecho "Add unimplemented methods" pegamos la definición copiada.
-* como nos falta la constante que estaba en Ave, la bajamos mediante `Alt` + `Flecha abajo`
+* luego, queremos definir un método abstracto: esFeliz. Para ello reemplazamos la definición por una cáscara que solo dice que esFeliz debe devolver un booleano. Dado que no hay código Kotlin nos fuerza a definir el tipo de retorno del método (y de sus parámetros) porque no puede inferirlo.
+* todos los métodos abstractos deben estar implementados en las subclases: el compilador nos avisa que falta la definición de esFeliz() en Torcaza. Con un botón derecho "Implement members" pegamos la definición copiada.
 
 y finalmente todo compila.
 
-# Constructores
+Te dejamos el código completo:
 
-Un constructor se define con la palabra reservada `new` (equivalente al `constructor` de Wollok):
+```kotlin
+val ENERGIA_MINIMA = 10
 
-```scala
-@Accessors
-class Golondrina {
-    int energia
-    new() {
-        this(100)   // llama al constructor con parámetros
-        // para llamar al constructor de la superclase es necesario utilizar super(params)
+abstract class Ave(var energia: Int) {
+    open fun volar() { energia = energia - 10 }
+    fun comer(cuanto: Int) { energia = energia + (cuanto * 2) }
+    abstract fun esFeliz(): Boolean
+    fun resetearEnergia() { energia = 0 }
+}
+
+class Golondrina(energia: Int) : Ave(energia) {
+    override fun esFeliz() = true
+}
+
+class Torcaza(energia: Int) : Ave(energia) {
+    var vecesQueVolo = 0
+    override fun volar() {
+        super.volar()
+        vecesQueVolo++
     }
-    new(int energia) {
-        this.energia = energia
+
+    override fun esFeliz() = energia < ENERGIA_MINIMA
+}
+
+class Ornitologo {
+    fun trabajar() {
+        val ave = Golondrina(energia = 100)
+        ave.comer(2)
+        ave.volar()
     }
 }
 ```
 
-* Por defecto, si no hay constructores se genera uno por defecto sin parámetros y no hace falta definirlo
-* Es posible definir múltiples constructores, como vemos en el ejemplo, con diferente cantidad de parámetros o de tipos
-* Cuando definimos constructores sobre una clase, se pierde el constructor por defecto
-* **Los constructores de Xtend no se heredan**
-
-# Bloques
+# Bloques (ACA)
 
 Un bloque permite definir una porción de código, también llamada expresión lambda:
 
