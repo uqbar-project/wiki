@@ -243,6 +243,8 @@ Recordemos que
 
 > Ojo 👀: no hay que mezclar las ideas de `val` y `var` con la (in)mutabilidad de las colecciones. Por ejemplo, una colección inmutable podría estar referenciada con var, mientras que una mutable podría ser val.
 
+Para más información recomendamos leer [la página oficial de Kotlin sobre colecciones](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/).
+
 ## Rangos con arrays
 
 Es posible generar un rango de números:
@@ -462,130 +464,201 @@ class Ornitologo {
 }
 ```
 
-# Bloques (ACA)
+# Bloques
 
-Un bloque permite definir una porción de código, también llamada expresión lambda:
+Un bloque permite definir una porción de código, también llamada **expresión lambda**:
 
-```scala
-val cuadrado = [ int num | num ** 2 ]
-cuadrado.apply(5)
+```kotlin
+val cuadrado = { num: Double -> num.pow(2) }
+cuadrado.invoke(5.0)  // 25
+```
+
+En este caso cuadrado es un bloque que recibe como parámetro un número con decimales y devuelve el cuadrado de dicho número. Si queremos definir el tipo de dato de cuadrado podemos:
+
+```kotlin
+val cuadrado: (Double) -> Double = { num: Double -> num.pow(2) }
+cuadrado.invoke(5.0)  // 25
+```
+
+En general un bloque en Kotlin tiene la siguiente sintaxis:
+
+```kotlin
+{ parametro: Tipo, parametro2: Tipo2 -> expresión a resolver }
 ```
 
 De esta manera podemos enviar bloques como parámetros, algo muy útil para trabajar entre otras cosas con las colecciones (`map`, `filter`, `fold`, etc.)
 
-La sintaxis general es
-
-```scala
-[ | ... ]                // bloque sin parámetros
-[ elem | ... ]           // bloque con un parámetro
-[ int a, int b | a + b ] // bloque con dos parámetros
-```
 
 ## Variable implícita it
 
-De la misma manera que cuando estamos dentro de una clase, podemos acceder a una variable de instancia con `this`
-
-```scala
-this.energia
-```
-
-o sin él:
-
-```scala
-energia
-```
-
-también podemos usar una variable implícita `it` dentro de un método.
-
-```scala
-val it = new Ave()
-volar       // equivale a it.volar()
-comer(2)    // equivale a it.comer(2)
-```
-
 Dentro de una expresión lambda, `it` es la variable implícita del primer parámetro, por lo tanto todas estas expresiones son equivalentes:
 
-```scala
-alumnos.filter [ alumno | alumno.estudioso() ]
-alumnos.filter [ it | it.estudioso() ]
-alumnos.filter [ it.estudioso() ]
-alumnos.filter [ it.estudioso ]
-alumnos.filter [ estudioso ]
+```kotlin
+System.out.println(alumnos.filter { alumno: Alumno -> alumno.estudioso() })
+System.out.println(alumnos.filter { it.estudioso() })
 ```
 
-![image](/img/languages/xtendItImplicitVariable.png)
+Para más información pueden consultar [la página oficial de lambdas de Kotlin](https://kotlinlang.org/docs/lambdas.html).
 
 # Manejo de nulls
 
-Los valores nulos son siempre un dolor de cabeza, Xtend tiene algunos trucos para facilitar un poco más el trabajo con ellos.
+## 100 veces no debo
 
-## Elvis operator
+Los valores nulos son siempre un dolor de cabeza, Kotlin es uno de los primeros lenguajes orientados a objetos que nace con una estrategia para mitigarlos. En principio una referencia definida como String o Int **no acepta valores nulos**.
+
+![Kotlin - String no acepta null](/img/wiki/kotlin-stringNotNull.png)
+
+Ok, entonces podríamos pensar que una solución es sacar el `null` explícito, y si como dijo Iván Noble algunos errores son deliciosos, sin dudas uno es éste:
+
+![Kotlin - no permite dejar sin inicializar](/img/wiki/kotlin-stringUninitialized1.png)
+
+Debemos inicializar la referencia, ¡exacto! porque de otra manera lo que pasa es que arrastramos un String que puede ser `null` por todo nuestro código, solo por no tomar la decisión de que ese valor **nunca puede ser nulo**.
+
+## Lateinit
+
+Una variante para resolver el problema es definir el atributo como `lateinit`:
+
+```kotlin
+class Persona {
+    lateinit var nombre: String
+    fun tieneNombreLargo() = nombre.length > 10
+}
+```
+
+El efecto que provoca es que Kotlin confía en que nosotros vamos a definir siempre un valor para el nombre de cada persona antes de utilizarlo. Por ejemplo:
+
+```kotlin
+fun main() {
+    val pepe = Persona()
+    pepe.nombre = "Pepe"
+    System.out.println(pepe.tieneNombreLargo())  // false
+}
+```
+
+Y no hay ningún inconveniente. ¿Qué pasa si en cambio probamos con esta variante?
+
+```kotlin
+fun main() {
+    val pepe = Persona()
+    System.out.println(pepe.tieneNombreLargo())
+}
+```
+
+Kotlin se va a quejar de que nosotros le dijimos "quedate tranquilo que yo me ocupo del nombre" y resultó que el nombre quedó sin inicializar:
+
+```bash
+Exception in thread "main" kotlin.UninitializedPropertyAccessException: lateinit property nombre has not been initialized
+ at Persona.getNombre (File.kt:2) 
+ at Persona.tieneNombreLargo (File.kt:3) 
+ at FileKt.main (File.kt:8)
+```
+
+Más adelante, cuando trabajemos con algunos frameworks como Spring, veremos que el modificador `lateinit` nos va a ser de mucha utilidad. Mientras tanto, cuando nosotros controlamos la inicialización de las referencias para cada objeto, la mejor estrategia es definir un valor no-nulo por defecto:
+
+```kotlin
+class Persona {
+    var nombre: String = ""
+    fun tieneNombreLargo() = nombre.length > 10
+}
+```
+
+## Valores que aceptan null
+
+Para aceptar valores `null` todos los tipos deben incorporar el sufijo `?`, por ejemplo `String?`, `Int?`, etc.
+
+```kotlin
+class Persona {
+    var nombre: String? = null
+    ...
+```
+
+El inconveniente es que para saber si una persona tiene nombre largo, tenemos que considerar ahora si tiene un nombre nulo:
+
+![Kotlin - Non null safe operation](/img/wiki/kotlin-nonNullSafe.png)
+
+### Operador !!
+
+Una opción es utilizar el operador `!!` sobre nombre, que implica nuevamente confiar en que el nombre no va a ser nulo:
+
+```kotlin
+fun tieneNombreLargo() = nombre!!.length > 10
+```
+
+Esto implica que anulamos la validación y nos puede pasar lo mismo que en otros lenguajes como Java: al enviar un mensaje a una referencia nula el programa explota en tiempo de ejecución.
+
+```bash
+Exception in thread "main" java.lang.NullPointerException
+ at Persona.tieneNombreLargo (File.kt:3) 
+ at FileKt.main (File.kt:8) 
+ at FileKt.main (File.kt:-1) 
+```
+
+### Elvis operator
 
 Parece un emoticón, pero `?:` es un shortcut para utilizar un valor por defecto cuando una expresión pueda ser nula:
 
-```scala
-val nombre = person.firstName ?: 'You'
+```kotlin
+fun tieneNombreLargo() = (nombre ?: "").length > 10
 ```
 
-Si la expresión que está a la izquierda se evalúa como null, `nombre` se asigna a la segunda expresión.
+En este caso, si la referencia nombre no está inicializada, se toma en cuenta la segunda expresión (el string vacío).
 
 ## Null safe operator
 
 También podemos resolver envíos de mensajes a referencias que potencialmente podrían ser nulas:
 
-```scala
-val mejorAlumno = alumnos.find [ ... ]
-...
-mejorAlumno?.felicitar()
+```kotlin
+class Alumno(var nombre: String = "") {
+    fun estudioso() = ...
+    fun felicitar() { ... }
+}
+
+fun main() {
+    val alumnos = listOf(Alumno(nombre = "Valar"), Alumno(nombre = "Arya"))
+    val estudioso = alumnos.find { it.estudioso() }
+    System.out.println(estudioso?.nombre) // null
+    estudioso?.felicitar()
+}
 ```
 
-En este caso, el operador `?.` es equivalente a preguntar `if (mejorAlumno) mejorAlumno.felicitar()`
+Si estamos buscando información del primer alumne estudiose (o de algune) enviando el mensaje `find` a la colección puede pasar que la búsqueda no encuentre ningún elemento. En ese caso el operador `?.` es equivalente a escribir:
+
+```kotlin
+val estudioso = alumnos.find { it.estudioso() }
+System.out.println(if (estudioso === null) null else estudioso.nombre) // null
+if (estudioso !== null) {
+    estudioso.felicitar()
+}
+```
+
+pero como vemos es bastante menos tedioso de escribir. De todas maneras cuando sea posible es una buena práctica evitar la manipulación de tipos de datos con valores nulos, porque no siempre se puede resolver mágicamente con un `?` cualquier operación:
+
+![Kotlin - null safe no válido](/img/wiki/kotlin-nullSafeOperatorNotAllowed.png)
+
+Entonces el consejo que te dejamos es **solo dejar valores que acepten nulls cuando el negocio realmente lo necesite**. Por ejemplo: si un perro puede tener dueño o no, entonces el atributo puede ser nullable.
 
 ## Comparar referencias
 
-Después de varios cambios, Xtend dejó las cosas como la mayoría de los lenguajes. Tenemos dos formas de comparar referencias:
+Tenemos dos formas de comparar referencias en Kotlin:
 
-```scala
-ref1 == ref2     // compara por igualdad, esto significa que son iguales si son las referencias
-                 // apuntan al mismo objeto o bien, en base a la definición del método equals
-                 // en la clase ref1 (sabiendo que ref1 no es nulo)
-                 // en la clase asociada a ref1
-ref1 === ref2    // compara por identidad, esto significa que son iguales si las referencias
-                 // apuntan al mismo objeto en memoria, determinado por la VM y no se puede cambiar
-```
+* **Igualdad referencial**: definido por el operador `===`. `ref1 === ref2` si ambas referencias apuntan al mismo objeto. Esto lo determina la VM y no se puede cambiar.
+* **Igualdad estructural**: definido por el operador `==`. `ref1 == ref2` en base a la definición del método `equals()` en la clase a la que pertenece ref1.
 
-**Tener especial atención a los strings**, ya que dos strings con el mismo contenido pueden ser iguales pero no idénticos, dependiendo de las estrategias de optimización de la VM. Siempre es conveniente utilizar ==, que además se puede modificar.
+**Tener especial atención a los strings**, ya que dos strings con el mismo contenido pueden ser iguales pero no idénticos, dependiendo de las estrategias de optimización de la VM. Vemos un ejemplo ilustrativo:
 
-# Métodos avanzados
-
-## Obligatoriedad del return en métodos
-
-Por lo general, los métodos devuelven la última expresión que contienen. Pero a veces es necesario cortar el flujo de envío de mensajes, como por ejemplo aquí:
-
-```scala
-def gradoDeFelicidad() {
-    if (!esFeliz) {
-       return 0
-    }
-    ... cálculo complejo ...
+```kotlin
+fun main() {
+    val nombre = "Ernesto"
+    val nombre2 = "Ernesto ".trim()
+    System.out.println(nombre == nombre2)   // true, tienen el mismo contenido
+    System.out.println(nombre === nombre2)  // false, no son el mismo objeto
 }
 ```
 
-Para determinar el grado de felicidad de alguien, tenemos como precondición que sea feliz. Y para simplificar la definición, escribimos el `if` y forzamos el return (dado que escribir únicamente `0` no tendrá efecto, porque Xtend seguirá evaluando el resto de las expresiones hasta terminar la última y nosotros queremos justamente cortar el flujo).
+> **Tip:** Siempre es conveniente utilizar ==, que además se puede redefinir en nuestras clases / objetos. 
 
-En el caso de un método que solo busque producir un efecto (`void`), es necesario utilizar `return;` con punto y coma...
 
-```scala
-def metodoConEfecto() {
-    ... cambios ...
-    if (!situacion) {
-       return;
-    }
-    ... otros cambios ...
-}
-```
-
-Igualmente, siempre es preferible tratar de extraer métodos más pequeños para simplificar la lógica.
+# Features avanzados (TODO)
 
 ## Extension methods
 
@@ -627,11 +700,7 @@ Esto produce que automáticamente, el compilador Xtend marque en naranja el mét
 
 Los métodos `map`, `filter`, `fold`, `length`, `any`, etc. son todos extension methods de Collections.
 
-## Dispatch methods
-
-Xtend permite trabajar con **multimethods**, más adelante tendremos [este ejercicio para contarlo con más profundidad](https://docs.google.com/document/d/1XWq9azqchoJZ7h8-hLcpA1Zj5T1UtvFtDKbpzxoQ-dw/edit?usp=sharing)
-
-# @Data
+# Data classes
 
 Para definir un objeto inmutable, debemos:
 
@@ -667,7 +736,7 @@ new Point(2, 4).x = 2
 
 nos dirá `The field x is not visible`.
 
-# With operator
+# Apply, ETC., operators
 
 Otro syntactic sugar muy interesante de Xtend es la posibilidad de enviar múltiples mensajes al mismo objeto, mediante el operador with `=>`, algo muy útil cuando estamos instanciando objetos:
 
