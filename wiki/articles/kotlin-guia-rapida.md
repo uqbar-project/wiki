@@ -658,106 +658,126 @@ fun main() {
 > **Tip:** Siempre es conveniente utilizar ==, que además se puede redefinir en nuestras clases / objetos. 
 
 
-# Features avanzados (TODO)
+# Features avanzados
 
 ## Extension methods
 
 Una de las herramientas más poderosas consiste en definir **extension methods**. Supongamos que un negocio tiene un horario de apertura y de cierre y queremos saber, dada una hora, si está abierto.
 
-```scala
+```kotlin
 class Negocio {
-    int horarioApertura
-    int horarioCierre
+    var horarioApertura: Int = 9
+    var horarioCierre: Int = 18
 
-    def estaAbierto(int horaActual) {
+    fun estaAbierto(horaActual: Int) =
         horaActual.between(horarioApertura, horarioCierre)
-    }
 }
 ```
 
-Por supuesto, no compila. No existe el método between asociado a los enteros. Pero en otro archivo vamos a definir un método estático (no asociado a un objeto):
+Por supuesto, no compila. No existe el método between asociado a los enteros. Pero podemos definir un **extension method** en cualquier archivo:
 
-```scala
-class NumberUtils {
-    static def between(int num, int from, int to) {
-        num >= from && num <= to
-    }
-}
+```kotlin
+fun Int.between(from: Int, to: Int) = this in from..to
 ```
 
-Y ahora, desde el archivo Negocio.xtend, vamos a importar el método como `static extension`:
+Si definiste la extensión en otro paquete, lo importás como cualquier otra definición:
 
-![image](/img/languages/xtendExtensionMethod.gif)
+```kotlin
+package otroPackage
 
-El código a agregar es
+import between
 
-```scala
-// después de la definición de package
-import static extension ar.edu.unsam.prueba.NumberUtils.*
+class Negocio {
+    ...
 ```
 
-Esto produce que automáticamente, el compilador Xtend marque en naranja el método between y nuestra clase Negocio compile perfectamente. En resumen, un extension method permite que nosotros agreguemos comportamiento por afuera de la definición de una clase como si estuviéramos trabajando en ella, algo muy importante cuando la clase no podemos modificarla (como en el caso de Integer , String), o bien cuando se está regenerando todo el tiempo (cuando tenemos un framework que genera código para nosotros), sin contar que además estamos respetando la idea de **mensaje** (y por consiguiente, la posibilidad de seguir trabajando con polimorfismo).
+En resumen, un extension method permite que nosotros agreguemos comportamiento por afuera de la definición de una clase como si estuviéramos trabajando en ella, algo muy importante cuando la clase no podemos modificarla (como en el caso de Int, String), o bien cuando se está regenerando todo el tiempo (cuando tenemos un framework que genera código para nosotros), sin contar que además estamos respetando la idea de **mensaje** (y por consiguiente, la posibilidad de seguir trabajando con polimorfismo).
 
-Los métodos `map`, `filter`, `fold`, `length`, `any`, etc. son todos extension methods de Collections.
 
 # Data classes
 
-Para definir un objeto inmutable, debemos:
+Kotlin provee el concepto de **Data class** para definir clases que sirven para modelar valores (_value objects_):
 
-* generar una clase
-* con atributos privados
-* y un constructor donde pueda asignar ese estado
+```kotlin
+data class Point(val x: Int, val y: Int) {
+    // ... definiciones
+}
 
-Xtend provee la anotación @Data para lograr eso:
-
-```scala
-@Data
-class Point {
-    int x
-    int y
+fun main() {
+    val punto = Point(2, 4)
+    System.out.println(punto.x)               // 2
+    System.out.println(punto)                 // Point(x=2, y=4)
+    System.out.println(punto == Point(2, 4))  // true
 }
 ```
 
-Esto equivale a definir el constructor con dos parámetros (x, y) y los getters para los atributos x e y, sin setters (dado que queremos únicamente representar un valor). Por lo tanto, esta definición compila perfectamente:
+Aquí vemos que el **data class Point**
 
-```scala
-class TestPoint {
-    def test() {
-        new Point(2, 4).x
-    }
-}
-```
+- define un constructor con dos parámetros que a su vez definen las variables x e y
+- los getters para x e y se definen automáticamente
+- definir x e y como `val` hace que nuestro objeto Point sea **inmutable**, si sumamos dos puntos obtenemos un nuevo punto (como pasa al concatenar los strings "hola΅ y "mundo" que se obtiene un nuevo string "holamundo" o al sumar 2 + 3 el resultado es un nuevo número 5)
+- si definimos x (o y) como `var`, Kotlin le agrega los setters correspondientes
+- el método `toString` de un data class que crea Kotlin es muy conveniente, permite mostrar tanto la clase como su estado interno (a comparación del `toString` por defecto que tiene Object que muestra solo el nombre de la clase y un número interno en formato hexadecimal)
+- y por último también redefine el método `equals` de manera de utilizar igualdad estructural: dos puntos son iguales si tienen la misma información, porque cuando modelamos _value objects_ es frecuente crear objetos para representar ciertos datos y después se descartan
 
-Si por el contrario intentamos asignar el valor de `x`:
+> **Tip:** qué objetos son candidatos a modelarse con data class: un Mail, un domicilio, en general cuando estamos agrupando información que está junta pero que no es específica de un dominio, la identidad no es importante como pasa cuando definimos objetos cliente, producto, etc.
 
-```scala
-new Point(2, 4).x = 2
-```
+# Operadores para procesar múltiples envíos de mensajes
 
-nos dirá `The field x is not visible`.
+Otro syntactic sugar muy interesante de Kotlin es la posibilidad de enviar múltiples mensajes al mismo objeto, mediante varios operadores:
 
-# Apply, ETC., operators
+- apply
+- let
+- with
+- run
+- also
 
-Otro syntactic sugar muy interesante de Xtend es la posibilidad de enviar múltiples mensajes al mismo objeto, mediante el operador with `=>`, algo muy útil cuando estamos instanciando objetos:
-
-```scala
-val ventaNacional = new Venta => [
+```kotlin
+val ventaNacional = Venta().apply {
     cantidadKilos = 12
-    fechaVenta = new Date
+    fechaVenta = LocalDate.now()
     parcela = parcela50
-    comprador = new CompradorNacional
-]
+    comprador = CompradorNacional()
+}
 ```
 
 De esta manera, todos los mensajes se apuntan al objeto que resulta de evaluar la expresión `new Venta`, y simplifica el envío de mensajes: 
 
-```scala
+```kotlin
 ventaNacional.cantidadKilos = 12
-ventaNacional.fechaVenta = new Date
+ventaNacional.fechaVenta = LocalDate.now()
 ventaNacional....
 ```
 
-## Links relacionados
+## Otras variantes
+
+Las funciones `let`, `also`, `run` y `with` son similares pero tienen ligeras variaciones para lo que sea más conveniente en cada caso:
+
+### Let
+
+El valor que le pasamos como parámetro se referencia como `it` y lo que devuelve es el resultado de toda la operación:
+
+```kotlin
+Venta().let { it.cantidadKilos * it.parcela.tamanio } // devuelve un número
+```
+
+### With
+
+El valor que le pasamos como parámetro se referencia como `this` y lo que devuelve es el resultado de toda la operación. También es útil para trabajar el ejemplo original de la creación de una venta diciendo "a este objeto enviale estos mensajes":
+
+```kotlin
+val ventaNacional = Venta()
+with(ventaNacional) {
+    cantidadKilos = 12
+    fechaVenta = LocalDate.now()
+    parcela = parcela50
+    comprador = CompradorNacional()
+}
+```
+
+Para más información pueden ver [este artículo](https://kotlinlang.org/docs/scope-functions.html#functions)
+
+# Links relacionados
 
 * [Colecciones](https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing)
 * [Intro a manejo de errores con excepciones](https://docs.google.com/document/d/1G0a9j-OA0rIEA5cdvEhIMbztJVo86ssvZKBK8HL9akg/edit?usp=sharing)
