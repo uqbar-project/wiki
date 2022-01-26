@@ -492,6 +492,82 @@ class Ornitologo {
 
 # Interfaces
 
+Las interfaces son un mecanismo que permite definir un **contrato**, provisto por una serie de métodos que pueden o no estar definidos. Por ejemplo, veamos la interfaz `Flying` que expresa el contrato para cualquier elemento que sepa volar:
+
+```kotlin
+interface Flying {
+    fun isHappy(): Boolean
+    fun fly()
+}
+```
+
+Esto implica que cualquier definición que **implemente** la interfaz `Flying` debe poder responder a esos dos mensajes: isHappy() y fly(). Por ejemplo, la clase `Bird`, donde el símbolo `:` sirve tanto para marcar herencia como implementación:
+
+```kotlin
+interface Flying {
+    fun fly()
+    fun isHappy(): Boolean
+}
+
+// clase Bird implementa Flying
+class Bird(var energy: Int = 100) : Flying {
+    fun eat(howMuch: Int) { energy = energy + (howMuch * 2) }
+    fun resetEnergy() { energy = 0 }
+    override fun fly() { energy = energy - 10 }
+    override fun isHappy() = energy > MIN_ENERGY
+}
+```
+
+Cada método implementado debe anotarse con el prefijo `override` para indicar que está implementando los métodos que le pide su interfaz.
+
+¿Por qué `Flying` no se define como clase abstracta? Podríamos, pero mientras que una clase solo tiene una superclase puede implementar varias interfaces a la vez. Supongamos que ahora definimos la interfaz `Living` para representar seres vivos:
+
+```kotlin
+interface Living {
+    var energy: Int
+    fun eat(howMuch: Int)
+}
+```
+
+Living define un atributo sin ningún valor concreto, ya que **no puede definir un estado, a diferencia de la clase abstracta**. Ahora `Bird` puede implementar ambas interfaces, para lo cual tiene que indicar que va a redefinir el atributo `energy` y todos los métodos abstractos requeridos por las interfaces `Flying` y `Living`:
+
+```kotlin
+// clase Bird implementa las interfaces Flying y Living
+class Bird(override var energy: Int = 100) : Flying, Living {
+    override fun eat(howMuch: Int) { energy = energy + (howMuch * 2) }
+    fun resetEnergy() { energy = 0 }
+    override fun fly() { energy = energy - 10 }
+    override fun isHappy() = energy > MIN_ENERGY
+}
+```
+
+Por último, las interfaces permiten definir implementaciones para los métodos, como podemos ver en este ejemplo completo:
+
+```kotlin
+val MIN_ENERGY = 100
+
+interface Flying {
+    fun fly()
+    fun isHappy(): Boolean
+    fun canFly() = !isHappy()
+}
+
+interface Living {
+    var energy: Int
+    fun eat(howMuch: Int) { energy = energy + (howMuch * 2) }
+    fun resetEnergy() { energy = 0 }
+}
+
+class Bird(override var energy: Int = 100) : Flying, Living {
+    override fun fly() { energy = energy - 10 }
+    override fun isHappy() = energy > MIN_ENERGY
+}
+```
+
+Aquí vemos que cuando le preguntemos a un pájaro si puede volar, la definición la tomará de la implementación de `Flying`. Por otra parte cuando le pidamos a un pájaro que coma, lo hará en base a la definición de la interfaz `Living`. De todas maneras hay que estar seguro de que vamos a reutilizar en más de un lugar cada una de nuestras definiciones para no caer en el sobrediseño.
+
+
+> **TIP**: A la hora de reutilizar, una interface nos permite tomar definiciones de múltiples lugares aunque no permite definir un estado mientras que una superclase abstracta nos permite definir una sola vez nuestros atributos aunque solo podemos tener una superclase.
 
 
 # Bloques
