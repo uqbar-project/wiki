@@ -107,6 +107,32 @@ perro.nombre("Carlos") // <---- SI COMPILA y puedo mutar la referencia nombre de
 
 Por defecto definí tus variables como `val`, a menos de que necesites modificar las referencias. _Por ejemplo_: la edad de una persona debería poder modificarse, en cuanto al nombre puede ser que no necesites modificarlo o sí, eso dependerá de las reglas de negocio. El motivo principal es acotar el efecto en nuestros programas, **mientras menor sea el efecto, más fácil es controlar nuestro software, y más fácil será testearlo**.
 
+# Companion object
+
+Kotlin provee la posibilidad de definir un objeto **companion** dentro de una clase, que es global para todas sus instancias:
+
+```kotlin
+class Ave {
+    companion object {
+        var ENERGIA_MINIMA = 100
+        fun subirEnergiaMinima(cuanto: Int) { ENERGIA_MINIMA += cuanto }
+        fun crear() = Ave()
+    }
+    var energia = 0
+    fun esFeliz() = energia > ENERGIA_MINIMA
+    ...
+```
+
+- en lugar de definir la referencia `ENERGIA_MINIMA` como constante por fuera de la clase, la asociamos al _companion object_
+- para manipular la energía mínima (como por ejemplo para subirla o bajarla en base a un valor), debemos hacerlo también dentro del _companion_
+- y también ofrecemos un método para crear un Ave, que por el momento solamente hace `Ave()`, pero el mecanismo de instanciación podría tornarse más complejo y el _companion object_ es adecuado para tal fin.
+
+Todo lo que definimos en el _companion object_ es accesible para atributos y métodos de instancia (como por ejemplo el método `esFeliz`). Desde otra clase, podemos invocar a la función que crea un ave de la siguiente manera:
+
+```kotlin
+val ave = Ave.crear()
+```
+
 # Objetos singleton
 
 Kotlin provee la capacidad de definir objetos:
@@ -464,6 +490,10 @@ class Ornitologo {
 }
 ```
 
+# Interfaces
+
+
+
 # Bloques
 
 Un bloque permite definir una porción de código, también llamada **expresión lambda**:
@@ -700,7 +730,7 @@ Kotlin provee el concepto de **Data class** para definir clases que sirven para 
 
 ```kotlin
 data class Point(val x: Int, val y: Int) {
-    // ... definiciones
+    // ... definiciones adicionales ...
 }
 
 fun main() {
@@ -714,8 +744,8 @@ fun main() {
 Aquí vemos que el **data class Point**
 
 - define un constructor con dos parámetros que a su vez definen las variables x e y
-- los getters para x e y se definen automáticamente
-- definir x e y como `val` hace que nuestro objeto Point sea **inmutable**, si sumamos dos puntos obtenemos un nuevo punto (como pasa al concatenar los strings "hola΅ y "mundo" que se obtiene un nuevo string "holamundo" o al sumar 2 + 3 el resultado es un nuevo número 5)
+- los getters para x e y existen automáticamente
+- como x e y son `val` esto hace que nuestro objeto Point sea **inmutable**, si sumamos dos puntos obtenemos un nuevo punto (como pasa al concatenar los strings "hola΅ y "mundo" donde se obtiene un nuevo string "holamundo" o al sumar 2 + 3 el resultado es un nuevo número 5)
 - si definimos x (o y) como `var`, Kotlin le agrega los setters correspondientes
 - el método `toString` de un data class que crea Kotlin es muy conveniente, permite mostrar tanto la clase como su estado interno (a comparación del `toString` por defecto que tiene Object que muestra solo el nombre de la clase y un número interno en formato hexadecimal)
 - y por último también redefine el método `equals` de manera de utilizar igualdad estructural: dos puntos son iguales si tienen la misma información, porque cuando modelamos _value objects_ es frecuente crear objetos para representar ciertos datos y después se descartan
@@ -741,7 +771,7 @@ val ventaNacional = Venta().apply {
 }
 ```
 
-De esta manera, todos los mensajes se apuntan al objeto que resulta de evaluar la expresión `new Venta`, y simplifica el envío de mensajes: 
+De esta manera, todos los mensajes se apuntan al objeto que resulta de evaluar la expresión `Venta()`, y simplifica el envío de mensajes: 
 
 ```kotlin
 ventaNacional.cantidadKilos = 12
@@ -751,7 +781,7 @@ ventaNacional....
 
 ## Otras variantes
 
-Las funciones `let`, `also`, `run` y `with` son similares pero tienen ligeras variaciones para lo que sea más conveniente en cada caso:
+Las _scope functions_ `let`, `also`, `run` y `with` son similares pero tienen ligeras variaciones para lo que sea más conveniente en cada caso:
 
 ### Let
 
@@ -775,7 +805,7 @@ with(ventaNacional) {
 }
 ```
 
-Para más información pueden ver [este artículo](https://kotlinlang.org/docs/scope-functions.html#functions)
+Para más información (como las scope functions `run` y `also`) pueden ver [este artículo](https://kotlinlang.org/docs/scope-functions.html#functions)
 
 # Links relacionados
 
