@@ -157,5 +157,7 @@ ____
 
 # Links útiles
 
-* [Siguiente paso: Sobre el control de versiones](kotlin-amigandonos-git.html)
+* [Cómo trabajar con el control de versiones](kotlin-amigandonos-git.html)
+* [Cómo importar un proyecto Kotlin con Gradle](kotlin-bajar-un-proyecto-gradle-de-un-repositorio-git.html)
 * [Volver al menú principal del entorno Kotlin](kotlin-principal.html)
+

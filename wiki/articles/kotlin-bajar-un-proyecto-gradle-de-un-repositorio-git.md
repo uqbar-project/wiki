@@ -138,3 +138,8 @@ Si necesitamos movernos a otra rama, eso se puede hacer mediante la opción "Git
 
 <!-- -->
 
+# Links útiles
+
+* [Cómo trabajar con el control de versiones](kotlin-amigandonos-git.html)
+* [Cómo crear un proyecto Kotlin con Gradle](kotlin-creacion-proyecto.html)
+* [Volver al menú principal del entorno Kotlin](kotlin-principal.html)

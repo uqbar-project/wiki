@@ -889,3 +889,7 @@ Para más información (como las scope functions `run` y `also`) pueden ver [est
 * [Intro a manejo de errores con excepciones](https://docs.google.com/document/d/1G0a9j-OA0rIEA5cdvEhIMbztJVo86ssvZKBK8HL9akg/edit?usp=sharing)
 * [Ejercicio del Monedero](https://docs.google.com/document/d/1vVW91adl0p-NxGNpe8fqmC_5YmBkrxaLDFKyZ0xZb9Y/edit?usp=sharing) para ver cómo interactúan la UI y el dominio a partir de errores del dominio y del sistema
 * [Testing](https://docs.google.com/document/d/11mVR-4wEZhlQMDEqrfQeYLypEsrSqXv98dr78SA0Oq4/edit?usp=sharing)
+
+# Links útiles
+
+* [Volver al menú principal del entorno Kotlin](kotlin-principal.html)
