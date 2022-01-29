@@ -4,11 +4,11 @@ title: Testeo unitario avanzado
 ---
 
 
-Este artículo presenta algunas guías para desarrollar los casos de prueba, considerando que ya tienen una base de testeo unitario automatizado. Si estás buscando un apunte, te recomendamos:
+Este artículo presenta algunas guías para desarrollar los casos de prueba, considerando que ya tienen una base de testeo unitario automatizado. Si estás buscando un apunte, te recomendamos el siguiente [apunte de Testing](https://docs.google.com/document/d/1zj-H_qPbUDvWsWhV2YLaPsnrI0MIkCuoeK_ilzSnxVI/edit?usp=sharing).
 
-- [Apunte de Testing - Xtend](https://docs.google.com/document/d/1zj-H_qPbUDvWsWhV2YLaPsnrI0MIkCuoeK_ilzSnxVI/edit?usp=sharing)
+Por otra parte, aquí explicamos la mecánica utilizando JUnit 5 como framework de testeo, si estás buscando una variante al estilo XSpec, como Kotest, podés ver [esta página](kotest-testeo-unitario-avanzado.html).
 
-## Ejemplo
+# Ejemplo
 
 Un sistema de seguros de automotor define en qué casos se puede pagar un siniestro:
 
