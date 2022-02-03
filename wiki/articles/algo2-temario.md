@@ -5,15 +5,15 @@ title: Temario de Algoritmos II
 
 ## Software
 
-- [Entorno Xtend (en Eclipse)](xtend-principal.html)
+- [Entorno Kotlin](kotlin-principal.html)
 - [JDK vs. JRE](jdkVsJre.html)
-- [Maven](maven.html)
-- [Cómo trabajar con Travis](algo2-travis.html)
+- [Gradle](gradle.html)
+- [Cómo trabajar con Travis](kotlin-ci.html)
 
 ## Páginas
 
 - [Testeo unitario avanzado](testeo-unitario-avanzado.html)
-- [Cómo corregir un error en runtime](https://github.com/uqbar-project/eg-seguros-xtend), a partir de un ejemplo en github
+- [Cómo corregir un error en runtime](https://github.com/uqbar-project/eg-seguros-kotlin), a partir de un ejemplo en github
 
 ## Links
 

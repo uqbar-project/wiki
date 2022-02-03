@@ -8,7 +8,7 @@ title: Programacion con herramientas modernas
 - [Entorno Xtend (en Eclipse)](xtend-principal.html)
 - [JDK vs. JRE](jdkVsJre.html)
 - [Maven](maven.html)
-- [Cómo trabajar con Travis](algo2-travis.html)
+- [Cómo trabajar con Travis](kotlin-ci.html)
 
 ## Páginas
 

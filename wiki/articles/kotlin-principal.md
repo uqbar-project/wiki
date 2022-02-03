@@ -14,6 +14,7 @@ A continuación te vamos a dejar los pasos de instalación del entorno Kotlin pa
   * [Cómo generar un proyecto Kotlin nuevo](kotlin-creacion-proyecto.html)
   * [Cómo importar un proyecto Kotlin con Gradle desde Github](kotlin-bajar-un-proyecto-gradle-de-un-repositorio-git.html)
   * [Sobre el control de versiones](kotlin-amigandonos-git.html)
+  * [Integración continua en proyectos Kotlin](kotlin-ci.html)
 * Ayudas para manejarte con el lenguaje
   * [Guía rápida de Kotlin](kotlin-guia-rapida.html)
   * [Colecciones](https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing)

@@ -44,14 +44,6 @@ Al hacer click automáticamente se actualizarán las dependencias. Este proceso 
 
 ## Continuous integration
 
-Otra herramienta que vamos a incorporar en la cursada es la integración continua, que consiste en validar cada porción de código o **incremento** que subamos, mediante una herramienta que
-
-- descarga la última versión del repositorio en una máquina en la nube
-- hace el build del proyecto: descarga las dependencias, compila los archivos fuentes, etc.
-- ejecuta los tests y todos deben pasar
-
-Esto permite detectar inconsistencias entre diferentes estaciones de trabajo, o errores más básicos como "algo no compila" o "estos 3 tests se rompieron".
-
 Por el momento, lo que necesitás es únicamente copiar [este archivo](./algo2.build.yml) en la siguiente estructura que **hay que crear**
 
 ```bash
@@ -61,6 +53,7 @@ Por el momento, lo que necesitás es únicamente copiar [este archivo](./algo2.b
         └── build.yml
 ```
 
+Para más información podés consultar la página [de integración continua para proyectos en Kotlin](./kotlin-ci.html).
 
 ## Primeros pasos
 
