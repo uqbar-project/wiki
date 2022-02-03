@@ -18,9 +18,9 @@ La integración continua busca automatizar los cambios en el código que escribe
 
 Para poder implementar la integración continua, necesitamos
 
+- la comunicación entre las personas que desarrollan en el proyecto (es importante que se hablen entre ustedes)
 - un servidor de integración continua: Github Actions, CircleCI, Jenkins, etc.
 - configurar nuestro proyecto contra ese servidor: eso puede involucrar uno o más archivos
-- la comunicación de las personas que desarrollan en el proyecto
 - una herramienta de versionado: git, Mercurial, etc.
 - y sobre todo, **una buena calidad de tests automatizados**
 
@@ -32,6 +32,7 @@ A continuación vamos a describir los pasos necesarios para que tu proyecto Kotl
 
 El servidor de integración continua será el que provee Github, y tiene las ventajas de estar integrado a tu repositorio y no tener que hacer nada para activarlo. Podés navegarlo en la solapa Actions:
 
+<br>
 <!-- -->
 
 ![GH Actions - repo](/img/wiki/kotlin-ci-gh-actions-repo.gif)
@@ -54,12 +55,12 @@ Copiate [este archivo](./algo2.build.yml) en la siguiente estructura que **hay q
 A partir de aquí, cada vez que hagas un push, [Github Actions](https://www.travis-ci.com/) como servidor de integración continua
 
 - clonará el repositorio tuyo
-- lo compilará (_build_) en Kotlin mediante un script de Gradle
+- lo compilará (_build_) en Kotlin mediante el script de Gradle
 - ejecutará los tests
-- y generará el nuevo status de tu proyecto
+- generará el nuevo status de tu proyecto
 - en caso de error, te mandará un mail avisándote que el build falló (por el momento solo al autor del commit)
-- y si anduvo ok, por defecto no recibirás ninguna notificación
-- de aquí en más, cada vez que hagas un push al repositorio, si anda ok no te dirá nada, pero si falla, te mandará un mail. Es mejor saberlo antes, ¿no? porque además queda registrado cada commit si pasa o no, y eso ayuda a encontrar cuál es el código que "rompió todo".
+- si anduvo ok, por defecto no recibirás ninguna notificación
+- de aquí en más, cada vez que hagas un push al repositorio, si anda ok no te dirá nada, pero si falla, te mandará un mail. Además queda registrado cada commit si pasa o no, y eso ayuda a encontrar cuál es el código donde se originó el error.
 
 ### Agregando el Badge al README
 
@@ -71,11 +72,13 @@ El _badge_ es un indicador visual de cómo resultó el último build, que ubicar
 - en el menú contextual elegimos la opción "Create Status Badge", elegimos la rama que queremos y
 - finalmente presionamos el botón de copia. 
 
+<br>
 <!-- -->
 
 ![Kotlin CI - Crear status badge](/img/wiki/kotlin-ci-gh-actions-badge.gif)
 
 <!-- -->
+<br>
 
 Vamos al editor, pegamos el texto en el README y pusheamos al repositorio.
 
