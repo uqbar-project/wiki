@@ -112,7 +112,7 @@ Si quieren chusmear más pueden profundizar sobre
 
 ## Ioke
 
-[Ioke](http://ioke.org/) (06/11/2008) fue un proyecto basado en la VM de Java que proponía trabajar con prototipos, intercalando lenguajes como Io, Ruby y Lisp. Vemos la misma implementación de pepita en Ioke:
+[Ioke](https://github.com/olabini/ioke) (06/11/2008) fue un proyecto basado en la VM de Java que proponía trabajar con prototipos, intercalando lenguajes como Io, Ruby y Lisp. Vemos la misma implementación de pepita en Ioke:
 
 ```ioke
 pepita = Origin mimic do(
@@ -135,7 +135,7 @@ El archivo pepita.ik tiene la definición de pepita y luego el script que prueba
 Lo evaluamos en la consola
 
 ```bash
-fernando@fernando-laptop ~/apps/ioke/bin $ ./ioke pepita.ik
+fernando@fernando-laptop ~/apps/ioke/bin $ ./ioke pepita  .ik
 Pepita energia: $0.0
 Pepita come 10 gramos
 Pepita vuela 3 kilometros
@@ -145,8 +145,6 @@ Pepita energia: $27.0
 ## Ozono
 
 Ozono (anteriormente llamado LOOP: Learning Object-Oriented Programming) fue una herramienta desarrollada por algunos docentes de esta facultad que permitía el trabajo con objetos antes de utilizar otras herramientas de Smalltalk.
-
-Pueden ver [en esta página](http://www.pdep.com.ar/software/software-pharo/object-browser-ultima-version) una demostración funcionando (por lo general el primer TP de la materia se hacía en este entorno).
 
 ## Otras apariciones de object
 

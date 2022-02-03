@@ -144,6 +144,5 @@ Antes que nada chequeá las [Configuraciones generales para cualquier Eclipse](c
 
 # Links útiles
 
-- Si venís del mundo Java chequeá [este link](http://jnario.org/org/jnario/jnario/documentation/20FactsAboutXtendSpec.html)
 - [Siguiente paso: Creación de un proyecto en Xtend](xtend-creacion-proyecto.html)
 - [Volver al menú principal del entorno Xtend](xtend-principal.html)

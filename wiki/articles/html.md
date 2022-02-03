@@ -51,7 +51,7 @@ Cada tag puede tener
 
 ## Estructura de una página HTML
 
-El contenido de una página web se estructura en forma jerárquica. A partir de [HTML 5](https://developer.mozilla.org/es/docs/Sections_and_Outlines_of_an_HTML5_document) tenemos tags especiales que permiten definir una semántica estándar para nuestro documento:
+El contenido de una página web se estructura en forma jerárquica. A partir de **HTML 5** tenemos tags especiales que permiten definir una semántica estándar para nuestro documento:
 
 - un encabezado o _header_ principal de la página
 - el cuerpo principal o _body_, que arma el contenido de la página y puede agrupar tags visuales y los de contenido, como 

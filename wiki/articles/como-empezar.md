@@ -140,6 +140,7 @@ El resaltado no funciona si no hay un idioma especificado.
 {% endwiki_note_info %}
 
 Ejemplo:
+
 ```ruby
     class Bleh
         def a(b)
@@ -147,7 +148,6 @@ Ejemplo:
         end
     end
 ```
-
 
 ## Alertas
 

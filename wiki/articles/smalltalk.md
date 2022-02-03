@@ -13,8 +13,6 @@ Sobre (algunos de) los distintos sabores de Smalltalk:
 - [Pharo Project](http://www.pharo-project.org/home)
 - [Squeak](http://www.squeak.org/)
 - [GNU Smalltalk](http://smalltalk.gnu.org/)
-- [Redline Smalltalk](http://www.redline.st/)
-- [Dolphin Smalltalk](http://www.object-arts.com/)
 - [(Instantiations) VisualAge Smalltalk](http://www.instantiations.com/products/vasmalltalk/index.html)
 - [Strongtalk](http://en.wikipedia.org/wiki/Strongtalk)
 - [Cincom (ObjectStudio/ VisualWorks)](http://www.cincomsmalltalk.com/main/products/objectstudio/)

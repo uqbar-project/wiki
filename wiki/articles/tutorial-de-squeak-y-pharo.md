@@ -22,7 +22,7 @@ Al darle OK les va a aparecer el template para crear clases dentro de esa catego
 
 3) Crear clases: Siempre que quieran crear una clase nueva hacen click sobre el nombre de la categoría para que les aparezca el template anterior. Lo que tienen que hacer es cambiar NameOfSubclass por el nombre real, por ejemplo, Pelicula; después para agregarle variables de instancias tienen que escribir los nombres entre las comillas simples de instanceVariableNames separadas por espacios. Si tuvieran variables de clase irían en el renglón de abajo. Recuerden que las de instancia empiezan con minúscula y las de clase con mayúscula por convención. Finalmente, si quisieran que herede de otra clase que no sea Object, cambian Object por el nombre de la superclase.
 
-Para dar los ejemplos vamos a usar la parte más básica de este [parcial/tp "Salas de Cine"](http://pdep.com.ar/material/trabajos-prcticos):
+Para dar los ejemplos vamos a usar la parte más básica de un parcial/tp "Salas de Cine":
 
 *Se desea hacer un sistema para una cadena de cines, en la cual guardar la información de las salas que administra la cadena y las películas que se dan en cada horario en cada una de esas salas. Para simplificar asumimos que todas las películas comienzan en punto y que duran una cantidad entera de horas. Además de su duración, de cada película se sabe su género.*
 

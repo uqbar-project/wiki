@@ -29,5 +29,5 @@ Pepita fue creada por Carlos Lombardi hacia 2004, y terminó de cobrar forma con
 Links Externos
 --------------
 
-- Más ejercicios: <http://pdep.com.ar/material/guas-de-ejercicios/guia-objetos-2008-1.pdf?attredirects=0>
+- Más ejercicios: <https://docs.google.com/document/d/1DQNuJwO3m6o_0-31tld94eJKJSQQ2TsjqBBY_rOVho4/edit>
 - Si aprendiste objetos con Pepita: <https://www.facebook.com/pepitaesunaformadevida?fref=ts>

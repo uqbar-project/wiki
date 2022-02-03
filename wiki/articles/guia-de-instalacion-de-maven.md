@@ -26,7 +26,7 @@ Vale la pena aclarar que si bien este método es ms simple, generalmente las ver
 
 ## Manualmente
 
-Descargar Apache Maven 3 desde [este link](http://apache.dattatec.com/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz).
+Descargar Apache Maven 3 desde [este link](https://maven.apache.org/download.cgi).
 
 Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: */home/john/programs/*.
 

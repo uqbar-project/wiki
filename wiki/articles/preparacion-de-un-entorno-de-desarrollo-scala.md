@@ -7,25 +7,7 @@ title: Preparacion de un entorno de desarrollo scala
 
 Hay varios IDEs para desarrollar con Scala, incluso podemos desarrollar sin un IDE (solamente necesitamos el compilador). De todos modos acá vamos a explicar cómo se puede armar un ambiente de desarrollo usando Eclipse y Maven (para manejo de dependencias).
 
-- La opción más recomendada es descargar la última versión [Scala IDE](http://scala-ide.org/download/sdk.html).
-
-- También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site), solamente te va a proponer instalar el componente m2e-slf4j, ya que los otros vienen con la instalación default. Aceptalo y ¡ya tenés tu entorno listo! 
-
-## Alternativa - Combinación Eclipse - Scala - Plugins
-
-Otra opción es combinar una instalación de
-
-- [Eclipse](http://www.eclipse.org/downloads/) 
-
-- con el plugin del [Scala IDE for Eclipse](http://scala-ide.org/download/current.html). **Asegurate que coincida la versión del plugin con la versión de Eclipse que tengas instalado.**  
-
-- Para ejecutar y escribir tests en ScalaTest (una especie de JUnit para Scala), tenés que instalarle un plugin opcional, que se encuentra en la misma URL que usaste para instalar el ScalaIDE. Asegurate de checkear el item bajo "Scala IDE Plugins (incubation) -&gt; ScalaTests for ScalaIDE". Pueden ver [acá](http://www.scalatest.org/user_guide/using_scalatest_with_eclipse) un screenshot.
-
-- También instalar el plugin que integra Scala con Maven del update site de [alchim31.free.fr](http://alchim31.free.fr/m2e-scala/update-site)
-
-Esta configuración tiene un bug que impide la utilización del visualizador de POMs que viene con el plugin de Maven. Un *workaround* para el problema del POM es abrirlo con el editor de XML.
-
-Por favor si notás que esta información está desactualizada reportalo.
+- La opción más recomendada es trabajar con [IntelliJ](https://www.jetbrains.com/help/idea/discover-intellij-idea-for-scala.html)
 
 # Creación de un proyecto Maven con Scala
 
@@ -55,18 +37,7 @@ Este parent project realiza varias configuraciones:
 - [Scala by Example](https://www.scala-lang.org/old/sites/default/files/linuxsoft_archives/docu/files/ScalaByExample.pdf) escrito por Martin Odersky, el creador de Scala.
 - [Effective Scala](http://twitter.github.io/effectivescala/)
 
-# Errores posibles
-
-Si te aparece un mensaje de error
-
-```bash
-scalatest_2.9.1-1.6.1.jar is cross-compiled with an incompatible version of Scala (2.9.1).
-In case of errorneous report, this check can be disabled in the compiler preference page.
-```
-
-la solución es Window &gt; Preferences &gt; Scala Compiler &gt; solapa Build Manager y deschequear la opción withVersionClasspathValidator. Hacer un rebuild de todos los proyectos.
-
 # Links de interés
 
-- [Página principal de Scala](http://www.scala-lang.org/)
+- [Página principal de Scala](https://www.scala-lang.org/)
 - [Un tutorial de Scala](http://paco.uqbar-project.org/te/scala/introduccin-a-scala) de Javi Fernándes, miembro de Uqbar

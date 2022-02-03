@@ -14,11 +14,11 @@ title: Tipo abstracto de datos
 ## En C
 
 -   Definir si se lo pasará por valor o por referencia
--   Codificar el .h con las declaraciones de las funciones
+-   Codificar el `.h` con las declaraciones de las funciones
 -   Si usa memoria dinámica, definir una operación para la destrucción del TAD
--   Definir la estructura a emplear. Si lo hacemos en el .c o en el .h depende del grado de desacomplamiento que busquemos y nivel de paranoia que tengamos. Tambien hace mas compleja la implementación
+-   Definir la estructura a emplear. Si lo hacemos en el `.c` o en el `.h` depende del grado de desacoplamiento que busquemos y nivel de paranoia que tengamos. Tambien hace mas compleja la implementación
 -   Definir sinónimos de tipos para la estructura.
--   Implementar las funciones en .c
+-   Implementar las funciones en `.c`
 
 ### Convenciones
 
@@ -78,8 +78,6 @@ typedef struct {
 
 *Para mas detalles sobre las funciones de manejo de memoria, ver [Manejo de memoria en C](manejo-de-memoria-en-c.html)*
 
-*El código completo se encuentra [aquí](http://svn2.xp-dev.com/svn/uqbar/examples/dds/estructurado/buffer)*
-
 La primera operación que debemos soportar es la instanciación del TAD. Esta operación debe tomar un tamaño máximo inicial, y reservar la memoria necesaria para el buffer en sí mismo, y el vector de memoria donde se copiarán los contenidos. También debe inicializar los atributos del TAD.
 
 Por convención y analogía con objetos, llamaremos a esta operación **new**:
@@ -138,8 +136,3 @@ void buffer_append_chars(Buffer * self, char * chars, int count){
 Es decir, decimos que para copiar un vector de caracteres al final del buffer, debemos expandir nuestro buffer tanto como sea necesario para almacenar los caracteres, y luego procedemos a efectivamente realizar la copia y actualizar el tamaño actual. Ahora, tenemos un problema un poco mas simple: solo debemos preocuparnos por redimensionar el buffer, de ser necesario.
 
 Dado que **\_buffer\_expand** no será usada desde el exterior (es una operación interna), no la colocamos en nuestro .h.
-
-## En Haskell
-
-
-Ejemplo: una red neuronal

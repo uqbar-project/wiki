@@ -7,18 +7,17 @@ No es este [Ruby](http://www.youtube.com/watch?v=qObzgUfCl28), pero les dejamos 
 
 Sobre el lenguaje:
 
-- [Official site](http://www.ruby-lang.org/es/)
-- [Ruby (wikipedia)](http://en.wikipedia.org/wiki/Ruby_(programming_language))
+- [Official site](https://www.ruby-lang.org/es/)
+- [Ruby (wikipedia)](https://en.wikipedia.org/wiki/Ruby_(programming_language))
 - [Operador Ampersand (a veces confuso)](https://ablogaboutcode.com/2012/01/04/the-ampersand-operator-in-ruby)
 
 Herramientas basadas en Ruby:
 
-- [JRuby](http://www.jruby.org/)
-- [Rubinius](http://rubini.us/)
-- [MagLev](http://maglev.github.com/)
-- [Rails](http://rubyonrails.org/)
+- [JRuby](https://www.jruby.org/)
+- [MagLev](https://maglev.github.io/)
+- [Rails](https://rubyonrails.org/)
 
 La comunidad:
 
 - [The Ruby Programming Language](https://github.com/ruby/ruby)
-- [Ruby Central](http://rubycentral.org/)
+- [Ruby Central](https://rubycentral.org/)
