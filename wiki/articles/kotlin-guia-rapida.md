@@ -269,7 +269,10 @@ Recordemos que
 
 > Ojo 👀: no hay que mezclar las ideas de `val` y `var` con la (in)mutabilidad de las colecciones. Por ejemplo, una colección inmutable podría estar referenciada con var, mientras que una mutable podría ser val.
 
-Para más información recomendamos leer [la página oficial de Kotlin sobre colecciones](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/).
+Para más información recomendamos leer 
+
+- [el apunte de la materia sobre Colecciones](https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit#)
+- [la página oficial de Kotlin sobre colecciones](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/).
 
 ## Rangos con arrays
 
