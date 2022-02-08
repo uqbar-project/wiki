@@ -12,7 +12,7 @@ title: Temario de Algoritmos II
 
 ## Páginas
 
-- [Testeo unitario avanzado](testeo-unitario-avanzado.html)
+- [Testeo unitario avanzado](kotest-testeo-unitario-avanzado.html)
 - [Cómo corregir un error en runtime](https://github.com/uqbar-project/eg-seguros-kotlin), a partir de un ejemplo en github
 
 ## Links

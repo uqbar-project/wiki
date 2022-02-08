@@ -13,6 +13,7 @@ A continuación te vamos a dejar los pasos de instalación del entorno Kotlin pa
 * Recomendaciones para trabajar en la materia
   * [Cómo generar un proyecto Kotlin nuevo](kotlin-creacion-proyecto.html)
   * [Cómo importar un proyecto Kotlin con Gradle desde Github](kotlin-bajar-un-proyecto-gradle-de-un-repositorio-git.html)
+  * [Cómo testear con Kotest](kotest-testeo-unitario-avanzado.html)
   * [Sobre el control de versiones](kotlin-amigandonos-git.html)
   * [Guía de Gradle](gradle.html)
   * [Integración continua en proyectos Kotlin](kotlin-ci.html)
@@ -20,4 +21,4 @@ A continuación te vamos a dejar los pasos de instalación del entorno Kotlin pa
   * [Guía rápida de Kotlin](kotlin-guia-rapida.html)
   * [Colecciones](https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing)
   * [Intro a manejo de errores con excepciones](https://docs.google.com/document/d/1G0a9j-OA0rIEA5cdvEhIMbztJVo86ssvZKBK8HL9akg/edit?usp=sharing)
-  * [Testing](https://docs.google.com/document/d/11mVR-4wEZhlQMDEqrfQeYLypEsrSqXv98dr78SA0Oq4/edit?usp=sharing)
+  * [Testing avanzado](https://docs.google.com/document/d/1zj-H_qPbUDvWsWhV2YLaPsnrI0MIkCuoeK_ilzSnxVI/edit?usp=sharing)
