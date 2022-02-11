@@ -218,7 +218,7 @@ fun main() {
 }
 ```
 
-Para más información pueden ver [esta página](https://kotlinlang.org/docs/basic-types.htm).
+Para más información pueden ver [esta página](https://kotlinlang.org/docs/basic-types.html).
 
 ## Colecciones mutables e inmutables
 
