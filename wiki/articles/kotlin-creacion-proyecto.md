@@ -105,7 +105,7 @@ ___
 
 **Tip**: si estás trabajando en una distribución de Linux que utiliza KDE, el shortcut `Ctrl` + `Alt` + `L` es tomado por el sistema como la acción para bloquear la pantalla. Para desactivarlo seguí [estas instrucciones](https://stackoverflow.com/questions/211043/disable-global-ctrl-alt-l-hotkey-in-kde).
 
-La configuración base se puede definir mediante `File` > `Settings` y luego: `Editor` > `Code Style` > `Kotlin`, aunque **te recomendamos que dejes los valores por defecto, así como todas las personas deben tener la misma configuración**.
+La configuración base se puede definir mediante `File` > `Settings` y luego: `Editor` > `Code Style` > `Kotlin`, aunque **te recomendamos que dejes los valores por defecto, así como recomendamos que todas las personas tengan la misma configuración**.
 
 <!-- -->
 ___
