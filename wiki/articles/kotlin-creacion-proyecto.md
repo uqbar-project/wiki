@@ -146,7 +146,7 @@ proyecto
 ```
 
 De esta manera, logramos mayor granularidad en la organización de nuestras clases.
-____
+___
 
 # Links útiles
 

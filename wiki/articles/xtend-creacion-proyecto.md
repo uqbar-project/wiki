@@ -82,7 +82,7 @@ proyecto
 ```
 
 De esta manera, logramos mayor granularidad en la organización de nuestras clases.
-____
+___
 
 * [Siguiente paso: Sobre el control de versiones](xtend-amigandonos-git.html)
 * [Volver al menú principal del entorno Xtend](xtend-principal.html)
