@@ -103,6 +103,10 @@ Para más información podés chequear [esta página](https://intellij-support.j
 
 Solo necesitamos agregar un plugin para ejecutar los tests unitarios: **Kotest**. Para instalarlo podés ir a [esta página](https://plugins.jetbrains.com/plugin/14080-kotest) y clickear el botón `Install to IntelliJ xxx` donde xxx es la versión más reciente que hayas instalado.
 
+## Plugins de temas (Themes)
+
+Si te interesa configurar un tema de tu interés, podés buscar plugins que contengan la palabra "Theme" en el Marketplace, como se describe en [esta página](https://www.jetbrains.com/help/idea/managing-plugins.html). Luego podrás [seleccionar el tema de tu preferencia](https://www.jetbrains.com/help/idea/user-interface-themes.html#tips).
+
 ## Actualizaciones automáticas
 
 Una vez instalado IntelliJ, las actualizaciones se disparan automáticamente. Por lo general es conveniente esperar un tiempo prudencial, sobre todo si tenés fechas de entrega de trabajos prácticos o un parcial en esos días, ya que ha habido algunos inconvenientes de uso que se suelen solucionar rápido pero no hace falta agregar más adrenalina a la cursada. La estrategia conservadora es la que te invitamos a seguir: esperar dos o tres semanas hasta que tu docente confirme que no hay problemas en instalar el _update_ y estar con buena señal de Internet para iniciar ese proceso.

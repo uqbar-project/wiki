@@ -93,7 +93,7 @@ ___
 
 Presionando la tecla `F2` te podés mover al siguiente lugar del archivo donde hay un error o warning:
 
-<img src="/img/wiki/intellij-altEnterF2.gif" alt="Moviéndose a través de errores y warnings mediante F2" height="100%" width="100%">
+<img src="/img/wiki/intelliJ-altEnterF2.gif" alt="Moviéndose a través de errores y warnings mediante F2" height="100%" width="100%">
 
 <!-- -->
 
