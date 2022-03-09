@@ -151,12 +151,12 @@ Noten que un proyecto comercial "normal" o mediano, puede incluir decenas y hast
 
 # Plugins
 
-Si bien Gradle provee una plataforma para poder facilitar el manejo de dependencias, la compilación tanto de nuestros objetos de dominio como los tests y muchas otras actividades más, quienes verdaderamente se encargan de esta tarea son los **plugins**, que son la implementación final que resuelve toda esta magia.
+Si bien Gradle provee una plataforma para poder facilitar el manejo de dependencias, el build del proyecto y muchas otras actividades más, quienes verdaderamente se encargan de esta tarea son los **plugins**, que terminan resolviendo cada una de estas cosas.
 
 Cada plugin permite
 
-- definir qué elementos van a participar, extendiendo el modelo original de Gradle: por ejemplo el plugin de Kotlin define que el directorio donde se ubican las clases principales es `src/main/kotlin`
-- crear tareas, como la compilación de todos los archivos Kotlin, o la ejecución de los tests unitarios indicando cuál es el framework, entre muchas otras
+- definir qué elementos van a participar, extendiendo el modelo original de Gradle: por ejemplo el plugin de Kotlin configura la carpeta donde se ubican las clases principales en `src/main/kotlin`
+- crear tareas, como la compilación de todos los archivos Kotlin, o la ejecución de los tests unitarios indicando cuál es el framework, entre muchas otras cosas
 - agregar configuraciones a nuestro proyecto, como repositorios adicionales donde ir a buscar dependencias, o definir una versión de la JDK por defecto.
 
 Podés ver en cualquiera de nuestros ejemplos qué contiene la sección plugins del `build.gradle.kts`:
@@ -168,8 +168,10 @@ plugins {
 }
 ```
 
+En este ejemplo
+
 - estamos utilizando una determinada versión del plugin de Kotlin para la JVM, para poder trabajar el proyecto adecuadamente en esa tecnología
-- y además se agrega JaCoCo (Java Code Coverage), que agrega tareas para poder escribir reportes de % de cobertura de nuestros tests que luego serán utilizados por sitios que los publican, como [Codecov](https://about.codecov.io/) o [Coveralls](https://coveralls.io/)
+- y además se agrega JaCoCo (Java Code Coverage), que agrega tareas para poder escribir reportes de porcentaje de cobertura de nuestros tests que luego serán utilizados por sitios que los publican, como [Codecov](https://about.codecov.io/) o [Coveralls](https://coveralls.io/)
 
 <br/>
 Para más información pueden consultar [esta página](https://docs.gradle.org/current/userguide/plugins.html).
