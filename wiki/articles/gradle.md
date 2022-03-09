@@ -52,7 +52,7 @@ rootProject.name = "eg-seguros-kotlin"
 
 ## Repositorios locales
 
-Las **dependencias** son útiles para poder acceder a códigos escritos por otros (como la biblioteca [Mockk](https://mockk.io/) o [Apache Commons Collections](https://commons.apache.org/proper/commons-collections/)). Para facilitar la descarga de esa dependencia, se suben como **artefacto** con diferentes números de versión a un **repositorio**. Cuando instalamos Gradle, se crea un repositorio local en una carpeta que por defecto suele ser `HOME/.gradle`. Podemos encontrar al componente cuyo identificador es `io.kotest:kotest-assertions-core:5.1.0` en
+Las **dependencias** son útiles para poder acceder a códigos escritos por otros (como la biblioteca [Mockk](https://mockk.io/) o [Apache Commons Collections](https://commons.apache.org/proper/commons-collections/)). Cuando instalamos Gradle, se crea un repositorio local en una carpeta que por defecto suele ser `HOME/.gradle`, donde descargamos los componentes localmente **una sola vez** (muchos proyectos que usan la misma dependencia van a buscar el artefacto en ese mismo lugar). Podemos encontrar al componente cuyo identificador es `io.kotest:kotest-assertions-core:5.1.0` en
 
 ```bash
 ~/.gradle
