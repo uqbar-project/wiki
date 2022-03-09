@@ -141,7 +141,11 @@ Por ejemplo:
 Al resolver las dependencias, el proyectoA necesitará descargar los componentes B, C, D, E y F. Incluso podríamos requerir diferentes versiones de los mismos componentes.
 
 <br/>
-Noten que un proyecto comercial "normal" o mediano, puede incluir decenas y hasta cientos de dependencias. Esto se puede ver en IntelliJ desde la solapa Gradle > Test Compile Path...
+Noten que un proyecto comercial "normal" o mediano, puede incluir decenas y hasta cientos de dependencias. Esto se puede ver en IntelliJ desde la solapa Gradle, e inspeccionar
+
+- **compileClasspath:** dependencias base para compilar los fuentes (que están en `src/main/kotlin`)
+- **runtimeClasspath:** dependencias que tendremos a la hora de ejecutar nuestra aplicación en Kotlin, que incluye dependencias `runtimeOnly`. En Algoritmos 2 no vamos a levantar ninguna aplicación, pero sí más adelante en Algoritmos 3.
+- **testCompileClasspath**: dependencias que incluyen tanto fuentes como las marcadas como `testImplementation`, que sirven para ejecutar los tests.
 
 ![Gradle - Dependencias transitivas](/img/wiki/gradle-transitive-dependencies.gif)
 
