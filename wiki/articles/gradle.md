@@ -208,10 +208,10 @@ Todas se pueden ejecutar de la misma manera que nuestra tarea custom `saludar`.
 
 ## Gradle Wrapper
 
-En lugar de trabajar directamente con Gradle, cada proyecto en IntelliJ va a trabajar con un script genérico que constituye el **Gradle Wrapper** o wrapper a secas, que tiene algunas ventajas
+En lugar de trabajar directamente con Gradle, cada proyecto en IntelliJ va a trabajar con un script genérico que constituye el **Gradle Wrapper** o wrapper a secas, que tiene algunas ventajas:
 
 - no requiere instalación local de Gradle, con lo cual es más fácil estandarizar el proyecto y llevarlo a entornos de integración continua
-- trabaja una versión de Gradle para ese proyecto y se puede actualizar a futuro a una versión más nueva
+- permite trabajar cada proyecto con una versión particular de Gradle y actualizarla a futuro cuando lo deseemos
 
 La pregunta que podemos hacernos es: ¿esto cambia algo en mi forma de trabajar? No, en nada, pero es útil entender por qué utilizamos `gradlew` como ejecutable por consola en lugar de `gradle`, y qué hace esta estructura dentro de nuestro proyecto:
 
