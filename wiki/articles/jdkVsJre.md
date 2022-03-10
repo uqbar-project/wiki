@@ -22,19 +22,21 @@ En este diagrama vemos el proceso de desarrollo de un programa Java desde que lo
 
 Eclipse integra todas estas herramientas de manera que cada vez que grabás un archivo Java realiza la compilación para generar el `.class` y ejecutarlo desde el mismo entorno. Por eso Eclipse es un IDE, o _Integrated Development Environment_.
 
-## Desarrollo en Xtend
+## Desarrollo en Kotlin/JVM
 
-Xtend agrega un paso previo: nosotros escribimos en Xtend, al grabar el archivo se genera el `.java` y a su vez el `.class`.
+Haciendo la aclaración de que hay variantes de Kotlin que no necesitan la JDK (Kotlin Native o bien Kotlin/JS), en las materias Algoritmos 2, Algoritmos 3 y Programación con Herramientas Modernas trabajamos con Kotlin/JVM que precisan instalarse la JDK.
+
+De esa manera cuando generamos nuestro archivo `.kt` con el código fuente, el compilador automáticamente genera el bytecode asociado (el `.class`, que está en la carpeta `build/classes/kotlin`) utilizando tanto el compilador de Kotlin como las herramientas que trae la JDK.
 
 <br/>
-![proceso de desarrollo en Xtend](/img/wiki/xtendJDKvsJRE.png)
+![proceso de desarrollo en Kotlin](/img/wiki/Kotlin_JDK_JRE.png)
 <br/>
 
-Como estamos trabajando dentro de Eclipse, este paso adicional es transparente para nosotros. Solo debemos tener en cuenta que necesitaremos tener una JDK para que el proceso de fondo convierta los archivos `.xtend` a `.java` y luego a `.class`.
+Como estamos trabajando dentro de un IDE, este paso adicional es transparente para nosotros. Solo debemos tener en cuenta que además del plugin de Kotlin, necesitaremos tener instalada una JDK para que el proceso de fondo convierta los archivos `.kt` a `.class`.
 
 Como resultado, nuestros programas pueden ejecutarse utilizando la máquina virtual de Java a partir de cualquier JRE.
 
 ## Links relacionados
 
-- [Volver al menú principal del entorno Xtend](xtend-principal.html)
+- [Volver al menú principal del entorno Kotlin](kotlin-principal.html)
 - [Página principal de Algoritmos 2](algo2-temario.html)
