@@ -20,7 +20,7 @@ Un sistema de seguros de automotor define en qué casos se puede pagar un sinies
 En base al ejemplo anterior, podemos considerar los siguientes escenarios:
 
 - un cliente normal moroso: si debe $ 1 ó $ 50.000 no nos importa, porque está en la misma [clase de equivalencia](https://es.wikipedia.org/wiki/Clase_de_equivalencia)
-- una flota con menos de 5 autos => serían "pocos" autos
+- una flota con menos de 5 autos (ó 5 autos) => serían "pocos" autos
 - una flota con más de 5 autos => serían "muchos" autos
 
 Elegimos cuántos autos en base al **valor límite**: como a partir de los seis autos se considera mucho y menos de 6 son "pocos" autos, 6 es el valor de una flota con muchos autos, 5 es el valor de una flota con pocos autos.
@@ -35,10 +35,10 @@ dado un cliente normal
   └── que no es moroso: puede cobrar un siniestro
 dado un cliente de flota con muchos autos (6 autos)
   ├── si el cliente debe más de $ 10.000 no puede cobrar un siniestro
-  └── si el cliente debe menos de $ 10.000, puede cobrar un siniestro
+  └── si el cliente debe $ 10.000 o menos, puede cobrar un siniestro
 dado un cliente de flota con pocos autos (5 autos)
   ├── si el cliente debe más de $ 5.000 no puede cobrar un siniestro
-  └── si el cliente debe menos de $ 5.000 puede cobrar un siniestro
+  └── si el cliente debe $ 5.000 o menos puede cobrar un siniestro
 ```
 
 ## Definiendo las clases y las variables de los tests

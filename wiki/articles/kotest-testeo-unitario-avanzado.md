@@ -6,6 +6,8 @@ title: Testeo unitario avanzado
 
 Este artículo presenta algunas guías para desarrollar los casos de prueba, considerando que ya tienen una base de testeo unitario automatizado. Si estás buscando un apunte, te recomendamos el siguiente [apunte de Testing](https://docs.google.com/document/d/1zj-H_qPbUDvWsWhV2YLaPsnrI0MIkCuoeK_ilzSnxVI/edit?usp=sharing).
 
+<br/>
+
 Por otra parte, aquí explicamos la mecánica utilizando Kotest como framework de testeo, si estás buscando una variante que siga los lineamientos de JUnit, podés ver [esta página](testeo-unitario-avanzado.html).
 
 # Ejemplo
@@ -20,7 +22,7 @@ Un sistema de seguros de automotor define en qué casos se puede pagar un sinies
 En base al ejemplo anterior, podemos considerar los siguientes escenarios:
 
 - un cliente normal moroso: si debe $ 1 ó $ 50.000 no nos importa, porque está en la misma [clase de equivalencia](https://es.wikipedia.org/wiki/Clase_de_equivalencia)
-- una flota con menos de 5 autos => serían "pocos" autos
+- una flota con menos de 5 autos (ó 5 autos) => serían "pocos" autos
 - una flota con más de 5 autos => serían "muchos" autos
 
 Elegimos cuántos autos en base al **valor límite**: como a partir de los seis autos se considera mucho y menos de 6 son "pocos" autos, 6 es el valor de una flota con muchos autos, 5 es el valor de una flota con pocos autos.
@@ -35,10 +37,10 @@ dado un cliente normal
   └── que no es moroso: puede cobrar un siniestro
 dado un cliente de flota con muchos autos (6 autos)
   ├── si el cliente debe más de $ 10.000 no puede cobrar un siniestro
-  └── si el cliente debe menos de $ 10.000, puede cobrar un siniestro
+  └── si el cliente debe $ 10.000 o menos, puede cobrar un siniestro
 dado un cliente de flota con pocos autos (5 autos)
   ├── si el cliente debe más de $ 5.000 no puede cobrar un siniestro
-  └── si el cliente debe menos de $ 5.000 puede cobrar un siniestro
+  └── si el cliente debe $ 5.000 o menos puede cobrar un siniestro
 ```
 
 # Definiendo las especificaciones de los tests
@@ -55,14 +57,17 @@ a los que podemos configurar diferentes grados de deuda. Podemos seguir algunas 
 
 Por el momento, no tenemos demasiados requerimientos. Entonces vamos a trabajar los tres escenarios desde el mismo archivo, al que llamaremos `CobroSiniestroSpec.kt` para explicitar el caso de uso que estamos testeando.
 
-Conforme crecen los requerimientos, tendremos que diseñar una estrategia para mantener nuestros tests confrontando dos ideas que confrontan
+<br/>
 
-- la reutilización de escenarios (los objetos que estamos testeando)
-- los casos de uso que queremos validar (representado por las acciones que hay que cubrir)
+A la hora de diseñar nuestros tests, hay dos ideas que están en tensión
+
+- reutilizar nuestros escenarios, es decir, los objetos que estamos testeando
+- que en cada test quede claro qué objetos participan de esa prueba (lo que se llama SUT, System Under Test)
 
 <!-- -->
 <br>
-Si bien estarán los tests en el mismo archivo, vamos a modelar nuestros tests de manera de poder diferenciar los escenarios, cada uno con su alcance: no queremos mezclar todas las variables de los tests en una definición global. Además, estaríamos penalizando a cada uno de los tests por lo que necesitan los demás: ¿tiene sentido crear un cliente de flota con 5 autos si estoy testeando un cliente que tiene 6?
+
+Por ejemplo, podríamos tener una flota con 6 autos y hacer tests para diferentes casos de uso: el cobro de un siniestro, el valor mensual de la cuota, el horario de atención, etc. El tema es que los tendremos en distintos archivos de test. La reutilización nos lleva a poner las cosas en un solo lugar, por ejemplo definiendo variables de instancia en una superclase común (o cualquier mecanismo que aumenta el alcance de la variable, volviéndola más global). Todo eso dificulta el entendimiento posterior del test, porque el código que se ejecuta previo a él está en varios lugares que además no son fáciles de rastrear. Más abajo veremos qué técnicas podemos utilizar para mantener nuestros tests simples.
 
 <!-- -->
 <br/>
@@ -101,7 +106,7 @@ describe("Lidia Pereyra") {
 		cantidadAutos = 6
 	}
 	it("no puede cobrar siniestro") {
-		pereyra.generarDeuda(MAXIMO_FLOTA_MUCHOS_AUTOS + 1)
+		pereyra.generarDeuda(10001)
 		pereyra.puedeCobrarSiniestro() shouldBe false
 	}
 	...
@@ -138,11 +143,11 @@ Vamos a mejorar la semántica del test, renombrando la variable `pereyra` por un
 
 ```java
 describe("Dada una flota con muchos autos") {
-	val pereyra = Flota()
-	pereyra.autos = LIMITE_MUCHOS_AUTOS + 1
+	val flotaConMuchosAutos = Flota()
+	flotaConMuchosAutos.autos = 6
 	it("si tiene mucha deuda no puede cobrar siniestro") {
-		pereyra.generarDeuda(MAXIMO_FLOTA_MUCHOS_AUTOS + 1)
-		pereyra.puedeCobrarSiniestro() shouldBe false
+		flotaConMuchosAutos.generarDeuda(10001)
+		flotaConMuchosAutos.puedeCobrarSiniestro() shouldBe false
 	}
 ```
 
@@ -251,8 +256,8 @@ El lector puede profundizar con estos artículos:
 
 Este es el resumen de buenas prácticas a la hora de definir tus tests:
 
-- armá los escenarios que generalmente definen las clases de tests
-- definí tanto los describes como los tests explicando **qué** estamos testeando. El cómo lo terminás de ver en el código, **evitá duplicidades** entre el texto que explica y el código escrito
+- armá los escenarios que definen las clases de equivalencia de los tests
+- escribí la descripción de los describes y los tests explicando **qué** estamos testeando. El cómo lo terminás de ver en el código, **evitá duplicidades** entre el texto que explica y el código escrito
 - separá los describes por requerimientos / casos de uso y los tests por escenarios donde quede claro la clase de equivalencia (cliente común, flota, etc.)
 - los nombres de las variables deben reflejar la clase de equivalencia que están resolviendo, y no casos particulares que no revelan la intención de lo que estamos modelando (sí `flotaConPocosAutos`, no `flotinha` o `miFlota`)
 - los tests se suelen estructurar utilizando las tres A: Arrange (el setup que conviene mantenerlo simple), Act (operaciones con efecto cuando corresponde) y Assert (las aserciones que deben testear el mismo concepto en cada test)
