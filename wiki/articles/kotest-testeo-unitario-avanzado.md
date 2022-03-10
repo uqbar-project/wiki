@@ -21,7 +21,7 @@ Un sistema de seguros de automotor define en qué casos se puede pagar un sinies
 
 En base al ejemplo anterior, podemos considerar los siguientes escenarios:
 
-- un cliente normal moroso: si debe $ 1 ó $ 50.000 no nos importa, porque está en la misma [clase de equivalencia](https://es.wikipedia.org/wiki/Clase_de_equivalencia)
+- un cliente normal moroso: si debe $ 1 ó $ 50.000 no nos importa, porque está en la misma [clase de equivalencia](http://en.wikipedia.org/wiki/Equivalence_partitioning)
 - una flota con menos de 5 autos (ó 5 autos) => serían "pocos" autos
 - una flota con más de 5 autos => serían "muchos" autos
 
