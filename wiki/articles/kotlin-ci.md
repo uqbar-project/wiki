@@ -54,13 +54,13 @@ Copiate [este archivo](./algo2.build.yml) en la siguiente estructura que **hay q
 
 A partir de aquí, cada vez que hagas un push, [Github Actions](https://www.travis-ci.com/) como servidor de integración continua
 
-- clonará el repositorio tuyo
+- clonará tu repositorio
 - lo compilará (_build_) en Kotlin mediante el script de Gradle
 - ejecutará los tests
-- generará el nuevo status de tu proyecto
 - en caso de error, te mandará un mail avisándote que el build falló (por el momento solo al autor del commit)
 - si anduvo ok, por defecto no recibirás ninguna notificación
-- de aquí en más, cada vez que hagas un push al repositorio, si anda ok no te dirá nada, pero si falla, te mandará un mail. Además queda registrado cada commit si pasa o no, y eso ayuda a encontrar cuál es el código donde se originó el error.
+
+Esto es útil porque ocurre automáticamente, no tenemos que acordarnos de hacerlo. Además queda registrado si cada commit pasa o no, y eso ayuda a encontrar cuál es el código donde se originó el error.
 
 ### Agregando el Badge al README
 
@@ -70,7 +70,7 @@ El _badge_ es un indicador visual de cómo resultó el último build, que ubicar
 - elegimos cualquiera de los builds 
 - luego a la derecha hacemos click sobre el botón que tiene los tres puntos: `...`
 - en el menú contextual elegimos la opción "Create Status Badge", elegimos la rama que queremos y
-- finalmente presionamos el botón de copia. 
+- presionamos el botón de copia. 
 
 <br>
 <!-- -->
@@ -80,7 +80,7 @@ El _badge_ es un indicador visual de cómo resultó el último build, que ubicar
 <!-- -->
 <br>
 
-Vamos al editor, pegamos el texto en el README y pusheamos al repositorio.
+- luego vamos al editor, pegamos el texto en el README y pusheamos al repositorio.
 
 # Links útiles
 
