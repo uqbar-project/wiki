@@ -264,5 +264,6 @@ Este es el resumen de buenas prácticas a la hora de definir tus tests:
 
 ## Links relacionados
 
+- [Video en youtube que explica cobertura y clases de equivalencia en un proyecto Kotlin](https://youtu.be/7rw3SNVI5yY)
 - Si conocés Ruby, te recomendamos [Better specs](http://www.betterspecs.org/)
 - [Página principal de Algoritmos 2](algo2-temario.html)
