@@ -58,6 +58,14 @@ cd nombre-de-tu-app
 yarn start
 ```
 
+Si en la instalación te aparece un mensaje de error: `Error while creating new React app ("You are running create-react-app 4.0.3, which is behind the latest release (5.0.0)")`, la solución es ejecutar
+
+```bash
+npx clear-npx-cache
+```
+
+y probar nuevamente crear la aplicación React mediante el comando `npx create-react-app ...`.
+
 Por defecto la aplicación cliente levantará en el puerto 3000. Como suele quedarse levantada aun cuando canceles la línea de comando y el navegador, te dejamos este link que te dice [cómo bajar el proceso del sistema operativo](https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt) para correr otro ejemplo.
 
 # Configuraciones adicionales para Algoritmos III
