@@ -26,14 +26,6 @@ npx permite ejecutar paquetes binarios de npm mediante un command-line interface
 npm install -g npx
 ```
 
-## yarn
-
-Yarn es un manejador de paquetes similar a npm, se instala globalmente desde la consola:
-
-```bash
-npm install --global yarn
-```
-
 # Plugins Visual Studio Code
 
 Dentro de Visual Studio Code, las extensiones que recomendamos para trabajar con React deberían ser:
@@ -54,8 +46,6 @@ Para crear un proyecto React desde la consola Git Bash o bien desde una terminal
 
 ```bash
 npx create-react-app nombre-de-tu-app
-cd nombre-de-tu-app
-yarn start
 ```
 
 Si en la instalación te aparece un mensaje de error: `Error while creating new React app ("You are running create-react-app 4.0.3, which is behind the latest release (5.0.0)")`, la solución es ejecutar
@@ -74,10 +64,10 @@ Una vez creado el proyecto, te recomendamos que agregues estas configuraciones.
 
 ## Agregar dependencias
 
-Agregamos una dependencia
+Agregamos estas dependencias
 
 ```bash
-yarn add eslint-plugin-react -D
+npm i eslint-plugin-react -D
 ```
 
 ## Archivos útiles
@@ -111,22 +101,28 @@ El archivo `.eslintrc.json` debe tener la siguiente configuración:
 
 ```js
 {
-  "parser": "babel-eslint",
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "ignorePatterns": ["/build/**"],
-  "plugins": ["react"],
+{
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+
   "settings": {
     "react": {
       "version": "detect"
     }
   },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "ignorePatterns": ["/build/**"],
+
   "rules": {
     "semi": ["error", "never"],
     "prefer-const": [
@@ -183,7 +179,9 @@ El archivo `.eslintrc.json` debe tener la siguiente configuración:
     "no-void": ["error"],
     "no-with": ["error"],
     "no-undef": ["off"],
-    "react/display-name": ["off"]
+    "react/display-name": ["off"],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }
 ```
@@ -218,7 +216,7 @@ Al archivo `package.json` le vamos a configurar JEST (el framework de testeo uni
 Luego ejecutá por la línea de comando
 
 ```bash
-yarn run lint:fix
+npm run lint:fix
 ```
 
 para que el linter corrija los errores y advertencias automáticamente.
