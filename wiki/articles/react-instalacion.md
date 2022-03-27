@@ -101,7 +101,6 @@ El archivo `.eslintrc.json` debe tener la siguiente configuración:
 
 ```js
 {
-{
   "parserOptions": {
     "ecmaVersion": 2021,
     "ecmaFeatures": {
