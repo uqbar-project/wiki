@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Precedencia de los operadores mas comunes en haskell
+title: Uso del signo pesos ($) en haskell
 ---
 
 El signo pesos en Haskell (el `$`) se usa para 2 cosas:
