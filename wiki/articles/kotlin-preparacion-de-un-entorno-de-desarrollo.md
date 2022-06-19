@@ -107,6 +107,12 @@ Solo necesitamos agregar un plugin para ejecutar los tests unitarios: **Kotest**
 
 Si te interesa configurar un tema de tu interés, podés buscar plugins que contengan la palabra "Theme" en el Marketplace, como se describe en [esta página](https://www.jetbrains.com/help/idea/managing-plugins.html). Luego podrás [seleccionar el tema de tu preferencia](https://www.jetbrains.com/help/idea/user-interface-themes.html#tips).
 
+## Inlays
+
+En versiones recientes puede ser que te aparezca un _inlay_ que muestra información sobre los autores del código en el repositorio que estás trabajando, algo que puede resultar un poco molesto. Para deshabilitarlo, podés seguir [los pasos que se explican a continuación](https://youtrack.jetbrains.com/issue/IDEA-277340/Add-ability-to-turn-off-author-inlay-hints-from-Editor): `Settings -> Editor -> Inlay Hints -> Code vision` y desactivar la opción `Code author`. Luego cerrá los archivos que tengas abierto y volvelos a abrir nuevamente.
+
+![inlay hints](/img/wiki/inlay_hints.gif)
+
 ## Actualizaciones automáticas
 
 Una vez instalado IntelliJ, las actualizaciones se disparan automáticamente. Por lo general es conveniente esperar un tiempo prudencial, sobre todo si tenés fechas de entrega de trabajos prácticos o un parcial en esos días, ya que ha habido algunos inconvenientes de uso que se suelen solucionar rápido pero no hace falta agregar más adrenalina a la cursada. La estrategia conservadora es la que te invitamos a seguir: esperar dos o tres semanas hasta que tu docente confirme que no hay problemas en instalar el _update_ y estar con buena señal de Internet para iniciar ese proceso.
