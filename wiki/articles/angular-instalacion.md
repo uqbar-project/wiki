@@ -2,7 +2,7 @@
 layout: article
 title: Instalacion de Entorno Angular
 featured: true
-categories: [web, angular, ui, configuracion, entorno, spa]
+categories: [web, angular, ui, configuracion, entorno, client-side]
 ---
 
 ![angular](/img/languages/angular1.png)
@@ -13,7 +13,7 @@ Es necesario que instales las siguientes herramientas, en este orden:
 
 - Si estás en entorno Windows te recomendamos instalarte [Git Bash](https://gitforwindows.org/)
 - Seguimos con [NodeJS](https://nodejs.org/en/).
-  - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales esta versión: `nvm install lts/fermium -> v14.15.2`
+  - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales esta versión: `nvm install lts/hydrogen -> v18.4.0`
   - Si estás en Windows instalate la versión actual
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
   - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)  
@@ -313,35 +313,3 @@ Te dejamos [este archivo de ejemplo](./build_angular.yml) que tenés que guardar
 ![Coverage](./badges/XXXXXXX/coverage.svg)
 ```
 
-
-# Ejemplo de un archivo Travis (deprecado)
-
-El siguiente es un ejemplo posible de un archivo `.travis.yml` para una aplicación Angular 8 ó superior. **Si estás cursando Algoritmos III podés ignorar este paso**:
-
-```yml
-sudo: required
-dist: trusty
-language: node_js
-node_js:
-  - '10.12'  # posiblemente haya que subirle la versión de Node
-
-addons:
-apt:
-  sources:
-    - google-chrome
-  packages:
-    - google-chrome-stable
-    - google-chrome-beta
-
-before_install:
-  - npm install -g npm@latest
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
-before_script:
-
-script: ng test --sourceMap=false --watch=false
-```
-
-Lo importante es que la versión de node que uses sea superior a 10.1
