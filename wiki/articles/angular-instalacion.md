@@ -149,7 +149,15 @@ npm install --save-dev @typescript-eslint/eslint-plugin eslint-plugin-prettier
 npm install --save-dev prettier prettier-eslint eslint-config-prettier
 ```
 
-# Ejemplo de .gitignore
+## Archivo .nvmrc
+
+Tener un archivo `.nvmrc` es conveniente si todo el equipo trabaja con NVM (el versionador de Node). El contenido especifica qué versión de Node vamos a utilizar:
+
+```bash
+18.4.0
+```
+
+## Ejemplo de .gitignore
 
 Te recomendamos que configures tu archivo .gitignore de la siguiente manera:
 
@@ -199,6 +207,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Angular cache
+.angular
 ```
 
 # Configuración del linter
