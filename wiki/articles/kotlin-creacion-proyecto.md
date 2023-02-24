@@ -16,24 +16,24 @@ Desde IntelliJ tenemos dos opciones:
 
 Eso abre la siguiente ventana de diálogo:
 
-<img src="/img/wiki/kotlin-nuevo-proyecto2.png" alt="Creación de un nuevo proyecto en Kotlin" height="100%" width="100%">
+<img src="/img/wiki/kotlin-nuevo-proyecto-3.png" alt="Creación de un nuevo proyecto en Kotlin" height="100%" width="100%">
 
 - El nombre del proyecto no debe contener espacios ni caracteres especiales (IntelliJ te va a avisar)
-- Todos los ejemplos que vas a descargar de la materia, así como los proyectos en los que vas a trabajar, se basan en la tecnología **Gradle**. Asegurate que tengas seleccionada la opción `Gradle Kotlin` en `Build System`.
-- Revisamos que la opción en `Project JDK` por defecto sea la **JDK 14**, en caso contrario debemos ir a [configurar la versión de Java](./kotlin-preparacion-de-un-entorno-de-desarrollo.html)
-- Te recomendamos que el group id sea `ar.edu.zzzz.xxx` donde `zzzz` sea la universidad y `xxx` sea la materia que estás cursando. Por ejemplo `ar.edu.unsam.algo2` para la materia Algoritmos 2 de UNSAM.
+- Todos los ejemplos que vas a descargar de la materia, así como los proyectos en los que vas a trabajar, se basan en la tecnología **Gradle**. Asegurate que tengas seleccionada la opción `Gradle` en `Build System` y `Kotlin` para la opción `Gradle DSL`.
+- Revisamos que la opción en `Project JDK` por defecto sea la **JDK 17**, en caso contrario debemos ir a [configurar la versión de Java](./kotlin-preparacion-de-un-entorno-de-desarrollo.html)
+- Te recomendamos que el group id sea `ar.edu.zzzz.xxx` donde `zzzz` sea la universidad y `xxx` sea la materia que estás cursando. Por ejemplo `ar.edu.unsam.algo2` para la materia Algoritmos 2 de UNSAM. Esta opción está disponible si expandís el grupo "Advanced settings".
 - El nombre del artefacto (Artifact ID) es el nombre de tu proyecto
 
 Cuando finalizamos, se genera un proyecto con un archivo `build.gradle.kts`, que es fundamental para que IntelliJ lea esas definiciones para el proyecto en otra máquina y descargue las dependencias.
 
 ## Archivo de configuración de Gradle
 
-Te dejamos un archivo con las dependencias base para la cursada de Algoritmos 2 (UNSAM) del aǹo 2022: [build.gradle.kts de ejemplo](algo2.build.gradle.kts). Luego tendrás que
+Te dejamos un archivo con las dependencias base para la cursada de Algoritmos 2 (UNSAM) del aǹo 2023: [build.gradle.kts de ejemplo](algo2.build.gradle.kts). Luego tendrás que
 
 - renombrar el archivo a `build.gradle.kts`
 - copiarlo al directorio raíz de tu proyecto ya creado
 - revisar el _groupId_ para ver si es el adecuado
-- revisar las dependencias
+- revisar las dependencias para ver si es necesario agregar algún elemento más
 
 Una vez que actualicemos ese archivo, desde IntelliJ nos aparecerán dos íconos para indicarnos que debemos sincronizar las definiciones de Gradle con las de nuestro IDE:
 
