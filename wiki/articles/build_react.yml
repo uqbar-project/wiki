@@ -10,10 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 14.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14.x
+    - name: Set the correct Node version using nvm
+      shell: bash -l {0} 
+      run: nvm install
+    - name: Install Dependencies
+      run: npm install
     - name: Cache node modules
       uses: actions/cache@v1
       with:
@@ -32,3 +33,4 @@ jobs:
       with:
         coverage-summary-path: ./coverage/coverage-summary.json
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        
