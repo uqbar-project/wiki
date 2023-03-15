@@ -122,7 +122,7 @@ En versiones recientes puede ser que te aparezca un _inlay_ que muestra informac
 
 ## Actualizaciones automáticas
 
-Una vez instalado IntelliJ, las actualizaciones se disparan automáticamente. Por lo general es conveniente esperar un tiempo prudencial, sobre todo si tenés fechas de entrega de trabajos prácticos o un parcial en esos días, ya que ha habido algunos inconvenientes de uso que se suelen solucionar rápido pero no hace falta agregar más adrenalina a la cursada. La estrategia conservadora es la que te invitamos a seguir: esperar dos o tres semanas hasta que tu docente confirme que no hay problemas en instalar el _update_ y estar con buena señal de Internet para iniciar ese proceso.
+Una vez instalado IntelliJ, el sistema te avisa cuando hay actualizaciones. Nuestra recomendación es que esperes para instalarlo a que finalice el cuatrimestre a menos de que estés teniendo un problema serio para trabajar en tu entorno y sepas que la actualización lo resuelve.
 
 <!-- -->
 
