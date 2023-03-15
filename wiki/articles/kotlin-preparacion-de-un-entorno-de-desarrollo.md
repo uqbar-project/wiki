@@ -19,17 +19,20 @@ Si estás en Mac o Linux, podés saltear este paso.
 
 Primero instalaremos el compilador de Java.
 
-Ingresamos a [esta dirección](https://jdk.java.net/java-se-ri/14), y descargamos la **Open JDK 14**, que es la versión oficial que manejamos desde 2022 y cuya licencia es [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License). 
+Ingresamos a una de las siguientes direcciones, y descargamos la **JDK 17**, que es la versión que manejamos desde 2023:
+
+* **(Recomendado)** [Adoptium Eclipse Temurin](https://adoptium.net/es/temurin/releases/?version=17) - JDK provisto por la Fundación Eclipse, y con apoyo activo al proyecto de parte de multiples compañías como Microsoft y RedHat (entre otras). El código se distribuye usando la licencia [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License) con [ciertas restricciones](https://openjdk.org/legal/gplv2+ce.html) provista por Oracle.
+* [Amazon Corretto](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) - Otra variante de JDK distribuida (y con soporte a largo plazo) por parte de Amazon. Si bien se encuentra optimizada para sus sistemas de AWS (Amazon Web Services), es una alternativa que funciona sin inconvenientes en sistemas tradicionales, para los que ofrece descargas.
 
 
 ### Pasos de instalación
 
-Una vez descargado el binario en una carpeta (supongamos que es `C:\jdk14`), hay que configurar dos variables de entorno de tu sistema operativo:
+Una vez descargado el binario en una carpeta (supongamos que es `C:\jdk17`), hay que configurar dos variables de entorno de tu sistema operativo:
 
-- JAVA_HOME: tiene que apuntar a `C:\jdk14`)
-- PATH: hay que incorporarle `C:\jdk14\bin` (cuidando de no borrar lo que ya está)
+- JAVA_HOME: tiene que apuntar a `C:\jdk17`)
+- PATH: hay que incorporarle `C:\jdk17\bin` (cuidando de no borrar lo que ya está)
 
-Te dejamos [un video que explica cómo hacerlo para Windows](https://www.youtube.com/watch?v=1guhEwxMAz8&ab_channel=Zurck%27zZ%C3%B6%C3%AB) (el procedimiento es similar para MacOS / Linux)
+Te dejamos [un video que explica cómo hacerlo para Windows](https://youtu.be/BG2OSaxWX4E) (el procedimiento es similar para MacOS / Linux)
 
 
 ### Chequeos posteriores a la instalación
@@ -71,7 +74,7 @@ Necesitarás definir un espacio de trabajo o _workspace_, que es la carpeta dond
 
 ### Configuraciones adicionales
 
-Por lo general no es necesario hacer nada más, solo en algunos casos en los que notes que funciona lento, podés configurar el tamaño de memoria de la Virtual Machine de Java mediante el menú `Edit > Custom VM Options`. Esto abre un archivo de texto similar al siguiente
+Por lo general no es necesario hacer nada más, solo en algunos casos en los que notes que funciona lento, podés configurar el tamaño de memoria de la Virtual Machine de Java mediante el menú `Help > Custom VM Options`. Esto abre un archivo de texto similar al siguiente
 
 ```ini
 -Xms128m
@@ -95,6 +98,8 @@ Los parámetros que tenés que revisar son:
 
 - la memoria inicial con la que levanta IntelliJ: `Xms`
 - la memoria máxima que puede ser utilizada para IntelliJ, que corre en una Virtual Machine de Java propia: `Xmx`. Por defecto viene con 2GB y para las necesidades de la materia no deberías tener que subirlo, pero en todo caso charlalo con tu docente favorito.
+  + Este parámetro específico puede alterarse más sencillamente mediante el menú `Help > Change Memory Settings`
+    ![image](https://user-images.githubusercontent.com/1235066/225169814-280dcf88-c874-4791-80a3-30e42c16c7d9.png)
 
 Para más información podés chequear [esta página](https://intellij-support.jetbrains.com/hc/en-us/articles/206544869-Configuring-JVM-options-and-platform-properties).
 
@@ -102,6 +107,8 @@ Para más información podés chequear [esta página](https://intellij-support.j
 ## Plugin Kotest
 
 Solo necesitamos agregar un plugin para ejecutar los tests unitarios: **Kotest**. Para instalarlo podés ir a [esta página](https://plugins.jetbrains.com/plugin/14080-kotest) y clickear el botón `Install to IntelliJ xxx` donde xxx es la versión más reciente que hayas instalado.
+
+Alternativamente se puede instalar abriendo el menú `File > Settings`, abriendo la sección "Plugins > Marketplace" y buscando "Kotest" allí.
 
 ## Plugins de temas (Themes)
 
