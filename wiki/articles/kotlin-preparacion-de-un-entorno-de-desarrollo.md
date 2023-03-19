@@ -50,11 +50,11 @@ Si no tenés ese programa, no vas a poder pasar tus objetos a código ejecutable
 
 ## IntelliJ IDEA
 
-Nuestro entorno integrado de desarrollo (IDE) permite que en una misma herramienta editemos nuestro código fuente, compilemos, hagamos pruebas, y muchas cosas más. En Algoritmos 1 ya conociste Eclipse, con un entorno modificado especialmente para soportar el lenguaje Wollok. Aquí utilizaremos IntelliJ IDEA que es un entorno bastante similar.
+Nuestro entorno integrado de desarrollo (IDE) permite que en una misma herramienta editemos nuestro código fuente, compilemos, hagamos pruebas, y muchas cosas más. En Algoritmos 1 ya conociste otro IDE: [Eclipse](https://www.eclipse.org/), modificado especialmente para soportar el lenguaje Wollok. Aquí utilizaremos IntelliJ IDEA que tiene muchas similitudes con Eclipse.
 
 ### Pasos de instalación
 
-Tenés que descargarlo desde [esta página](https://www.jetbrains.com/es-es/idea/download/) que te va a ofrecer dos opciones:
+Tenés que descargarlo desde [esta página](https://www.jetbrains.com/es-es/idea/download/) y te va a ofrecer dos opciones:
 
 - **Ultimate**: es la versión que recomendamos, para obtener una licencia podés enviar una solicitud con tu cuenta de UNSAM (debe terminar en `@unsam.edu.ar` ya que de esa manera se comprueba el origen educativo de la cuenta) [**siguiendo los pasos que cuenta esta página**](https://www.jetbrains.com/es-es/community/education/#students).
 - **Community**: es la versión open-source que no tiene disponibles los plugins para Spring, herramienta que vemos en Algoritmos 3 y Programación con Herramientas Modernas.

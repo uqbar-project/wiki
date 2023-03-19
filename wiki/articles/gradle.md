@@ -17,15 +17,13 @@ Gradle es una herramienta que ayuda a desarrollar un proyecto basado en el entor
 
 # Reificación de Proyecto
 
-Java no trabaja la idea de proyecto, no lo representa como concepto, y esto se traslada a todos los lenguajes basados en la JDK. Entonces, cada uno de los IDEs pensados para Java agregan su propia forma de definirlo: 
+Java no trabaja la idea de proyecto, no lo representa como concepto, y eso se traslada a todos los lenguajes basados en la JDK. Entonces, cada uno de los IDEs pensados para Java agregan su propia forma de definirlo: 
 
 - en Eclipse tenemos los archivos `.classpath` y `.project`
-- en IntelliJ tenemos el directorio oculto `.idea`
-- en Visual Studio Code tenemos el directorio `.vscode`
+- en IntelliJ tenemos el directorio `.idea`
+- en Visual Studio Code tenemos la carpeta `.vscode`
 
 Gradle permite trabajar en cualquiera de estos IDEs con su propio modelo de proyecto, que se guarda en el archivo `build.gradle.kts` en el caso de trabajar utilizando el lenguaje Kotlin o `build.gradle` a secas, cuando la configuración se hace utilizando el lenguaje Groovy. A partir de ahora vamos a continuar la explicación asumiendo que estás usando Gradle con Kotlin.
-
-> **Aclaración:** los términos `componente` y `artefacto` son sinónimos de proyecto.
 
 ## Identificación de un proyecto Gradle
 
@@ -33,6 +31,9 @@ Todo proyecto en Gradle tiene tres cosas que lo identifican:
 
 - **group**: representa la organización autora/dueña del artefacto. Por ejemplo, los proyectos de Algoritmos 2 suelen usar el groupId `ar.edu.unsam.algo2`.
 - **artifact**: este campo define el nombre por el que se conoce al proyecto en sí mismo. Algunos ejemplos: `commons-collections`, `eg-seguros-kotlin`, `tp-futbol5-grupo01`, etc.
+
+> **Aclaración:** los términos `componente` y `artefacto` son sinónimos de proyecto.
+
 - **version**: es el último componente del rompecabezas, dado que groupId:artifactId denota un único proyecto pero no alcanza para definir en qué versión del proyecto nos estamos parando. Se agrega entonces un número de versión para completar la información que Gradle necesita para generar una identificación unívoca. Conviene seguir las reglas de [**versionado semántico**](https://semver.org/), para liberar versiones productivas. A veces se suele acompañar de un sufijo `RELEASE` (para versiones estables) o `SNAPSHOT` (para versiones intermedias que pueden estar sujetas a cambios).
 
 Gradle tomó de Maven, su antecesor directo, esta misma forma de identificar un proyecto. Vemos cómo se definen estos valores en el archivo `build.gradle.kts`:
