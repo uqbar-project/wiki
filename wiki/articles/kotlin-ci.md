@@ -52,17 +52,27 @@ Copiate [este archivo](./algo2.build.yml) en la siguiente estructura que **hay q
 
 ### Qué pasa entonces
 
-A partir de aquí, cada vez que hagas un push, [Github Actions](https://www.travis-ci.com/) como servidor de integración continua
+A partir de aquí, cada vez que:
+
+* Hagas un push en las branches "main" o "master"
+* Crees un PR que quiera mergear a "main" o "master"
+* Hagas un push en las branches asociadas a uno de esos PR (mientras se encuentre abierto).
+
+En esas situaciones, [Github Actions](https://docs.github.com/es/actions/learn-github-actions/understanding-github-actions) como servidor de integración continua hará lo siguiente de forma automática:
 
 - clonará tu repositorio
 - lo compilará (_build_) en Kotlin mediante el script de Gradle
 - ejecutará los tests
-- en caso de error, te mandará un mail avisándote que el build falló (por el momento solo al autor del commit)
-- si anduvo ok, por defecto no recibirás ninguna notificación
+- en caso de error, mandará un mail avisando que el build falló (por el momento solo al autor del commit/PR)
+  - si anduvo ok, por defecto no recibirás ninguna notificación
+- si es un push directo, actualizará la badge de cobertura de JaCoCo en `.github/badges/jacoco.svg`
+- sí, en cambio, es un evento relacionado con un Pull Request no actualizará la badge, pero comentará en dicho PR con la cobertura actual luego de aplicar los cambios sugeridos.
+- Finalmente, subirá a la descripción de esta instancia del action un "artefacto" con un reporte de cobertura generado por JaCoCo en HTML.
+  - Los artefactos son archivos que github permite almacenar, junto a logs, junto a un intento de build durante un periodo determinado de tiempo (actualmente un máximo de 90 días, tras lo cual son eliminados)
 
-Esto es útil porque ocurre automáticamente, no tenemos que acordarnos de hacerlo. Además queda registrado si cada commit pasa o no, y eso ayuda a encontrar cuál es el código donde se originó el error.
+Todo esto es muy útil, ya que al automatizarlo no tendremos que acordarnos de hacerlo. Queda además registrado si cada commit pasa o no, lo cual nos ayuda a encontrar donde se ubica el código donde se originó el error.
 
-### Agregando el Badge al README
+### Agregando el Badge de Build al README
 
 El _badge_ es un indicador visual de cómo resultó el último build, que ubicaremos en el archivo README. Para eso, 
 
