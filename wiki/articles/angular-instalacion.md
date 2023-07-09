@@ -13,7 +13,7 @@ Es necesario que instales las siguientes herramientas, en este orden:
 
 - Si estás en entorno Windows te recomendamos instalarte [Git Bash](https://gitforwindows.org/)
 - Seguimos con [NodeJS](https://nodejs.org/en/).
-  - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales esta versión: `nvm install lts/hydrogen -> v18.4.0`
+  - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales esta versión: `nvm install 20.4.0`
   - Si estás en Windows instalate la versión actual
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
   - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)  
@@ -44,9 +44,9 @@ Los plugins del Visual Studio Code que te recomendamos al 2021 son:
 ### Opcionales ###
 
 - **Import Cost (Wix)**: permite calcular cuántos KB pesa cada import
-- **Angular2-Switcher**: agrega shortcuts para navegar entre .ts, .css, .html
-- **Angular2 Inline**: syntax highlighting y autocompletado de código para componentes Angular inline (que tienen embebido html y css)
-- **REST Client**: para hacer pedidos http desde Visual Studio Code directamente (podés usar POSTMAN, Insomnia o Swagger + navegador también)
+- **Angular2-Switcher (infinity1207)**: agrega shortcuts para navegar entre .ts, .css, .html
+- **Angular2 Inline (Nate Wallace)**: syntax highlighting y autocompletado de código para componentes Angular inline (que tienen embebido html y css)
+- **REST Client (Huachao Mao)**: para hacer pedidos http desde Visual Studio Code directamente (podés usar POSTMAN, Insomnia o Swagger + navegador también)
 
 ## Alternativa a Visual Studio Code
 
@@ -154,7 +154,7 @@ npm install --save-dev prettier prettier-eslint eslint-config-prettier
 Tener un archivo `.nvmrc` es conveniente si todo el equipo trabaja con NVM (el versionador de Node). El contenido especifica qué versión de Node vamos a utilizar:
 
 ```bash
-18.4.0
+20.4.0
 ```
 
 ## Ejemplo de .gitignore
@@ -265,6 +265,8 @@ Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la
       ]
     },
 ```
+
+> Si no tenés un archivo `karma.conf.js` lo podés generar desde el Angular CLI: `ng generate config karma`
 
 # Otros archivos útiles
 
