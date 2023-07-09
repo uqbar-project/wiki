@@ -12,10 +12,12 @@ repositories {
     mavenCentral()
 }
 
+val mockkVersion = "1.13.5"
 val kotestVersion = "5.5.5"
 
 dependencies {
     implementation(kotlin("stdlib"))
+    testImplementation("io.mockk:mockk:${mockkVersion}")
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
 }
@@ -46,7 +48,7 @@ jacoco {
 tasks.jacocoTestReport {
     reports {
         xml.required.set(true)
-        csv.required.set(false)
+        csv.required.set(true)
         html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
     }
 }
