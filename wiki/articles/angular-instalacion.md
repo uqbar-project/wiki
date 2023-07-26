@@ -29,17 +29,19 @@ npm install -g @angular/cli
 
 - El editor de texto que vamos a soportar en la cursada es [**Visual Studio Code**](https://code.visualstudio.com/) (hay [una versión portable](https://sourceforge.net/projects/vscode-portable/) si estás en una máquina sin privilegios de administrador).
 
-Los plugins del Visual Studio Code que te recomendamos al 2021 son:
+Los plugins del Visual Studio Code que te recomendamos al 2023 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
 
 ### Necesarios ###
 
 - **Path Intellisense (Christian Kohler)**: autocompletado para archivos de tu file system
 - **Auto Import (steoates)**: ayuda y autocompletado para importar componentes de JS
 - **Angular Files (Alexander Ivanichev)**: agrega un menú contextual para crear elementos de Angular
+- **Angular Snippets (Version 16) (John Papa)**: los _snippets_ permiten generar código para servicios y componentes en forma rápida
 - **JSON to TS (MariusAlchimavicius)**: te construye una interfaz de TS en base a la información de un JSON
 - **Angular Language Service (Angular)**: autocompletado dentro del template html
 - **Material Icon Theme (Philipp Kief)**
-- **Git Lens**, para ver el historial de Git integrado con tu Visual Studio Code
+- **Git Lens (GitKraken)**, para ver el historial de Git integrado con tu Visual Studio Code
+- **ESLint (Microsoft)**: para disparar el linter de la sintaxis de TS
 
 ### Opcionales ###
 
