@@ -43,6 +43,15 @@ Los plugins del Visual Studio Code que te recomendamos al 2023 son los que ya in
 - **Git Lens (GitKraken)**, para ver el historial de Git integrado con tu Visual Studio Code
 - **ESLint (Microsoft)**: para disparar el linter de la sintaxis de TS
 
+Si tenés instalada la extensión **Prettier - Code formatter (Prettier)** te recomendamos desinstalarla y reemplazarla por **Prettier ESLint (Rebecca Vest)**: es el plugin que vamos a utilizar para aplicar el formato y ejecutar el proceso linter con la sintaxis de la cursada, que define:
+
+- no usar puntos y coma al final de cada sentencia
+- utilizar comillas simples para strings, un estándar en el mundo Javascript/Typescript
+- evitar imports innecesarios o definiciones de variables que luego no se usen
+- etc.
+
+Los valores se configuran en el archivo `.eslintrc.json` que más abajo se indica.
+
 ### Opcionales ###
 
 - **Import Cost (Wix)**: permite calcular cuántos KB pesa cada import
@@ -90,31 +99,30 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 
 ```js
 {
-  "prettier.semi": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+    "[javascript]": {
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+      "editor.formatOnPaste": false, // required 
+      "editor.formatOnType": false, // required
+      "editor.formatOnSave": true, // optional 
+      "editor.formatOnSaveMode": "file", // required to format on save
     },
-    "editor.formatOnSave": true
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+    "[typescript]": {
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+      "editor.formatOnPaste": false, // required 
+      "editor.formatOnType": false, // required
+      "editor.formatOnSave": true, // optional 
+      "editor.formatOnSaveMode": "file", // required to format on save
     },
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+    "[json]": {
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+      "editor.formatOnPaste": false, // required 
+      "editor.formatOnType": false, // required
+      "editor.formatOnSave": true, // optional 
+      "editor.formatOnSaveMode": "file", // required to format on save
     },
-    "editor.formatOnSave": false
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
 }
 ```
 
