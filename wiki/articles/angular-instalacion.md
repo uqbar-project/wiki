@@ -50,7 +50,7 @@ Si tenés instalada la extensión **Prettier - Code formatter (Prettier)** te re
 - evitar imports innecesarios o definiciones de variables que luego no se usen
 - etc.
 
-Los valores se configuran en el archivo `.eslintrc.json` que más abajo se indica.
+Más abajo te indicamos los dos archivos que definen esta configuración: `.eslintrc.json` y `.prettierrc.json`.
 
 ### Opcionales ###
 
