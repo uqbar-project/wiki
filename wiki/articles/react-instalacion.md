@@ -39,6 +39,12 @@ Y luego
 - `✔ Select a framework: › React`: seleccionar React como framework de UI
 - `✔ Select a variant: › Javascript + SWC`: elegir la variante Javascript con SWC (herramienta de reemplazo de Babel)
 
+También podés usar el template directo React + Javascript + SWC (eso evita que tengas que seleccionar el tipo de proyecto):
+
+```bash
+npm create vite@latest nombre-de-proyecto -- --template react-swc
+```
+
 Por defecto la aplicación cliente levantará en el puerto 5173. Como suele quedarse levantada aun cuando canceles la línea de comando y el navegador, te dejamos este link que te dice [cómo bajar el proceso del sistema operativo](https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt) para correr otro ejemplo.
 
 # Configuraciones adicionales para Algoritmos III
