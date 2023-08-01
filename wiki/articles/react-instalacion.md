@@ -12,7 +12,7 @@ featured: true
 Si ya estuviste trabajando con Angular estos pasos no son necesarios, pero conviene verificar que ya estén instalados.
 
 - Si estás en entorno Windows te recomendamos instalarte [Git Bash](https://gitforwindows.org/)
-- Seguimos con [NodeJS](https://nodejs.org/en/), preferentemente la última versión (tiene que ser 14 ó superior).
+- Seguimos con [NodeJS](https://nodejs.org/en/), preferentemente la última versión (tiene que ser 20.4.0 ó superior).
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
 - El editor de texto que vamos a soportar en la cursada es [Visual Studio Code](https://code.visualstudio.com/) (hay una versión portable si estás en una máquina sin privilegios de administrador).
 
