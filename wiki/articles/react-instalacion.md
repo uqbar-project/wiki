@@ -18,45 +18,28 @@ Si ya estuviste trabajando con Angular estos pasos no son necesarios, pero convi
 
 # Específicos de React
 
-## npx
-
-npx permite ejecutar paquetes binarios de npm mediante un command-line interface, y se instala con npm
-
-```bash
-npm install -g npx
-```
-
 # Plugins Visual Studio Code
 
-Dentro de Visual Studio Code, las extensiones que recomendamos para trabajar con React deberían ser:
+Dentro de Visual Studio Code, las extensiones que recomendamos para trabajar con React deberían ser las mismas con las que trabajaste en Angular y además revisar que tengas:
 
-- compartidas con el entorno de Angular
-  - **ESLint - Dirk Baeumer**
-  - **Prettier - Code formatter - Prettier**
-  - **Prettier - ESLint - Rebecca Vest**
-- compartidas con el entorno de Typescript
-  - [JEST](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest): que permite integrar en VSC los test unitarios que vamos a ejecutar con Jest.
-  - [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner): para ejecutar o debuggear tests unitarios contra la terminal (cuando tengamos muchos tests y el primer plugin resulte engorroso).
-
-Opcionalmente podés instalar la extensión _ES7 React/Redux/GraphQL/React-Native snippets_ de _dsznajder_.
+- **ESLint - Microsoft**
+- **Prettier - ESLint - Rebecca Vest**
+- y además **Vitest - Zixuan Chen**
 
 # Crear un proyecto React de cero
 
 Para crear un proyecto React desde la consola Git Bash o bien desde una terminal Linux escribimos:
 
 ```bash
-npx create-react-app nombre-de-tu-app
+npm create vite@latest nombre-del-proyecto
 ```
 
-Si en la instalación te aparece un mensaje de error: `Error while creating new React app ("You are running create-react-app 4.0.3, which is behind the latest release (5.0.0)")`, la solución es ejecutar
+Y luego
 
-```bash
-npx clear-npx-cache
-```
+- `✔ Select a framework: › React`: seleccionar React como framework de UI
+- `✔ Select a variant: › Javascript + SWC`: elegir la variante Javascript con SWC (herramienta de reemplazo de Babel)
 
-y probar nuevamente crear la aplicación React mediante el comando `npx create-react-app ...`.
-
-Por defecto la aplicación cliente levantará en el puerto 3000. Como suele quedarse levantada aun cuando canceles la línea de comando y el navegador, te dejamos este link que te dice [cómo bajar el proceso del sistema operativo](https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt) para correr otro ejemplo.
+Por defecto la aplicación cliente levantará en el puerto 5173. Como suele quedarse levantada aun cuando canceles la línea de comando y el navegador, te dejamos este link que te dice [cómo bajar el proceso del sistema operativo](https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt) para correr otro ejemplo.
 
 # Configuraciones adicionales para Algoritmos III
 
@@ -64,10 +47,18 @@ Una vez creado el proyecto, te recomendamos que agregues estas configuraciones.
 
 ## Agregar dependencias
 
-Agregamos estas dependencias
+Agregamos estas dependencias de Prettier y Vitest (el framework de testing)
 
 ```bash
-npm i eslint-plugin-react -D
+npm i @testing-library/react @vitest/coverage-v8 @vitejs/plugin-react jsdom prettier vitest -D
+```
+
+## Archivo .nvmrc
+
+Tener un archivo `.nvmrc` es conveniente si todo el equipo trabaja con NVM (el versionador de Node). El contenido especifica qué versión de Node vamos a utilizar:
+
+```bash
+20.4.0
 ```
 
 ## Archivos útiles
@@ -97,128 +88,102 @@ En la carpeta raíz creá los siguientes archivos
 
 ## Linter para javascript
 
-El archivo `.eslintrc.json` debe tener la siguiente configuración:
+El archivo `.eslintrc.cjs` debe tener la siguiente configuración:
 
 ```js
-{
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "sourceType": "module"
-  },
-
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-
-  "plugins": [
-    "react"
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
   ],
-
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "ignorePatterns": ["/build/**"],
-
-  "rules": {
-    "semi": ["error", "never"],
-    "prefer-const": [
-      "warn",
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  settings: { react: { version: '18.2' } },
+  plugins: ['react-refresh'],
+  rules: {
+    'semi': ['error', 'never'],
+    'prefer-const': [
+      'warn',
       {
-        "destructuring": "any",
-        "ignoreReadBeforeAssign": false
+        'destructuring': 'any',
+        'ignoreReadBeforeAssign': false
       }
     ],
-    "getter-return": ["error"],
-    "no-async-promise-executor": ["warn"],
-    "no-cond-assign": ["warn", "except-parens"],
-    "no-dupe-keys": ["error"],
-    "no-empty": ["warn"],
-    "no-ex-assign": ["error"],
-    "no-extra-boolean-cast": [
-      "error",
+    'getter-return': ['error'],
+    'no-async-promise-executor': ['warn'],
+    'no-cond-assign': ['warn', 'except-parens'],
+    'no-dupe-keys': ['error'],
+    'no-empty': ['warn'],
+    'no-ex-assign': ['error'],
+    'no-extra-boolean-cast': [
+      'error',
       {
-        "enforceForLogicalOperands": true
+        'enforceForLogicalOperands': true
       }
     ],
-    "no-extra-parens": ["warn", "all"],
-    "no-func-assign": ["error"],
-    "no-import-assign": ["error"],
-    "no-inner-declarations": ["error", "both"],
-    "no-obj-calls": ["error"],
-    "no-promise-executor-return": ["error"],
-    "no-sparse-arrays": ["error"],
-    "no-template-curly-in-string": ["error"],
-    "no-unreachable": ["error"],
-    "no-unreachable-loop": ["error"],
-    "no-unsafe-optional-chaining": ["error"],
-    "require-atomic-updates": ["error"],
-    "use-isnan": ["error"],
-    "block-scoped-var": ["error"],
-    "consistent-return": ["error"],
-    "default-param-last": ["warn"],
-    "no-alert": ["error"],
-    "no-caller": ["error"],
-    "no-constructor-return": ["error"],
-    "no-global-assign": ["error"],
-    "no-lone-blocks": ["warn"],
-    "no-multi-spaces": ["warn"],
-    "no-new": ["warn"],
-    "no-param-reassign": ["error"],
-    "no-proto": ["warn"],
-    "no-redeclare": ["error"],
-    "no-return-assign": ["error"],
-    "no-return-await": ["warn"],
-    "no-self-assign": ["error"],
-    "no-sequences": ["warn"],
-    "no-useless-catch": ["warn"],
-    "no-useless-return": ["error"],
-    "no-void": ["error"],
-    "no-with": ["error"],
-    "no-undef": ["off"],
-    "react/display-name": ["off"],
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
-  }
+    'no-extra-parens': ['warn', 'all'],
+    'no-func-assign': ['error'],
+    'no-import-assign': ['error'],
+    'no-inner-declarations': ['error', 'both'],
+    'no-obj-calls': ['error'],
+    'no-promise-executor-return': ['error'],
+    'no-sparse-arrays': ['error'],
+    'no-template-curly-in-string': ['error'],
+    'no-unreachable': ['error'],
+    'no-unreachable-loop': ['error'],
+    'no-unsafe-optional-chaining': ['error'],
+    'require-atomic-updates': ['error'],
+    'use-isnan': ['error'],
+    'block-scoped-var': ['error'],
+    'consistent-return': ['error'],
+    'default-param-last': ['warn'],
+    'no-alert': ['error'],
+    'no-caller': ['error'],
+    'no-constructor-return': ['error'],
+    'no-global-assign': ['error'],
+    'no-lone-blocks': ['warn'],
+    'no-multi-spaces': ['warn'],
+    'no-new': ['warn'],
+    'no-param-reassign': ['error'],
+    'no-proto': ['warn'],
+    'no-redeclare': ['error'],
+    'no-return-assign': ['error'],
+    'no-return-await': ['warn'],
+    'no-self-assign': ['error'],
+    'no-sequences': ['warn'],
+    'no-useless-catch': ['warn'],
+    'no-useless-return': ['error'],
+    'no-void': ['error'],
+    'no-with': ['error'],
+    'no-undef': ['off'],
+    'react/display-name': ['off'],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
 }
 ```
 
 ## Configuración del proyecto
 
-Al archivo `package.json` le vamos a configurar JEST (el framework de testeo unitario) para tener un coverage más exacto (borrale los comentarios porque no están permitidos en `json`):
+Al archivo `package.json` le modificamos el script lint y le agregamos test y coverage (borrale los comentarios porque no están permitidos en `json`):
 
 ```js
   "scripts": {
-    ...,
-    "eject": "react-scripts eject", // se agrega una coma
-    "lint": "eslint .",             // línea a agregar para ejecutar el linter
-    "lint:fix": "eslint . --fix"    // línea a agregar para ejecutar el fix del linter
-  },
-  "eslintConfig": {
-    // dejar la configuración de eslintConfig tal cual está
-  },
-  "jest": {
-    "coverageReporters": [ "html", "text-summary", "json-summary"],
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/reportWebVitals.js",
-      "!**/index.js",
-      "!**/setupTests.js",
-      "!**/node_modules/**",
-      "!**/vendor/**"
-    ]
+    "lint": "eslint --cache --fix .", // modificar
+    ...
+    // agregar
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
 ```
-
-Luego ejecutá por la línea de comando
-
-```bash
-npm run lint:fix
-```
-
-para que el linter corrija los errores y advertencias automáticamente.
 
 ## .gitignore
 
@@ -227,6 +192,42 @@ Al archivo .gitignore se le pueden incorporar estas líneas:
 ```bash
 # VSC - Git Lens
 .history
+```
+
+## Archivo de configuración para Visual Studio Code
+
+Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un archivo `settings.json` que tenga este contenido:
+
+```js
+{
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "editor.formatOnSave": true, 
+    "files.autoSave": "onFocusChange" 
+}
+```
+
+## Configuración para el testeo unitario de frontend
+
+El archivo `vite.config.js` contiene la configuración que necesitamos para ejecutar los tests, es importante agregar un reporter de tipo `json-summary` para que el build de Github Actions cree el badge con el % de cobertura automáticamente:
+
+```js
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    coverage: {
+      reporter: ['text', 'json', 'html', 'json-summary'],
+    },
+  }
+})
 ```
 
 # Ejemplo de un archivo para Github Actions

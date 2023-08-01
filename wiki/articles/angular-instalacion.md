@@ -85,7 +85,7 @@ cd nombre-de-tu-app
 ng serve -open  # o bien, la versión corta es ng s -o
 ```
 
-# Correr los tests de un proyecto
+## Correr los tests de un proyecto
 
 Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y ejecutás desde la consola
 
@@ -93,7 +93,7 @@ Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y 
 ng test
 ```
 
-# Archivo de configuración para Visual Studio Code
+## Archivo de configuración para Visual Studio Code
 
 Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un archivo `settings.json` que tenga este contenido:
 
@@ -126,7 +126,7 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 }
 ```
 
-# Cambios al package.json
+## Cambios al package.json
 
 Dentro del archivo `package.json` del raíz de tu proyecto debés tener estos scripts:
 
@@ -222,7 +222,7 @@ Thumbs.db
 .angular
 ```
 
-# Configuración del linter
+## Configuración del linter
 
 El linter es el proceso que genera advertencias o errores en base a la sintaxis y semántica de nuestros componentes. Lo interesante es que podemos configurar, por ejemplo, que escribir `console.log` o `debugger` no es código que queremos que esté en el ambiente productivo, pero sí podríamos admitirlo en desarrollo. También se puede configurar validaciones como el uso de let en lugar de const, variables sin utilizar, etc. Te dejamos la configuración recomendada en el archivo `.eslintrc.json` que debe estar en el directorio raíz:
 
@@ -260,9 +260,9 @@ con el archivo `package.json` que contenga los scripts que arriba te dejamos. Es
 npm run lint:fix
 ```
 
-# Configuración del archivo de test
+## Configuración del archivo de test
 
-Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la opción para que genere el porcentaje de cobertura en formato `json` también (borrale los comentarios porque no están permitidos en `json`):
+Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la opción para que genere el porcentaje de cobertura en formato `json` también:
 
 ```js
     coverageReporter: {
@@ -311,7 +311,7 @@ En la carpeta raíz creá los siguientes archivos
 }
 ```
 
-# Ajustes para el % de cobertura
+## Ajustes para el % de cobertura
 
 Para tener información más precisa sobre el porcentaje de cobertura de tus tests, en el archivo `app.component.spec.ts` de tu directorio `src/app` tenés que agregar este import:
 
@@ -319,14 +319,14 @@ Para tener información más precisa sobre el porcentaje de cobertura de tus tes
 import './app.module'
 ```
 
-# Ejemplo de un archivo para Github Actions
+## Ejemplo de un archivo para Github Actions
 
 Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
 Te dejamos [este archivo de ejemplo](./build_angular.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
 
-# Cómo configurar los badges en tu README
+## Cómo configurar los badges en tu README
 
 - Para agregar el badge del build de Github Actions, seguí [estas instrucciones](https://docs.github.com/es/actions/managing-workflow-runs/adding-a-workflow-status-badge)
 
