@@ -56,7 +56,7 @@ Una vez creado el proyecto, te recomendamos que agregues estas configuraciones.
 Agregamos estas dependencias de Prettier y Vitest (el framework de testing)
 
 ```bash
-npm i @testing-library/react @vitest/coverage-v8 @vitejs/plugin-react jsdom prettier vitest -D
+npm i @testing-library/react @testing-library/jest-dom @testing-library/user-event @vitest/coverage-v8 @vitejs/plugin-react jsdom prettier vitest -D
 ```
 
 ## Archivo .nvmrc
@@ -214,6 +214,12 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 
 ## Configuración para el testeo unitario de frontend
 
+Hay que definir un archivo `setupTests.js` en el raíz de nuestro proyecto, que tenga el siguiente contenido:
+
+```js
+import "@testing-library/jest-dom/vitest"
+```
+
 El archivo `vite.config.js` contiene la configuración que necesitamos para ejecutar los tests, es importante agregar un reporter de tipo `json-summary` para que el build de Github Actions cree el badge con el % de cobertura automáticamente:
 
 ```js
@@ -221,6 +227,7 @@ El archivo `vite.config.js` contiene la configuración que necesitamos para ejec
 /// <reference types="vite/client" />
 
 import { defineConfig } from 'vite'
+
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
@@ -228,6 +235,7 @@ export default defineConfig({
   plugins: [react()],
   test: {
     globals: true,
+    setupFiles: ["./setupTests.js"], // es importante definirlo en un archivo aparte para que se ejecute en otro contexto
     environment: 'jsdom',
     coverage: {
       reporter: ['text', 'json', 'html', 'json-summary'],
@@ -235,6 +243,8 @@ export default defineConfig({
   }
 })
 ```
+
+> Si no configurás el archivo `setupTests.js` te va a aparecer un mensaje de error: `Error: Invalid Chai property: toBeInTheDocument` en cada expect.
 
 # Ejemplo de un archivo para Github Actions
 
