@@ -277,6 +277,25 @@ Incorporemos este archivo que nos ayudará para que el plugin auto-import funcio
 }
 ```
 
+Nuestra recomendación es que no actives el chequeo de tipos de javascript (para eso es preferible usar typescript). Si lo activás mediante la opción:
+
+```js
+    ...
+    "checkJs": true,
+    ...
+```
+
+en el archivo `jsconfig.json`, tenés que agregar esta configuración al archivo `vite.config.js`:
+
+```js
+    coverage: {
+      // agregar
+      provider: 'v8',
+      //
+      reporter: ['text', 'json', 'html', 'json-summary'],
+    },
+```
+
 # Ejemplo de un archivo para Github Actions
 
 Te dejamos [este archivo de ejemplo](./build_react.yml) que tenés que guardar en `.github/workflows/build.yml`. No hay que hacer ningún cambio.
