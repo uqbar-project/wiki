@@ -233,6 +233,12 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      src: "/src",
+      components: "/src/components",      
+    },
+  },
   test: {
     globals: true,
     setupFiles: ["./setupTests.js"], // es importante definirlo en un archivo aparte para que se ejecute en otro contexto
@@ -245,6 +251,31 @@ export default defineConfig({
 ```
 
 > Si no configurás el archivo `setupTests.js` te va a aparecer un mensaje de error: `Error: Invalid Chai property: toBeInTheDocument` en cada expect.
+
+Por otra parte, los imports conviene hacerlos en forma absoluta, desde `src` para las definiciones de dominio, services, etc. y `src/components` para los componentes de React.
+
+
+## Archivo jsconfig.json
+
+Incorporemos este archivo que nos ayudará para que el plugin auto-import funcione, así como definiciones extra para el intérprete JS:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "checkJs": false,
+    "jsx": "react-jsx",
+    "paths": {
+      "src/*": [
+        "./src/*"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ]
+    }
+  }
+}
+```
 
 # Ejemplo de un archivo para Github Actions
 
