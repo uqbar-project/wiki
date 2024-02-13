@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.9.22"
     jacoco
 }
 
@@ -12,8 +12,8 @@ repositories {
     mavenCentral()
 }
 
-val mockkVersion = "1.13.5"
-val kotestVersion = "5.5.5"
+val mockkVersion = "1.13.9"
+val kotestVersion = "5.8.0"
 
 dependencies {
     implementation(kotlin("stdlib"))
@@ -25,7 +25,7 @@ dependencies {
 tasks.withType<KotlinCompile> { 
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "17"
+        jvmTarget = "21"
     }
 }
 
@@ -42,7 +42,7 @@ tasks.jacocoTestReport {
 }
 
 jacoco {
-    toolVersion = "0.8.8"
+    toolVersion = "0.8.11"
 }
 
 tasks.jacocoTestReport {

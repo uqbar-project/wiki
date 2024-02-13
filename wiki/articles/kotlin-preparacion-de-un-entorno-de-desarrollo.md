@@ -19,18 +19,18 @@ Si estás en Mac o Linux, podés saltear este paso.
 
 Primero instalaremos el compilador de Java.
 
-Ingresamos a una de las siguientes direcciones, y descargamos la **JDK 17**, que es la versión que manejamos desde 2023:
+Ingresamos a una de las siguientes direcciones, y descargamos la **JDK 21**, que es la versión que manejamos desde 2024:
 
-* **(Recomendado)** [Adoptium Eclipse Temurin](https://adoptium.net/es/temurin/releases/?version=17) - JDK provisto por la Fundación Eclipse, y con apoyo activo al proyecto de parte de multiples compañías como Microsoft y RedHat (entre otras). El código se distribuye usando la licencia [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License) con [ciertas restricciones](https://openjdk.org/legal/gplv2+ce.html) provista por Oracle.
-* [Amazon Corretto](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) - Otra variante de JDK distribuida (y con soporte a largo plazo) por parte de Amazon. Si bien se encuentra optimizada para sus sistemas de AWS (Amazon Web Services), es una alternativa que funciona sin inconvenientes en sistemas tradicionales, para los que ofrece descargas.
+* **(Recomendado)** [Adoptium Eclipse Temurin](https://adoptium.net/es/temurin/releases/?version=21) - JDK provisto por la Fundación Eclipse, y con apoyo activo al proyecto de parte de multiples compañías como Microsoft y RedHat (entre otras). El código se distribuye usando la licencia [GPL](https://es.wikipedia.org/wiki/GNU_General_Public_License) con [ciertas restricciones](https://openjdk.org/legal/gplv2+ce.html) provista por Oracle.
+* [Amazon Corretto](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html) - Otra variante de JDK distribuida (y con soporte a largo plazo) por parte de Amazon. Si bien se encuentra optimizada para sus sistemas de AWS (Amazon Web Services), es una alternativa que funciona sin inconvenientes en sistemas tradicionales, para los que ofrece descargas.
 
 
 ### Pasos de instalación
 
-Una vez descargado el binario en una carpeta (supongamos que es `C:\jdk17`), hay que configurar dos variables de entorno de tu sistema operativo:
+Una vez descargado el binario en una carpeta (supongamos que es `C:\jdk21`), hay que configurar dos variables de entorno de tu sistema operativo:
 
-- JAVA_HOME: tiene que apuntar a `C:\jdk17`)
-- PATH: hay que incorporarle `C:\jdk17\bin` (cuidando de no borrar lo que ya está)
+- JAVA_HOME: tiene que apuntar a `C:\jdk21`)
+- PATH: hay que incorporarle `C:\jdk21\bin` (cuidando de no borrar lo que ya está)
 
 Te dejamos [un video que explica cómo hacerlo para Windows](https://youtu.be/BG2OSaxWX4E) (el procedimiento es similar para MacOS / Linux)
 
