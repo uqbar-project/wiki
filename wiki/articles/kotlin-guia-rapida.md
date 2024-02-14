@@ -48,7 +48,7 @@ pepita.energia = 100    // <-- equivale a pepita.setEnergia(100)
 pepita.energia          // <-- equivale a pepita.getEnergia()
 ```
 
-¡Ojo! si bien parece que estamos accediendo diréctamente a la variable de instancia, no es así. Xtend simplemente traduce esa sintaxis a la anterior. Es decir que en ambos casos estamos igualmente llamando al getter y al setter. Pueden probar definiendo la variable `energia` como privada y el IDE mostrará un mensaje de error "Cannot access 'energia': it is private in 'Ave'".
+¡Ojo! si bien parece que estamos accediendo diréctamente a la variable de instancia, no es así. Kotlin simplemente traduce esa sintaxis a la anterior. Es decir que en ambos casos estamos igualmente llamando al getter y al setter. Pueden probar definiendo la variable `energia` como privada y el IDE mostrará un mensaje de error "Cannot access 'energia': it is private in 'Ave'".
 
 
 ## Métodos

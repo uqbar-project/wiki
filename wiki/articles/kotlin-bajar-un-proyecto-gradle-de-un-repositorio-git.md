@@ -42,6 +42,7 @@ $ cd ~/workspace/materia # el directorio principal donde estén tus proyectos
 $ git clone https://github.com/uqbar-project/eg-microprocesador-kotlin
 ```
 
+
 En el directorio local se bajan los recursos del proyecto, incluyendo un directorio `.git` donde está la información. De ser necesario debemos cambiar la rama o branch de trabajo, por ejemplo al branch *dev*:
 
 ```bash
@@ -59,7 +60,7 @@ Nos puede aparecer una ventana de diálogo para que confiemos en el proyecto:
 
 ![IntelliJ confiar en el proyecto](/img/wiki/importProject_10.png)
 
-Aceptamos seleccionando la opción "Trust project" y entonces se importará el proyecto, al detectar que está hecho en Gradle se utilizará el archivo correspondiente para hacer el build.
+Aceptamos seleccionando la opción "Trust project" y entonces se importará el proyecto, al detectar que está hecho en Gradle se utilizará el archivo correspondiente para hacer el build. Te recomendamos que actives el check para que IntelliJ confíe en todos los proyectos que te descargás en la carpeta raíz de la materia.
 
 ![IntelliJ build del proyecto](/img/wiki/importProject_11.png)
 
@@ -110,7 +111,9 @@ Ingresamos la contraseña
 <!-- -->
 ___
 
-y ya podemos cerrar el navegador y volver a IntelliJ:
+(si activaste la autenticación en 2 pasos o 2FA es probable que tengas que ingresar tu token también). 
+
+Una vez finalizado este paso ya podemos cerrar el navegador y volver a IntelliJ:
 
 ![Github - cerrar navegador](/img/wiki/importProject_08.png)
 
@@ -126,7 +129,7 @@ Aquí podemos hacer una búsqueda y nos aparecerán todos los repositorios a los
 
 ![IntelliJ confiar en el proyecto](/img/wiki/importProject_10.png)
 
-Aceptamos seleccionando la opción "Trust project" y entonces se importará el proyecto, al detectar que está hecho en Gradle se utilizará el archivo correspondiente para hacer el build.
+Aceptamos seleccionando la opción "Trust project" y entonces se importará el proyecto, al detectar que está hecho en Gradle se utilizará el archivo correspondiente para hacer el build. Te recomendamos que actives el check para que IntelliJ confíe en todos los proyectos que te descargás en la carpeta raíz de la materia.
 
 ![IntelliJ build del proyecto](/img/wiki/importProject_11.png)
 
