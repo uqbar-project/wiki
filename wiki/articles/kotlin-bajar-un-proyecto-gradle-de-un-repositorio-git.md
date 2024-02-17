@@ -37,13 +37,19 @@ Para esto debemos
 
 <!-- -->
 
+Por ejemplo:
+
 ```bash
-$ cd ~/workspace/materia # el directorio principal donde estén tus proyectos
-$ git clone https://github.com/uqbar-project/eg-microprocesador-kotlin
+# buscá el directorio principal donde estén tus proyectos
+$ cd ~/workspace/algo2
+
+# clonamos la URL
+$ git clone https://github.com/uqbar-project/eg-seguros-kotlin
+
+# en la carpeta eg-seguros-kotlin se baja el proyecto
 ```
 
-
-En el directorio local se bajan los recursos del proyecto, incluyendo un directorio `.git` donde está la información. De ser necesario debemos cambiar la rama o branch de trabajo, por ejemplo al branch *dev*:
+En el directorio local (en este caso `eg-seguros-kotlin`) se bajan los recursos del proyecto, incluyendo un directorio `.git` donde está la información. De ser necesario debemos cambiar la rama o branch de trabajo, por ejemplo al branch *dev*:
 
 ```bash
 $ git checkout dev
