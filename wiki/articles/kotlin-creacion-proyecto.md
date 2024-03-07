@@ -5,7 +5,7 @@ categories: [xtend, nuevo proyecto, maven]
 featured: true
 ---
 
-Para realizar las prácticas, vas a crear un proyecto desde cero. Como ahora hay muchas más opciones, te dejamos una guía simple de cómo iniciarte.
+Para realizar las prácticas, vas a crear un proyecto desde cero. 
 
 # Crear proyecto Kotlin
 
@@ -146,7 +146,7 @@ proyecto
 ```
 
 De esta manera, logramos mayor granularidad en la organización de nuestras clases.
-___
+
 
 # Links útiles
 
