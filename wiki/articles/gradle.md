@@ -43,7 +43,7 @@ group = "ar.edu.unsam.algo2"
 version = "1.0-SNAPSHOT"
 ```
 
-El artifact se define en el archivo `settings.gradle`:
+El artifact se define en el archivo `settings.gradle.kts`:
 
 ```kotlin
 rootProject.name = "eg-seguros-kotlin"
@@ -90,7 +90,7 @@ repositories {
 Las dependencias se definen dentro de un tag `dependencies`:
 
 ```kotlin
-val kotestVersion = "5.1.0"
+val kotestVersion = "5.8.0"
 
 dependencies {
     implementation(kotlin("stdlib"))
@@ -164,7 +164,7 @@ Podés ver en cualquiera de nuestros ejemplos qué contiene la sección plugins 
 
 ```kotlin
 plugins {
-    kotlin("jvm") version "1.6.10"
+    kotlin("jvm") version "1.9.22"
     jacoco
 }
 ```

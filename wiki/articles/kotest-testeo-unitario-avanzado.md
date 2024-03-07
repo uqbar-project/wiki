@@ -4,7 +4,7 @@ title: Testeo unitario avanzado
 ---
 
 
-Este artículo presenta algunas guías para desarrollar los casos de prueba, considerando que ya tienen una base de testeo unitario automatizado. Si estás buscando un apunte, te recomendamos el siguiente [apunte de Testing](https://docs.google.com/document/d/1zj-H_qPbUDvWsWhV2YLaPsnrI0MIkCuoeK_ilzSnxVI/edit?usp=sharing).
+Este artículo presenta algunas guías para desarrollar los casos de prueba, considerando que ya tienen una base de testeo unitario automatizado. Si estás buscando estudiar el tema en profundidad, te recomendamos el siguiente [apunte de Testing](https://docs.google.com/document/d/1zj-H_qPbUDvWsWhV2YLaPsnrI0MIkCuoeK_ilzSnxVI/edit?usp=sharing).
 
 <br/>
 
@@ -81,7 +81,7 @@ Es importante que no haya demasiados detalles de implementación en la descripci
 
 ### Intention revealing - parte 1
 
-Queremos expresar lo más claramente posible la intención del describe: qué clase de equivalencia está testeando. Por eso comenzamos escribiendo:
+Queremos expresar lo más claramente posible **qué clase de equivalencia está testeando el describe**. Por eso comenzamos escribiendo:
 
 ```java
 describe("Tests Cobro Siniestro") {
