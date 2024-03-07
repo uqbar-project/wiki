@@ -20,7 +20,7 @@ En este diagrama vemos el proceso de desarrollo de un programa Java desde que lo
 ![proceso de JDK](/img/wiki/JDKvsJRE.png)
 <br/>
 
-Eclipse integra todas estas herramientas de manera que cada vez que grabás un archivo Java realiza la compilación para generar el `.class` y ejecutarlo desde el mismo entorno. Por eso Eclipse es un IDE, o _Integrated Development Environment_.
+Tu IDE integra todas estas herramientas de manera que cada vez que grabás un archivo Java realiza la compilación para generar el `.class` y ejecutarlo desde el mismo entorno. Por eso recordemos que un IDE es un _Integrated Development Environment_.
 
 ## Desarrollo en Kotlin/JVM
 
