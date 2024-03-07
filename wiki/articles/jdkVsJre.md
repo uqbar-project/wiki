@@ -10,7 +10,7 @@ Cuando nos piden "instalar Java" (a secas) en nuestra máquina, es importante te
 - **JRE** o _Java Runtime Environment_: un conjunto de herramientas que permite ejecutar código compilado en Java. El _environment_ o ambiente donde viven los objetos se implementa con la JVM (_Java Virtual Machine_).
 - **JDK** o _Java Development Kit_: incluye al JRE y además le agrega herramientas propias para desarrollar en Java: el compilador (`javac`), el generador de documentación html para las clases (`javadoc`), el debugger (`jdb`), entre otros.
 
-Para tener el listado completo de las herramientas que trae OpenJDK, recomendamos ingresar a [esta página](https://openjdk.java.net/tools/index.html).
+Para tener el listado completo de las herramientas que trae OpenJDK (una de las tantas variantes), recomendamos ingresar a [esta página](https://openjdk.java.net/tools/index.html).
 
 ## Arquitectura general del entorno Java
 
