@@ -52,25 +52,24 @@ Copiate [este archivo](./algo2.build.yml) en la siguiente estructura que **hay q
 
 ### Qué pasa entonces
 
-A partir de aquí, cada vez que:
+A partir de aquí, cada vez que
 
-* Hagas un push en las branches "main" o "master"
-* Crees un PR que quiera mergear a "main" o "master"
-* Hagas un push en las branches asociadas a uno de esos PR (mientras se encuentre abierto).
+* hagas un push en las branches "main" o "master"
+* crees un PR que quiera mergear a "main" o "master" o hagas un push a esa rama
 
-En esas situaciones, [Github Actions](https://docs.github.com/es/actions/learn-github-actions/understanding-github-actions) como servidor de integración continua hará lo siguiente de forma automática:
+[Github Actions](https://docs.github.com/es/actions/learn-github-actions/understanding-github-actions) automáticamente hará lo siguiente:
 
 - clonará tu repositorio
 - lo compilará (_build_) en Kotlin mediante el script de Gradle
 - ejecutará los tests
 - en caso de error, mandará un mail avisando que el build falló (por el momento solo al autor del commit/PR)
   - si anduvo ok, por defecto no recibirás ninguna notificación
-- si es un push directo, actualizará la badge de cobertura de JaCoCo en `.github/badges/jacoco.svg`
-- sí, en cambio, es un evento relacionado con un Pull Request no actualizará la badge, pero comentará en dicho PR con la cobertura actual luego de aplicar los cambios sugeridos.
-- Finalmente, subirá a la descripción de esta instancia del action un "artefacto" con un reporte de cobertura generado por JaCoCo en HTML.
-  - Los artefactos son archivos que github permite almacenar, junto a logs, junto a un intento de build durante un periodo determinado de tiempo (actualmente un máximo de 90 días, tras lo cual son eliminados)
+- si es un push directo a la rama principal, actualizará la badge de cobertura de JaCoCo en `.github/badges/jacoco.svg`
+- si es un pull request comentará la cobertura actual luego de aplicar los cambios sugeridos (lo vas a ver en la página del PR mismo)
+- finalmente, subirá a la descripción de esta instancia del action un "artefacto" con un reporte de cobertura generado por JaCoCo en HTML
+  - los artefactos son archivos que github permite almacenar, junto a logs, junto a un intento de build durante un periodo determinado de tiempo (actualmente un máximo de 90 días, tras lo cual son eliminados)
 
-Todo esto es muy útil, ya que al automatizarlo no tendremos que acordarnos de hacerlo. Queda además registrado si cada commit pasa o no, lo cual nos ayuda a encontrar donde se ubica el código donde se originó el error.
+La principal ventaja: al automatizarlo no tendremos que acordarnos de hacerlo. Queda además registrado si cada commit pasa o no, lo cual nos ayuda a encontrar dónde se originó un error en el código.
 
 ### Agregando el Badge de Build al README
 
