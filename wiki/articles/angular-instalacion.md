@@ -33,15 +33,12 @@ Los plugins del Visual Studio Code que te recomendamos al 2023 son los que ya in
 
 ### Necesarios ###
 
-- **Path Intellisense (Christian Kohler)**: autocompletado para archivos de tu file system
-- **Auto Import (steoates)**: ayuda y autocompletado para importar componentes de JS
-- **Angular Files (Alexander Ivanichev)**: agrega un menú contextual para crear elementos de Angular
-- **Angular Snippets (Version 16) (John Papa)**: los _snippets_ permiten generar código para servicios y componentes en forma rápida
-- **JSON to TS (MariusAlchimavicius)**: te construye una interfaz de TS en base a la información de un JSON
 - **Angular Language Service (Angular)**: autocompletado dentro del template html
-- **Material Icon Theme (Philipp Kief)**
-- **Git Lens (GitKraken)**, para ver el historial de Git integrado con tu Visual Studio Code
+- **Angular Snippets (Version 16) (John Papa)**: los _snippets_ permiten generar código para servicios y componentes en forma rápida
 - **ESLint (Microsoft)**: para disparar el linter de la sintaxis de TS
+- **Git Lens (GitKraken)**, para ver el historial de Git integrado con tu Visual Studio Code
+- **Material Icon Theme (Philipp Kief)**
+- **Pretty TypeScript Errors**: mejora tu experiencia con los errores de Typescript
 
 Si tenés instalada la extensión **Prettier - Code formatter (Prettier)** te recomendamos desinstalarla y reemplazarla por **Prettier ESLint (Rebecca Vest)**: es el plugin que vamos a utilizar para aplicar el formato y ejecutar el proceso linter con la sintaxis de la cursada, que define:
 
@@ -56,8 +53,6 @@ Más abajo te indicamos los dos archivos que definen esta configuración: `.esli
 
 - **Import Cost (Wix)**: permite calcular cuántos KB pesa cada import
 - **Angular2-Switcher (infinity1207)**: agrega shortcuts para navegar entre .ts, .css, .html
-- **Angular2 Inline (Nate Wallace)**: syntax highlighting y autocompletado de código para componentes Angular inline (que tienen embebido html y css)
-- **REST Client (Huachao Mao)**: para hacer pedidos http desde Visual Studio Code directamente (podés usar POSTMAN, Insomnia o Swagger + navegador también)
 
 ## Alternativa a Visual Studio Code
 
@@ -67,13 +62,10 @@ Otra opción es utilizar [Web Storm](https://www.jetbrains.com/webstorm/) (de la
 
 Typescript es el lenguaje de programación base para Angular. Tranquilo, es muy similar a los lenguajes orientados a objetos en los que ya trabajaste. Para iniciarte o para hacer consultas te dejamos estos links:
 
-- [Documentación oficial de Typescript](https://www.typescriptlang.org/docs/home.html): tiene una intro de 5 minutos, otros tutoriales cortos y el Handbook para sacarse dudas
+- [Documentación oficial de Typescript](https://www.typescriptlang.org/docs/): tiene una intro de 5 minutos, otros tutoriales cortos y el Handbook para sacarse dudas
 - [Aprendiendo Typescript en 30 minutos](https://tutorialzine.com/2016/07/learn-typescript-in-30-minutes): muy buen tutorial para comenzar explicando los conceptos más salientes
-- [Tutorial de Typescript en castellano y PDF](https://www.gitbook.com/download/pdf/book/khru/typescript): material de consulta en castellano para los interesados
 - El [cheatsheet](https://rmolinamir.github.io/typescript-cheatsheet/) o guía rápida para tener a mano mientras programan
-- Y como typescript es un superconjunto de javascript, siempre conviene tener a mano las [funcionalidades de ES6](http://es6-features.org)
-- **Tips**
-  - [Typing destructured objects parameters](https://mariusschulz.com/blog/typing-destructured-object-parameters-in-typescript)
+- **Tips**: [Typing destructured objects parameters](https://mariusschulz.com/blog/typing-destructured-object-parameters-in-typescript)
 
 # Crear un proyecto Angular desde cero
 
@@ -82,7 +74,7 @@ En la consola Git Bash o bien desde una terminal de Linux hacemos
 ```bash
 ng new nombre-de-tu-app
 cd nombre-de-tu-app
-ng serve -open  # o bien, la versión corta es ng s -o
+npm start
 ```
 
 ## Correr los tests de un proyecto
@@ -90,7 +82,7 @@ ng serve -open  # o bien, la versión corta es ng s -o
 Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y ejecutás desde la consola
 
 ```bash
-ng test
+npm test
 ```
 
 ## Archivo de configuración para Visual Studio Code
@@ -121,14 +113,14 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
       "editor.formatOnSaveMode": "file", // required to format on save
     },
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": "explicit"
     }
 }
 ```
 
 ## Cambios al package.json
 
-Dentro del archivo `package.json` del raíz de tu proyecto debés tener estos scripts:
+Dentro del archivo `package.json` del raíz de tu proyecto debés tener estos scripts (**los últimos 4 son los que agregamos**):
 
 ```js
   "scripts": {
@@ -242,7 +234,7 @@ El linter es el proceso que genera advertencias o errores en base a la sintaxis 
       "never"
     ],
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": ["off"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-var-requires": "off"
   }
 }
@@ -266,17 +258,17 @@ Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la
 
 ```js
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/eg-conversor-angular'),
+      dir: require('path').join(__dirname, './coverage/XXXXXX'), // <-- reemplazar XXXXXX por nombre del proyecto
       subdir: '.',
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }, // <-- agregar una coma al final
-        { type: 'json-summary' }  // <-- agregar esta línea
+        { type: 'lcov' }   // <-- agregar esta línea
       ]
     },
 ```
 
-> Si no tenés un archivo `karma.conf.js` lo podés generar desde el Angular CLI: `ng generate config karma`
+> Si no tenés un archivo `karma.conf.js` lo podés generar desde el Angular CLI: `ng generate config karma`.
 
 # Otros archivos útiles
 
@@ -286,16 +278,8 @@ En la carpeta raíz creá los siguientes archivos
 
 ```js
 {
-    "tagname-lowercase": false,
-    "attr-lowercase": false,
-    "attr-value-double-quotes": true,
-    "doctype-first": false,
-    "tag-pair": true,
-    "spec-char-escape": true,
-    "id-unique": true,
-    "src-not-empty": true,
-    "attr-no-duplication": true,
-    "title-require": true
+  "tagname-lowercase": false,
+  "attr-lowercase": false
 }
 ```
 
@@ -311,17 +295,7 @@ En la carpeta raíz creá los siguientes archivos
 }
 ```
 
-## Ajustes para el % de cobertura
-
-Para tener información más precisa sobre el porcentaje de cobertura de tus tests, en el archivo `app.component.spec.ts` de tu directorio `src/app` tenés que agregar este import:
-
-```ts
-import './app.module'
-```
-
 ## Ejemplo de un archivo para Github Actions
-
-Para agregar el coverage tenés que reemplazar `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
 Te dejamos [este archivo de ejemplo](./build_angular.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
 
