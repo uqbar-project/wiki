@@ -263,7 +263,7 @@ Al archivo `karma.conf.js` que está en el directorio raíz hay que agregarle la
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }, // <-- agregar una coma al final
-        { type: 'lcov' }   // <-- agregar esta línea
+        { type: 'lcov' }          // <-- agregar esta línea
       ]
     },
 ```
