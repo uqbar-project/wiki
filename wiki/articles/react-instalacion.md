@@ -20,7 +20,7 @@ Si ya estuviste trabajando con Angular estos pasos no son necesarios, pero convi
 
 # Plugins Visual Studio Code
 
-Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos React (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA), la recomendación es partir con un profile totalmente vacío. También te dejamos [este tutorial muy piola (en inglés)](https://www.youtube.com/watch?v=QjvvqR9KyVo)). Las extensiones que recomendamos para trabajar son:
+Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos React (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA), la recomendación es partir con un profile totalmente vacío. También te dejamos [este tutorial muy piola - en inglés](https://www.youtube.com/watch?v=QjvvqR9KyVo)). Las extensiones que recomendamos para trabajar son:
 
 - **ESLint - Microsoft**: integra las reglas definidas en el linter con el IDE
 - **Prettier - ESLint - Rebecca Vest**: formatea el código según la configuración de Prettier
@@ -32,7 +32,6 @@ Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo as
 Opcionalmente podés instalarte
 
 - **Import Cost - Wix**: te dice cuánto pesan (en KB) los imports de cada archivo que hacés en tus componentes
-
 
 # Crear un proyecto React de cero
 

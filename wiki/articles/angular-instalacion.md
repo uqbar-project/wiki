@@ -29,7 +29,9 @@ npm install -g @angular/cli
 
 - El editor de texto que vamos a soportar en la cursada es [**Visual Studio Code**](https://code.visualstudio.com/) (hay [una versión portable](https://sourceforge.net/projects/vscode-portable/) si estás en una máquina sin privilegios de administrador).
 
-Los plugins del Visual Studio Code que te recomendamos al 2023 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
+Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos Angular (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA), la recomendación es partir con un profile totalmente vacío. También te dejamos [este tutorial muy piola - en inglés](https://www.youtube.com/watch?v=QjvvqR9KyVo)). Las extensiones que recomendamos para trabajar son:
+
+Los plugins del Visual Studio Code que te recomendamos al 2024 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
 
 ### Necesarios ###
 
@@ -39,15 +41,11 @@ Los plugins del Visual Studio Code que te recomendamos al 2023 son los que ya in
 - **Git Lens (GitKraken)**, para ver el historial de Git integrado con tu Visual Studio Code
 - **Material Icon Theme (Philipp Kief)**
 - **Pretty TypeScript Errors**: mejora tu experiencia con los errores de Typescript
-
-Si tenés instalada la extensión **Prettier - Code formatter (Prettier)** te recomendamos desinstalarla y reemplazarla por **Prettier ESLint (Rebecca Vest)**: es el plugin que vamos a utilizar para aplicar el formato y ejecutar el proceso linter con la sintaxis de la cursada, que define:
-
-- no usar puntos y coma al final de cada sentencia
-- utilizar comillas simples para strings, un estándar en el mundo Javascript/Typescript
-- evitar imports innecesarios o definiciones de variables que luego no se usen
-- etc.
-
-Más abajo te indicamos los dos archivos que definen esta configuración: `.eslintrc.json` y `.prettierrc.json`.
+- **Prettier ESLint (Rebecca Vest)**: es el plugin que vamos a utilizar para aplicar el formato y ejecutar el proceso linter con la sintaxis de la cursada, que define
+  - no usar puntos y coma al final de cada sentencia
+  - utilizar comillas simples para strings, un estándar en el mundo Javascript/Typescript
+  - evitar imports innecesarios o definiciones de variables que luego no se usen
+  - etc. Más abajo te indicamos los dos archivos que definen esta configuración: `.eslintrc.json` y `.prettierrc.json`.
 
 ### Opcionales ###
 
