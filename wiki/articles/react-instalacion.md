@@ -163,13 +163,6 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 
 ## Configuración para el testeo unitario de frontend
 
-Hay que definir un archivo `setupTests.ts` en el raíz de nuestro proyecto, que tenga el siguiente contenido:
-
-```ts
-import "@testing-library/jest-dom/vitest"
-```
-
-
 El archivo `vite.config.ts` contiene la configuración que necesitamos para ejecutar los tests, es importante tener un reporter que sea válido para la herramienta de cobertura que utilices (puede ser `json-summary` o `lcov`):
 
 ```js
@@ -191,7 +184,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ["./setupTests.ts"],
     coverage: {
       reporter: ['lcov', 'json', 'html', 'json-summary'],
     },
