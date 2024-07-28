@@ -29,7 +29,7 @@ npm install -g @angular/cli
 
 - El editor de texto que vamos a soportar en la cursada es [**Visual Studio Code**](https://code.visualstudio.com/) (hay [una versión portable](https://sourceforge.net/projects/vscode-portable/) si estás en una máquina sin privilegios de administrador).
 
-Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos Angular (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA), la recomendación es partir con un profile totalmente vacío. También te dejamos [este tutorial muy piola - en inglés](https://www.youtube.com/watch?v=QjvvqR9KyVo)). Las extensiones que recomendamos para trabajar son:
+Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos Angular (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA), la recomendación es partir con un profile totalmente vacío. También te dejamos [este tutorial muy piola - en inglés](https://www.youtube.com/watch?v=QjvvqR9KyVo) y [la documentación oficial](https://code.visualstudio.com/docs/editor/profiles)). Las extensiones que recomendamos para trabajar son:
 
 Los plugins del Visual Studio Code que te recomendamos al 2024 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
 
