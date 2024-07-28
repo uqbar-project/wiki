@@ -62,8 +62,8 @@ Una vez creado el proyecto, te recomendamos que agregues estas configuraciones.
 
 Lamentablemente, [versiones de Typescript 5.4 ó posterior tienen problemas con la extensión JS/TS de VSCode](https://github.com/yarnpkg/berry/issues/6270) así que nuestra recomendación es que fijes la versión de Typescript en 5.3, cambiando la versión en el archivo `package.json` a
 
-```json
-"typescript": "~5.3.1",
+```ts
+  "typescript": "~5.3.1",
 ```
 
 > Este paso hay que hacerlo antes de ejecutar `npm install` o de lo contrario te conviene borrar la carpeta `node_modules` y el archivo `package-lock.json` y volver a ejecutar el comando
