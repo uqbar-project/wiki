@@ -33,7 +33,7 @@ Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo as
 
 ### Instalación 
 
-> **Opción 1**: podés importar [este archivo que trae todas las extensiones para Angular](./Angular.code-profile)
+> **Opción 1**: podés importar [este archivo que trae todas las extensiones para Angular](https://github.com/algo3-unsam/proyecto-base-tp/blob/master/Angular.code-profile)
 
 O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2024 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
 
