@@ -29,28 +29,31 @@ npm install -g @angular/cli
 
 - El editor de texto que vamos a soportar en la cursada es [**Visual Studio Code**](https://code.visualstudio.com/) (hay [una versión portable](https://sourceforge.net/projects/vscode-portable/) si estás en una máquina sin privilegios de administrador).
 
-Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos Angular (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA), la recomendación es partir con un profile totalmente vacío. También te dejamos [este tutorial muy piola - en inglés](https://www.youtube.com/watch?v=QjvvqR9KyVo) y [la documentación oficial](https://code.visualstudio.com/docs/editor/profiles)). Las extensiones que recomendamos para trabajar son:
+Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos Angular (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA). También te dejamos [este tutorial muy piola - en inglés](https://www.youtube.com/watch?v=QjvvqR9KyVo) y [la documentación oficial](https://code.visualstudio.com/docs/editor/profiles)).
 
-Los plugins del Visual Studio Code que te recomendamos al 2024 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
+### Instalación 
+
+> **Opción 1**: podés importar [este archivo que trae todas las extensiones para Angular](./Angular.code-profile)
+
+O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2024 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
 
 ### Necesarios ###
 
 - **Angular Language Service (Angular)**: autocompletado dentro del template html
-- **Angular Snippets (Version 16) (John Papa)**: los _snippets_ permiten generar código para servicios y componentes en forma rápida
+- **Angular Snippets (Version 18) (John Papa)**: los _snippets_ permiten generar código para servicios y componentes en forma rápida
 - **ESLint (Microsoft)**: para disparar el linter de la sintaxis de TS
 - **Git Lens (GitKraken)**, para ver el historial de Git integrado con tu Visual Studio Code
-- **Material Icon Theme (Philipp Kief)**
-- **Pretty TypeScript Errors**: mejora tu experiencia con los errores de Typescript
 - **Prettier ESLint (Rebecca Vest)**: es el plugin que vamos a utilizar para aplicar el formato y ejecutar el proceso linter con la sintaxis de la cursada, que define
   - no usar puntos y coma al final de cada sentencia
   - utilizar comillas simples para strings, un estándar en el mundo Javascript/Typescript
   - evitar imports innecesarios o definiciones de variables que luego no se usen
   - etc. Más abajo te indicamos los dos archivos que definen esta configuración: `.eslintrc.json` y `.prettierrc.json`.
+- **Pretty TypeScript Errors**: mejora tu experiencia con los errores de Typescript
 
 ### Opcionales ###
 
 - **Import Cost (Wix)**: permite calcular cuántos KB pesa cada import
-- **Angular2-Switcher (infinity1207)**: agrega shortcuts para navegar entre .ts, .css, .html
+- **Material Icon Theme (Philipp Kief)**
 
 ## Alternativa a Visual Studio Code
 
