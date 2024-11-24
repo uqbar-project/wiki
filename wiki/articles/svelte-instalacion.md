@@ -5,7 +5,7 @@ featured: true
 categories: [web, svelte, ui, configuracion, entorno, client-side]
 ---
 
-![logo svelte](/img/languages/svelte.png)
+<img src="/img/languages/svelte.png" alt="logo svelte" height="auto" width="120px">
 
 # Entorno
 
@@ -115,3 +115,118 @@ Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y 
 ```bash
 npm test
 ```
+
+## Archivo de configuración para Visual Studio Code
+
+Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un archivo `settings.json` que tenga este contenido:
+
+```js
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2
+}
+```
+
+## Cambios al package.json
+
+Dentro del archivo `package.json` del raíz de tu proyecto hay que agregar `lint:fix` (para poder corregir errores simples del linter) y `test:ci` (para que al ejecutar el build de Github Actions tengas la cobertura):
+
+```js
+  "scripts": {
+		"lint:fix": "eslint . && prettier --write .",
+		"test:unit": ...,
+		"test:ci": "npm run test:unit -- --run --coverage"
+  },
+```
+
+## Dependencias adicionales
+
+Ejecutá este comando para agregar las siguientes dependencias:
+
+```bash
+yarn add @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @types/eslint @vitest/coverage-v8 jsdom
+```
+
+## Archivo .nvmrc
+
+Tener un archivo `.nvmrc` es conveniente si todo el equipo trabaja con NVM (el versionador de Node). El contenido especifica qué versión de Node vamos a utilizar:
+
+```bash
+22.9.0
+```
+
+## Ejemplo de .gitignore
+
+Agregamos estas líneas al archivo `.gitognore`:
+
+```bash
+vite.config.ts.timestamp-*
+# ... empezamos acá ...
+
+# Coverage
+coverage
+
+# VSCode
+.history
+```
+
+## Configuración de prettier
+
+En el archivo `.prettierrc` vamos a configurar el tabSize a 2 posiciones y comillas simples, además de eliminar punto y coma:
+
+```js
+{
+	"useTabs": true,
+	"singleQuote": true,
+  // acá ubicamos estas dos líneas
+	"tabWidth": 2,
+	"semi": false,
+```
+
+Cada vez que grabamos un archivo se ejecuta automáticamente el proceso que corrige los errores de linter. Para activarlo manualmente debemos hacer
+
+```bash
+npm run lint:fix
+```
+## Configuración del archivo de test
+
+El archivo `vitest-setup.js` tiene que incorporar el plugin de testing de Svelte. Te dejamos el archivo completo:
+
+```ts
+import { defineConfig } from 'vitest/config'
+import { svelteTesting } from '@testing-library/svelte/vite'
+import { sveltekit } from '@sveltejs/kit/vite'
+
+export default defineConfig({
+	plugins: [sveltekit(), svelteTesting()],
+
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}'],
+		globals: true,
+		environment: 'jsdom',
+		setupFiles: ['./vitest-setup.js'],
+		coverage: {
+			include: ['src']
+		}
+	}
+})
+```
+
+## Ejemplo de un archivo para Github Actions
+
+Te dejamos [este archivo de ejemplo](./build_svelte.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
+
+
+## Cómo configurar los badges en tu README
+
+- Para agregar el badge del build de Github Actions, seguí [estas instrucciones](https://docs.github.com/es/actions/managing-workflow-runs/adding-a-workflow-status-badge)
+
+- Para agregar el badge del porcentaje de cobertura, tenés que agregar la imagen que genera el mismo build de Github Actions (reemplazando `XXXXXXX` por el nombre de la carpeta donde está tu proyecto):
+
+```md
+![Coverage](./badges/XXXXXXX/coverage.svg)
+```
+
