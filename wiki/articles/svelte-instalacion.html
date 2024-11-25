@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Instalacion de Entorno Svelte</title>
+  <meta property="og:title" content="Instalacion de Entorno Svelte" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/svelte-instalacion.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/svelte-instalacion.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2024-11-24T23:29:44-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="web,svelte,ui,configuracion,entorno,client-side," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Instalacion de Entorno Svelte</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Entorno</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Editor de Texto</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Visual Studio Code</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">3</span> <span class="toctext">Aprendiendo Typescript</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">4</span> <span class="toctext">Crear un proyecto Svelte desde cero</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-5-1"><span class="tocnumber">4.1</span> <span class="toctext">Levantar la app</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#tocAnchor-1-5-2"><span class="tocnumber">4.2</span> <span class="toctext">Correr los tests de un proyecto</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#tocAnchor-1-5-3"><span class="tocnumber">4.3</span> <span class="toctext">Archivo de configuración para Visual Studio Code</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#tocAnchor-1-5-4"><span class="tocnumber">4.4</span> <span class="toctext">Cambios al package.json</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#tocAnchor-1-5-5"><span class="tocnumber">4.5</span> <span class="toctext">Dependencias adicionales</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-11">
+                  <a href="#tocAnchor-1-5-6"><span class="tocnumber">4.6</span> <span class="toctext">Archivo .nvmrc</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#tocAnchor-1-5-7"><span class="tocnumber">4.7</span> <span class="toctext">Ejemplo de .gitignore</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-13">
+                  <a href="#tocAnchor-1-5-8"><span class="tocnumber">4.8</span> <span class="toctext">Configuración de prettier</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-14">
+                  <a href="#tocAnchor-1-5-9"><span class="tocnumber">4.9</span> <span class="toctext">Configuración del archivo de test</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-15">
+                  <a href="#tocAnchor-1-5-10"><span class="tocnumber">4.10</span> <span class="toctext">Ejemplo de un archivo para Github Actions</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-16">
+                  <a href="#tocAnchor-1-5-11"><span class="tocnumber">4.11</span> <span class="toctext">Cómo configurar los badges en tu README</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>
+  <img src="/img/languages/svelte.png" alt="logo svelte" height="auto" width="120px" />
+</p>
+
+<h1 id="tocAnchor-1-1">Entorno</h1>
+
+<p>Es necesario que instales las siguientes herramientas, en este orden:</p>
+
+<ul>
+  <li>Si estás en entorno Windows te recomendamos instalarte <a href="https://gitforwindows.org/">Git Bash</a></li>
+  <li>Seguimos con <a href="https://nodejs.org/en/">NodeJS</a>.
+    <ul>
+      <li>Si estás en entorno Linux/Mac recomendamos que descargues Node desde <a href="https://github.com/nvm-sh/nvm">nvm (Node Version Manager)</a> y luego instales esta versión: <code class="language-plaintext highlighter-rouge">nvm install 22.9.0</code></li>
+      <li>Si estás en Windows instalate la versión actual</li>
+    </ul>
+  </li>
+  <li>Luego <a href="https://www.npmjs.com/">NPM (Node Package Manager)</a>, con el que vamos a hacer los builds de nuestras aplicaciones.
+    <ul>
+      <li>Para familiarizarte con el manejo de dependencias, te dejamos <a href="npm-dependencias.html">este artículo</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="tocAnchor-1-2">Editor de Texto</h1>
+
+<h2 id="tocAnchor-1-2-1">Visual Studio Code</h2>
+
+<ul>
+  <li>El editor de texto que vamos a soportar en la cursada es <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a> (hay <a href="https://sourceforge.net/projects/vscode-portable/">una versión portable</a> si estás en una máquina sin privilegios de administrador).</li>
+</ul>
+
+<p>Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos Svelte (podés ver <a href="https://www.youtube.com/watch?v=_2F2Zt-_tUA">cómo se trabaja con perfiles en VSCode en este video</a>. También te dejamos <a href="https://www.youtube.com/watch?v=QjvvqR9KyVo">este tutorial muy piola - en inglés</a> y <a href="https://code.visualstudio.com/docs/editor/profiles">la documentación oficial</a>).</p>
+
+<h3 id="instalación">Instalación</h3>
+
+<blockquote>
+  <p><strong>Opción 1</strong>: podés importar <a href="https://github.com/algo3-unsam/proyecto-base-tp/blob/master/Svelte.code-profile">este archivo que trae todas las extensiones para Svelte</a></p>
+</blockquote>
+
+<p>O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2024 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:</p>
+
+<h3 id="necesarios">Necesarios</h3>
+
+<ul>
+  <li><strong>Auto Rename Tag (Jun Han)</strong>: que permite acomodar la apertura y cierre de los tags de HTML</li>
+  <li><strong>ESLint (Microsoft)</strong>: para disparar el linter de la sintaxis de TS</li>
+  <li><strong>Github Actions (Github)</strong>: te ayuda con el archivo de configuración de CI para Github Actions</li>
+  <li><strong>GitLens - Git Supercharged (GitKraken)</strong>: utilidades para el trabajo con Git</li>
+  <li><strong>Playwright Runner by Koushik (Koushik Chatterjee)</strong>: ayuda a ejecutar tests e2e de Playwright</li>
+  <li><strong>Playwright Snippets (Nitay Neeman)</strong>: snippets de código que expanden tests e2e de Playwright</li>
+  <li><strong>Playwright Test for VSCode (Microsoft)</strong>: plugin para ejecutar tests e2e de Playwright</li>
+  <li><strong>Svelte for VS Code (Svelte)</strong>: plugin para soportar Svelte en VSCode</li>
+  <li><strong>Vitest (Vitest)</strong>: plugin para poder ejecutar los tests de frontend en el VSCode</li>
+</ul>
+
+<h3 id="opcionales">Opcionales</h3>
+
+<ul>
+  <li><strong>Import Cost (Wix)</strong>: permite calcular cuántos KB pesa cada import</li>
+  <li><strong>Material Icon Theme (Philipp Kief)</strong></li>
+</ul>
+
+<h1 id="tocAnchor-1-4">Aprendiendo Typescript</h1>
+
+<p>Typescript es el lenguaje de programación base en el que vamos a trabajar. Tranquilo, es muy similar a los lenguajes orientados a objetos en los que ya trabajaste. Para iniciarte o para hacer consultas te dejamos estos links:</p>
+
+<ul>
+  <li><a href="https://www.typescriptlang.org/docs/">Documentación oficial de Typescript</a>: tiene una intro de 5 minutos, otros tutoriales cortos y el Handbook para sacarse dudas</li>
+  <li><a href="https://tutorialzine.com/2016/07/learn-typescript-in-30-minutes">Aprendiendo Typescript en 30 minutos</a>: muy buen tutorial para comenzar explicando los conceptos más salientes</li>
+  <li>El <a href="https://rmolinamir.github.io/typescript-cheatsheet/">cheatsheet</a> o guía rápida para tener a mano mientras programan</li>
+  <li><strong>Tips</strong>: <a href="https://mariusschulz.com/blog/typing-destructured-object-parameters-in-typescript">Typing destructured objects parameters</a></li>
+</ul>
+
+<h1 id="tocAnchor-1-5">Crear un proyecto Svelte desde cero</h1>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npx sv create lala
+┌  Welcome to the Svelte CLI! <span class="o">(</span>v0.6.5<span class="o">)</span>
+│
+◇  Which template would you like?
+│  SvelteKit minimal
+│
+◇  Add <span class="nb">type </span>checking with Typescript?
+│  Yes, using Typescript syntax
+│
+◆  Project created
+│
+◆  What would you like to add to your project? <span class="o">(</span>use arrow keys / space bar<span class="o">)</span>
+│  ◼ prettier
+│  ◼ eslint
+│  ◼ vitest
+│  ◼ playwright <span class="o">(</span>browser testing - https://playwright.dev<span class="o">)</span>
+│  ◻ tailwindcss
+│  ◻ drizzle
+│  ◻ lucia
+│  ◻ mdsvex
+│  ◻ paraglide
+│  ◻ storybook
+└
+◇  Which package manager <span class="k">do </span>you want to install dependencies with?
+│  yarn
+│
+◆  Successfully setup add-ons
+│
+◇  Installing dependencies with yarn...
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Repasamos las opciones</p>
+<ul>
+  <li>Sveltekit minimal como biblioteca</li>
+  <li>usar Typescript (sin JSDoc)</li>
+  <li>agregamos prettier, eslint, vitest y playwright. Vitest es para hacer tests de frontend y Playwright para tests e2e</li>
+  <li>yarn como manejador de dependencias (es un poco más rápido que npm)</li>
+</ul>
+
+<h2 id="tocAnchor-1-5-1">Levantar la app</h2>
+
+<p>Para levantar la aplicación Svelte ejecutás</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm run dev
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Luego en un navegador pedís la siguiente url: <code class="language-plaintext highlighter-rouge">http://localhost:5173</code>.</p>
+
+<h2 id="tocAnchor-1-5-2">Correr los tests de un proyecto</h2>
+
+<p>Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y ejecutás desde la consola</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm <span class="nb">test</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-3">Archivo de configuración para Visual Studio Code</h2>
+
+<p>Te recomendamos que dentro del proyecto crees una carpeta <code class="language-plaintext highlighter-rouge">.vscode</code> y dentro un archivo <code class="language-plaintext highlighter-rouge">settings.json</code> que tenga este contenido:</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">{</span>
+	<span class="s2">"editor.codeActionsOnSave"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"source.fixAll.eslint"</span><span class="p">:</span> <span class="s2">"explicit"</span>
+	<span class="p">},</span>
+	<span class="s2">"editor.formatOnSave"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+	<span class="s2">"editor.tabSize"</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-4">Cambios al package.json</h2>
+
+<p>Dentro del archivo <code class="language-plaintext highlighter-rouge">package.json</code> del raíz de tu proyecto hay que agregar <code class="language-plaintext highlighter-rouge">lint:fix</code> (para poder corregir errores simples del linter) y <code class="language-plaintext highlighter-rouge">test:ci</code> (para que al ejecutar el build de Github Actions tengas la cobertura):</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>  <span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"lint:fix"</span><span class="p">:</span> <span class="s2">"eslint . &amp;&amp; prettier --write ."</span><span class="p">,</span>
+		<span class="s2">"test:unit"</span><span class="p">:</span> <span class="p">...,</span>
+		<span class="s2">"test:ci"</span><span class="p">:</span> <span class="s2">"npm run test:unit -- --run --coverage"</span>
+  <span class="p">},</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-5">Dependencias adicionales</h2>
+
+<p>Ejecutá este comando para agregar las siguientes dependencias:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>yarn add @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @types/eslint @vitest/coverage-v8 jsdom
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-6">Archivo .nvmrc</h2>
+
+<p>Tener un archivo <code class="language-plaintext highlighter-rouge">.nvmrc</code> es conveniente si todo el equipo trabaja con NVM (el versionador de Node). El contenido especifica qué versión de Node vamos a utilizar:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>22.9.0
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-7">Ejemplo de .gitignore</h2>
+
+<p>Agregamos estas líneas al archivo <code class="language-plaintext highlighter-rouge">.gitognore</code>:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>vite.config.ts.timestamp-<span class="k">*</span>
+<span class="c"># ... empezamos acá ...</span>
+
+<span class="c"># Coverage</span>
+coverage
+
+<span class="c"># VSCode</span>
+.history
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-8">Configuración de prettier</h2>
+
+<p>En el archivo <code class="language-plaintext highlighter-rouge">.prettierrc</code> vamos a configurar el tabSize a 2 posiciones y comillas simples, además de eliminar punto y coma:</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">{</span>
+	<span class="s2">"useTabs"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+	<span class="s2">"singleQuote"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="c1">// acá ubicamos estas dos líneas</span>
+	<span class="s2">"tabWidth"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+	<span class="s2">"semi"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Cada vez que grabamos un archivo se ejecuta automáticamente el proceso que corrige los errores de linter. Para activarlo manualmente debemos hacer</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm run lint:fix
+</code>
+    </pre>
+  </div>
+</div>
+<h2 id="tocAnchor-1-5-9">Configuración del archivo de test</h2>
+
+<p>El archivo <code class="language-plaintext highlighter-rouge">vitest-setup.js</code> tiene que incorporar el plugin de testing de Svelte. Te dejamos el archivo completo:</p>
+
+<div class="language-ts highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">import</span> <span class="p">{</span> <span class="nx">defineConfig</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'vitest/config'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">svelteTesting</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@testing-library/svelte/vite'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">sveltekit</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@sveltejs/kit/vite'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+	<span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">sveltekit</span><span class="p">(),</span> <span class="nx">svelteTesting</span><span class="p">()],</span>
+
+	<span class="na">test</span><span class="p">:</span> <span class="p">{</span>
+		<span class="na">include</span><span class="p">:</span> <span class="p">[</span><span class="s1">'src/**/*.{test,spec}.{js,ts}'</span><span class="p">],</span>
+		<span class="na">globals</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="na">environment</span><span class="p">:</span> <span class="s1">'jsdom'</span><span class="p">,</span>
+		<span class="na">setupFiles</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./vitest-setup.js'</span><span class="p">],</span>
+		<span class="na">coverage</span><span class="p">:</span> <span class="p">{</span>
+			<span class="na">include</span><span class="p">:</span> <span class="p">[</span><span class="s1">'src'</span><span class="p">]</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">})</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-10">Ejemplo de un archivo para Github Actions</h2>
+
+<p>Te dejamos <a href="./build_svelte.yml">este archivo de ejemplo</a> que tenés que guardar en <code class="language-plaintext highlighter-rouge">.github/workflows/build.yml</code>. Descargalo y reemplazá <code class="language-plaintext highlighter-rouge">XXXXXXXXX</code> por el nombre de la carpeta donde está tu proyecto.</p>
+
+<h2 id="tocAnchor-1-5-11">Cómo configurar los badges en tu README</h2>
+
+<ul>
+  <li>
+    <p>Para agregar el badge del build de Github Actions, seguí <a href="https://docs.github.com/es/actions/managing-workflow-runs/adding-a-workflow-status-badge">estas instrucciones</a></p>
+  </li>
+  <li>
+    <p>Para agregar el badge del porcentaje de cobertura, tenés que agregar la imagen que genera el mismo build de Github Actions (reemplazando <code class="language-plaintext highlighter-rouge">XXXXXXX</code> por el nombre de la carpeta donde está tu proyecto):</p>
+  </li>
+</ul>
+
+<div class="language-md highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">![</span><span class="nv">Coverage</span><span class="p">](</span><span class="sx">./badges/XXXXXXX/coverage.svg</span><span class="p">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/web" title="web">Web</a></li>
+            
+             <li><a href="/categories/svelte" title="svelte">Svelte</a></li>
+            
+             <li><a href="/categories/ui" title="ui">Ui</a></li>
+            
+             <li><a href="/categories/configuracion" title="configuracion">Configuracion</a></li>
+            
+             <li><a href="/categories/entorno" title="entorno">Entorno</a></li>
+            
+             <li><a href="/categories/client-side" title="client-side">Client-side</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on November 24, 2024 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>233</td>
+                                <td>1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>9cb9cdd9</td>
+                        <td>Sun Nov 24 18:06:07 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Completing Svelte -> pending build_svelte.yml</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>83adeeb3</td>
+                        <td>Sun Nov 24 14:16:38 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>First version of Svelte installation instructions</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2024 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>
