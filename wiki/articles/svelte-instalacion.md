@@ -30,7 +30,7 @@ Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo as
 
 > **Opción 1**: podés importar [este archivo que trae todas las extensiones para Svelte](https://github.com/algo3-unsam/proyecto-base-tp/blob/master/Svelte.code-profile)
 
-O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2024 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
+O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2025 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
 
 ### Necesarios ###
 
@@ -48,6 +48,8 @@ O si no, podés instalar las extensiones del Visual Studio Code manualmente. Par
 
 - **Import Cost (Wix)**: permite calcular cuántos KB pesa cada import
 - **Material Icon Theme (Philipp Kief)**
+- **Svelte snippets**: autocompletado de código para Svelte
+- **Svelte Dark**: tema oscuro de Svelte
 
 # Aprendiendo Typescript
 
@@ -73,7 +75,7 @@ npx sv create lala
 ◆  Project created
 │
 ◆  What would you like to add to your project? (use arrow keys / space bar)
-│  ◼ prettier
+│  ◻ prettier
 │  ◼ eslint
 │  ◼ vitest
 │  ◼ playwright (browser testing - https://playwright.dev)
@@ -123,10 +125,12 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 ```js
 {
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit"
+		"source.fixAll": "explicit"
 	},
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
 	"editor.formatOnSave": true,
-	"editor.tabSize": 2
+	"editor.tabSize": 2,
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "svelte"],
 }
 ```
 
@@ -136,10 +140,22 @@ Dentro del archivo `package.json` del raíz de tu proyecto hay que agregar `lint
 
 ```js
   "scripts": {
-		"lint:fix": "eslint . && prettier --write .",
+		"lint": "eslint src",
+		"lint:fix": "eslint src --fix",
 		"test:unit": ...,
-		"test:ci": "npm run test:unit -- --run --coverage"
+		"test:ci": "playwright test"
   },
+```
+
+## Cambios al archivo de configuración de Svelte
+
+Es conveniente hacer el siguiente cambio al archivo `svelte.config.js`:
+
+```ts
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	// agregamos `{ script: true } al preprocesador para tener acceso a los syntactic sugar de TS
+	preprocess: vitePreprocess({ script: true }),
 ```
 
 ## Dependencias adicionales
@@ -148,6 +164,12 @@ Ejecutá este comando para agregar las siguientes dependencias:
 
 ```bash
 yarn add @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @types/eslint @vitest/coverage-v8 jsdom
+```
+
+Para agregar dependencias de los tests e2e:
+
+```bash
+yarn add @playwright/test
 ```
 
 ## Archivo .nvmrc
@@ -160,7 +182,7 @@ Tener un archivo `.nvmrc` es conveniente si todo el equipo trabaja con NVM (el v
 
 ## Ejemplo de .gitignore
 
-Agregamos estas líneas al archivo `.gitognore`:
+Agregamos estas líneas al archivo `.gitignore`:
 
 ```bash
 vite.config.ts.timestamp-*
@@ -173,25 +195,14 @@ coverage
 .history
 ```
 
-## Configuración de prettier
-
-En el archivo `.prettierrc` vamos a configurar el tabSize a 2 posiciones y comillas simples, además de eliminar punto y coma:
-
-```js
-{
-	"useTabs": true,
-	"singleQuote": true,
-  // acá ubicamos estas dos líneas
-	"tabWidth": 2,
-	"semi": false,
-```
+## Ejecutar el linter
 
 Cada vez que grabamos un archivo se ejecuta automáticamente el proceso que corrige los errores de linter. Para activarlo manualmente debemos hacer
 
 ```bash
 npm run lint:fix
 ```
-## Configuración del archivo de test
+## Vitest: configuración del archivo
 
 El archivo `vitest-setup.js` tiene que incorporar el plugin de testing de Svelte. Te dejamos el archivo completo:
 
@@ -217,8 +228,7 @@ export default defineConfig({
 
 ## Ejemplo de un archivo para Github Actions
 
-Te dejamos [este archivo de ejemplo](./build_svelte.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto.
-
+Te dejamos [este archivo de ejemplo](./build_svelte.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto. Después veremos cómo agregar para que ejecuten los tests e2e.
 
 ## Cómo configurar los badges en tu README
 
