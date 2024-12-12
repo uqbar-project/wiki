@@ -284,7 +284,7 @@ export default [
 
 Indirectamente el plugin de Svelte para VSCode utiliza [**Prettier**](https://prettier.io/), un formateador de código. Agregamos entonces un archivo `.prettierrc` con el siguiente contenido:
 
-```json
+```js
 {
 	"useTabs": false,
 	"singleQuote": true,
