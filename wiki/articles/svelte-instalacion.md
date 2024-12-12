@@ -16,7 +16,12 @@ Es necesario que instales las siguientes herramientas, en este orden:
   - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales esta versión: `nvm install 22.9.0`
   - Si estás en Windows instalate la versión actual
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
-  - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)  
+  - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)
+	- Y como en realidad vamos a usar Yarn como manejador de dependencias, hay que instalarlo con npm
+
+```bash
+npm install --global yarn
+```
 
 # Editor de Texto
 
@@ -39,15 +44,13 @@ O si no, podés instalar las extensiones del Visual Studio Code manualmente. Par
 - **Github Actions (Github)**: te ayuda con el archivo de configuración de CI para Github Actions
 - **GitLens - Git Supercharged (GitKraken)**: utilidades para el trabajo con Git
 - **Playwright Runner by Koushik (Koushik Chatterjee)**: ayuda a ejecutar tests e2e de Playwright
-- **Playwright Snippets (Nitay Neeman)**: snippets de código que expanden tests e2e de Playwright
 - **Playwright Test for VSCode (Microsoft)**: plugin para ejecutar tests e2e de Playwright
 - **Svelte for VS Code (Svelte)**: plugin para soportar Svelte en VSCode
 - **Vitest (Vitest)**: plugin para poder ejecutar los tests de frontend en el VSCode
 
 ### Opcionales ###
 
-- **Import Cost (Wix)**: permite calcular cuántos KB pesa cada import
-- **Material Icon Theme (Philipp Kief)**
+- **Playwright Snippets (Nitay Neeman)**: snippets de código que expanden tests e2e de Playwright
 - **Svelte snippets**: autocompletado de código para Svelte
 - **Svelte Dark**: tema oscuro de Svelte
 
@@ -97,26 +100,8 @@ npx sv create lala
 Repasamos las opciones
 - Sveltekit minimal como biblioteca
 - usar Typescript (sin JSDoc)
-- agregamos prettier, eslint, vitest y playwright. Vitest es para hacer tests de frontend y Playwright para tests e2e
+- agregamos eslint, vitest y playwright. Vitest es para hacer tests de frontend y Playwright para tests e2e
 - yarn como manejador de dependencias (es un poco más rápido que npm)
-
-## Levantar la app
-
-Para levantar la aplicación Svelte ejecutás
-
-```bash
-npm run dev
-```
-
-Luego en un navegador pedís la siguiente url: `http://localhost:5173`.
-
-## Correr los tests de un proyecto
-
-Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y ejecutás desde la consola
-
-```bash
-npm test
-```
 
 ## Archivo de configuración para Visual Studio Code
 
@@ -125,13 +110,35 @@ Te recomendamos que dentro del proyecto crees una carpeta `.vscode` y dentro un 
 ```js
 {
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "explicit"
+		"source.fixAll.eslint": "explicit",
+		"source.removeUnusedImports": "explicit",
 	},
 	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
 	"editor.formatOnSave": true,
 	"editor.tabSize": 2,
-	"eslint.validate": ["javascript", "javascriptreact", "typescript", "svelte"],
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript"
+	],
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	}
 }
+```
+
+## Configuración para Typescript
+
+El archivo `tsconfig.json` define cómo vamos a utilizar el intérprete de Typescript. Es conveniente agregar al final estas líneas:
+
+```ts
+	"compilerOptions": {
+		...,
+		"module": "ES2015",
+		"lib": [
+			"ES2015"
+		],
+		"moduleResolution": ...
 ```
 
 ## Cambios al package.json
@@ -143,19 +150,32 @@ Dentro del archivo `package.json` del raíz de tu proyecto hay que agregar `lint
 		"lint": "eslint src",
 		"lint:fix": "eslint src --fix",
 		"test:unit": ...,
-		"test:ci": "playwright test"
+		"test:ci": "npm run test:unit -- --run --coverage"
   },
 ```
+
+Cuando agregues los tests e2e podés definir estos scripts:
+
+```js
+  "scripts": {
+		"test:e2e": "playwright test --ui",
+		"test": "npm run test:e2e",
+		"test:ci": "npm run test:unit -- --run --coverage && playwright test"
+	}
+```
+
+Con eso vas a correr tanto los test escritos con Vitest como los de Playwright (los veremos más adelante).
 
 ## Cambios al archivo de configuración de Svelte
 
 Es conveniente hacer el siguiente cambio al archivo `svelte.config.js`:
 
 ```ts
-/** @type {import('@sveltejs/kit').Config} */
+...
 const config = {
 	// agregamos `{ script: true } al preprocesador para tener acceso a los syntactic sugar de TS
 	preprocess: vitePreprocess({ script: true }),
+	//
 ```
 
 ## Dependencias adicionales
@@ -193,18 +213,110 @@ coverage
 
 # VSCode
 .history
+
+# Playwright
+test-results
+```
+
+## Configuración del linter
+
+Cada vez que grabamos un archivo se ejecuta automáticamente el proceso que analiza el código y diagnostica errores de sintaxis y oportunidades de mejora, proceso que se conoce como **Linter**. El archivo `eslint.config.js` debe tener el siguiente contenido:
+
+```js
+// eslint.config.cjs
+
+// import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import eslintPluginSvelte from 'eslint-plugin-svelte'
+import js from '@eslint/js'
+import svelteParser from 'svelte-eslint-parser'
+import tsEslint from 'typescript-eslint'
+import tsParser from '@typescript-eslint/parser'
+import globals from 'globals'
+
+export default [
+  js.configs.recommended,
+  ...tsEslint.configs.strict,
+  ...eslintPluginSvelte.configs['flat/recommended'],
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+    },
+    rules: {
+      quotes: [
+        'warn',
+        'single',
+        { avoidEscape: true, allowTemplateLiterals: true },
+      ],
+      semi: ['error', 'never'],
+      indent: ['warn', 2],
+      'no-extra-parens': 'warn',
+      'no-nested-ternary': 'error',
+      'linebreak-style': ['error', 'unix'],
+      'no-cond-assign': ['error', 'always'],
+      'no-console': 'error',
+      '@typescript-eslint/sort-type-constituents': 'error',
+    },
+  },
+  {
+    files: ['**/*.svelte'],
+    languageOptions: {
+      parser: svelteParser,
+      parserOptions: {
+        parser: tsParser,
+      },
+    },
+    rules: {
+      'svelte/no-target-blank': 'error',
+      'svelte/no-at-debug-tags': 'error',
+      'svelte/no-reactive-functions': 'error',
+      'svelte/no-reactive-literals': 'error',
+      '@/semi': ['error', 'never'],
+      '@/quotes': ['warn', 'single'],
+      '@/indent': ['warn', 2],
+    }
+  }
+]
+```
+
+## Configuración de prettier
+
+Indirectamente el plugin de Svelte para VSCode utiliza [**Prettier**](https://prettier.io/), un formateador de código. Agregamos entonces un archivo `.prettierrc` con el siguiente contenido:
+
+```json
+{
+	"useTabs": false,
+	"singleQuote": true,
+	"tabWidth": 2,
+	"semi": false,
+	"trailingComma": "none",
+	"printWidth": 100,
+	"plugins": [
+		"prettier-plugin-svelte"
+	],
+	"overrides": [
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte"
+			}
+		}
+	]
+}
 ```
 
 ## Ejecutar el linter
 
-Cada vez que grabamos un archivo se ejecuta automáticamente el proceso que corrige los errores de linter. Para activarlo manualmente debemos hacer
+Si queremos ejecutar el proceso que corrige los errores del linter podemos hacerlo desde la línea de comando:
 
 ```bash
-npm run lint:fix
+yarn run lint:fix
 ```
+
 ## Vitest: configuración del archivo
 
-El archivo `vitest-setup.js` tiene que incorporar el plugin de testing de Svelte. Te dejamos el archivo completo:
+El archivo `vite.config.ts` tiene que incorporar el plugin de testing de Svelte. Te dejamos el archivo completo:
 
 ```ts
 import { defineConfig } from 'vitest/config'
@@ -238,5 +350,23 @@ Te dejamos [este archivo de ejemplo](./build_svelte.yml) que tenés que guardar 
 
 ```md
 ![Coverage](./badges/XXXXXXX/coverage.svg)
+```
+
+## Levantar la app
+
+Para levantar la aplicación Svelte ejecutás
+
+```bash
+yarn run dev
+```
+
+Luego en un navegador pedís la siguiente url: `http://localhost:5173`.
+
+## Correr los tests de un proyecto
+
+Para ejecutar los tests de un proyecto, te posicionás en el directorio raíz y ejecutás desde la consola
+
+```bash
+yarn test
 ```
 
