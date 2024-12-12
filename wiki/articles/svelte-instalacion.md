@@ -314,6 +314,19 @@ Si queremos ejecutar el proceso que corrige los errores del linter podemos hacer
 yarn run lint:fix
 ```
 
+Si al ejecutar este comando o `yarn run lint` te aparece este mensaje de error
+
+```bash
+TypeError: Error while loading rule '@typescript-eslint/no-unused-expressions': Cannot read properties of undefined (reading 'allowShortCircuit')
+```
+
+la solución es desinstalar e instalar la versión 8.15.0 ó superior de typescript-eslint:
+
+```bash
+yarn remove typescript-eslint
+yarn add typescript-eslint
+```
+
 ## Vitest: configuración del archivo
 
 El archivo `vite.config.ts` tiene que incorporar el plugin de testing de Svelte. Te dejamos el archivo completo:
