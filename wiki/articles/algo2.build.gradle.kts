@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.9.22"
+    kotlin("jvm") version "1.9.25"
     jacoco
 }
 
@@ -12,8 +12,8 @@ repositories {
     mavenCentral()
 }
 
-val mockkVersion = "1.13.9"
-val kotestVersion = "5.8.0"
+val mockkVersion = "1.13.16"
+val kotestVersion = "5.9.1"
 
 dependencies {
     implementation(kotlin("stdlib"))
@@ -42,7 +42,7 @@ tasks.jacocoTestReport {
 }
 
 jacoco {
-    toolVersion = "0.8.11"
+    toolVersion = "0.8.12"
 }
 
 tasks.jacocoTestReport {
