@@ -16,7 +16,7 @@ Desde IntelliJ tenemos dos opciones:
 
 Eso abre la siguiente ventana de diálogo:
 
-<img src="/img/wiki/kotlin-new-project.png" alt="Creación de un nuevo proyecto en Kotlin" height="70%" width="70%">
+<img src="/img/wiki/kotlin-new-project-2025.png" alt="Creación de un nuevo proyecto en Kotlin" height="70%" width="70%">
 
 - El nombre del proyecto no debe contener espacios ni caracteres especiales (IntelliJ te va a avisar)
 - Todos los ejemplos que vas a descargar de la materia, así como los proyectos en los que vas a trabajar, se basan en la tecnología **Gradle**. Asegurate que tengas seleccionada la opción `Gradle` en `Build System` y `Kotlin` para la opción `Gradle DSL`.
@@ -28,7 +28,7 @@ Cuando finalizamos, se genera un proyecto con un archivo `build.gradle.kts`, que
 
 ## Archivo de configuración de Gradle
 
-Te dejamos un archivo con las dependencias base para la cursada de Algoritmos 2 (UNSAM) del aǹo 2024: [build.gradle.kts de ejemplo](algo2.build.gradle.kts). Luego tendrás que
+Te dejamos un archivo con las dependencias base para la cursada de Algoritmos 2 (UNSAM) del aǹo 2025: [build.gradle.kts de ejemplo](algo2.build.gradle.kts). Luego tendrás que
 
 - renombrar el archivo a `build.gradle.kts`
 - copiarlo al directorio raíz de tu proyecto ya creado
