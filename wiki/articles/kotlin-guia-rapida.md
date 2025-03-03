@@ -169,6 +169,8 @@ class Cliente {
     var nombre = "Juan" // string simple
 
     fun saludo() = "Hola $nombre" // string simple interpolando una referencia
+
+    fun otroSaludo() = "Hola ${nombre.uppercase()}" // interpolamos una expresión
     
     // string con múltiples líneas interpolando código Kotlin
     fun saludoFormal() =
@@ -412,7 +414,7 @@ class Torcaza : Ave() {
 
 Como regla general solo deben utilizar `super` cuando no puedan utilizar `this`, como en este caso: de lo contrario entrarían en loop infinito si invocaran a `this.volar()`.
 
-## Constructores delegado
+## Constructores delegados
 
 Si la clase Ave se definiera de la siguiente manera:
 
