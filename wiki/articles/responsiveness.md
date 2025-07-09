@@ -15,10 +15,12 @@ Esto se relaciona con el concepto de usabilidad: el contenido debe adaptarse par
 
 Algunos frameworks de presentación web que trabajan sobre esta idea son:
 
-- [Twitter Bootstrap](https://getbootstrap.com)
+- [Tailwind](https://tailwindcss.com/)
+- [Bulma](https://bulma.io)
+- [Chakra](https://chakra-ui.com/)
+- [Bootstrap](https://getbootstrap.com)
 - [Material Design](https://material.io/)
-- [Foundation](http://foundation.zurb.com/)
-- [Skeleton](http://getskeleton.com/)
+- [Foundation](https://get.foundation)
 
 entre otros.
 

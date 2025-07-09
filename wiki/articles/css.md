@@ -56,7 +56,7 @@ Aplica esas dos propiedades a todos los &lt;td&gt;
 Este selector, que comienza con un punto, indica que va a matchear con cualquier tag (no importa el tipo de tag), siempre que éste tenga el valor **filaImpar** en su atributo **class**. Por ejemplo matchearía con estos tags:
 
 ```html
-<p class="filaImpar">Hola Soy un P&aacute;rrafo<p>
+<p class="filaImpar">Hola Soy un Párrafo<p>
 
 <span class="filaImpar importante">Hola Soy un Span<p>
 
