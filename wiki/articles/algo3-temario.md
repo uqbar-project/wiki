@@ -16,7 +16,7 @@ El sitio oficial de la materia es <http://algo3.uqbar-project.org>
 
 ## Entorno
 
-Solo necesitás un editor de texto (nosotros te recomendamos Visual Studio Code) y un navegador (el que vos prefieras)
+- [Entorno HTML - CSS](css-instalacion.html)
 
 ## Artículos
 
