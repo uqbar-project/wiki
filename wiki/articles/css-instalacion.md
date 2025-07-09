@@ -5,7 +5,7 @@ featured: true
 categories: [web, entorno, css, html, estático]
 ---
 
-<img src="/img/wiki/css-logo.png" alt="CSS Logo" height="40%" width="40%">
+<img src="/img/wiki/css-logo.png" alt="CSS Logo" height="20%" width="20%">
 
 # Entorno
 
