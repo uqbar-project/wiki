@@ -5,7 +5,7 @@ featured: true
 categories: [web, entorno, css, html, estático]
 ---
 
-![logo css](/img/css-logo.png)
+![logo css](/img/wiki/css-logo.png)
 
 # Entorno
 
@@ -21,11 +21,9 @@ Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo as
 
 ### Instalación 
 
-> **Opción 1**: podés importar [este archivo que trae todas las extensiones para Angular](./css.code-profile)
+**Opción 1**: podés importar [este archivo que trae todas las extensiones para Angular](./css.code-profile)
 
-O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2025 son las siguientes:
-
-### Necesarios ###
+O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2025 son las siguientes
 
 - **IntelliSense for CSS class names in HTML - Zignd**: te ofrece autocompletado para clases en HTML
 - **CSS Peek - Pranay Prakash**: para poder encontrar las definiciones de estilos desde el HTML (con F12 - Go to definition)
@@ -38,7 +36,7 @@ y no te olvides de instalarte el **Git Extension Pack - Don Jayamanne** para pod
 
 También es bueno chequear en el setting (Ctrl + , o Cmd + , en Mac) que tengas activada la opción Bracket Pair Colorization.
 
-![Bracket colorization VSC setting](/img/bracket-colorization.png)
+![Bracket colorization VSC setting](/img/wiki/bracket-colorization.png)
 
 ## Alternativa a Visual Studio Code
 
