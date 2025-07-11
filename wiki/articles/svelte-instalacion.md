@@ -13,7 +13,7 @@ Es necesario que instales las siguientes herramientas, en este orden:
 
 - Si estás en entorno Windows te recomendamos instalarte [Git Bash](https://gitforwindows.org/)
 - Seguimos con [NodeJS](https://nodejs.org/en/).
-  - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales esta versión: `nvm install 22.9.0`
+  - Si estás en entorno Linux/Mac recomendamos que descargues Node desde [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm) y luego instales la versión lts/jod: `nvm install lts/jod` que es la que recomendaremos para 2025
   - Si estás en Windows instalate la versión actual
 - Luego [NPM (Node Package Manager)](https://www.npmjs.com/), con el que vamos a hacer los builds de nuestras aplicaciones.
   - Para familiarizarte con el manejo de dependencias, te dejamos [este artículo](npm-dependencias.html)
@@ -31,28 +31,32 @@ npm install --global yarn
 
 Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos Svelte (podés ver [cómo se trabaja con perfiles en VSCode en este video](https://www.youtube.com/watch?v=_2F2Zt-_tUA). También te dejamos [este tutorial muy piola - en inglés](https://www.youtube.com/watch?v=QjvvqR9KyVo) y [la documentación oficial](https://code.visualstudio.com/docs/editor/profiles)).
 
-### Instalación 
+## Instalación
 
-> **Opción 1**: podés importar [este archivo que trae todas las extensiones para Svelte](https://github.com/algo3-unsam/proyecto-base-tp/blob/master/Svelte.code-profile)
+### Importar extensiones
 
-O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2025 son los que ya instalaste para trabajar con HTML/CSS y los siguientes:
+Podés importar [este archivo que trae todas las extensiones para Svelte](https://github.com/algo3-unsam/proyecto-base-tp/blob/master/Svelte.code-profile)
+
+### Instalación manual
+
+O si no, podés instalar las extensiones del Visual Studio Code manualmente. Para 2025 son los siguientes:
 
 ### Necesarios ###
 
-- **Auto Rename Tag (Jun Han)**: que permite acomodar la apertura y cierre de los tags de HTML
-- **ESLint (Microsoft)**: para disparar el linter de la sintaxis de TS
-- **Github Actions (Github)**: te ayuda con el archivo de configuración de CI para Github Actions
-- **GitLens - Git Supercharged (GitKraken)**: utilidades para el trabajo con Git
-- **Playwright Runner by Koushik (Koushik Chatterjee)**: ayuda a ejecutar tests e2e de Playwright
-- **Playwright Test for VSCode (Microsoft)**: plugin para ejecutar tests e2e de Playwright
 - **Svelte for VS Code (Svelte)**: plugin para soportar Svelte en VSCode
 - **Vitest (Vitest)**: plugin para poder ejecutar los tests de frontend en el VSCode
+- **ESLint (Microsoft)**: para disparar el linter de la sintaxis de TS
+- **Github Actions (Github)**: te ayuda con el archivo de configuración de CI para Github Actions
+- **Git Extension Pack - Don Jayamanne**: utilidades para el trabajo con Git
+- **Playwright Test for VSCode (Microsoft)**: plugin para ejecutar tests e2e de Playwright
+
+> Evitá la extensión `Svelte 3 Snippets` porque te sugerirá código desactualizado
 
 ### Opcionales ###
 
-- **Playwright Snippets (Nitay Neeman)**: snippets de código que expanden tests e2e de Playwright
 - **Svelte snippets**: autocompletado de código para Svelte
 - **Svelte Dark**: tema oscuro de Svelte
+- **Playwright Snippets (Nitay Neeman)**: snippets de código que expanden tests e2e de Playwright
 
 # Aprendiendo Typescript
 
@@ -66,7 +70,7 @@ Typescript es el lenguaje de programación base en el que vamos a trabajar. Tran
 # Crear un proyecto Svelte desde cero
 
 ```bash
-npx sv create lala
+npx sv create proyecto-svelte
 ┌  Welcome to the Svelte CLI! (v0.6.5)
 │
 ◇  Which template would you like?
@@ -158,9 +162,11 @@ Cuando agregues los tests e2e podés definir estos scripts:
 
 ```js
   "scripts": {
+    ...,
 		"test:e2e": "playwright test --ui",
 		"test": "npm run test:e2e",
-		"test:ci": "npm run test:unit -- --run --coverage && playwright test"
+		"test:ci": "npm run test:unit -- --run --coverage && playwright test",
+    ...,
 	}
 ```
 
@@ -197,7 +203,7 @@ yarn add @playwright/test
 Tener un archivo `.nvmrc` es conveniente si todo el equipo trabaja con NVM (el versionador de Node). El contenido especifica qué versión de Node vamos a utilizar:
 
 ```bash
-22.9.0
+lts/jod
 ```
 
 ## Ejemplo de .gitignore

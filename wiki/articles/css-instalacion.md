@@ -21,7 +21,7 @@ Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo as
 
 ### Importar extensiones
 
-Podés importar [este archivo que trae todas las extensiones para Angular](./css.code-profile)
+Podés importar [este archivo que trae todas las extensiones para CSS](https://github.com/algo3-unsam/proyecto-base-tp/blob/master/css.code-profile)
 
 ### Instalación manual
 
