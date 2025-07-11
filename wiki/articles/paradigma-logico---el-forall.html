@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Paradigma logico   el forall</title>
+  <meta property="og:title" content="Paradigma logico   el forall" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/paradigma-logico---el-forall.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/paradigma-logico---el-forall.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Paradigma logico   el forall</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Antes que nada</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Definición</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Un ejemplo</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Tener claro lo que se quiere decir</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">El forall en acción</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">¿Qué pasa si no hay soluciones para el primer parámetro de forall?</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#tocAnchor-1-7"><span class="tocnumber">7</span> <span class="toctext">Forall e inversibilidad</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#tocAnchor-1-8"><span class="tocnumber">8</span> <span class="toctext">Varias condiciones</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-9">
+              <a href="#tocAnchor-1-9"><span class="tocnumber">9</span> <span class="toctext">Para pensar</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-10">
+              <a href="#tocAnchor-1-10"><span class="tocnumber">10</span> <span class="toctext">Más sobre forall</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Antes que nada</h1>
+
+<p>El forall es un predicado, o sea, no conviene pensar qué “hace”, sino qué relaciona, y/o cuándo se verifica.
+El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.</p>
+
+<h1 id="tocAnchor-1-2">Definición</h1>
+
+<p>El forall recibe dos parámetros, los dos deben ser consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de <a href="orden-superior.html">orden superior</a>, porque puede manejar predicados dentro de sus parámetros.</p>
+
+<p>Hagámosnos la pregunta … ¿cuándo se verifica?
+Cuando a todos los que les pasa lo primero, les pasa lo segundo.
+Dicho un poco más “en técnico”, cuando todas las respuestas de la primer consulta son respuestas de la segunda.</p>
+
+<p>Entonces, en las situaciones donde decimos “a todos los que …blah… les pasa …bleh…” es probable que el forall nos venga bien.</p>
+
+<h1 id="tocAnchor-1-3">Un ejemplo</h1>
+
+<p>partimos de estos hechos</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>    <span class="ss">dulce</span><span class="p">(</span><span class="ss">chocolate</span><span class="p">).</span>
+    <span class="ss">dulce</span><span class="p">(</span><span class="ss">caramelo</span><span class="p">).</span>
+    <span class="ss">dulce</span><span class="p">(</span><span class="ss">durazno</span><span class="p">).</span>
+    <span class="ss">amargo</span><span class="p">(</span><span class="ss">radicheta</span><span class="p">).</span>
+    <span class="ss">amargo</span><span class="p">(</span><span class="ss">cebada</span><span class="p">).</span>
+
+    <span class="ss">leGusta</span><span class="p">(</span><span class="ss">roque</span><span class="p">,</span><span class="ss">chocolate</span><span class="p">).</span>
+    <span class="ss">leGusta</span><span class="p">(</span><span class="ss">roque</span><span class="p">,</span><span class="ss">radicheta</span><span class="p">).</span>
+    <span class="ss">leGusta</span><span class="p">(</span><span class="ss">pepe</span><span class="p">,</span><span class="ss">cebada</span><span class="p">).</span>
+    <span class="err">%</span> <span class="p">...</span> <span class="ss">y</span> <span class="ss">muchos</span> <span class="ss">hechos</span> <span class="ss">más</span> <span class="ss">que</span> <span class="ss">describen</span> <span class="ss">los</span> <span class="ss">gustos</span> <span class="ss">de</span> <span class="ss">un</span> <span class="ss">grupo</span> <span class="ss">de</span> <span class="ss">personas</span>
+
+    <span class="ss">colorDePelo</span><span class="p">(</span><span class="ss">roque</span><span class="p">,</span><span class="ss">colorado</span><span class="p">).</span>
+    <span class="ss">colorDePelo</span><span class="p">(</span><span class="ss">pepe</span><span class="p">,</span><span class="ss">castanio</span><span class="p">).</span>
+    <span class="err">%</span> <span class="p">...</span> <span class="ss">etc</span><span class="p">.</span> <span class="ss">con</span> <span class="ss">los</span> <span class="ss">colores</span> <span class="ss">de</span> <span class="ss">pelo</span>
+
+    <span class="ss">vive</span><span class="p">(</span><span class="ss">roque</span><span class="p">,</span><span class="ss">buenosAires</span><span class="p">).</span>
+    <span class="ss">vive</span><span class="p">(</span><span class="ss">pepe</span><span class="p">,</span><span class="ss">mendoza</span><span class="p">).</span>
+    <span class="ss">vive</span><span class="p">(</span><span class="ss">lucas</span><span class="p">,</span><span class="ss">salliquelo</span><span class="p">).</span>
+    <span class="err">%</span> <span class="p">...</span> <span class="ss">y</span> <span class="ss">donde</span> <span class="ss">vive</span> <span class="ss">cada</span> <span class="ss">persona</span> <span class="ss">de</span> <span class="ss">la</span> <span class="ss">que</span> <span class="ss">queremos</span> <span class="ss">hablar</span>
+
+    <span class="ss">ciudadGrande</span><span class="p">(</span><span class="ss">buenosAires</span><span class="p">).</span>
+    <span class="ss">ciudadGrande</span><span class="p">(</span><span class="ss">mendoza</span><span class="p">).</span>
+    <span class="err">%</span> <span class="p">...</span> <span class="ss">y</span> <span class="ss">así</span> <span class="ss">todas</span> <span class="ss">las</span> <span class="ss">ciudades</span> <span class="ss">grandes</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>y queremos definir esTierno/1, donde decimos que una persona es tierna si todas las cosas que le gustan son dulces.</p>
+
+<p>Estamos en un caso candidato a forall: “a todas las cosas que le gustan les tiene que pasar ser dulces”. En Prolog:</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">esTierno</span><span class="p">(</span><span class="nv">Persona</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="ss">dulce</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">)).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>… una Persona es tierna si … todas las cosas que le gustan son dulces, exactamente lo que dijimos en castellano.</p>
+
+<p>Ahora quiero definir el predicado alimentoCurioso/1, un alimento es curioso si solamente le gusta a gente de pelo colorado.
+Para darme cuenta que el forall me puede servir, lo pienso en términos de “a todos los que … les tiene que pasar …”. A veeer</p>
+
+<ul>
+  <li>a todas <strong>las personas</strong> que … les gusta el alimento</li>
+  <li>les tiene que pasar … ser coloradas</li>
+</ul>
+
+<p>Queda</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">alimentoCurioso</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="ss">esColorado</span><span class="p">(</span><span class="nv">Persona</span><span class="p">)).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h1 id="tocAnchor-1-4">Tener claro lo que se quiere decir</h1>
+
+<p>¿Está bien si defino esTierno así?</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">esTierno</span><span class="p">(</span><span class="nv">Persona</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">dulce</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">)).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Claramente no, porque estaría pidiendo que le gusten todos los alimentos dulces.</p>
+
+<p>Si programar va a consistir en definir condiciones, es relevante entender la diferencia entre</p>
+
+<ul>
+  <li>todos los alimentos que le gustan son dulces, y</li>
+  <li>le gustan todos los alimentos dulces.</li>
+</ul>
+
+<h1 id="tocAnchor-1-5">El forall en acción</h1>
+
+<p>Supongamos que hacemos esta consulta:</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="o">?-</span><span class="err"> </span><span class="ss">esTierno</span><span class="p">(</span><span class="ss">roque</span><span class="p">).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>La variable Persona de esTierno se liga con roque … entonces el forall se va a verificar (ver la definición técnica) cuando</p>
+
+<ul>
+  <li>
+    <p>todas las respuestas a la consulta
+    leGusta(roque,Alimento)</p>
+  </li>
+  <li>
+    <p>verifiquen la consulta
+    dulce(Alimento)</p>
+  </li>
+</ul>
+
+<p>Para cada respuesta a la consulta leGusta(roque,Alimento), la variable Alimento se va a ligar, en el ejemplo hay dos respuestas, una con chocolate y otra con cebada.
+La consulta correspondiente ya viene con esa variable ligada, o sea que las consultas que se tienen que verificar para que se verifique el forall son</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">esDulce</span><span class="p">(</span><span class="ss">chocolate</span><span class="p">).</span>
+<span class="err">   </span><span class="ss">esDulce</span><span class="p">(</span><span class="ss">cebada</span><span class="p">).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Volvamos a la definición: el forall se verifica si todas las respuestas a la primer consulta son respuestas de la segunda. Mirando el ejemplo de recién debería cerrar el esquema.</p>
+
+<h1 id="tocAnchor-1-6">¿Qué pasa si no hay soluciones para el primer parámetro de forall?</h1>
+
+<p>¿Qué pasa si consultamos si lucas es tierno y en nuestra base de conocimientos no hay nada que le guste?</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="o">?-</span><span class="err"> </span><span class="ss">esTierno</span><span class="p">(</span><span class="ss">lucas</span><span class="p">).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Esta consulta va a ser cierta, porque si no le gusta nada, es cierto que todas las cosas que le gustan son dulces. Si nos interesa que sólo diga verdadero para las personas que les gusta algo, debemos agregar otra condición fuera del forall que lo asegure.</p>
+
+<h1 id="tocAnchor-1-7">Forall e inversibilidad</h1>
+
+<p>Veamos qué pasa con las variables y la inversibilidad.
+¿Será inversible el predicado esTierno/1? Hagamos la consulta con una variable en el argumento</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="o">?-</span><span class="err"> </span><span class="ss">esTierno</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso la variable Persona llega sin ligar al forall. Entonces la primer consulta es</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Para cada una de las respuestas a esta consulta, se tiene que verificar</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">esDulce</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>donde Alimento es lo que ligó la primer consulta.</p>
+
+<p>¿Cuáles son las respuestas a la primer consulta? <strong>Todos</strong> los pares (persona,alimento) relacionados por leGusta.
+Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <strong>a alguien</strong>, no importa a quién, es dulce.</p>
+
+<p>Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable Persona llegue ligada al forall mediante <a href="paradigma-logico---generacion.html"> generación</a>:</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">esTierno</span><span class="p">(</span><span class="nv">Persona</span><span class="p">):-</span><span class="err"> </span><span class="ss">persona</span><span class="p">(</span><span class="nv">Persona</span><span class="p">),</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="ss">esDulce</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">)).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Una que no falla:</p>
+
+<p>fíjense que siempre decimos “a todos los blah que les pasa la consulta 1, les tiene que pasar la consulta 2”.</p>
+
+<p>Bueno, para ese “blah” va a haber una variable, que es Alimento en el caso de esTierno (si todos <strong>los alimentos</strong> que le gustan …) y P para alimentoCurioso (si todas <strong>las personas</strong> a quienes les gusta …). Esa variable tiene que llegar al forall sin ligar. El resto de las variables por lo general deben llegar ligadas.</p>
+
+<h1 id="tocAnchor-1-8">Varias condiciones</h1>
+
+<p>Qué pasa si se tienen que cumplir varias condiciones: digamos que un alimento es peculiar si todas las personas a las que le gusta son colorados y porteños … nos queda</p>
+
+<ul>
+  <li>a todas <strong>las personas</strong> que … les gusta el alimento</li>
+  <li>les tiene que pasar … ser coloradas y ser porteñas</li>
+</ul>
+
+<p>entonces la segunda consulta es un “y” entre dos condiciones.</p>
+
+<p>Si pongo</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">  </span><span class="ss">esPeculiar</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="ss">colorDePelo</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="ss">colorado</span><span class="p">),</span><span class="err"> </span><span class="ss">vive</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span><span class="ss">buenosAires</span><span class="p">)).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>está mal, porque el forall lleva dos parámetros, no tres. Necesito agrupar colorDePelo(…) y vive(…), para eso los encierro entre paréntesis, queda</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">  </span><span class="ss">esPeculiar</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="p">(</span><span class="ss">colorDePelo</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="ss">colorado</span><span class="p">),</span><span class="err"> </span><span class="ss">vive</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="ss">buenosAires</span><span class="p">))).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Pregunto: ¿está bien</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">  </span><span class="ss">esPeculiar</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">((</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="ss">colorDePelo</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="ss">colorado</span><span class="p">)),</span><span class="err"> </span><span class="ss">vive</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="ss">buenosAires</span><span class="p">)).</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>? No, porque estaría pidiendo que todos los colorados a los que les gusta el alimento vivan en Buenos Aires.</p>
+
+<h1 id="tocAnchor-1-9">Para pensar</h1>
+
+<p>Una que les queda para pensar: ahora tengo que decir que un alimento es marketinable si todas las personas a las que les gusta viven en ciudades grandes. No me interesa que el predicado sea inversible.</p>
+
+<p>Tiro tres opciones: elijan la correcta y piensen por qué eligieron esa.</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">   </span><span class="ss">esMarketinable</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="ss">vive</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Ciudad</span><span class="p">),</span><span class="err"> </span><span class="ss">ciudadGrande</span><span class="p">(</span><span class="nv">Ciudad</span><span class="p">)).</span><span class="err"> </span>  <span class="err"> % </span><span class="ss">opción</span><span class="err"> </span><span class="m">1</span>
+<span class="err">   </span><span class="ss">esMarketinable</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">((</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="ss">vive</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Ciudad</span><span class="p">)),</span><span class="err"> </span><span class="ss">ciudadGrande</span><span class="p">(</span><span class="nv">Ciudad</span><span class="p">)).</span><span class="err">  % </span><span class="ss">opción</span><span class="err"> </span><span class="m">2</span>
+<span class="err">   </span><span class="ss">esMarketinable</span><span class="p">(</span><span class="nv">Alimento</span><span class="p">):-</span><span class="err"> </span><span class="ss">forall</span><span class="p">(</span><span class="ss">leGusta</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Alimento</span><span class="p">),</span><span class="err"> </span><span class="p">(</span><span class="ss">vive</span><span class="p">(</span><span class="nv">Persona</span><span class="p">,</span> <span class="nv">Ciudad</span><span class="p">),</span><span class="err"> </span><span class="ss">ciudadGrande</span><span class="p">(</span><span class="nv">Ciudad</span><span class="p">))).</span><span class="err">  % </span><span class="ss">opción</span><span class="err"> </span><span class="m">3</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h1 id="tocAnchor-1-10">Más sobre forall</h1>
+
+<p>Léanse <a href="paradigma-logico---forall---no-siempre-con-member.html">Paradigma Lógico - forall - no siempre con member</a></p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on June 21, 2017 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>16</td>
+                                <td>77</td>
+                                <td>58</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
+                                <td>8</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>c0e41c46</td>
+                        <td>Wed Jun 21 12:09:56 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update paradigma-logico---el-forall.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>116548a7</td>
+                        <td>Wed Jun 21 12:08:24 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update paradigma-logico---el-forall.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>17d04c39</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Definición */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a63721ea</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Definición */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Super</title>
+  <meta property="og:title" content="Super" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/super.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/super.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Super</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p><strong>super</strong> es una <a href="pseudovariable.html">pseudovariable</a> muy parecida a <a href="self.html">self</a>.</p>
+
+<p><strong>super</strong> referencia (apunta) al objeto receptor del mensaje del método que estamos analizando en un momento dado al igual que <strong>self</strong>. La diferencia entre <strong>self</strong> y <strong>super</strong> es que <strong>super</strong> afecta al <a href="paradigma-de-objetos---method-lookup.html"> method lookup</a></p>
+
+<h2 id="problema-que-resuelve">Problema que resuelve</h2>
+
+<p>Sin la existencia de super tendríamos problemas para resolver ciertos problemas, por ejemplo si tenemos la siguiente jerarquía de clases <code class="language-plaintext highlighter-rouge">A ⇽ B</code>:</p>
+
+<pre><code class="language-Smalltalk">#A &gt;&gt; m
+   "lógica definida por A para cuando se recibe el mensaje m"
+   ^ 'hola'
+#B &gt;&gt; m
+   "queremos usar la lógica que define A y además hacer otra cosa"
+   ^ self m , ' mundo'
+</code></pre>
+
+<p>Si a una instancia de B le mandamos el mensaje m ejecutará el método m definido en B y en su definición se manda a sí mismo m, con lo cual se ejecuta ese mismo método (no el de A) y así indefinidamente. Para solucionar este problema podemos usar super.</p>
+
+<pre><code class="language-Smalltalk">#A &gt;&gt; m
+   "lógica definida por A para cuando se recibe el mensaje m"
+   ^ 'hola'
+#B &gt;&gt; m
+   "queremos usar la lógica que define A y además hacer otra cosa"
+   ^ super m , ' mundo'
+</code></pre>
+
+<p>Cuando en un método se manda un mensaje a super el method lookup se ve modificado empezando la búsqueda del método correspondiente a ese mensaje en la clase inmediatamente superior a donde está definido ese método, en vez de en la clase de la cual es instancia el objeto. De esta forma podemos <a href="redefinicion.html">redefinir</a> un método de la superclase para agregar lógica nueva y a su vez reutilizar el comportamiento heredado.</p>
+
+<p>Supongamos que tenemos la siguiente jerarquía de clases <code class="language-plaintext highlighter-rouge">A ⇽ B ⇽ C</code> que definen:</p>
+
+<pre><code class="language-Smalltalk">#A &gt;&gt; m
+   ^ self n + 4
+   &gt;&gt; n
+   ^ 1
+#B &gt;&gt; m
+   ^ super m + 5
+#C &gt;&gt; n
+   ^ 3
+</code></pre>
+
+<p>Sabiendo que tanto <strong>self</strong> como <strong>super</strong> apuntan a <strong>i</strong>, o sea, ambos apuntan al objeto receptor del mensaje, analicemos lo que pasa si evaluamos lo siguiente:</p>
+
+<pre><code class="language-Smalltalk">i := C new.
+i m.
+</code></pre>
+
+<p>Cuando i recibe el mensaje m busca un método en su clase C con el mismo nombre y no lo encuentra, con lo cual lo sigue buscando en la superclase de C, que es B. Allí existe una definición para ejecutar y vemos que al objeto referenciado por <strong>super</strong> (que es i) se le manda el mensaje m, haciendo que el method lookup para ese mensaje comience en la clase A (superclase de donde está definido el método). La definición de #A&gt;&gt;m envía el mensaje n al objeto referenciado por <strong>self</strong> (que también es i), pero el method lookup para encontrar el método n comienza desde la clase de la cual es instancia i (o sea en C).</p>
+
+<p>El resultado final del cálculo sería: 3 + 4 + 5</p>
+
+<p>Si le mandáramos el mensaje m a una instancia de B el resultado sería: 1 + 4 + 5, ya que se ejecutaría #B&gt;&gt;m que hace <code class="language-plaintext highlighter-rouge">self</code> <code class="language-plaintext highlighter-rouge">n</code>, se empieza a buscar n en B, no se encuentra, se lo busca en A y retorna 1.</p>
+
+<h2 id="resumen">Resumen</h2>
+
+<ul>
+  <li>Si el receptor del mensaje <strong>NO</strong> es <strong>super</strong>, se busca en la clase de la cual es instancia el objeto un método con el mismo nombre del mensaje.</li>
+  <li>Si el receptor del mensaje ES <strong>super</strong> entonces se busca la definición en la superclase de la clase en donde está el método que contiene a la pseudovariable <strong>super</strong>.</li>
+</ul>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p><em>super <strong>sólo</strong> debe usarse para <strong>redefinir</strong> métodos que envían el <strong>mismo mensaje</strong> que se está definiendo, para <strong>evitar loops</strong> que se provocarían en el method lookup usando self</em></p>
+
+<h2 id="malos-usos-de-super">Malos usos de super</h2>
+
+<h3 id="caso-1">Caso 1</h3>
+
+<p>Supongamos que tenemos este código para la jerarquía <code class="language-plaintext highlighter-rouge">A ⇽ B</code> (O sea B es subclase de A)</p>
+
+<p>Código erróneo:</p>
+
+<pre><code class="language-Smalltalk">#A &gt;&gt; m1
+  "hace algo"
+#B &gt;&gt; m1
+  super m1
+</code></pre>
+
+<p>Esta redefinición usando super es innecesaria, ya que si a una instancia de B se le manda m1 el mismo method lookup buscará la definición en A en caso de no encontrarla en B. Es además incorrecta, porque al redefinir un método semánticamente estoy indicando que “hago las cosas distintas a arriba”, cuando éste no es el caso.</p>
+
+<p>Código correcto:</p>
+
+<pre><code class="language-Smalltalk">#A &gt;&gt; m1
+  "hace algo"
+</code></pre>
+
+<p>¡No hace falta escribir nada, B ya entiende el mensaje m1!</p>
+
+<h3 id="caso-2">Caso 2</h3>
+
+<p>Otro error muy común (y muy grave) es usar super para mandar un mensaje con nombre diferente al método que se está definiendo: (C hereda de B, B hereda de A)</p>
+
+<p>Código erróneo:</p>
+
+<pre><code class="language-Smalltalk">#A &gt;&gt; m1
+   ^ 1
+#B &gt;&gt; m2
+   ^ super m1 + 5
+#C &gt;&gt; m1
+   ^ 3
+</code></pre>
+
+<p>En este ejemplo se puede ver que se manda el mensaje m1 en B usando super en vez de self en el método m2. Esto es un problema ya que se ignora el comportamiento que puedan tener para m1 las subclases de B así como una posible implementación futura de m1 para B. Este mal uso de super suele llevar a un comportamiento inesperado del sistema que puede no resultar en un error como sucede en este caso (retornaría 6 en vez de 8), con lo cual es muy difícil de detectar y corregir.</p>
+
+<p>Código correcto:</p>
+
+<pre><code class="language-Smalltalk">#A &gt;&gt; m1
+   ^ 1
+#B &gt;&gt; m2
+   ^ self m1 + 5
+#C &gt;&gt; m1
+   ^ 3
+</code></pre>
+
+<p>¡Si yo soy un B, quiero hacer m1 como un B! Siempre voy a querer comportarme como me corresponde a mí. Que ese método esté definido en la superclase es <em>una coincidencia</em>. Si yo quiero hacer m1, entonces hago self m1. (Releer la conclusión)</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on October 05, 2017 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>11</td>
+                                <td>168</td>
+                                <td>66</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Gleiva</td>
+                                <td>Gleiva@...</td>
+                                <td>6</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>0b82a93c</td>
+                        <td>Thu Oct 5 15:30:15 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update super.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>61a21d02</td>
+                        <td>Thu Oct 5 15:27:15 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Corregida sintaxis markdown de articulo super</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1c4d8735</td>
+                        <td>Thu Feb 2 19:13:48 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>614588a0</td>
+                        <td>Thu Feb 2 19:13:48 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

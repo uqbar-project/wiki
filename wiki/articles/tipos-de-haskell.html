@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Tipos de haskell</title>
+  <meta property="og:title" content="Tipos de haskell" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/tipos-de-haskell.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/tipos-de-haskell.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Tipos de haskell</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Tal vez convenga aclarar que esta no es una categorización teórica, es más bien una introducción y vamos de lo más simple a lo más complejo.</p>
+
+<h2 id="tipos-simples">Tipos Simples</h2>
+
+<p>Los tipos más básicos que tenemos en Haskell son los booleanos y los caracteres, que tiene los tipos y respectivamente:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t True
+True :: Bool
+Prelude&gt; :t 'a'
+'a' :: Char
+</code></pre>
+
+<p>Qué podemos hacer con ellos? Algunos ejemplos con booleanos y caracteres:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; True &amp;&amp; False
+False
+Prelude&gt; True || False
+True
+Prelude&gt; not True
+False
+
+Prelude&gt; Char.isLower 'a'
+True
+Prelude&gt; Char.isUpper 'a'
+False
+Prelude&gt; Char.toLower 'A'
+'a'
+Prelude&gt; Char.toUpper 'a'
+'A'
+Prelude&gt; 'b' &gt; 'a'
+True
+</code></pre>
+
+<p>El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver en más detalle más adelante. Algunas operaciones que podemos hacer:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; 4*6
+24
+Prelude&gt; 2+3
+5
+Prelude&gt; 9-4
+5
+Prelude&gt; 4 `div` 3 
+1
+Prelude&gt; 4 `mod` 3 
+1
+Prelude&gt; 4/6
+0.6666666666666666
+</code></pre>
+
+<p>La división en ocasiones puede traer problemas de tipos, si tuviste problemas con esto leé el <a href="problemas-comunes-con-los-tipos-numericos-de-haskell.html">siguiente artículo</a></p>
+
+<h2 id="tipos-compuestos">Tipos Compuestos</h2>
+
+<h3 id="listas-y-strings">Listas y Strings</h3>
+
+<p>Un String es simplemente una lista de caracteres que puede escribirse con una sintaxis particular, los siguientes ejemplos son equivalentes:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t "Hola"
+"Hola" :: [Char]
+Prelude&gt; :t ['H','o','l','a']
+['H','o','l','a'] :: [Char]
+</code></pre>
+
+<p>Para cualquier lista el tipo se escribe poniendo entre corchetes el tipo de los elementos la lista, por ejemplo una lista de booleanos:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t [True, False]
+[True, False] :: [Bool]
+</code></pre>
+
+<p>También una lista de Strings (o lista de listas de caracteres):</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t ["Hola", "Chau"]
+["Hola", "Chau"] :: [ [Char] ]
+</code></pre>
+
+<h3 id="tuplas">Tuplas</h3>
+
+<p>Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los componentes pueden ser cada uno de un tipo distinto. (Esto está más detallado en <a href="cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html">¿Cuál es la diferencia entre una tupla y una lista?</a>, pero antes te recomiendo mirar los ejemplos que siguen.)</p>
+
+<p>Una de las tuplas más simples que se puede imaginar es:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t (True, 'H')
+(True, 'H') :: (Bool, Char)
+</code></pre>
+
+<p>es decir, una tupla compuesta por un booleano y un caracter. Sin embargo, los elementos de las tuplas también pueden ser compuestos, como un String:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t (True, "Hola")
+(True, "Hola") :: (Bool, [Char])
+</code></pre>
+
+<p>o inclusive el componente de una tupla puede ser otra tupla:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t (False, ('H', "ola"))
+(False, ('H', "ola")) :: (Bool, (Char, [Char]))
+</code></pre>
+
+<p>También podemos tener tuplas de más de dos componentes</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t (True, 'H', [False])
+(True, 'H', [False]) :: (Bool, Char, [Bool])
+</code></pre>
+
+<p>es decir, un booleano, un caracter y una lista de booleanos.</p>
+
+<p>Para finalizar podemos ver un ejemplo en el que combianmos todo lo anterior (no es trivial, tomate tu tiempo para leerlo!):</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t ([True, False, True], "Chau", [(True, "True"), (False, "False")])
+([True, False, True], "Chau", [(True, "True"), (False, "False")])
+  :: ([Bool], [Char], [(Bool, [Char])])
+</code></pre>
+
+<p>Es decir, una tupla de tres componentes, a saber:</p>
+
+<ul>
+  <li>Una lista de booleanos</li>
+  <li>Un string o lista de caracteres</li>
+  <li>Una lista de tuplas cuyo primer componente es un booleano y su segundo componente es un string.</li>
+</ul>
+
+<h3 id="type">Type</h3>
+
+<p>Haskell nos permite definir sinónimos de tipos, o sea definir un alias para un tipo concreto que se use para modelar alguna abstracción que nos interese.</p>
+
+<p>Por ejemplo si modelamos a los alumnos como tuplas de aridad 2 cuyo primer elemento es el nombre y el segundo una lista de números que representa las notas que se sacó, podríamos definir un tipo Alumno como:</p>
+
+<pre><code class="language-Haskell">type Alumno = (String, [Int])
+</code></pre>
+
+<p>De hecho, String no es más que un alias para el tipo [Char]. Sin embargo, es importante tener en cuenta que estos sinónimos sólo son útiles a efectos de declarar los tipos de otros datos o de las funciones de nuestro programa, pero para el motor de inferencia de tipos, estos alias son ignorados con lo cual si preguntamos de qué tipo es una función en donde se espera un alumno por parámetro, nos dirá (String, [Int]) y no Alumno.</p>
+
+<h3 id="data">Data</h3>
+
+<p>Es posible <a href="data--definiendo-nuestros-tipos-en-haskell.html">definir nuestros propios tipos de dato</a> usando data para poder mejorar las abstracciones de nuestros programas y evitar algunos problemas asociados al uso de tuplas. Esto puede hacerse de la siguiente forma:</p>
+
+<pre><code class="language-Haskell">data NuevoTipo = Constructor Tipo1 Tipo2 ... TipoN
+</code></pre>
+
+<p>Usamos el constructor, como su nombre lo indica, para construir nuestros datos de este tipo y para hacer pattern matching como hacíamos con las tuplas.</p>
+
+<pre><code class="language-Haskell">data Alumno = UnAlumno String [Int]
+fede = UnAlumno "Federico" [2,3]
+nombreAlumno (UnAlumno nombre notas) = nombre
+&gt; :t nombreAlumno
+nombreAlumno :: Alumno -&gt; String
+&gt; nombreAlumno fede
+"Federico"
+</code></pre>
+
+<p>El nombre del constructor puede coincidir con el nombre del tipo de dato, en este caso usamos nombres distintos para denotar que son cosas distintas y en qué contexto se usa cada una.</p>
+
+<h2 id="funciones">Funciones</h2>
+
+<h3 id="funciones-con-un-único-parámetro">Funciones con un único parámetro</h3>
+
+<p>El tipo de una función que tiene un parámetro se indica relacionando mediante el símbolo la entrada o dominio de la función con la salida o imagen. Por ejemplo la función not recibe un booleano y devuelve otro:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t not
+not :: Bool -&gt; Bool
+</code></pre>
+
+<p>La función isLower recibe un caracter y devuelve un booleano.</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t isLower 
+isLower :: Char -&gt; Bool
+</code></pre>
+
+<p>(Nótese que la función isLower está en el módulo Char, dependiendo de su versión de Haskell tal vez deban escribir para poder probar el ejemplo, o bien importar el módulo correspondiente.)</p>
+
+<p>Y la función and recibe una lista de booleanos y devuelve un booleano (resultado de realizar la conjunción entre todos los booleanos de la lista)</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t and
+and :: [Bool] -&gt; Bool
+</code></pre>
+
+<h3 id="funciones-con-más-de-un-parámetro">Funciones con más de un parámetro</h3>
+
+<p>Las funciones de más de un parámetro tienen alguna sutileza porque en Haskell se trabaja con el concepto de <a href="currificacion.html">Currificación</a>, entonces una función que nosotros en matemática estaríamos acostumbrados a verla como en Haskell la vamos a escribir . Las funciones de dos parámetros cuyo tipo tiene esa forma se denominan <em>currificadas</em>.</p>
+
+<p>(A los efectos de entender el sistema de tipos podemos pensarlo simplemente como una función que recibe dos booleanos, aunque en realidad la versión currificada es mucho más poderosa. Para más detalles ver la teoría sobre <a href="currificacion.html">Currificación</a>.)</p>
+
+<p>El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros) a la función</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t (&amp;&amp;)
+(&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool
+</code></pre>
+
+<h3 id="aplicación">Aplicación</h3>
+
+<p>La <a href="aplicacion.html">aplicación</a> es uno de los temas que tal vez más confunden cuando se habla de tipos de datos. La confusión más frecuente radica en no diferenciar correctamente <em>una expresión que tiene valor Booleano</em> de <em>una función que devuelve Booleanos</em>.</p>
+
+<p>Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parámetros:</p>
+
+<pre><code class="language-Haskell">Prelude&gt; :t not
+not :: Bool -&gt; Bool
+Prelude&gt; :t Char.isLower
+Char.isLower :: Char -&gt; Bool
+Prelude&gt; :t and
+and :: [Bool] -&gt; Bool
+Prelude&gt; :t (&amp;&amp;)
+(&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool
+</code></pre>
+
+<p>En este punto es importante entender que ninguno de estos ejemplos es un <em>valor booleano</em>. Cuando veo el tipo eso se entiende como el tipo <em>de las funciones a las que si les aplico un parámetro de tipo Char producen un valor de tipo Bool</em>, que claramente no es lo mismo que el tipo Bool.</p>
+
+<p>Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos obtener valores booleanos:</p>
+
+<pre><code class="language-Haskell">*Main&gt; :t not True
+not True :: Bool
+*Main&gt; :t Char.isLower 'a'
+Char.isLower 'a' :: Bool
+*Main&gt; :t and [True, False, True]
+and [True, False, True] :: Bool
+*Main&gt; :t True &amp;&amp; False
+True &amp;&amp; False :: Bool
+</code></pre>
+
+<p>En síntesis es un valor booleano, en cambio no es un valor booleano, es una función que devuelve booleanos. También es <em>un valor</em>, pero es un valor de otro tipo y no se pueden mezclar.</p>
+
+<p>Si intentamos utilizar un valor función en un lugar donde se espera un valor booleano, obtendremos un error:</p>
+
+<pre><code class="language-Haskell">*Main&gt; not Char.isLower
+&lt;interactive&gt;:1:4:
+     Couldn't match expected type `Bool' 
+            against inferred type `Char -&gt; Bool' 
+     In the first argument of `not' ... 
+</code></pre>
+
+<p>Es decir, el primer argumento de debe ser y en cambio se recibió un argumento de tipo .</p>
+
+<p>Similarmente:</p>
+
+<pre><code class="language-Haskell">*Main&gt; True &amp;&amp; not
+&lt;interactive&gt;:1:8:
+     Couldn't match expected type `Bool' 
+            against inferred type `Bool -&gt; Bool' 
+    In the second argument of `(&amp;&amp;)', namely `not' 
+    In the expression: True &amp;&amp; not
+    ....
+</code></pre>
+
+<h2 id="typeclasses">Typeclasses</h2>
+
+<p>Si en algún momento consultaste el tipo de una función y viste algo como: <code class="language-plaintext highlighter-rouge">Num a =&gt; ...</code>, <code class="language-plaintext highlighter-rouge">Ord a =&gt; ...</code> o <code class="language-plaintext highlighter-rouge">Eq a =&gt; ...</code>, significa que esa función puede trabajar con distintos tipos concretos (como ser Int o Float). Num, Ord y Eq (al igual que otras menos cotidianas) no son tipos, sino familias de tipos que imponen restricciones sobre qué valores pueden usarse para evaluar esa función. A las familias de tipos les vamos a llamar <a href="typeclasses.html">Typeclasses</a>.</p>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on July 31, 2018 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>46</td>
+                                <td>280</td>
+                                <td>310</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>7</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>31</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>3564bf1c</td>
+                        <td>Tue Jul 31 14:33:59 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Moví todo lo de typeclasses al artículo de typeclasses</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>269b4c54</td>
+                        <td>Sun Mar 26 19:16:53 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update tipos-de-haskell.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>fa448132</td>
+                        <td>Sun Mar 26 18:46:05 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update tipos-de-haskell.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>cb688766</td>
+                        <td>Sun Mar 26 13:49:21 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update tipos-de-haskell.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0eccad4c</td>
+                        <td>Fri Mar 24 22:32:01 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Reformateado el código</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

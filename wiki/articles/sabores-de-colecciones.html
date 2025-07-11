@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Sabores de colecciones</title>
+  <meta property="og:title" content="Sabores de colecciones" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/sabores-de-colecciones.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/sabores-de-colecciones.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Sabores de colecciones</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="sabores-de-colecciones-en-wollok">Sabores de colecciones en Wollok</h2>
+
+<p>En Wollok disponemos de dos sabores básicos de colecciones: las listas y los sets (conjunto matemático). Se diferencian principalmente por las siguientes características:</p>
+
+<ul>
+  <li>Las listas tienen orden, los sets no, por eso sólo es posible obtener un determinado elemento en base a su pocisión sólo si es una lista con el mensaje get(posicionBaseCero)</li>
+  <li>Los sets no admiten repetidos, las listas sí, por eso si se agrega un elemento repetido a un set no se agregará una nueva referencia al mismo, mientras que en las listas se incluirá una nueva referencia (en otra posición) al mismo objeto.</li>
+</ul>
+
+<p>Literal de listas: [1,2,3] Literal de sets: #{1,2,3}</p>
+
+<p>Para ejemplos de uso ver <a href="intro-a-colecciones.html">Intro a colecciones</a></p>
+
+<h2 id="sabores-de-colecciones-en-smalltalk">Sabores de colecciones en Smalltalk</h2>
+
+<p>Smalltalk tiene una clase llamada <strong>Collection</strong> que me permite representar colecciones, pero Collection es la abstracción superior de la jerarquía de colecciones. Al momento de instanciar una colección, tengo que decidirme por un sabor. A continuación intentaremos mostrar los sabores de colecciones, tratando de ordenarlos en base a sus respectivos grados de especialización.</p>
+
+<h3 id="set-y-bag">Set y Bag</h3>
+
+<p>El primer sabor que visitaremos es el <strong>Bag</strong>. Esta colección es de las denominadas <strong>sin orden</strong> y como su nombre lo indica, es la representación de una bolsa. Una bolsa de objetos. Por ejemplo, al principio, hablamos de un carrito de compras. El Bag la colección más adecuada para esta representación. Imagínense que puedo poner tres latas de tomates, dos botellas de agua y siete peras.</p>
+
+<p>El segundo sabor que veremos es el <strong>Set</strong>. El Set, como su nombre lo indica, está concebido para la representación de conjuntos.</p>
+
+<p>Una propiedad, fundamental diría, sobre conjuntos es que los elementos que pertenecen al conjunto son únicos en él. En resumidas palabras, en los conjuntos (Sets) no voy a tener dos veces el mismo elemento. O sea el Set no admite repetidos. Salvo por esta propiedad, el comportamiento es el mismo que el del Bag.</p>
+
+<p>Imagínense que tengo una lata de tomates y miCarrito es una colección. Lo voy a representar así:</p>
+
+<p><code class="language-plaintext highlighter-rouge">unaLata := LataDeTomates new. </code>
+<code class="language-plaintext highlighter-rouge">unaLata conTomates: ‘perita’. </code>
+<code class="language-plaintext highlighter-rouge">unaLata deLaMarca: ‘La Marca que a uds les guste’ </code>
+<code class="language-plaintext highlighter-rouge">unaLata conPrecio: 1.00 </code></p>
+
+<p>Bien, tengo mi objeto unaLata y quiero agregar a mi carrito de compras 3 latas de tomates. Entonces hago:</p>
+
+<p><code class="language-plaintext highlighter-rouge">miCarrito add: unaLata. </code>
+<code class="language-plaintext highlighter-rouge">miCarrito add: unaLata. </code>
+<code class="language-plaintext highlighter-rouge">miCarrito add: unaLata. </code></p>
+
+<p>¿Qué pasará cuando evalúe la siguiente línea?</p>
+
+<p><code class="language-plaintext highlighter-rouge">miCarrito size.</code></p>
+
+<p>Yo agregué 3 veces al carrito una lata de tomates, con lo cual podría esperar que me responda 3. Pero, como vimos, si represento a mi carrito de compras con un Bag, (o sea que hice miCarrito:= Bag new.) entonces sí voy a tener 3 referencias a unaLata en miCarrito.</p>
+
+<p>Si representara mi carrito de compras con un Set (o sea que hice miCarrito:=Set new.) entonces hubiese tenido un solo objeto dentro de mi colección. Simplemente, cuando hago el segundo miCarrito add: unaLata el Set identifica que ya tiene ese objeto en la colección y no lo vuelve a agregar.</p>
+
+<h3 id="colecciones-ordenadas">Colecciones ordenadas</h3>
+
+<p>Entonces ya vimos el Set y Bag, que son colecciones sin orden. Ahora introduciremos algunas colecciones con orden.</p>
+
+<p>¿Qué quiere decir <strong>ordenadas</strong>? Que hay un elemento 1, un elemento 2, etc., al contrario de un Set o un Bag, en donde los elementos están “todos tirados”. O sea, puedo acceder a los elementos de cualquier colección ordenada (veremos que hay varias variantes) parecido a como se accede a un Array en C o Pascal. Para eso le envío a la colección el mensaje <strong>at:</strong> , si quiero el cuarto elemento de miCol que es una colección ordenada, lo puedo pedir así:</p>
+
+<p><code class="language-plaintext highlighter-rouge">miCol at: 4 </code></p>
+
+<p>y tengo los mensajes first y last que devuelven el primero y el último.</p>
+
+<p>Eeeehhh pero … si tengo un Set o un Bag, ¿ cómo accedo a los elementos de un Bag o un Set? Eso … viene más adelante. Veamos ahora las variantes de colecciones ordenadas.</p>
+
+<p>La primera que les presentaremos es la <strong>OrderedCollection</strong>. Esta colección ordena sus elementos, y el criterio es el orden en cual fueron agregados a la colección. Entonces si creo mi colección así</p>
+
+<p><code class="language-plaintext highlighter-rouge">miCol := OrderedCollection new. </code>
+<code class="language-plaintext highlighter-rouge">miCol add: 'hola'. </code>
+<code class="language-plaintext highlighter-rouge">miCol add: 'queridos'. </code>
+<code class="language-plaintext highlighter-rouge">miCol add: 'amigos'. </code>
+<code class="language-plaintext highlighter-rouge">miCol add: 'escandinavos'. </code></p>
+
+<p>después puedo pedirle varias cosas</p>
+
+<p><code class="language-plaintext highlighter-rouge">miCol first &lt;- el primero - 'hola'</code>
+<code class="language-plaintext highlighter-rouge">miCol last &lt;- el último - 'escandinavos'</code>
+<code class="language-plaintext highlighter-rouge">miCol at: 3 &lt;- el tercero - 'amigos'</code>
+<code class="language-plaintext highlighter-rouge">miCol at: 4 &lt;- el cuarto - 'escandinavos'</code>
+<code class="language-plaintext highlighter-rouge">miCol size &lt;- cantidad de elementos - 4</code></p>
+
+<p>y después puedo seguir agregándole elementos, ante lo cual la colección “se estira”</p>
+
+<p><code class="language-plaintext highlighter-rouge">miCol add: 'agrego'. </code>
+<code class="language-plaintext highlighter-rouge">miCol add: 'cosas'. </code>
+<code class="language-plaintext highlighter-rouge">miCol size &lt;- cantidad de elementos ahora - 6</code>
+<code class="language-plaintext highlighter-rouge">miCol last &lt;- el último ahora - 'cosas'</code></p>
+
+<p>Luego, así como la OrderedCollection, también tenemos la llamada <strong>SortedCollection</strong>, que la diferencia con la primera radica en que el criterio de ordenamiento puede ser definido. Si no definimos el criterio, SortedCollection ordena los elementos por su “orden natural” (significa que los ordenará de menor a mayor). Dicho de otra forma, no ordena por orden de llegada, sino por comparación entre los elementos.</p>
+
+<p>Si queremos ordenar los elementos de la colección con un criterio en particular, necesitamos pasárselo a la colección. La forma de hacerlo, es pasarle lo que denominamos <strong>sortBlock</strong>, que es un objeto <a href="bloques.html">Block</a> (bloque).</p>
+
+<p>Con respecto a las colecciones que tienen orden, por último veremos al viejo amigo <strong>Array</strong>. Aquí en Smalltalk también existe, y una de sus características es que es de tamaño fijo. Para instanciar un Array, hago Array new: 6, donde 6 es la cantidad de elementos que contendrá, alternativamete si conocemos los elementos de antemano pueden crearse de <a href="arrays-literales-en-smalltalk.html"> forma literal</a> (que es uno de los pocos motivo razonable para querer usar un Array en vez de otro tipo de colección como OrderedCollection).</p>
+
+<p>Los Arrays no implementan el mensaje add:, justamente porque no puedo modificar su tamaño. La forma de agregarles elementos es a través del mensaje <strong>at:put:</strong>, como por ejemplo:</p>
+
+<p><code class="language-plaintext highlighter-rouge">miVector := Array new: 2. </code>
+<code class="language-plaintext highlighter-rouge">miVector at: 1 put: unaLata. </code></p>
+
+<p>Todas las colecciones entienden una serie de mensajes que permiten obtener distintos sabores de colecciones con los mismos elementos. Estos mensajes son de la forma “as{ColeccionQueQuiero}”. Vamos a un par de ejemplos para ver cómo funciona.</p>
+
+<p>Si tuviese una colección de la clase Bag, y quiero sacarle los repetidos, sé que el Set no tiene repetidos, entonces tomo mi colección como un Set. Entonces:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sinRepetidos := miCarrito asSet. </code></p>
+
+<p>Si tuviese un array, y lo quiero convertir en una colección de tamaño variable, podría hacer:</p>
+
+<p><code class="language-plaintext highlighter-rouge">coleccionVariable := miVector asOrderedCollection. </code></p>
+
+<p>Si quisiera ordenar mi carrito de compras del producto más caro al más barato, haría algo como:</p>
+
+<p><code class="language-plaintext highlighter-rouge">ordenadosPorPrecio := miCarrito asSortedCollection: [:unProd :otroProd | unProd precio &gt; otroProd precio]. </code></p>
+
+<p>El mensaje <strong>asSortedCollection:</strong> recibe un parámetro que, obviamente, es un sortBlock. El sortBlock es un bloque que necesita 2 parámetros. El código del bloque es un código que debe devolver true o false. Para ordenar los objetos dentro de la colección, se evalúa el código y si el objeto retornado es true, el primer parámetro va antes que el segundo. Si retorna false, el segundo parámetro se ubica antes que el primero.</p>
+
+<p>También está el mensaje <strong>asSortedCollection</strong> (o sea sin el dos-puntos, o sea que no requiere parámetro) que, como dijimos antes, ordenará los elementos por el “orden natural”.</p>
+
+<p>¿Cuál es el “orden natural”? Dijimos que si a una SortedCollection no le decimos cómo queremos que ordene los elementos, los ordena por el “orden natural”. Pero … ¿qué puede ser este “orden natural”?</p>
+
+<p>Si estoy en el paradigma de objetos … seguro va a tener que ver con objetos y mensajes. El “orden natural” es el que dicta el mensaje &lt;, que es binario. O sea, en una SortedCollection con “orden natural” el criterio es poner a elem1 antes que elem2 si el resultado de evaluar <strong>elem1 &lt; elem2</strong> es true.</p>
+
+<p>Claro, eso quiere decir que solamente voy a poder tener, en una SortedCollection con “orden natural”, objetos que entiendan el mensaje &lt;. Los números, los String, las fechas, todos esos entienden &lt;. Pero p.ej. si quiero poner latas en una SortedCollection, no puede ser por “orden natural”, tengo que especificar el orden con el bloque con dos parámetros como vimos hace un ratito.</p>
+
+<h3 id="jerarquía-de-colecciones-en-pharo">Jerarquía de Colecciones (En Pharo)</h3>
+
+<p>Aquí se provee una imagen con una jerarquía simplificada de las colecciones existentes en Pharo. Presten especial atención a las clases explicadas en este artículo, las demás se proveen por motivos de completitud.</p>
+
+<p><img src="CollectionHierarchy.png" title="Jerarquía de colecciones en Pharo Smalltalk" alt="Jerarquía de colecciones en Pharo Smalltalk" width="600" /></p>
+
+<h2 id="diccionarios">Diccionarios</h2>
+
+<p>Por último, queremos mostrarles un sabor de colección que es especial. Se llama Dictionary y, como su nombre lo indica, intenta representar un diccionario. Este tipo de representación implica tener una asociación entre una clave y un valor.</p>
+
+<p>Poniendo como ejemplo, el propio diccionario. El diccionario es una asociación entre una clave, que son cada letra del abecedario y un apartado de páginas que tienen palabras. El diccionario lleva todo una explicación aparte, pueden profundizar más al respecto leyendo sobre <a href="diccionarios.html">Diccionarios</a>.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>5</td>
+                                <td>145</td>
+                                <td>12</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>70af887a</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f9436cd8</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>41ede305</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>623332ae</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Smalltalk tiene una clase llamada '''Collection''' que me permite representar colecciones, pero Collection es la abstracción superior de la jerarquía de colecciones. Al m...»</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

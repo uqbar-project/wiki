@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Problemas comunes con los tipos numericos de haskell</title>
+  <meta property="og:title" content="Problemas comunes con los tipos numericos de haskell" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/problemas-comunes-con-los-tipos-numericos-de-haskell.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/problemas-comunes-con-los-tipos-numericos-de-haskell.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Problemas comunes con los tipos numericos de haskell</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="para-salir-del-paso">Para salir del paso…</h2>
+
+<p>Al programar en <code class="language-plaintext highlighter-rouge">Haskell</code> suele pasar que <em>muy</em> frecuentemente tenemos problemas con los tipos numéricos, en particular suele ocurrir al intentar hacer divisiones. Por ejemplo en el siguiente programa, la función <code class="language-plaintext highlighter-rouge">promedio</code></p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">promedio</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">sum</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">length</span><span class="err"> </span><span class="n">xs</span>
+</code></pre></div></div>
+
+<p>Produce el siguiente error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    • Could not deduce (Fractional Int) arising from a use of ‘/’
+      from the context: Foldable t
+        bound by the inferred type of
+                   promedio :: Foldable t =&gt; t Int -&gt; Int
+        at main.hs:1:1-32
+    • In the expression: sum xs / length xs
+      In an equation for ‘promedio’: promedio xs = sum xs / length xs
+</code></pre></div></div>
+
+<p>El problema surge porque el <code class="language-plaintext highlighter-rouge">Haskell</code> tiene diferentes tipos de valores numéricos (enteros, reales, etc): un sistema de tipos muy estricto que hace que no sea sencillo mezclar los distintos tipos de valores en una misma operación.</p>
+
+<p>La versión corta es que <code class="language-plaintext highlighter-rouge">length xs</code> es un entero y la operación <code class="language-plaintext highlighter-rouge">/</code> no está definida para los números enteros.</p>
+
+<h2 id="solución-en-ghci">Solución en GHCi</h2>
+
+<p>Es necesario convertir el resultado de <code class="language-plaintext highlighter-rouge">length xs</code> al tipo de datos adecuado, utilizando la función <code class="language-plaintext highlighter-rouge">fromIntegral</code>:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">division</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">sum</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Esto funciona siempre que yo quiera hacer una división no-entera y uno de los parámetros (o ambos) es un entero. Para hacer divisiones enteras tenemos las funciones <code class="language-plaintext highlighter-rouge">div</code> y <code class="language-plaintext highlighter-rouge">mod</code>.</p>
+
+<h2 id="solución-si-utilizás-pdepreludat-con-stack">Solución si utilizás pdepreludat con stack</h2>
+
+<p>Es necesario convertir el resultado de <code class="language-plaintext highlighter-rouge">length xs</code> al tipo de datos adecuado, utilizando la función <code class="language-plaintext highlighter-rouge">toFloat</code>:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">division</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">sum</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="la-historia-completa">La historia completa</h2>
+
+<h3 id="la-división-no-está-definida-para-los-enteros">¿La división no está definida para los enteros?</h3>
+
+<p>Para comprender la totalidad del problema, es necesario comprender el tipo de la función <code class="language-plaintext highlighter-rouge">(/)</code>:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Main</span><span class="o">&gt;</span><span class="err"> </span><span class="o">:</span><span class="n">t</span><span class="err"> </span><span class="p">(</span><span class="o">/</span><span class="p">)</span>
+<span class="p">(</span><span class="o">/</span><span class="p">)</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="kt">Fractional</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">=&gt;</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span>
+</code></pre></div></div>
+
+<p>Se puede ver que <code class="language-plaintext highlighter-rouge">(/)</code> es una función polimórfica, es decir que puede ser utilizada con diferentes tipos de datos. Sin embargo no puede ser utilizada con <em>cualquier</em> tipo de dato; la restricción es que el tipo tiene que ser <em>instancia</em> de la clase <code class="language-plaintext highlighter-rouge">Fractional</code>. En particular, los tipos enteros de Haskell (<code class="language-plaintext highlighter-rouge">Int</code> e <code class="language-plaintext highlighter-rouge">Integer</code>) no son instancias de <code class="language-plaintext highlighter-rouge">Fractional</code>, por lo tanto siempre que se tenga un valor de alguno de esos tipos deberá ser <em>convertido</em> utilizando la función <code class="language-plaintext highlighter-rouge">fromIntegral</code>.</p>
+
+<p>Con esa idea en mente, analizamos los tipos de las funciones del ejemplo de la sección anterior:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Main</span><span class="o">&gt;</span><span class="err"> </span><span class="o">:</span><span class="n">t</span><span class="err"> </span><span class="n">sum</span>
+<span class="n">sum</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="kt">Num</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">=&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span>
+<span class="kt">Main</span><span class="o">&gt;</span><span class="err"> </span><span class="o">:</span><span class="n">t</span><span class="err"> </span><span class="n">length</span>
+<span class="n">length</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="kt">Int</span>
+</code></pre></div></div>
+
+<p>Y podemos concluir que sum no tendrá problemas, porque funciona para cualquier tipo numérico (por definición todas las instancias de <code class="language-plaintext highlighter-rouge">Fractional</code> son instancias de <code class="language-plaintext highlighter-rouge">Num</code>.</p>
+
+<p>En cambio la función <code class="language-plaintext highlighter-rouge">length</code> no es polimórfica en cuanto a su valor de retorno; aunque puede recibir cualquier tipo de lista, siempre devuelve un <code class="language-plaintext highlighter-rouge">Int</code>. Entonces el resultado de <code class="language-plaintext highlighter-rouge">length</code> no puede ser parámetro de <code class="language-plaintext highlighter-rouge">(/)</code>.</p>
+
+<h3 id="algunos-casos-más-complicados">Algunos casos más complicados</h3>
+
+<p>Supongamos que no utilizamos la función <code class="language-plaintext highlighter-rouge">sum</code>, y en cambio queremos definir la nuestra propia, de la siguiente manera:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">suma</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">foldr</span><span class="err"> </span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="err"> </span><span class="mi">0</span>
+</code></pre></div></div>
+
+<p>O bien (para no definir una que ya existe), podemos definir</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">prod</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">foldr</span><span class="err"> </span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="err"> </span><span class="mi">1</span>
+</code></pre></div></div>
+
+<p>¿Funcionan las siguientes definiciones?</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">div2</span><span class="err">  </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">suma</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span>
+<span class="n">floca</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">prod</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Si intentamos hacer eso, obtendremos el siguiente error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR `[`file:.\pruebas.hs:15`](file:.\pruebas.hs:15)` - Instance of Fractional Integer required for definition of div2
+</code></pre></div></div>
+
+<p>Para entender por qué se produce esto, debemos analizar nuevamente los tipos de <code class="language-plaintext highlighter-rouge">suma</code> y <code class="language-plaintext highlighter-rouge">prod</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hugs&gt; :t suma
+suma :: [Integer] -&gt; Integer
+Main&gt; :t prod
+prod :: [Integer] -&gt; Integer
+</code></pre></div></div>
+
+<p>Y como se puede ver devuelven valores de tipo <code class="language-plaintext highlighter-rouge">Integer</code> que, como dijimos antes, no es instancia de <code class="language-plaintext highlighter-rouge">Fractional</code> y por lo tanto no funciona.</p>
+
+<p>La idea de la sección anterior también puede servir en este caso (aunque no es la única forma):</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">div2</span><span class="err">  </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">suma</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span>
+<span class="n">floca</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">prod</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="aprovechando-mejor-el-polimorfismo">Aprovechando mejor el polimorfismo</h3>
+
+<p>En realidad hay una forma mejor de solucionar el problema planteado en la sección. La desventaja de la solución descripta consiste en que, al resolverlo de esa manera, la función suma sólo funciona para valores de tipo <code class="language-plaintext highlighter-rouge">Integer</code>; lo que puede resultar muy restrictivo en un futuro.</p>
+
+<p>¿Por qué sucede esto? Como sabemos, <code class="language-plaintext highlighter-rouge">Haskell</code> trabaja con <a href="inferencia-de-tipos.html">inferencia de tipos</a>, por lo tanto, cuando nosotros no indicamos en nuestro programa de qué tipo son los valores que espera y devuelve una función, el sistema intentará descubrir ese tipo por nosotros. Normalmente este mecanismo de inferencia es suficiente y resulta de gran utilidad, ya que nos permite tener un lenguaje fuertemente tipado que nos ayuda a encontrar muchos errores en nuestro código en una fase previa a la ejecución del programa, al mismo tiempo que nos evita de la burocracia y el engorro de tener que indicar el tipo de cada función explícitamente.</p>
+
+<p>Sin embargo en este caso el tipo inferido por el sistema de tipos de <code class="language-plaintext highlighter-rouge">Haskell</code> es <em>subóptimo</em>. El tipo inferido es <code class="language-plaintext highlighter-rouge">[Integer] -&gt; Integer</code>, es decir, que sólo funciona para listas de tipo <code class="language-plaintext highlighter-rouge">Integer</code>.</p>
+
+<p>Sin embargo, si miramos la definición de <code class="language-plaintext highlighter-rouge">suma</code>, podemos ver que se basa en las funciones <code class="language-plaintext highlighter-rouge">foldr</code> y <code class="language-plaintext highlighter-rouge">(+)</code>, cuyos tipos son:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Main</span><span class="o">&gt;</span><span class="err"> </span><span class="o">:</span><span class="n">t</span><span class="err"> </span><span class="n">foldr</span>
+<span class="n">foldr</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="p">(</span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span><span class="p">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span>
+<span class="kt">Main</span><span class="o">&gt;</span><span class="err"> </span><span class="o">:</span><span class="n">t</span><span class="err"> </span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="kt">Num</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">=&gt;</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span>
+</code></pre></div></div>
+
+<p>Es decir que no hay ningún motivo para restringir el tipo a <code class="language-plaintext highlighter-rouge">[Integer] -&gt; Integer</code>, dado que <code class="language-plaintext highlighter-rouge">foldr</code> funciona para cualquier tipo de lista y <code class="language-plaintext highlighter-rouge">(+)</code> funciona para todos los tipos de la familia <code class="language-plaintext highlighter-rouge">Num</code> (es decir, todos los tipos numéricos predefinidos del Haskell). De hecho, si consultamos el tipo de la expresión <code class="language-plaintext highlighter-rouge">foldr (+) 0</code>, obtenemos:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Main</span><span class="o">&gt;</span><span class="err"> </span><span class="o">:</span><span class="n">t</span><span class="err"> </span><span class="n">foldr</span><span class="err"> </span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="err"> </span><span class="mi">0</span>
+<span class="n">foldr</span><span class="err"> </span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="err"> </span><span class="mi">0</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="kt">Num</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">=&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span>
+</code></pre></div></div>
+
+<p>que es el tipo que buscamos.</p>
+
+<p>Lamentablemente, cuando intenta inferir un tipo automáticamente para la función <code class="language-plaintext highlighter-rouge">suma</code>, <code class="language-plaintext highlighter-rouge">Haskell</code> le asigna un tipo <em>monomórfico</em>, defaulteando en el tipo <code class="language-plaintext highlighter-rouge">Integer</code>. La forma de evitar esta restricción es haciendo explícita nuestra intención de que la función suma sea <em>polmórfica</em>, esto se logra asociando a la función una indicación del tipo esperado.</p>
+
+<p>El tipo esperado no es otro que el de la expresión <code class="language-plaintext highlighter-rouge">foldr (+) 0</code>, es decir, <code class="language-plaintext highlighter-rouge">Num a =&gt; [a] -&gt; a</code>. La definición de la función quedaría así:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">suma</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="kt">Num</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">=&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span>
+<span class="n">suma</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">foldr</span><span class="err"> </span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="err"> </span><span class="mi">0</span>
+</code></pre></div></div>
+
+<p>Al hacer ese cambio la siguiente definición pasa a estar correctamente tipada:</p>
+
+<div class="language-hs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- con GHCi</span>
+<span class="n">div2</span><span class="err">  </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">suma</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">fromIntegral</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span> 
+<span class="c1">-- con pdepreludat y stack ghci</span>
+<span class="n">div2</span><span class="err">  </span><span class="n">xs</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">suma</span><span class="err"> </span><span class="n">xs</span><span class="err"> </span><span class="o">/</span><span class="err"> </span><span class="n">toFloat</span><span class="err"> </span><span class="p">(</span><span class="n">length</span><span class="err"> </span><span class="n">xs</span><span class="p">)</span> 
+</code></pre></div></div>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on April 12, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>18</td>
+                                <td>95</td>
+                                <td>48</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Alfredo.sanzo</td>
+                                <td>Alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>12</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>2e21ff35</td>
+                        <td>Fri Apr 12 18:51:10 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update problemas-comunes-con-los-tipos-numericos-de-haskell.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>cb7b5bb4</td>
+                        <td>Fri Apr 12 18:50:10 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update problemas-comunes-con-los-tipos-numericos-de-haskell.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>51551fd2</td>
+                        <td>Fri Apr 12 18:38:14 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update problemas-comunes-con-los-tipos-numericos-de-haskell.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9a7052ca</td>
+                        <td>Fri Apr 12 18:36:32 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update problemas-comunes-con-los-tipos-numericos-de-haskell.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

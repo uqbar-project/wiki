@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Xtend - control de versiones</title>
+  <meta property="og:title" content="Xtend - control de versiones" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/xtend-amigandonos-git.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/xtend-amigandonos-git.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="xtend,lenguaje,git,equipo,trabajo,versionado,control,VCS," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Xtend - control de versiones</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Cómo no subir esos archivos</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Recomendaciones para trabajar con mi grupo</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Metodología para trabajar en grupo</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Git por consola o Git con una herramienta visual?</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>No todos los archivos deben subirse al repo. Como regla general no deberían subir archivos que se puedan generar a partir de otros, por ejemplo:</p>
+
+<ul>
+  <li>los archivos <code class="language-plaintext highlighter-rouge">.java</code> que se generan a partir del código Xtend (en <code class="language-plaintext highlighter-rouge">target/xtend-gen/main</code>)</li>
+  <li>los binarios que se generan a partir del código fuente de ustedes (en <code class="language-plaintext highlighter-rouge">target/classes</code>). Ocupan espacio en el repositorio y se corre el riesgo de estar trabajando con versiones desactualizadas.</li>
+  <li>archivos de configuración propios de Eclipse, como <code class="language-plaintext highlighter-rouge">.project</code>, <code class="language-plaintext highlighter-rouge">.classpath</code> y el directorio <code class="language-plaintext highlighter-rouge">.settings</code>. Todos estos se generan a partir del <code class="language-plaintext highlighter-rouge">pom.xml</code> cuando hacemos Maven &gt; Update, y por este motivo no es bueno trabajar con los archivos de Eclipse ni tenerlos en cuenta en el control de versiones.</li>
+</ul>
+
+<h1 id="tocAnchor-1-1">Cómo no subir esos archivos</h1>
+
+<p>Debemos crear un archivo <code class="language-plaintext highlighter-rouge">.gitignore</code> (que en Wollok se los creó el propio entorno), en la carpeta raíz del proyecto, que debe tener al menos esta lista:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>/target/
+.classpath
+.project
+bin
+generated<span class="k">*</span>
+.settings
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Fíjense que hemos eliminado todos los archivos que se pueden generar en base a definiciones originales. Esto da como resultado un repositorio con menos cantidad de archivos y mayor calidad de los mismos. Por lo general, deberíamos evitar subir archivos binarios (salvo imágenes o archivos encriptados con información sensible), dado que ocupan más espacio y no se puede comparar diferencias entre versiones, solo saber si cambió.</p>
+
+<h1 id="tocAnchor-1-2">Recomendaciones para trabajar con mi grupo</h1>
+
+<ul>
+  <li>Cuando empiezo el día primero sincronizo el repositorio para ver los cambios que no tengo en el código. Si no hay cambios, simplemente corro los tests y empiezo a codear como un campeón. Si no…
+    <ul>
+      <li>Acepto los cambios entrantes y en caso de ser necesario resuelvo conflictos</li>
+      <li>Corro los tests y veo que todo anda sobre ruedas</li>
+      <li>Vuelvo a sincronizar y veo que ya no quedan ni conflictos ni cambios sin aceptar</li>
+      <li>Subo mis cambios al repositorio remoto para que mis compañeros lo vean</li>
+    </ul>
+  </li>
+  <li>Ahora sí, a programo, programo, programo… y cuando termino, corro los tests</li>
+  <li>Y vuelvo a sincronizar contra el repositorio remoto</li>
+</ul>
+
+<p>En resumen:</p>
+
+<ul>
+  <li>No pasa un día de trabajo sin hacer un commit y push al repositorio remoto. Esto implica planificar mi trabajo para que pueda subir algo al repositorio sin que rompa todo: <strong>hay que partir un cambio grande en pequeños pasos</strong> (iterativo, incremental).</li>
+  <li>Nunca deberían subir nuevos fuentes al repositorio sin explicar brevemente qué cambiaron. Si los mensajes son descriptivos (y “fix”, “asdsadsa” o “arreglo una cosita” definitivamente no lo son) rápidamente puedo detectar qué modificaron mis compañeros con sólo leer lo que escribieron en los commits. Una buena descripción me ayuda también a entender qué es lo que se modificó y por qué razón, especialmente útil a la hora de solucionar un conflicto o entender por qué se rompieron los tests.</li>
+  <li>El que rompe los tests paga las facturas.</li>
+</ul>
+
+<h1 id="tocAnchor-1-3">Metodología para trabajar en grupo</h1>
+
+<ul>
+  <li>los tests tienen que estar en verde <strong>siempre</strong></li>
+  <li>los tests son de todos y todos somos responsables por mantenerlos</li>
+  <li>si encontramos un bug y no había un test que lo probaba agregamos uno</li>
+  <li>los tests son rápidos de correr (no pueden tardar 10 minutos)</li>
+</ul>
+
+<h1 id="tocAnchor-1-4">Git por consola o Git con una herramienta visual?</h1>
+
+<p>Da lo mismo, elegí la herramienta que mejor te resulte. eGit no es la gran cosa y hay otras opciones (tenés los links en la página), lo importante es cómo te organizás con tus compañeros.</p>
+
+<hr />
+
+<ul>
+  <li><a href="xtend-guia-rapida.html">Siguiente paso: Guía rápida de Xtend</a></li>
+  <li><a href="xtend-principal.html">Volver al menú principal del entorno Xtend</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/xtend" title="xtend">Xtend</a></li>
+            
+             <li><a href="/categories/lenguaje" title="lenguaje">Lenguaje</a></li>
+            
+             <li><a href="/categories/git" title="git">Git</a></li>
+            
+             <li><a href="/categories/equipo" title="equipo">Equipo</a></li>
+            
+             <li><a href="/categories/trabajo" title="trabajo">Trabajo</a></li>
+            
+             <li><a href="/categories/versionado" title="versionado">Versionado</a></li>
+            
+             <li><a href="/categories/control" title="control">Control</a></li>
+            
+             <li><a href="/categories/VCS" title="VCS">Vcs</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on August 14, 2019 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>60</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>b1c4ac52</td>
+                        <td>Wed Aug 14 07:15:27 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Xtend main page added</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

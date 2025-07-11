@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+    environment:
+      TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
+    paralelism: 2
+    steps:
+    - run: git config --global user.email "bot@uqbar.org"
+    - run: git config --global user.name "UqbarBot"
+    - checkout
+    - run:
+        name: APT Installs
+        command: |
+          sudo apt-get --allow-releaseinfo-change update
+          sudo apt-get update
+          sudo apt-get install build-essential patch
+          sudo apt-get install ruby-dev zlib1g-dev liblzma-dev libgmp-dev cmake
+    - run:
+        name: Setup nvm and npm
+        command: |
+          yarn install
+    - run:
+        name: Install Rake
+        command: gem install rake
+    - run:
+        name: Install dependencies
+        command: bundle install --jobs=10 --retry=3
+    - run:
+        name: Test
+        command: bundle exec jekyll build
+    - run:
+        name: Publishing
+        command: bundle exec rake publish
+
+workflows:
+  version: 2
+  build:
+    jobs:
+    - build:
+        filters:
+          branches:
+            only: master

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Fold</title>
+  <meta property="og:title" content="Fold" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/fold.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/fold.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Fold</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Existe una familia de funciones en Haskell para modelar un algoritmo que permite procesar una estructura de datos para construir un valor, a esta idea le decimos foldear (derivado del inglés, “to fold”) o reducir.</p>
+
+<p>¿Cómo sumo los elementos de una lista? ¿Cómo multiplico los elementos de una lista? ¿Cómo concateno una lista de palabras?</p>
+
+<pre><code class="language-Haskell">sum [] = 0 
+sum (x:xs) = x + sum xs 
+
+prod [] = 1 
+prod (x:xs) = x * prod xs 
+
+concatenar [] = [] 
+concatenar (x:xs) = x ++ concatenar xs
+</code></pre>
+
+<p>O bien si usamos los operadores de forma infija…</p>
+
+<pre><code class="language-Haskell">sum [] = 0 
+sum (x:xs) = (+) x (sum xs) 
+
+prod [] = 1 
+prod (x:xs) = (*) x (prod xs) 
+
+concatenar [] = []
+concatenar (x:xs) = (++) x (concatenar xs)
+</code></pre>
+
+<p>Si vemos las diferencias entre estas funciones notamos que sólo cambia la operación a realizar y el valor inicial, por ende si queremos hacer una función que nos generalice el algoritmo tenemos que recibirlos como parámetro.</p>
+
+<p>En términos generales… ¿cómo la paso a una función de orden superior? Necesitamos:</p>
+<ul>
+  <li>una función que opera con dos parámetros</li>
+  <li>un valor inicial</li>
+  <li>una lista</li>
+</ul>
+
+<pre><code class="language-Haskell">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b 
+</code></pre>
+
+<p>Caso base: si la lista es vacía, devuelvo el valor inicial.</p>
+
+<pre><code class="language-Haskell">foldr f valorInicial [] = valorInicial 
+</code></pre>
+
+<p>Si la lista no es vacía, ¿qué voy a tener que hacer? A partir de alguna de las funciones podemos trasladar:</p>
+
+<pre><code class="language-Haskell">concatenar (x:xs) = (++) x (concatenar xs) 
+foldr f valorInicial (x:xs) = f x (foldr f valorInicial xs)
+</code></pre>
+
+<h2 id="sumando-con-foldr">Sumando con foldr</h2>
+
+<pre><code class="language-Haskell">sum = foldr (+) 0 
+</code></pre>
+
+<p>Para sumar una lista hay que aplicar la suma elemento por elemento arrancando de 0. Como es difícil de asimilar de golpe, vamos a hacer el seguimiento de un caso:</p>
+
+<pre><code class="language-Haskell">&gt; sum [2, 3, 5] 
+= foldr (+) [2, 3, 5] 
+= (+ 2) (foldr (+) 0 [3, 5]) 
+= (+ 2) ((+ 3) (foldr (+) 0 [5])) 
+= (+ 2) ((+ 3) ((+ 5) (foldr (+) 0 []))) 
+= (+ 2) ((+ 3) ((+ 5) 0)) &lt;- caso base 
+= (+ 2) ((+ 3 5)) 
+= (+ 2) 8 
+= 10
+</code></pre>
+
+<p>Si revisan el Prelude, van a encontrar otra función similar:</p>
+
+<pre><code class="language-Haskell">foldl f z [] = z 
+foldl f z (x:xs) = foldl f (f z x) xs 
+</code></pre>
+
+<h2 id="foldl-vs-foldr">foldl vs foldr</h2>
+
+<p>¿Cuál es la diferencia? Revisemos los tipos:</p>
+
+<pre><code class="language-Haskell">foldl :: (a -&gt; b -&gt; a) -&gt; a -&gt; [b] -&gt; a
+foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b 
+</code></pre>
+
+<p>Foldr trabaja asociando a derecha la función f, mientras que foldl trabaja asociando a izquierda la función f. El seguimiento de la sumatoria definida en base a foldl puede ayudar a entender cómo realiza la operatoria:</p>
+
+<pre><code class="language-Haskell">sum = foldl (+) 0 
+&gt; sum [2, 3, 5] 
+= foldl (+) 0 [2, 3, 5] 
+= foldl (+) ((+) 0 2) [3, 5] 
+= foldl (+) ((+) 2 3) [5] 
+= foldl (+) ((+) 5 5) []
+= foldl (+) 10 [] 
+= 10 &lt;- caso base
+</code></pre>
+
+<p>Y aquí vemos que el valor inicial del caso base es en realidad el resultado final. Para comparar la forma de trabajar de las dos funciones pueden realizar consultas de este estilo en su intérprete de Haskell (show es una función que retorna la representación de el valor recibido como string):</p>
+
+<pre><code class="language-Haskell">&gt; foldr (\x y -&gt; concat ["(",x,"+",y,")"]) "0" (map show [1..13])
+"(1+(2+(3+(4+(5+(6+(7+(8+(9+(10+(11+(12+(13+0)))))))))))))"
+&gt; foldl (\x y -&gt; concat ["(",x,"+",y,")"]) "0" (map show [1..13])
+"(((((((((((((0+1)+2)+3)+4)+5)+6)+7)+8)+9)+10)+11)+12)+13)"
+</code></pre>
+
+<p>Otras variantes de fold son foldl1 y foldr1 que trabajan de forma análoga a las anteriores sólo que toman como valor inicial al primer elemento de la lista. Eso es útil para los casos en los que la lista no debería estar vacía y/o no hay un valor adecuado para parametrizar. Veamos un ejemplo:</p>
+
+<pre><code class="language-Haskell">maximum' = foldr1 max
+</code></pre>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on April 26, 2018 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>166</td>
+                                <td>44</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>e6b7f724</td>
+                        <td>Thu Apr 26 10:21:12 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update fold.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>36d5bbd5</td>
+                        <td>Fri May 26 05:04:06 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update fold.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e134e7ac</td>
+                        <td>Thu Feb 2 19:10:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Existe una familia de funciones en Haskell para modelar un algoritmo que permite procesar una estructura de datos para construir un valor, a esta idea le decimos foldear (d...»</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

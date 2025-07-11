@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Introducción a Gradle</title>
+  <meta property="og:title" content="Introducción a Gradle" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/gradle.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/gradle.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="gradle,build,integración,scm," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Introducción a Gradle</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Reificación de Proyecto</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Identificación de un proyecto Gradle</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">3</span> <span class="toctext">Manejo de dependencias</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#tocAnchor-1-4-1"><span class="tocnumber">3.1</span> <span class="toctext">Repositorios locales</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-4-2"><span class="tocnumber">3.2</span> <span class="toctext">Repositorios remotos</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#tocAnchor-1-4-3"><span class="tocnumber">3.3</span> <span class="toctext">Definiendo dependencias en el proyecto</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#tocAnchor-1-4-4"><span class="tocnumber">3.4</span> <span class="toctext">Resumen general del manejo de dependencias de Gradle</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#tocAnchor-1-4-5"><span class="tocnumber">3.5</span> <span class="toctext">Dependencias transitivas</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-10">
+              <a href="#tocAnchor-1-10"><span class="tocnumber">4</span> <span class="toctext">Plugins</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-11">
+              <a href="#tocAnchor-1-11"><span class="tocnumber">5</span> <span class="toctext">Tareas</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-12">
+              <a href="#tocAnchor-1-12"><span class="tocnumber">6</span> <span class="toctext">Temas adicionales</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-13">
+                  <a href="#tocAnchor-1-12-1"><span class="tocnumber">6.1</span> <span class="toctext">Gradle Wrapper</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-14">
+                  <a href="#tocAnchor-1-12-2"><span class="tocnumber">6.2</span> <span class="toctext">Ejecutando gradle desde la consola</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-15">
+              <a href="#tocAnchor-1-15"><span class="tocnumber">7</span> <span class="toctext">Documentación oficial</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-16">
+              <a href="#tocAnchor-1-16"><span class="tocnumber">8</span> <span class="toctext">Links relacionados</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>
+  <img src="/img/wiki/gradle_logo2.png" alt="Gradle logo" />
+</p>
+
+<h1 id="tocAnchor-1-1">Introducción</h1>
+
+<p>Gradle es una herramienta que ayuda a desarrollar un proyecto basado en el entorno de una JDK (Java, Kotlin, Xtend, Scala, Groovy, etc.) y que cumple con las siguientes funciones principales que vamos a explicar en las siguientes secciones:</p>
+
+<ul>
+  <li>Reificación del Proyecto</li>
+  <li>Manejo de Dependencias a partir de repositorios locales y remotos</li>
+  <li>Plugins y tareas</li>
+</ul>
+
+<h1 id="tocAnchor-1-2">Reificación de Proyecto</h1>
+
+<p>Java no trabaja la idea de proyecto, no lo representa como concepto, y eso se traslada a todos los lenguajes basados en la JDK. Entonces, cada uno de los IDEs pensados para Java agregan su propia forma de definirlo:</p>
+
+<ul>
+  <li>en Eclipse tenemos los archivos <code class="language-plaintext highlighter-rouge">.classpath</code> y <code class="language-plaintext highlighter-rouge">.project</code></li>
+  <li>en IntelliJ tenemos el directorio <code class="language-plaintext highlighter-rouge">.idea</code></li>
+  <li>en Visual Studio Code tenemos la carpeta <code class="language-plaintext highlighter-rouge">.vscode</code></li>
+</ul>
+
+<p>Gradle permite trabajar en cualquiera de estos IDEs con su propio modelo de proyecto, que se guarda en el archivo <code class="language-plaintext highlighter-rouge">build.gradle.kts</code> en el caso de trabajar utilizando el lenguaje Kotlin o <code class="language-plaintext highlighter-rouge">build.gradle</code> a secas, cuando la configuración se hace utilizando el lenguaje Groovy. A partir de ahora vamos a continuar la explicación asumiendo que estás usando Gradle con Kotlin.</p>
+
+<h2 id="tocAnchor-1-2-1">Identificación de un proyecto Gradle</h2>
+
+<p>Todo proyecto en Gradle tiene tres cosas que lo identifican:</p>
+
+<ul>
+  <li><strong>group</strong>: representa la organización autora/dueña del artefacto. Por ejemplo, los proyectos de Algoritmos 2 suelen usar el groupId <code class="language-plaintext highlighter-rouge">ar.edu.unsam.algo2</code>.</li>
+  <li><strong>artifact</strong>: este campo define el nombre por el que se conoce al proyecto en sí mismo. Algunos ejemplos: <code class="language-plaintext highlighter-rouge">commons-collections</code>, <code class="language-plaintext highlighter-rouge">eg-seguros-kotlin</code>, <code class="language-plaintext highlighter-rouge">tp-futbol5-grupo01</code>, etc.</li>
+</ul>
+
+<blockquote>
+  <p><strong>Aclaración:</strong> los términos <code class="language-plaintext highlighter-rouge">componente</code> y <code class="language-plaintext highlighter-rouge">artefacto</code> son sinónimos de proyecto.</p>
+</blockquote>
+
+<ul>
+  <li><strong>version</strong>: es el último componente del rompecabezas, dado que groupId:artifactId denota un único proyecto pero no alcanza para definir en qué versión del proyecto nos estamos parando. Se agrega entonces un número de versión para completar la información que Gradle necesita para generar una identificación unívoca. Conviene seguir las reglas de <a href="https://semver.org/"><strong>versionado semántico</strong></a>, para liberar versiones productivas. A veces se suele acompañar de un sufijo <code class="language-plaintext highlighter-rouge">RELEASE</code> (para versiones estables) o <code class="language-plaintext highlighter-rouge">SNAPSHOT</code> (para versiones intermedias que pueden estar sujetas a cambios).</li>
+</ul>
+
+<p>Gradle tomó de Maven, su antecesor directo, esta misma forma de identificar un proyecto. Vemos cómo se definen estos valores en el archivo <code class="language-plaintext highlighter-rouge">build.gradle.kts</code>:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">group</span> <span class="p">=</span> <span class="s">"ar.edu.unsam.algo2"</span>
+<span class="n">version</span> <span class="p">=</span> <span class="s">"1.0-SNAPSHOT"</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El artifact se define en el archivo <code class="language-plaintext highlighter-rouge">settings.gradle.kts</code>:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">rootProject</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">"eg-seguros-kotlin"</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h1 id="tocAnchor-1-4">Manejo de dependencias</h1>
+
+<h2 id="tocAnchor-1-4-1">Repositorios locales</h2>
+
+<p>Las <strong>dependencias</strong> son útiles para poder acceder a códigos escritos por otros (como la biblioteca <a href="https://mockk.io/">Mockk</a> o <a href="https://commons.apache.org/proper/commons-collections/">Apache Commons Collections</a>). Cuando instalamos Gradle, se crea un repositorio local en una carpeta que por defecto suele ser <code class="language-plaintext highlighter-rouge">HOME/.gradle</code>, donde descargamos los componentes localmente <strong>una sola vez</strong> (muchos proyectos que usan la misma dependencia van a buscar el artefacto en ese mismo lugar). Podemos encontrar al componente cuyo identificador es <code class="language-plaintext highlighter-rouge">io.kotest:kotest-assertions-core:5.1.0</code> en</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>~/.gradle
+   └── caches
+        └── modules-2
+             └── files-2.1
+                    └── io.kotest
+                          └── kotest-assertions-core
+                                ├─ 4.4.3 <span class="o">(</span>otra versión<span class="o">)</span>
+                                └─ 5.1.0 <span class="nt">--</span><span class="o">&gt;</span> dentro de esta carpeta estará el artefacto
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li>recordemos que el identificador de un componente se arma a partir del groupId + el artifactId + la versión</li>
+  <li>en la cache de Gradle están todos los componentes que descargamos localmente. Esto permite que cuando estemos trabajando en otro proyecto que comparta la misma dependencia no necesitemos ir a descargarla desde los repositorios. El comportamiento en una máquina Windows es exactamente igual, hay que explorar los directorios incluyendo los que son ocultos, y navegar a partir de la carpeta de usuario + <code class="language-plaintext highlighter-rouge">\.gradle</code>.</li>
+</ul>
+
+<h2 id="tocAnchor-1-4-2">Repositorios remotos</h2>
+
+<p>Ahora bien, ¿desde dónde descargamos las versiones 4.4.3 y 5.1.0 de io.kotest:kotest-assertions-core? Existen para eso <strong>repositorios remotos</strong> donde se publican artefactos:</p>
+
+<ul>
+  <li><strong>Maven Central</strong>, que es el repositorio principal donde están subidos artefactos publicados con tecnología <a href="https://maven.apache.org/">Maven</a>. Las dependencias más importantes suelen estar en este repositorio y tenés una <a href="https://search.maven.org/">página de búsqueda de artefactos</a>, muy útil cuando necesitamos bajarnos “Mockito”, “Log4J”, “Kotest” o cualquier otra dependencia.</li>
+  <li>para los proyectos en Kotlin, otro repositorio importante es el de <a href="https://maven.google.com/web/index.html"><strong>Google</strong> (también en Maven)</a> ya que contiene componentes relacionados con el desarrollo de Android, entre otros.</li>
+  <li>hay eventualmente otros repositorios remotos e incluso podés crear un servidor que funcione como repositorio de artefactos. Podés investigar <a href="https://jfrog.com/artifactory/">Artifactory o JFrog</a>, por el momento es suficiente con saber simplemente desde dónde estamos descargando nuestros componentes.</li>
+</ul>
+
+<p>En el archivo <code class="language-plaintext highlighter-rouge">build.gradle.kts</code> podés ver cómo se referencian los repositorios remotos:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">repositories</span> <span class="p">{</span>
+    <span class="n">mavenCentral</span><span class="p">()</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-4-3">Definiendo dependencias en el proyecto</h2>
+
+<p>Las dependencias se definen dentro de un tag <code class="language-plaintext highlighter-rouge">dependencies</code>:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">kotestVersion</span> <span class="p">=</span> <span class="s">"5.8.0"</span>
+
+<span class="n">dependencies</span> <span class="p">{</span>
+    <span class="n">implementation</span><span class="p">(</span><span class="n">kotlin</span><span class="p">(</span><span class="s">"stdlib"</span><span class="p">))</span>
+    <span class="n">testImplementation</span><span class="p">(</span><span class="s">"io.kotest:kotest-runner-junit5:$kotestVersion"</span><span class="p">)</span>
+    <span class="n">testImplementation</span><span class="p">(</span><span class="s">"io.kotest:kotest-assertions-core:$kotestVersion"</span><span class="p">)</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso, estamos definiendo que nuestro proyecto tiene como pre-requisitos:</p>
+<ul>
+  <li>la biblioteca estándar de Kotlin</li>
+  <li>y los componentes <code class="language-plaintext highlighter-rouge">kotest-runner-junit5</code> y <code class="language-plaintext highlighter-rouge">kotest-assertions-core</code> de <code class="language-plaintext highlighter-rouge">io.kotest</code>. La versión se define en una referencia <code class="language-plaintext highlighter-rouge">val</code>, el código que escribimos para definir el archivo de configuración es Kotlin.</li>
+</ul>
+
+<p>Una vez que hagamos un cambio en las dependencias, nos aparece el botón para sincronizar las definiciones del archivo con el IntelliJ, como vemos en este video:</p>
+
+<p>
+  <img src="/img/wiki/gradle-add-dependency.gif" alt="descarga componente local" />
+</p>
+
+<p>Al agregar una dependencia lo hacemos con el formato “group:artifact:version” y también definimos <strong>el tipo de alcance</strong> (scope), que puede ser</p>
+
+<ul>
+  <li><strong>implementation</strong>: el componente es necesario para hacer el <em>build</em> de nuestro proyecto.</li>
+  <li><strong>testImplementation</strong>: el componente es necesario para ejecutar los tests de nuestro proyecto.</li>
+  <li><strong>runtimeOnly</strong>: el componente se utiliza únicamente cuando tenemos levantada la aplicación. Esta variante es útil cuando trabajamos con objetos de resguardo (<em>stubs</em> o <em>mocks</em>) para ejecutar los tests (<code class="language-plaintext highlighter-rouge">testImplementation</code>) pero queremos tener un componente real que envía mails en la versión productiva (<code class="language-plaintext highlighter-rouge">runtimeOnly</code>).</li>
+  <li>otras variantes pueden estudiarse leyendo <a href="https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph">la documentación del plugin de Gradle para Java</a></li>
+  <li><strong><em>custom</em></strong>: para les interesades dejamos un artículo que explica <a href="https://docs.gradle.org/current/userguide/declaring_dependencies.html">cómo definir configuraciones propias extendiendo el modelo de Gradle</a></li>
+</ul>
+
+<h2 id="tocAnchor-1-4-4">Resumen general del manejo de dependencias de Gradle</h2>
+
+<p>
+  <img src="/img/wiki/gradle-dependencias.png" alt="manejo de dependencias de gradle" />
+</p>
+
+<p><em>Fuente:</em> https://docs.gradle.org/current/userguide/dependency_management.html</p>
+
+<p>Al hacer el build de nuestro proyecto</p>
+
+<ul>
+  <li>si la versión de ese componente se encuentra descargado en nuestro repositorio local, se utiliza como dependencia válida</li>
+  <li>en caso contrario habrá que buscar en los repositorios definidos en nuestro proyecto, como Maven Central, google, etc. en el orden en que fueron definidos</li>
+  <li>si en ninguno de los repositorios fue posible encontrarlo, entonces recibiremos un mensaje de error cuando intentemos hacer build del proyecto:</li>
+</ul>
+
+<p>
+  <img src="/img/wiki/gradle-componenteFallido.png" alt="gradle componente fallido" />
+</p>
+
+<h2 id="tocAnchor-1-4-5">Dependencias transitivas</h2>
+
+<p>Un detalle no menor de la resolución de dependencias de Gradle es que también funciona para las dependencias transitivas.</p>
+
+<p>Por ejemplo:</p>
+
+<ul>
+  <li>proyectoA –&gt; proyectoB</li>
+  <li>proyectoB –&gt; proyectoC</li>
+  <li>proyectoC –&gt; proyectoD, proyectoE, proyectoF</li>
+</ul>
+
+<p>Al resolver las dependencias, el proyectoA necesitará descargar los componentes B, C, D, E y F. Incluso podríamos requerir diferentes versiones de los mismos componentes.</p>
+
+<p><br />
+Noten que un proyecto comercial “normal” o mediano, puede incluir decenas y hasta cientos de dependencias. Esto se puede ver en IntelliJ desde la solapa Gradle, e inspeccionar</p>
+
+<ul>
+  <li><strong>compileClasspath:</strong> dependencias base para compilar los fuentes (que están en <code class="language-plaintext highlighter-rouge">src/main/kotlin</code>)</li>
+  <li><strong>runtimeClasspath:</strong> dependencias que tendremos a la hora de ejecutar nuestra aplicación en Kotlin, que incluye dependencias <code class="language-plaintext highlighter-rouge">runtimeOnly</code>. En Algoritmos 2 no vamos a levantar ninguna aplicación, pero sí más adelante en Algoritmos 3.</li>
+  <li><strong>testCompileClasspath</strong>: dependencias que incluyen tanto fuentes como las marcadas como <code class="language-plaintext highlighter-rouge">testImplementation</code>, que sirven para ejecutar los tests.</li>
+</ul>
+
+<p>
+  <img src="/img/wiki/gradle-transitive-dependencies.gif" alt="Gradle - Dependencias transitivas" />
+</p>
+
+<h1 id="tocAnchor-1-10">Plugins</h1>
+
+<p>Si bien Gradle provee una plataforma para poder facilitar el manejo de dependencias, el build del proyecto y muchas otras actividades más, quienes verdaderamente se encargan de esta tarea son los <strong>plugins</strong>, que terminan resolviendo cada una de estas cosas.</p>
+
+<p>Cada plugin permite</p>
+
+<ul>
+  <li>definir qué elementos van a participar, extendiendo el modelo original de Gradle: por ejemplo el plugin de Kotlin configura la carpeta donde se ubican las clases principales en <code class="language-plaintext highlighter-rouge">src/main/kotlin</code></li>
+  <li>crear tareas, como la compilación de todos los archivos Kotlin, o la ejecución de los tests unitarios indicando cuál es el framework, entre muchas otras cosas</li>
+  <li>agregar configuraciones a nuestro proyecto, como repositorios adicionales donde ir a buscar dependencias, o definir una versión de la JDK por defecto.</li>
+</ul>
+
+<p>Podés ver en cualquiera de nuestros ejemplos qué contiene la sección plugins del <code class="language-plaintext highlighter-rouge">build.gradle.kts</code>:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">plugins</span> <span class="p">{</span>
+    <span class="n">kotlin</span><span class="p">(</span><span class="s">"jvm"</span><span class="p">)</span> <span class="n">version</span> <span class="s">"1.9.22"</span>
+    <span class="n">jacoco</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este ejemplo</p>
+
+<ul>
+  <li>estamos utilizando una determinada versión del plugin de Kotlin para la JVM, para poder trabajar el proyecto adecuadamente en esa tecnología</li>
+  <li>y además se agrega JaCoCo (Java Code Coverage), que agrega tareas para poder escribir reportes de porcentaje de cobertura de nuestros tests que luego serán utilizados por sitios que los publican, como <a href="https://about.codecov.io/">Codecov</a> o <a href="https://coveralls.io/">Coveralls</a></li>
+</ul>
+
+<p><br />
+Para más información pueden consultar <a href="https://docs.gradle.org/current/userguide/plugins.html">esta página</a>.</p>
+
+<h1 id="tocAnchor-1-11">Tareas</h1>
+
+<p>Una tarea de Gradle no es otra cosa que una porción de código que se ejecuta en un determinado contexto. Por ejemplo, si escribimos en el archivo <code class="language-plaintext highlighter-rouge">build.gradle.kts</code> estas líneas de código:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">tasks</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="s">"saludar"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"Hola, qué tal?"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Podemos ejecutarlo desde el menú de IntelliJ:</p>
+
+<p>
+  <img src="/img/wiki/gradle_task.gif" alt="Gradle Task" />
+</p>
+
+<p>Como se ve, es código Kotlin lo que se ejecuta.</p>
+
+<p>En particular, el plugin Kotlin define la mayoría de las <strong>tareas</strong> que vamos a utilizar:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">build</code> construye el proyecto</li>
+  <li><code class="language-plaintext highlighter-rouge">jar</code> sirve para empaquetar las clases y generar un <strong>J</strong>ava <strong>AR</strong>chive, un zip de archivos .class</li>
+  <li><code class="language-plaintext highlighter-rouge">clean</code> elimina carpetas temporales, algo útil previo a un <em>build</em></li>
+  <li><code class="language-plaintext highlighter-rouge">test</code> ejecuta las pruebas unitarias, algo que igualmente se hace también desde el IDE</li>
+  <li>y muchas otras tareas más que no hace falta conocer.</li>
+</ul>
+
+<p>Todas se pueden ejecutar de la misma manera que nuestra tarea custom <code class="language-plaintext highlighter-rouge">saludar</code>.</p>
+
+<h1 id="tocAnchor-1-12">Temas adicionales</h1>
+
+<h2 id="tocAnchor-1-12-1">Gradle Wrapper</h2>
+
+<p>En lugar de trabajar directamente con Gradle, cada proyecto en IntelliJ va a trabajar con un script genérico que constituye el <strong>Gradle Wrapper</strong> o wrapper a secas, que tiene algunas ventajas:</p>
+
+<ul>
+  <li>no requiere instalación local de Gradle, con lo cual es más fácil estandarizar el proyecto y llevarlo a entornos de integración continua</li>
+  <li>permite trabajar cada proyecto con una versión particular de Gradle y actualizarla a futuro cuando lo deseemos</li>
+</ul>
+
+<p>La pregunta que podemos hacernos es: ¿esto cambia algo en mi forma de trabajar? No, en nada, pero es útil entender por qué utilizamos <code class="language-plaintext highlighter-rouge">gradlew</code> como ejecutable por consola en lugar de <code class="language-plaintext highlighter-rouge">gradle</code>, y qué hace esta estructura dentro de nuestro proyecto:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>.gradlew
+.gradlew.bat
+   └──gradle
+        └──wrapper
+            └──gradle-wrapper.jar
+            └──gradle-wrapper.properties <span class="c"># link a la versión de Gradle que estamos usando</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Para más información pueden ver <a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">esta página</a>.</p>
+
+<h2 id="tocAnchor-1-12-2">Ejecutando gradle desde la consola</h2>
+
+<p>Una alternativa es trabajar directamente con Gradle desde la consola, algo que puede ser útil para automatizar tareas, como cuando trabajemos con herramientas de integración continua.</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>./gradlew clean build
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Esto ejecuta varios plugins en forma sincronizada:</p>
+
+<ul>
+  <li>por un lado la tarea <code class="language-plaintext highlighter-rouge">clean</code> borra el directorio <code class="language-plaintext highlighter-rouge">build</code> donde estarán los archivos compilados</li>
+  <li>y luego compila los fuentes del proyecto, lo cual implica descargarse las dependencias, y compilar los archivos Kotlin a <code class="language-plaintext highlighter-rouge">.class</code> que una JRE pueda interpretar</li>
+</ul>
+
+<p>Si queremos ver el árbol de dependencias transitivas, podemos escribir</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>./gradlew <span class="nt">-q</span> dependencies 
+</code>
+    </pre>
+  </div>
+</div>
+
+<h1 id="tocAnchor-1-15">Documentación oficial</h1>
+
+<p>Para más información recomendamos leer</p>
+
+<ul>
+  <li>la <a href="https://docs.gradle.org/current/userguide/userguide.html">documentación oficial del proyecto Gradle</a></li>
+  <li>tenés también una <a href="https://gradle.org/guides/">página de tutoriales de Gradle</a></li>
+  <li>un video bastante exhaustivo de personas que trabajan en Gradle: <a href="https://www.youtube.com/watch?v=KN-_q3ss4l0">Getting Started with the Gradle DSL Kotlin</a> de Paul Merlin &amp; Rodrigo de Oliveira.</li>
+  <li>y un <a href="https://www.youtube.com/watch?v=zYNbsVv9oN0">tutorial sobre Kotlin DSL</a> de Anton Arhipov</li>
+</ul>
+
+<h1 id="tocAnchor-1-16">Links relacionados</h1>
+
+<ul>
+  <li><a href="algo2-temario.html">Página principal de Algoritmos 2</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/gradle" title="gradle">Gradle</a></li>
+            
+             <li><a href="/categories/build" title="build">Build</a></li>
+            
+             <li><a href="/categories/integración" title="integración">Integración</a></li>
+            
+             <li><a href="/categories/scm" title="scm">Scm</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on March 07, 2024 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>8</td>
+                                <td>22</td>
+                                <td>15</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>8</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>09dd0fc2</td>
+                        <td>Thu Mar 7 07:47:36 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Enhance docs</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6d866039</td>
+                        <td>Sun Mar 19 09:22:05 2023 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>fix typos 2023 class</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2fe7cf65</td>
+                        <td>Tue Mar 8 23:36:24 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Gradle wrapper better explanation</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>459e6838</td>
+                        <td>Tue Mar 8 23:33:01 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Plugins better explained</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b152d292</td>
+                        <td>Tue Mar 8 23:28:19 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Gradle dependency graph</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

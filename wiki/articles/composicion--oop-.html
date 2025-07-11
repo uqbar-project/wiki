@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Composicion  oop</title>
+  <meta property="og:title" content="Composicion  oop" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/composicion--oop-.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/composicion--oop-.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Composicion  oop</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Supongamos que queremos modelar el comportamiento de personas a la hora de pagar la cuenta después de una comida en un restaurant. Los clientes pagan lo que consumen más la propina, que depende de su humor. Sabemos que la gente feliz deja de propina 25% de lo que salió la comida, la gente enojada no deja nada y los que están de un humor indiferente dejan lo que tienen en el bolsillo.</p>
+
+<p>Queremos que un cliente nos pueda decir cuánto paga en total (propina + lo que consumió) dado el importe de la comida consumida, y además debe ser posible para una persona cambiar de humor a lo largo de la ejecución del programa.</p>
+
+<p>Sería posible resolver toda esta lógica (y la que esté por venir más adelante) con muchos ifs en el cliente, pero es posible modelarlo de otra forma: los diferentes humores del cliente podrían ser otros objetos separados que le ayuden a saber cuánta propina poner, y por su puesto ser polimórficos para que el cliente pueda delegar en ellos esta funcionalidad sin importar cuál sea su humor actual (objeto al cual referencia con algún atributo propio, como ser humor).</p>
+
+<h4 id="wollok">Wollok</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cliente</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">property</span> <span class="n">humor</span>
+  <span class="n">method</span> <span class="n">cuantoPaga</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">){</span>
+    <span class="k">return</span> <span class="n">importeTotal</span><span class="err"> </span><span class="o">+</span><span class="err"> </span><span class="n">self</span><span class="o">.</span><span class="n">cuantoDePropina</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">)</span>
+  <span class="o">}</span>
+  <span class="n">method</span><span class="err"> </span><span class="n">cuantoDePropina</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">){</span><span class="err"> </span>
+<span class="err">  </span>  <span class="k">return</span> <span class="n">humor</span><span class="o">.</span><span class="n">cuantoDePropina</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+  
+<span class="k">class</span> <span class="nc">Feliz</span> <span class="o">{</span>
+  <span class="n">method</span> <span class="n">cuantoDePropina</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">){</span>
+<span class="err">  </span>  <span class="k">return</span> <span class="n">importeTotal</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="mf">1.25</span>
+  <span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Enojado</span> <span class="o">{</span>
+  <span class="n">method</span> <span class="n">cuantoDePropina</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">){</span>
+    <span class="k">return</span> <span class="mi">0</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Indiferente</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">property</span> <span class="n">plataDelBolsillo</span>
+  <span class="n">method</span><span class="err"> </span><span class="n">cuantoDePropina</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">)</span>
+    <span class="k">return</span> <span class="n">plataDelBolsillo</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>Nota:</strong> en este ejemplo se ubicó la variable <code class="language-plaintext highlighter-rouge">plataDelBolsillo</code> en la estrategia Indiferente. Esto implica que cada vez que el cliente cambie de humor a indiferente, hay que indicarle cuánta plata en el bolsillo tiene.</p>
+
+<p>Otra opción podría haber sido poner la <code class="language-plaintext highlighter-rouge">plataDelBolsillo</code> en el cliente y para que la estrategia Indiferente resuelva cuánto tiene que devolver al recibir el mensaje <code class="language-plaintext highlighter-rouge">cuantoDePropina</code> hay dos opciones:</p>
+
+<ul>
+  <li>Que la instancia del objeto Indiferente conozca al Cliente y le pida su <code class="language-plaintext highlighter-rouge">plataDelBolsillo</code></li>
+  <li>Que el cliente se pase por parámetro al pedirle a la estrategia cuánta propina pone, modificando el método para recibir dos parámetros, por ejemplo:</li>
+</ul>
+
+<h4 id="wollok-1">Wollok</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cliente</span> <span class="o">{</span>
+  <span class="n">method</span><span class="err"> </span><span class="n">cuantoDePropina</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">){</span>
+<span class="err">  </span>  <span class="k">return</span> <span class="n">humor</span><span class="o">.</span><span class="n">cuantoDePropinaPara</span><span class="o">(</span><span class="n">importeTotal</span><span class="o">,</span><span class="n">self</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Ante la necesidad de poder cambiar el humor de la persona, separamos a la Persona (que intuitivamente iba a ser un concepto entero abarcando a su estado de humor) de su Humor en un concepto aparte. Los objetos Humor deben ser polimórficos para la persona, ya que debo poder intercambiar los distintos humores y la persona debería hablarle de la misma forma a cualquiera.</p>
+
+<p>Entonces en vez de tener un objeto que resuelve todo el problema tenemos un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración del cliente y el uso de <a href="polimorfismo.html">polimorfismo</a>.</p>
+
+<p>Es importante notar que <strong>no sería válido modelar una solución a este problema basada en herencia</strong> teniendo personas felices, indiferentes y enojadas, ya que una vez que la persona es instanciada como feliz no es posible cambiarla a indiferente o enojada, ya que implicaría cambiar su clase que <strong>no se puede hacer</strong>.</p>
+
+<p>Entonces, la composición en objetos es simplemente una relación de conocimiento entre dos objetos (por ejemplo, el cliente conoce a su humor) donde el objeto conocido puede cambiarse por otro que sea polimórfico para el que los conoce.</p>
+
+<p>Otro ejemplo podría ser el de las colecciones con un algoritmo de ordenamiento elegido por el usuario (<a href="sabores-de-colecciones.html">SortedCollection</a> en Smalltalk), donde la colección delega en otro objeto que modela el algoritmo de ordenamiento a usar sobre sus elementos.</p>
+
+<h2 id="cambiando-herencia-por-composición">Cambiando herencia por composición</h2>
+
+<p>El uso de composición en ocasiones es una solución muy elegante para problemas aparejados por el concepto de <a href="herencia.html">Herencia</a>, que pueden verse en el siguiente ejemplo tomado de un final de Paradigmas de Programación:</p>
+
+<blockquote>
+  <p>El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio de 100 pesos por cada venta. Los vendedores de salón cobran un premio que se indica para cada vendedor.”</p>
+
+  <p>Avanzando en el relevamiento, nos dicen lo siguiente:</p>
+
+  <p>“Para motivar las ventas en el equipo, decidimos incorporar un cambio: categorías senior y junior. Un vendedor senior tendrá a cargo a un junior. Un vendedor senior recibe como parte del premio un adicional correspondiente al 3% de las ventas realizadas por la persona que tiene a cargo. Un Junior tiene un porcentaje de descuento en su premio. Por otra parte, si un vendedor junior hace bien las cosas, con el tiempo puede pasar a ser senior”</p>
+</blockquote>
+
+<p>La codificación propuesta en el enunciado es:</p>
+
+<h4 id="wollok-2">Wollok</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">VendedorEspecialista</span> <span class="o">{</span>
+  <span class="n">const</span> <span class="n">ventas</span> <span class="k">=</span> <span class="o">[]</span>
+  <span class="n">method</span> <span class="n">premio</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">ventas</span><span class="o">.</span><span class="n">length</span><span class="o">()</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">VendedorSalon</span> <span class="o">{</span>
+  <span class="n">const</span> <span class="n">ventas</span> <span class="k">=</span> <span class="o">[]</span>
+  <span class="k">var</span> <span class="n">premio</span>
+  <span class="n">method</span> <span class="n">premio</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">premio</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">VendedorSalonSenior</span> <span class="n">inherits</span> <span class="nc">VendedorSalon</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">junior</span>
+  <span class="n">method</span> <span class="n">premio</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="k">super</span><span class="o">()</span><span class="err"> </span><span class="o">+</span><span class="err"> </span><span class="n">self</span><span class="o">.</span><span class="n">adicionalJunior</span><span class="o">()</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">adicionalJunior</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">junior</span><span class="o">.</span><span class="n">totalVentas</span><span class="o">()</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="mf">0.03</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">VendedorSalonJunior</span> <span class="n">inherits</span> <span class="nc">VendedorSalon</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">descuento</span>
+  <span class="n">method</span> <span class="n">totalVentas</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">ventas</span><span class="o">.</span><span class="n">sum</span><span class="o">({</span> <span class="n">venta</span> <span class="o">=&gt;</span><span class="err"> </span><span class="n">venta</span><span class="o">.</span><span class="n">monto</span><span class="o">()</span><span class="err"> </span><span class="o">})</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">premio</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="k">super</span><span class="o">()</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="o">(</span><span class="mi">1</span> <span class="o">-</span><span class="err"> </span><span class="n">self</span><span class="o">.</span><span class="n">descuento</span><span class="o">())</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">VendedorEspecialistaSenior</span> <span class="n">inherits</span> <span class="nc">VendedorEspecialista</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">junior</span>
+  <span class="n">method</span> <span class="n">premio</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="k">super</span><span class="o">()</span><span class="err"> </span><span class="o">+</span><span class="err"> </span><span class="n">self</span><span class="o">.</span><span class="n">adicionalJunior</span><span class="o">()</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">adicionalJunior</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">junior</span><span class="o">.</span><span class="n">totalVentas</span><span class="o">()</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="mf">0.03</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">VendedorEspecialistaJunior</span> <span class="n">inherits</span> <span class="nc">VendedorEspecialista</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">descuento</span>
+  <span class="n">method</span> <span class="n">totalVentas</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">ventas</span><span class="o">.</span><span class="n">sum</span><span class="o">({</span> <span class="n">venta</span> <span class="o">=&gt;</span><span class="err"> </span><span class="n">venta</span><span class="o">.</span><span class="n">monto</span><span class="o">()</span><span class="err"> </span><span class="o">})</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">premio</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="k">super</span><span class="o">()</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="o">(</span><span class="mi">1</span> <span class="o">-</span><span class="err"> </span><span class="n">self</span><span class="o">.</span><span class="n">descuento</span><span class="o">())</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>La solución propuesta tiene problemas que surgen por el mal uso de herencia. Los que podemos destacar son:</p>
+
+<ul>
+  <li><strong>Repetición de código:</strong> La forma de subclasificar a los vendedores tanto por tipo de vendedor (Salón o Especialista) como por categoría (Senior o Junior) hace que tengamos código repetido entre las hojas del árbol de herencia. Esto tiene problemas, sobre todo si el sistema sigue creciendo de esta forma, ya que la repetición de código es exponencial y realizar un cambio en la lógica del premio de los juniors por ejemplo se propagaría para todos los tipos de vendedores habidos y por haber (tiene problemas de <strong><a href="atributos-de-calidad.html">extensibilidad</a></strong>).</li>
+  <li><strong>Problemas con la <a href="igual-o-identico-----vs---.html">identidad</a> de los objetos:</strong> El enunciado indica que un junior puede volverse senior con el tiempo, pero el modelo que tenemos no soporta este tipo de cambio en tiempo de ejecución. Un objeto de la clase VendedorSalonJunior no puede cambiar de clase a VendedorSalonSenior, su clase es algo que se mantiene durante toda la vida del objeto. Si tratamos de emular el cambio de clase creando un nuevo objeto y copiando los valores de sus atributos según corresponda lograremos tener el comportamiento de senior pero ya no será el mismo objeto para el sistema. En OOP una de las características de un objeto es su identidad, la cual estaríamos perdiendo si tomamos esa decisión y el problema asociado a este cambio es que todos los objetos que tengan una referencia a nuestro vendedor promovido deberán enterarse de este cambio (y seguramente no lo hagan) para referenciar al nuevo objeto que lo reemplaza. La consecuencia de esto es o bien una complejidad espantosa para mantener las referencias o un sistema <strong><a href="atributos-de-calidad.html">inconsistente</a></strong>.</li>
+</ul>
+
+<p><strong>¿Cómo se soluciona este problema?</strong> Si cambiamos el modelo para que la categoría (Junior o Senior) sea un objeto aparte que el vendedor conozca y delegamos en este objeto todo aquello que corresponda a ser senior o junior solucionamos ambos problemas a la vez, ya que el valor de las referencias sí puede ser cambiado en tiempo de ejecución, es sólo settear un atributo. Veamos cómo queda la nueva solución:</p>
+
+<h4 id="wollok-3">Wollok</h4>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Vendedor</span> <span class="o">{</span>
+  <span class="n">const</span> <span class="n">ventas</span> <span class="k">=</span> <span class="o">[]</span>
+  <span class="k">var</span> <span class="n">categoria</span>
+  
+  <span class="n">method</span> <span class="n">premio</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">categoria</span><span class="o">.</span><span class="n">premioPara</span><span class="o">(</span><span class="n">self</span><span class="o">)</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">totalVentas</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">ventas</span><span class="o">.</span><span class="n">sum</span><span class="o">({</span> <span class="n">venta</span> <span class="o">=&gt;</span><span class="err"> </span><span class="n">venta</span><span class="o">.</span><span class="n">monto</span><span class="o">()</span><span class="err"> </span><span class="o">})</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">VendedorEspecialista</span> <span class="n">inherits</span> <span class="nc">Vendedor</span> <span class="o">{</span>
+  <span class="n">method</span> <span class="n">premioBase</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">ventas</span><span class="o">.</span><span class="n">length</span><span class="o">()</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">VendedorSalon</span> <span class="n">inherits</span> <span class="nc">Vendedor</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">premioBase</span>
+  <span class="n">method</span> <span class="n">premioBase</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">premioBase</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Senior</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">junior</span>
+  <span class="n">method</span> <span class="n">premioPara</span><span class="o">(</span><span class="n">unVendedor</span><span class="o">){</span>
+    <span class="k">return</span> <span class="n">unVendedor</span><span class="o">.</span><span class="n">premioBase</span><span class="o">()</span><span class="err"> </span><span class="o">+</span><span class="err"> </span><span class="n">self</span><span class="o">.</span><span class="n">adicionalJuniorPara</span><span class="o">(</span><span class="n">unVendedor</span><span class="o">)</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">adicionalJuniorPara</span><span class="o">(</span><span class="n">unVendedor</span><span class="o">){</span>
+    <span class="k">return</span> <span class="n">junior</span><span class="o">.</span><span class="n">totalVentas</span><span class="o">()</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="mf">0.03</span><span class="o">.</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Junior</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">descuento</span>
+  <span class="n">method</span> <span class="n">premioPara</span><span class="o">(</span><span class="n">unVendedor</span><span class="o">){</span>
+    <span class="k">return</span> <span class="n">unVendedor</span><span class="o">.</span><span class="n">premioBase</span><span class="o">()</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="o">(</span><span class="mi">1</span> <span class="o">-</span><span class="err"> </span><span class="n">self</span><span class="o">.</span><span class="n">descuento</span><span class="o">())</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>Disclaimer:</strong> el método <code class="language-plaintext highlighter-rouge">totalVentas</code> se termina definiendo en la clase Vendedor porque tenía sentido para todos en este dominio, no sólo para los juniors. Para que fuera totalmente análoga podríamos tenerlo definido en Junior y delegar en la categoría, pero siendo que no es inválido que los vendedores lo definan, era más sencillo resolverlo de esta forma. En caso de dudas de dominio, siempre vale preguntar.</p>
+
+<p>Como se puede ver en el <a href="https://yuml.me/ba4c2042.png">diagrama de clases de la solución con composición</a>, para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una <strong><a href="atributos-de-calidad.html">complejidad</a></strong> extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor <strong><a href="atributos-de-calidad.html">flexibilidad</a></strong> del modelo.</p>
+
+<p>A modo de resumen rápido:</p>
+
+<p><strong>Herencia</strong></p>
+
+<ul>
+  <li>Estática (no puedo cambiar la clase de un objeto en run-time, si creo otro objeto se pierde la identidad lo cual trae problemas)</li>
+  <li>Menos objetos -&gt; Menos complejidad</li>
+  <li>Es una relación entre clases! Es mucho más fuerte que la relación entre instancias planteada en composición. La herencia implica no sólo heredar código sino conceptos.</li>
+</ul>
+
+<p><strong>Composición</strong></p>
+
+<ul>
+  <li>Dinámico (la implementación se puede cambiar en run-time, ya que se basa sólo en un atributo que se puede settear en cualquier momento con otro objeto que sea polimórfico)</li>
+  <li>Aumenta la cantidad de objetos -&gt; Mayor complejidad (Es más complicado entender el todo y hay que configurar adecuadamente las relaciones entre los objetos)</li>
+  <li>Se reparten mejor las responsabilidades en objetos más chicos</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 09, 2020 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>16</td>
+                                <td>44</td>
+                                <td>132</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>8</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>053281b0</td>
+                        <td>Sun Feb 9 12:53:17 2020 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update composicion--oop-.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>affaf59e</td>
+                        <td>Sun Feb 9 12:49:13 2020 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Formateo código Wollok como Scala como estaba</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f8ebf9c3</td>
+                        <td>Sun Feb 9 12:25:05 2020 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Le agrego un diagrama yuml a la solución propuesta</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bfa96150</td>
+                        <td>Sun Feb 9 12:10:04 2020 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update composicion--oop-.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5bcd579e</td>
+                        <td>Sun Feb 9 11:42:08 2020 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Quito código en Smalltalk, queda sólo Wollok</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

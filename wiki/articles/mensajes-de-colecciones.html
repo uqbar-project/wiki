@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Mensajes de colecciones</title>
+  <meta property="og:title" content="Mensajes de colecciones" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/mensajes-de-colecciones.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/mensajes-de-colecciones.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Mensajes de colecciones</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Este es un pequeño resumen de mensajes que entiende una colección. Lo que sigue sirve para todos los <a href="sabores-de-colecciones.html">sabores de colecciones</a>.</p>
+
+<p>¿Qué puedo hacer con los conjuntos de objetos? Muchas cosas, las colecciones entienden mensajes muy útiles para ayudarnos a abstraernos un poquito. Vamos a separarlos en los que tienen <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html">efecto colateral</a> sobre la colección receptora y los que no.</p>
+
+<h2 id="con-efecto">Con efecto</h2>
+
+<p>Estos mensajes alteran a la colección que recibe el mensaje. Si no quiero perder la colección original puedo o bien copiar la colección mandándole shallowCopy y luego usar estos mensajes, o replantearme si no quería usar alguno de los mensajes de colecciones sin efecto :)</p>
+
+<h3 id="agregarle-objetos">Agregarle objetos</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros add: pepita.</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.add(pepita)</code></p>
+
+<p>También existe el mensaje addAll: en Smalltalk y addAll(conjunto) en Wollok que recibe otra colección y agrega todos los elementos del parámetro a la colección receptora.</p>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros addAll: picaflores</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.addAll(picaflores)</code></p>
+
+<h3 id="quitarle-objetos">Quitarle objetos</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros remove: pepita.</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.remove(pepita)</code></p>
+
+<p>Análogamente al addAll:/addAll(conjunto), existe el removeAll:/removeAll(conjunto) que le quita a la receptora todos los que estén en la colección parametrizada.</p>
+
+<h2 id="sin-efecto">Sin efecto</h2>
+
+<p>Estos mensajes se pueden mandar tantas veces como queramos sin miedo de alterar la colección receptora.</p>
+
+<h3 id="saber-cuántos-objetos-tiene">Saber cuántos objetos tiene</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros size.</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.size()</code></p>
+
+<p>¿Que me devuelve? Un objeto número con la cantidad de objetos que conoce.</p>
+
+<h3 id="preguntarle-si-tiene-un-objeto">Preguntarle si tiene un objeto</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros includes: pepita. </code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.contains(pepita)</code></p>
+
+<p>¿Que me devuelve? Un objeto booleano, true o false</p>
+
+<h3 id="unirlo-o-intersectarlo-con-otro-conjunto">Unirlo o intersectarlo con otro conjunto</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">golondrinas union: picaflores.</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">golondrinas.union(picaflores)</code></p>
+
+<p>¿Que me devuelve? Una nueva colección con la unión de ambas.</p>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">aves intersection: voladores.</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">aves.intersection(voladores)</code></p>
+
+<p>¿Que me devuelve? Una nueva colección con la intersección de ambas.</p>
+
+<p>Siendo que la unión y la intersección está pensada para conjuntos matemáticos, estos mensajes sólo lo entienden los sets.</p>
+
+<p>Además en Wollok puede hacerse:</p>
+
+<p><code class="language-plaintext highlighter-rouge">golondrinas + picaflores</code></p>
+
+<p>Que retorna la concatenación de ambos conjuntos, retornando una colección del mismo sabor que la receptora.</p>
+
+<h3 id="seleccionar-los-elementos-que-cumplen-con-un-criterio">Seleccionar los elementos que cumplen con un criterio</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros select: [:unPajaro | unPajaro estaDebil ].</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">usuarios select: [:unUsuario | unUsuario deuda &gt; 1000].</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.filter({unPajaro =&gt; unPajaro.estaDebil()})</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">usuarios.filter({unUsuario =&gt; unUsuario.deuda() &gt; 1000})</code></p>
+
+<p>¿Que me devuelve? Una nueva colección con los objetos que cuando se los evalúa con el bloque, dan true.</p>
+
+<h3 id="buscar-algún-elementos-que-cumpla-con-un-criterio">Buscar algún elementos que cumpla con un criterio</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros detect: [:unPajaro | unPajaro estaDebil ].</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.find({unPajaro =&gt; unPajaro.estaDebil()})</code></p>
+
+<p>¿Que me devuelve? Un objeto de la colección que cuando se lo evalúe con el bloque, de true.</p>
+
+<p>¿Qué pasa si no hay ningún objeto que cumpla la condición? Explota, lo cual tiene sentido porque no sabe qué hacer si no lo tiene. Por eso existe otra versión en la cual podemos decirle qué devolvernos si no hay ninguno.</p>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros detect: [:unPajaro | unPajaro estaDebil ] ifNone: [ pajaros anyOne ].</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.findOrElse({unPajaro =&gt; unPajaro.estaDebil()}, { pajaros.anyOne() })</code></p>
+
+<h3 id="recolectar-el-resultado-de-hacer-algo-con-cada-elemento">Recolectar el resultado de hacer algo con cada elemento</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros collect: [:unPajaro | unPajaro ultimoLugarDondeFue].</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.map({unPajaro =&gt; unPajaro.ultimoLugarDondeFue()})</code></p>
+
+<p>¿Que me devuelve? Una nueva colección con los objetos que devuelve el bloque al aplicarlo con cada elemento.</p>
+
+<h3 id="verificar-si-todos-los-elementos-de-la-colección-cumplen-con-un-criterio">Verificar si todos los elementos de la colección cumplen con un criterio</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros allSatisfy: [:unPajaro | unPajaro estaDebil].</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.all({unPajaro =&gt; unPajaro.estaDebil()})</code></p>
+
+<p>¿Que me devuelve? un booleano que indique si todos los objetos de la colección dan true al evaluarlos con el bloque.</p>
+
+<h3 id="verificar-si-algún-elemento-de-la-colección-cumple-con-un-criterio">Verificar si algún elemento de la colección cumple con un criterio</h3>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros anySatisfy: [:unPajaro | unPajaro estaDebil].</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.any({unPajaro =&gt; unPajaro.estaDebil()})</code></p>
+
+<p>¿Que me devuelve? un booleano que indique si alguno de los objetos de la colección da true al evaluarlo con el bloque.</p>
+
+<h3 id="reducir-una-colección-haciendo-algo-un-elemento-y-el-resultado-de-la-reducción-con-el-elemento-anterior">Reducir una colección haciendo algo un elemento y el resultado de la reducción con el elemento anterior</h3>
+
+<p>Si queremos evaluar un bloque de dos parámetros con cada elemento de la colección, usando como primer parámetro la evaluación previa, y como segundo parámetro ese elemento (o sea, lo que en funcional vimos como <a href="fold.html">fold</a>)</p>
+
+<p><strong>Smalltalk</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pajaros inject: 0 into: [:inicial :unPajaro | inicial + unPajaro peso].  "sumatoria de pesos"
+pajaros inject: (pajaros anyOne) into: [:masFuerte :unPajaro | 
+  (unPajaro energia &lt; masFuerte energia) ifTrue: [unPajaro] ifFalse: [masFuerte]] "maximo segun energia"
+</code></pre></div></div>
+
+<p><strong>Wollok</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pajaros.fold(0, {inicial, unPajaro =&gt; inicial + unPajaro.peso()}) // sumatoria de pesos
+pajaros.fold(pajaros.anyOne(), {masFuerte, unPajaro =&gt; 
+  if(unPajaro.energia() &lt; masFuerte.energia()) unPajaro else masFuerte }) // maximo segun energia
+</code></pre></div></div>
+
+<p>¿Que me devuelve? La ultima evaluación del bloque.</p>
+
+<p>¿Para qué me sirve? Para muchas cosas: obtener el que maximice o minimice algo, obtener el resultado de una operación sobre todos (p.ej. sumatoria), y más. Por lo general existen operaciones de más alto nivel para la mayoría de las reducciones más comunes, de ser así obviamente es preferible usar esos mensajes en vez de hacer la reducción.</p>
+
+<p>Por ejemplo, en Wollok podríamos haber hecho directamente:</p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.sum({unPajaro =&gt; unPajaro.peso()})</code>
+<code class="language-plaintext highlighter-rouge">pajaros.max({unPajaro =&gt; unPajaro.energia()})</code></p>
+
+<h3 id="obtener-una-colección-de-otro-sabor">Obtener una colección de otro sabor</h3>
+
+<p>En <strong>Smalltalk</strong> existen los mensajes asSet, asBag, asOrderedCollection y asSortedCollection: que retornan una colección nueva a partir de la receptora que tiene otras características (ver <a href="sabores-de-colecciones.html">sabores de colecciones</a>). En particular asSet y asSortedCollection: son de uso más común para quitar repetidos u ordenar en base a un criterio respectivamente.</p>
+
+<p><code class="language-plaintext highlighter-rouge">usuarios.asSortedCollection: [:usuarioJoven :usuarioViejo | usuarioJoven edad &lt; usuarioViejo edad ]</code></p>
+
+<p>En <strong>Wollok</strong>, al sólo haber sets y listas, lo que ambas entienden son <code class="language-plaintext highlighter-rouge">asSet()</code> y <code class="language-plaintext highlighter-rouge">asList()</code>. Las listas ordenadas por un criterio pueden obtenerse mediante el mensaje <code class="language-plaintext highlighter-rouge">sortedBy(criterio)</code>, que retorna una nueva colección con los elementos de la receptora ordenadas según el bloque recibido.</p>
+
+<p><code class="language-plaintext highlighter-rouge">usuarios.sortedBy({ usuarioJoven, usuarioViejo =&gt; usuarioJoven.edad() &lt; usuarioViejo.edad() })</code></p>
+
+<p>A su vez en Wollok también existe el mensaje <code class="language-plaintext highlighter-rouge">sortBy(criterio)</code> que se diferencia en que en vez de retornar una nueva colección ordenada de esa forma, modifica la colección receptora para quedar ordenada así. O sea, <strong>produce un efecto colateral</strong>.</p>
+
+<h2 id="y-la-iteración">¿Y la iteración?</h2>
+
+<p>El mensaje do: en Smalltalk o forEach(bloque) en Wollok, sirve para hacer algo con cada objeto de la colección. Este mensaje en sí mismo no tiene efecto colateral, pero tampoco tiene un valor de retorno que pueda interesarnos. Entonces, ¿cuándo se usa? Sólo tiene sentido usar este mensaje cuando lo que queremos hacer sobre cada elemento (o sea, el bloque) sí produce un efecto.</p>
+
+<p><strong>Smalltalk</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros do: [:unPajaro | unPajaro vola: 100 ].</code></p>
+
+<p><strong>Wollok</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">pajaros.forEach({unPajaro =&gt; unPajaro.vola(100)})</code></p>
+
+<p>Yo no pretendo recolectar resultados, sólo quiero que pasen cosas con cada elemento.</p>
+
+<p><strong>Importante:</strong> no usar el do:/forEach para todo, los mensajes que vimos anteriormente son abtracciones mucho más ricas que nos permiten concentrarnos en nuestro objetivo y no en el algoritmo para lograr el resultado, <strong>seamos declarativos</strong>!</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on September 07, 2017 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>9</td>
+                                <td>101</td>
+                                <td>76</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>6</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>f0cfbed9</td>
+                        <td>Thu Sep 7 20:52:32 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update mensajes-de-colecciones.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2d5b8e07</td>
+                        <td>Thu Sep 7 20:49:27 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update mensajes-de-colecciones.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9a9d72e7</td>
+                        <td>Thu Feb 2 19:11:50 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Recolectar el resultado de hacer algo con cada elemento */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>869d7300</td>
+                        <td>Thu Feb 2 19:11:50 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Quitarle objetos */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

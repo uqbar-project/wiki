@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Guia rapida de Kotlin</title>
+  <meta property="og:title" content="Guia rapida de Kotlin" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/kotlin-guia-rapida.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/kotlin-guia-rapida.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="kotlin,lenguaje,guia,referencia," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Guia rapida de Kotlin</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Definición de una clase</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Reglas generales para la clase</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Atributos</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Métodos</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">2</span> <span class="toctext">Referencias variables y valores</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-5-1"><span class="tocnumber">2.1</span> <span class="toctext">Cuándo debería usar val y cuándo var</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#tocAnchor-1-7"><span class="tocnumber">3</span> <span class="toctext">Companion object</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#tocAnchor-1-8"><span class="tocnumber">4</span> <span class="toctext">Objetos singleton</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-9">
+              <a href="#tocAnchor-1-9"><span class="tocnumber">5</span> <span class="toctext">Tipos de datos</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#tocAnchor-1-9-1"><span class="tocnumber">5.1</span> <span class="toctext">Strings</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-11">
+                  <a href="#tocAnchor-1-9-2"><span class="tocnumber">5.2</span> <span class="toctext">Números</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#tocAnchor-1-9-3"><span class="tocnumber">5.3</span> <span class="toctext">Colecciones mutables e inmutables</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-13">
+                  <a href="#tocAnchor-1-9-4"><span class="tocnumber">5.4</span> <span class="toctext">Rangos con arrays</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-14">
+                  <a href="#tocAnchor-1-9-5"><span class="tocnumber">5.5</span> <span class="toctext">Inferencia de tipos</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-15">
+              <a href="#tocAnchor-1-15"><span class="tocnumber">6</span> <span class="toctext">Instanciación y constructores</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-16">
+                  <a href="#tocAnchor-1-15-1"><span class="tocnumber">6.1</span> <span class="toctext">Instanciación por defecto</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-17">
+                  <a href="#tocAnchor-1-15-2"><span class="tocnumber">6.2</span> <span class="toctext">Definiendo constructores</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-18">
+                  <a href="#tocAnchor-1-15-3"><span class="tocnumber">6.3</span> <span class="toctext">Constructores secundarios</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-19">
+              <a href="#tocAnchor-1-19"><span class="tocnumber">7</span> <span class="toctext">Herencia y redefinición de métodos</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-20">
+                  <a href="#tocAnchor-1-19-1"><span class="tocnumber">7.1</span> <span class="toctext">Torcaza: This y super</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-21">
+                  <a href="#tocAnchor-1-19-2"><span class="tocnumber">7.2</span> <span class="toctext">Constructores delegados</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-22">
+              <a href="#tocAnchor-1-22"><span class="tocnumber">8</span> <span class="toctext">Clases y métodos abstractos</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-23">
+              <a href="#tocAnchor-1-23"><span class="tocnumber">9</span> <span class="toctext">Interfaces</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-24">
+              <a href="#tocAnchor-1-24"><span class="tocnumber">10</span> <span class="toctext">Bloques</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-25">
+                  <a href="#tocAnchor-1-24-1"><span class="tocnumber">10.1</span> <span class="toctext">Variable implícita it</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-26">
+              <a href="#tocAnchor-1-26"><span class="tocnumber">11</span> <span class="toctext">Manejo de nulls</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-27">
+                  <a href="#tocAnchor-1-26-1"><span class="tocnumber">11.1</span> <span class="toctext">100 veces no debo</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-28">
+                  <a href="#tocAnchor-1-26-2"><span class="tocnumber">11.2</span> <span class="toctext">Lateinit</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-29">
+                  <a href="#tocAnchor-1-26-3"><span class="tocnumber">11.3</span> <span class="toctext">Valores que aceptan null</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-30">
+                  <a href="#tocAnchor-1-26-4"><span class="tocnumber">11.4</span> <span class="toctext">Null safe operator</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-31">
+                  <a href="#tocAnchor-1-26-5"><span class="tocnumber">11.5</span> <span class="toctext">Comparar referencias</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-32">
+              <a href="#tocAnchor-1-32"><span class="tocnumber">12</span> <span class="toctext">Features avanzados</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-33">
+                  <a href="#tocAnchor-1-32-1"><span class="tocnumber">12.1</span> <span class="toctext">Extension methods</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-34">
+              <a href="#tocAnchor-1-34"><span class="tocnumber">13</span> <span class="toctext">Data classes</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-35">
+              <a href="#tocAnchor-1-35"><span class="tocnumber">14</span> <span class="toctext">Operadores para procesar múltiples envíos de mensajes</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-36">
+                  <a href="#tocAnchor-1-35-1"><span class="tocnumber">14.1</span> <span class="toctext">Otras variantes</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-37">
+              <a href="#tocAnchor-1-37"><span class="tocnumber">15</span> <span class="toctext">Links relacionados</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-38">
+              <a href="#tocAnchor-1-38"><span class="tocnumber">16</span> <span class="toctext">Links útiles</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>La siguiente es una guía de <em>syntactic sugars</em> de Kotlin, algunos de los cuales trabajan conceptos más profundos que veremos a lo largo de la materia.</p>
+
+<h1 id="tocAnchor-1-1">Definición de una clase</h1>
+
+<p>Una clase necesita un nombre, atributos a los cuales referencia y métodos, definidos mediante el prefijo <code class="language-plaintext highlighter-rouge">fun</code>.</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">ENERGIA_MINIMA</span> <span class="p">=</span> <span class="m">10</span>
+
+<span class="kd">class</span> <span class="nc">Ave</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">energia</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">fun</span> <span class="nf">volar</span><span class="p">()</span> <span class="p">{</span> <span class="n">energia</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">-</span> <span class="m">10</span> <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">comer</span><span class="p">(</span><span class="n">cuanto</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="n">energia</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">+</span> <span class="p">(</span><span class="n">cuanto</span> <span class="p">*</span> <span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">()</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">&gt;</span> <span class="n">ENERGIA_MINIMA</span>
+    <span class="k">fun</span> <span class="nf">resetearEnergia</span><span class="p">()</span> <span class="p">{</span> <span class="n">energia</span> <span class="p">=</span> <span class="m">0</span> <span class="p">}</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-1-1">Reglas generales para la clase</h2>
+
+<ul>
+  <li>podemos escribir múltiples clases en un archivo Kotlin</li>
+  <li>la definición de la clase se encierra entre llaves</li>
+</ul>
+
+<h2 id="tocAnchor-1-1-2">Atributos</h2>
+
+<ul>
+  <li>la variable ENERGIA_MINIMA se define como una constante y es referenciable dentro de cualquier clase que esté dentro de ese archivo. Otra variante es definir atributos asociados a una clase específica (ver companion object), suele usarse como constantes o valores que difícilmente cambien.</li>
+  <li>la variable energia <strong>es una variable de instancia</strong> porque cada objeto Ave tiene su propio valor.</li>
+  <li>las variables tienen un tipo que se infiere en base al valor: en el caso de la energia es un número (<code class="language-plaintext highlighter-rouge">Int</code>) porque se asocia al valor <code class="language-plaintext highlighter-rouge">0</code> aunque podemos explicitarla nosotros de la siguiente manera:</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">var</span> <span class="py">energia</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
+<span class="c1">// la variable energia 
+//    tiene el tipo Int y el valor por defecto 0
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li>Kotlin automáticamente define getters y setters para la variable <code class="language-plaintext highlighter-rouge">energia</code> (no es necesario hacer nada, mientras no especifiquemos la visibilidad del atributo a privada, de la siguiente manera: <code class="language-plaintext highlighter-rouge">private var energia = 0</code>)</li>
+  <li>La manera de invocar al getter es: <code class="language-plaintext highlighter-rouge">objeto.atributo</code> y la manera de invocar al setter es <code class="language-plaintext highlighter-rouge">objeto.atributo = valor</code>:</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">pepita</span><span class="p">.</span><span class="n">energia</span> <span class="p">=</span> <span class="m">100</span>    <span class="c1">// &lt;-- equivale a pepita.setEnergia(100)
+</span><span class="n">pepita</span><span class="p">.</span><span class="n">energia</span>          <span class="c1">// &lt;-- equivale a pepita.getEnergia()
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>¡Ojo! si bien parece que estamos accediendo diréctamente a la variable de instancia, no es así. Kotlin simplemente traduce esa sintaxis a la anterior. Es decir que en ambos casos estamos igualmente llamando al getter y al setter. Pueden probar definiendo la variable <code class="language-plaintext highlighter-rouge">energia</code> como privada y el IDE mostrará un mensaje de error “Cannot access ‘energia’: it is private in ‘Ave’”.</p>
+
+<h2 id="tocAnchor-1-1-3">Métodos</h2>
+
+<ul>
+  <li>respecto a los métodos, algunos producen efecto (volar y comer) y otros simplemente devuelven un valor (esFeliz).</li>
+  <li>en el caso de los métodos con efecto, se delimitan con llaves. Por defecto los métodos que no devuelven nada no tienen ninguna anotación de tipo, se dice que son <code class="language-plaintext highlighter-rouge">void</code> o <code class="language-plaintext highlighter-rouge">Unit</code>.</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">volar</span><span class="p">()</span> <span class="p">{</span> <span class="n">energia</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">-</span> <span class="m">10</span> <span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li>los métodos que solo devuelven valores y tienen una sola línea se definen con el símbolo <code class="language-plaintext highlighter-rouge">=</code>:</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">()</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">&gt;</span> <span class="n">ENERGIA_MINIMA</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li>también es posible definir un método que devuelve un valor mediante las llaves, definiendo una anotación de tipo para el método:</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">():</span> <span class="n">Boolean</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="n">energia</span> <span class="p">&gt;</span> <span class="n">ENERGIA_MINIMA</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso el tipo de retorno del método es Boolean. Si el método tiene varias líneas es necesario utilizar este formato en lugar del <code class="language-plaintext highlighter-rouge">=</code>.</p>
+
+<h1 id="tocAnchor-1-5">Referencias variables y valores</h1>
+
+<p>En Kotlin, al igual que muchos otros lenguajes, se diferencian las referencias como</p>
+
+<ul>
+  <li><strong>Variables</strong>: son referencias que pueden inicializarse apuntando a un objeto, y luego reasignarse a otro:</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">var</span> <span class="py">unString</span> <span class="p">=</span> <span class="s">"Pepito"</span>
+<span class="n">unString</span> <span class="p">=</span> <span class="s">"Otro String"</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li><strong>Constantes</strong>: son referencias que nacen apuntando a un valor y no pueden ser modificadas para apuntar a otro objeto. Serían como “constantes”.</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">constante</span> <span class="p">=</span> <span class="s">"Constante"</span>
+<span class="n">constante</span> <span class="p">=</span> <span class="s">"Otro"</span>  <span class="c1">// &lt;----- NO COMPILA !
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>¡Ojo! no confundir el hecho de que no se pueda modificar la “referencia” de la mutabilidad/inmutabilidad del objeto al que apunta. Puedo tener un “val” apuntando a un elemento que sí mute.</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">perro</span> <span class="p">=</span> <span class="n">Perro</span><span class="p">()</span>
+<span class="n">perro</span><span class="p">.</span><span class="n">nombre</span><span class="p">(</span><span class="s">"Juan"</span><span class="p">)</span>
+<span class="n">perro</span> <span class="p">=</span> <span class="n">Perro</span><span class="p">()</span>        <span class="c1">// &lt;----- NO COMPILA: no puedo modificar la referencia
+</span><span class="n">perro</span><span class="p">.</span><span class="n">nombre</span><span class="p">(</span><span class="s">"Carlos"</span><span class="p">)</span> <span class="c1">// &lt;---- SI COMPILA y puedo mutar la referencia nombre de perro
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-1">Cuándo debería usar val y cuándo var</h2>
+
+<p>Por defecto definí tus variables como <code class="language-plaintext highlighter-rouge">val</code>, a menos de que necesites modificar las referencias. <em>Por ejemplo</em>: la edad de una persona debería poder modificarse, en cuanto al nombre puede ser que no necesites modificarlo o sí, eso dependerá de las reglas de negocio. El motivo principal es acotar el efecto en nuestros programas, <strong>mientras menor sea el efecto, más fácil es controlar nuestro software, y más fácil será testearlo</strong>.</p>
+
+<h1 id="tocAnchor-1-7">Companion object</h1>
+
+<p>Kotlin provee la posibilidad de definir un objeto <strong>companion</strong> dentro de una clase, que es global para todas sus instancias:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Ave</span> <span class="p">{</span>
+    <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="py">ENERGIA_MINIMA</span> <span class="p">=</span> <span class="m">100</span>
+        <span class="k">fun</span> <span class="nf">subirEnergiaMinima</span><span class="p">(</span><span class="n">cuanto</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="n">ENERGIA_MINIMA</span> <span class="p">+=</span> <span class="n">cuanto</span> <span class="p">}</span>
+        <span class="k">fun</span> <span class="nf">crear</span><span class="p">()</span> <span class="p">=</span> <span class="n">Ave</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="py">energia</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">()</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">&gt;</span> <span class="n">ENERGIA_MINIMA</span>
+    <span class="o">..</span><span class="p">.</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li>en lugar de definir la referencia <code class="language-plaintext highlighter-rouge">ENERGIA_MINIMA</code> como constante por fuera de la clase, la asociamos al <em>companion object</em></li>
+  <li>para manipular la energía mínima (como por ejemplo para subirla o bajarla en base a un valor), debemos hacerlo también dentro del <em>companion</em></li>
+  <li>y también ofrecemos un método para crear un Ave, que por el momento solamente hace <code class="language-plaintext highlighter-rouge">Ave()</code>, pero el mecanismo de instanciación podría tornarse más complejo y el <em>companion object</em> es adecuado para tal fin.</li>
+</ul>
+
+<p>Todo lo que definimos en el <em>companion object</em> es accesible para atributos y métodos de instancia (como por ejemplo el método <code class="language-plaintext highlighter-rouge">esFeliz</code>). Desde otra clase, podemos invocar a la función que crea un ave de la siguiente manera:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">ave</span> <span class="p">=</span> <span class="n">Ave</span><span class="p">.</span><span class="n">crear</span><span class="p">()</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h1 id="tocAnchor-1-8">Objetos singleton</h1>
+
+<p>Kotlin provee la capacidad de definir objetos:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">object</span> <span class="nc">Pepita</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">energia</span> <span class="p">=</span> <span class="m">100</span>
+    <span class="k">fun</span> <span class="nf">volar</span><span class="p">(</span><span class="n">minutos</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">energia</span> <span class="p">-=</span> <span class="n">minutos</span> <span class="p">*</span> <span class="m">2</span> <span class="p">+</span> <span class="m">10</span>
+    <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">comer</span><span class="p">(</span><span class="n">gramos</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">energia</span> <span class="p">+=</span> <span class="n">gramos</span> <span class="p">*</span> <span class="m">4</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Pepita</span><span class="p">.</span><span class="n">energia</span> <span class="p">=</span> <span class="m">150</span>
+    <span class="n">Pepita</span><span class="p">.</span><span class="n">volar</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+    <span class="n">Pepita</span><span class="p">.</span><span class="n">comer</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"La energia de pepita es ${Pepita.energia}"</span><span class="p">)</span>  <span class="c1">// "La energia de pepita es 88"
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Pepita es una instancia que se puede acceder globalmente, representa una implementación <em>thread safe</em> del <strong>Singleton</strong> que es más trabajosa de implementar en Java (podés investigar más en <a href="https://devexperto.com/object-kotlin-singleton/">este artículo</a>). Si trabajaste en <strong>Wollok</strong> (o <strong>Scala</strong>) el concepto es exactamente similar, solo que el nombre debe comenzar con mayúscula.</p>
+
+<h1 id="tocAnchor-1-9">Tipos de datos</h1>
+
+<h2 id="tocAnchor-1-9-1">Strings</h2>
+
+<p>Un string se encierra entre dobles comillas, o bien podemos aprovechar para escribir un texto largo con triples comillas dobles (lo que nos permite incluso utilizar enters). Podemos interpolar referencias de Kotlin mediante <code class="language-plaintext highlighter-rouge">$</code> o bien utilizar código ejecutable usando <code class="language-plaintext highlighter-rouge">${zzz}</code> donde zzz es código Kotlin.</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Cliente</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">nombre</span> <span class="p">=</span> <span class="s">"Juan"</span> <span class="c1">// string simple
+</span>
+    <span class="k">fun</span> <span class="nf">saludo</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Hola $nombre"</span> <span class="c1">// string simple interpolando una referencia
+</span>
+    <span class="k">fun</span> <span class="nf">otroSaludo</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Hola ${nombre.uppercase()}"</span> <span class="c1">// interpolamos una expresión
+</span>    
+    <span class="c1">// string con múltiples líneas interpolando código Kotlin
+</span>    <span class="k">fun</span> <span class="nf">saludoFormal</span><span class="p">()</span> <span class="p">=</span>
+        <span class="s">"""
+        Bienvenido, ${nombre.trim()} a nuestra aplicación.
+        En breve nos contactaremos con ud.
+        """</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-9-2">Números</h2>
+
+<p>Existen muchos tipos de datos diferentes para números:</p>
+
+<ul>
+  <li><strong>Int</strong>: es un número entero que admite negativos pero sin decimales</li>
+  <li><strong>Double</strong>, <strong>Float</strong>: son números reales que admiten decimales pero con errores en las operaciones, es por ello que no debemos usarlo para operaciones sensibles (como transacciones bancarias o que requieran cálculos exactos). ¿Por qué? Por este código que podés probar en <a href="https://play.kotlinlang.org/">este REPL</a></li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="m">0.02</span>
+    <span class="kd">val</span> <span class="py">b</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="m">0.03</span>
+    <span class="kd">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="n">b</span> <span class="p">-</span> <span class="n">a</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1">// 0.009999999999999998
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li><strong>BigDecimal</strong>: es el tipo de dato que conviene utilizar ya que no produce errores de redondeo (permite trabajar con una cantidad exacta de decimales y truncarlos o redondearlos en caso de ser necesario)</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">import</span> <span class="nn">java.math.BigDecimal</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">BigDecimal</span> <span class="p">=</span> <span class="n">BigDecimal</span><span class="p">(</span><span class="s">"0.02"</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">b</span><span class="p">:</span> <span class="n">BigDecimal</span> <span class="p">=</span> <span class="n">BigDecimal</span><span class="p">(</span><span class="s">"0.03"</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">BigDecimal</span> <span class="p">=</span> <span class="n">b</span> <span class="p">-</span> <span class="n">a</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>    <span class="c1">// 0.01
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Tanto Int, como Double como BigDecimal representan objetos a los que podés enviarle mensajes:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">numero</span><span class="p">:</span> <span class="n">Double</span> <span class="p">=</span> <span class="m">10.0</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">numero</span><span class="p">.</span><span class="n">inc</span><span class="p">())</span>   <span class="c1">// 11.0
+</span>    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">numero</span><span class="p">.</span><span class="n">rem</span><span class="p">(</span><span class="m">3</span><span class="p">))</span>  <span class="c1">// 1.0
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Para más información pueden ver <a href="https://kotlinlang.org/docs/basic-types.html">esta página</a>.</p>
+
+<h2 id="tocAnchor-1-9-3">Colecciones mutables e inmutables</h2>
+
+<p>En Kotlin, todas las colecciones vienen en dos “sabores”: mutables e inmutables. Las primeras soportan modificar sus elementos (agregar, quitar, actualizar), mientras que las segundas solo permiten acceder a sus elementos. Queda a criterio de quien programa cuál utilizar en cada caso, prefiriendo desde este espacio las inmutables (porque algo que no se puede modificar es menos propenso a errores).</p>
+
+<p>Existen literales para definir listas, conjuntos y mapas (dictionaries):</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Lista inmutable
+</span>    <span class="kd">val</span> <span class="py">myList</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">)</span>
+    <span class="n">myList</span><span class="p">.</span><span class="n">size</span>
+    <span class="c1">// ERROR, no puedo agregar un elemento a una lista inmutable
+</span>    <span class="c1">// └ myList.add("Goodbye")
+</span>    
+    <span class="c1">// Lista mutable
+</span>    <span class="kd">val</span> <span class="py">myMutableList</span> <span class="p">=</span> <span class="n">mutableListOf</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">)</span>
+    <span class="n">myMutableList</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">"Goodbye"</span><span class="p">)</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"${myMutableList[1]}"</span><span class="p">)</span>  <span class="c1">// "World"
+</span>
+    <span class="c1">// Set inmutable
+</span>    <span class="kd">val</span> <span class="py">mySet</span> <span class="p">=</span> <span class="n">setOf</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">)</span>
+    <span class="c1">// ERROR, no puedo agregar un elemento a un set inmutable
+</span>    <span class="c1">// └ mySet.add("Goodbye")
+</span>
+    <span class="c1">// Set mutable
+</span>    <span class="kd">val</span> <span class="py">myMutableSet</span> <span class="p">=</span> <span class="n">mutableSetOf</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">)</span>
+    <span class="n">myMutableSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">"Goodbye"</span><span class="p">)</span>
+    <span class="n">myMutableSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>  <span class="c1">// no tiene efecto porque ya hay un elemento "Hello"
+</span>    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"${myMutableSet.size}"</span><span class="p">)</span>  <span class="c1">// 3
+</span>
+    <span class="c1">// Mapa/Diccionario inmutable
+</span>    <span class="kd">val</span> <span class="py">myMap</span> <span class="p">=</span> <span class="n">mapOf</span><span class="p">(</span><span class="s">"a"</span> <span class="n">to</span> <span class="m">1</span> <span class="p">,</span> <span class="s">"b"</span> <span class="n">to</span> <span class="m">2</span><span class="p">)</span>
+    <span class="c1">// ERROR, no puedo agregar un elemento a un set inmutable
+</span>    <span class="c1">// └ myMap.set("c", 3)
+</span>    
+    <span class="kd">val</span> <span class="py">myMutableMap</span> <span class="p">=</span> <span class="n">mutableMapOf</span><span class="p">(</span><span class="s">"a"</span> <span class="n">to</span> <span class="m">1</span> <span class="p">,</span> <span class="s">"b"</span> <span class="n">to</span> <span class="m">2</span><span class="p">)</span>
+    <span class="n">myMutableMap</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="s">"c"</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"${myMutableMap.size}"</span><span class="p">)</span>  <span class="c1">// 3
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Recordemos que</p>
+
+<ul>
+  <li><strong>listas</strong>: respetan el orden en el que se agregan (como una fila) y admiten duplicados.</li>
+  <li><strong>conjuntos</strong>: no tienen orden y tampoco admiten duplicados. Dos objetos son iguales en base a la definición de equals() y hashCode().</li>
+  <li><strong>mapas</strong>: son un conjunto de pares clave/valor. Se acceden por clave.</li>
+</ul>
+
+<blockquote>
+  <p>Ojo 👀: no hay que mezclar las ideas de <code class="language-plaintext highlighter-rouge">val</code> y <code class="language-plaintext highlighter-rouge">var</code> con la (in)mutabilidad de las colecciones. Por ejemplo, una colección inmutable podría estar referenciada con var, mientras que una mutable podría ser val.</p>
+</blockquote>
+
+<p>Para más información recomendamos leer</p>
+
+<ul>
+  <li><a href="https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit#">el apunte de la materia sobre Colecciones</a></li>
+  <li><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/">la página oficial de Kotlin sobre colecciones</a>.</li>
+</ul>
+
+<h2 id="tocAnchor-1-9-4">Rangos con arrays</h2>
+
+<p>Es posible generar un rango de números:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Array de enteros con valores [0, 0, 0, 0, 0]
+</span><span class="kd">val</span> <span class="py">arrZeros</span> <span class="p">=</span> <span class="n">IntArray</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+
+<span class="c1">// Array de enteros de tamaño 5 con valores [42, 42, 42, 42, 42]
+</span><span class="kd">val</span> <span class="py">arrConstants</span> <span class="p">=</span> <span class="n">IntArray</span><span class="p">(</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span> <span class="m">42</span> <span class="p">}</span>
+
+<span class="c1">// Podemos utilizar una lambda para inicializar un array: [0, 1, 2, 3, 4]
+</span><span class="kd">var</span> <span class="py">arrLambda</span> <span class="p">=</span> <span class="n">IntArray</span><span class="p">(</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span> <span class="n">it</span> <span class="p">}</span>
+<span class="c1">// ... o [1, 2, 3, 4, 5]
+</span><span class="kd">var</span> <span class="py">arrLambda</span> <span class="p">=</span> <span class="n">IntArray</span><span class="p">(</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span> <span class="n">it</span> <span class="p">+</span> <span class="m">1</span> <span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Más abajo explicamos definición de bloques o lambdas.</p>
+
+<h2 id="tocAnchor-1-9-5">Inferencia de tipos</h2>
+
+<p>Kotlin cuenta con inferencia de tipos, lo que permite</p>
+
+<ul>
+  <li>que exista chequeo de tipos</li>
+  <li>pero que muchas veces no sea necesario definir los tipos de las expresiones</li>
+</ul>
+
+<p>Vemos un ejemplo en vivo, mostrando cómo cambia la solapa “Structure” (disponible mediante <code class="language-plaintext highlighter-rouge">Alt</code>+ <code class="language-plaintext highlighter-rouge">7</code>) cuando modificamos el código:</p>
+
+<p>
+  <img src="/img/wiki/kotlin-typeInference.gif" alt="Kotlin Type Inference" />
+</p>
+
+<p>Volviendo a la inferencia de tipos, es fundamental poder contar con un lenguaje que tenga chequeo de tipos para detectar errores en forma temprana pero <strong>que no me obligue a definir los tipos todo el tiempo</strong>. La definición de tipos es obligatoria cuando la definición pueda resultar ambigua para Kotlin, por ejemplo cuando definas un método que retorna un valor pero no lo anotes en la definición:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">resetearEnergia</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">energia</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">return</span> <span class="k">true</span>   <span class="c1">// ERROR: la definición del método conflictúa con este return
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En ese caso el IDE te mostrará un error y lo podés solucionar fácilmente indicando el tipo del valor a retornar (o bien eliminando la instrucción <code class="language-plaintext highlighter-rouge">return</code>):</p>
+
+<p>
+  <img src="/img/wiki/kotlin-fixMethodReturn.gif" alt="Kotlin Fix method return" />
+</p>
+
+<h1 id="tocAnchor-1-15">Instanciación y constructores</h1>
+
+<h2 id="tocAnchor-1-15-1">Instanciación por defecto</h2>
+
+<p>Para instanciar un objeto, Kotlin no utiliza la palabra <code class="language-plaintext highlighter-rouge">new</code>, simplemente se invoca mediante el nombre de la clase y paréntesis:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Entrenador</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">ave</span> <span class="p">=</span> <span class="n">Ave</span><span class="p">()</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-15-2">Definiendo constructores</h2>
+
+<p>Adicionalmente, podemos definir parámetros en la construcción de una clase (lo que en otros lenguajes se conoce como constructor):</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Ave</span><span class="p">(</span><span class="kd">var</span> <span class="py">energia</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El valor por defecto indica que podemos crear un ave sin pasar parámetros, en cuyo caso el valor de su energía será 0:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">pepita</span> <span class="p">=</span> <span class="n">Ave</span><span class="p">()</span> <span class="c1">// un ave con energia = 0
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>Pero también podemos pasar un valor:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">pepita</span> <span class="p">=</span> <span class="n">Ave</span><span class="p">(</span><span class="n">energia</span> <span class="p">=</span> <span class="m">150</span><span class="p">)</span> <span class="c1">// un ave con energia = 150
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>Si en cambio no definimos un valor por defecto para energia</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Ave</span><span class="p">(</span><span class="kd">var</span> <span class="py">energia</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>es obligatorio pasarle un valor para energía:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">ave</span> <span class="p">=</span> <span class="n">Ave</span><span class="p">()</span>              <span class="c1">// ERROR: No value passed for parameter 'energia'
+</span><span class="kd">val</span> <span class="py">ave</span> <span class="p">=</span> <span class="n">Ave</span><span class="p">(</span><span class="n">energia</span> <span class="p">=</span> <span class="m">200</span><span class="p">)</span> <span class="c1">// OK
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-15-3">Constructores secundarios</h2>
+
+<p>Por lo general solo es necesario definir un constructor por defecto, pero en caso de que lo necesites te dejamos <a href="https://kotlinlang.org/docs/classes.html#secondary-constructors">este artículo que explica cómo escribir constructores secundarios</a>.</p>
+
+<h1 id="tocAnchor-1-19">Herencia y redefinición de métodos</h1>
+
+<p>A continuación vemos cómo definir Golondrina como subclase de Ave.</p>
+
+<p>
+  <img src="/img/wiki/kotlin-inheritance.gif" alt="image" />
+</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">open</span> <span class="kd">class</span> <span class="nc">Ave</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+    <span class="k">open</span> <span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">()</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">&lt;</span> <span class="n">ENERGIA_MINIMA</span>
+<span class="p">}</span>
+
+
+<span class="kd">class</span> <span class="nc">Golondrina</span> <span class="p">:</span> <span class="n">Ave</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">()</span> <span class="p">=</span> <span class="k">true</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Aquí vemos que</p>
+
+<ul>
+  <li>Golondrina hereda de Ave, indicado mediante el símbolo <code class="language-plaintext highlighter-rouge">:</code></li>
+  <li>Golondrina debe llamar al constructor de Ave, que al no tener parámetros se indica por el momento con paréntesis vacíos: <code class="language-plaintext highlighter-rouge">class Golondrina : Ave()</code></li>
+  <li>Golondrina <strong>redefine</strong> el comportamiento de esFeliz, lo pisa, y esto requiere la palabra clave <code class="language-plaintext highlighter-rouge">override</code>, de lo contrario el IDE mostrará un mensaje de error</li>
+  <li>Para que una clase pueda subclasificarse Kotlin obliga a utilizar la palabra clave <code class="language-plaintext highlighter-rouge">open</code>. Una segunda variante es que la clase sea abstracta en cuyo caso automáticamente es abierta.</li>
+  <li>La misma operatoria debe seguir un método: debe marcarse con la palabra clave <code class="language-plaintext highlighter-rouge">open</code> (como en el caso <code class="language-plaintext highlighter-rouge">esFeliz</code>) para poder redefinirse en las subclases, a menos de que el método sea abstracto. Esto es un poco burocrático y extraño para el objetivo general que suele tener Kotlin, pero por el momento es así.</li>
+</ul>
+
+<h2 id="tocAnchor-1-19-1">Torcaza: This y super</h2>
+
+<p>Si queremos definir una clase Torcaza que redefina el comportamiento de volar pero que además delegue el comportamiento en la superclase, debemos utilizar la palabra clave <code class="language-plaintext highlighter-rouge">super</code> junto con el mensaje a enviar:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Torcaza</span> <span class="p">:</span> <span class="n">Ave</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">vecesQueVolo</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">volar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="n">volar</span><span class="p">()</span>
+        <span class="n">vecesQueVolo</span><span class="p">++</span>
+    <span class="p">}</span> 
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Como regla general solo deben utilizar <code class="language-plaintext highlighter-rouge">super</code> cuando no puedan utilizar <code class="language-plaintext highlighter-rouge">this</code>, como en este caso: de lo contrario entrarían en loop infinito si invocaran a <code class="language-plaintext highlighter-rouge">this.volar()</code>.</p>
+
+<h2 id="tocAnchor-1-19-2">Constructores delegados</h2>
+
+<p>Si la clase Ave se definiera de la siguiente manera:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">open</span> <span class="kd">class</span> <span class="nc">Ave</span><span class="p">(</span><span class="kd">var</span> <span class="py">energia</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>eso no produciría ningún cambio en las definiciones de Golondrina y Torcaza ya que en cada invocación tomaría el valor por defecto de energía:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Torcaza</span> <span class="p">:</span> <span class="n">Ave</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// considera energia = 0
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>Ahora bien, si la definición del constructor en Ave no tuviera valor por defecto:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">open</span> <span class="kd">class</span> <span class="nc">Ave</span><span class="p">(</span><span class="kd">var</span> <span class="py">energia</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Entonces es necesario redefinir el constructor por defecto para Golondrina y Torcaza y pasarle ese valor al constructor de Ave. Esto se hace de la siguiente manera:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Golondrina</span><span class="p">(</span><span class="n">energia</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Ave</span><span class="p">(</span><span class="n">energia</span><span class="p">)</span> <span class="p">{</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Si bien esto puede convertirse en algo tedioso, veremos que el IDE nos simplifica bastante esta tarea, utilizando <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">Enter</code> para aceptar la sugerencia:</p>
+
+<p>
+  <img src="/img/wiki/kotlin-constructorInheritance.gif" alt="Kotlin - Delegación de constructores" />
+</p>
+
+<h1 id="tocAnchor-1-22">Clases y métodos abstractos</h1>
+
+<p>Podemos definir a Ave como clase abstracta, esto producirá que no podamos instanciar objetos Ave. Una clase abstracta puede definir solo la interfaz de un método, lo que se conoce como método abstracto. Veamos el siguiente ejemplo:</p>
+
+<p>
+  <img src="/img/wiki/kotlin-abstractClass.gif" alt="image" />
+</p>
+
+<p>En el ejemplo:</p>
+
+<ul>
+  <li>primero definimos Ave como abstracta</li>
+  <li>eso provoca que el compilador tire un error cuando queremos instanciar un Ave en la clase Ornitologo</li>
+  <li>lo corregimos instanciando una Golondrina</li>
+  <li>luego, queremos definir un método abstracto: esFeliz. Para ello reemplazamos la definición por una cáscara que solo dice que esFeliz debe devolver un booleano. Dado que no hay código Kotlin nos fuerza a definir el tipo de retorno del método (y de sus parámetros) porque no puede inferirlo.</li>
+  <li>todos los métodos abstractos deben estar implementados en las subclases: el compilador nos avisa que falta la definición de esFeliz() en Torcaza. Con un botón derecho “Implement members” pegamos la definición copiada.</li>
+</ul>
+
+<p>y finalmente todo compila.</p>
+
+<p>Te dejamos el código completo:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">ENERGIA_MINIMA</span> <span class="p">=</span> <span class="m">10</span>
+
+<span class="k">abstract</span> <span class="kd">class</span> <span class="nc">Ave</span><span class="p">(</span><span class="kd">var</span> <span class="py">energia</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">open</span> <span class="k">fun</span> <span class="nf">volar</span><span class="p">()</span> <span class="p">{</span> <span class="n">energia</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">-</span> <span class="m">10</span> <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">comer</span><span class="p">(</span><span class="n">cuanto</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="n">energia</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">+</span> <span class="p">(</span><span class="n">cuanto</span> <span class="p">*</span> <span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">():</span> <span class="n">Boolean</span>
+    <span class="k">fun</span> <span class="nf">resetearEnergia</span><span class="p">()</span> <span class="p">{</span> <span class="n">energia</span> <span class="p">=</span> <span class="m">0</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Golondrina</span><span class="p">(</span><span class="n">energia</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Ave</span><span class="p">(</span><span class="n">energia</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">()</span> <span class="p">=</span> <span class="k">true</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Torcaza</span><span class="p">(</span><span class="n">energia</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Ave</span><span class="p">(</span><span class="n">energia</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">vecesQueVolo</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">volar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="n">volar</span><span class="p">()</span>
+        <span class="n">vecesQueVolo</span><span class="p">++</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">esFeliz</span><span class="p">()</span> <span class="p">=</span> <span class="n">energia</span> <span class="p">&lt;</span> <span class="n">ENERGIA_MINIMA</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Ornitologo</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">trabajar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">ave</span> <span class="p">=</span> <span class="n">Golondrina</span><span class="p">(</span><span class="n">energia</span> <span class="p">=</span> <span class="m">100</span><span class="p">)</span>
+        <span class="n">ave</span><span class="p">.</span><span class="n">comer</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+        <span class="n">ave</span><span class="p">.</span><span class="n">volar</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h1 id="tocAnchor-1-23">Interfaces</h1>
+
+<p>Las interfaces son un mecanismo que permite definir un <strong>contrato</strong>, provisto por una serie de métodos que pueden o no estar definidos. Por ejemplo, veamos la interfaz <code class="language-plaintext highlighter-rouge">Flying</code> que expresa el contrato para cualquier elemento que sepa volar:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">interface</span> <span class="nc">Flying</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">isHappy</span><span class="p">():</span> <span class="n">Boolean</span>
+    <span class="k">fun</span> <span class="nf">fly</span><span class="p">()</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Esto implica que cualquier definición que <strong>implemente</strong> la interfaz <code class="language-plaintext highlighter-rouge">Flying</code> debe poder responder a esos dos mensajes: isHappy() y fly(). Por ejemplo, la clase <code class="language-plaintext highlighter-rouge">Bird</code>, donde el símbolo <code class="language-plaintext highlighter-rouge">:</code> sirve tanto para marcar herencia como implementación:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">interface</span> <span class="nc">Flying</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">fly</span><span class="p">()</span>
+    <span class="k">fun</span> <span class="nf">isHappy</span><span class="p">():</span> <span class="n">Boolean</span>
+<span class="p">}</span>
+
+<span class="c1">// clase Bird implementa Flying
+</span><span class="kd">class</span> <span class="nc">Bird</span><span class="p">(</span><span class="kd">var</span> <span class="py">energy</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">100</span><span class="p">)</span> <span class="p">:</span> <span class="n">Flying</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">eat</span><span class="p">(</span><span class="n">howMuch</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">+</span> <span class="p">(</span><span class="n">howMuch</span> <span class="p">*</span> <span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">resetEnergy</span><span class="p">()</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="m">0</span> <span class="p">}</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">fly</span><span class="p">()</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">-</span> <span class="m">10</span> <span class="p">}</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">isHappy</span><span class="p">()</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">&gt;</span> <span class="n">MIN_ENERGY</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Cada método implementado debe anotarse con el prefijo <code class="language-plaintext highlighter-rouge">override</code> para indicar que está implementando los métodos que le pide su interfaz.</p>
+
+<p>¿Por qué <code class="language-plaintext highlighter-rouge">Flying</code> no se define como clase abstracta? Podríamos, pero mientras que una clase solo tiene una superclase puede implementar varias interfaces a la vez. Supongamos que ahora definimos la interfaz <code class="language-plaintext highlighter-rouge">Living</code> para representar seres vivos:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">interface</span> <span class="nc">Living</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">energy</span><span class="p">:</span> <span class="n">Int</span>
+    <span class="k">fun</span> <span class="nf">eat</span><span class="p">(</span><span class="n">howMuch</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Living define un atributo sin ningún valor concreto, ya que <strong>no puede definir un estado, a diferencia de la clase abstracta</strong>. Ahora <code class="language-plaintext highlighter-rouge">Bird</code> puede implementar ambas interfaces, para lo cual tiene que indicar que va a redefinir el atributo <code class="language-plaintext highlighter-rouge">energy</code> y todos los métodos abstractos requeridos por las interfaces <code class="language-plaintext highlighter-rouge">Flying</code> y <code class="language-plaintext highlighter-rouge">Living</code>:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// clase Bird implementa las interfaces Flying y Living
+</span><span class="kd">class</span> <span class="nc">Bird</span><span class="p">(</span><span class="k">override</span> <span class="kd">var</span> <span class="py">energy</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">100</span><span class="p">)</span> <span class="p">:</span> <span class="n">Flying</span><span class="p">,</span> <span class="n">Living</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">eat</span><span class="p">(</span><span class="n">howMuch</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">+</span> <span class="p">(</span><span class="n">howMuch</span> <span class="p">*</span> <span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">resetEnergy</span><span class="p">()</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="m">0</span> <span class="p">}</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">fly</span><span class="p">()</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">-</span> <span class="m">10</span> <span class="p">}</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">isHappy</span><span class="p">()</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">&gt;</span> <span class="n">MIN_ENERGY</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Por último, las interfaces permiten definir implementaciones para los métodos, como podemos ver en este ejemplo completo:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">MIN_ENERGY</span> <span class="p">=</span> <span class="m">100</span>
+
+<span class="kd">interface</span> <span class="nc">Flying</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">fly</span><span class="p">()</span>
+    <span class="k">fun</span> <span class="nf">isHappy</span><span class="p">():</span> <span class="n">Boolean</span>
+    <span class="k">fun</span> <span class="nf">canFly</span><span class="p">()</span> <span class="p">=</span> <span class="p">!</span><span class="n">isHappy</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span> <span class="nc">Living</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">energy</span><span class="p">:</span> <span class="n">Int</span>
+    <span class="k">fun</span> <span class="nf">eat</span><span class="p">(</span><span class="n">howMuch</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">+</span> <span class="p">(</span><span class="n">howMuch</span> <span class="p">*</span> <span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">resetEnergy</span><span class="p">()</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="m">0</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Bird</span><span class="p">(</span><span class="k">override</span> <span class="kd">var</span> <span class="py">energy</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">100</span><span class="p">)</span> <span class="p">:</span> <span class="n">Flying</span><span class="p">,</span> <span class="n">Living</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">fly</span><span class="p">()</span> <span class="p">{</span> <span class="n">energy</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">-</span> <span class="m">10</span> <span class="p">}</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">isHappy</span><span class="p">()</span> <span class="p">=</span> <span class="n">energy</span> <span class="p">&gt;</span> <span class="n">MIN_ENERGY</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Aquí vemos que cuando le preguntemos a un pájaro si puede volar, la definición la tomará de la implementación de <code class="language-plaintext highlighter-rouge">Flying</code>. Por otra parte cuando le pidamos a un pájaro que coma, lo hará en base a la definición de la interfaz <code class="language-plaintext highlighter-rouge">Living</code>. De todas maneras hay que estar seguro de que vamos a reutilizar en más de un lugar cada una de nuestras definiciones para no caer en el sobrediseño.</p>
+
+<blockquote>
+  <p><strong>TIP</strong>: A la hora de reutilizar, una interface nos permite tomar definiciones de múltiples lugares aunque no permite definir un estado mientras que una superclase abstracta nos permite definir una sola vez nuestros atributos aunque solo podemos tener una superclase.</p>
+</blockquote>
+
+<h1 id="tocAnchor-1-24">Bloques</h1>
+
+<p>Un bloque permite definir una porción de código, también llamada <strong>expresión lambda</strong>:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">cuadrado</span> <span class="p">=</span> <span class="p">{</span> <span class="n">num</span><span class="p">:</span> <span class="n">Double</span> <span class="p">-&gt;</span> <span class="n">num</span><span class="p">.</span><span class="n">pow</span><span class="p">(</span><span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">cuadrado</span><span class="p">.</span><span class="n">invoke</span><span class="p">(</span><span class="m">5.0</span><span class="p">)</span>  <span class="c1">// 25
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso cuadrado es un bloque que recibe como parámetro un número con decimales y devuelve el cuadrado de dicho número. Si queremos definir el tipo de dato de cuadrado podemos:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">cuadrado</span><span class="p">:</span> <span class="p">(</span><span class="n">Double</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Double</span> <span class="p">=</span> <span class="p">{</span> <span class="n">num</span><span class="p">:</span> <span class="n">Double</span> <span class="p">-&gt;</span> <span class="n">num</span><span class="p">.</span><span class="n">pow</span><span class="p">(</span><span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">cuadrado</span><span class="p">.</span><span class="n">invoke</span><span class="p">(</span><span class="m">5.0</span><span class="p">)</span>  <span class="c1">// 25
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>En general un bloque en Kotlin tiene la siguiente sintaxis:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">{</span> <span class="n">parametro</span><span class="p">:</span> <span class="n">Tipo</span><span class="p">,</span> <span class="n">parametro2</span><span class="p">:</span> <span class="n">Tipo2</span> <span class="p">-&gt;</span> <span class="n">expresión</span> <span class="n">a</span> <span class="n">resolver</span> <span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>De esta manera podemos enviar bloques como parámetros, algo muy útil para trabajar entre otras cosas con las colecciones (<code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">filter</code>, <code class="language-plaintext highlighter-rouge">fold</code>, etc.)</p>
+
+<h2 id="tocAnchor-1-24-1">Variable implícita it</h2>
+
+<p>Dentro de una expresión lambda, <code class="language-plaintext highlighter-rouge">it</code> es la variable implícita del primer parámetro, por lo tanto todas estas expresiones son equivalentes:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">alumnos</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">alumno</span><span class="p">:</span> <span class="n">Alumno</span> <span class="p">-&gt;</span> <span class="n">alumno</span><span class="p">.</span><span class="n">estudioso</span><span class="p">()</span> <span class="p">})</span>
+<span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">alumnos</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">estudioso</span><span class="p">()</span> <span class="p">})</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Para más información pueden consultar <a href="https://kotlinlang.org/docs/lambdas.html">la página oficial de lambdas de Kotlin</a>.</p>
+
+<h1 id="tocAnchor-1-26">Manejo de nulls</h1>
+
+<h2 id="tocAnchor-1-26-1">100 veces no debo</h2>
+
+<p>Los valores nulos son siempre un dolor de cabeza, Kotlin es uno de los primeros lenguajes orientados a objetos que nace con una estrategia para mitigarlos. En principio una referencia definida como String o Int <strong>no acepta valores nulos</strong>.</p>
+
+<p>
+  <img src="/img/wiki/kotlin-stringNotNull.png" alt="Kotlin - String no acepta null" />
+</p>
+
+<p>Ok, entonces podríamos pensar que una solución es sacar el <code class="language-plaintext highlighter-rouge">null</code> explícito, y si como dijo Iván Noble algunos errores son deliciosos, sin dudas uno es éste:</p>
+
+<p>
+  <img src="/img/wiki/kotlin-stringUninitialized1.png" alt="Kotlin - no permite dejar sin inicializar" />
+</p>
+
+<p>Debemos inicializar la referencia, ¡exacto! porque de otra manera lo que pasa es que arrastramos un String que puede ser <code class="language-plaintext highlighter-rouge">null</code> por todo nuestro código, solo por no tomar la decisión de que ese valor <strong>nunca puede ser nulo</strong>.</p>
+
+<h2 id="tocAnchor-1-26-2">Lateinit</h2>
+
+<p>Una variante para resolver el problema es definir el atributo como <code class="language-plaintext highlighter-rouge">lateinit</code>:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Persona</span> <span class="p">{</span>
+    <span class="k">lateinit</span> <span class="kd">var</span> <span class="py">nombre</span><span class="p">:</span> <span class="n">String</span>
+    <span class="k">fun</span> <span class="nf">tieneNombreLargo</span><span class="p">()</span> <span class="p">=</span> <span class="n">nombre</span><span class="p">.</span><span class="n">length</span> <span class="p">&gt;</span> <span class="m">10</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El efecto que provoca es que Kotlin confía en que nosotros vamos a definir siempre un valor para el nombre de cada persona antes de utilizarlo. Por ejemplo:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">pepe</span> <span class="p">=</span> <span class="n">Persona</span><span class="p">()</span>
+    <span class="n">pepe</span><span class="p">.</span><span class="n">nombre</span> <span class="p">=</span> <span class="s">"Pepe"</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">pepe</span><span class="p">.</span><span class="n">tieneNombreLargo</span><span class="p">())</span>  <span class="c1">// false
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Y no hay ningún inconveniente. ¿Qué pasa si en cambio probamos con esta variante?</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">pepe</span> <span class="p">=</span> <span class="n">Persona</span><span class="p">()</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">pepe</span><span class="p">.</span><span class="n">tieneNombreLargo</span><span class="p">())</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Kotlin se va a quejar de que nosotros le dijimos “quedate tranquilo que yo me ocupo del nombre” y resultó que el nombre quedó sin inicializar:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>Exception <span class="k">in </span>thread <span class="s2">"main"</span> kotlin.UninitializedPropertyAccessException: lateinit property nombre has not been initialized
+ at Persona.getNombre <span class="o">(</span>File.kt:2<span class="o">)</span> 
+ at Persona.tieneNombreLargo <span class="o">(</span>File.kt:3<span class="o">)</span> 
+ at FileKt.main <span class="o">(</span>File.kt:8<span class="o">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Más adelante, cuando trabajemos con algunos frameworks como Spring, veremos que el modificador <code class="language-plaintext highlighter-rouge">lateinit</code> nos va a ser de mucha utilidad. Mientras tanto, cuando nosotros controlamos la inicialización de las referencias para cada objeto, la mejor estrategia es definir un valor no-nulo por defecto:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Persona</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">nombre</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">""</span>
+    <span class="k">fun</span> <span class="nf">tieneNombreLargo</span><span class="p">()</span> <span class="p">=</span> <span class="n">nombre</span><span class="p">.</span><span class="n">length</span> <span class="p">&gt;</span> <span class="m">10</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-26-3">Valores que aceptan null</h2>
+
+<p>Para aceptar valores <code class="language-plaintext highlighter-rouge">null</code> todos los tipos deben incorporar el sufijo <code class="language-plaintext highlighter-rouge">?</code>, por ejemplo <code class="language-plaintext highlighter-rouge">String?</code>, <code class="language-plaintext highlighter-rouge">Int?</code>, etc.</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Persona</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">nombre</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+    <span class="o">..</span><span class="p">.</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El inconveniente es que para saber si una persona tiene nombre largo, tenemos que considerar ahora si tiene un nombre nulo:</p>
+
+<p>
+  <img src="/img/wiki/kotlin-nonNullSafe.png" alt="Kotlin - Non null safe operation" />
+</p>
+
+<h3 id="operador-">Operador !!</h3>
+
+<p>Una opción es utilizar el operador <code class="language-plaintext highlighter-rouge">!!</code> sobre nombre, que implica nuevamente confiar en que el nombre no va a ser nulo:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">tieneNombreLargo</span><span class="p">()</span> <span class="p">=</span> <span class="n">nombre</span><span class="o">!!</span><span class="p">.</span><span class="n">length</span> <span class="p">&gt;</span> <span class="m">10</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Esto implica que anulamos la validación y nos puede pasar lo mismo que en otros lenguajes como Java: al enviar un mensaje a una referencia nula el programa explota en tiempo de ejecución.</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>Exception <span class="k">in </span>thread <span class="s2">"main"</span> java.lang.NullPointerException
+ at Persona.tieneNombreLargo <span class="o">(</span>File.kt:3<span class="o">)</span> 
+ at FileKt.main <span class="o">(</span>File.kt:8<span class="o">)</span> 
+ at FileKt.main <span class="o">(</span>File.kt:-1<span class="o">)</span> 
+</code>
+    </pre>
+  </div>
+</div>
+
+<h3 id="elvis-operator">Elvis operator</h3>
+
+<p>Parece un emoticón, pero <code class="language-plaintext highlighter-rouge">?:</code> es un shortcut para utilizar un valor por defecto cuando una expresión pueda ser nula:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">tieneNombreLargo</span><span class="p">()</span> <span class="p">=</span> <span class="p">(</span><span class="n">nombre</span> <span class="o">?:</span> <span class="s">""</span><span class="p">).</span><span class="n">length</span> <span class="p">&gt;</span> <span class="m">10</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso, si la referencia nombre no está inicializada, se toma en cuenta la segunda expresión (el string vacío).</p>
+
+<h2 id="tocAnchor-1-26-4">Null safe operator</h2>
+
+<p>También podemos resolver envíos de mensajes a referencias que potencialmente podrían ser nulas:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Alumno</span><span class="p">(</span><span class="kd">var</span> <span class="py">nombre</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">""</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">estudioso</span><span class="p">()</span> <span class="p">=</span> <span class="o">..</span><span class="p">.</span>
+    <span class="k">fun</span> <span class="nf">felicitar</span><span class="p">()</span> <span class="p">{</span> <span class="o">..</span><span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">alumnos</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="n">Alumno</span><span class="p">(</span><span class="n">nombre</span> <span class="p">=</span> <span class="s">"Valar"</span><span class="p">),</span> <span class="n">Alumno</span><span class="p">(</span><span class="n">nombre</span> <span class="p">=</span> <span class="s">"Arya"</span><span class="p">))</span>
+    <span class="kd">val</span> <span class="py">estudioso</span> <span class="p">=</span> <span class="n">alumnos</span><span class="p">.</span><span class="n">find</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">estudioso</span><span class="p">()</span> <span class="p">}</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">estudioso</span><span class="o">?.</span><span class="n">nombre</span><span class="p">)</span> <span class="c1">// null
+</span>    <span class="n">estudioso</span><span class="o">?.</span><span class="n">felicitar</span><span class="p">()</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Si estamos buscando información del primer alumne estudiose (o de algune) enviando el mensaje <code class="language-plaintext highlighter-rouge">find</code> a la colección puede pasar que la búsqueda no encuentre ningún elemento. En ese caso el operador <code class="language-plaintext highlighter-rouge">?.</code> es equivalente a escribir:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">estudioso</span> <span class="p">=</span> <span class="n">alumnos</span><span class="p">.</span><span class="n">find</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">estudioso</span><span class="p">()</span> <span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">estudioso</span> <span class="p">===</span> <span class="k">null</span><span class="p">)</span> <span class="k">null</span> <span class="k">else</span> <span class="n">estudioso</span><span class="p">.</span><span class="n">nombre</span><span class="p">)</span> <span class="c1">// null
+</span><span class="k">if</span> <span class="p">(</span><span class="n">estudioso</span> <span class="p">!==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">estudioso</span><span class="p">.</span><span class="n">felicitar</span><span class="p">()</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>pero como vemos es bastante menos tedioso de escribir. De todas maneras cuando sea posible es una buena práctica evitar la manipulación de tipos de datos con valores nulos, porque no siempre se puede resolver mágicamente con un <code class="language-plaintext highlighter-rouge">?</code> cualquier operación:</p>
+
+<p>
+  <img src="/img/wiki/kotlin-nullSafeOperatorNotAllowed.png" alt="Kotlin - null safe no válido" />
+</p>
+
+<p>Entonces el consejo que te dejamos es <strong>solo dejar valores que acepten nulls cuando el negocio realmente lo necesite</strong>. Por ejemplo: si un perro puede tener dueño o no, entonces el atributo puede ser nullable.</p>
+
+<h2 id="tocAnchor-1-26-5">Comparar referencias</h2>
+
+<p>Tenemos dos formas de comparar referencias en Kotlin:</p>
+
+<ul>
+  <li><strong>Igualdad referencial</strong>: definido por el operador <code class="language-plaintext highlighter-rouge">===</code>. <code class="language-plaintext highlighter-rouge">ref1 === ref2</code> si ambas referencias apuntan al mismo objeto. Esto lo determina la VM y no se puede cambiar.</li>
+  <li><strong>Igualdad estructural</strong>: definido por el operador <code class="language-plaintext highlighter-rouge">==</code>. <code class="language-plaintext highlighter-rouge">ref1 == ref2</code> en base a la definición del método <code class="language-plaintext highlighter-rouge">equals()</code> en la clase a la que pertenece ref1.</li>
+</ul>
+
+<p><strong>Tener especial atención a los strings</strong>, ya que dos strings con el mismo contenido pueden ser iguales pero no idénticos, dependiendo de las estrategias de optimización de la VM. Vemos un ejemplo ilustrativo:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">nombre</span> <span class="p">=</span> <span class="s">"Ernesto"</span>
+    <span class="kd">val</span> <span class="py">nombre2</span> <span class="p">=</span> <span class="s">"Ernesto "</span><span class="p">.</span><span class="n">trim</span><span class="p">()</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">nombre</span> <span class="p">==</span> <span class="n">nombre2</span><span class="p">)</span>   <span class="c1">// true, tienen el mismo contenido
+</span>    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">nombre</span> <span class="p">===</span> <span class="n">nombre2</span><span class="p">)</span>  <span class="c1">// false, no son el mismo objeto
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<blockquote>
+  <p><strong>Tip:</strong> Siempre es conveniente utilizar ==, que además se puede redefinir en nuestras clases / objetos.</p>
+</blockquote>
+
+<h1 id="tocAnchor-1-32">Features avanzados</h1>
+
+<h2 id="tocAnchor-1-32-1">Extension methods</h2>
+
+<p>Una de las herramientas más poderosas consiste en definir <strong>extension methods</strong>. Supongamos que un negocio tiene un horario de apertura y de cierre y queremos saber, dada una hora, si está abierto.</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">class</span> <span class="nc">Negocio</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">horarioApertura</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">9</span>
+    <span class="kd">var</span> <span class="py">horarioCierre</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">18</span>
+
+    <span class="k">fun</span> <span class="nf">estaAbierto</span><span class="p">(</span><span class="n">horaActual</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span>
+        <span class="n">horaActual</span><span class="p">.</span><span class="n">between</span><span class="p">(</span><span class="n">horarioApertura</span><span class="p">,</span> <span class="n">horarioCierre</span><span class="p">)</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Por supuesto, no compila. No existe el método between asociado a los enteros. Pero podemos definir un <strong>extension method</strong> en cualquier archivo:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">fun</span> <span class="nf">Int</span><span class="p">.</span><span class="n">between</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="k">this</span> <span class="k">in</span> <span class="n">from</span><span class="o">..</span><span class="n">to</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Si definiste la extensión en otro paquete, lo importás como cualquier otra definición:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">package</span> <span class="nn">otroPackage</span>
+
+<span class="k">import</span> <span class="nn">between</span>
+
+<span class="kd">class</span> <span class="nc">Negocio</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En resumen, un extension method permite que nosotros agreguemos comportamiento por afuera de la definición de una clase como si estuviéramos trabajando en ella, algo muy importante cuando la clase no podemos modificarla (como en el caso de Int, String), o bien cuando se está regenerando todo el tiempo (cuando tenemos un framework que genera código para nosotros), sin contar que además estamos respetando la idea de <strong>mensaje</strong> (y por consiguiente, la posibilidad de seguir trabajando con polimorfismo).</p>
+
+<h1 id="tocAnchor-1-34">Data classes</h1>
+
+<p>Kotlin provee el concepto de <strong>Data class</strong> para definir clases que sirven para modelar valores (<em>value objects</em>):</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">data class</span> <span class="nc">Point</span><span class="p">(</span><span class="kd">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="kd">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ... definiciones adicionales ...
+</span><span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">punto</span> <span class="p">=</span> <span class="n">Point</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">punto</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>               <span class="c1">// 2
+</span>    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">punto</span><span class="p">)</span>                 <span class="c1">// Point(x=2, y=4)
+</span>    <span class="n">System</span><span class="p">.</span><span class="k">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">punto</span> <span class="p">==</span> <span class="n">Point</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">))</span>  <span class="c1">// true
+</span><span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Aquí vemos que el <strong>data class Point</strong></p>
+
+<ul>
+  <li>define un constructor con dos parámetros que a su vez definen las variables x e y</li>
+  <li>los getters para x e y existen automáticamente</li>
+  <li>como x e y son <code class="language-plaintext highlighter-rouge">val</code> esto hace que nuestro objeto Point sea <strong>inmutable</strong>, si sumamos dos puntos obtenemos un nuevo punto (como pasa al concatenar los strings “hola΅ y “mundo” donde se obtiene un nuevo string “holamundo” o al sumar 2 + 3 el resultado es un nuevo número 5)</li>
+  <li>si definimos x (o y) como <code class="language-plaintext highlighter-rouge">var</code>, Kotlin le agrega los setters correspondientes</li>
+  <li>el método <code class="language-plaintext highlighter-rouge">toString</code> de un data class que crea Kotlin es muy conveniente, permite mostrar tanto la clase como su estado interno (a comparación del <code class="language-plaintext highlighter-rouge">toString</code> por defecto que tiene Object que muestra solo el nombre de la clase y un número interno en formato hexadecimal)</li>
+  <li>y por último también redefine el método <code class="language-plaintext highlighter-rouge">equals</code> de manera de utilizar igualdad estructural: dos puntos son iguales si tienen la misma información, porque cuando modelamos <em>value objects</em> es frecuente crear objetos para representar ciertos datos y después se descartan</li>
+</ul>
+
+<blockquote>
+  <p><strong>Tip:</strong> qué objetos son candidatos a modelarse con data class: un Mail, un domicilio, en general cuando estamos agrupando información que está junta pero que no es específica de un dominio, la identidad no es importante como pasa cuando definimos objetos cliente, producto, etc.</p>
+</blockquote>
+
+<h1 id="tocAnchor-1-35">Operadores para procesar múltiples envíos de mensajes</h1>
+
+<p>Otro syntactic sugar muy interesante de Kotlin es la posibilidad de enviar múltiples mensajes al mismo objeto, mediante varios operadores:</p>
+
+<ul>
+  <li>apply</li>
+  <li>let</li>
+  <li>with</li>
+  <li>run</li>
+  <li>also</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">ventaNacional</span> <span class="p">=</span> <span class="n">Venta</span><span class="p">().</span><span class="n">apply</span> <span class="p">{</span>
+    <span class="n">cantidadKilos</span> <span class="p">=</span> <span class="m">12</span>
+    <span class="n">fechaVenta</span> <span class="p">=</span> <span class="n">LocalDate</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">parcela</span> <span class="p">=</span> <span class="n">parcela50</span>
+    <span class="n">comprador</span> <span class="p">=</span> <span class="n">CompradorNacional</span><span class="p">()</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>De esta manera, todos los mensajes se apuntan al objeto que resulta de evaluar la expresión <code class="language-plaintext highlighter-rouge">Venta()</code>, y simplifica el envío de mensajes:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">ventaNacional</span><span class="p">.</span><span class="n">cantidadKilos</span> <span class="p">=</span> <span class="m">12</span>
+<span class="n">ventaNacional</span><span class="p">.</span><span class="n">fechaVenta</span> <span class="p">=</span> <span class="n">LocalDate</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">ventaNacional</span><span class="o">....</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-35-1">Otras variantes</h2>
+
+<p>Las <em>scope functions</em> <code class="language-plaintext highlighter-rouge">let</code>, <code class="language-plaintext highlighter-rouge">also</code>, <code class="language-plaintext highlighter-rouge">run</code> y <code class="language-plaintext highlighter-rouge">with</code> son similares pero tienen ligeras variaciones para lo que sea más conveniente en cada caso:</p>
+
+<h3 id="let">Let</h3>
+
+<p>El valor que le pasamos como parámetro se referencia como <code class="language-plaintext highlighter-rouge">it</code> y lo que devuelve es el resultado de toda la operación:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">Venta</span><span class="p">().</span><span class="n">let</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">cantidadKilos</span> <span class="p">*</span> <span class="n">it</span><span class="p">.</span><span class="n">parcela</span><span class="p">.</span><span class="n">tamanio</span> <span class="p">}</span> <span class="c1">// devuelve un número
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<h3 id="with">With</h3>
+
+<p>El valor que le pasamos como parámetro se referencia como <code class="language-plaintext highlighter-rouge">this</code> y lo que devuelve es el resultado de toda la operación. También es útil para trabajar el ejemplo original de la creación de una venta diciendo “a este objeto enviale estos mensajes”:</p>
+
+<div class="language-kotlin highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">val</span> <span class="py">ventaNacional</span> <span class="p">=</span> <span class="n">Venta</span><span class="p">()</span>
+<span class="n">with</span><span class="p">(</span><span class="n">ventaNacional</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cantidadKilos</span> <span class="p">=</span> <span class="m">12</span>
+    <span class="n">fechaVenta</span> <span class="p">=</span> <span class="n">LocalDate</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">parcela</span> <span class="p">=</span> <span class="n">parcela50</span>
+    <span class="n">comprador</span> <span class="p">=</span> <span class="n">CompradorNacional</span><span class="p">()</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Para más información (como las scope functions <code class="language-plaintext highlighter-rouge">run</code> y <code class="language-plaintext highlighter-rouge">also</code>) pueden ver <a href="https://kotlinlang.org/docs/scope-functions.html#functions">este artículo</a></p>
+
+<h1 id="tocAnchor-1-37">Links relacionados</h1>
+
+<ul>
+  <li><a href="https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing">Colecciones</a></li>
+  <li><a href="https://docs.google.com/document/d/1G0a9j-OA0rIEA5cdvEhIMbztJVo86ssvZKBK8HL9akg/edit?usp=sharing">Intro a manejo de errores con excepciones</a></li>
+  <li><a href="https://docs.google.com/document/d/1vVW91adl0p-NxGNpe8fqmC_5YmBkrxaLDFKyZ0xZb9Y/edit?usp=sharing">Ejercicio del Monedero</a> para ver cómo interactúan la UI y el dominio a partir de errores del dominio y del sistema</li>
+  <li><a href="https://docs.google.com/document/d/11mVR-4wEZhlQMDEqrfQeYLypEsrSqXv98dr78SA0Oq4/edit?usp=sharing">Testing</a></li>
+</ul>
+
+<h1 id="tocAnchor-1-38">Links útiles</h1>
+
+<ul>
+  <li><a href="kotlin-principal.html">Volver al menú principal del entorno Kotlin</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/kotlin" title="kotlin">Kotlin</a></li>
+            
+             <li><a href="/categories/lenguaje" title="lenguaje">Lenguaje</a></li>
+            
+             <li><a href="/categories/guia" title="guia">Guia</a></li>
+            
+             <li><a href="/categories/referencia" title="referencia">Referencia</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on March 03, 2025 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>15</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>15</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>915da7ca</td>
+                        <td>Mon Mar 3 15:50:53 2025 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Fix typos & add string interpolation</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0d06d80e</td>
+                        <td>Tue Feb 13 21:27:30 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Updating docs</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9d33f65d</td>
+                        <td>Thu Feb 10 21:16:52 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Fix link to Basic Types</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>478c07ce</td>
+                        <td>Sun Feb 6 11:58:45 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Linking Collections paper from Kotlin quick reference page</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7c88893b</td>
+                        <td>Thu Feb 3 09:07:03 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Adding ci for kotlin</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

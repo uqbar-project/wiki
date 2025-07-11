@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Paradigma logico   introduccion</title>
+  <meta property="og:title" content="Paradigma logico   introduccion" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/paradigma-logico---introduccion.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/paradigma-logico---introduccion.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Paradigma logico   introduccion</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>El paradigma lógico se basa en la definición de reglas lógicas y es un paradigma declarativo así que si no lo leíste todavía te recomiendo leer antes sobre <a href="declaratividad.html">Declaratividad</a>. En este artículo hablamos principalmente de la teoría del paradigma lógico, pero para los ejemplos tomamos como base el lenguaje <a href="https://es.wikipedia.org/wiki/Prolog">Prolog</a></p>
+
+<h2 id="introducción-silogismos">Introducción: Silogismos</h2>
+
+<p>¿Cómo describir un problema usando la lógica? ¿Qué tipo de problema podemos describir?</p>
+
+<p>Comencemos con un ejemplo simple, seguramente muchos de ustedes lo habrán escuchado alguna vez:</p>
+
+<p><em>Sócrates es hombre</em></p>
+
+<p><em>Todos los hombres son mortales</em></p>
+
+<p>Luego… ¿qué podemos deducir de esto? Claro adivinaste, que Sócrates es mortal. De eso se trata la programación lógica, vamos a describir nuestro conocimiento en formas de reglas y vamos a permitir que otra cosa (el <a href="backtracking.html">motor</a>) se ocupe de procesar ese conocimiento y sacar conclusiones al respecto.</p>
+
+<p>¿Y solito se da cuenta de las cosas? Más o menos, en realidad no podemos pedirle al motor que solamente se ponga a deducir y que nos diga a qué conclusión llega, hay que hacerle preguntas más concretas. Por ejemplo podemos preguntarle:</p>
+<ul>
+  <li>si socrates es mortal, y nos va a decir que sí</li>
+  <li>qué mortales conoce, y nos va a decir que socrates es mortal</li>
+</ul>
+
+<p>Esos son los dos tipos de preguntas básicas que el motor va a saber contestar, después vamos a bajar en detalle sobre esto.</p>
+
+<h2 id="cómo-lo-bajamos-a-código">¿Cómo lo bajamos a código?</h2>
+
+<p>Programemos este mismo ejemplo en Prolog, en realidad es bastante simple:</p>
+<div class="language-prolog highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ss">hombre</span><span class="p">(</span><span class="ss">socrates</span><span class="p">).</span>
+<span class="ss">mortal</span><span class="p">(</span><span class="nv">X</span><span class="p">):-</span>
+  <span class="ss">hombre</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
+</code></pre></div></div>
+
+<p>¿Qué quiere decir esto?</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">hombre(socrates)</code> afirma que Sócrates es un hombre, o dicho de otra manera que <em>socrates</em> tiene la característica <em>hombre</em>. Es una afirmación que afecta únicamente a Sócrates y la llamamos un <strong>hecho</strong>, ya que es una declaración que no depende de nada para ser verdadera.</li>
+  <li><code class="language-plaintext highlighter-rouge">mortal(X):-hombre(X)</code> es lo que llamamos una <strong>regla</strong> y se puede leer como: <em>X es hombre ⇒ X es mortal</em>. La regla es una implicación, el antecedente es <code class="language-plaintext highlighter-rouge">hombre(X)</code> y el consecuente es <code class="language-plaintext highlighter-rouge">mortal(X)</code>. Esto quiere decir que para todo X que tenga la característica <em>hombre</em> se da que ese X también tiene la característica <em>mortal</em> (o más corto: todos los hombres son mortales).</li>
+</ul>
+
+<p>Fijate que <em>socrates</em> está en minúscula, mientras que la <em>X</em> aparece en mayúscula, ¿por qué? Los términos en minúscula se refieren a cosas particulares y las palabras en mayúscula son <strong>incógnitas</strong> (o variables).</p>
+
+<p>Eso se relaciona también con que la primera línea sea un hecho (porque habla de un individuo particular) y la segunda sea una regla (porque habla de todos los hombres).</p>
+
+<p>Pero la principal diferencia entre el hecho y la regla es que la regla tiene un antecedente (que se debe cumplir para que se cumpla la regla) y el hecho no, el hecho es verdadero siempre. En programas más complejos, a veces pasa que tenemos hechos que usan variables o reglas sobre individuos particulares.</p>
+
+<p>Los hechos me permiten definir <strong>por extensión</strong> el conjunto de individuos que tienen una característica. Las reglas me permiten hacer esa misma definición <strong>por comprensión</strong>.</p>
+
+<h2 id="un-poco-de-teoría">Un poco de teoría</h2>
+
+<p>Si entendiste todo hasta acá, es momento de formalizar algunas cositas acerca del programa que hicimos. Antes que nada:</p>
+
+<ul>
+  <li>La base de conocimiento se compone de <strong>cláusulas</strong> que definen <strong>predicados</strong> partiendo de los <strong>individuos</strong> de los que queremos hablar (para más detalles sobre estos términos, podemos pasar a ver algunas <a href="paradigma-logico---un-poco-de-nomenclatura.html">definiciones</a>).</li>
+  <li>Un programa Prolog es una base de conocimiento.</li>
+</ul>
+
+<p>Para obtener resultados a partir de un programa, hacemos <a href="paradigma-logico---un-poco-de-nomenclatura.html">consultas individuales y existenciales</a>.</p>
+
+<h2 id="universo-cerrado">Universo Cerrado</h2>
+
+<p><em>¿Qué pasa si ahora quiero preguntar si Aristóteles es mortal?</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">?- mortal(aristoteles).</code></p>
+
+<p>Al ejecutar esa consulta, la secuencia de pasos del motor (simplificada) es la siguiente:</p>
+
+<ol>
+  <li>El motor buscará en la base de conocimientos las diferentes cláusulas del predicado <code class="language-plaintext highlighter-rouge">mortal/1</code>, en particular las que matcheen con <code class="language-plaintext highlighter-rouge">mortal(aristoteles)</code>.</li>
+  <li>Al hacer esto encontrará una única regla: <code class="language-plaintext highlighter-rouge">mortal(X):-hombre(X)</code>. Ergo, para probar que Aristóteles es mortal, deberá probar que es hombre.</li>
+  <li>Al intentar verificar si aristoteles es un hombre, es decir la consulta <code class="language-plaintext highlighter-rouge">hombre(aristoteles)</code>.</li>
+  <li>Pero la única definición del predicado hombre es <code class="language-plaintext highlighter-rouge">hombre(socrates)</code>, que no matchea con <code class="language-plaintext highlighter-rouge">hombre(aristoteles)</code>.</li>
+  <li>La base de conocimientos no dice nada acerca de aristóteles, por lo tanto no se puede verificar que Aristóteles sea mortal.</li>
+</ol>
+
+<p>En este momento aparece un concepto que llamamos <strong>principio de universo cerrado</strong>, que dice que el motor asume como falso todo lo que no pueda probar como verdadero, es decir que si al preguntarle si aristoteles es mortal, me va a contestar que no!</p>
+
+<p>Muchos entornos (tanto dentro del paradigma lógico como en otros muchos lugares) trabajan con este principio. Aunque no es la única forma de trabajar, es algo bastante frecuente dado que lo contrario es en general más complicado de implementar y de utilizar.</p>
+
+<p><em>¿Cómo solucionar el problema?</em></p>
+
+<p>Agregando el hecho que indica que Aristóteles es un hombre:</p>
+
+<p><code class="language-plaintext highlighter-rouge">hombre(aristoteles).</code></p>
+
+<p>Si volvemos a hacer la misma consulta ahora vamos a tener el resultado esperado.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on June 18, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>49</td>
+                                <td>26</td>
+                                <td>31</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>192.168.1.1</td>
+                                <td>192.168...</td>
+                                <td>9</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
+                                <td>7</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>24</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>f1a6cdab</td>
+                        <td>Tue Jun 18 13:32:16 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Cambio link inexistente por link a wikipedia</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>8911bdf8</td>
+                        <td>Tue Jun 18 13:20:21 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update paradigma-logico---introduccion.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ce0de01b</td>
+                        <td>Wed Jun 13 20:58:06 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update paradigma-logico---introduccion.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c97bbd23</td>
+                        <td>Thu Feb 2 19:12:36 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ¿Cómo lo bajamos a código? */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

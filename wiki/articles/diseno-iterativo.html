@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Diseno iterativo</title>
+  <meta property="og:title" content="Diseno iterativo" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/diseno-iterativo.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/diseno-iterativo.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Diseno iterativo</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>La metodología de desarrollo nos lleva a diseñar de dos formas completamente diferentes:</p>
+
+<p>Las metodologías predictivas proponen el <strong>diseño anticipado</strong>, donde se asume que</p>
+
+<ul>
+  <li>el análisis ya ha relevado todos los procesos que el usuario necesita</li>
+  <li>tenemos disponible toda la información para poder definir cada proceso</li>
+  <li>no habrá cambios en los requerimientos hasta nuestra implementación
+    <ul>
+      <li>el usuario no hará cambios o nuevos pedidos.</li>
+      <li>no habrá cambios externos al sistema que obliguen a modificarlo (como disposiciones legales).</li>
+    </ul>
+  </li>
+  <li>si el diseño es adecuado, la codificación se ajustará perfectamente a lo que el usuario necesita.
+    <ul>
+      <li>para ello hay que documentar el sistema en su completitud para que los programadores no tengan que tomar decisiones de diseño en la codificación.</li>
+    </ul>
+  </li>
+  <li>en la fase de diseño no se debe programar, dado que se estaría solapando la actividad (de la misma manera que en la fase de codificación no se debe diseñar)</li>
+</ul>
+
+<p>Esta forma de diseñar también se conoce como “Big Design Up Front”. <a href="http://www.joelonsoftware.com/articles/AardvarkSpec.html">En este artículo</a> el autor expone algunos argumentos en favor de esta metodología.</p>
+
+<p>Por el contrario, las metodologías adaptativas proponen el <strong>diseño iterativo</strong>, donde se asume que</p>
+
+<ul>
+  <li>sólo tenemos algunos procesos relevados, y aunque los tuviéramos en su totalidad, los requerimientos podrían cambiar.</li>
+  <li>es inocente pensar en que no habrá cambios en los requerimientos, dado que
+    <ul>
+      <li>el usuario no sabe exactamente lo que se va a construir y tiene derecho a pedir modificaciones cuando se da cuenta de que cometió un error al dar información al diseñador.</li>
+      <li>bajo la premisa anterior el diseñador no puede realizar un diseño que no esté sujeto a cambios, por los errores propios que además podría cometer.</li>
+    </ul>
+  </li>
+  <li>si el diseño no es adecuado, debemos cambiarlo lo más pronto posible. Esto incluye la fase de codificación.</li>
+  <li>si queremos reflejar la realidad, tenemos que permitir que haya alternancia entre diseño y programación. No paralelizamos las actividades, sino que una se va solapando a la otra, como en una pila.</li>
+  <li>el diseño iterativo considera que los errores son parte del desarrollo mismo y necesitamos poder modificar el diseño en cualquier momento, sin que eso paralice el proyecto (iterativo tiene mucho de “prueba y error”).</li>
+  <li>simplest thing that could possible work</li>
+  <li><a href="http://martinfowler.com/articles/designDead.html">En este artículo</a> Martin Fowler explica el diseño desde el punto de vista de las metodologías ágiles.</li>
+</ul>
+
+<h2 id="el-costo-del-cambio">El costo del cambio</h2>
+
+<p>Tradicionalmente las metodologías secuenciales interpretan que le costo de corregir un error o de introducir un cambio en un desarrollo de software se incrementa exponencialmente a medida que se avanza con el desarrollo. Según esta visión, un error en el análisis que podría corregirse en un par de horas de trabajo, tardará días en solucionarse si se lo detecta durante la etapa de diseño e incluso podría requerir de varias semanas si se lo encuentra recién durante la etapa de construcción.</p>
+
+<p>Varios autores, entre ellos Kent Beck han propuesto otra interpretación. Según esta nueva perspectiva la curva del cambio es radicalmente distinta para los proyectos de software en la actualidad. La valoración incorrecta del costo del cambio proviene en parte por la asociación con otras ingenierías; en las ingenierías que trabajan con entidades físicas hacer una modificación sobre algo construido suele ser muy costoso, incluso en algunos casos imposible. Esto no es válido para una ingeniería que trabaja con productos tan abstractos y maleables como el software. Adicionalmente la ingeniería del software se diferencia radicalmente de las otras en cuanto a que el costo de reproducción de un producto una vez construido es insignificante (compárese el costo de construir una nueva unidad de un automóvil determinado en una línea de producción con el costo de producir una nueva unidad de un programa que se vende en forma masiva).</p>
+
+<p>Por otro lado, las herramientas para el desarrollo de software han evolucionado notablemente en los últimos años, apareciendo entornos integrados de desarrollo, lenguajes de muy alto nivel, herramientas de versionado, refactorings automáticos, herramientas de integración contínua, entre otros. A modo de ejemplo, podemos considerar el costo de cambiar el nombre de una variable en un entorno de desarrollo que no tenga la capacidad de hacerlo automáticamente en un programa grande con la simplicidad de hacerlo en un entorno de los que se usan hoy en día. El tiempo se reduce apenas a segundos.</p>
+
+<p>Según la interpretación de Beck, cualquier cambio es realizable con un costo relativamente bajo aun en etapas avanzadas del desarrollo. Otros autores sugieren que hay algunos cambios para los cuales se puede aplanar la curva del costo y otros cambios para los que no. Por ejemplo, se ha sugerido que los errores arquitecturales tienden a tener curvas empinadas. Si bien es imaginable que en la medida que las herramientas (tanto tecnológicas como conceptuales) evolucionen, más y más decisiones puedan tomarse considerando la posibilidad de modidicarlas mas adelante sin que esto implique un costo alto, todavía hoy en día es importante detectar para cada decisión que tomamos en una etapa temprana del desarrollo si el costo potencial de un error es elevado o no.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>9</td>
+                                <td>12</td>
+                                <td>9</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Deby</td>
+                                <td>Deby@uq...</td>
+                                <td>7</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2cf8029f</td>
+                        <td>Thu Feb 2 19:10:00 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* El costo del cambio */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>683d5631</td>
+                        <td>Thu Feb 2 19:10:00 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>eece2346</td>
+                        <td>Thu Feb 2 19:10:00 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>940947fc</td>
+                        <td>Thu Feb 2 19:10:00 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

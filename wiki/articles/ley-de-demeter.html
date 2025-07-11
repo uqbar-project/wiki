@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Ley de demeter</title>
+  <meta property="og:title" content="Ley de demeter" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/ley-de-demeter.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/ley-de-demeter.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Ley de demeter</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Usamos la “ley de demeter” siempre que es posible (que es la mayoría de las veces), pueden consultarla <a href="https://es.wikipedia.org/wiki/Ley_de_Demeter">acá</a>, un resumen:</p>
+
+<ul>
+  <li>You can play with yourself.</li>
+  <li>You can play with your own toys (but you can’t take them apart),</li>
+  <li>You can play with toys that were given to you.</li>
+  <li>And you can play with toys you’ve made yourself.</li>
+</ul>
+
+<h3 id="you-can-play-with-yourself">You can play with yourself</h3>
+
+<p>Esto significa que podemos enviarnos mensajes a uno mismo:</p>
+
+<p>Wollok:</p>
+
+<div class="language-wollok highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">object</span><span class="w"> </span><span class="nc">pepita</span><span class="w"> </span>{<span class="w">
+    </span><span class="kr">method</span><span class="w"> </span>graznar(){<span class="w">
+        </span><span class="bp">self</span>.gastarEnergia()<span class="w">
+    </span>}<span class="w">
+    </span><span class="c1">// ...</span><span class="w">
+</span>}<span class="w">
+</span></code></pre></div></div>
+
+<p>(<code class="language-plaintext highlighter-rouge">self</code> soy yo mismo, me envío el mensaje <code class="language-plaintext highlighter-rouge">gastarEnergia()</code>)</p>
+
+<h3 id="you-can-play-with-your-own-toys-but-you-cant-take-them-apart">You can play with your own toys (but you can’t take them apart)</h3>
+
+<p>Esto significa que nuestros atributos están para mandarles mensajes:</p>
+
+<p>Wollok:</p>
+
+<pre><code class="language-Wollok">object pepita {
+    var ciudadActual = bsAs
+    method estasContenta(){
+        return ciudadActual.esGrande()
+    }
+    // ...
+}
+</code></pre>
+
+<p>(<code class="language-plaintext highlighter-rouge">ciudadActual</code> es un atributo de pepita, al que se le envía el mensaje <code class="language-plaintext highlighter-rouge">esGrande()</code>)</p>
+
+<p><strong>Pero</strong> no está bueno meterme con su composición interna:</p>
+
+<pre><code class="language-Wollok">object pepita {
+    var ciudadActual = bsAs
+    method estasContenta(){
+        return ciudadActual.poblacion().size() &gt; 50000 //esto es incorrecto
+    }
+    // ...
+}
+</code></pre>
+
+<p>(es incorrecto hablar con los objetos que le pido a los objetos que le pido a los objetos…. Ya que eso es como “desarmar” a <code class="language-plaintext highlighter-rouge">ciudadActual</code>. Directamente debo pedirle lo que necesito, que es saber si es grande)</p>
+
+<h3 id="you-can-play-with-toys-that-were-given-to-you">You can play with toys that were given to you</h3>
+
+<p>Esto significa que puedo hablar con los <strong>parámetros</strong> que me lleguen</p>
+
+<pre><code class="language-Wollok">object pepita {
+    method queresIrA(otraCiudad){
+        return otraCiudad.esGrande()
+    }
+    // ...
+}
+</code></pre>
+
+<p>(<code class="language-plaintext highlighter-rouge">otraCiudad</code> es un parámetro que me llega en este método, por eso ahora mismo puedo hablarle y mandarle el mensaje <code class="language-plaintext highlighter-rouge">esGrande()</code>)</p>
+
+<h3 id="and-you-can-play-with-toys-youve-made-yourself">And you can play with toys you’ve made yourself</h3>
+
+<p>Esto significa que puedo hablar con los objetos que yo haya creado:</p>
+
+<pre><code class="language-Wollok">object pepita {
+    method anioActual{
+        return new Date().year()
+    }
+    // ...
+}
+</code></pre>
+<p>(<code class="language-plaintext highlighter-rouge">new Date()</code> representa el día de hoy, que lo acabo de crear, y le mando el mensaje <code class="language-plaintext highlighter-rouge">year()</code>)</p>
+
+<h3 id="resumen">Resumen</h3>
+
+<p>Puedo mandarles mensajes a self, a mis atributos, a lo que me llega por parámetro, y a los objetos que creé yo.</p>
+
+<p>Entonces, esto es incorrecto:</p>
+
+<pre><code class="language-Wollok">object pepita {
+    method queresIrA(){
+        return otraCiudad.esGrande()
+    }
+    // ...
+}
+</code></pre>
+
+<p>… porque ¿de dónde sacó la otraCiudad? No es un parámetro, no es un atributo….</p>
+
+<h3 id="nota-sobre-los-wkos">Nota sobre los WKOs</h3>
+
+<p>Hay muchos lenguajes que ofrecen puntos de acceso globales a ciertos objetos, con quienes también se puede hablar.</p>
+
+<p>Por ejemplo, en Smalltalk puedo hablar con las clases, que son objetos globales:</p>
+
+<pre><code class="language-Smalltalk">#Golondrina&gt;&gt;ciudadNatal
+   ^ Ciudad getInstance: 'BuenosAires'
+</code></pre>
+<p>(Hablo con <code class="language-plaintext highlighter-rouge">Ciudad</code>, que es una clase, y le digo <code class="language-plaintext highlighter-rouge">getInstance:</code>, lo que me da una ciudad bien conocida)</p>
+
+<p>Y en Wollok existen los WKOs (well known objects), que permiten hablarles directamente sin conocerlos:</p>
+
+<pre><code class="language-Wollok">object pepita {
+    method enQueKMNaciste() {
+        return buenosAires.kilometro()
+    }
+    // ...
+}
+</code></pre>
+
+<p>(puedo hablar con <code class="language-plaintext highlighter-rouge">buenosAires</code>, aunque no sea ni un parámetro ni un atributo, ya que es un WKO)</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on September 19, 2017 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>5</td>
+                                <td>142</td>
+                                <td>11</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>131aa113</td>
+                        <td>Tue Sep 19 12:15:58 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update ley-de-demeter.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>98a011ca</td>
+                        <td>Tue Sep 19 12:15:00 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update ley-de-demeter.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c6477f89</td>
+                        <td>Mon Sep 18 18:00:08 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update ley-de-demeter.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a1a74b89</td>
+                        <td>Thu Feb 2 19:11:35 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

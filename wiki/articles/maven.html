@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Introducción a Maven</title>
+  <meta property="og:title" content="Introducción a Maven" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/maven.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/maven.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Introducción a Maven</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Maven es una herramienta que ayuda a desarrollar un proyecto basado en el entorno de una JDK (Java, Xtend, Scala, Groovy, etc.)</p>
+
+<h2 id="funcionalidades">Funcionalidades</h2>
+
+<p>Maven cumple con las siguientes funciones principales que vamos a explicar en las siguientes secciones:</p>
+
+<ul>
+  <li>Reificación de Proyecto / Artefacto en forma standard, declarativa y extensible</li>
+  <li>Manejo de Dependencias</li>
+  <li>Manejo del Ciclo de Vida del Artefacto, incluyendo releases</li>
+</ul>
+
+<h2 id="reificación-de-proyectoartefacto">Reificación de Proyecto/Artefacto</h2>
+
+<p>Java no trabaja la idea de proyecto, no lo representa como concepto. Entonces, cada uno de los IDEs pensados para Java agregan su propia forma de definirlo: en el caso de Eclipse tenemos</p>
+
+<ul>
+  <li>el archivo <code class="language-plaintext highlighter-rouge">.classpath</code> que define los directorios donde compilar y las dependencias que necesita</li>
+  <li>el archivo <code class="language-plaintext highlighter-rouge">.project</code> que contiene el nombre del proyecto, entre otras cosas</li>
+</ul>
+
+<p>Si nosotros trabajamos con otro IDE (como IntelliJ IDEA o NetBeans) tenemos que adaptar estos archivos para generar el proyecto con sus dependencias adecuadamente. Maven permite trabajar entre IDEs con su propio modelo de proyecto, que se guarda en el archivo <code class="language-plaintext highlighter-rouge">pom.xml</code> (de <strong>Project Object Model</strong>)</p>
+
+<h2 id="identificación-de-un-proyecto-maven">Identificación de un proyecto Maven</h2>
+
+<p>En el archivo pom se declaran, entre otras cosas, un identificador único de nuestro proyecto/artefacto, que resulta de la unión de tres identificadores:</p>
+
+<ul>
+  <li><strong>groupId</strong>: representa la organización autora/dueña del artefacto. Por ejemplo, los proyectos de Algoritmos 2 suelen usar el groupId <code class="language-plaintext highlighter-rouge">org.uqbar</code>.</li>
+  <li><strong>artifactId</strong>: este campo define el nombre por el que se conoce al proyecto en sí mismo. Algunos ejemplos: <code class="language-plaintext highlighter-rouge">commons-collections</code>, <code class="language-plaintext highlighter-rouge">eg-seguros-xtend</code>, <code class="language-plaintext highlighter-rouge">tp-futbol5-grupo01</code>, etc.</li>
+  <li><strong>versión</strong>: es el último componente del rompecabezas, dado que groupId:artifactId denota un único proyecto pero no alcanza para definir en qué versión del proyecto nos estamos parando. Se agrega entonces un número de versión para completar la información que Maven necesita para generar una identificación unívoca. Conviene seguir las reglas de <a href="https://semver.org/"><strong>versionado semántico</strong></a>, para liberar versiones productivas. A veces se suele acompañar de un sufijo <code class="language-plaintext highlighter-rouge">RELEASE</code> (para versiones estables) o <code class="language-plaintext highlighter-rouge">SNAPSHOT</code> (para versiones intermedias que pueden estar sujetas a cambios)</li>
+</ul>
+
+<p>A continuación un ejemplo básico.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+      <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+      <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0
+                          http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+    <span class="nt">&lt;groupId&gt;</span>org.uqbar<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>uqbar-commons<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.1.2<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Cuando se publica un componente, se empaquetan todas las clases compiladas (<code class="language-plaintext highlighter-rouge">.class</code>) en un archivo comprimido que tiene la extensión <code class="language-plaintext highlighter-rouge">.jar</code> (de Java Archive). Opcionalmente podemos tener un archivo comprimido extra con los fuentes.</p>
+</blockquote>
+
+<h2 id="repositorios-maven">Repositorios Maven</h2>
+
+<p>Un repositorio Maven es <strong>un lugar donde están los artefactos Maven</strong>, estructurados en cierta forma estándar para hacer las descargas de las dependencias. Cuando instalamos Maven, se crea un repositorio Maven local en una carpeta que por defecto suele ser <code class="language-plaintext highlighter-rouge">HOME/.m2</code>. Si queremos ubicar al componente cuyo identificador es <code class="language-plaintext highlighter-rouge">org.eclipse.xtend:org.eclipse.xtend.core:2.21.0.M1</code> podremos encontrarlo localmente en</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%M2_HOME%/repository
+   └── org
+       └── eclipse
+             └── xtend
+                  └── org.eclipse.xtend.core
+                         ├─ 2.19.0 <span class="o">(</span>otra versión<span class="o">)</span>
+                         └─ 2.21.0.M1 <span class="nt">--</span><span class="o">&gt;</span> dentro de esta carpeta estará el .jar
+</code></pre></div></div>
+
+<ul>
+  <li>recordemos que el identificador de un componente se arma a partir del groupId + el artifactId + la versión</li>
+  <li>se suele exportar como variable la carpeta <code class="language-plaintext highlighter-rouge">HOME/.m2</code> con el nombre <code class="language-plaintext highlighter-rouge">M2_HOME</code></li>
+  <li>en <code class="language-plaintext highlighter-rouge">M2_HOME</code> puede haber opcionalmente un archivo <code class="language-plaintext highlighter-rouge">settings.xml</code> que veremos más adelante</li>
+  <li>en la subcarpeta <code class="language-plaintext highlighter-rouge">repository</code> están todos los componentes que descargamos localmente</li>
+</ul>
+
+<p>Vemos un video de ejemplo, en una máquina Linux. El comportamiento en una máquina Windows es exactamente igual, hay que explorar los directorios incluyendo los que son ocultos, y navegar a partir de la carpeta de usuario.m2:</p>
+
+<p><img src="/img/wiki/maven_local_repo.gif" alt="repo maven local" /></p>
+
+<h2 id="relacionando-proyectos-maven-desde-el-pom">Relacionando proyectos maven desde el POM</h2>
+
+<p>Es posible referenciar a otros proyectos maven desde un POM, esto es muy útil para cuando necesitamos</p>
+
+<ul>
+  <li>declarar dependencias,</li>
+  <li>definir un proyecto padre,</li>
+  <li>agregar plugins</li>
+</ul>
+
+<p>a la hora de compilar nuestro proyecto.</p>
+
+<h3 id="dependencias">Dependencias</h3>
+
+<p>Las dependencias se definen dentro de un tag <code class="language-plaintext highlighter-rouge">&lt;dependencies&gt;</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;project</span> <span class="err">...</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;...&gt;</span>
+	<span class="nt">&lt;dependencies&gt;</span>
+		<span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>junit-jupiter-params<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>5.5.2<span class="nt">&lt;/version&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+	<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></div></div>
+
+<p>En este caso, estamos definiendo que nuestro proyecto tiene como pre-requisito el componente <code class="language-plaintext highlighter-rouge">junit-jupiter-params</code> asociado a <code class="language-plaintext highlighter-rouge">org.junit.jupiter</code>. Si utilizamos Maven como un plugin de Eclipse</p>
+
+<ul>
+  <li>agregamos la dependencia en el pom,</li>
+  <li>actualizamos el proyecto (<code class="language-plaintext highlighter-rouge">Maven &gt; Update project</code>)</li>
+  <li>y eso dispara la descarga del componente al repositorio Maven local como vemos en el video</li>
+</ul>
+
+<p><img src="/img/wiki/downloading-maven-component.gif" alt="descarga componente local" /></p>
+
+<p>Al agregar una dependencia a un proyecto es posible especificar el <code class="language-plaintext highlighter-rouge">type</code> (por ej., <code class="language-plaintext highlighter-rouge">jar</code>), el <code class="language-plaintext highlighter-rouge">scope</code> (por ejemplo: test), y si es o no <code class="language-plaintext highlighter-rouge">optional</code>.</p>
+
+<h3 id="parent-project">Parent project</h3>
+
+<p>Otra variante es utilizar un proyecto padre mediante el tag <code class="language-plaintext highlighter-rouge">&lt;parent&gt;</code>, como ocurría en versiones anteriores de los ejemplos de Uqbar hasta 2019:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;parent&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.uqbar-project<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>uqbar-xtend-parent<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.17.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/parent&gt;</span>
+</code></pre></div></div>
+
+<p>El parent project permite reutilizar definiciones comunes entre varios proyectos. En este caso particular, uqbar-xtend-parent (el nombre que le dimos a este artefacto) sirve para definir</p>
+
+<ul>
+  <li>que utilizaremos la versión 2.17.0 de Xtend</li>
+  <li>con una dependencia para correr tests unitarios</li>
+  <li>compilando a JDK 1.8</li>
+</ul>
+
+<h3 id="plugins">Plugins</h3>
+
+<p>Los plugins de Maven no solo permiten reutilizar lógica sino que además ejecutan acciones cuando son descargados. Así funciona el núcleo central de Maven: uno de los plugins más conocidos es <code class="language-plaintext highlighter-rouge">clean</code>, que elimina el directorio de destino (en el caso de Xtend, donde están los archivos Java y los .class que se generan a partir de los fuentes originales). Otro plugin conocido es <code class="language-plaintext highlighter-rouge">Surefire</code>, que ejecuta los tests de un proyecto basado en JDK.</p>
+
+<p><br />
+Distintos proyectos maven requieren/ofrecen distintos settings al ser referenciados como plugins. Veamos un ejemplo de la configuración del plugin de <code class="language-plaintext highlighter-rouge">xtend</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;plugins&gt;</span>
+		<span class="nt">&lt;plugin&gt;</span>
+      <span class="nt">&lt;groupId&gt;</span>org.eclipse.xtend<span class="nt">&lt;/groupId&gt;</span>
+      <span class="nt">&lt;artifactId&gt;</span>xtend-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+      <span class="nt">&lt;version&gt;</span>2.20.0<span class="nt">&lt;/version&gt;</span>
+      <span class="nt">&lt;executions&gt;</span>
+        <span class="nt">&lt;execution&gt;</span>
+          <span class="nt">&lt;goals&gt;</span>
+            <span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+            <span class="nt">&lt;goal&gt;</span>testCompile<span class="nt">&lt;/goal&gt;</span>
+          <span class="nt">&lt;/goals&gt;</span>
+          <span class="nt">&lt;configuration&gt;</span>
+            <span class="nt">&lt;outputDirectory&gt;</span>${project.build.directory}/xtend-gen/main<span class="nt">&lt;/outputDirectory&gt;</span>
+            <span class="nt">&lt;testOutputDirectory&gt;</span>${project.build.directory}/xtend-gen/test<span class="nt">&lt;/testOutputDirectory&gt;</span>
+          <span class="nt">&lt;/configuration&gt;</span>
+        <span class="nt">&lt;/execution&gt;</span>
+      <span class="nt">&lt;/executions&gt;</span>
+		<span class="nt">&lt;/plugin&gt;</span>
+  <span class="nt">&lt;/plugins&gt;</span>
+</code></pre></div></div>
+
+<p>Aquí le estamos indicando a maven las características de la ejecución del plugin, es decir:</p>
+
+<ul>
+  <li>los goals (metas/capacidades del plugin). Este es un plugin de compilación por lo que indica los valores <code class="language-plaintext highlighter-rouge">compile</code> y <code class="language-plaintext highlighter-rouge">testCompile</code>.</li>
+  <li>la configuración de las rutas del filesystem para los archivos java compilados.</li>
+</ul>
+
+<p><br />
+Lo recomendable en cada caso es siempre revisar la documentación oficial del proyecto maven que queremos referenciar, para entender qué settings son requeridos o convenientes para nuestro proyecto.</p>
+
+<h2 id="dependencias-transitivas">Dependencias transitivas</h2>
+
+<p>Un detalle no menor de la resolución de dependencias de maven es que también funciona para las dependencias transitivas.</p>
+
+<p>Por ejemplo:</p>
+
+<ul>
+  <li>proyectoA –&gt; proyectoB</li>
+  <li>proyectoB –&gt; proyectoC</li>
+  <li>proyectoC –&gt; proyectoD, proyectoE, proyectoF</li>
+</ul>
+
+<p>Al resolver las dependencias, el proyectoA necesitará descargar los componentes B, C, D, E y F. Incluso podríamos requerir diferentes versiones de los mismos componentes.</p>
+
+<p><br />
+Noten que un proyecto comercial “normal” o mediano, puede incluir decenas y hasta cientos de dependencias. Eclipse permite integrar todas las definiciones de un pom junto con sus parents en la solapa <code class="language-plaintext highlighter-rouge">Effective POM</code>:</p>
+
+<p><img src="/img/wiki/effective-pom.gif" alt="effective POM" /></p>
+
+<h2 id="repositorios-remotos">Repositorios remotos</h2>
+
+<p>La pregunta que puede hacerse el lector es: ¿desde dónde se descargan los componentes la primera vez? ¿Cómo es que Maven sabe dónde ubicarlos, y cómo saber a qué versión apuntar? Por defecto, Maven apunta a un repositorio central donde se suben todos los componentes que utiliza la comunidad que trabaja con la JDK: https://repo.maven.apache.org/maven2/</p>
+
+<p>Cuando tenemos dudas sobre las versiones de algún componente, podemos hacer una búsqueda en</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">http://search.maven.org
+</span></code></pre></div></div>
+
+<p>por ejemplo, podemos buscar el componente uqbar-domain, que direcciona a https://search.maven.org/search?q=uqbar-domain. Allí tenemos todos los releases, con sus fechas correspondientes:</p>
+
+<p><img src="/img/wiki/search-maven.gif" alt="search maven" /></p>
+
+<p>Para publicar un componente en el repositorio Sonatype que está relacionado con Maven Central, hay que cumplir algunas reglas. En particular, para los componentes Uqbar hay que seguir <a href="deploy-en-maven-central.html">estas instrucciones.</a></p>
+
+<h3 id="definiendo-repositorios-remotos">Definiendo repositorios remotos</h3>
+
+<p>En nuestro pom.xml podemos definir repositorios adicionales donde encontrar componentes de Maven:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;project&gt;</span>
+  ...
+  <span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+      <span class="nt">&lt;id&gt;</span>my-internal-site<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;url&gt;</span>http://myserver/repo<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+  <span class="nt">&lt;/repositories&gt;</span>
+  ...
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+<p>Otra opción es escribir esto en el archivo <code class="language-plaintext highlighter-rouge">settings.xml</code> del directorio raíz de nuestro M2, como cuenta <a href="configuracion-de-maven-para-poder-utilizar-las-herramientas-de-uqbar.html">este artículo</a>.</p>
+
+<h3 id="flujo-general-de-descarga-de-componentes">Flujo general de descarga de componentes</h3>
+
+<p>A continuación mostraremos el algoritmo que utiliza Maven para encontrar las dependencias de nuestro proyecto: si no lo tenemos en nuestro repositorio local, lo irá a buscar al repositorio Maven Central, y en última instancia, en los repositorios adicionales definidos por nuestro proyecto o la configuración general de Maven (el archivo <code class="language-plaintext highlighter-rouge">settings.xml</code>).</p>
+
+<p><img src="/img/wiki/maven-flow.png" alt="flujo general de descarga de componentes Maven" /></p>
+
+<h2 id="ejecutando-maven-desde-la-consola">Ejecutando maven desde la consola</h2>
+
+<p>Una alternativa es trabajar directamente con Maven desde la consola, algo que puede ser útil para automatizar tareas, como cuando trabajemos con herramientas de integración continua.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn clean compile
+</code></pre></div></div>
+
+<p>Esto ejecuta varios plugins en forma sincronizada:</p>
+
+<ul>
+  <li>por un lado borra los directorios de destino, como hemos contado en el párrafo plugins</li>
+  <li>y luego compila los fuentes del proyecto, lo cual implica descargarse las dependencias, y en el caso del plugin de Xtend, convertir los archivos <code class="language-plaintext highlighter-rouge">.xtend</code> a <code class="language-plaintext highlighter-rouge">.java</code> (y luego generar los <code class="language-plaintext highlighter-rouge">.class</code>)</li>
+</ul>
+
+<p>Si queremos ver el árbol de dependencias transitivas, podemos escribir</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn dependency:tree
+</code></pre></div></div>
+
+<p>Pero ¿cómo sabemos qué comando debemos ejecutar? Para eso hay que entender el ciclo de vida de un build de Maven.</p>
+
+<h2 id="ciclos-de-build">Ciclos de build</h2>
+
+<p>Maven está pensado para todo el ciclo de vida del proyecto. Lo vamos a usar para compilar, para generar código (de ser necesario), para correr los tests, para empaquetar, y hasta para publicar nuestros artefactos generando releases con trazabilidad.</p>
+
+<p>Maven define un conjunto de etapas en la construcción (build) de nuestro proyecto. Resumimos algunas acá:</p>
+
+<ul>
+  <li><strong>generate-sources</strong>: generar código, previo a compilación.</li>
+  <li><strong>compile</strong>: compila el código fuente.</li>
+  <li><strong>test</strong>: ejecuta los test cases</li>
+  <li><strong>package</strong>: genera un paquete con el código (.jar por ejemplo)</li>
+  <li><strong>install</strong>: hace público el paquete en nuestro repositorio local (ver repositorios locales en las siguiente sección)</li>
+  <li><strong>deploy</strong>: publica el artefacto en un repositorio remoto (ver repositorios locales en las siguiente sección)</li>
+</ul>
+
+<p>Podemos indicar a Maven que ejecute hasta cierta fase. Por ejemplo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn compile
+</code></pre></div></div>
+
+<p>Va a ejecutar las dos primeras fases.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nb">test</span>
+</code></pre></div></div>
+
+<p>Las tres primeras. Es decir es igual a mvn compile + correr los tests.</p>
+
+<p><br />
+De la misma manera podemos trabajar en Eclipse con el plugin M2:</p>
+
+<p><img src="/img/wiki/maven-m2-build.gif" alt="maven m2 build" /></p>
+
+<h3 id="relación-entre-plugins-y-ciclos-del-build">Relación entre plugins y ciclos del build</h3>
+
+<p>A continuación dejamos un diagrama básico que muestra la relación entre plugin y el ciclo de vida del build:</p>
+
+<p><img src="/img/wiki/maven-plugin-lifecycle.png" alt="Maven Plugin and Build Lifecycle" /></p>
+
+<p>El gráfico no incluye plugins que estamos usando en Algoritmos 2: Xtend, cobertura de tests, etc. pero sirve como referencia para entender qué goals se ejecutarán en base al comando Maven pedido.</p>
+
+<h2 id="resumen-general-de-la-arquitectura-maven">Resumen general de la arquitectura Maven</h2>
+
+<p><img src="/img/wiki/Maven2.png" alt="maven architecture" /></p>
+
+<h2 id="documentación-oficial">Documentación oficial</h2>
+
+<p>Para más información recomendamos leer la documentación oficial del proyecto Maven:</p>
+
+<ul>
+  <li><a href="https://maven.apache.org/pom.html">POM reference</a></li>
+  <li><a href="https://maven.apache.org/guides/introduction/introduction-to-the-pom.html">Introduction to the POM</a></li>
+</ul>
+
+<p><br />
+Y estos links:</p>
+
+<ul>
+  <li><a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven in 5 minutes</a></li>
+  <li><a href="https://www.youtube.com/watch?v=KNGQ9JBQWhQ">Simple Explanation of Maven - video de la Universidad de Cincinnati</a></li>
+</ul>
+
+<h2 id="links-relacionados">Links relacionados</h2>
+
+<ul>
+  <li><a href="algo2-temario.html">Página principal de Algoritmos 2</a></li>
+</ul>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on March 10, 2021 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>8</td>
+                                <td>142</td>
+                                <td>54</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>8</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>9227fb29</td>
+                        <td>Wed Mar 10 20:14:32 2021 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Maven page fixes</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e35b96e6</td>
+                        <td>Wed Feb 26 08:55:49 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Maven page revision done!</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0d3aaec6</td>
+                        <td>Wed Feb 26 00:32:28 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Maven page fixes</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>51b77b8c</td>
+                        <td>Wed Feb 26 00:13:31 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Maven 100% complete - first iteration</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6319d5de</td>
+                        <td>Tue Feb 25 23:34:51 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Maven -> 75% done</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

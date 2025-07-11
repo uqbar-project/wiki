@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Lambdas en java 8</title>
+  <meta property="og:title" content="Lambdas en java 8" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/lambdas-en-java-8.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/lambdas-en-java-8.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Lambdas en java 8</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>En la versión 8 del lenguaje <a href="java.html">Java</a> se introduce una herramienta fundamental para cualquier lenguaje de programación orientado a objetos y que era una de sus principales falencias: las <a href="expresiones-lambda.html">expresiones lambda</a>, también conocidas como <a href="bloques.html">bloques</a> de código o funciones anónimas.</p>
+
+<p>Con ellas podemos implementar fácilmente mensajes de alto nivel de abstracción, que reciben o devuelven bloques de código y se comportan de forma parecida a las funciones de <a href="orden-superior.html">orden superior</a> que podemos encontrar en el <a href="paradigma-funcional.html">Paradigma Funcional</a>.</p>
+
+<p>Dado que el lenguaje Java existió mucho tiempo sin presentar Lambdas (a partir de utilizar <a href="clases-anonimas-en-java.html">Clases Anónimas</a>), estas presentan características distintivas si las comparamos con los bloques de Ruby o Smalltalk, o las funciones anónimas de Scala o C#.</p>
+
+<h2 id="uso-básico">Uso básico</h2>
+
+<p>En una primera aproximación, una lambda es cualquier objeto que implementa algunas de las siguientes interfaces:</p>
+
+<ul>
+  <li><strong>Function:</strong> una función que toma un sólo argumento</li>
+  <li><strong>Predicate:</strong> una función que toma un sólo argumento pero que devuelve exclusivamente booleanos</li>
+  <li><strong>Consumer:</strong> una función que toma un sólo argumento y no devuelve nada, probablemente porque produce un <a href="efecto.html">efecto</a>. Es decir, los Consumers normalmente NO son computaciones puras.</li>
+  <li>Para otras variantes, ver: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html</a></li>
+</ul>
+
+<p>Si queremos recibirlas por parámetro, debemos simplemente tipar al parámetro de nuestro método con alguna de estas interfaces.</p>
+
+<p>Ejemplo:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Persona</span><span class="err"> </span><span class="n">primerPersonasQueCumple</span><span class="o">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="err"> </span><span class="n">predicado</span><span class="o">)</span><span class="err"> </span><span class="o">{</span>
+<span class="err">  </span> <span class="k">for</span><span class="o">(</span><span class="n">Persona</span><span class="err"> </span><span class="n">persona</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="n">personas</span><span class="o">)</span>
+<span class="err">   </span>  <span class="err"> </span><span class="k">if</span><span class="err"> </span><span class="o">(</span><span class="n">predicado</span><span class="o">.</span><span class="na">test</span><span class="o">(</span><span class="n">persona</span><span class="o">))</span>
+<span class="err">     </span>   <span class="err"> </span><span class="k">return</span><span class="err"> </span><span class="n">persona</span><span class="o">;</span>
+  <span class="err"> </span><span class="k">throw</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="n">PersonaNoExisteException</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Para pasarlas por parámetro, la sintaxis es la siguiente:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="n">TipoParametro</span><span class="err"> </span><span class="n">parametro</span><span class="o">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">cuerpo</span>
+</code></pre></div></div>
+
+<p>que es análogo al siguiente bloque en Smalltalk (recordar que en Smalltalk las variables no se tipan explícitamente):</p>
+
+<div class="language-smalltalk highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err"> </span><span class="p">[</span><span class="err"> :</span><span class="nv">parametro</span><span class="err"> | </span><span class="nv">cuerpo</span><span class="err">  </span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Ejemplo:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primerPersonaQueCumple</span><span class="o">((</span><span class="n">Persona</span><span class="err"> </span><span class="n">p</span><span class="o">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">p</span><span class="o">.</span><span class="na">esMayorDeEdad</span><span class="o">())</span>
+</code></pre></div></div>
+
+<p>En muchos casos como el anterior tipo del parámetro puede ser obviado, cuando este puede ser inferido por el contexto:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primerPersonaQueCumple</span><span class="o">(</span><span class="n">p</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">p</span><span class="o">.</span><span class="na">esMayorDeEdad</span><span class="o">())</span>
+</code></pre></div></div>
+
+<h2 id="referencias-a-métodos">Referencias a métodos</h2>
+
+<p>Si el cuerpo del método es el envío de un sólo mensaje (como en el ejemplo anterior), entonces podemos usar una MethodReference:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primerPersonaQueCumple</span><span class="o">(</span><span class="nl">Persona:</span><span class="o">:</span><span class="n">esMayorDeEdad</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="interfaces-de-un-sólo-mensaje">Interfaces de un sólo mensaje</h2>
+
+<p>Por motivos de retrocompatibilidad, en realidad, cualquier interface que defina un sólo mensaje puede ser usada con la sintaxis de lambda. Ejemplo:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span><span class="err"> </span><span class="nc">ChequeadorDePersona</span><span class="err"> </span><span class="o">{</span>
+<span class="err">   </span><span class="kt">boolean</span><span class="err"> </span><span class="n">chequear</span><span class="o">(</span><span class="n">Persona</span><span class="err"> </span><span class="n">p</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Persona</span><span class="err"> </span><span class="n">primerPersonasQueCumple</span><span class="o">(</span><span class="n">ChequeadorDePersona</span><span class="err"> </span><span class="n">predicado</span><span class="o">)</span><span class="err"> </span><span class="o">{</span>
+ <span class="err">  </span><span class="k">for</span><span class="o">(</span><span class="n">Persona</span><span class="err"> </span><span class="n">persona</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="n">personas</span><span class="o">)</span><span class="err"> </span>
+ <span class="err">    </span> <span class="k">if</span><span class="err"> </span><span class="o">(</span><span class="n">predicado</span><span class="o">.</span><span class="na">chequear</span><span class="o">(</span><span class="n">persona</span><span class="o">))</span>
+ <span class="err">     </span>  <span class="err"> </span><span class="k">return</span><span class="err"> </span><span class="n">persona</span><span class="o">;</span>
+<span class="err"> </span>  <span class="k">throw</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="n">PersonaNoExisteException</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Y se usa exactamente igual. De todas formas, si no pensamos darle alguna semántica particular a nuestro bloque de código, preferiremos usar normalente las interfaces estándar comentadas anteriormente.</p>
+
+<h2 id="colecciones-en-java">Colecciones en Java</h2>
+
+<p>Una de las principales utilidades de las lambdas es el manejo de colecciones. Java 8 incorpora mensajes a sus colecciones para poder transformarlas usando mensajes análogos a las funciones de orden superior de Haskell: map, filter y reduce(fold), limit(take), entre otros: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html</a></p>
+
+<p>La forma de trabajar siempre es la misma: cuando tengamos una colecciones, le enviaremos el mensaje stream() para obtener una secuencia potencialmente infinita (análoga a las listas de Haskell), al cual le podemos enviar mensajes para filtrar, mapear, etc. Cuando hayamos terminado, y si queremos reconvertir nuestro Stream a una colección (como una List, Set, o Collection), le enviaremos el mensaje collect, indicandole a que tipo de colección queremos convertirlo:</p>
+
+<ul>
+  <li>collect(toList()) (análogo al asOrderedCollection de ST)</li>
+  <li>collect(toSet()) (análogo al asSet de ST)</li>
+  <li>entre otros. Ver <a href="http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html">http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html</a></li>
+</ul>
+
+<p>Ejemplo:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="err"> </span><span class="n">personas</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">jose</span><span class="o">,</span><span class="err"> </span><span class="n">pedro</span><span class="o">,</span><span class="err"> </span><span class="n">maria</span><span class="o">,</span><span class="err"> </span><span class="n">anabela</span><span class="o">);</span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="err"> </span><span class="n">nombresDeDocentesSinRepetidos</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">personas</span>
+    <span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span> <span class="nl">Persona:</span><span class="o">:</span><span class="n">esDocente</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">Persona:</span><span class="o">:</span><span class="n">getNombre</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">toSet</span><span class="o">());</span>
+</code></pre></div></div>
+
+<p>Lo cual es análogo al siguiente código Smalltalk:</p>
+
+<div class="language-smalltalk highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err"> </span><span class="nv">personas</span><span class="err"> </span><span class="o">:=</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="nv">jose</span><span class="p">.</span><span class="err"> </span><span class="nv">pedro</span><span class="p">.</span><span class="err"> </span><span class="nv">maria</span><span class="p">.</span><span class="err"> </span><span class="nv">anabela</span><span class="err"> </span><span class="p">}</span>
+<span class="err"> </span><span class="nv">nombresDeDocentesSinRepetidos</span><span class="err"> </span><span class="o">:=</span><span class="err"> </span>
+     <span class="p">((</span><span class="nv">personas</span><span class="err"> select: </span><span class="p">[</span><span class="err"> :</span><span class="nv">p</span><span class="err"> | </span><span class="nv">p</span><span class="err"> </span><span class="nv">esDocente</span><span class="err"> </span><span class="p">])</span><span class="err"> collect: </span><span class="p">[</span><span class="err"> :</span><span class="nv">p</span><span class="err"> | </span><span class="nv">p</span><span class="err"> </span><span class="nv">nombre</span><span class="err"> </span><span class="p">]</span><span class="err"> </span><span class="p">)</span><span class="err"> </span><span class="nv">asSet</span>
+</code></pre></div></div>
+
+<h2 id="ordenar">Ordenar</h2>
+
+<p>El orden superior se puede aprovechar para ordenar colecciones en Java. Supongan que tienen:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span><span class="err"> </span><span class="kd">class</span><span class="err"> </span><span class="nc">Foo</span><span class="err"> </span><span class="o">{</span>
+<span class="err">   </span><span class="kd">private</span><span class="err"> </span><span class="n">String</span><span class="err"> </span><span class="n">bar</span><span class="o">;</span>
+<span class="err">   </span><span class="kd">private</span><span class="err"> </span><span class="kt">int</span><span class="err"> </span><span class="n">baz</span><span class="o">;</span>
+<span class="err">   </span><span class="c1">// y sus getters y constructor</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Cuando quieran tener algo ordenado según un criterio, antes o después, necesitarán un Comparator: es un objeto que nos dice si un objeto es “menor” que otro (precede a otro, dirían en discreta). La buena noticia es que normalmente no tendrán que declarar una clase que implemente esta interfaz, sino que podrán definirlo usando una lambda. Por ejemplo, si quieren crear una priorirty queue que esté ordenada según bar, pueden hacer:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="err"> </span><span class="n">foos</span><span class="err"> </span><span class="o">=</span><span class="err"> </span>
+    <span class="k">new</span><span class="err"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;((</span><span class="n">x</span><span class="o">,</span><span class="err"> </span><span class="n">y</span><span class="o">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">x</span><span class="o">.</span><span class="na">getBar</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">y</span><span class="o">.</span><span class="na">getBar</span><span class="o">()));</span>
+</code></pre></div></div>
+
+<p>En general ni siquiera es necesario hacer la comparación a mano. Si quieren ordenar por una propiedad (como en este caso) pueden utilizar Comparator.comparing:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="err"> </span><span class="n">foos</span><span class="err"> </span><span class="o">=</span><span class="err"> </span>
+    <span class="k">new</span><span class="err"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="n">foo</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">foo</span><span class="o">.</span><span class="na">getBar</span><span class="o">()));</span>
+</code></pre></div></div>
+
+<p>o lo que es lo mismo:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="err"> </span><span class="n">foos</span><span class="err"> </span><span class="o">=</span><span class="err"> </span>
+    <span class="k">new</span><span class="err"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="nl">Foo:</span><span class="o">:</span><span class="n">getBar</span><span class="o">));</span>
+</code></pre></div></div>
+
+<p>Si tienen que ordenar por multiples propiedades, pueden utilizar el mensaje thenComparing. Ejemplo de creación de un TreeSet que ordene segun bar y luego segun baz:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="err"> </span><span class="n">foos</span><span class="err"> </span><span class="o">=</span><span class="err"> </span>
+    <span class="k">new</span><span class="err"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;(</span>
+        <span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="nl">Foo:</span><span class="o">:</span><span class="n">getBar</span><span class="o">).</span><span class="na">thenComparing</span><span class="o">(</span><span class="nl">Foo:</span><span class="o">:</span><span class="n">getBaz</span><span class="o">)</span>
+    <span class="o">);</span>
+</code></pre></div></div>
+
+<p>Finalmente, si tienen que ordenar al revés del orden de precedencia, pueden usar el mensaje reversed. Por ejemplo, acá se está obteniendo un stream ordenado por baz, de mayor a menor:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span><span class="err"> </span><span class="n">Foo</span><span class="o">(</span><span class="s">"hola"</span><span class="o">,</span><span class="err"> </span><span class="mi">2</span><span class="o">),</span><span class="err"> </span>
+              <span class="k">new</span><span class="err"> </span><span class="n">Foo</span><span class="o">(</span><span class="s">"hello"</span><span class="o">,</span><span class="err"> </span><span class="mi">9</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">sorted</span><span class="o">(</span><span class="n">Comparator</span><span class="o">.</span><span class="na">comparing</span><span class="o">(</span><span class="nl">Foo:</span><span class="o">:</span><span class="n">getBaz</span><span class="o">).</span><span class="na">reversed</span><span class="o">());</span>
+</code></pre></div></div>
+
+<p>Para más información, miren la documentación de Comparator: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html</a></p>
+
+<h2 id="nombres-alternativos">Nombres alternativos</h2>
+
+<p>A veces se referencia a las lambda de Java como closure. En términos generales esto no es correcto, dado que son ideas diferentes: una lambda es una función que no tiene nombre, mientras una closure o cierre o clausura es una función que puede acceder a las variables disponibles en el contexto en que se la declaró.</p>
+
+<p>Sin embargo en este lenguaje informalmente y en términos prácticos ambos conceptos son intercambiables, ya que todas las lambdas encierra su contexto, y el unico tipo de closure que se puede tener es con una lambda.</p>
+
+<p>Como prueba de esto, históricamente, los frameworks de Java llamaban a la interfaz a ser implementada con una clase anónima indistintamente como Closure, Function o Lambda.</p>
+
+<h2 id="más-información">Más información</h2>
+
+<p>Para más información consultar:</p>
+
+<ul>
+  <li><a href="http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html</a></li>
+  <li><a href="http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html">http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html</a></li>
+</ul>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on September 26, 2019 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>14</td>
+                                <td>158</td>
+                                <td>67</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>10</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Jfernandes</td>
+                                <td>Jfernan...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>fdodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>b3cafc87</td>
+                        <td>Thu Sep 26 17:46:23 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>closures enhancements | ts articles added</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7a882bba</td>
+                        <td>Tue Jun 6 11:42:06 2017 -0300</td>
+                        <td>fdodino</td>
+                        <td>fernand...</td>
+                        <td>Upgrade Algo3 Temario</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f767eb7c</td>
+                        <td>Thu Feb 2 19:11:30 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>8295158f</td>
+                        <td>Thu Feb 2 19:11:30 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

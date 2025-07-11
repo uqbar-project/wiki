@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Guia rapida de Xtend</title>
+  <meta property="og:title" content="Guia rapida de Xtend" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/xtend-guia-rapida.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/xtend-guia-rapida.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="xtend,lenguaje,guia,referencia," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Guia rapida de Xtend</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Definición de una clase</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Referencias variables y valores</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Cuándo debería usar val y cuándo var</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">3</span> <span class="toctext">Tipos de datos</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#tocAnchor-1-4-1"><span class="tocnumber">3.1</span> <span class="toctext">Strings</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-4-2"><span class="tocnumber">3.2</span> <span class="toctext">Números</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#tocAnchor-1-4-3"><span class="tocnumber">3.3</span> <span class="toctext">Colecciones</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#tocAnchor-1-4-4"><span class="tocnumber">3.4</span> <span class="toctext">Range</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#tocAnchor-1-4-5"><span class="tocnumber">3.5</span> <span class="toctext">Literales para lista, conjunto, etc.</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#tocAnchor-1-4-6"><span class="tocnumber">3.6</span> <span class="toctext">Inferencia de tipos</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-11">
+                  <a href="#tocAnchor-1-4-7"><span class="tocnumber">3.7</span> <span class="toctext">Casteos</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-12">
+              <a href="#tocAnchor-1-12"><span class="tocnumber">4</span> <span class="toctext">Definición de propiedades</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-13">
+              <a href="#tocAnchor-1-13"><span class="tocnumber">5</span> <span class="toctext">Shortcut para acceder a propiedades</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-14">
+              <a href="#tocAnchor-1-14"><span class="tocnumber">6</span> <span class="toctext">Paréntesis en el envío de mensajes</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-15">
+              <a href="#tocAnchor-1-15"><span class="tocnumber">7</span> <span class="toctext">Herencia y redefinición de métodos</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-16">
+              <a href="#tocAnchor-1-16"><span class="tocnumber">8</span> <span class="toctext">Clases y métodos abstractos</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-17">
+              <a href="#tocAnchor-1-17"><span class="tocnumber">9</span> <span class="toctext">Constructores</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-18">
+              <a href="#tocAnchor-1-18"><span class="tocnumber">10</span> <span class="toctext">Bloques</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-19">
+                  <a href="#tocAnchor-1-18-1"><span class="tocnumber">10.1</span> <span class="toctext">Variable implícita it</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-20">
+              <a href="#tocAnchor-1-20"><span class="tocnumber">11</span> <span class="toctext">Manejo de nulls</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-21">
+                  <a href="#tocAnchor-1-20-1"><span class="tocnumber">11.1</span> <span class="toctext">Elvis operator</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-22">
+                  <a href="#tocAnchor-1-20-2"><span class="tocnumber">11.2</span> <span class="toctext">Null safe operator</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-23">
+                  <a href="#tocAnchor-1-20-3"><span class="tocnumber">11.3</span> <span class="toctext">Comparar referencias</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-24">
+              <a href="#tocAnchor-1-24"><span class="tocnumber">12</span> <span class="toctext">Métodos avanzados</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-25">
+                  <a href="#tocAnchor-1-24-1"><span class="tocnumber">12.1</span> <span class="toctext">Obligatoriedad del return en métodos</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-26">
+                  <a href="#tocAnchor-1-24-2"><span class="tocnumber">12.2</span> <span class="toctext">Extension methods</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-27">
+                  <a href="#tocAnchor-1-24-3"><span class="tocnumber">12.3</span> <span class="toctext">Dispatch methods</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-28">
+              <a href="#tocAnchor-1-28"><span class="tocnumber">13</span> <span class="toctext">@Data</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-29">
+              <a href="#tocAnchor-1-29"><span class="tocnumber">14</span> <span class="toctext">With operator</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-30">
+                  <a href="#tocAnchor-1-29-1"><span class="tocnumber">14.1</span> <span class="toctext">Links relacionados</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>La siguiente es una guía de <em>syntactic sugars</em> de Xtend, algunos de los cuales trabajan conceptos más profundos que veremos a lo largo de la materia.</p>
+
+<h1 id="tocAnchor-1-1">Definición de una clase</h1>
+
+<p>No tenemos objetos en Xtend, sólo clases. Aquí dejamos un ejemplo</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">class</span> <span class="nc">Ave</span> <span class="o">{</span>
+    <span class="n">static</span> <span class="n">int</span> <span class="nc">ENERGIA_MINIMA</span> <span class="k">=</span> <span class="mi">10</span>
+    <span class="nd">@Accessors</span> <span class="n">int</span> <span class="n">energia</span> <span class="k">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="n">volar</span><span class="o">()</span> <span class="o">{</span> <span class="n">energia</span> <span class="k">=</span> <span class="n">energia</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">}</span>
+    <span class="k">def</span> <span class="n">comer</span><span class="o">(</span><span class="n">int</span> <span class="n">cuanto</span><span class="o">)</span> <span class="o">{</span> <span class="n">energia</span> <span class="k">=</span> <span class="n">energia</span> <span class="o">+</span> <span class="o">(</span><span class="n">cuanto</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span> <span class="o">}</span>
+    <span class="k">def</span> <span class="n">esFeliz</span><span class="o">()</span> <span class="o">{</span> <span class="n">energia</span> <span class="o">&gt;</span> <span class="nc">ENERGIA_MINIMA</span> <span class="o">}</span>
+    <span class="k">def</span> <span class="n">resetearEnergia</span><span class="o">()</span> <span class="o">{</span> <span class="n">energia</span> <span class="k">=</span> <span class="mi">0</span> <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li>podemos escribir múltiples clases en un archivo Xtend</li>
+  <li>la definición de la clase se encierra entre llaves</li>
+  <li>la variable ENERGIA_MINIMA es estática, esto significa que <strong>todas las instancias comparten la misma variable</strong> (lo que también se llama variable de clase), suele usarse como constantes o valores que difícilmente cambien.</li>
+  <li>la variable energia <strong>es una variable de instancia</strong> porque cada objeto Ave tiene su propio valor.</li>
+  <li>las variables de instancia y de clase deben anotarse con el tipo, en este caso ambos son int</li>
+  <li>la variable <code class="language-plaintext highlighter-rouge">energia</code> tiene la anotación <code class="language-plaintext highlighter-rouge">@Accessors</code>, que permite definir getters y setters automáticos</li>
+  <li>los métodos volar, comer y esFeliz necesitan la palabra <code class="language-plaintext highlighter-rouge">def</code> para indicar que son métodos. Algunos producen efecto (volar y comer) y otros simplemente devuelven un valor (esFeliz)</li>
+  <li>no es necesaria la palabra <code class="language-plaintext highlighter-rouge">return</code> al final de cada método, pero en algunos casos veremos que es necesaria</li>
+  <li>no siempre es necesario hacer anotaciones de tipo sobre los métodos, como veremos más adelante</li>
+</ul>
+
+<h1 id="tocAnchor-1-2">Referencias variables y valores</h1>
+
+<p>En Xtend, al igual que muchos otros lenguajes, se diferencian las referencias como</p>
+
+<ul>
+  <li><strong>Variables</strong>: son referencias que pueden inicializarse apuntando a un objeto, y luego reasignarse a otro. Justamente “varían”:</li>
+</ul>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">var</span> <span class="nc">String</span> <span class="n">unString</span> <span class="k">=</span> <span class="s">"Pepito"</span>
+<span class="n">unString</span> <span class="k">=</span> <span class="s">"Otro String"</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li><strong>Constantes</strong>: son referencias que nacen apuntando a un valor y no pueden ser modificadas para apuntar a otro objeto. Serían como “constantes”.</li>
+</ul>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="nc">String</span> <span class="n">constante</span> <span class="k">=</span> <span class="s">"Constante"</span>
+<span class="n">constante</span> <span class="k">=</span> <span class="s">"Otro"</span>  <span class="c1">// &lt;----- NO COMPILA !
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>¡Ojo! no confundir el hecho de que no se pueda modificar la “referencia” de la mutabilidad/inmutabilidad del objeto al que apunta. Puedo tener un “val” apuntando a una colección, que es mutable.</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="nc">List</span> <span class="n">miLista</span> <span class="k">=</span> <span class="n">unaLista</span>
+<span class="n">miLista</span> <span class="k">=</span> <span class="n">otraLista</span>  <span class="c1">// &lt;----- NO COMPILA: no puedo modificar la referencia
+</span><span class="n">miLista</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="mi">23</span><span class="o">)</span>      <span class="c1">// &lt;---- SI COMPILA: puedo mandarle mensajes al objeto lista y agregarle elementos
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-2-1">Cuándo debería usar val y cuándo var</h2>
+
+<ul>
+  <li>las variables de instancia siempre son variables, de lo contrario no tiene sentido definirlas como tal</li>
+  <li>los valores constantes se suelen definir como variables de clase o static</li>
+  <li>respecto a las variables locales, en la cursada las usaremos pocas veces: primero intentaremos definirlas como <code class="language-plaintext highlighter-rouge">val</code> y de no ser posible, como <code class="language-plaintext highlighter-rouge">var</code>. El motivo principal es acotar el efecto en nuestros programas, <strong>mientras menor sea el efecto, más fácil es controlar nuestro software, y más fácil será testearlo</strong>.</li>
+</ul>
+
+<h1 id="tocAnchor-1-4">Tipos de datos</h1>
+
+<h2 id="tocAnchor-1-4-1">Strings</h2>
+
+<p>Un string se encierra entre dobles comillas, o bien podemos aprovechar para escribir un texto largo con enters con triples comillas simples, e insertar en el medio código Xtend mediante</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">class</span> <span class="nc">Cliente</span> <span class="o">{</span>
+    <span class="k">var</span> <span class="n">nombre</span> <span class="k">=</span> <span class="s">"Juan"</span> <span class="c1">// definición con comillas dobles
+</span>
+    <span class="k">def</span> <span class="n">presentacion</span><span class="o">()</span> <span class="o">{</span>
+        <span class="sc">'''</span>
+        <span class="nc">Bienvenido</span><span class="o">,</span> <span class="err">«</span><span class="n">nombre</span><span class="o">.</span><span class="n">trim</span><span class="o">()</span><span class="err">»</span> <span class="n">a</span> <span class="n">nuestra</span> <span class="n">aplicación</span><span class="o">.</span>
+        <span class="nc">En</span> <span class="n">breve</span> <span class="n">nos</span> <span class="n">contactaremos</span> <span class="n">con</span> <span class="n">ud</span><span class="o">.</span>
+        <span class="sc">'''</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<blockquote>
+  <p><strong>Tip</strong>: para que te aparezcan los símbolos <code class="language-plaintext highlighter-rouge">«»</code> que son difíciles de encontrar en el teclado, simplemente utilizá las teclas <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Espacio</code> dentro de la definición del string y aparecerán solas</p>
+</blockquote>
+
+<h2 id="tocAnchor-1-4-2">Números</h2>
+
+<p>Existen muchos tipos de datos diferentes para números:</p>
+
+<ul>
+  <li><strong>int</strong>: es un número entero que admite negativos pero sin decimales</li>
+  <li><strong>double</strong>, <strong>float</strong>: son números reales que admiten decimales pero con errores en las operaciones, es por ello que no debemos usarlo para operaciones sensibles (como transacciones bancarias o que requieran cálculos exactos)</li>
+  <li><strong>BigDecimal</strong>: es el tipo de dato que conviene utilizar ya que no produce errores de redondeo (permite trabajar con una cantidad exacta de decimales y truncarlos o redondearlos en caso de ser necesario)</li>
+  <li>También existen las variantes “objetosas” de int, double y float que son Integer, Double y Float. La principal ventaja es que son objetos, y podemos enviarle mensajes (concretamente más mensajes) que a las versiones en minúscula, que son <em>tipos primitivos</em>. Es posible “envolver” en una variable Integer cualquier int, la conversión se da automáticamente por el compilador de Java y se llama “autoboxing”:</li>
+</ul>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">var</span> <span class="n">i</span> <span class="k">=</span> <span class="mi">0</span>                         <span class="c1">// int
+</span><span class="k">var</span> <span class="n">pi</span> <span class="k">=</span> <span class="mf">3.14d</span>                    <span class="c1">// double
+</span><span class="k">var</span> <span class="n">saldo</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">BigDecimal</span><span class="o">(</span><span class="mi">1500</span><span class="o">)</span>  <span class="c1">// BigDecimal
+</span><span class="k">var</span> <span class="nc">Integer</span> <span class="n">otroI</span> <span class="k">=</span> <span class="n">i</span>             <span class="c1">// otroI es un entero
+</span><span class="n">otroI</span><span class="o">.</span><span class="n">bitwiseNot</span>                  <span class="c1">// puedo enviar un mensajes
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-4-3">Colecciones</h2>
+
+<p>Existen literales para definir listas, conjuntos y mapas (dictionaries):</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Lista inmutable:
+</span><span class="k">val</span> <span class="n">myList</span> <span class="k">=</span> <span class="o">#[</span><span class="kt">'Hello'</span>, <span class="kt">'World'</span><span class="o">]</span>
+<span class="c1">// Set inmutable
+</span><span class="k">val</span> <span class="n">mySet</span> <span class="k">=</span> <span class="o">#{</span><span class="ss">'Hello</span><span class="o">',</span> <span class="ss">'World</span><span class="o">'}</span>
+<span class="c1">// Mapa/Diccionario inmutable
+</span><span class="k">val</span> <span class="n">myMap</span> <span class="k">=</span> <span class="o">#{</span><span class="sc">'a'</span> <span class="o">-&gt;</span> <span class="mi">1</span> <span class="o">,</span> <span class="sc">'b'</span> <span class="o">-&gt;</span><span class="mi">2</span><span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Recordemos que</p>
+
+<ul>
+  <li><strong>listas</strong>: respetan el orden en el que se agregan (como una fila) y admiten duplicados.</li>
+  <li><strong>conjuntos</strong>: no tienen orden y tampoco admiten duplicados. Dos objetos son iguales en base a la definición de equals() y hashCode().</li>
+  <li><strong>mapas</strong>: también llamados dictionaries, son un conjunto de pares clave/valor. Se acceden por clave.</li>
+</ul>
+
+<h2 id="tocAnchor-1-4-4">Range</h2>
+
+<p>Es posible generar un rango de números, por ejemplo para iterar una cantidad de veces:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="o">#[</span><span class="err">1</span> <span class="kt">..</span> <span class="err">10</span><span class="o">].</span><span class="n">forEach</span> <span class="o">[</span> <span class="kt">...</span> <span class="o">]</span>      <span class="c1">// [1..10] genera la lista de 1 a 10
+</span><span class="o">#[</span><span class="err">1</span> <span class="kt">..&lt;</span> <span class="err">10</span><span class="o">].</span><span class="n">forEach</span> <span class="o">[</span> <span class="kt">...</span> <span class="o">]</span>     <span class="c1">// [1..&lt;10] genera la lista de 1 a 9
+</span><span class="o">#[</span><span class="err">1</span> <span class="kt">&gt;..</span> <span class="err">10</span><span class="o">].</span><span class="n">forEach</span> <span class="o">[</span> <span class="kt">...</span> <span class="o">]</span>     <span class="c1">// [1&gt;..10] genera la lista de 2 a 10
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p><code class="language-plaintext highlighter-rouge">..&lt;</code> es útil cuando necesitás iterar una lista de Java, que comienza en 0 y termina en (longitud - 1):</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="o">#[</span><span class="err">0</span> <span class="kt">..&lt;</span> <span class="kt">lista.size</span><span class="o">].</span><span class="n">forEach</span> <span class="o">[</span> <span class="kt">i</span> <span class="kt">|</span> <span class="kt">println</span><span class="o">(</span><span class="kt">i</span><span class="o">)</span> <span class="o">]</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-4-5">Literales para lista, conjunto, etc.</h2>
+
+<p>Xtend trae shortcuts para definir diferentes tipos de colecciones:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Factura</span><span class="o">&gt;</span> <span class="n">facturas</span> <span class="k">=</span> <span class="n">newArrayList</span>
+<span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Domicilio</span><span class="o">&gt;</span> <span class="n">domicilios</span> <span class="k">=</span> <span class="n">newHashSet</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">nombres</span> <span class="k">=</span> <span class="n">newArrayList</span><span class="o">(</span><span class="s">"nahuel"</span><span class="o">,</span> <span class="s">"rodrigo"</span><span class="o">,</span> <span class="s">"marina"</span><span class="o">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Podés utilizar <code class="language-plaintext highlighter-rouge">newLinkedList</code>, <code class="language-plaintext highlighter-rouge">emptyList</code>, <code class="language-plaintext highlighter-rouge">emptySet</code>, <code class="language-plaintext highlighter-rouge">emptyMap</code>, <code class="language-plaintext highlighter-rouge">newInmutableMap</code>, <code class="language-plaintext highlighter-rouge">newImmutableSet</code>, <code class="language-plaintext highlighter-rouge">newImmutableList</code>, <code class="language-plaintext highlighter-rouge">newLinkedHashSet</code>, <code class="language-plaintext highlighter-rouge">newTreeSet</code>, <code class="language-plaintext highlighter-rouge">newHashMap</code>, <code class="language-plaintext highlighter-rouge">newLinkedHashMap</code>, <code class="language-plaintext highlighter-rouge">newTreeMap</code>. La ventaja que tienen es que permiten pasarle parámetros variables (tantos como elementos necesites) y trae implementaciones por defecto para algunas colecciones que necesitan comparators (tenés que estudiar más a fondo <a href="https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing"><strong>Colecciones en Xtend</strong></a>)</p>
+
+<h2 id="tocAnchor-1-4-6">Inferencia de tipos</h2>
+
+<p>Xtend cuenta con inferencia de tipos, lo que permite</p>
+
+<ul>
+  <li>que existan chequeo de tipos</li>
+  <li>pero que la mayoría de las veces no sea necesario definir los tipos de las expresiones</li>
+</ul>
+
+<p>Vemos un ejemplo en vivo, mostrando cómo cambia la solapa “Outline” cuando modificamos el código:</p>
+
+<p>
+  <img src="/img/languages/xtendTypeInference.gif" alt="image" />
+</p>
+
+<p>Aquí vemos que incluso Xtend detecta expresiones que no tienen sentido, como cuando hicimos:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">def</span> <span class="n">esFeliz</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">energia</span> <span class="o">&gt;</span> <span class="nc">ENERGIA_MINIMA</span>
+    <span class="s">"si"</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El hecho de generar una expresión <code class="language-plaintext highlighter-rouge">energia &gt; ENERGIA_MINIMA</code> no causa efecto en el objeto y tampoco se devuelve (porque se pisa por la expresión “si” que es devuelta como retorno del método).</p>
+
+<p>Volviendo a la inferencia de tipos, es fundamental poder contar con un lenguaje que tenga chequeo de tipos para detectar errores en forma temprana pero <strong>que no me obligue a definir los tipos todo el tiempo</strong>. La definición de tipos es obligatoria para las variables de instancia y de clase de los objetos, y en algunos casos cuando la definición de métodos polimórficos puede resultar ambigua para Xtend. En cualquiera de esos casos vas a ver un mensaje de error o de advertencia para que definas el tipo que mejor se ajuste.</p>
+
+<h2 id="tocAnchor-1-4-7">Casteos</h2>
+
+<p>Si bien toda expresión tiene un tipo y Xtend suele inferirlo bastante bien, a veces es necesario hacer <em>downcasting</em> o forzar que una expresión pase por un tipo de datos:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="o">(</span><span class="mi">42</span> <span class="n">as</span> <span class="nc">Integer</span><span class="o">)</span>
+<span class="o">(</span><span class="n">cliente</span> <span class="n">as</span> <span class="nc">Cliente</span><span class="o">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En general la expresión es, entre paréntesis: (<code class="language-plaintext highlighter-rouge">valor/variable</code> as <code class="language-plaintext highlighter-rouge">tipo</code>)</p>
+
+<h1 id="tocAnchor-1-12">Definición de propiedades</h1>
+
+<p>La anotación @Accessors puede hacerse sobre una variable, como hemos visto antes:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">class</span> <span class="nc">Ave</span> <span class="o">{</span>
+    <span class="nd">@Accessors</span> <span class="n">int</span> <span class="n">energia</span> <span class="k">=</span> <span class="mi">0</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso se crean getters y setters para energia, <strong>transformándolo en una propiedad</strong>.</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">class</span> <span class="nc">Ave</span> <span class="o">{</span>
+    <span class="nd">@Accessors</span><span class="o">(</span><span class="nc">PUBLIC_GETTER</span><span class="o">)</span> <span class="n">int</span> <span class="n">energia</span> <span class="k">=</span> <span class="mi">0</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso se crea un getter público para la variable energia. Otras variantes son: crear sólo un setter público o crear getters o setters con diferentes visibilidad.</p>
+
+<p>Por último, podemos anotar la clase con @Accessors</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="nd">@Accessors</span>
+<span class="k">class</span> <span class="nc">Ave</span> <span class="o">{</span>
+    <span class="n">int</span> <span class="n">energia</span> <span class="k">=</span> <span class="mi">0</span>
+    <span class="n">int</span> <span class="n">vecesQueVolo</span> <span class="k">=</span> <span class="mi">0</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>en este caso, se crean getters y setters para todas las variables de dicha clase.</p>
+
+<h1 id="tocAnchor-1-13">Shortcut para acceder a propiedades</h1>
+
+<p>Cuando usamos un objeto que tiene propiedades (par getter y setter), podemos cambiar un poco la sintaxis para que se vea más simple. En el ejemplo anterior del Ave:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="n">pepita</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Ave</span><span class="o">()</span>
+<span class="n">pepita</span><span class="o">.</span><span class="n">energia</span> <span class="k">=</span> <span class="mi">100</span>    <span class="c1">// &lt;-- equivale a pepita.setEnergia(100)
+</span><span class="n">pepita</span><span class="o">.</span><span class="n">energia</span>          <span class="c1">// &lt;-- equivale a pepita.getEnergia()
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>¡Ojo! si bien parece que estamos accediendo diréctamente a la variable de instancia, no es así. Xtend simplemente traduce esa sintaxis a la anterior. Es decir que en ambos casos estamos igualmente llamando al getter y al setter. Pueden probar eliminando la anotación @Accessors y recibiremos un mensaje “The field energia is not visible”.</p>
+
+<h1 id="tocAnchor-1-14">Paréntesis en el envío de mensajes</h1>
+
+<p>No es necesario utilizar paréntesis, ni en la creación de objetos, ni en el envío de mensajes sin parámetros:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="n">golondrina</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Ave</span>
+<span class="n">golondrina</span><span class="o">.</span><span class="n">resetearEnergia</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h1 id="tocAnchor-1-15">Herencia y redefinición de métodos</h1>
+
+<p>A continuación vemos cómo definir dos subclases de Ave: Golondrina y Torcaza.</p>
+
+<p>
+  <img src="/img/languages/xtendInheritanceShort.gif" alt="image" />
+</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="nd">@Accessors</span>
+<span class="k">class</span> <span class="nc">Ave</span> <span class="o">{</span>
+    <span class="n">int</span> <span class="n">energia</span> <span class="k">=</span> <span class="mi">0</span>
+    <span class="n">static</span> <span class="n">int</span> <span class="nc">ENERGIA_MINIMA</span> <span class="k">=</span> <span class="mi">10</span>
+    <span class="k">def</span> <span class="n">volar</span><span class="o">()</span> <span class="o">{</span> <span class="n">energia</span> <span class="k">=</span> <span class="n">energia</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">}</span>
+    <span class="k">def</span> <span class="n">comer</span><span class="o">(</span><span class="n">int</span> <span class="n">cuanto</span><span class="o">)</span> <span class="o">{</span> <span class="n">energia</span> <span class="k">=</span> <span class="n">energia</span> <span class="o">+</span> <span class="o">(</span><span class="n">cuanto</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span> <span class="o">}</span>
+    <span class="k">def</span> <span class="n">esFeliz</span><span class="o">()</span> <span class="o">{</span> <span class="n">energia</span> <span class="o">&gt;</span> <span class="nc">ENERGIA_MINIMA</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Golondrina</span> <span class="k">extends</span> <span class="nc">Ave</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="n">esFeliz</span><span class="o">()</span> <span class="o">{</span> <span class="kc">true</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Torcaza</span> <span class="k">extends</span> <span class="nc">Ave</span> <span class="o">{</span>
+    <span class="n">int</span> <span class="n">vecesQueVolo</span> <span class="k">=</span> <span class="mi">0</span>
+
+    <span class="k">override</span> <span class="n">volar</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="n">volar</span><span class="o">()</span>
+        <span class="n">vecesQueVolo</span><span class="o">++</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Aquí vemos que</p>
+
+<ul>
+  <li>Golondrina y Torcaza heredan de Ave, indicado mediante la palabra clave <code class="language-plaintext highlighter-rouge">extends</code></li>
+  <li>Golondrina <strong>redefine</strong> el comportamiento de esFeliz, lo pisa, y esto requiere la palabra clave <code class="language-plaintext highlighter-rouge">override</code> (no funciona si intentamos definirlo con <code class="language-plaintext highlighter-rouge">def</code>)</li>
+  <li>Torcaza también lo redefine, pero fuerza a llamar al comportamiento de la superclase mediante la palabra clave <code class="language-plaintext highlighter-rouge">super</code>, indicando luego el mensaje a aplicar. Como regla general solo deben utilizar <code class="language-plaintext highlighter-rouge">super</code> cuando no puedan utilizar <code class="language-plaintext highlighter-rouge">self</code>, como en este caso (entrarían en loop infinito)</li>
+</ul>
+
+<h1 id="tocAnchor-1-16">Clases y métodos abstractos</h1>
+
+<p>Podemos definir a Ave como clase abstracta, esto producirá que no podamos instanciar objetos Ave. Una clase abstracta puede definir solo la interfaz de un método, lo que se conoce como método abstracto. Veamos el siguiente ejemplo:</p>
+
+<p>
+  <img src="/img/languages/xtendAbstractClassesAndMethods.gif" alt="image" />
+</p>
+
+<p>En el ejemplo:</p>
+
+<ul>
+  <li>primero definimos Ave como abstracta</li>
+  <li>eso provoca que el compilador Xtend tire un error cuando queremos instanciar un Ave en la clase Ornitologo</li>
+  <li>lo corregimos instanciando una Golondrina</li>
+  <li>luego, queremos definir un método abstracto: esFeliz. Para ello reemplazamos la definición por una cáscara que solo dice que esFeliz debe devolver un booleano. Dado que no hay código Xtend nos fuerza a definir el tipo de retorno del método (y de sus parámetros) porque no puede inferirlo.</li>
+  <li>todos los métodos abstractos deben estar implementados en las subclases: el compilador nos avisa que falta la definición de esFeliz() en Torcaza. Con un botón derecho “Add unimplemented methods” pegamos la definición copiada.</li>
+  <li>como nos falta la constante que estaba en Ave, la bajamos mediante <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">Flecha abajo</code></li>
+</ul>
+
+<p>y finalmente todo compila.</p>
+
+<h1 id="tocAnchor-1-17">Constructores</h1>
+
+<p>Un constructor se define con la palabra reservada <code class="language-plaintext highlighter-rouge">new</code> (equivalente al <code class="language-plaintext highlighter-rouge">constructor</code> de Wollok):</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="nd">@Accessors</span>
+<span class="k">class</span> <span class="nc">Golondrina</span> <span class="o">{</span>
+    <span class="n">int</span> <span class="n">energia</span>
+    <span class="k">new</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span>   <span class="c1">// llama al constructor con parámetros
+</span>        <span class="c1">// para llamar al constructor de la superclase es necesario utilizar super(params)
+</span>    <span class="o">}</span>
+    <span class="k">new</span><span class="o">(</span><span class="n">int</span> <span class="n">energia</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="n">energia</span> <span class="k">=</span> <span class="n">energia</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li>Por defecto, si no hay constructores se genera uno por defecto sin parámetros y no hace falta definirlo</li>
+  <li>Es posible definir múltiples constructores, como vemos en el ejemplo, con diferente cantidad de parámetros o de tipos</li>
+  <li>Cuando definimos constructores sobre una clase, se pierde el constructor por defecto</li>
+  <li><strong>Los constructores de Xtend no se heredan</strong></li>
+</ul>
+
+<h1 id="tocAnchor-1-18">Bloques</h1>
+
+<p>Un bloque permite definir una porción de código, también llamada expresión lambda:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="n">cuadrado</span> <span class="k">=</span> <span class="o">[</span> <span class="kt">int</span> <span class="kt">num</span> <span class="kt">|</span> <span class="kt">num</span> <span class="kt">**</span> <span class="err">2</span> <span class="o">]</span>
+<span class="n">cuadrado</span><span class="o">.</span><span class="n">apply</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>De esta manera podemos enviar bloques como parámetros, algo muy útil para trabajar entre otras cosas con las colecciones (<code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">filter</code>, <code class="language-plaintext highlighter-rouge">fold</code>, etc.)</p>
+
+<p>La sintaxis general es</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="o">[</span> <span class="kt">|</span> <span class="kt">...</span> <span class="o">]</span>                <span class="c1">// bloque sin parámetros
+</span><span class="o">[</span> <span class="kt">elem</span> <span class="kt">|</span> <span class="kt">...</span> <span class="o">]</span>           <span class="c1">// bloque con un parámetro
+</span><span class="o">[</span> <span class="kt">int</span> <span class="kt">a</span>, <span class="kt">int</span> <span class="kt">b</span> <span class="kt">|</span> <span class="kt">a</span> <span class="kt">+</span> <span class="kt">b</span> <span class="o">]</span> <span class="c1">// bloque con dos parámetros
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-18-1">Variable implícita it</h2>
+
+<p>De la misma manera que cuando estamos dentro de una clase, podemos acceder a una variable de instancia con <code class="language-plaintext highlighter-rouge">this</code></p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">this</span><span class="o">.</span><span class="n">energia</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>o sin él:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">energia</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>también podemos usar una variable implícita <code class="language-plaintext highlighter-rouge">it</code> dentro de un método.</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="n">it</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Ave</span><span class="o">()</span>
+<span class="n">volar</span>       <span class="c1">// equivale a it.volar()
+</span><span class="n">comer</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>    <span class="c1">// equivale a it.comer(2)
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>Dentro de una expresión lambda, <code class="language-plaintext highlighter-rouge">it</code> es la variable implícita del primer parámetro, por lo tanto todas estas expresiones son equivalentes:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">alumnos</span><span class="o">.</span><span class="n">filter</span> <span class="o">[</span> <span class="kt">alumno</span> <span class="kt">|</span> <span class="kt">alumno.estudioso</span><span class="o">()</span> <span class="o">]</span>
+<span class="n">alumnos</span><span class="o">.</span><span class="n">filter</span> <span class="o">[</span> <span class="kt">it</span> <span class="kt">|</span> <span class="kt">it.estudioso</span><span class="o">()</span> <span class="o">]</span>
+<span class="n">alumnos</span><span class="o">.</span><span class="n">filter</span> <span class="o">[</span> <span class="kt">it.estudioso</span><span class="o">()</span> <span class="o">]</span>
+<span class="n">alumnos</span><span class="o">.</span><span class="n">filter</span> <span class="o">[</span> <span class="kt">it.estudioso</span> <span class="o">]</span>
+<span class="n">alumnos</span><span class="o">.</span><span class="n">filter</span> <span class="o">[</span> <span class="kt">estudioso</span> <span class="o">]</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>
+  <img src="/img/languages/xtendItImplicitVariable.png" alt="image" />
+</p>
+
+<h1 id="tocAnchor-1-20">Manejo de nulls</h1>
+
+<p>Los valores nulos son siempre un dolor de cabeza, Xtend tiene algunos trucos para facilitar un poco más el trabajo con ellos.</p>
+
+<h2 id="tocAnchor-1-20-1">Elvis operator</h2>
+
+<p>Parece un emoticón, pero <code class="language-plaintext highlighter-rouge">?:</code> es un shortcut para utilizar un valor por defecto cuando una expresión pueda ser nula:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="n">nombre</span> <span class="k">=</span> <span class="n">person</span><span class="o">.</span><span class="n">firstName</span> <span class="o">?:</span> <span class="ss">'You</span><span class="o">'</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Si la expresión que está a la izquierda se evalúa como null, <code class="language-plaintext highlighter-rouge">nombre</code> se asigna a la segunda expresión.</p>
+
+<h2 id="tocAnchor-1-20-2">Null safe operator</h2>
+
+<p>También podemos resolver envíos de mensajes a referencias que potencialmente podrían ser nulas:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="n">mejorAlumno</span> <span class="k">=</span> <span class="n">alumnos</span><span class="o">.</span><span class="n">find</span> <span class="o">[</span> <span class="kt">...</span> <span class="o">]</span>
+<span class="o">...</span>
+<span class="n">mejorAlumno</span><span class="o">?.</span><span class="n">felicitar</span><span class="o">()</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En este caso, el operador <code class="language-plaintext highlighter-rouge">?.</code> es equivalente a preguntar <code class="language-plaintext highlighter-rouge">if (mejorAlumno) mejorAlumno.felicitar()</code></p>
+
+<h2 id="tocAnchor-1-20-3">Comparar referencias</h2>
+
+<p>Después de varios cambios, Xtend dejó las cosas como la mayoría de los lenguajes. Tenemos dos formas de comparar referencias:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">ref1</span> <span class="o">==</span> <span class="n">ref2</span>     <span class="c1">// compara por igualdad, esto significa que son iguales si son las referencias
+</span>                 <span class="c1">// apuntan al mismo objeto o bien, en base a la definición del método equals
+</span>                 <span class="c1">// en la clase ref1 (sabiendo que ref1 no es nulo)
+</span>                 <span class="c1">// en la clase asociada a ref1
+</span><span class="n">ref1</span> <span class="o">===</span> <span class="n">ref2</span>    <span class="c1">// compara por identidad, esto significa que son iguales si las referencias
+</span>                 <span class="c1">// apuntan al mismo objeto en memoria, determinado por la VM y no se puede cambiar
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p><strong>Tener especial atención a los strings</strong>, ya que dos strings con el mismo contenido pueden ser iguales pero no idénticos, dependiendo de las estrategias de optimización de la VM. Siempre es conveniente utilizar ==, que además se puede modificar.</p>
+
+<h1 id="tocAnchor-1-24">Métodos avanzados</h1>
+
+<h2 id="tocAnchor-1-24-1">Obligatoriedad del return en métodos</h2>
+
+<p>Por lo general, los métodos devuelven la última expresión que contienen. Pero a veces es necesario cortar el flujo de envío de mensajes, como por ejemplo aquí:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">def</span> <span class="n">gradoDeFelicidad</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">esFeliz</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">return</span> <span class="mi">0</span>
+    <span class="o">}</span>
+    <span class="o">...</span> <span class="n">cálculo</span> <span class="n">complejo</span> <span class="o">...</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Para determinar el grado de felicidad de alguien, tenemos como precondición que sea feliz. Y para simplificar la definición, escribimos el <code class="language-plaintext highlighter-rouge">if</code> y forzamos el return (dado que escribir únicamente <code class="language-plaintext highlighter-rouge">0</code> no tendrá efecto, porque Xtend seguirá evaluando el resto de las expresiones hasta terminar la última y nosotros queremos justamente cortar el flujo).</p>
+
+<p>En el caso de un método que solo busque producir un efecto (<code class="language-plaintext highlighter-rouge">void</code>), es necesario utilizar <code class="language-plaintext highlighter-rouge">return;</code> con punto y coma…</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">def</span> <span class="n">metodoConEfecto</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">...</span> <span class="n">cambios</span> <span class="o">...</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">situacion</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="o">...</span> <span class="n">otros</span> <span class="n">cambios</span> <span class="o">...</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Igualmente, siempre es preferible tratar de extraer métodos más pequeños para simplificar la lógica.</p>
+
+<h2 id="tocAnchor-1-24-2">Extension methods</h2>
+
+<p>Una de las herramientas más poderosas consiste en definir <strong>extension methods</strong>. Supongamos que un negocio tiene un horario de apertura y de cierre y queremos saber, dada una hora, si está abierto.</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">class</span> <span class="nc">Negocio</span> <span class="o">{</span>
+    <span class="n">int</span> <span class="n">horarioApertura</span>
+    <span class="n">int</span> <span class="n">horarioCierre</span>
+
+    <span class="k">def</span> <span class="n">estaAbierto</span><span class="o">(</span><span class="n">int</span> <span class="n">horaActual</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">horaActual</span><span class="o">.</span><span class="n">between</span><span class="o">(</span><span class="n">horarioApertura</span><span class="o">,</span> <span class="n">horarioCierre</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Por supuesto, no compila. No existe el método between asociado a los enteros. Pero en otro archivo vamos a definir un método estático (no asociado a un objeto):</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">class</span> <span class="nc">NumberUtils</span> <span class="o">{</span>
+    <span class="n">static</span> <span class="k">def</span> <span class="n">between</span><span class="o">(</span><span class="n">int</span> <span class="n">num</span><span class="o">,</span> <span class="n">int</span> <span class="n">from</span><span class="o">,</span> <span class="n">int</span> <span class="n">to</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">num</span> <span class="o">&gt;=</span> <span class="n">from</span> <span class="o">&amp;&amp;</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">to</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Y ahora, desde el archivo Negocio.xtend, vamos a importar el método como <code class="language-plaintext highlighter-rouge">static extension</code>:</p>
+
+<p>
+  <img src="/img/languages/xtendExtensionMethod.gif" alt="image" />
+</p>
+
+<p>El código a agregar es</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// después de la definición de package
+</span><span class="k">import</span> <span class="nn">static</span> <span class="n">extension</span> <span class="n">ar</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">unsam</span><span class="o">.</span><span class="n">prueba</span><span class="o">.</span><span class="nc">NumberUtils</span><span class="o">.*</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Esto produce que automáticamente, el compilador Xtend marque en naranja el método between y nuestra clase Negocio compile perfectamente. En resumen, un extension method permite que nosotros agreguemos comportamiento por afuera de la definición de una clase como si estuviéramos trabajando en ella, algo muy importante cuando la clase no podemos modificarla (como en el caso de Integer , String), o bien cuando se está regenerando todo el tiempo (cuando tenemos un framework que genera código para nosotros), sin contar que además estamos respetando la idea de <strong>mensaje</strong> (y por consiguiente, la posibilidad de seguir trabajando con polimorfismo).</p>
+
+<p>Los métodos <code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">filter</code>, <code class="language-plaintext highlighter-rouge">fold</code>, <code class="language-plaintext highlighter-rouge">length</code>, <code class="language-plaintext highlighter-rouge">any</code>, etc. son todos extension methods de Collections.</p>
+
+<h2 id="tocAnchor-1-24-3">Dispatch methods</h2>
+
+<p>Xtend permite trabajar con <strong>multimethods</strong>, más adelante tendremos <a href="https://docs.google.com/document/d/1XWq9azqchoJZ7h8-hLcpA1Zj5T1UtvFtDKbpzxoQ-dw/edit?usp=sharing">este ejercicio para contarlo con más profundidad</a></p>
+
+<h1 id="tocAnchor-1-28">@Data</h1>
+
+<p>Para definir un objeto inmutable, debemos:</p>
+
+<ul>
+  <li>generar una clase</li>
+  <li>con atributos privados</li>
+  <li>y un constructor donde pueda asignar ese estado</li>
+</ul>
+
+<p>Xtend provee la anotación @Data para lograr eso:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="nd">@Data</span>
+<span class="k">class</span> <span class="nc">Point</span> <span class="o">{</span>
+    <span class="n">int</span> <span class="n">x</span>
+    <span class="n">int</span> <span class="n">y</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Esto equivale a definir el constructor con dos parámetros (x, y) y los getters para los atributos x e y, sin setters (dado que queremos únicamente representar un valor). Por lo tanto, esta definición compila perfectamente:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">class</span> <span class="nc">TestPoint</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="n">test</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="nc">Point</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">).</span><span class="n">x</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Si por el contrario intentamos asignar el valor de <code class="language-plaintext highlighter-rouge">x</code>:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">new</span> <span class="nc">Point</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">).</span><span class="n">x</span> <span class="k">=</span> <span class="mi">2</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>nos dirá <code class="language-plaintext highlighter-rouge">The field x is not visible</code>.</p>
+
+<h1 id="tocAnchor-1-29">With operator</h1>
+
+<p>Otro syntactic sugar muy interesante de Xtend es la posibilidad de enviar múltiples mensajes al mismo objeto, mediante el operador with <code class="language-plaintext highlighter-rouge">=&gt;</code>, algo muy útil cuando estamos instanciando objetos:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">val</span> <span class="n">ventaNacional</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Venta</span> <span class="k">=&gt;</span> <span class="o">[</span>
+    <span class="kt">cantidadKilos</span> <span class="kt">=</span> <span class="err">12</span>
+    <span class="kt">fechaVenta</span> <span class="kt">=</span> <span class="kt">new</span> <span class="kt">Date</span>
+    <span class="kt">parcela</span> <span class="kt">=</span> <span class="kt">parcela50</span>
+    <span class="kt">comprador</span> <span class="kt">=</span> <span class="kt">new</span> <span class="kt">CompradorNacional</span>
+<span class="o">]</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>De esta manera, todos los mensajes se apuntan al objeto que resulta de evaluar la expresión <code class="language-plaintext highlighter-rouge">new Venta</code>, y simplifica el envío de mensajes:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">ventaNacional</span><span class="o">.</span><span class="n">cantidadKilos</span> <span class="k">=</span> <span class="mi">12</span>
+<span class="n">ventaNacional</span><span class="o">.</span><span class="n">fechaVenta</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Date</span>
+<span class="n">ventaNacional</span><span class="o">....</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-29-1">Links relacionados</h2>
+
+<ul>
+  <li><a href="https://docs.google.com/document/d/1lzOStySb8i94oVvZUIxkgymf2tuCDuXzqSTnClPqKSM/edit?usp=sharing">Colecciones</a></li>
+  <li><a href="https://docs.google.com/document/d/1G0a9j-OA0rIEA5cdvEhIMbztJVo86ssvZKBK8HL9akg/edit?usp=sharing">Intro a manejo de errores con excepciones</a></li>
+  <li><a href="https://docs.google.com/document/d/1vVW91adl0p-NxGNpe8fqmC_5YmBkrxaLDFKyZ0xZb9Y/edit?usp=sharing">Ejercicio del Monedero</a> para ver cómo interactúan la UI y el dominio a partir de errores del dominio y del sistema</li>
+  <li><a href="https://docs.google.com/document/d/11mVR-4wEZhlQMDEqrfQeYLypEsrSqXv98dr78SA0Oq4/edit?usp=sharing">Testing</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/xtend" title="xtend">Xtend</a></li>
+            
+             <li><a href="/categories/lenguaje" title="lenguaje">Lenguaje</a></li>
+            
+             <li><a href="/categories/guia" title="guia">Guia</a></li>
+            
+             <li><a href="/categories/referencia" title="referencia">Referencia</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on January 04, 2020 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>623</td>
+                                <td>79</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>6de06f17</td>
+                        <td>Sat Jan 4 10:41:09 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Xtend pages upgraded</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bf86193e</td>
+                        <td>Mon Aug 12 22:37:55 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Enhancing Xtend Quick Reference</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>952ae745</td>
+                        <td>Mon Aug 12 22:24:54 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>adding xtend pages</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>acda2ed1</td>
+                        <td>Mon Aug 12 21:52:48 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Xtend - Quick reference</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

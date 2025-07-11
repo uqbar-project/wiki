@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Polimorfismo en el paradigma logico</title>
+  <meta property="og:title" content="Polimorfismo en el paradigma logico" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/polimorfismo-en-el-paradigma-logico.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/polimorfismo-en-el-paradigma-logico.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Polimorfismo en el paradigma logico</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>El polimorfismo permite obtener soluciones más genéricas, que sean válidas para diferentes tipos de datos contemplando las particularidades de cada uno de ellos. En general podemos decir que dos cosas son polimórficas cuando desde algún punto de vista comparten un tipo, o sea que pueden ser tratados indistintamente por quienes no les interesen los detalles en los cuales difieren.</p>
+
+<p>Si bien todos los predicados pueden recibir cualquier tipo de argumento, muchas veces el uso que se hace de ellos en el interior de las cláusulas que lo definen, delimita un rango de tipos de valores que tiene sentido recibir. En lógico no sucede un error si se recibe un dato de tipo diferente a los esperados, sino que directamente la consulta falla por no poder unificar el valor recibido con lo esperado, descartándolo como posible respuesta a la misma.</p>
+
+<h2 id="ejemplo-de-polimorfismo-usando-functores">Ejemplo de Polimorfismo usando functores</h2>
+
+<p>Si tenemos el siguiente requerimiento: “se tiene 3 tipos de vehiculos autos, camiones y bicicletas. Un auto es viejo si su patente es menor a F, un camion es viejo si tiene más de 60000km o más de 10 años, una bicicleta es vieja si la fecha de fabricacion es de año anterior al 2006”</p>
+
+<p>Supongamos que nuestra base de conocimiento tiene los siguientes hechos:</p>
+
+<pre><code class="language-Prolog">hoy(fecha(22,12,2008)).
+vehiculo(auto("A2000")).
+vehiculo(auto("H2342")).
+vehiculo(camion(12000,2005)).
+vehiculo(camion(70000,2003)).
+vehiculo(camion(30000,1997)).
+vehiculo(bici(fecha(30,10,2005))).
+vehiculo(bici(fecha(20,12,2008))).
+</code></pre>
+
+<p>Si quiero hacer una consulta que me diga si todos los vehículos de la base de conocimientos son viejos, ¿cómo hago para manejar el tema de que los datos tienen formas distintas y la lógica asociada a las distintas formas varía?</p>
+
+<p>La alternativa infeliz no polimórfica sería hacer algo así:</p>
+
+<pre><code class="language-Prolog">autoViejo(Patente):- Patente &gt; "F".
+camionViejo(Kilometraje,_):- Kilometraje &gt; 60000.
+camionViejo(_,Anio):- hoy(fecha(_,_,AnioActual)),
+                      AnioActual - Anio &gt; 10.
+biciVieja(fecha(_,_,Anio)):- Anio &lt; 2006.
+
+?- forall(vehiculo(auto(Patente)), autoViejo(Patente)),
+   forall(vehiculo(camion(Kms, Anio)), camionViejo(Kms, Anio)),
+   forall(vehiculo(bici(Fecha)), biciVieja(Fecha)).
+</code></pre>
+
+<p>Para que esto se cumpla todos los vehículos deben cumplir la correspondiente validación del forall con lo cual estaría funcionando como necesitamos, pero la solución elegida es bastante molesta y repetitiva. Sin contar que si queremos incorporar las motos a nuestra base de conocimientos, la consulta sería aún más larga.</p>
+
+<p>La idea del polimorfismo nos viene bárbaro en este caso, y lo único que necesitamos es que exista un predicado esViejo/1 ande con autos, camiones y bicicletas y por ende pueda ser usado de forma genérica por otro predicado o consulta sin tener que pensar en el tipo de vehículo.</p>
+
+<p>Ahora, para resolver el requerimiento de forma polimórfica tenemos que hacer el predicado esViejo/1 que se verifique si se cumplen las condiciones explicadas anteriormente. Para ello usaremos varias cláusulas que, por medio de pattern matching, se apliquen a cada tipo de vehículo particular.</p>
+
+<pre><code class="language-Prolog">esViejo(auto(Patente)):- Patente &gt; "F".
+esViejo(camion(Kilometraje,_)):- Kilometraje &gt; 60000.
+esViejo(camion(_,Anio)):- hoy(fecha(_,_,AnioActual)),
+                          AnioActual - Anio &gt; 10.
+esViejo(bici(fecha(_,_,Anio))):- Anio &lt; 2006.
+</code></pre>
+
+<p>Con esto podemos realizar la consulta que queríamos de esta forma:</p>
+
+<pre><code class="language-Prolog">?- forall(vehiculo(Vehiculo), esViejo(Vehiculo)).
+</code></pre>
+
+<p>Podemos decir entonces que el predicado polimórfico es esViejo/1, porque funciona con distintos tipos de vehiculos, y quien lo aprovecha es la consulta del forall que no necesita hacer distinciones sobre los tipos de vehículos, unificando toda la estructura con la variable <code class="language-plaintext highlighter-rouge">Vehiculo</code>.</p>
+
+<p>Es importante notar que modelar los vehículos con functores nos permite tener individuos más complejos a que si tuviéramos directamente los datos en el predicado:</p>
+
+<pre><code class="language-Prolog">vehiculo(auto,"A2000").
+</code></pre>
+
+<p>Y además nos permite usar el mismo predicado (vehiculo/1 en este caso) para todos los tipos de vehículos, lo cual se aprovecha principalmente con el camión que tiene año y kilometraje:</p>
+
+<pre><code class="language-Prolog">vehiculo(auto,"A2000").            % vehiculo/2
+vehiculo(camion, 12000, 2005).     % vehiculo/3
+</code></pre>
+
+<p>Al tener distinta cantidad de valores afecta directamente a la aridad. Eso nos llevaría a trabajar con más de un predicado para la misma relación, que era el problema original. (Por más que se llamen igual, si la cantidad de parámetros es distinta, es otro predicado, ya que no hay forma de consultarlos a la vez).</p>
+
+<h2 id="errores-comunes">Errores comunes</h2>
+
+<h3 id="repito-lógica-por-hacer-mal-uso-de-polimorfismo">Repito lógica por hacer mal uso de polimorfismo</h3>
+
+<p>Supongamos que tenemos la siguiente base de conocimiento:</p>
+
+<pre><code class="language-Prolog">juguete(ingenio(cuboRubik,10)).
+juguete(ingenio(encajar,2)).
+juguete(munieco(50)).
+juguete(peluche(300)).
+juguete(peluche(150)).
+</code></pre>
+
+<p>Suponiendo que quiero saber si un juguete es caro, lo que sucede cuando su precio supera los 100 pesos.</p>
+
+<p>Se sabe que el precio de los juguetes de ingenio es de $20 por cada punto de dificultad, el precio del muñeco es el indicado, y el precio de los peluches es la mitad de su tamaño en mm.</p>
+
+<p>Una forma de resolverlo sería:</p>
+
+<pre><code class="language-Prolog">esCaro(ingenio(_,Dificultad)):-
+     100 &lt; Dificultad * 20.
+esCaro(munieco(Precio)):- 
+     Precio &gt; 100.
+esCaro(peluche(Tamanio)):-
+     Tamanio / 2 &gt; 100.
+</code></pre>
+
+<p>El problema es que repito la lógica de cuándo un juguete es caro en las tres cláusulas, porque <strong>me falta abstraer la lógica del precio</strong>.</p>
+
+<p>Si tengo la lógica del precio delegada en otro predicado, luego no necesito repetir la lógica de esCaro en cada cláusula:</p>
+
+<pre><code class="language-Prolog">esCaro(Juguete):-
+     precio(Juguete,Precio),
+     Precio &gt; 100.
+     
+precio(ingenio(_,Dificultad), Precio):-
+     Precio is Dificultad * 20.
+precio(munieco(Precio),Precio).
+precio(peluche(Tamanio),Precio):-
+     Precio is Tamanio / 2.
+</code></pre>
+
+<h3 id="intento-poner-una-variable-en-el-nombre-del-functor">Intento poner una variable en el nombre del functor</h3>
+
+<p>Supongamos que tenemos un predicado que relaciona una patente con un vehículo, como la siguiente base de conocimiento:</p>
+
+<pre><code class="language-Prolog">vehiculo(opp564, camion(mercedes,2014)).
+vehiculo(agt445, auto(504,1995)).
+vehiculo(mmr444, camion(scania,2010)).
+</code></pre>
+
+<p>Y quisiéramos <em>saber las patentes de los autos anteriores al 2000</em>. Lo siguiente es <strong>incorrecto</strong>:</p>
+
+<pre><code class="language-Prolog">patenteDeAutoInteresante(Patente):-
+   vehiculo(Patente, Tipo(_,Anio)),
+   Anio &lt; 2000.
+</code></pre>
+
+<p>¿Por qué es incorrecto? Primero, Prolog <strong>no me deja usar el nombre del functor como un dato</strong>, que yo pueda poner en una variable ú operar. Además, lo siguiente no sería posible:</p>
+
+<pre><code class="language-Prolog">vehiculo(ppt666, moto(2010)). % No respeta la aridad
+vehiculo(ert434, lancha(2017,yamaha)). % El orden es otro
+vehiculo(dfg345, karting(rojo)). % ¡Y puede ser que no incluya la información del año y haya que hacer otra cosa!
+</code></pre>
+
+<p>Por lo tanto, lo que deberíamos hacer es obtener el dato de año de alguna otra manera…</p>
+
+<h4 id="relaciones-que-repiten-lógica">Relaciones que repiten lógica</h4>
+
+<p>… una forma podría ser relacionando el año con la patente:</p>
+
+<pre><code class="language-Prolog">patenteDeAutoInteresante(Patente):-
+   anioPatente(Patente, Anio),
+   Anio &lt; 2000.
+</code></pre>
+
+<p>El problema está en que estamos obligados a relacionar la patente con el vehículo para saber el año, repetida en cada cláusula de <code class="language-plaintext highlighter-rouge">anioPatente/2</code>:</p>
+
+<pre><code class="language-Prolog">anioPatente(Patente, Anio):-
+   vehiculo(Patente, moto(Anio)).
+
+anioPatente(Patente, Anio):-
+   vehiculo(Patente, camion(_, Anio)).
+   
+anioPatente(Patente, Anio):-
+   vehiculo(Patente, lancha(Anio, _)).
+</code></pre>
+
+<p>El problema está en que estamos relacionando la patente con un año, cuando eso <em>depende del vehículo</em>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/4098184/67187242-2c0f9580-f3c0-11e9-8bec-888d4b2280dd.png" alt="relaciones" /></p>
+
+<h4 id="una-posible-solución">Una posible solución</h4>
+
+<p>La siguiente solución arregla todos los problemas mencionados arriba:</p>
+
+<pre><code class="language-Prolog">patenteDeAutoInteresante(Patente):-
+   vehiculo(Patente,Vehiculo),
+   anioVehiculo(Vehiculo,Anio),
+   Anio &lt; 2000.
+   
+anioVehiculo(camion(_,Anio),Anio).
+anioVehiculo(auto(_,Anio),Anio).
+anioVehiculo(moto(Anio),Anio).
+anioVehiculo(lancha(Anio,_),Anio).
+anioVehiculo(karting(Color),Anio):- colorDelAnio(Color,Anio).
+
+colorDelAnio(rojo,2010).
+colorDelAnio(verde,1990).
+colorDelAnio(azul,2015).
+</code></pre>
+
+<p>De esta forma se evita repetir lógica creando relaciones acordes a los datos de los individuos, aprovechando el polimorfismo en <code class="language-plaintext highlighter-rouge">patenteDeAutoInteresante/1</code> al unificar toda la estructura con <code class="language-plaintext highlighter-rouge">Vehiculo</code> (sin iportar su forma) y recién haciendo pattern matching cuando es necesario, en <code class="language-plaintext highlighter-rouge">anioVehiculo/2</code>.</p>
+
+<p>Así puedo meter <strong>los functores con la forma que yo quiera</strong> , y aún así mi predicado <code class="language-plaintext highlighter-rouge">patenteDeAutoInteresante/1</code> <strong>no cambia</strong>. Esa es la gran ventaja del polimorfismo. Lo único que tengo que hacer es definir el predicado <code class="language-plaintext highlighter-rouge">anioVehiculo/2</code> para ese nuevo tipo de functor, y ya todo anda ;)</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on October 21, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>195</td>
+                                <td>46</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Nahuel Palumbo</td>
+                                <td>nahuel....</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>03b45bca</td>
+                        <td>Mon Oct 21 05:11:12 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update polimorfismo-en-el-paradigma-logico.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e8a4f0b4</td>
+                        <td>Fri Dec 1 12:08:12 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update polimorfismo-en-el-paradigma-logico.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0dcf04d3</td>
+                        <td>Thu Oct 5 00:19:36 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update polimorfismo-en-el-paradigma-logico.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>10f7158a</td>
+                        <td>Thu Feb 2 19:12:53 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo de Polimorfismo usando functores */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

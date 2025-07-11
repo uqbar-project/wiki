@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Variables</title>
+  <meta property="og:title" content="Variables" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/variables.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/variables.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Variables</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Referencias</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Asignación de variables</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Inicialización</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Ejemplo completo</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">2</span> <span class="toctext">Atributos: errores comunes</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Referencias</h1>
+
+<p>En objetos una variable es una <strong>referencia</strong> a un objeto. La mayoría de las referencias pueden ser reapuntadas a otros objetos mediante la operación de <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html">asignación</a>. Al hacerlo eso no modifica al objeto previamente referenciado.</p>
+
+<p>Hay distintos tipos de referencias, dependiendo del contexto en el cual son declaradas:</p>
+
+<ul>
+  <li>atributos: se usan para que el objeto mantenga un estado propio.</li>
+  <li>locales: se declaran dentro de un método, sólo son visibles desde el mismo, y no sobreviven a su ejecución.</li>
+  <li>parámetros: forman parte de la firma del método, no pueden ser reapuntadas a otros objetos dentro del método.</li>
+</ul>
+
+<h2 id="tocAnchor-1-1-1">Asignación de variables</h2>
+
+<p>La asignación de variables se logra de la siguiente forma:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">variable</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">expresion</span><span class="o">-</span><span class="n">que</span><span class="o">-</span><span class="n">devuelve</span><span class="o">-</span><span class="n">un</span><span class="o">-</span><span class="n">objeto</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>y debe interpretarse que cuando se evalúa esta línea, la variable referencia al objeto resultado de la expresión de la derecha.</p>
+
+<p>Entonces, al asignar una variable <strong>no estoy creando ningún objeto</strong> ni estoy cambiando al objeto referenciado anteriormente por dicha variable, sólo se cambia cuál es el objeto al que está apuntando esa referencia.</p>
+
+<h3 id="var-y-const">var y const</h3>
+<p>En Wollok, las referencias pueden declararse como variables (con la palabra reservada <code class="language-plaintext highlighter-rouge">var</code>) o como constantes (con la palabra reservada <code class="language-plaintext highlighter-rouge">const</code>). Las constantes están pensadas para ser usadas siempre que no se espere que la referencia pueda cambiar de valor, con lo cual intentar asignar una constante luego de su inicialización no está permitido.</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">var</span> <span class="n">edad</span> <span class="k">=</span> <span class="mi">15</span>
+<span class="n">const</span> <span class="n">iva</span> <span class="k">=</span> <span class="mi">21</span>
+<span class="n">edad</span> <span class="k">=</span> <span class="mi">16</span> <span class="c1">// esto anda perfecto
+</span><span class="n">iva</span> <span class="k">=</span> <span class="mi">19</span> <span class="c1">// esto tira error en tiempo de compilación
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>Error común: ¿qué significa “cambiar un objeto”?</p>
+<ul>
+  <li>¿Lo cambio <strong>por otro</strong>?</li>
+  <li>¿O le cambio <strong>sus atributos</strong>?</li>
+</ul>
+
+<p>Miremos el siguiente ejemplo:</p>
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">const</span> <span class="n">laPreferida</span> <span class="k">=</span> <span class="n">pepita</span> <span class="c1">// atentos al const
+</span><span class="n">laPreferida</span><span class="o">.</span><span class="n">volar</span><span class="o">()</span> <span class="c1">// ¿Qué sucede en este caso? ¿Da error? 
+</span><span class="n">laPreferida</span> <span class="k">=</span> <span class="n">pepona</span> <span class="c1">// ¿Y en este caso?
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p><code class="language-plaintext highlighter-rouge">laPreferida.volar()</code> no da error. Esto es porque al enviar el mensaje <code class="language-plaintext highlighter-rouge">volar()</code>, <code class="language-plaintext highlighter-rouge">laPreferida</code> (que apunta al mismo objeto que <code class="language-plaintext highlighter-rouge">pepita</code>) está cambiando su <strong>estado interno</strong>, su energía. ¡Pero la <strong>flecha</strong> <code class="language-plaintext highlighter-rouge">laPreferida</code> no se modifica! Se modifica sólo la energía de pepita al volar.</p>
+
+<p>En cambio, en <code class="language-plaintext highlighter-rouge">laPreferida = pepona</code> sí hay un error de compilación. Estoy intentando modificar a dónde apunta <code class="language-plaintext highlighter-rouge">laPreferida</code>, pero como esa referencia es <code class="language-plaintext highlighter-rouge">const</code> nunca podrá dejar de apuntar a pepita.</p>
+
+<p>Es importante entender que <code class="language-plaintext highlighter-rouge">const laPreferida</code> <strong>no significa que el objeto no pueda modificar su estado interno, sino que no puedo hacer que la flecha laPreferida apunte a otro objeto</strong>.</p>
+
+<h2 id="tocAnchor-1-1-2">Inicialización</h2>
+
+<p>Un problema común que suele darse con atributos de los objetos es olvidarse de inicializarlos.</p>
+
+<p>Lo que sucede cuando una variable no ha sido inicializada puede variar de un lenguaje a otro: algunos (por ejemplo Smalltalk) tienen un objeto especial para representar la nada que entienden muy poquitos mensajes, otros (como Java o Wollok) directamente usan un valor primitivo. Pero lo importante es que para poder usar una variable de forma razonable, la misma debería referenciar a un objeto que entienda los mensajes que esperamos mandarle, de lo contrario se generará un error.</p>
+
+<p>¿Cuál es el momento adecuado para inicializar un atributo? Si bien podrían darse situaciones en las cuales se quiera o necesite postergar la inicialización de un atributo, lo más común es querer inicializar los atributos al momento de la creación del objeto, de esa forma nunca se llegará a un estado en el cual el se le mande un mensaje al objeto y el mismo falle porque no se haya inicializado un atributo previamente.</p>
+
+<p>En Wollok podemos inicializar las variables al momento de declararlas. Eso en general es suficiente para trabajar con objetos bien conocidos (como en el ejemplo que se muestra más adelante). En caso de trabajar con objetos instanciados a partir de <a href="clases.html">clases</a>, es posible inicializar los atributos con valores distintos para cada instancia usando las <a href="herramientas-de-instanciacion.html">herramientas de instanciación</a> disponibles (en otros lenguajes en los cuales las clases son objetos, como Smalltalk, esto se logra mediante mensajes a las clases).</p>
+
+<h2 id="tocAnchor-1-1-3">Ejemplo completo</h2>
+
+<p>Dado el siguiente código Wollok:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">object</span><span class="err"> </span><span class="n">pepita</span><span class="err"> </span><span class="o">{</span>
+<span class="err">  </span><span class="k">var</span><span class="err"> </span><span class="n">energia</span> <span class="k">=</span> <span class="mi">100</span>
+<span class="err">  </span>
+<span class="err">  </span><span class="n">method</span><span class="err"> </span><span class="n">energia</span><span class="o">(</span><span class="n">cantidad</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">    </span><span class="n">energia</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">cantidad</span>
+<span class="err">  </span><span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>… y luego le mando el mensaje…</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">pepita</span><span class="o">.</span><span class="n">energia</span><span class="o">(</span><span class="mi">50</span><span class="o">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Cuando el objeto se crea, la variable energía se inicializa apuntando al objeto 100. Al mandar el mensaje para settearle la energía, el atributo energia que tiene pepita pasa de apuntar a 100 a apuntar a 50. O sea que sólo cambia a quién conoce pepita mediante la referencia energia.</p>
+
+<p>SIEMPRE lo que se encuentre a la izquierda de la asignación debe ser una variable, no se puede asignar un objeto (y por el mismo motivo no se puede asignar un envío de mensajes). Las siguientes expresiones son inválidas:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="mi">3</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">5</span><span class="err"> </span>                <span class="c1">// &lt;--- 3 es un objeto, no una referencia!!!
+</span><span class="n">pepita</span><span class="o">.</span><span class="n">energia</span><span class="o">()</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="mi">10</span> <span class="c1">// &lt;--- pepita.energia() es un envío de mensajes, no una referencia!!!
+</span></code>
+    </pre>
+  </div>
+</div>
+
+<p>En ningún caso vamos a poder modificar desde fuera del objeto que tiene una referencia el valor de la misma, siempre hay que mandarle un mensaje a ese objeto para que la cambie. Esto está relacionado con la idea de <a href="encapsulamiento.html">encapsulamiento</a>, que es una de las bases del paradigma de objetos.</p>
+
+<h1 id="tocAnchor-1-5">Atributos: errores comunes</h1>
+
+<p>Los atributos son obviamente muy útiles, ya que permiten que un objeto recuerde toda la información que necesita para poder usarla en cualquier momento. Sin embargo, hay que ser criteriosos respecto a cuándo usarlos, ya que pueden ser el motivo de inconsistencias y dificultad para mantener nuestros programas.</p>
+
+<p>Los siguientes son los algunos errores comunes de ver respecto al uso de atributos:</p>
+
+<ul>
+  <li>Atributos redundantes: si cierta pieza de información puede ser calculada a partir de otra, no uses un atributo que tenga que ser mantenido consistente, usá un método que calcule lo que necesitás a partir de la otra información disponible. Para más información podés leer <a href="oo-temporary-variable.html">este artículo</a></li>
+  <li>Atributos innecesarios: no hay que perder de vista que nuestro programa es un <strong>modelo</strong>, y por ende no hace falta que el objeto recuerde información que luego no va a ser usada.</li>
+  <li>Uso de atributos en vez de locales: si necesitamos recordar cierta información sólo dentro de la ejecución de un método, lo correcto es usar una local, no un atributo.</li>
+</ul>
+
+<p>Como regla general para evitar estos problemas, preguntate: ¿hay alguna forma de no usar un atributo para lo que estás haciendo? si la hay, <strong><em>no uses un atributo</em></strong>.</p>
+
+<p>¿Y las referencias circulares? Es perfectamente válido que dos objetos se conozcan entre ellos, en el caso de que sea necesario obviamente, las reglas anteriores valen también para esto. El único recaudo que hay que tener es asegurar la consistencia del estado de ambos objetos, lo cual puede simplificarse asegurando que esas referencias se modifiquen dentro de una misma operación, y no de forma independiente.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on October 03, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>16</td>
+                                <td>130</td>
+                                <td>82</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Gleiva</td>
+                                <td>Gleiva@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>6</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>babfb86a</td>
+                        <td>Thu Oct 3 18:48:36 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update variables.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>107f5d99</td>
+                        <td>Tue Sep 17 21:40:10 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>temporary variable</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>70e7924f</td>
+                        <td>Fri Sep 13 11:33:20 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Linkeo herramientas-de-instanciacion.html</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e0471aff</td>
+                        <td>Fri Aug 18 15:16:12 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update variables.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>8945c80d</td>
+                        <td>Mon Feb 6 20:38:51 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Fixed some articles</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

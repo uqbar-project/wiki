@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Cómo generar un proyecto Xtend nuevo</title>
+  <meta property="og:title" content="Cómo generar un proyecto Xtend nuevo" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/xtend-creacion-proyecto.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/xtend-creacion-proyecto.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="xtend,nuevo proyecto,maven," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Cómo generar un proyecto Xtend nuevo</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Crear proyecto Maven</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Configuración de un proyecto Maven</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">Pom, pom, pom, pom…</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">3</span> <span class="toctext">Sincronización entre Eclipse y Maven</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">4</span> <span class="toctext">Primeros pasos</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-5-1"><span class="tocnumber">4.1</span> <span class="toctext">Generación de archivos .java</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#tocAnchor-1-7"><span class="tocnumber">5</span> <span class="toctext">Recomendaciones</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>Para realizar las prácticas, vas a crear un proyecto desde cero. Como ahora hay muchas más opciones, te dejamos una guía simple de cómo iniciarte.</p>
+
+<h1 id="tocAnchor-1-1">Crear proyecto Maven</h1>
+
+<p>Todos los ejemplos que vas a descargar de la materia, así como los proyectos en los que vas a trabajar, se basan en la tecnología Maven. Para crear un proyecto Maven, te dejamos esta animación:</p>
+
+<p>
+  <img src="/img/languages/creatingNewProject.gif" alt="image" />
+</p>
+
+<ul>
+  <li>Seleccionamos New &gt; Project… Maven Project</li>
+  <li>Chequeamos “Skip archetype selection” ya que no lo usaremos, y luego Next</li>
+  <li>En la siguiente pantalla, escribimos cualquier cosa en “groupId”, que es un valor que luego borraremos, pero que si lo dejamos vacío Eclipse nos mostrará un error. Y el nombre de nuestro proyecto o <code class="language-plaintext highlighter-rouge">artifactId</code>, éste sí es importante, seguimos la nomenclatura de paquetes de Java, para que no haya confusiones en los nombres: <code class="language-plaintext highlighter-rouge">ar.edu.unsam.prueba</code> identifica nuestro proyecto en todo el mundo</li>
+  <li>cuando finalizamos, se genera un proyecto con un archivo pom.xml, que es fundamental para que Eclipse regenere el proyecto en otra máquina y descargue las dependencias</li>
+</ul>
+
+<h1 id="tocAnchor-1-2">Configuración de un proyecto Maven</h1>
+
+<p>El acrónimo POM es por “Project Object Model”. El archivo <code class="language-plaintext highlighter-rouge">pom.xml</code> es el core de la configuración de un proyecto maven. Es un solo archivo de configuración que contiene la mayoría de la información requerida para el build de un proyecto.</p>
+
+<h2 id="tocAnchor-1-2-1">Pom, pom, pom, pom…</h2>
+
+<p>Para comenzar a escribir la configuración del proyecto en un archivo <code class="language-plaintext highlighter-rouge">pom.xml</code> existen algunas opciones:</p>
+
+<ul>
+  <li>Inicializar un proyecto maven desde 0 desde la terminal con el comando <code class="language-plaintext highlighter-rouge">mvn archetype:generate</code>. Al hacer esto maven nos pedirá los datos iniciales para inicializar el proyecto (artifactId, groupId, etc) y nos dejará un <code class="language-plaintext highlighter-rouge">pom.xml</code> creado y listo para usar/modificar.</li>
+  <li>Crear un proyecto maven desde eclipse u algún otro IDE.</li>
+  <li>Copiarse un <code class="language-plaintext highlighter-rouge">pom.xml</code> de un proyecto maven existente y adecuar los valores de los campos que identifican el proyecto.</li>
+</ul>
+
+<p>Te dejamos entonces el modelo de proyecto Maven por defecto para la cursada de Algoritmos 2 (UNSAM) del aǹo 2021: <a href="pom-algo2.xml">pom.xml de ejemplo</a>. Luego tendrás que</p>
+
+<ul>
+  <li>renombrar el archivo a <code class="language-plaintext highlighter-rouge">pom.xml</code></li>
+  <li>copiarlo dentro del directorio raíz de tu proyecto ya creado</li>
+  <li>actualizar en base a los nombres de tu proyecto (el <em>artifactId</em> y <em>groupId</em>)</li>
+  <li>revisar las dependencias</li>
+</ul>
+
+<p>Para profundizar un poco más sobre lo que contiene un archivo de Maven, te recomendamos <a href="maven.html">este artículo</a>.</p>
+
+<h1 id="tocAnchor-1-4">Sincronización entre Eclipse y Maven</h1>
+
+<p>Cada vez que hagamos un cambio en el archivo <code class="language-plaintext highlighter-rouge">pom.xml</code>, nos aparecerá un mensaje de error en la solapa <strong>Problems</strong>, que se soluciona forzando la sincronización entre Eclipse y Maven (dado que cada uno maneja su propia estructura de proyectos Java). Como regla general, <strong>siempre que necesitemos agregar alguna biblioteca, o dependencia, debemos hacerlo en el archivo pom y no desde las opciones que ofrece el Eclipse, porque nuestros compañeros o los docentes no tendrán esa biblioteca</strong>. Para sincronizar Maven y Eclipse, nos paramos en el proyecto y con un botón derecho elegimos “Maven &gt; Update Project”.</p>
+
+<h1 id="tocAnchor-1-5">Primeros pasos</h1>
+
+<p>
+  <img src="/img/languages/firstClass.gif" alt="image" />
+</p>
+
+<p>Ahora solo nos queda eliminar la línea groupId (con Ctrl + D), formatear el pom.xml (con Ctrl + Shift + F) y crear nuestra primera clase Perro. Es importante notar que tendremos dos carpetas donde ubicaremos los fuentes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">src/main/java</code>: donde irán las clases</li>
+  <li><code class="language-plaintext highlighter-rouge">src/test/java</code>: donde irán los tests</li>
+</ul>
+
+<p>Por eso, nos ubicamos en <code class="language-plaintext highlighter-rouge">src/main/java</code> y con un botón derecho, New &gt; Xtend Class (es importante que hayas configurado el Eclipse para que no esté escondida esta opción).</p>
+
+<h2 id="tocAnchor-1-5-1">Generación de archivos .java</h2>
+
+<p>En <code class="language-plaintext highlighter-rouge">src/main/generated-sources</code> vas a tener los archivos <code class="language-plaintext highlighter-rouge">.java</code> que se generan en base a los archivos de xtend. ¡No los toques! Porque cada cambio que hagas en tu clase xtend va a pisar los cambios de los archivos <code class="language-plaintext highlighter-rouge">.java</code>. En general no deberías mirar nunca el java que genera, porque además utiliza construcciones menos simples que si programaras directamente en java.</p>
+
+<h1 id="tocAnchor-1-7">Recomendaciones</h1>
+
+<p>A continuación te dejamos algunas recomendaciones para que tu estadía en Eclipse + Xtend sea más feliz:</p>
+
+<ul>
+  <li>¡Formatear el código! Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad. Además, el Eclipse lo hace solo (Ctrl + Shift + F).</li>
+</ul>
+
+<p>
+  <img src="/img/languages/formattingCode.gif" alt="image" />
+</p>
+
+<ul>
+  <li>Utilización de packages (paquetes). Es una buena práctica agrupar las clases afines en paquetes para organizar semánticamente el código. No hay una guía firme a seguir con respecto a cómo organizar nuestro código, ya que suele depender del contexto en el cual estamos trabajando, pero a medida que veas nuestros ejemplos y vayas haciendo las prácticas notarás que hay clases que se pueden agrupar en contextos similares. Te dejamos un ejemplo</li>
+</ul>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>proyecto
+   ├── home
+   ├── registration
+   │   ├── Profile.xtend
+   │   └── User.xtend
+   └── settings
+       ├── CustomPrivacy.xtend
+       ├── DefaultPrivacy.xtend
+       ├── Privacy.xtend
+       └── Setting.xtend
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>De esta manera, logramos mayor granularidad en la organización de nuestras clases.
+___</p>
+
+<ul>
+  <li><a href="xtend-amigandonos-git.html">Siguiente paso: Sobre el control de versiones</a></li>
+  <li><a href="xtend-principal.html">Volver al menú principal del entorno Xtend</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/xtend" title="xtend">Xtend</a></li>
+            
+             <li><a href="/categories/nuevo proyecto" title="nuevo proyecto">Nuevo proyecto</a></li>
+            
+             <li><a href="/categories/maven" title="maven">Maven</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on March 08, 2022 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>9</td>
+                                <td>19</td>
+                                <td>76</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>8</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>marin-h</td>
+                                <td>marina@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>9e87581e</td>
+                        <td>Tue Mar 8 21:59:06 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Fix separator</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>594f4e5b</td>
+                        <td>Thu Mar 4 23:37:24 2021 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>POM algo2 2021</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>98443f16</td>
+                        <td>Tue Feb 25 10:40:38 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>maven - wip</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>caf30163</td>
+                        <td>Sat Feb 15 09:10:05 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>added example of pom for 2020 Algo2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>480a7b68</td>
+                        <td>Sat Feb 15 08:59:56 2020 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>xtend installation environment finished</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

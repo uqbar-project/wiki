@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Instalacion de ReactJS</title>
+  <meta property="og:title" content="Instalacion de ReactJS" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/react-instalacion.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/react-instalacion.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="arena,entorno,instalacion," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Instalacion de ReactJS</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Pasos previos</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Específicos de React</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Plugins Visual Studio Code</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Crear un proyecto React de cero</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Configuraciones adicionales para Algoritmos III</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-5-1"><span class="tocnumber">5.1</span> <span class="toctext">Versión de Typescript</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#tocAnchor-1-5-2"><span class="tocnumber">5.2</span> <span class="toctext">Agregar dependencias</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#tocAnchor-1-5-3"><span class="tocnumber">5.3</span> <span class="toctext">Archivo .nvmrc</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#tocAnchor-1-5-4"><span class="tocnumber">5.4</span> <span class="toctext">Archivos útiles</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#tocAnchor-1-5-5"><span class="tocnumber">5.5</span> <span class="toctext">Linter para javascript</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-11">
+                  <a href="#tocAnchor-1-5-6"><span class="tocnumber">5.6</span> <span class="toctext">Configuración del proyecto</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#tocAnchor-1-5-7"><span class="tocnumber">5.7</span> <span class="toctext">.gitignore</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-13">
+                  <a href="#tocAnchor-1-5-8"><span class="tocnumber">5.8</span> <span class="toctext">Archivo de configuración para Visual Studio Code</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-14">
+                  <a href="#tocAnchor-1-5-9"><span class="tocnumber">5.9</span> <span class="toctext">Configuración para el testeo unitario de frontend</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-15">
+              <a href="#tocAnchor-1-15"><span class="tocnumber">6</span> <span class="toctext">Ejemplo de un archivo para Github Actions</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-16">
+              <a href="#tocAnchor-1-16"><span class="tocnumber">7</span> <span class="toctext">Cómo configurar los badges en tu README</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-17">
+                  <a href="#tocAnchor-1-16-1"><span class="tocnumber">7.1</span> <span class="toctext">Links relacionados</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>
+  <img src="/img/languages/React-logo.png" height="30%" width="30%" />
+</p>
+
+<h1 id="tocAnchor-1-1">Pasos previos</h1>
+
+<p>Si ya estuviste trabajando con Angular estos pasos no son necesarios, pero conviene verificar que ya estén instalados.</p>
+
+<ul>
+  <li>Si estás en entorno Windows te recomendamos instalarte <a href="https://gitforwindows.org/">Git Bash</a></li>
+  <li>Seguimos con <a href="https://nodejs.org/en/">NodeJS</a>, preferentemente la última versión (tiene que ser 20.x).</li>
+  <li>Luego <a href="https://www.npmjs.com/">NPM (Node Package Manager)</a>, con el que vamos a hacer los builds de nuestras aplicaciones.</li>
+  <li>El editor de texto que vamos a soportar en la cursada es <a href="https://code.visualstudio.com/">Visual Studio Code</a> (hay una versión portable si estás en una máquina sin privilegios de administrador).</li>
+</ul>
+
+<h1 id="tocAnchor-1-2">Específicos de React</h1>
+
+<h1 id="tocAnchor-1-3">Plugins Visual Studio Code</h1>
+
+<p>Dentro de Visual Studio Code, te recomendamos que crees un perfil vacío y lo asocies a tus nuevos proyectos React (podés ver <a href="https://www.youtube.com/watch?v=_2F2Zt-_tUA">cómo se trabaja con perfiles en VSCode en este video</a>, la recomendación es partir con un profile totalmente vacío. También te dejamos <a href="https://www.youtube.com/watch?v=QjvvqR9KyVo">este tutorial muy piola - en inglés</a> y <a href="https://code.visualstudio.com/docs/editor/profiles">la documentación oficial</a>). Las extensiones que recomendamos para trabajar son:</p>
+
+<ul>
+  <li><strong>ESLint - Microsoft</strong>: integra las reglas definidas en el linter con el IDE</li>
+  <li><strong>Prettier - ESLint - Rebecca Vest</strong>: formatea el código según la configuración de Prettier</li>
+  <li><strong>npm intellisense - de Christian Kohler</strong>: te permite autocompletar dependencias buscándolas en npm</li>
+  <li><strong>VSCode React Refactor</strong>: agrega refactors de los componentes de React</li>
+  <li><strong>Vitest - Vitest</strong>: para ejecutar los tests de frontend desde el VSC</li>
+  <li>y por supuesto <strong>Git Lens - Git supercharged</strong> para manejarte con git</li>
+</ul>
+
+<p>Opcionalmente podés instalarte</p>
+
+<ul>
+  <li><strong>Import Cost - Wix</strong>: te dice cuánto pesan (en KB) los imports de cada archivo que hacés en tus componentes</li>
+</ul>
+
+<h1 id="tocAnchor-1-4">Crear un proyecto React de cero</h1>
+
+<p>Para crear un proyecto React desde la consola Git Bash o bien desde una terminal Linux escribimos:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm create vite@latest nombre-del-proyecto
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Y luego</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">✔ Select a framework: › React</code>: seleccionar React como framework de UI</li>
+  <li><code class="language-plaintext highlighter-rouge">✔ Select a variant: › Typescript + SWC</code>: elegir la variante Typescript con SWC (herramienta de reemplazo de Babel)</li>
+</ul>
+
+<p>También podés usar el template directo React + Typescript + SWC (eso evita que tengas que seleccionar el tipo de proyecto):</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm create vite@latest nombre-de-proyecto <span class="nt">--</span> <span class="nt">--template</span> react-swc-ts
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Por defecto la aplicación cliente levantará en el puerto 5173. Como suele quedarse levantada aun cuando canceles la línea de comando y el navegador, te dejamos este link que te dice <a href="https://stackoverflow.com/questions/39322089/node-js-port-3000-already-in-use-but-it-actually-isnt">cómo bajar el proceso del sistema operativo</a> para correr otro ejemplo.</p>
+
+<h1 id="tocAnchor-1-5">Configuraciones adicionales para Algoritmos III</h1>
+
+<p>Una vez creado el proyecto, te recomendamos que agregues estas configuraciones.</p>
+
+<h2 id="tocAnchor-1-5-1">Versión de Typescript</h2>
+
+<p>Lamentablemente, <a href="https://github.com/yarnpkg/berry/issues/6270">versiones de Typescript 5.4 ó posterior tienen problemas con la extensión JS/TS de VSCode</a> así que nuestra recomendación es que fijes la versión de Typescript en 5.3, cambiando la versión en el archivo <code class="language-plaintext highlighter-rouge">package.json</code> a</p>
+
+<div class="language-ts highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>  <span class="s2">"typescript"</span><span class="p">:</span> <span class="s2">"~5.3.1"</span><span class="p">,</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<blockquote>
+  <p>Este paso hay que hacerlo antes de ejecutar <code class="language-plaintext highlighter-rouge">npm install</code> o de lo contrario te conviene borrar la carpeta <code class="language-plaintext highlighter-rouge">node_modules</code> y el archivo <code class="language-plaintext highlighter-rouge">package-lock.json</code> y volver a ejecutar el comando</p>
+</blockquote>
+
+<h2 id="tocAnchor-1-5-2">Agregar dependencias</h2>
+
+<p>Agregamos estas dependencias de Prettier y Vitest (el framework de testing)</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm i @testing-library/react @testing-library/jest-dom @testing-library/user-event @vitest/coverage-v8 @vitejs/plugin-react-swc jsdom prettier vitest <span class="nt">-D</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-3">Archivo .nvmrc</h2>
+
+<p>Tener un archivo <code class="language-plaintext highlighter-rouge">.nvmrc</code> es conveniente si todo el equipo trabaja con NVM (el versionador de Node). El contenido especifica qué versión de Node vamos a utilizar:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>20.4.0
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Para la cursada 2024 vamos a trabajar con Node 20, que <a href="https://nodejs.org/en/about/previous-releases">será la versión activa al menos hasta mediados de Octubre</a>. Para el 2025 migraremos a la versión 22.</p>
+
+<h2 id="tocAnchor-1-5-4">Archivos útiles</h2>
+
+<p>En la carpeta raíz creá los siguientes archivos</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.markdownlint.json</code> (configuración del Linter para archivos con extensión <code class="language-plaintext highlighter-rouge">.md</code>), con el siguiente contenido</li>
+</ul>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">{</span>
+  <span class="s2">"MD013"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"MD024"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"MD025"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.prettierrc</code> (configuración de Prettier para eliminar puntos y coma, definir tab de 2 espacios, utilizar single quote, etc.) Es importante que tod@s tengan esta configuración para que no haya un montón de conflictos en git a la hora de pushear.</li>
+</ul>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">{</span>
+  <span class="s2">"trailingComma"</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+  <span class="s2">"tabWidth"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">"semi"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"singleQuote"</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-5">Linter para javascript</h2>
+
+<p>El archivo <code class="language-plaintext highlighter-rouge">.eslintrc.cjs</code> debe tener la siguiente configuración:</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">root</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">env</span><span class="p">:</span> <span class="p">{</span> <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">es2020</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="na">extends</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'eslint:recommended'</span><span class="p">,</span>
+    <span class="s1">'plugin:@typescript-eslint/recommended'</span><span class="p">,</span>
+    <span class="s1">'plugin:react-hooks/recommended'</span><span class="p">,</span>
+  <span class="p">],</span>
+  <span class="na">ignorePatterns</span><span class="p">:</span> <span class="p">[</span><span class="s1">'dist'</span><span class="p">,</span> <span class="s1">'.eslintrc.cjs'</span><span class="p">],</span>
+  <span class="na">parser</span><span class="p">:</span> <span class="s1">'@typescript-eslint/parser'</span><span class="p">,</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="s1">'react-refresh'</span><span class="p">],</span>
+  <span class="na">rules</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'react-refresh/only-export-components'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'warn'</span><span class="p">,</span>
+      <span class="p">{</span> <span class="na">allowConstantExport</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-6">Configuración del proyecto</h2>
+
+<p>Al archivo <code class="language-plaintext highlighter-rouge">package.json</code> le modificamos el script lint y le agregamos test y coverage (borrale los comentarios porque no están permitidos en <code class="language-plaintext highlighter-rouge">json</code>):</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>  <span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"lint"</span><span class="p">:</span> <span class="s2">"eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix"</span><span class="p">,</span> <span class="c1">// agregarle --fix</span>
+    <span class="p">...</span>
+    <span class="c1">// agregar</span>
+    <span class="s2">"test"</span><span class="p">:</span> <span class="s2">"vitest"</span><span class="p">,</span>
+    <span class="s2">"coverage"</span><span class="p">:</span> <span class="s2">"vitest run --coverage"</span>
+  <span class="p">},</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-7">.gitignore</h2>
+
+<p>Al archivo .gitignore se le pueden incorporar estas líneas:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c"># VSC - Git Lens</span>
+.history
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-8">Archivo de configuración para Visual Studio Code</h2>
+
+<p>Te recomendamos que dentro del proyecto crees una carpeta <code class="language-plaintext highlighter-rouge">.vscode</code> y dentro un archivo <code class="language-plaintext highlighter-rouge">settings.json</code> que tenga este contenido:</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">{</span>
+    <span class="s2">"editor.codeActionsOnSave"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"source.fixAll.eslint"</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+    <span class="s2">"editor.formatOnSave"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
+    <span class="s2">"files.autoSave"</span><span class="p">:</span> <span class="s2">"onFocusChange"</span> 
+<span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-9">Configuración para el testeo unitario de frontend</h2>
+
+<p>El archivo <code class="language-plaintext highlighter-rouge">vite.config.ts</code> contiene la configuración que necesitamos para ejecutar los tests, es importante tener un reporter que sea válido para la herramienta de cobertura que utilices (puede ser <code class="language-plaintext highlighter-rouge">json-summary</code> o <code class="language-plaintext highlighter-rouge">lcov</code>):</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">/// &lt;reference types="vitest" /&gt;</span>
+<span class="c1">/// &lt;reference types="vite/client" /&gt;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">defineConfig</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'vite'</span>
+<span class="k">import</span> <span class="nx">react</span> <span class="k">from</span> <span class="s1">'@vitejs/plugin-react-swc'</span>
+
+<span class="c1">// https://vitejs.dev/config/</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">react</span><span class="p">()],</span>
+  <span class="na">resolve</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">alias</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">src</span><span class="p">:</span> <span class="s1">'/src'</span><span class="p">,</span>
+      <span class="na">components</span><span class="p">:</span> <span class="s1">'/src/components'</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="na">test</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">globals</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">environment</span><span class="p">:</span> <span class="s1">'jsdom'</span><span class="p">,</span>
+    <span class="na">coverage</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">reporter</span><span class="p">:</span> <span class="p">[</span><span class="s1">'lcov'</span><span class="p">,</span> <span class="s1">'json'</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">,</span> <span class="s1">'json-summary'</span><span class="p">],</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Por otra parte, los imports conviene hacerlos en forma absoluta, desde <code class="language-plaintext highlighter-rouge">src</code> para las definiciones de dominio, services, etc. y <code class="language-plaintext highlighter-rouge">src/components</code> para los componentes de React.</p>
+
+<h1 id="tocAnchor-1-15">Ejemplo de un archivo para Github Actions</h1>
+
+<p>Te dejamos <a href="./build_react.yml">este archivo de ejemplo</a> que tenés que guardar en <code class="language-plaintext highlighter-rouge">.github/workflows/build.yml</code>. No hay que hacer ningún cambio.</p>
+
+<h1 id="tocAnchor-1-16">Cómo configurar los badges en tu README</h1>
+
+<ul>
+  <li>
+    <p>Para agregar el badge del build de Github Actions, seguí <a href="https://docs.github.com/es/actions/managing-workflow-runs/adding-a-workflow-status-badge">estas instrucciones</a></p>
+  </li>
+  <li>
+    <p>Para agregar el badge del porcentaje de cobertura, tenés que agregar la imagen que genera el mismo build de Github Actions (tal cual está escrito):</p>
+  </li>
+</ul>
+
+<div class="language-md highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="p">![</span><span class="nv">coverage</span><span class="p">](</span><span class="sx">./badges/coverage/coverage.svg</span><span class="p">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-16-1">Links relacionados</h2>
+
+<ul>
+  <li><a href="algo3-temario.html">Temario Algoritmos III</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/arena" title="arena">Arena</a></li>
+            
+             <li><a href="/categories/entorno" title="entorno">Entorno</a></li>
+            
+             <li><a href="/categories/instalacion" title="instalacion">Instalacion</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on July 28, 2024 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>32</td>
+                                <td>22</td>
+                                <td>12</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>32</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>7279ecb6</td>
+                        <td>Sun Jul 28 19:05:05 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Fix code block</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d5f777ee</td>
+                        <td>Sun Jul 28 15:00:28 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Typescript version</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>56cae007</td>
+                        <td>Sun Jul 28 10:13:15 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Link to official doc for VSCode Profile</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d7edb148</td>
+                        <td>Sun Jul 28 09:54:44 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>setupTests reverted again</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c4e7a135</td>
+                        <td>Sun Jul 28 01:29:58 2024 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Adding back setupTest config file</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Herramientas de instanciación</title>
+  <meta property="og:title" content="Herramientas de instanciación" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/herramientas-de-instanciacion.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/herramientas-de-instanciacion.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Herramientas de instanciación</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Llamamos instanciación a la creación de un objeto a partir de una <a href="clases.html">clase</a>, la cual define cuál es el comportamiento y los atributos que debería tener dicha instancia.</p>
+
+<p>Los mecanismos para instanciar objetos a partir de una clase varían bastante entre los distintos lenguajes. En particular, en aquellos lenguajes en los cuales las clases no son a su vez objetos (como Wollok y Java por porner algunos ejemplos) se proveen herramientas para instanciar objetos que se escapan un poquito de la mecánica más común de trabajo que es la de enviarle un mensaje a un objeto.</p>
+
+<p>En general, desde el punto de vista del uso, lo que los lenguajes proveen es una forma de crear cada instancia indicando cuál es la clase que se está instanciando y, en caso de que sea necesario, con qué valores debe inicializarse la instancia en cuestión. De esa forma, el objeto ya estará listo para su uso desde el momento de la creación.</p>
+
+<p>A continuación se detallan algunas herramientas de construcción a modo de referencia.</p>
+
+<h2 id="inicialización-directa">Inicialización directa</h2>
+
+<p>Este es el mecanismo disponible en el lenguaje Wollok en su versión actual. Permite crear instancias de una clase parametrizando los valores iniciales para los atributos que correspondan usando <strong>parámetros nombrados</strong>. Supongamos que tenemos una clase Golondrina con un atributo energia, cuyo valor por defecto es 100:</p>
+
+<pre><code class="language-Wollok">class Golondrina {
+  var energia = 100
+  // ... todos los otros métodos para las golondrinas, 
+  // entre los cuales habrán muchos que trabajen con la energía asumiendo que está inicializada con algún valor numérico
+}
+</code></pre>
+
+<p>Podemos crear una instancia de la clase Golondrina manteniendo el default para la energía de esta forma: <code class="language-plaintext highlighter-rouge">new Golondrina()</code>. Si nos interesara crear una golondrina con 25 de energía, la inicialización directa permite parametrizar esta información de esta forma: <code class="language-plaintext highlighter-rouge">new Golondrina(energia = 25)</code>, y el default simplemente no se usará.</p>
+
+<p>En caso de haber varios atributos, pueden inicializarse tantos como querramos, por ejemplo: <code class="language-plaintext highlighter-rouge">new Direccion(calle = "Amenabar", numeracion = 140)</code>. No importa el orden en el cual se indiquen estos parámetros, solamente debe coincidir con el nombre del atributo que se está inicializando.</p>
+
+<p>Esta herramienta, combinada con buenos defaults en caso de que existan, permite construir objetos listos para usar de forma sencilla y con muy poca burocracia.</p>
+
+<h2 id="constructores">Constructores</h2>
+
+<blockquote>
+  <p><strong>Nota:</strong> Los ejemplos que se muestran a continuación son en el lenguaje Wollok en sus versiones previas a la 1.8, sólo a modo ilustrativo.</p>
+</blockquote>
+
+<p>Los <strong>constructores</strong> son métodos especiales cuya finalidad es la creación de objetos de la clase indicada con la inicialización de estado interno correspondiente. Para invocarlos se usa la palabra reservada <strong>new</strong> seguido por el nombre de la clase y los parámetros según corresponda. Este es el mecanismo que se puede encontrar en varios lenguajes industriales muy usados, como Java y C#, y también fue el mecanismo soportado por el lenguaje Wollok en sus primeras versiones (luego se deprecó intrudiciendo el mecanismo de <strong>inicialización directa</strong>).</p>
+
+<p>En general esta forma de definir lógica de inicialización permite definir más de un constructor con distinta cantidad de parámetros, de modo que se permita al usuario elegir la forma más adecuada para crear las instancias. Por ejemplo, las fechas podrían permitir instanciarse con un constructor sin parámetros retornando la fecha del día de hoy (porque es muy común querer obtener instancias con esa configuración particular, entonces se considera como la inicialización por defecto si no se indica nada), o con otro de 3 parámetros para que al instanciar la fecha se la inicialice con el día, el mes y el año deseados:</p>
+
+<pre><code class="language-Wollok">new Date() // retornaría la fecha de hoy
+new Date(22,10,2016) // retornaría la fecha para el día, mes y año especificados.
+</code></pre>
+
+<p>Esto permite que siempre que obtengamos un objeto, el mismo ya esté en condiciones de ser usado en vez de requerir que el usuario recuerde indicar los valores necesarios uno por uno mediante setters, teniendo mientras tanto un objeto con un estado inválido que no puede ser usado.</p>
+
+<p>Si no definimos ningún constructor, por defecto la clase viene con un constructor vacío implícito para poder crear los objetos haciendo, por ejemplo: <code class="language-plaintext highlighter-rouge">new Golondrina()</code></p>
+
+<p>Supongamos que queremos construir golondrinas con una cantidad de energía que nosotros elijamos como valor inicial, podríamos definir:</p>
+
+<pre><code class="language-Wollok">class Golondrina {
+  var energia
+  
+  constructor(_energia){
+    energia = _energia
+  }
+  // ... todos los otros métodos para las golondrinas, 
+  // entre los cuales habrán muchos que trabajen con la energía asumiendo que está inicializada con algún valor numérico
+}
+</code></pre>
+
+<p>Al definir ese constructor, el constructor vacío por defecto ya no estará disponible para instanciar objetos, de esa forma sólo podremos crear objetos con un estado interno válido en base al constructor particular que hayamos definido.</p>
+
+<p>Si el lenguaje que usás usa constructores para definir cómo se inicializan las instancias, asegurate de investigar no sólo cuestiones sintácticas, sino también qué recaudos hay que tener respecto a la <a href="herencia.html">herencia</a>.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on September 13, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>65</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>e285de81</td>
+                        <td>Fri Sep 13 11:09:16 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Cambio constructores por herramientas de instanciacion</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Transparencia referencial  efecto de lado y asignacion destructiva</title>
+  <meta property="og:title" content="Transparencia referencial  efecto de lado y asignacion destructiva" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Transparencia referencial  efecto de lado y asignacion destructiva</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="definiciones">Definiciones</h2>
+
+<p><strong>Operación:</strong> aplicar una función, evaluar un predicado, enviar un mensaje, etc.</p>
+
+<p><strong>Transparencia Referencial</strong></p>
+
+<p>Hay transparencia referencial si al reemplazar una operación por su resultado se logra el mismo efecto.</p>
+
+<p>Una definición alternativa dice: Hay transparencia referencial cuando al realizar una operación con los mismos valores siempre da el mismo resultado. Si bien esta parece más fácil de entender, no es tan precisa como la primera; puede ser útil para dar los primeros pasos, pero para el final hay que terminar de entender la otra.</p>
+
+<p>También se puede pensar en las propiedades necesarias para tener Transparencia Referencial.</p>
+
+<p>Decimos que una operación tiene transparencia referencial si es:</p>
+<ul>
+  <li>Independiente: No dependen del estado de nada que este fuera de sí misma</li>
+  <li>Sin estado/Stateless: No tiene un estado que se mantenga de llamada en llamada</li>
+  <li>Determinística: Siempre devuelven el mismo valor dados los mismos argumentos</li>
+  <li>No produce efecto colateral</li>
+</ul>
+
+<p><strong>Efecto de Lado/Colateral (Side Effect)</strong></p>
+
+<p>Hay efecto cuando un cambio de estado sobrevive a la realización de una operación. Por ejemplo, una operación puede modificar una variable global, modificar uno de sus argumentos, escribir datos a la pantalla o a un archivo, o hacer uso de otras operaciones que tienen efecto de lado.</p>
+
+<p>Otra definición válida es: Si le sacás una foto al sistema (llamémosla F1), después realizas la operación de tu interés, y le volvés a sacar una foto al sistema (F2). Si F1 y F2 son distintas =&gt; la operación que hiciste tiene efecto de lado.</p>
+
+<p><strong>Asignación Destructiva</strong></p>
+
+<p>Asignar destructivamente es reemplazar el valor de una variable por otro valor.</p>
+
+<p>La <a href="unificacion-y-pattern-matching.html">unificación</a> no se considera asignación (al momento de ligar no había ningún valor anterior, ¿sería más bien una inicialización?). Unificar es encontrar una sustitución capaz de igualar 2 términos. Cuando se efectiviza está sustitución hablamos de ligado de variables (tal valor se ligó a tal variable).</p>
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+<p>Cuando hablamos de que “algo” tiene transparencia referencial, efecto colateral o asignación destructiva, ese “algo” es la realización de una operación, de un lenguaje en particular o de un paradigma.</p>
+
+<p>Estos tres conceptos suelen ir de la mano y si bien pueden darse relaciones entre ellas es saludable poder detectar la aparición de cada uno de ellos individualmente. Una relación que surge de la definición de transparencia referencial es que para ésta se dé, no puede haber efecto colateral, ya que si el estado del sistema se modifica, o se escribe en un archivo por ejemplo, no es lo mismo ejecutar esa operación que reemplazar por el resultado.</p>
+
+<p>A continuación mostramos algunos ejemplos en el <a href="paradigma-de-objetos.html">paradigma orientado a objetos</a>, ya que permite la aparición de todas estas características, para dejar más en claro de qué manera podemos identificarlas.</p>
+
+<h3 id="ejemplo-1-consulta-no-determinística">Ejemplo 1: consulta no determinística</h3>
+
+<p>El siguiente código crea una fecha, configurada para representar el día de hoy: <code class="language-plaintext highlighter-rouge">new Date()</code></p>
+
+<ul>
+  <li>Transparencia Referencial: NO (Con cualquiera de las 2 definiciones de transparencia referencial)</li>
+  <li>Efecto: NO</li>
+  <li>Asignación Destructiva: NO</li>
+</ul>
+
+<p>Evaluarlo con los mismos parámetros (o sea ninguno) en días distintos va a dar resultados distintos. Reemplazar la operación por el resultado una vez que cambia el día se rompe todo. Asignación destructiva y efecto no hay, o al menos no es relevante (se está creando un nuevo objeto en el sistema, pero en general no lo vamos a considerar para nuestro análisis, y tampoco tiene que ver con el hecho de que un día responda una cosa y otro día otra).</p>
+
+<p>Ejemplos como este hacen que transparencia referencial y efecto colateral no sean conceptos opuestos, ya que en este caso se debe a que la operación depende de algo externo (la fecha de la computadora).</p>
+
+<h3 id="ejemplo-2-método-con-efecto">Ejemplo 2: método con efecto</h3>
+
+<p>Dada la siguiente implementación del objeto pepita:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>object pepita {
+  var energia = 100
+  method vola(metros) {
+   energia = energia - (metros + 4)
+  }
+}
+</code></pre></div></div>
+
+<p>Analicemos el mensaje: <code class="language-plaintext highlighter-rouge">pepita.vola(20)</code></p>
+
+<ul>
+  <li>Efecto colateral: SI, porque la energía de pepita antes era 100 y luego es 76.</li>
+  <li>Transparencia Referencial: NO, se está produciendo un efecto al disminuirse la energía de pepita. En este caso el método no retorna un valor, con lo cual no tendría sentido intentar reemplazar ese envío de mensajes por su resultado.</li>
+  <li>Asignación destructiva: SI, al hacer energia = … estamos cambiando a qué objeto referencia por esa variable.</li>
+</ul>
+
+<h3 id="ejemplo-3-método-de-consulta-determinística">Ejemplo 3: método de consulta determinística</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>object factorial {
+  method para(numero){
+    var resultado = 1
+    if(numero &gt; 0) 
+      resultado = self.para(numero - 1) * numero
+    return resultado
+  }
+}
+</code></pre></div></div>
+
+<p>Analicemos el mensaje: <code class="language-plaintext highlighter-rouge">factorial.para(20)</code></p>
+
+<ul>
+  <li>Transparencia Referencial: SI, el resultado sólo depende de sus argumentos, no importa en qué contexto, siempre dará el mismo resultado para el número 20.</li>
+  <li>Asignaciones Destructivas: SI, podemos ver que la variable local resultado primero toma el valor 1, pero luego para números mayores a 0 se modifica por el valor que corresponda.</li>
+  <li>Efecto colateral: NO, a pesar de que hay una asignación dentro del método, al ser sólo una variable local no se produce ningún efecto que perdure a la ejecución de ese mensaje. Esa asignación podría analizarse como efecto colateral dentro del método. Probablemente en un método tan pequeño como este no tenga importancia ese tipo de análisis, pero en el caso de algoritmos más complejos podría cobrar valor (y asumiendo que no sea posible partir un algoritmo complejo en operaciones más pequeñas que simplifiquen justamente el análisis, pero eso ya es otra cuestión).</li>
+</ul>
+
+<h2 id="por-qué-nos-interesa-pensar-en-estos-conceptos">¿Por qué nos interesa pensar en estos conceptos?</h2>
+
+<p>Estos son algunos ejemplos concretos sobre cómo la existencia o no de efecto, asignación destructiva y transparencia referencial afectan a la hora de programar.</p>
+
+<p><strong>Separar la lógica que hace cosas de la que consulta:</strong> Muy seguido vemos métodos (o procedimientos, dependiendo del paradigma) que tienen efecto y a su vez retornan algún valor relacionado con el mismo, estas prácticas pueden llevar a confusiones que producen un funcionamiento erróneo del sistema, sobre todo cuando el nombre del método elegido no denota que existe un efecto asociado a su ejecución. Es una buena práctica tener separada la lógica que realiza modificaciones sobre el sistema de los que sólo pretenden obtener el resultado de una consulta, que nuestros métodos tengan un único objetivo, lo cual simplifica su uso y la elección de un nombre suficientemente representativo.</p>
+
+<p><strong>Respetar los contratos blandos:</strong> Un contrato blando es algo que cierta pieza de código requiere que cumpla el usuario para que la misma funcione de la forma esperada, pero esos requisitos no son validados de ninguna forma. Un ejemplo típico de esto está relacionado con los <a href="mensajes-de-colecciones.html">mensajes de colecciones</a> que esperan recibir un bloque de código que sea sólo de consulta, o sea que no produzca ningún efecto.</p>
+
+<p><strong>Optimizaciones:</strong> Tener asegurada la transparencia referencial permite hacer optimizaciones como las que tiene el motor de Haskell que afectan globalmente a los programas construidos con el mismo. La <a href="estrategias-de-evaluacion.html">evaluación perezosa o lazy</a> es posible gracias a esta característica. También lo podemos ver en Prolog que para buscar soluciones utiliza el mecanismo de <a href="backtracking.html">Backtracking</a> de modo que se puedan encontrar múltiples respuestas a una consulta, así como descartar los caminos por los cuales no sea posible hayar alguna, de una forma eficiente.</p>
+
+<p>Otro ejemplo viene de la mano del procesamiento en paralelo. Si tenemos un conjunto con millones de elementos y queremos filtrarlo por un criterio, ¿no puedo dividir ese conjunto en varios más pequeños, filtrarlos por separado en distintos procesadores y juntar sus resultados? Si yo aseguro que evaluar el criterio de filtrado sobre cada elemento no va a provocar ningún efecto que pueda alterar mi resultado final, esta optimización podría permitir aprovechar mucho mejor el hardware disponible. Si te interesa el tema acá hay algo para leer al respecto: <a href="http://infoscience.epfl.ch/record/150220/files/pc.pdf">Scala - Parallel Collection Framework</a></p>
+
+<p><strong><a href="testing.html">Testing</a>:</strong> El testeo unitario se basa en la premisa de que cada test sea independiente del otro y eso se logra controlando que el estado del sistema antes y después de correr cada test sea el mismo, por ese motivo es importante mantener el efecto controlado y poder revertir aquellos cambios que sobrevivan a la ejecución de cada test particular. También la transparencia referencial es importante para el testeo unitario ya que testear el resultado de una operación que depende de algo no determinístico no es viable y hace falta usar estrategias de testeo más avanzadas (<a href="http://es.wikipedia.org/wiki/Objeto_simulado">Mock Objects</a>) para evitar este tipo de dependencia.</p>
+
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+
+<p>Leí una definición de Transparencia Referencial: “Hay transparencia referencial si al reemplazar una operación por su resultado se logra el mismo efecto”</p>
+
+<p>Con este criterio, aquí sí habría transparencia referencial:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a=1;
+int c;
+c=a++;
+</code></pre></div></div>
+
+<p>Ya que es lo mismo que hacer esto:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a=1;
+int c;
+c=1;
+</code></pre></div></div>
+
+<p>Ya que el efecto en la variable c es el mismo: va a valer 1.</p>
+
+<p>Pero para mí no es así, ya que no va a haber transparencia referencial, porque si bien se logra el mismo efecto con respecto a c, el sistema cambia (la variable a se incrementa en una unidad).</p>
+
+<p>¿Es correcto afirmar entonces que si no hay Efecto de Lado entonces tengo garantizada la Transparencia referencial y viceversa?</p>
+
+<blockquote>
+  <p>En el ejemplo dado no hay transparencia referencial, es correcta la interpretación. La expresión a++ tiene el efecto colateral de modificar el valor de a, por lo tanto no puede tener transparencia referencial. Sin embargo, no es correcto que si no hay efecto entonces está garantizada la transparencia referencial (como se pone en evidencia en el ejemplo de la consulta no determinística).</p>
+</blockquote>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on March 29, 2018 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>34</td>
+                                <td>84</td>
+                                <td>110</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Alfredo.sanzo</td>
+                                <td>Alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Gleiva</td>
+                                <td>Gleiva@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Guille</td>
+                                <td>Guille@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>9</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>18</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>a41cc2a1</td>
+                        <td>Thu Mar 29 12:42:44 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2b112a9b</td>
+                        <td>Thu Mar 29 12:41:46 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>98d3fea0</td>
+                        <td>Thu Feb 2 19:14:02 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4c32faca</td>
+                        <td>Thu Feb 2 19:14:02 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

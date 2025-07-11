@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Tutorial de squeak y pharo</title>
+  <meta property="og:title" content="Tutorial de squeak y pharo" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/tutorial-de-squeak-y-pharo.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/tutorial-de-squeak-y-pharo.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Tutorial de squeak y pharo</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Empezar a usar el Squeak puede ser un poco complicado porque no es muy intuitivo, les dejamos una explicación para poder arrancar con menos miedo. Pharo no es muy diferente, así que sólo aclaramos cuando difiere para no armar todo de nuevo :D</p>
+
+<h2 id="crear-una-clase">Crear una Clase</h2>
+
+<p>1) Abrir el Class Browser (System Browser): Hagan click sobre el fondo del squeak para que se les abrá el menú World -&gt; open… y eligen Class Browser (en Pharo se llama System Browser)</p>
+
+<p>2) En la primer columna del Class Browser tienen las categorías, allí deberían crear una nueva para agrupar las clases que vayan haciendo. Para eso hacen click derecho sobre esa columna y eligen add item… (en Pharo es Add Category) Les va a pedir que ingresen el nombre para la categoría, por ejemplo, TPObjetos-grupoBle (no sé si había algún formato requerido, pero pongan algo que los identifique).</p>
+
+<p>Al darle OK les va a aparecer el template para crear clases dentro de esa categoría:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   Object subclass: #NameOfSubclass</code>
+<code class="language-plaintext highlighter-rouge">       instanceVariableNames: ''</code>
+<code class="language-plaintext highlighter-rouge">       classVariableNames: ''</code>
+<code class="language-plaintext highlighter-rouge">       poolDictionaries: ''</code>
+<code class="language-plaintext highlighter-rouge">       category: 'TPObjetos-grupoBle'</code></p>
+
+<p>3) Crear clases: Siempre que quieran crear una clase nueva hacen click sobre el nombre de la categoría para que les aparezca el template anterior. Lo que tienen que hacer es cambiar NameOfSubclass por el nombre real, por ejemplo, Pelicula; después para agregarle variables de instancias tienen que escribir los nombres entre las comillas simples de instanceVariableNames separadas por espacios. Si tuvieran variables de clase irían en el renglón de abajo. Recuerden que las de instancia empiezan con minúscula y las de clase con mayúscula por convención. Finalmente, si quisieran que herede de otra clase que no sea Object, cambian Object por el nombre de la superclase.</p>
+
+<p>Para dar los ejemplos vamos a usar la parte más básica de un parcial/tp “Salas de Cine”:</p>
+
+<p><em>Se desea hacer un sistema para una cadena de cines, en la cual guardar la información de las salas que administra la cadena y las películas que se dan en cada horario en cada una de esas salas. Para simplificar asumimos que todas las películas comienzan en punto y que duran una cantidad entera de horas. Además de su duración, de cada película se sabe su género.</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">   Object subclass: #Pelicula</code>
+<code class="language-plaintext highlighter-rouge">       instanceVariableNames: 'duracion genero titulo'</code>
+<code class="language-plaintext highlighter-rouge">       classVariableNames: ''</code>
+<code class="language-plaintext highlighter-rouge">       poolDictionaries: ''</code>
+<code class="language-plaintext highlighter-rouge">       category: 'TPObjetos-grupoBle'</code></p>
+
+<p>Una vez que completaron el template hacen click derecho -&gt; Accept o simplemente Ctrl+S.</p>
+
+<p>Si quieren editar la definición de la clase, por ejemplo para agregar/quitar variables o cosas así, clickeando sobre el nombre de la clase debería mostrarles el código que guardaron y vuelven al paso 3.</p>
+
+<p>Para crear una subclase pueden cambiar el template para que use la superclase en vez de Object. Más detalles, acá: <a href="como-crear-una-subclase-en-squeak.html">Cómo crear una subclase en Squeak</a></p>
+
+<h2 id="métodos">Métodos</h2>
+
+<h3 id="creando-un-método">Creando un Método</h3>
+
+<p>4) Agregar métodos: Haciendo click sobre la 3er columna (donde tienen –all– y no messages) les aparece un ejemplo de cómo quedaría un método:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   message selector and argument names</code>
+<code class="language-plaintext highlighter-rouge">       "comment stating purpose of message"</code>
+<code class="language-plaintext highlighter-rouge">       | temporary variable names |</code>
+<code class="language-plaintext highlighter-rouge">       statements</code></p>
+
+<p>Eso lo borran y escriben el método que tengan ganas. Por ejemplo:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   verificarLongitud</code>
+<code class="language-plaintext highlighter-rouge">       "Esto de abajo es fruta, pero para que se imaginen cómo podría escribirse un método"</code>
+<code class="language-plaintext highlighter-rouge">       ^ self genero nombre size &gt; 10 ifTrue: [30] ifFalse: [20]</code></p>
+
+<p>Acá se están usando 2 mensajes aún indefinidos: genero y nombre, que son los getters de las variables de instancia. Los accessors se pueden crear directamente haciendo click derecho en el nombre de la clase y… En Squeak: -&gt; more… -&gt; create inst var accessors En Pharo: -&gt; Refactor Class -&gt; Accessors (para crear todos los que falten)</p>
+
+<p><code class="language-plaintext highlighter-rouge">         -&gt; Refactor instance variable -&gt; Accessors (para elegir una variable para cual crear los accessors)</code></p>
+
+<p>Como todavía no había hecho eso al hacer Ctrl+S al método verificarLongitud para aceptar y que se agregue efectivamente debería aparecer un cartelito diciendo que no conoce esos selectores porque no hay ninguna clase que defina genero y nombre, entonces les tira un par de opciones por si se confundieron, siendo la primera lo que tipearon, las siguientes algunas alternativas existentes y al final Cancel para seguir editando el método sin aceptar los cambios.</p>
+
+<p>Mucho más que eso no hay para lo que es definir las clases. Lo que quedaría es armar el programita -&gt; workspace (no main =P). Lo que tiene de copado es que tienen un ambiente vivo y pueden mandarles mensajes a los objetos como se les de la gana, no es necesario tener todo el programa armado y darle run, lo pueden ir armando a la par que le agregan los métodos a las clases. Así que…</p>
+
+<h3 id="modificando-un-método">Modificando un Método</h3>
+
+<p>Para modificar un método, si se equivocaron, pueden hacerlo seleccionando el método, haciendo los cambios y apretando aceptar. Pero ¡Ojo! ‘’’ No se puede modificar así nomás el nombre de un método. ‘’’ Si se quiere cambiar su <strong>selector</strong> (cualquier cosa del nombre ó los parámetros) deberán hacerlo así:</p>
+
+<ul>
+  <li>Clck en la lista de métodos sobre el que quieren modificar</li>
+  <li>Botón derecho en el método -&gt; <strong>refactor method</strong></li>
+</ul>
+
+<p>Y ahí les ofrece varias cosas, eligen lo que quieren hacer.</p>
+
+<h2 id="escribir-un-workspace">Escribir Un Workspace</h2>
+
+<p>5) El Workspace: Volvemos al fondo del Squeak, hacen click para que aparezca World -&gt; open… -&gt; workspace</p>
+
+<p>Ahí les aparece un cuadro de texto en blanco para que tiren código. Lo primero que podemos hacer es instanciar una Pelicula y settearle un par de atributos. Así que escribimos lo siguiente en el workspace:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   saw := Pelicula new.</code>
+<code class="language-plaintext highlighter-rouge">   saw titulo: 'El Juego del Miedo'.</code>
+<code class="language-plaintext highlighter-rouge">   saw duracion: 2.</code></p>
+
+<p>Si seleccionan esas tres líneas (para seleccionar todo tienen Ctrl+espacio) y hacen Ctrl+d (do it) se evalua ese código. Para ver si anduvo todo bien pueden escribir lo siguiente en el workspace:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   saw titulo.</code></p>
+
+<p>Si se paran al final de ese renglón (para evaluar una sola línea no es necesario seleccionar, si seleccionan todo se va a evaluar todo desde el principio nuevamente y eso no tiene gracia, jeje) y le dan Ctrl+p (print it) les va a aparecer al final de la línea y seleccionado para su conveniente borrado el string ‘El Juego del Miedo’</p>
+
+<p>Otra forma de ver qué onda con nuestros objetitos es pararse sobre la variable con la que lo referenciamos, en este caso saw, y hacer ctrl+i (inspect it). Eso les abre una ventanita donde pueden ver a qué está referenciando cada una de las variables. En este caso tendrían lo siguiente:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   </code><strong><code class="language-plaintext highlighter-rouge">self</code> <code class="language-plaintext highlighter-rouge">-&gt;</code> <code class="language-plaintext highlighter-rouge">a</code> <code class="language-plaintext highlighter-rouge">Pelicula</code></strong>
+<code class="language-plaintext highlighter-rouge">   </code><strong><code class="language-plaintext highlighter-rouge">all</code> <code class="language-plaintext highlighter-rouge">inst</code> <code class="language-plaintext highlighter-rouge">vars:</code></strong>
+<code class="language-plaintext highlighter-rouge">   </code><strong><code class="language-plaintext highlighter-rouge">duracion:</code> <code class="language-plaintext highlighter-rouge">2</code></strong>
+<code class="language-plaintext highlighter-rouge">   </code><strong><code class="language-plaintext highlighter-rouge">titulo:</code> <code class="language-plaintext highlighter-rouge">'El</code> <code class="language-plaintext highlighter-rouge">Juego</code> <code class="language-plaintext highlighter-rouge">del</code> <code class="language-plaintext highlighter-rouge">Miedo</code></strong><code class="language-plaintext highlighter-rouge">'</code>
+<code class="language-plaintext highlighter-rouge">   </code><strong><code class="language-plaintext highlighter-rouge">genero:</code> <code class="language-plaintext highlighter-rouge">nil</code></strong></p>
+
+<p>Claro, el genero está en nil porque no le setteamos nada, de hecho ni siquiera creamos la clase Genero. Hagamos eso así probamos verificarLongitud…</p>
+
+<p>Creamos la clase Genero dentro de la categoría TPObjetos-GrupoBle con las v.i. que quieran, incluyendo nombre. Después create inst var accessors y listo.</p>
+
+<p>Volvemos al workspace… agregamos el siguiente código:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   terror:=Genero new.</code>
+<code class="language-plaintext highlighter-rouge">   terror nombre: 'Terror'.</code>
+<code class="language-plaintext highlighter-rouge">   saw genero: terror.</code>
+<code class="language-plaintext highlighter-rouge">   </code>
+<code class="language-plaintext highlighter-rouge">   saw verificarLongitud.</code></p>
+
+<p>Seleccionamos ese código y le damos ctrl+p y al final de ese código seleccionado aparece el número 20 que es lo que esperábamos.</p>
+
+<h2 id="métodos-de-clase">Métodos de Clase</h2>
+
+<p>5) Métodos de clase: supongamos que el género lo quieren instanciar directamente como:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   terror := Genero conNombre: 'Terror' yDuracionMaxima: 1.5.</code></p>
+
+<p>Ahí habría que escribir el método de clase conNombre: yDuracionMaxima: Para eso vamos a la clase Genero en el Class Browser y hacemos click en el botoncito que dice class (hasta ahora veníamos trabajando del lado de las instancias). De manera análoga, hacemos click en la tercer columna para que nos aparezca el ejemplo de método y escribimos lo siguiente:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   conNombre: unNombre yDuracionMaxima: unaDuracion</code>
+<code class="language-plaintext highlighter-rouge">   ^ self new</code>
+<code class="language-plaintext highlighter-rouge">           nombre: unNombre;</code>
+<code class="language-plaintext highlighter-rouge">           duracionMaxima: unaDuracion.</code></p>
+
+<p>Ahí lo único loco que hice fue usar un truquito que no contamos en clase me parece que es el de enviar mensajes en cascada. La forma de evaluación de ese código sería: primero self new por ser unario, eso me da una instancia de Genero, a esa instancia se le envía el mensaje nombre: con el parámetro que nos llegó de afuera unNombre. El punto y coma indica que la siguiente sentencia es un mensaje que se le envía al mismo objeto de antes, o sea al genero que instanciamos recién. Le mandamos duracionMaxima: y le setteamos la duración correspondiente.</p>
+
+<p>Finalmente retorna al objeto ya inicializado (el ^ es lo que tiene menor precedencia) y lo que va a retornar es lo que haya retornado el último envío de mensajes. Como duracionMaxima: es un setter por defecto que no tiene ningún ^ estamos seguros de que lo que va a retornar (porque TODOS los mensajes retornan un objeto) es al objeto receptor.</p>
+
+<p>A modo informativo, si duracionMaxima: retornara algo diferente de self habría que hacer lo siguiente:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   conNombre: unNombre yDuracionMaxima: unaDuracion</code>
+<code class="language-plaintext highlighter-rouge">       ^ self new</code>
+<code class="language-plaintext highlighter-rouge">               nombre: unNombre;</code>
+<code class="language-plaintext highlighter-rouge">               duracionMaxima: unaDuracion;</code>
+<code class="language-plaintext highlighter-rouge">               yourself.</code></p>
+
+<p>Para que nos retorne al objetito receptor.</p>
+
+<p>La otra alternativa que a mí me resulta medio incómoda pero es la más fácil es definirle un mensaje de instancia al género que sea nombre: yDuracionMaxima: que le settee internamete las dos variables al objeto. Con lo cual quedaría lo siguiente:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   conNombre: unNombre yDuracionMaxima: unaDuracion</code>
+<code class="language-plaintext highlighter-rouge">   ^ self new nombre: unNombre yDuracionMaxima: unaDuracion.</code></p>
+
+<p>Y del lado de las instancias (hacemos click en instance) agregamos el método nombre: yDuracionMaxima: que haga lo siguiente:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   self nombre: unNombre.</code>
+<code class="language-plaintext highlighter-rouge">   self duracionMaxima: unaDuracion</code></p>
+
+<p>Y no retornamos nada porque queremos que nos retorne self.</p>
+
+<p>Ahora podemos refactorizar nuestro workspace y nos quedaría algo así:</p>
+
+<p><code class="language-plaintext highlighter-rouge">   saw := Pelicula new.</code>
+<code class="language-plaintext highlighter-rouge">   saw titulo: 'El Juego del Miedo'.</code>
+<code class="language-plaintext highlighter-rouge">   saw duracion: 2.</code>
+<code class="language-plaintext highlighter-rouge">   </code>
+<code class="language-plaintext highlighter-rouge">   terror:=Genero conNombre: 'Terror' yDuracionMaxima: 1.5.</code>
+<code class="language-plaintext highlighter-rouge">   saw genero: terror.</code>
+<code class="language-plaintext highlighter-rouge">   </code>
+<code class="language-plaintext highlighter-rouge">   saw verificarLongitud.</code></p>
+
+<p>Hacemos Ctrl+space + Ctrl+p y mágicamente sigue dando 20 =D O sea que hicimos las cosas bien y no rompimos nada.</p>
+
+<h2 id="guardando-nuestro-trabajo">Guardando nuestro trabajo</h2>
+
+<h3 id="grabar-la-imagen">Grabar la Imagen</h3>
+
+<p>6) Guardar los cambios: Hagan click en el fondo para abrir World -&gt; save</p>
+
+<h3 id="grabar-en-un-archivo-st">Grabar en un archivo .st</h3>
+
+<p>7) FileOut: Para hacer la entrega tienen que hacer un fileOut de la categoría. Para eso sólo le dan click derecho al nombre de la categoría -&gt; fileOut. Cuando yo lo hice no me preguntó en dónde guardar ni con qué nombre, simplemente se guardó en mi directorio de instalación del Squeak con el nombre de la categoría y extensión .st</p>
+
+<p>No se preocupen si ven muchos !!!! en el archivo, es lo que tienen que pasar. Después de todo no fue hecho para ser leído por mortales, nada más para ser importado en otro Squeak o para los paspados que prefieren la entrega en papel, jajajaj (mentira, es útil tenerlo en papel, y con un poquito de cancha es hasta fácil de seguir)</p>
+
+<h3 id="grabar-el-workspace">Grabar el Workspace</h3>
+
+<p>8) Guardar el Workspace: obviamente el fileOut sólo les guarda el código de las clases que estén en la categoría, el ws hay que guardarlo aparte. Pueden hacer simplemente copy/paste y pegarlo a un txt normal o pueden usar la opción de guardado que trae el Squeak. Para eso: click derecho sobre el workspace -&gt; more… -&gt; save contents to file</p>
+
+<p>Le ponen el nombre que quieran y la extensión la pueden dejar como txt o cambiarla a st, que es como se guarda en la otra versión de Smalltalk. Se los va a guardar en la misma carpeta por default en la que se hizo el fileOut.</p>
+
+<h3 id="importar-un-archivo-st">Importar un archivo .st</h3>
+
+<ul>
+  <li>Arrastrar el archivo .st y soltarlo sobre la imagen de Pharo. Le dan <strong>FileIn Entire File</strong> y ¡Listo!</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Otra forma:</li>
+</ul>
+
+<p>1) Botón derecho sobre el fondo. En el menú <strong>World</strong> van a <strong>Tools -&gt; File Browser</strong>.</p>
+
+<p>2) En el File Browser van a ver tres paneles:el de la izquierda muestra el arbol de directorios y carpetas de su sistema.</p>
+
+<p>3) Seleccionar la carpeta donde esta instalado Pharo, que es donde va a estar el archivo .st que quieren importar. En el panel de la derecha, van a ver la lista de los archivos incluidos en esa carpeta.</p>
+
+<p>4) Seleccionen el archivo .st. En el panel inferior van a ver el codigo que escribieron, y arriba de los paneles superiores van a aparecer varios botones, elijan <strong>Install</strong></p>
+
+<h2 id="shortcuts--atajos-del-teclado--fatalities">Shortcuts / Atajos del Teclado / Fatalities</h2>
+
+<ul>
+  <li><strong>Ctrl+b</strong> seleccionando una clase* para que se abra un Class Browser sobre esa clase.</li>
+  <li><strong>Ctrl+n</strong> seleccionando un selector* para ver sus Senders (se abre una lista de métodos desde donde se envía ese mensaje, también vale para cuando se usa un symbol igual al mensaje, onda #size).</li>
+  <li><strong>Ctrl+m</strong> seleccionando un selector* para ver sus Implementors (se abre una lista de métodos para ese mensaje)</li>
+  <li><strong>Ctrl+shift+n</strong> sobre una clase* para ver en dónde se usa (References)</li>
+  <li><strong>Ctrl+i</strong> sobre un objeto nos permite inspeccionarlo por adentro</li>
+  <li><strong>Alt+punto</strong> para mandar una interrupción (útil para cuando uno se la manda y queda ejecutando algo recursivamente, se interrumpe la ejecución y se puede debuggear el stacktrace desde donde interrumpimos)</li>
+</ul>
+
+<p>* En cualquiera de estos casos, “seleccionar” se puede entender como seleccionar un selector / nombre de clase dentro de un cacho de código (workspace, definición de un método en el class browser, el debugger, etc), o bien seleccionarlo en un listado de cualquier browser (el Class Browser, la lista de variables de instancia y temporales que aparece en un debugger, una lista de senders que hayas abierto, etc).</p>
+
+<p>Por cierto, todas las cosas que se listan con Ctrl también funcionan con Alt en Windows (a veces sólo funcionan con Alt).</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2022 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>25</td>
+                                <td>22</td>
+                                <td>3</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Alfredo.sanzo</td>
+                                <td>Alfredo...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Callende</td>
+                                <td>Callend...</td>
+                                <td>11</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Matosm</td>
+                                <td>Matosm@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>89ffd4c2</td>
+                        <td>Wed Feb 2 22:33:08 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Fixing external links</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0d468c45</td>
+                        <td>Sun Feb 19 20:39:00 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Fix broken urls</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5ccc3d86</td>
+                        <td>Thu Feb 2 19:14:05 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>dc2e92d2</td>
+                        <td>Thu Feb 2 19:14:05 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Crear una Clase */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

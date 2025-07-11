@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Dsl</title>
+  <meta property="og:title" content="Dsl" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/dsl.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/dsl.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Dsl</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>DSL viene de las siglas en inglés <strong>Domain-Specific Language</strong>.</p>
+
+<p>Un DSL es un lenguaje ideado para expresar cierta parte de un sistema. Por eso se dice que es un lenguaje de propósito específico, a diferencia de los lenguajes de propósito general (GPL).</p>
+
+<p>Los lenguajes con los que estamos acostumbrados a trabajar, como Java, Haskell o Groovy tienen la característica de que pueden ser utilizados para resolver problemas de programación de cualquier índole, por lo que decimos que son lenguajes de propósito general (GPL por sus siglas en inglés).</p>
+
+<p>Estos lenguajes son Turing-complete, siendo capaces de expresar cualquier algoritmo, y pudiendo ser aplicados a cualquier dominio. Con estos lenguajes, con mayor o menor facilidad o eficiencia, podemos construir sistemas de cálculo impositivo, implementar algoritmos de aprendizaje de máquina, etc. Es decir, son lenguajes que pretenden ser igualmente efectivos (igualmente buenos o malos) en todos los campos de accion.</p>
+
+<p>Sin embargo, el empleo GPLs para expresar problemas muy específicos, si bien es posible, puede significar mayor esfuerzo de lo que uno desearía, dado que las abstracciones que estos dominios plantean no están soportadas nativamente por el lenguaje; no son primitivas. Por ejemplo, escribir una transposición de matrices, aún contando con API bien diseñada, es ciertamente más complejo en Java que en Mathematica u Octave, y lenguajes como SQL están específicamente diseñados para realizar operaciones sobre una base datos.</p>
+
+<p>Estos lenguajes son específicos de un dominio particular (DSL, domain-specific languages), y si bien no pueden resolver todos los problemas, resuelven aquellos para los que fueron diseñados mejor que los GPL.</p>
+
+<p>Qué quiere decir esto ?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>propósito general</th>
+      <th>propósito específico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Abarca construir</td>
+      <td>la totalidad de la aplicación</td>
+      <td>una parte de la aplicación</td>
+    </tr>
+    <tr>
+      <td>Tipo de Aplicacíón</td>
+      <td>cualquiera</td>
+      <td>un solo tipo</td>
+    </tr>
+    <tr>
+      <td>Conceptos</td>
+      <td>generales:</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                  -   función (en funcional),                        
+                  -   clase, objeto, método (en OOP),                
+                  -   variable, predicado (en lógico)...             | del (único) dominio                                                                                                                                                                                    | | Ejemplos           | C, Java, Smalltalk, Self, ADA, Haskell, Prolog... | [xpath](http://es.wikipedia.org/wiki/XPath), SQL, [pic](http://macroexpand.org/doku.php?id=articles:uml-sequence-diagram-dsl-txl:start), [sed](http://es.wikipedia.org/wiki/Sed_(inform%C3%A1tica))... |
+</code></pre></div></div>
+
+<h2 id="problema-que-ataca-un-dsl">Problema que ataca un DSL</h2>
+
+<p>En general cuando nos enfrentamos a un problema de programación aparecen varias actividades que trataremos de simplificar ampliamente acá:</p>
+
+<ol>
+  <li>Entendimiento del problema/dominio</li>
+  <li>Formación conceptual de una solución</li>
+  <li>Implementación en un lenguaje de programación</li>
+  <li>Compilación, ejecución y pruebas.</li>
+</ol>
+
+<p>Normalmente trabajamos con un único paradigma de programación y unos pocos lenguajes. Estos lenguajes permiten expresar sobre ellos cualquier tipo de dominio, es decir que se utilizan para desarrollar cualquier tipo de aplicación. Por esto es que se llaman <strong>lenguajes de propósito general (GPL del inglés)</strong>.</p>
+
+<p>En el proceso de <strong>entendimiento del dominio</strong> podríamos trabajar completamente abstractos del lenguaje de programación, simplemente tratando de relevar información y requerimientos. No vamos a entrar en detalles acá acerca de esta etapa, pero lo que nos interesa es que <strong>se podría hacer una análisis del problema independiente del lenguaje de programación y hasta del paradigma</strong>.</p>
+
+<p>Durante la formación conceptual de una solución ya debemos pensar el dominio dentro de uno o varios paradigmas (en caso en que osemos desarrollar la solución con múltiples paradigmas), de acuerdo a nuestra experiencia, o lo que veamos que mejor se adapte a la problemática.</p>
+
+<p>Por ejemplo, hay problemas que son inherentemente más fáciles de implementar en el paradigma lógico que en objetos, o funcional, etc. Sin embargo, todavía podríamos pensar en una solución independiente del lenguaje.</p>
+
+<p>Por ejemplo, en objetos es donde identificamos:</p>
+
+<ul>
+  <li>objetos y clases.</li>
+  <li>responsabilidades (mensajes).</li>
+  <li>interacciones y colaboraciones.</li>
+  <li>jerarquías / traits (lógica común y reutilización.</li>
+  <li>etc.</li>
+</ul>
+
+<p>Luego tenemos que realmente implementar esta solución abstracta en los <strong>pasos 3 y 4</strong>, y para eso utilizamos un GPL.</p>
+
+<p>Y acá va el problema:</p>
+
+<ul>
+  <li>El mapeo de la solución conceptual con el lenguaje no es directo, no suele ser trivial.</li>
+  <li>A veces no tenemos soporte del lenguaje para ciertas abstracciones de nuestro dominio: Los ejemplos más simples son los patrones como singleton, delegación automática, etc.</li>
+  <li>Estamos forzados a adaptar el dominio y nuestra solución al lenguaje.</li>
+</ul>
+
+<p>Y eso es lo que hacemos siempre, adaptamos al lenguaje que tenemos “a mano”. Eso nos lleva a que nuestra solución va a estar siempre de aquí en adelante expresada en un lenguaje que no es el más cercano al problema/dominio, sino más bien a un lenguaje de programación general.</p>
+
+<p>Algunas consecuencias:</p>
+
+<p><strong>Legibilidad</strong>:</p>
+
+<ul>
+  <li>Nuestro código contendrá una mezcla entre conceptos de dominio (una Cuenta, un Cliente, etc) y palabras propias del lenguajes (keywords, como public class, trait, etc).</li>
+  <li>Quien se incorpore al proyecto o quiera revisar la solución deberá, naturalmente, hacer el proceso inverso, como una <strong>ingeniería reversa</strong>, a partir del código y de lo expresado en el GPL abstraerse para generar una representación mental del problema/dominio.</li>
+</ul>
+
+<p><strong>Flexibilidad</strong> (cambios de requerimientos o dominio):</p>
+
+<ul>
+  <li>Naturalmente solo podrán ser implementados por desarrolladores que entiendan no solo el dominio, sino además el GPL.</li>
+  <li>Cada nuevo cambio deberá ser traducido nuevamente <strong>de dominio hacia GPL</strong>.</li>
+</ul>
+
+<p><strong>Duplicación</strong>:</p>
+
+<ul>
+  <li>Tendremos al menos dos representaciones de la solución, la mental (que muchas veces además se plasma en documentos de especificación y análisis) y la traducción/implementación en el GPL.</li>
+</ul>
+
+<p>Estas consecuencias hacen que la programación dedique <strong>la mayor parte del tiempo y esfuerzo en lidiar con los problemas de traducción e implementación de la solución al GPL</strong>.</p>
+
+<p>Entonces, una vía alternativa sería en pensar que <strong>en lugar de adaptar nuestra solución a un lenguaje, podemos adaptar el lenguaje a nuestra solución</strong>.</p>
+
+<p>A esto se lo conoce como <strong><a href="http://www.onboard.jetbrains.com/articles/04/10/lop/2.html">Language-Oriented Programming</a></strong>, desde el punto de vista de un nuevo “paradigma”. Y una de las prácticas es crear un nuevo lenguaje para expresar nuestra solución o una parte de la solución. Esto es un <strong>DSL</strong>.</p>
+
+<h2 id="motivación-para-hacer-un-dsl">Motivación para hacer un DSL</h2>
+
+<p>Suponemos que con la comparación que ya vimos, aparecen varias razones. Pero vamos a enumerarlas acá para resumir:</p>
+
+<ul>
+  <li>para acercar la brecha entre la descripción del problema en términos abstractos (descripción del dominio) y la implementación de la “computación” que lo resuelve / ejecuta.
+    <ul>
+      <li>Facilitaría la comunicación con gente no-técnica.</li>
+      <li>No programadores podrían entenderlo y escribirlo.</li>
+    </ul>
+  </li>
+  <li>para esconder los detalles internos
+    <ul>
+      <li>de la lógica común</li>
+      <li>o las construcciones propias del lenguaje</li>
+    </ul>
+  </li>
+  <li>para configuraciones de ciertas partes de la aplicación.</li>
+  <li>para expresar de forma declarativa ciertas reglas del negocio, que se va a separar de la forma en que se interprete y ejecute esa regla. Ej: regular expressions.</li>
+  <li>para la creación de un grafo complejo de objetos, problema que normalmente solucionamos con patrones creacionales, como factories, builders &amp; prototypes.</li>
+</ul>
+
+<p>¿Cuando necesito un DSL? Como aproximación, diremos que si la cantidad de problemas en este domino específico que queremos resolver es pequeño, o la complejidad de crear el DSL es mayor que la resolver el problema en nuestro GPL, probablemente no lo necesitemos. De lo contrario, será una alternativa a considerar.</p>
+
+<h2 id="tipos-de-dsls">Tipos de DSL’s</h2>
+
+<p>A grandes rasgos, podríamos catalogar los DSLs a través de las siguientes categorías. Existen autores que refinan mucho más a detalle la categorización, incluyendo nuevos tipos. A fines prácticos de explicar la idea general a nivel de programación, nosotros optamos por acotar esa categorización:</p>
+
+<ul>
+  <li>Parser + Compilador ó Interprete
+    <ul>
+      <li>Compilador: traduce a lenguaje maquina ejecutable: puede ser assembler o un lenguaje ejecutable por una VM como java, etc.</li>
+      <li>Interprete: a medida que se va parseando (leyendo) el código de expresado en el DSL, se va ejecutando, sin haber “generado” código ejecutable como paso intermedio.</li>
+    </ul>
+  </li>
+  <li>Traductor:
+    <ul>
+      <li>son los famosos generadores de código.</li>
+      <li>si bien se podría trazar una analogía con los compiladores, ya que también generan código, la diferencia es que los traductores generan código que no es “ejecutable” de por sí, sino más bien código de otro lenguaje.</li>
+      <li>Ejemplo: generadores de código. a través de Java APT (annotation processing tool)</li>
+    </ul>
+  </li>
+  <li>Embebidos:
+    <ul>
+      <li>se utiliza un lenguaje GPL, pero se lo usa de tal manera de “simular” o asemejarse lo mayor posible a un lenguaje propio del dominio</li>
+      <li>con syntax sugar y un diseño de API’s especial, llamado Fluent Interfaces, se acerca de un lenguaje de dominio.</li>
+      <li>aprovechar las características del lenguaje GPL existente,</li>
+      <li>Evita tener que hacer un parser, compilador e interprete.</li>
+      <li>Ej: ruby</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dsl-interno">DSL Interno</h3>
+
+<p>Desarrollados como un API dentro de un lenguaje de proposito general, que se ejecutan en su mismo ambiente, llamado lenguaje huésped.</p>
+
+<p>Si comparamos los DSLs internos y externos, en general los segundos serán mas flexibles, pero también el esfuerzo de implementarlos será mayor, no sólo porque la complejidad de implementar un parser a mano es mayor, sino que probablemente el lenguaje huésped nos proveerá muchas construcciones y bibliotecas útiles. (Digresión: aprovechar las bibliotecas existentes para otro lenguaje es un punto muy importante también a la hora de diseñar un GPL. Así es como surge gran cantidad de lenguajes que corren sobre la máquina virtual de Java o .Net)</p>
+
+<p><a href="https://docs.google.com/document/d/1kf-wpUB0as2xezLqN92_-afYEdUUQVpaIG9ZjMWyvbE/pub">Ejemplo de DSL interno para definir especificaciones</a> aprovechando <a href="uso-de-features-de-lenguajes-dinamicos.html">features de lenguajes dinámicos</a></p>
+
+<h3 id="dsl-externo">DSL Externo</h3>
+
+<p>Desarrollados como un lenguaje independiente, compilado, interpretado o una mezcla de ambos, que se ejecuta en un ambiente independiente, y no guarda necesariamente relación con el lenguaje en que está escrito el parser.</p>
+
+<p><strong>Ventajas</strong></p>
+
+<ul>
+  <li>Libertad absoluta sobre la sintaxis del lenguaje (solo limitada por capacidad de implementación del parser, etc), por eso..</li>
+  <li>Mayor expresividad del dominio.</li>
+</ul>
+
+<p><strong>Desventajas</strong></p>
+
+<ul>
+  <li>Complejidad al tener que implementar el parser + compiler</li>
+  <li>Disasociación del lenguaje “base” o de ejecución.</li>
+  <li>Caemos fuera de las herramientas tradicionales, y perdemos soporte a nivel IDE (salvo, ahora con xtext)</li>
+</ul>
+
+<p><a href="http://www.drdobbs.com/open-source/project-of-the-month-xtext-dsl-framework/230700063">Artículo sobre cómo hacer un DSL externo usando XText</a></p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 19, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>5</td>
+                                <td>164</td>
+                                <td>16</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>0d475d77</td>
+                        <td>Sun Feb 19 18:43:45 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Fix some 404 links</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7e4d235d</td>
+                        <td>Thu Feb 2 19:09:44 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* DSL Interno */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>eb4c8c24</td>
+                        <td>Thu Feb 2 19:09:43 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>217ad565</td>
+                        <td>Thu Feb 2 19:09:43 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «DSL viene de las siglas en inglés '''Domain-Specific Language'''.  Un DSL es un lenguaje ideado para expresar cierta parte de un sistema. Por eso se dice que es un lenguaj...»</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

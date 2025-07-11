@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Excepciones</title>
+  <meta property="og:title" content="Excepciones" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/excepciones.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/excepciones.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Excepciones</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="introducción">Introducción</h2>
+
+<p>Cuando un programa se ejecuta, pueden ocurrir errores: problemas de diversa índole que hacen que el sistema se comporte de una forma no esperada: el usuario ingresó un valor inválido, un objeto mal programado envió un mensaje con parámetros incorrectos, etc. Si el programa continuara ejecutándose ignorando esto, lo único que lograríamos sería que se produzcan más errores, cada vez más graves. Entonces, ¿qué hacer ante un error?</p>
+
+<p>Lo más seguro es fallar, es decir, abortar el flujo de ejecución para impedir que el resto del programa continúe ejecutándose como si no hubiera pasado nada. Una forma de lograr esto es mediante el lanzamiento de excepciones.</p>
+
+<p>En general cada método desarrollado debería seguir las siguientes pautas:</p>
+
+<ul>
+  <li>Tener un nombre descriptivo, ya que dicho nombre nos dice qué esperar, es una promesa al usuario de lo que debería suceder luego de mandar el mensaje</li>
+  <li>Hacer todo y sólo lo que el nombre indica</li>
+  <li>Si por algún motivo no se puede cumplir con lo prometido por el nombre del método, explotar de la forma más prolija posible</li>
+</ul>
+
+<p>Es importante que aquellas cosas que puedan ser validadas para saber si no se podrá cumplir con lo prometido, se validen previamente a producir efectos colaterales, de esa forma podemos evitar algunas posibles inconsistencias en caso de poder seguir adelante manejando el problema de alguna forma.</p>
+
+<h2 id="excepciones">Excepciones</h2>
+
+<p>Una excepción es la indicación de un problema que ocurre durante la ejecución de un programa. La principal particularidad de las excepciones es que cortan el flujo de ejecución hasta que alguien se encargue de resolverlo. Supongamos que tenemos este código Wollok:</p>
+
+<pre><code class="language-Wollok">object prueba {
+  method msj1(){
+    self.msj3(self.msj2())
+  }
+  
+  method msj2(){
+    self.error("Todo mal!")
+    return "Esto no se va a ejecutar nunca"
+  }
+  
+  method msj3(string) = "Opa! " ++ string
+}
+</code></pre>
+
+<p>De esta forma si el objeto que define esto recibe el mensaje msj1, la excepción lanzada en msj2 cortará la ejecución con lo cual no se evaluará la siguiente línea ni se mandará msj3. Es correcto dejar que la excepción se propague hacia atrás por la cadena de mensajes enviados siempre que no haya nada para hacer al respecto. Eventualmente, en algún punto donde sí sea posible tomar alguna acción, se podrá manejar esta excepción y continuar la ejecución con normalidad.</p>
+
+<h2 id="bugs-vs-errores-de-usuario">Bugs vs Errores de usuario</h2>
+
+<p>Algunos errores surgen por un bug en el programa, por ejemplo si un objeto no entiende un mensaje la forma de resolverlo es modificar el código para que o bien lo entienda o el mismo no le llegue dependiendo de si debería o no entenderlo. Por ejemplo, si a un Set le pedimos el primer elemento tira un error porque no es una colección ordenada, por ende no debe responder al mensaje first como sí lo hace una colección ordenada.</p>
+
+<p>Otros errores surgen del uso del programa, ya que pueden darse situaciones que llevan a que un objeto no pueda realizar lo que se le pide. Por ejemplo, si a una colección vacía el mandamos el mensaje anyOne tira un error porque no tiene forma de resolver el problema.</p>
+
+<h2 id="lanzando-excepciones">Lanzando Excepciones</h2>
+
+<p>En Wollok la forma más fácil de lanzar una excepción es mediante un mensaje a self (en este caso <code class="language-plaintext highlighter-rouge">error(descripcion)</code>) que todos los objetos entienden. Por ejemplo:</p>
+
+<pre><code class="language-Wollok">object pepita {
+  var energia = 100
+  method vola(unosKms){
+    if(energia &lt; unosKms){
+      self.error("Energía insuficiente para volar los kilómetros requeridos")
+    }
+    energia = energia - unosKms
+  }
+}
+</code></pre>
+
+<p>En el ejemplo vemos que si la energía de pepita es menor a la cantidad de kilómetros pasados por parámetro, la operación no debería realizarse porque quedaría con energía negativa. Para evitar que eso pase se lanza el error con una descripción simpática para que el usuario o el desarrollador (dependiendo de si debería o no llegarse a esa situación) entienda qué fue lo que pasó. Lo interesante es que la línea que modifica la energía sólo llega a ejecutarse si energia &gt;= unosKms.</p>
+
+<p>Otra forma de lanzar excepciones es usando clases pertenecientes a una jerarquía particular, que son de tipo excepción. El ejemplo anterior podría reescribirse de la siguiente forma, usando <code class="language-plaintext highlighter-rouge">DomainException</code> que es el mismo tipo de excepción que usa el mensaje error por atrás y hereda de la clase <code class="language-plaintext highlighter-rouge">Exception</code>:</p>
+
+<pre><code class="language-Wollok">object pepita {
+  var energia = 100
+  method vola(unosKms){
+    if(energia &lt; unosKms){
+      throw new DomainException(message = "Energía insuficiente para volar los kilómetros requeridos")  // se usa la palabra reservada throw con la excepción a lanzar
+    }
+    energia = energia - unosKms
+  }
+  ...
+}
+</code></pre>
+
+<p>Esto así como está no tiene ninguna ventaja sobre lo anterior, que era bastante más bonito y simple. Para que tenga sentido, tenemos que pensar en este problema en un contexto más amplio…</p>
+
+<h2 id="cómo-evitar-que-se-rompa-todo-ante-situaciones-excepcionales">¿Cómo evitar que se rompa todo ante situaciones excepcionales?</h2>
+
+<p>Algunos errores pueden evitarse realizando validaciones previas, pero no siempre es posible o deseable usar este enfoque. Entonces, una vez que se produce el error tenemos que tener una forma de recuperarnos del mismo para que el programa no termine con excepción.</p>
+
+<p>Lo que deberíamos hacer en aquellos lugares en donde sabemos qué hacer ante un problema (que idealmente son muy pocos) es atrapar la excepción que causó el problema y evaluar un determinado código para seguir adelante de forma correcta. Para eso primero tenemos que saber qué parte del código a ejecutar es el que podría terminar en excepción, luego qué tipo de error queremos tratar y finalmente qué se debería hacer al respecto.</p>
+
+<p>El siguiente código va a pedirle a pepita que vuele, que puede romperse y supongamos que la forma de reaccionar ante alguna excepción según el requerimiento sea darle de comer para que no se muera:</p>
+
+<pre><code class="language-Wollok">try {
+  pepita.vola(100)
+} catch e : Exception {
+  pepita.come(50)
+}
+</code></pre>
+
+<p>Un problema que tiene esta solución es que para cualquier problema se le va a dar de comer a pepita, si la energía de pepita no estuviera inicializada y el error surge de intentar tratar a la nada como un número, o si pepita no entiende el mensaje para volar, también resolvería el problema con el bloque que le da de comer en vez de romperse, de modo que sepamos que el problema existe. Eso lógicamente no es correcto.</p>
+
+<p>Considerando que el mensaje <code class="language-plaintext highlighter-rouge">self.error(descripcion)</code> lanza una excepción más particular que Exception, una primer mejora que se puede hacer es acotar ante qué tipo de error queremos darle de comer a pepita:</p>
+
+<pre><code class="language-Wollok">try {
+  pepita.vola(100)
+} catch e : DomainException {
+  pepita.come(50)
+}
+</code></pre>
+
+<p>Eso va a evitar que nos recuperemos incorrectamente de errores como ser mensajes no entendidos, ya que no son de tipo DomainException, sin embargo sería interesante poder refinarlo un poco más, para tener la certeza de que sólo vamos a estar manejando con este mecanismo las excepciones que surjan por tener energía insuficiente.</p>
+
+<p>Acá entra en juego nuevamente la jerarquía de clases de excepción. En vez de simplemente usar <code class="language-plaintext highlighter-rouge">self.error(descripcion)</code>, podríamos tener clases propias que hereden de la clase de excepción más apropiada (en este caso <code class="language-plaintext highlighter-rouge">DomainException</code> podría tener sentido):</p>
+
+<pre><code class="language-Wollok">class EnergiaInsuficienteException inherits DomainException {}
+</code></pre>
+
+<p>…y luego hacer algo así en el método <code class="language-plaintext highlighter-rouge">vola(kms)</code> de pepita: <code class="language-plaintext highlighter-rouge">throw new EnergiaInsuficienteException(message = "Energía insuficiente para volar los kilómetros requeridos")</code>.</p>
+
+<p>Eso permite atrapar sólo las excepciones que me interesan y dejar pasar las que no sé cómo manejar para que alguien más se ocupe. Por ejemplo:</p>
+
+<pre><code class="language-Wollok">try {
+  pepita.vola(100)
+} catch e:EnergiaInsuficienteException {
+  pepita.come(50)
+}
+</code></pre>
+
+<p>También, si estamos testeando podemos verificar que el resultado de ejecutar algo sea no poder volar:</p>
+
+<pre><code class="language-Wollok">assert.throwsExceptionWithType(new EnergiaInsuficienteException(), {pepita.vola(100)})
+</code></pre>
+
+<p>Al usar <code class="language-plaintext highlighter-rouge">throwsExceptionWithType</code> el test va a dar verde exclusivamente cuando el bloque al ejecutarse lanza una excepcion cuya clase sea <code class="language-plaintext highlighter-rouge">EnergiaInsuficienteException</code> o alguna subclase de la misma. Si el error que lanza ejecutar ese bloque es por ejemplo que un objeto no entendió un mensaje como se explicó antes, el test no va a dar verde, y es exactamente lo que necesitamos.</p>
+
+<h2 id="estrategias-para-manejar-excepciones">Estrategias para manejar excepciones</h2>
+
+<ul>
+  <li>La forma por excelencia de lidiar con una excepción es <strong>no hacer nada!!</strong>. La mayoría de las veces no tenemos la capacidad de recuperarnos del problema en el mismo lugar donde se produce, lo más sano es dejarla burbujear hasta el punto en donde sí haya algo para hacer al respecto.</li>
+  <li>Atraparla, hacer algo y continuar con el flujo normal de ejecución.</li>
+  <li>Atraparla, hacer algo y volver a lanzar la misma excepción. Eso se puede hacer volviendo a usar <code class="language-plaintext highlighter-rouge">throw</code> usando la excepcion atrapada en el bloque que maneja el problema.</li>
+  <li>Atraparla y lanzar otra más adecuada agregando más información del problema. Las excepciones además de un mensaje descriptivo pueden tener asociada una <em>causa</em> que es otra excepción y sirve justamente para los casos en los cuales se usa esta estrategia. Si vemos stacktrace completo de una excepción que tiene una instancia de otra excepción como causa, podremos notar que se incluye la información de ambas excepciones, sin perder información por el camino.</li>
+</ul>
+
+<h2 id="donde-es-común-atrapar-excepciones">¿Donde es común atrapar excepciones?</h2>
+
+<p>Lo más usual es que las excepciones no se atrapen en el código de nuestros objetos de dominio, sino mucho más lejos, en unos pocos lugares puntuales. Por ejemplo, si tenemos un sistema con una interfaz gráfica que es la que el usuario final usa para interactual, vamos a querer que en esa interfaz se muestre un mensaje razonable para que el usuario vea. Por ejemplo, si el problema está relacionado con alguna acción incorrecta por parte del usuario, lo ideal sería comunicársela de modo que pueda entender el problema y corregirlo; si en cambio es un problema inesperado sobre el cual el usuario no puede hacer nada (un problema del programa en sí, no del uso), se le podría mostrar otro tipo de mensaje para que sepa que hubo un problema y también informar del problema a los desarrolladores para que puedan analizarlo y trabajar sobre la causa.</p>
+
+<p>En las herramientas de testeo que <strong>usan</strong> nuestro código también de seguro se están atrapando las excepciones que se lancen al ejecutar nuestra lógica, lo cual lleva a que se reporte adecuadamente si las pruebas pasaron, si falló una aserción o si hubo un error inesperado, y la información de esas excepciones que se atraparon debería poder ser vista por quien corre las pruebas.</p>
+
+<p>Eso no quiere decir que nunca se atrapen excepciones dentro del modelo, sin embargo hay que entender que no es tan común, y es importante no abusar de estas herramientas, ya que podrían traer más problemas que soluciones.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on October 24, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>18</td>
+                                <td>72</td>
+                                <td>79</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>9</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>fad34ea8</td>
+                        <td>Thu Oct 24 12:01:42 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update excepciones.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>771f7252</td>
+                        <td>Thu Oct 24 11:45:49 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Actualizado en base a nuevas versiones de Wollok</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4aca4615</td>
+                        <td>Sat Aug 17 00:09:50 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Exceptions page</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6b0bc866</td>
+                        <td>Thu Sep 6 18:02:08 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update excepciones.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>39444c3c</td>
+                        <td>Thu Oct 5 16:33:51 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update excepciones.md</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

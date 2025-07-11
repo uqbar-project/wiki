@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Conceptos basicos del diseno</title>
+  <meta property="og:title" content="Conceptos basicos del diseno" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/conceptos-basicos-del-diseno.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/conceptos-basicos-del-diseno.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Conceptos basicos del diseno</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Modelo</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Dominio</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Heurística</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Cohesión</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Acoplamiento</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-5-1"><span class="tocnumber">5.1</span> <span class="toctext">Acoplamiento explícito e implícito</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#tocAnchor-1-7"><span class="tocnumber">6</span> <span class="toctext">Requerimientos y casos de uso</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#tocAnchor-1-8"><span class="tocnumber">7</span> <span class="toctext">Links relacionados</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Modelo</h1>
+
+<p>Un modelo es una simplificación. Es una interpretación de la realidad que abstrae los aspectos relevantes para la solución de un problema. (Definición extraída de <a href="https://en.wikipedia.org/wiki/Domain-driven_design">Domain Driven Design</a> de Eric Evans.</p>
+
+<h1 id="tocAnchor-1-2">Dominio</h1>
+
+<p>Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas “actividades” o “intereses” y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifiquen, seleccionen y estructuren el conocimiento de manera de enfocarlo en lo que necesitamos para solucionar el problema.</p>
+
+<h1 id="tocAnchor-1-3">Heurística</h1>
+
+<p>La heurística es una medida. No es una medida cuantitativa como una longitud o un peso, sino una medida que me permite establecer un valor de referencia de una característica cualitativa.</p>
+
+<p>Podemos hablar de que una heurística es una buena práctica, que permite comparar dos objetos de estudio en base a una determinada característica. No vamos a poder establecer un valor numérico para compararlos pero igualmente nos va a poder permitir saber si un objeto es “más” o “menos” que el otro en ese aspecto.</p>
+
+<p>Por ejemplo, si hablamos de la simplicidad de un diseño, no podemos decir que un sistema tenga complejidad 3.5 complejidoñios; pero sí podemos decir que un diseño es más o menos simple que otro.</p>
+
+<p>Las heurísticas son útiles cuando no disponemos de los medios cientificos para usar otras medidas.</p>
+
+<p>Es equivocado buscar que una heurística se convierta en un número medible, eso resulta contradictorio por su propia definición. Por lo tanto, en elementos cualitativos, es imposible establecer medidas cuantitativas. Aunque resulte tentador convertir una heurística en una medición debemos evitar esa tentación a todo costo.</p>
+
+<p>Por ejemplo un error común es hablar de complejidad en número de clases o número de métodos, de la misma manera que no podemos medir la complejidad de una solución por la cantidad de líneas de código involucradas. Estas medidas son apenas indicios pero es necesario analizar las clases, los métodos, el código para poder determinar si efectivamente esa solución resulta más compleja que otra.</p>
+
+<h1 id="tocAnchor-1-4">Cohesión</h1>
+
+<ul>
+  <li>Una clase es cohesiva si podemos definirle un objetivo claro y puntual.</li>
+  <li>Un método es cohesivo si tiene un único objetivo.</li>
+</ul>
+
+<p>Emitir una factura y calcular el total de facturación está bueno que estén en diferentes métodos. En general, tener métodos con efecto colateral (emitir factura, realizar un descuento, firmar una libreta de un alumno, cambiar el sueldo básico a un empleado) y métodos que no tengan efecto (conocer el sueldo de un empleado, saber el promedio de notas de un alumno en finales, conocer el total de facturación de un mes para un cliente, etc.) es una buena práctica, también es bueno abstraer ideas que se repiten en la misma clase dándole un nombre y dejándolo en un método aparte. Así por un lado evitamos duplicar código y por otro aumenta la cohesión de un método: se concentra en hacer sólo una cosa por vez.</p>
+
+<p>Por eso mismo un Cliente representa todo lo que un cliente puede abstraer. Si hay una clase Empresa es porque representa para nosotros una abstracción importante en el sistema, no para que la Empresa tome decisiones que son del cliente. El cliente tiene atributos + comportamiento. Así aumentamos la cohesión de nuestro sistema. De lo contrario, la Empresa toma responsabilidades de un Cliente, de un Empleado, etc. y como hace muchas cosas a la vez, el objetivo que cumple es difuso y la consecuencia de esta menor cohesión es el impacto que tiene cualquier modificación de la estructura interna de un cliente, un empleado o una factura.</p>
+
+<h1 id="tocAnchor-1-5">Acoplamiento</h1>
+
+<p>Es el grado en que los componentes de un sistema se conocen.</p>
+
+<p>Un cliente conoce sus facturas para calcular el total, y está bien que las conozca. Lo que es nocivo para el cliente es conocer de más o de menos. De más porque si el cliente le pide las líneas (los renglones) a cada factura y luego a cada línea le pide el precio unitario de cada producto, cualquier modificación en el cálculo del precio de un producto (por ejemplo, descuento por cantidad dependiente del producto), el que se ve directamente afectado es el cliente.</p>
+
+<p>
+  <strong>Ejemplo de código con alto nivel de acoplamiento</strong>
+</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">public</span><span class="err"> </span><span class="n">BigDecimal</span><span class="err"> </span><span class="n">getMontoTotal</span><span class="o">()</span><span class="err"> </span><span class="o">{</span>
+<span class="err">    </span><span class="n">BigDecimal</span><span class="err"> </span><span class="n">total</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="err">    </span><span class="k">for</span><span class="err"> </span><span class="o">(</span><span class="n">Factura</span><span class="err"> </span><span class="n">factura</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="k">this</span><span class="o">.</span><span class="na">facturas</span><span class="o">)</span><span class="err"> </span><span class="o">{</span>
+<span class="err">        </span><span class="k">for</span><span class="err"> </span><span class="o">(</span><span class="n">Renglon</span><span class="err"> </span><span class="n">renglon</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="n">factura</span><span class="o">.</span><span class="na">renglones</span><span class="o">)</span><span class="err"> </span><span class="o">{</span><span class="err"> </span>
+<span class="err">            </span><span class="n">total</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">total</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">renglon</span><span class="o">.</span><span class="na">getProducto</span><span class="o">().</span><span class="na">getPrecioUnitario</span><span class="o">()</span><span class="err"> </span><span class="o">*</span><span class="err"> </span><span class="n">renglon</span><span class="o">.</span><span class="na">getCantidad</span><span class="o">());</span>
+<span class="err">        </span><span class="o">}</span>
+<span class="err">    </span><span class="o">}</span>
+<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="n">total</span><span class="o">;</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Aquí vemos que un cliente conoce a objetos factura, pero también a renglones de factura y a productos.</p>
+
+<p>Si el cliente conoce de menos no tiene forma de saber el total de facturación si no sabe que cada factura tiene como interfaz un método que me permite saber el total</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">public</span> <span class="n">BigDecimal</span> <span class="nf">getTotal</span><span class="o">()</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>
+  <br />
+</p>
+
+<p>
+  <strong>El mismo ejemplo con nivel adecuado de acoplamiento entre cliente y factura</strong>
+</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">public</span><span class="err"> </span><span class="n">BigDecimal</span><span class="err"> </span><span class="n">getMontoTotal</span><span class="o">()</span><span class="err"> </span><span class="o">{</span>
+<span class="err">    </span><span class="n">BigDecimal</span><span class="err"> </span><span class="n">total</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="k">new</span><span class="err"> </span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="err">    </span><span class="k">for</span><span class="err"> </span><span class="o">(</span><span class="n">Factura</span><span class="err"> </span><span class="n">factura</span><span class="err"> </span><span class="o">:</span><span class="err"> </span><span class="k">this</span><span class="o">.</span><span class="na">facturas</span><span class="o">)</span><span class="err"> </span><span class="o">{</span>
+<span class="err">        </span><span class="n">total</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">total</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">factura</span><span class="o">.</span><span class="na">getTotal</span><span class="o">());</span>
+<span class="err">    </span><span class="o">}</span>
+<span class="err">    </span><span class="k">return</span><span class="err"> </span><span class="n">total</span><span class="o">;</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-5-1">Acoplamiento explícito e implícito</h2>
+
+<p>En algunos casos, el acoplamiento entre dos entidades de software no es fácilmente detectable, por lo que se llaman acoplamientos <strong>implícitos</strong>. Esto se produce cuando una entidad de software para su funcionamiento depende de una característica de otra que no está visible en su interfaz pública y en cambio forma parte de su implementación interna. En algunos libros este concepto puede encontrarse mencionado como <em>Program to an interface, not to an implementation</em>.</p>
+
+<p>El acoplamiento entre dos entidades de software produce una dependencia: un cambio en una de ellas posiblemente produzca un cambio en la otra. Al modificar una entidad de software es importante poder conocer cuáles son todas las otras entidades que pudieran ser afectadas por este cambio. Por eso, en el caso en que tengamos un acoplamiento, siempre es preferible que lo explicitemos, ya que facilitará la mantenibilidad del sistema y nos dará una herramienta para asegurar la consistencia ante las modificaciones.</p>
+
+<h1 id="tocAnchor-1-7">Requerimientos y casos de uso</h1>
+
+<p>Un caso de uso es una secuencia de interacciones que se desarrollarán entre un sistema y sus actores en respuesta a un evento que inicia un actor principal sobre el propio sistema. Cuando hacemos especificaciones de los casos de uso definimos la interacción entre usuario y sistema, dejando claro el límite entre lo que debe proporcionar el usuario y lo que el sistema debe responder.</p>
+
+<p>Los casos de uso pueden ser útiles para establecer requisitos de comportamiento, pero no establecen completamente los requisitos funcionales ni permiten determinar los requisitos no funcionales. Los casos de uso deben complementarse con información adicional como reglas de negocio, requisitos no funcionales, diccionario de datos que complementen los requerimientos del sistema.</p>
+
+<p>Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un usuario.</p>
+
+<p>
+  <a href="conceptos-de-ingenieria-de-software-y-de-sistemas.html">Más sobre requerimientos</a>
+</p>
+
+<h1 id="tocAnchor-1-8">Links relacionados</h1>
+
+<ul>
+  <li><a href="design-temario.html">Volver a Diseño de Sistemas</a></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on June 10, 2017 by
+        fdodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>46</td>
+                                <td>51</td>
+                                <td>44</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Deby</td>
+                                <td>Deby@uq...</td>
+                                <td>11</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>24</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ptesone</td>
+                                <td>Ptesone...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>fdodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>14dc3140</td>
+                        <td>Sat Jun 10 01:24:44 2017 -0300</td>
+                        <td>fdodino</td>
+                        <td>fernand...</td>
+                        <td>Adding toc for articles</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>24db0e84</td>
+                        <td>Mon Jun 5 12:32:59 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update conceptos-basicos-del-diseno.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e94d8089</td>
+                        <td>Mon Jun 5 12:19:06 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update conceptos-basicos-del-diseno.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0d468c45</td>
+                        <td>Sun Feb 19 20:39:00 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Fix broken urls</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

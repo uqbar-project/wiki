@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Validaciones y manejo de errores en la UI</title>
+  <meta property="og:title" content="Validaciones y manejo de errores en la UI" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/ui-mvcpesado-validaciones-errores.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/ui-mvcpesado-validaciones-errores.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="arena,validaciones,errores," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Validaciones y manejo de errores en la UI</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Validaciones a implementar</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Momentos de la validación</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#tocAnchor-1-3-1"><span class="tocnumber">3.1</span> <span class="toctext">El número debe contener sólo dígitos numéricos</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#tocAnchor-1-3-2"><span class="tocnumber">3.2</span> <span class="toctext">Otras formas de evitar acciones incorrectas</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#tocAnchor-1-6"><span class="tocnumber">4</span> <span class="toctext">Implementando las validaciones restantes</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#tocAnchor-1-6-1"><span class="tocnumber">4.1</span> <span class="toctext">El modelo de celular debe ser un modelo válido</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#tocAnchor-1-6-2"><span class="tocnumber">4.2</span> <span class="toctext">Los números de celular deben ser mayores a 1000</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#tocAnchor-1-6-3"><span class="tocnumber">4.3</span> <span class="toctext">No puede repetirse el mismo número de celular para dos clientes</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#tocAnchor-1-6-4"><span class="tocnumber">4.4</span> <span class="toctext">Obligatoriedad de recibir resumen de cuenta en domicilio</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-11">
+              <a href="#tocAnchor-1-11"><span class="tocnumber">5</span> <span class="toctext">Algunas conclusiones</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#tocAnchor-1-11-1"><span class="tocnumber">5.1</span> <span class="toctext">Desventajas de las excepciones</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-13">
+                  <a href="#tocAnchor-1-11-2"><span class="tocnumber">5.2</span> <span class="toctext">Pop-ups y paneles de error</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-14">
+              <a href="#tocAnchor-1-14"><span class="tocnumber">6</span> <span class="toctext">Links relacionados</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>Podemos ver un repaso del tema excepciones en <a href="excepciones-avanzadas.html">esta página</a></p>
+
+<h1 id="tocAnchor-1-1">Introducción</h1>
+
+<p>Consideremos el ejemplo de los clientes de una empresa de celulares, donde tenemos un formulario que permite ingresar</p>
+
+<ul>
+  <li>nombre del cliente</li>
+  <li>número de celular</li>
+  <li>modelo de celular</li>
+  <li>si quiere recibir el resumen de cuenta en el domicilio</li>
+</ul>
+
+<h1 id="tocAnchor-1-2">Validaciones a implementar</h1>
+
+<ol>
+  <li>El número debe contener sólo dígitos numéricos</li>
+  <li>El modelo de celular debe ser un modelo válido</li>
+  <li>Los números de celular deben ser mayores a 1000</li>
+  <li>No puede ingresarse el mismo número de teléfono para dos clientes diferentes</li>
+  <li>Algunos modelos de celular exigen que sus clientes reciban el resumen de cuenta en su domicilio</li>
+</ol>
+
+<p>¿Qué hacemos en cada caso? ¿Quién es responsable de cada validación?</p>
+
+<h1 id="tocAnchor-1-3">Momentos de la validación</h1>
+
+<h2 id="tocAnchor-1-3-1">El número debe contener sólo dígitos numéricos</h2>
+
+<p>Si el objeto de dominio Celular define el número de teléfono como un Integer, no es posible hacer</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="n">celular</span><span class="o">.</span><span class="n">numero</span> <span class="k">=</span> <span class="s">"A"</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>eso <strong>no compila</strong>. Pero la UI podría tener un cuadro de texto que permita ingresar caracteres alfanuméricos: entonces tenemos que elegir cuál va a ser el comportamiento del sistema</p>
+
+<ol>
+  <li>permitir ingresar caracteres inválidos pero mostrar un mensaje de error: en Arena esto lo hace por defecto el controller que adapta lo que el usuario carga a lo que el dominio necesita. El panel de errores (ErrorsPanel) captura cualquier excepción que ocurra en la conversión, ya sea que lo incluyamos manualmente o por una ventana que herede de <code class="language-plaintext highlighter-rouge">SimpleWindow</code>.</li>
+  <li>podríamos pensar: ¿para qué dejamos que el usuario ingrese un caracter inválido si luego lo vamos a rechazar? La segunda variante consiste en definir un filtro que no permita que el usuario pueda ingresar caracteres alfabéticos si queremos que ingrese números. Para esto…</li>
+</ol>
+
+<h3 id="opción-1-definimos-un-filter">Opción 1: Definimos un filter</h3>
+
+<p>Esta es la versión en lenguaje Java:</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">new</span> <span class="n">TextBox</span><span class="o">(</span><span class="n">form</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">withFilter</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFilter</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="n">TextInputEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">isNumeric</span><span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getPotentialTextResult</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">})</span>
+    <span class="o">.</span><span class="na">bindValueToProperty</span><span class="o">(</span><span class="n">Celular</span><span class="o">.</span><span class="na">NUMERO</span><span class="o">);</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>La misma versión en lenguaje Xtend:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">new</span> <span class="nc">TextBox</span><span class="o">(</span><span class="n">form</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">[</span>
+    <span class="kt">withFilter</span> <span class="o">[</span> <span class="kt">event</span> <span class="kt">|</span> <span class="kt">event.potentialTextResult.matches</span><span class="o">(</span><span class="err">"</span><span class="o">[</span><span class="err">0</span><span class="kt">-</span><span class="err">9</span>,<span class="kt">.</span><span class="o">]</span><span class="kt">*</span><span class="err">"</span><span class="o">)</span> <span class="o">]</span>
+    <span class="kt">bindValueToProperty</span><span class="o">(</span><span class="err">"</span><span class="kt">numero</span><span class="err">"</span><span class="o">)</span>
+    <span class="kt">width</span> <span class="kt">=</span> <span class="err">100</span>
+<span class="o">]</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>¿Qué es el TextFilter dentro del MVC? El TextFilter es un <strong>controller</strong>, porque se comunica con el dominio <em>(le manda un mensaje al modelo - en el caso de estar ok el input)</em> y actúa sobre la vista <em>(en la pantalla no aparece ese caracter, se filtra)</em>.</p>
+
+<h3 id="opción-2-utilizamos-un-control-específico-para-ingresar-números">Opción 2: Utilizamos un control específico para ingresar números</h3>
+
+<p>Desde Arena 3.6.1 tenemos un control NumericField que se encarga de filtrar los caracteres alfabéticos:</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Java</span>
+<span class="k">new</span> <span class="nf">NumericField</span><span class="o">(</span><span class="n">form</span><span class="o">).</span><span class="na">setWidth</span><span class="o">(</span><span class="mi">150</span><span class="o">).</span><span class="na">bindValueToProperty</span><span class="o">(</span><span class="s">"numero"</span><span class="o">);</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Xtend
+</span><span class="k">new</span> <span class="nc">NumericField</span><span class="o">(</span><span class="n">form</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">[</span>
+    <span class="kt">value</span> <span class="kt">&lt;=&gt;</span> <span class="err">"</span><span class="kt">numero</span><span class="err">"</span>
+    <span class="kt">width</span> <span class="kt">=</span> <span class="err">100</span>
+<span class="o">]</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Internamente está utilizando un Filter, lo importante es que tenemos una abstracción de alto nivel que está diciendo “quiero un control donde sólo se puedan cargar números”.</p>
+
+<p>Entonces la primera variante es impedir cualquier ingreso inválido por parte del usuario: Esto tiene como ventaja ser fail fast, evita ingresos incorrectos y esto para el usuario es más beneficioso.</p>
+
+<h2 id="tocAnchor-1-3-2">Otras formas de evitar acciones incorrectas</h2>
+
+<p>Siguiendo la anterior linea de pensamiento, ¿debería dejar que el usuario presione el botón Aceptar, solo para mostarle un mensaje de error después? ¿no debería habilitar el botón Aceptar solamente cuando todos los controles se hayan cumplido satisfactoriamente?</p>
+
+<p>Aquí vemos que esta estrategia tiene un límite: en ciertos casos las validaciones del negocio pueden ser verdaderamente complejas como para poder dejarlas en forma explícita en la pantalla. Entonces el usuario sentirá una lógica frustración de no poder avanzar con el caso de uso cuando el botón Aceptar esté inhabilitado y no quede claro por qué. <strong>Una regla importante para la usabilidad de un sistema es que debe explicar claramente al usuario qué información no cumple las reglas de negocio y además cómo debe continuar para llegar al caso exitoso</strong>.</p>
+
+<h1 id="tocAnchor-1-6">Implementando las validaciones restantes</h1>
+
+<h2 id="tocAnchor-1-6-1">El modelo de celular debe ser un modelo válido</h2>
+
+<p>¿El responsable es el celular? sí, si lo pensamos como un dato obligatorio, pero claramente participan</p>
+
+<ol>
+  <li>la UI que guía al usuario mostrándole un combo con las opciones válidas, el usuario no puede elegir un modelo inexistente, a lo sumo puede dejarlo vacío</li>
+  <li>si yo permito que el combo quede vacío, el dominio (el objeto celular) debería validar que el celular no deje en blanco el campo modelo. El form builder permite en sus opciones decirle “este combo no tiene la opción vacía”.</li>
+</ol>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Java</span>
+<span class="n">Selector</span><span class="o">&lt;</span><span class="n">ModeloCelular</span><span class="o">&gt;</span> <span class="n">selector</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Selector</span><span class="o">&lt;</span><span class="n">ModeloCelular</span><span class="o">&gt;(</span><span class="n">form</span><span class="o">)</span> <span class="c1">//</span>
+     <span class="o">.</span><span class="na">allowNull</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Xtend
+</span><span class="k">new</span> <span class="nc">Selector</span><span class="o">&lt;</span><span class="nc">Modelo</span><span class="o">&gt;(</span><span class="n">form</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">[</span>
+     <span class="kt">allowNull</span><span class="o">(</span><span class="kt">false</span><span class="o">)</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El tema es que al dar de alta un celular el binding es contra un atributo nulo, entonces el combo queda igualmente vacío. ¿Dónde voy a poner la validación del celular? En la clase Celular, un método validar() ¿qué va a devolver? void, o exception si hubo error… nada de códigos de error numéricos, como saben. Porque si todo sale bien sólo sigo enviando mensajes a los objetos que corresponden. Y si algo sale mal se que tengo que atrapar una excepción en la vista.</p>
+
+<p>Entonces no acoplo innecesariamente las validaciones del modelo a la vista. La pantalla de edición sólo tiene que saber que pueden ocurrir dos tipos de error posibles:</p>
+
+<ul>
+  <li><strong>errores de negocio:</strong> surgen de las restricciones que el negocio va poniendo (no podés ingresar un modelo inexistente, no podés poner caracteres alfabéticos en la línea del celular). Esto lo modelamos con una UserException.</li>
+  <li><strong>errores de sistema:</strong> son errores propios de la programación, o errores generales del sistema (algo se rompió). Estos no los modelamos, simplemente ocurren: son los NullPointerException, OutOfMemoryError, etc.
+Codificamos entonces el método validar:</li>
+</ul>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Java</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">validar</span><span class="o">()</span> <span class="o">{</span>
+   <span class="o">...</span>
+   <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">modeloCelular</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserException</span><span class="o">(</span><span class="s">"Debe ingresar un modelo de celular"</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Xtend
+</span><span class="k">def</span> <span class="n">void</span> <span class="n">validar</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">modeloCelular</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">UserException</span><span class="o">(</span><span class="s">"Debe ingresar un modelo de celular"</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>¿Quién debe atrapar esta excepción que tira el negocio?</p>
+
+<p>Eso tiene que estar del lado de la tecnología de presentación: en la vista o más precisamente en el controller, allí debe estar el bloque try/catch para trabajar tanto los errores de negocio como los de sistema:</p>
+
+<ul>
+  <li>si ocurre un error de usuario/negocio, el mensaje contiene información importante para el usuario. Entonces hay que mostrarle un cartel (o dejar una parte específica del panel para mostrar errores) con lo que contenga la propiedad message de la excepción de usuario/negocio</li>
+  <li>por el contrario, si el error se da dentro del programa, mostrar el mensaje de error al usuario le genera confusión: lo mejor que uno puede hacer es advertirle al usuario que hubo un error, que la operación que solicitó no va a poder completarse y sobre todo, registrar el problema para que un desarrollador lo analice luego.</li>
+</ul>
+
+<h2 id="tocAnchor-1-6-2">Los números de celular deben ser mayores a 1000</h2>
+
+<p>Si ponemos la validación en el setter</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Java</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNumero</span><span class="o">(</span><span class="n">Integer</span> <span class="n">numero</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">numero</span> <span class="o">&lt;</span> <span class="n">MAX_NUMERO</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserException</span><span class="o">(</span><span class="s">"El número de celular debe ser mayor a "</span> <span class="o">+</span> <span class="n">MAX_NUMERO</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">numero</span> <span class="o">=</span> <span class="n">numero</span><span class="o">;</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Xtend
+</span><span class="k">def</span> <span class="n">void</span> <span class="n">setNumero</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">unNumero</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">unNumero</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">unNumero</span><span class="o">.</span><span class="n">intValue</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="nc">MAX_NUMERO</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">UserException</span><span class="o">(</span><span class="s">"El número debe ser mayor a "</span> <span class="o">+</span> <span class="nc">MAX_NUMERO</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="k">this</span><span class="o">.</span><span class="n">numero</span> <span class="k">=</span> <span class="n">unNumero</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>eso tiene como consecuencia que <strong>tanto en la búsqueda como al editar un celular</strong> yo tenga que poner un número de celular mayor a 1000. ¿Tiene sentido? Y… en parte sí porque si yo no puedo ingresar un celular mayor a 1000 no tiene sentido que pueda buscar un celular menor a 1000, no lo voy a encontrar (en una aplicación comercial me reportaron en un caso de prueba que no debería poder buscar por CUIT si ese CUIT no es válido).</p>
+
+<p>Si ubicamos la pregunta en un método validar y lo llamamos en onClick del botón Aceptar…</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Java</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">validar</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="na">ingresoNumero</span><span class="o">())</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserException</span><span class="o">(</span><span class="s">"Debe ingresar número"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">numero</span><span class="o">.</span><span class="na">intValue</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="n">MAX_NUMERO</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserException</span><span class="o">(</span><span class="s">"El número debe ser mayor a "</span> <span class="o">+</span> <span class="n">MAX_NUMERO</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Xtend
+</span><span class="k">def</span> <span class="n">validar</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">numero</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">UserException</span><span class="o">(</span><span class="s">"Debe ingresar número"</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">numero</span><span class="o">.</span><span class="n">intValue</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="nc">MAX_NUMERO</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">UserException</span><span class="o">(</span><span class="s">"El número debe ser mayor a "</span> <span class="o">+</span> <span class="nc">MAX_NUMERO</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>el efecto que tiene es que pude ingresar números menores a 1000 en la búsqueda pero no en la edición.</p>
+
+<p>O sea, cuando yo tuve que poner esta validación, dudé entre ponerlo en:</p>
+
+<ol>
+  <li>el setter del atributo número</li>
+  <li>el método validar de celular, que se dispara al presionar el botón aceptar.</li>
+</ol>
+
+<p>Ahora, validar que el nombre y el número no sean nulos claramente no está bueno incorporarlo en el setter porque entonces la búsqueda me fuerza a escribir algo tanto en el nombre como en el número. Nuevamente aparece una tensión de fuerzas: la filosofía fail fast me dice que debería tirar error tan pronto como sea posible, eso tiene como consecuencia que a medida que estoy ingresando una fecha o un rango de valores estoy recibiendo continuos mensajes de error que distraen mi foco de atención. Por otra parte esperar a que un formulario con muchos campos se complete para validar produce una sensación frustrante al querer aceptar: “Falta xxx”, “Debe completar yyy”, “La fecha es inválida”, etc.</p>
+
+<p>¿Cuál es la solución? No hay una única respuesta como se imaginarán,</p>
+
+<ul>
+  <li>algunas validaciones irán en los filtros</li>
+  <li>otras pueden ir en los setters</li>
+  <li>otras deberán esperar su turno en la validación del formulario</li>
+  <li>y la estrategia resultante será una combinación de todas ellas</li>
+</ul>
+
+<h2 id="tocAnchor-1-6-3">No puede repetirse el mismo número de celular para dos clientes</h2>
+
+<p>Esto no lo puedo validar en Celular, porque un objeto sólo tiene validaciones atómicas. Un celular no conoce a todos los otros celulares, me costaría mucho trabajo hacer que eso sucediera. Pero hay otro objeto que sí conoce a todos los celulares: el home/repositorio.</p>
+
+<p>Por suerte en la implementación del Repo default en Arena, el método create delega posibles validaciones en un “hook method” específico, que se llama validateCreate:</p>
+
+<p>En <code class="language-plaintext highlighter-rouge">AbstractAutogeneratedIdRepo&lt;T&gt;</code> donde T es un Celular (hereda de <code class="language-plaintext highlighter-rouge">Entity</code>):</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">(</span><span class="n">T</span> <span class="n">object</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">validateCreate</span><span class="o">(</span><span class="n">object</span><span class="o">);</span>
+    <span class="o">...</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Definimos la validación en RepositorioCelulares:</p>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Java</span>
+<span class="nd">@Override</span> 
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">validateCreate</span><span class="o">(</span><span class="n">Celular</span> <span class="n">celular</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">celular</span><span class="o">.</span><span class="na">validar</span><span class="o">();</span>
+    <span class="n">validarClientesDuplicados</span><span class="o">(</span><span class="n">celular</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">validarClientesDuplicados</span><span class="o">(</span><span class="n">Celular</span> <span class="n">celular</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">numero</span> <span class="o">=</span> <span class="n">celular</span><span class="o">.</span><span class="na">getNumero</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="na">search</span><span class="o">(</span><span class="n">numero</span><span class="o">).</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserException</span><span class="o">(</span><span class="s">"Ya existe un celular con el número: "</span> <span class="o">+</span> <span class="n">numero</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="c1">// Xtend
+</span><span class="k">override</span> <span class="n">validateCreate</span><span class="o">(</span><span class="nc">Celular</span> <span class="n">celular</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">celular</span><span class="o">.</span><span class="n">validar</span><span class="o">()</span>
+    <span class="n">validarClientesDuplicados</span><span class="o">(</span><span class="n">celular</span><span class="o">)</span>
+<span class="o">}</span>
+ 
+<span class="k">def</span> <span class="n">void</span> <span class="n">validarClientesDuplicados</span><span class="o">(</span><span class="nc">Celular</span> <span class="n">celular</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">numero</span> <span class="k">=</span> <span class="n">celular</span><span class="o">.</span><span class="n">numero</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="n">search</span><span class="o">(</span><span class="n">numero</span><span class="o">).</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">UserException</span><span class="o">(</span><span class="s">"Ya existe otro cliente con el mismo número"</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>¿Qué pasa en la modificación?</p>
+
+<ul>
+  <li>Actualizar una colección en memoria es simplemente borrar el objeto anterior y agregar el objeto editado, eso está definido en CollectionBasedRepo.</li>
+  <li>Arena no definió un método validateUpdate() para incorporar validaciones. Esta limitación suele ser común al utilizar frameworks, eso no evita que podamos interceptar el mensaje update, de la siguiente manera:</li>
+</ul>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">override</span> <span class="n">update</span><span class="o">(</span><span class="nc">Celular</span> <span class="n">celular</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">validarClientesDuplicados</span><span class="o">(</span><span class="n">celular</span><span class="o">)</span>
+    <span class="k">super</span><span class="o">.</span><span class="n">update</span><span class="o">(</span><span class="n">celular</span><span class="o">)</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Al fin y al cabo estamos trabajando con objetos.</p>
+
+<p>¿Y la validación cuándo se dispara? Cuando aceptamos el formulario, porque determinar si el número de celular se repite con otro tiene sentido cuando terminamos de definir el número, y además esa operación tiene un costo.</p>
+
+<h2 id="tocAnchor-1-6-4">Obligatoriedad de recibir resumen de cuenta en domicilio</h2>
+
+<p>Cada celular pertenece a un modelo de celular que define si debe recibir el resumen de cuenta en domicilio. ¿Cómo afecta eso a la ventana de edición?</p>
+
+<ul>
+  <li>Una opción es que la vista no sufra modificaciones: en el método validar chequeamos que el usuario haya cargado una configuración válida para el modelo de celular y recepción de resumen de cuenta en domicilio.</li>
+  <li>Pero para el usuario esta decisión puede resultar desconcertante: ¿qué modelo será el que me permita dejar destildado el check? Por eso para diseñar una buena UI necesitaríamos hacer algunas modificaciones: si el modelo de celular obliga a que el cliente reciba el resumen de cuenta, debería
+    <ul>
+      <li>automáticamente ponerse en true el flag recibeResumenCuenta para el cliente</li>
+      <li>deshabilitarse la opción de modificar el check</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Entonces vemos que la validación original en el celular pierde sentido: la interfaz va guiando al usuario impidiendo que tome decisiones incorrectas y minimizando así las ventanas de error según las restricciones que impone el negocio. Eso no implica sacar la validación, pero sí tener en mente la famosa experiencia de usuario para anticiparnos a ingresos incorrectos.</p>
+
+<p>Aunque no siempre es posible evitar los mensajes de error, como hemos visto con la duplicidad de números de celular (no podemos saberlo sin consultar al repositorio), estas ideas de diseño en la UI mejoran notablemente su usabilidad.</p>
+
+<h1 id="tocAnchor-1-11">Algunas conclusiones</h1>
+
+<h2 id="tocAnchor-1-11-1">Desventajas de las excepciones</h2>
+
+<p>Como las excepciones cortan el flujo normal de envío de mensajes entre objetos, la contra de tirar una excepción por cada error de negocio es que no nos permite decirle al usuario todos los campos que tienen problemas (los errores van apareciendo de a uno). Por eso otra técnica es “recolectar” los errores y asociarlos a campos, de manera de tener un listado de mensajes de error donde cada uno está asociado a un campo que se ingresa en el formulario.</p>
+
+<h2 id="tocAnchor-1-11-2">Pop-ups y paneles de error</h2>
+
+<p>Volviendo al ejemplo de los celulares, vemos que la validación tira User Exceptions:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">def</span> <span class="n">void</span> <span class="n">validar</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="n">ingresoNumero</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">UserException</span><span class="o">(</span><span class="s">"Debe ingresar número"</span><span class="o">)</span>
+      <span class="o">}</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Lo mismo ocurre con validaciones que hacen los repos:</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">private</span> <span class="n">void</span> <span class="n">validarClientesDuplicados</span><span class="o">(</span><span class="nc">Celular</span> <span class="n">celular</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="n">numero</span> <span class="k">=</span> <span class="n">celular</span><span class="o">.</span><span class="n">numero</span>
+      <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="n">search</span><span class="o">(</span><span class="n">numero</span><span class="o">).</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">UserException</span><span class="o">(</span><span class="s">"Ya existe un celular con el mismo número"</span><span class="o">)</span>
+      <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Pero esa excepción no está atrapada en el método asociado al botón Aceptar de la pantalla de Edición.</p>
+
+<div class="language-scala highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">new</span> <span class="nc">Button</span><span class="o">(</span><span class="n">actions</span><span class="o">)</span>
+      <span class="o">.</span><span class="n">setCaption</span><span class="o">(</span><span class="s">"Aceptar"</span><span class="o">)</span>
+      <span class="o">.</span><span class="n">onClick</span> <span class="o">[</span> <span class="kt">|</span> <span class="kt">this.accept</span><span class="o">]</span>
+      <span class="o">.</span><span class="n">setAsDefault</span>
+      <span class="o">.</span><span class="n">disableOnError</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>¿Cómo es entonces que funciona bien, que los errores se muestran con un popup?</p>
+
+<ul>
+  <li>cada control de arena tiene un realidad abajo un builder que crea finalmente los objetos de la tecnología. En nuestro caso objetos swt + jface</li>
+  <li>por ejemplo, al crear un SimpleWindow nosotros estamos utilizando (sin saberlo) un JFaceWindowBuilder que le construye el ErrorViewer (esto no ocurre si nuestra ventana hereda de Window solamente)</li>
+  <li>Cuando se crea un botón, por ejemplo, y le seteamos un Action en el onClick, esta capa de Arena le agrega un listener (un observer) que envuelve el command que nosotros construimos incorporándole el manejo de errores:</li>
+</ul>
+
+<div class="language-java highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">widgetSelected</span><span class="o">(</span><span class="n">SelectionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">try</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">action</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UserException</span> <span class="n">exception</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">context</span><span class="o">.</span><span class="na">getErrorViewer</span><span class="o">().</span><span class="na">showWarning</span><span class="o">(</span><span class="n">exception</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RuntimeException</span> <span class="n">exception</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">exception</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">context</span><span class="o">.</span><span class="na">getErrorViewer</span><span class="o">().</span><span class="na">showError</span><span class="o">(</span><span class="s">"Se produjo un error de sistema. Puede revisar el log de la aplicación para obtener más detalles"</span><span class="o">);</span>
+      <span class="o">}</span>
+<span class="o">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El bloque catch puede variar dependiendo de la versión de Arena que estén usando. Pero más allá de algunos detalles de implementación que pueden ver ustedes, lo importante es ver qué sucede con los dos tipos de excepción:</p>
+
+<ul>
+  <li>errores de usuario/negocio: mostramos el error en una ventana de diálogo. ¿Qué dice el mensaje de error? A la ventana no le interesa, sabe que cualquier acción que disparemos puede dar este tipo de error, y que el mensaje contiene información importante para el usuario. Pero no acoplamos la UI al resto de los componentes del sistema: nos da lo mismo si el número de celular debe comenzar con 15, si ya existe otro alumno con el mismo legajo o si no podemos cargar una fecha de nacimiento futura para los empleados.</li>
+  <li>los errores de programa los catcheamos después, porque RuntimeException es más general que UserException. Hay una decisión de diseño de no envolver las excepciones chequeadas, para respetar así a quienes quieran trabajar con este tipo de excepciones.</li>
+  <li>mientras que la excepción de programa se “loguea” (haciendo un printStackTrace), las excepciones de negocio no tiene sentido registrarlas. Las excepciones de programa las leen los programadores, las de negocio le sirven al usuario para comprender que está tratando de usar el sistema de manera incorrecta, el mensaje de error le debe aportar una ayuda para solucionar este inconveniente y seguir adelante.</li>
+  <li>el log default hace un printStackTrace(), esto deja en el archivo standard output la pila de mensajes donde ocurrió el error. Este archivo puede ser voluminoso, entonces
+    <ul>
+      <li>se suele particionar los errores por aplicación (y a veces por módulo también)</li>
+      <li>también se registran datos adicionales, como usuario logueado, fecha y hora en que ocurrió el error, esto por lo general se puede parametrizar sin mucho esfuerzo</li>
+      <li>otra cosa que se suele hacer es activar/desactivar niveles de logueo para ver cómo está funcionando una aplicación (niveles debug/info/warning/error/fatal)</li>
+      <li>y el ErrorViewer sabe mostrar un mensaje de error al usuario (showError), en este caso mediante una ventana de diálogo</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="tocAnchor-1-14">Links relacionados</h1>
+
+<ul>
+  <li><a href="algo3-temario.html">Temario Algoritmos III</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/arena" title="arena">Arena</a></li>
+            
+             <li><a href="/categories/validaciones" title="validaciones">Validaciones</a></li>
+            
+             <li><a href="/categories/errores" title="errores">Errores</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on August 22, 2019 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>5</td>
+                                <td>382</td>
+                                <td>12</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>d0ffcd18</td>
+                        <td>Thu Aug 22 10:00:24 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>UI Errors & Validations page updated</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f42f7078</td>
+                        <td>Sat Aug 17 00:19:10 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Error handling enhancements</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>93561807</td>
+                        <td>Sat Aug 17 00:14:43 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Error handling typo fix</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4aca4615</td>
+                        <td>Sat Aug 17 00:09:50 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Exceptions page</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1422941b</td>
+                        <td>Fri Aug 16 23:56:40 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Error handling & validations in UI page</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

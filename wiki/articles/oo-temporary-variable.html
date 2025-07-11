@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Temporary variables</title>
+  <meta property="og:title" content="Temporary variables" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/oo-temporary-variable.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/oo-temporary-variable.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="oo,bad smells,buenas prácticas,variables,temporales,efecto,precalculo,precalcular," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Temporary variables</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <h2 id="introducción-persona-instruída">Introducción: persona instruída</h2>
+
+<p>Supongamos que tenemos que conocer si Helmut es una persona instruida, esto ocurre cuando leyó más de 20 libros y conoce más de 3 idiomas.</p>
+
+<p>Tenemos esta implementación:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">helmut</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">librosLeidos</span> <span class="k">=</span> <span class="mi">0</span>
+  <span class="n">const</span> <span class="n">idiomasQueConoce</span> <span class="k">=</span> <span class="o">[]</span>
+  <span class="n">method</span> <span class="n">leerLibro</span><span class="o">()</span> <span class="o">{</span> <span class="n">librosLeidos</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">}</span>
+  <span class="n">method</span> <span class="n">conocerIdioma</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span> <span class="o">{</span> <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span> <span class="o">}</span>
+  <span class="n">method</span> <span class="n">esInstruido</span><span class="o">()</span> <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="bad-smell-temporary-variable">Bad smell: temporary variable</h2>
+
+<p>Es un patrón frecuente la resolución del ejemplo agregando un nuevo atributo en <code class="language-plaintext highlighter-rouge">helmut</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">helmut</span> <span class="o">{</span>
+  <span class="o">...</span>
+  <span class="k">var</span> <span class="n">instruido</span> <span class="k">=</span> <span class="kc">false</span>
+  <span class="n">method</span> <span class="n">esInstruido</span><span class="o">()</span> <span class="k">=</span> <span class="n">instruido</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Una solución similar puede ser definir instruido como una <strong>property</strong>, el efecto es el mismo. Esto tiene algunas desventajas:</p>
+
+<ul>
+  <li>el problema no es tanto incorporar un nuevo atributo, sino que es un atributo que podría calcularse…</li>
+  <li>…y que además tiene dependencias con las otras dos variables</li>
+</ul>
+
+<p>Para mantener consistente el estado de Helmut, deberíamos codificar su comportamiento de la siguiente manera:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">helmut</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">librosLeidos</span> <span class="k">=</span> <span class="mi">0</span>
+  <span class="n">const</span> <span class="n">idiomasQueConoce</span> <span class="k">=</span> <span class="o">[]</span>
+  <span class="k">var</span> <span class="n">instruido</span> <span class="k">=</span> <span class="kc">false</span>
+  <span class="n">method</span> <span class="n">leerLibro</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">librosLeidos</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1">// sincronizo esInstruido...
+</span>    <span class="n">instruido</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">3</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">conocerIdioma</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span>
+    <span class="c1">// sincronizo esInstruido...
+</span>    <span class="n">instruido</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">3</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">esInstruido</span><span class="o">()</span> <span class="k">=</span> <span class="n">instruido</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Por supuesto, podemos extraer un método aparte, igualmente estaremos enviando el mismo mensaje en ambos casos:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">helmut</span> <span class="o">{</span>
+  <span class="o">...</span>
+  <span class="n">method</span> <span class="n">leerLibro</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">librosLeidos</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">self</span><span class="o">.</span><span class="n">actualizoInstruido</span><span class="o">()</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">conocerIdioma</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span>
+    <span class="n">self</span><span class="o">.</span><span class="n">actualizoInstruido</span><span class="o">()</span>
+  <span class="o">}</span>
+  <span class="n">method</span> <span class="n">actualizoInstruido</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">instruido</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">3</span>
+  <span class="o">}</span>
+  <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Otra variante similar consiste en que el método instruido haga algo como:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">method</span> <span class="n">leerLibro</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">librosLeidos</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="n">self</span><span class="o">.</span><span class="n">esInstruido</span><span class="o">()</span>
+<span class="o">}</span>
+<span class="n">method</span> <span class="n">conocerIdioma</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span>
+  <span class="n">self</span><span class="o">.</span><span class="n">esInstruido</span><span class="o">()</span>
+<span class="o">}</span>
+<span class="n">method</span> <span class="n">esInstruido</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">instruido</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">3</span>
+  <span class="k">return</span> <span class="n">instruido</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>lo cual agrega más desventajas:</p>
+
+<ul>
+  <li>la variable <code class="language-plaintext highlighter-rouge">instruido</code> da lo mismo si es una variable de instancia (atributo) o una variable local del método <code class="language-plaintext highlighter-rouge">esInstruido</code>, solo se asigna para ser retornada</li>
+  <li>métodos que representan acciones como leer el libro o conocer idioma, llaman a una aparente pregunta (esInstruido) solo para actualizar el estado, se confunde así métodos que tienen efecto y que no lo tienen</li>
+  <li>si hay más atributos cuyos valores dependen de otros, puede no resultar trivial el momento de actualizar el estado del objeto sin que quede momentáneamente inconsistente (o puede resultar en errores si no respetamos el orden en que actualizamos dichos atributos)</li>
+  <li>En general, intentar guardarse cosas que pueden ser calculadas es un smell, conocido también como “precalcular”, término popularizado por <a href="https://github.com/PalumboN">Maese Rasta</a>.</li>
+</ul>
+
+<h2 id="una-alternativa-más-simple">Una alternativa más simple</h2>
+
+<p>La alternativa más sencilla es descartar todos los atributos que pueden calcularse, de esa manera evitamos sincronizar el estado de Helmut:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">helmut</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">librosLeidos</span> <span class="k">=</span> <span class="mi">0</span>
+  <span class="n">const</span> <span class="n">idiomasQueConoce</span> <span class="k">=</span> <span class="o">[]</span>
+  <span class="n">method</span> <span class="n">leerLibro</span><span class="o">()</span> <span class="o">{</span> <span class="n">librosLeidos</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">}</span>
+  <span class="n">method</span> <span class="n">conocerIdioma</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span> <span class="o">{</span> <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="n">idioma</span><span class="o">)</span> <span class="o">}</span>
+  <span class="n">method</span> <span class="n">esInstruido</span><span class="o">()</span> <span class="k">=</span> <span class="n">librosLeidos</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="o">&amp;&amp;</span> <span class="n">idiomasQueConoce</span><span class="o">.</span><span class="n">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">3</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Aquí vemos cómo tenemos</p>
+
+<ul>
+  <li>métodos que producen efecto (acciones): <code class="language-plaintext highlighter-rouge">leerLibro</code>, <code class="language-plaintext highlighter-rouge">conocerIdioma</code></li>
+  <li>y métodos que no tienen efecto (contestan preguntas): <code class="language-plaintext highlighter-rouge">esInstruido</code></li>
+</ul>
+
+<h2 id="heurística-para-tener-atributos-que-pudieran-ser-calculables">Heurística para tener atributos que pudieran ser calculables</h2>
+
+<p>En general, intentar guardarse cosas de antemano para “optimizar” es un smell. Como dijo Donald Knuth, <a href="https://en.wikiquote.org/wiki/Donald_Knuth"><em>premature optimization is the root of all evil</em></a>.</p>
+
+<p>Sin embargo, <strong>sí hay ocasiones donde guardarse un resultado de antemano es aceptable</strong>:</p>
+
+<ul>
+  <li>si el cálculo lleva tiempo (o implica acceder a recursos externos costosos, como un archivo o un servicio web)</li>
+  <li>si la tasa de actualización es poco frecuente pero necesitamos conocer esa información una gran cantidad de veces al día</li>
+</ul>
+
+<p>son señales en los que tener un cálculo como atributo es justificable, algo que es improbable que ocurra en cursos iniciales de programación OO.</p>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/oo" title="oo">Oo</a></li>
+            
+             <li><a href="/categories/bad smells" title="bad smells">Bad smells</a></li>
+            
+             <li><a href="/categories/buenas prácticas" title="buenas prácticas">Buenas prácticas</a></li>
+            
+             <li><a href="/categories/variables" title="variables">Variables</a></li>
+            
+             <li><a href="/categories/temporales" title="temporales">Temporales</a></li>
+            
+             <li><a href="/categories/efecto" title="efecto">Efecto</a></li>
+            
+             <li><a href="/categories/precalculo" title="precalculo">Precalculo</a></li>
+            
+             <li><a href="/categories/precalcular" title="precalcular">Precalcular</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on November 25, 2020 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>141</td>
+                                <td>7</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>a3b33073</td>
+                        <td>Wed Nov 25 16:41:19 2020 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update oo-temporary-variable.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>50d38db9</td>
+                        <td>Wed Sep 18 11:36:54 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>replacing var => const in oo-temporary-variable whenever possible</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d48ba7f0</td>
+                        <td>Tue Sep 17 21:59:32 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Temporary variables article completed</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>107f5d99</td>
+                        <td>Tue Sep 17 21:40:10 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>temporary variable</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

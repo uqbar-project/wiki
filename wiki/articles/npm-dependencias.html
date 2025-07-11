@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Manejo de dependencias con NPM</title>
+  <meta property="og:title" content="Manejo de dependencias con NPM" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/npm-dependencias.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/npm-dependencias.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Manejo de dependencias con NPM</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Versionado semántico</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Dependencias de un proyecto con NPM</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-2-1"><span class="tocnumber">2.1</span> <span class="toctext">package.json</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#tocAnchor-1-2-2"><span class="tocnumber">2.2</span> <span class="toctext">package-lock.json</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">3</span> <span class="toctext">Primera instalación con npm install</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#tocAnchor-1-6"><span class="tocnumber">4</span> <span class="toctext">¿Tengo que versionar el package-json? (subirlo a git)</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#tocAnchor-1-7"><span class="tocnumber">5</span> <span class="toctext">Actualizando nuestras dependencias</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#tocAnchor-1-7-1"><span class="tocnumber">5.1</span> <span class="toctext">Subir las versiones minor - npm update</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#tocAnchor-1-7-2"><span class="tocnumber">5.2</span> <span class="toctext">Subir las versiones major (con coraje)</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Versionado semántico</h1>
+
+<p>Recordemos que todo componente tiene una versión compuesta por tres números:</p>
+
+<ul>
+  <li>major</li>
+  <li>minor</li>
+  <li>patch</li>
+</ul>
+
+<p>Ejemplo: el componente “typescript” tiene la versión “3.6.3”, donde 3 es el major number, 6 el minor y finalmente 3 es el patch.</p>
+
+<p>Para respetar el versionado semántico, al liberar una nueva versión tenemos que indicar qué es lo que trae ese nuevo componente:</p>
+
+<ul>
+  <li>si soluciona <em>bugs</em>, debería incrementar el patch: el componente “typescript” pasaría a tener la versión “3.6.4”</li>
+  <li>si trae nuevos <em>features</em> o funcionalidades que <strong>no rompen la retrocompatibilidad</strong>, debería incrementar el minor a “3.7.0”</li>
+  <li>si trae nuevas funcionalidades que rompen la retrocompatibilidad (ej. métodos o clases que dejaron de existir, o tienen diferente cantidad de parámetros), deberíamos incrementar la major a “4.0.0”</li>
+</ul>
+
+<h1 id="tocAnchor-1-2">Dependencias de un proyecto con NPM</h1>
+
+<h2 id="tocAnchor-1-2-1">package.json</h2>
+
+<p>El Node Package Manager (NPM) almacena las dependencias de nuestro proyecto (entre otras configuraciones) en el archivo <code class="language-plaintext highlighter-rouge">package.json</code>, por ejemplo:</p>
+
+<div class="language-js highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>  <span class="s2">"dependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"@angular/animations"</span><span class="p">:</span> <span class="s2">"^8.2.7"</span><span class="p">,</span>
+    <span class="s2">"@angular/common"</span><span class="p">:</span> <span class="s2">"^8.2.7"</span><span class="p">,</span>
+    <span class="s2">"@angular/compiler"</span><span class="p">:</span> <span class="s2">"^8.2.7"</span><span class="p">,</span>
+    <span class="s2">"@angular/core"</span><span class="p">:</span> <span class="s2">"^8.2.7"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"devDependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"@angular-devkit/build-angular"</span><span class="p">:</span> <span class="s2">"^0.803.5"</span><span class="p">,</span>
+    <span class="s2">"@angular/cli"</span><span class="p">:</span> <span class="s2">"~8.3.5"</span><span class="p">,</span>
+    <span class="s2">"@angular/compiler-cli"</span><span class="p">:</span> <span class="s2">"^8.2.7"</span><span class="p">,</span>
+    <span class="s2">"@angular/language-service"</span><span class="p">:</span> <span class="s2">"^8.2.7"</span><span class="p">,</span>
+    <span class="s2">"typescript"</span><span class="p">:</span> <span class="s2">"~3.6.3"</span>
+  <span class="p">}</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Por ejemplo, “~3.6.3” implica que podemos subir hasta una versión minor (3.7.x), pero no más (no a la 3.8.1 por ejemplo). El modificador “^8.2.7”, implica que podemos subir todas las versiones minor y patch que necesitemos, pero no actualizaremos la versión major a “9.0.0” por ejemplo.</p>
+
+<p>Para más información pueden leer <a href="https://www.npmjs.com/package/semver">el componente de node que trabaja el <em>versionado semántico</em></a>.</p>
+
+<h2 id="tocAnchor-1-2-2">package-lock.json</h2>
+
+<p>Mientras que el <code class="language-plaintext highlighter-rouge">package.json</code> permite configurar las dependencias para un rango de versiones posibles, el <code class="language-plaintext highlighter-rouge">package-lock.json</code> es la foto de las dependencias exactas que se descargaron en tu máquina, incluyendo las dependencias indirectas.</p>
+
+<p>Esto permite que todos los desarrolladores (y especialmente el CI) puedan replicar el mismo entorno y que las versiones que instalamos no dependa del momento en el que hacemos <code class="language-plaintext highlighter-rouge">npm install</code>.</p>
+
+<h1 id="tocAnchor-1-5">Primera instalación con npm install</h1>
+
+<p>La primera vez que descargamos un proyecto, debemos descargar las dependencias, para eso debemos ejecutar</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm install
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Si existe el archivo <code class="language-plaintext highlighter-rouge">package-lock.json</code>, npm partirá de esa definición para ir a buscar las dependencias y bajarlas a nuestro directorio node_modules. Si no existe el archivo <code class="language-plaintext highlighter-rouge">package-lock.json</code>, entonces se basará en las definiciones del <code class="language-plaintext highlighter-rouge">package.json</code> para buscar las últimas versiones posibles de cada uno de los componentes.</p>
+
+<h1 id="tocAnchor-1-6">¿Tengo que versionar el package-json? (subirlo a git)</h1>
+
+<p>TL;DR <strong>Sí</strong>.</p>
+
+<p>La justificación es que de esa manera estaremos seguros de que todos los que trabajamos en el proyecto tengamos las mismas dependencias.</p>
+
+<h1 id="tocAnchor-1-7">Actualizando nuestras dependencias</h1>
+
+<p>Para mantener al día las dependencias de nuestros ejemplos, tenemos dos opciones:</p>
+
+<h2 id="tocAnchor-1-7-1">Subir las versiones minor - npm update</h2>
+
+<p>Podemos detectar si hay nuevas versiones <em>minor</em> que no rompan la retrocompatibilidad escribiendo en nuestra consola o git bash:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm outdated
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>O directamente podemos escribir:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm update
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Al ejecutar este comando:</p>
+
+<ul>
+  <li>se actualiza el <code class="language-plaintext highlighter-rouge">package-lock.json</code></li>
+  <li>y también en el directorio <code class="language-plaintext highlighter-rouge">node_modules</code> descargamos los paquetes con el código que vamos a utilizar</li>
+</ul>
+
+<p>
+  <img src="/img/wiki/node_modules_meme.png" alt="node_modules_meme" />
+</p>
+
+<h2 id="tocAnchor-1-7-2">Subir las versiones major (con coraje)</h2>
+
+<p>Si estás seguro que vas a poder seguir manteniendo estable tu conjunto de dependencias, podés trabajar con npm-check-updates. Lo instalás globalmente la primera vez:</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>npm install <span class="nt">-g</span> npm-check-updates
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Y luego lo ejecutás</p>
+
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>ncu <span class="nt">-u</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Esto <strong>te va actualizar las versiones de tu <code class="language-plaintext highlighter-rouge">package.json</code> tratando de subir a la mayor versión posible</strong>. Luego podés correr <code class="language-plaintext highlighter-rouge">npm update</code> (o bien <code class="language-plaintext highlighter-rouge">npm install</code> si te bajaste el proyecto la primera vez)</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on March 08, 2021 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>3</td>
+                                <td>112</td>
+                                <td>2</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>8ed214df</td>
+                        <td>Mon Mar 8 10:27:42 2021 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>[#23] - Fix some of the 404 urls</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e8649719</td>
+                        <td>Thu Sep 19 17:47:38 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Damn highlighter</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ea41b962</td>
+                        <td>Thu Sep 19 17:40:34 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Adding npm dependencies page</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

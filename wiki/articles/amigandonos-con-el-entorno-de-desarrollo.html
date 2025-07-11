@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Amigandonos con el entorno de desarrollo</title>
+  <meta property="og:title" content="Amigandonos con el entorno de desarrollo" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/amigandonos-con-el-entorno-de-desarrollo.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/amigandonos-con-el-entorno-de-desarrollo.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Amigandonos con el entorno de desarrollo</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Algunas buenas prácticas para tener en cuenta:</p>
+
+<h2 id="control-de-versiones">Control de versiones</h2>
+
+<ul>
+  <li>No todos los archivos deben subirse al repo. Como regla general no deberían subir archivos que se puedan generar a partir de otros, por ejemplo:
+    <ul>
+      <li>los binarios que se generan a partir del código fuente de ustedes. Ocupan espacio en el repositorio y se corre el riesgo de estar trabajando con versiones desactualizadas.</li>
+      <li>archivos de configuración propios de cada uno (por ejemplo el .settings que genera el Eclipse). Si alguno tiene una configuración diferente (que es muy muy muy probable) la van a estar pisando a cada rato, e incluso es probable que les genere conflictos.</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Nunca deberían subir nuevos fuentes al repositorio sin explicar brevemente qué cambiaron. Si los mensajes son descriptivos (y “fix”, “asdsadsa” o “arreglo una cosita” definitivamente no lo son) rápidamente puedo detectar qué modificaron mis compañeros con sólo leer lo que escribieron en los commits. Una buena descripción me ayuda también a entender qué es lo que se modificó y por qué razón, especialmente útil a la hora de solucionar un conflicto o entender por qué se rompieron los tests.</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Establecer criterios de trabajo en grupo, algunos muy usados:
+    <ul>
+      <li>los tests tienen que estar en verde</li>
+      <li>los tests son de todos y todos somos responsables por mantenerlos</li>
+      <li>si encontramos un bug y no había un test que lo probaba agregamos uno</li>
+      <li>los tests son rápidos de correr</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Establecer formas de trabajo y organizar el trabajo nuestro con el de los demás:
+    <ul>
+      <li>Cuando empiezo el día primero sincronizo el repositorio para ver los cambios que no tengo en el código</li>
+      <li>Acepto los cambios entrantes y en caso de ser necesario resuelvo conflictos</li>
+      <li>Corro los tests y veo que todo anda sobre ruedas</li>
+      <li>Vuelvo a sincronizar y veo que ya no quedan ni conflictos ni cambios sin aceptar</li>
+      <li>Subo mis cambios al repositorio remoto para que mis compañeros lo vean</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Esto mismo lo hacemos varias veces al día y antes de subir algo nuevo al repositorio. Siempre corro los tests y si alguno da error, bueno, alguien subió algo indebido. Los tests y el repositorio nos ayudan a entender cuándo se rompió y por qué.</p>
+
+<!-- -->
+
+<h3 id="git">Git</h3>
+
+<ul>
+  <li>A la hora de ignorar archivos, git nos provee una forma muy sencilla y a la vez poderosa de hacerlo: los .gitignore. Estos son archivos que podemos crear en cualquier carpeta de nuestra estructura (usualmente en el directorio raíz) y especificar en ellos qué archivos o patrones deberían quedar fuera del versionado. Cada línea del .gitignore representa algo que queremos ignorar, por ejemplo “enunciado.pdf” nos ignoraría ese archivo, mientras que “*.class” va a ignorar todos los .class que tengamos en el directorio actual y en todos sus subdirectorios. Pueden encontrar versiones de .gitignore para la mayoría de los lenguajes en <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></li>
+</ul>
+
+<p>A continuación te damos una lista de posibles recursos que deberían estar en el archivo .gitignore:</p>
+
+<ul>
+  <li>/target/</li>
+  <li>.classpath</li>
+  <li>.project</li>
+  <li>bin</li>
+  <li>generated*</li>
+  <li>.settings</li>
+</ul>
+
+<h2 id="eclipse">Eclipse</h2>
+
+<ul>
+  <li>Cómo organizar los archivos: <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a>, el código productivo debería estar en src/main y el código de test en src/test. ¿Qué gano usando estas convenciones? Me corren los tests, me integro con el mundo y eventualmente puedo usar herramientas externas sin tener que configurar nada, ya que respetan estas convenciones (como Maven).</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>¡Formatear el código! Nunca nos olvidemos de que nuestro código tiene que ser entendible para el resto de la humanidad. Además, el Eclipse lo hace solo (Ctrl + Shift + F).</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Utilización de packages (<em>paquetes</em>). Es una buena práctica agrupar las clases afines en paquetes para organizar semánticamente el código. No hay una guía firme a seguir con respecto a cómo organizar nuestro código, ya que suele depender del contexto en el cuál estamos trabajando, pero es muy común respetar convenciones para mantener la simplicidad y flexibilidad ahorrando al desarrollador de tomar estas decisiones (“<em>Convention over Configuration</em>”).</li>
+</ul>
+
+<p>Por ejemplo, en un proyecto completo tener paquetes para el “<em>dominio</em>”, “<em>controllers</em>” y “<em>vista</em>” (si correspondiese) es una convención común. Cada uno de éstos agrupa las clases que tienen un concepto afín. Se podría seguir ahondando en la definición de subpaquetes agrupando, por ejemplo, por componente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>domain/
+   ├── home
+   ├── registration
+   │   ├── Profile.java
+   │   └── User.java
+   └── settings
+       ├── CustomPrivacy.java
+       ├── DefaultPrivacy.java
+       ├── Privacy.java
+       └── Setting.java
+
+</code></pre></div></div>
+
+<p>De esta manera, logramos mayor granularidad en la organización de nuestras clases.</p>
+
+<p>Otro uso de los paquetes, también relacionado con el concepto anteriormente mencionado Convention over Configuration, es el de identificar unívocamente a una aplicación. ¿Qué significa ésto? Que las clases que yo defina formen parte de un meta grupo que los identifique, y así evitar colisiones en los nombres que yo les ponga. Por ejemplo: yo puedo definir la clase Color, pero la api de Java AWT ya define una clase Color.</p>
+
+<p>Es por este motivo que se utiliza el dominio de internet de la organización, pero “dado vuelta”. Por ejemplo si trabajamos para Google sería común encontrar paquetes del estilo <strong>com.google.blah</strong>. Para el ejemplo de Color, la api de Java la define como java.awt.Color. En nuestro caso podríamos usar, por ejemplo: <strong>ar.edu.materiaQueCursan.paquete</strong>.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on June 08, 2017 by
+        fdodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>13</td>
+                                <td>40</td>
+                                <td>31</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Faloi</td>
+                                <td>Faloi@u...</td>
+                                <td>6</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mdumrauf</td>
+                                <td>Mdumrau...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>fdodino</td>
+                                <td>fernand...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>3657ec91</td>
+                        <td>Thu Jun 8 21:26:30 2017 -0300</td>
+                        <td>fdodino</td>
+                        <td>fernand...</td>
+                        <td>Fixing code first space (padding)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6148f756</td>
+                        <td>Wed Jun 7 09:47:16 2017 -0300</td>
+                        <td>fdodino</td>
+                        <td>fernand...</td>
+                        <td>Java + Arena configuration enhanced</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>dc264d1d</td>
+                        <td>Thu Feb 2 19:08:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Control de versiones */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1657e37d</td>
+                        <td>Thu Feb 2 19:08:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

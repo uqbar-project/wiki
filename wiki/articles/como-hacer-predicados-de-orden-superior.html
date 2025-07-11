@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Como hacer predicados de orden superior</title>
+  <meta property="og:title" content="Como hacer predicados de orden superior" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/como-hacer-predicados-de-orden-superior.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/como-hacer-predicados-de-orden-superior.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Como hacer predicados de orden superior</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Recordemos los predicados de orden superior que vimos hasta el momento, esos “predicados que relacionan predicados”:</p>
+
+<ul>
+  <li>not/1</li>
+  <li>findall/3</li>
+  <li>forall/2</li>
+</ul>
+
+<p>¿Eso es todo lo que hay? No, por supuesto que no. Existen muchos otros predicados de orden superior “pre-construidos” (built-in), pero esta base nos alcanza para lo que queremos ver en la materia. Pero lo más interesante es que podemos construir nuestros propios predicados de orden superior, sin embargo vamos a ver que no es tan natural como sí era en Haskell.</p>
+
+<h2 id="call--1">call / 1</h2>
+
+<p>El predicado call/1 nos permite evaluar un predicado pasado por parámetro. Retomando uno de nuestros primeros ejemplos, veamos cómo se usaría:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- call(padre(Padre, Hijo)).</code>
+<code class="language-plaintext highlighter-rouge">Padre = homero</code>
+<code class="language-plaintext highlighter-rouge">Hijo = bart ;</code>
+<code class="language-plaintext highlighter-rouge">...</code></p>
+
+<p>Pero eso no aporta mucho respecto de hacerlo en forma directa:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- padre(Padre, Hijo).</code>
+<code class="language-plaintext highlighter-rouge">Padre = homero</code>
+<code class="language-plaintext highlighter-rouge">Hijo = bart ;</code>
+<code class="language-plaintext highlighter-rouge">...</code></p>
+
+<p>Se supone que sólo tiene sentido usar esto si no sabemos qué consulta es la que nos van a pasar por parámetro y usamos el call/1 para definir algo más genérico. Veamos otra variante, entonces, que puede resultarnos más interesante y útil para lo que sí podemos llegar a usar.</p>
+
+<h2 id="call--_">call / _</h2>
+
+<p>El predicado call/_ también nos permite evaluar un predicado pasado por parámetro, pero separando los parámetros que el mismo recibe:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- call(padre, Padre, Hijo).</code>
+<code class="language-plaintext highlighter-rouge">Padre = homero</code>
+<code class="language-plaintext highlighter-rouge">Hijo = bart ;</code>
+<code class="language-plaintext highlighter-rouge">...</code></p>
+
+<p>O también:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- call(padre(homero), Hijo).</code>
+<code class="language-plaintext highlighter-rouge">Hijo = bart ;</code>
+<code class="language-plaintext highlighter-rouge">...</code></p>
+
+<p>Momento, momento… entonces, ¿cuál es la aridad de call/_? El predicado call/_ no tiene definida una aridad fija. Puede tener desde 1 (la versión que vimos antes) hasta N + 1, siendo N la aridad del predicado que se recibe como primer parámetro.</p>
+
+<p>Usando este predicado podemos hacer cosas equivalentes (¡no iguales!) a las que hacíamos con orden superior en Haskell. Juguemos un poco con esto: implementemos map y filter.</p>
+
+<h2 id="creando-nuestros-propios-predicados-de-orden-superior">Creando nuestros propios predicados de orden superior</h2>
+
+<h3 id="el-viejo-y-querido-filter">el viejo y querido filter</h3>
+
+<p>La cuestión de los parámetros es igual a la anterior: vamos a necesitar uno más que lo que tenía filter en Haskell para unificar la lista resultante. Hagamos también dos versiones.</p>
+
+<p><strong>Versión recursiva:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">filterRecursivo( _ , [] , [] ).</code>
+<code class="language-plaintext highlighter-rouge">filterRecursivo(Pred, [X | Xs], [X | Ys]):-</code>
+<code class="language-plaintext highlighter-rouge">  call(Pred, X),</code>
+<code class="language-plaintext highlighter-rouge">  filterRecursivo(Pred, Xs, Ys).</code>
+<code class="language-plaintext highlighter-rouge">filterRecursivo(Pred, [X | Xs], Ys):-</code>
+<code class="language-plaintext highlighter-rouge">  not(call(Pred, X)),</code>
+<code class="language-plaintext highlighter-rouge">  filterRecursivo(Pred, Xs, Ys).</code></p>
+
+<p><strong>Versión no recursiva:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">filterNoRecursivo(Pred, ListaOrigen, ListaResultante):-</code>
+<code class="language-plaintext highlighter-rouge">  findall(X, (member(X, ListaOrigen), call(Pred, X)), ListaResultante).</code></p>
+
+<p>Ejemplos de consulta:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- filterRecursivo(padre(homero), [herbert, lisa, maggie, homero, bart], ListaFiltrada).</code>
+<code class="language-plaintext highlighter-rouge">ListaFiltrada = [lisa, maggie, bart] ;</code>
+<code class="language-plaintext highlighter-rouge">No</code>
+<code class="language-plaintext highlighter-rouge">?- filterNoRecursivo(padre(homero), [herbert, lisa, maggie, homero, bart], ListaFiltrada).</code>
+<code class="language-plaintext highlighter-rouge">ListaFiltrada = [lisa, maggie, bart] ;</code>
+<code class="language-plaintext highlighter-rouge">No</code></p>
+
+<p>Buenísimo :D Este predicado también existe como built-in y, como el título lo dice, es <strong>include/3</strong>.</p>
+
+<h3 id="el-viejo-y-querido-map">el viejo y querido map</h3>
+
+<p>Empecemos por lo básico… ¿cuántos parámetros tenía la función map?</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; map f lista</code></p>
+
+<p>Tenía dos parámetros, una función de transformación “f” y una lista, y la función era aplicable a cada elemento de la lista.</p>
+
+<p>Entonces, ¿cuántos argumentos va a tener nuestra relación maplist? Vamos a tener el predicado de transformación y la lista, por supuesto. Pero también necesitamos un argumento más para unificarlo con la lista resultante del mapeo. Tenemos también que considerar las cosas que relaciona el predicado: un elemento de la lista original con uno de la lista resultante.</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- map(Predicado, ListaOriginal, ListaResultante).</code></p>
+
+<p>Ejemplo de uso:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- map(padre, [homero,abe], Hijos).</code>
+<code class="language-plaintext highlighter-rouge">Hijos = [[bart,lisa,maggie],[homero,herbert]]</code></p>
+
+<p>Ok, pensemos cómo lo podríamos implementar para que haga lo que queremos?</p>
+
+<p><strong>Versión 1 con recursividad</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">mapRecursivo( _ , [] , [] ).</code>
+<code class="language-plaintext highlighter-rouge">mapRecursivo(Pred, [X|Xs], [Y|Ys]):-</code>
+<code class="language-plaintext highlighter-rouge">  call(Pred, X, Y),</code>
+<code class="language-plaintext highlighter-rouge">  mapRecursivo(Pred, Xs, Ys).</code></p>
+
+<p>Ejemplos de consulta:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- mapRecursivo(padre, [homero,abe], Hijos).</code>
+<code class="language-plaintext highlighter-rouge">Hijos= [bart, homero] ;</code>
+<code class="language-plaintext highlighter-rouge">Hijos= [bart, herbert] ;</code>
+<code class="language-plaintext highlighter-rouge">Hijos= [lisa, homero] ;</code>
+<code class="language-plaintext highlighter-rouge">Hijos= [lisa, herbert] ;</code>
+<code class="language-plaintext highlighter-rouge">Hijos= [maggie, homero] ;</code>
+<code class="language-plaintext highlighter-rouge">Hijos= [maggie, herbert] ;</code>
+<code class="language-plaintext highlighter-rouge">No</code></p>
+
+<p>Ok… esto no hace lo que queremos, vemos que vamos a tener múltiples respuestas donde para cada padre me mappea con un único hijo de ese padre. Pensándolo desde un punto de vista genérico, más allá del dominio particular, nuestra primer implementación nos da N respuestas con todas las combinaciones posibles de mapeo, pero siempre con mapeos 1 a 1 para cada elemento de la lista original. Qué más se nos ocurre?</p>
+
+<p><strong>Versión 2 con findall</strong> También podríamos hacer una versión no recursiva:</p>
+
+<p><code class="language-plaintext highlighter-rouge">mapNoRecursivo(Pred, ListaOriginal, ListaResultante):-</code>
+<code class="language-plaintext highlighter-rouge">   findall(Y, (member(X, ListaOriginal), call(Pred, X, Y)), ListaResultante).</code></p>
+
+<p>Ejemplos de consulta:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- mapNoRecursivo(padre, [homero,abe], Hijos).</code>
+<code class="language-plaintext highlighter-rouge">Hijos = [bart, lisa, maggie, homero, herbert] ;</code>
+<code class="language-plaintext highlighter-rouge">No</code></p>
+
+<p>Para nuestra implementación no recursiva la respuesta es única, pero están en la misma lista los hijos de todos y según nuestro ejemplo de uso esperado que dijimos al principio queríamos que nos de una lista de listas, sino no podemos distinguir los que son hijos de homero respecto a los de abe.</p>
+
+<p>Las dos implementaciones que realizamos sin embargo funcionarían correctamente con relaciones que cumplan con unicidad (con lo cual estaríamos más cerca del mundo funcional, no siempre queremos esto, depende del problema). Si modeláramos la relación hijosDe/2 como:</p>
+
+<p><code class="language-plaintext highlighter-rouge">hijosDe(Padre,Hijos):- findall(Hijo, padre(Padre,Hijo), Hijos).</code></p>
+
+<p>Podríamos hacer la siguiente consulta</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- mapNoRecursivo(hijosDe, [homero,abe], Hijos).</code>
+<code class="language-plaintext highlighter-rouge">Hijos = [[bart,lisa,maggie],[homero,herbert]]</code></p>
+
+<p>Y el resultado sería idéntico al de nuestro mapRecursivo.</p>
+
+<p><strong>Y cuál es el que está bien?</strong> La respuesta es depende. Si buscamos múltiples respuestas con relaciones 1 a 1 vamos a querer la primera, si buscamos una única respuesta que englobe todas las respuestas posibles vamos a querer la segunda, y si queremos que sea 1 a 1 con una única respuesta tenemos que asegurarnos de que nuestro dominio esté modelado de forma acorde, incluso podríamos tener una tercer versión como esta:</p>
+
+<p><strong>Versión 3 con recursividad y findall</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">mapListaDeListas( _ , [] , [] ).</code>
+<code class="language-plaintext highlighter-rouge">mapListaDeListas(Pred, [X|Xs], [Y|Ys]):-</code>
+<code class="language-plaintext highlighter-rouge">  findall(Z,call(Pred, X, Z),Y),</code>
+<code class="language-plaintext highlighter-rouge">  mapListaDeListas(Pred, Xs, Ys).</code></p>
+
+<p>Esta consulta va a hacer lo que queríamos originalmente, pero siempre nos va a dar una lista de listas y capaz no queremos eso…</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- mapListaDeListas(padre, [homero,abe], Hijos).</code>
+<code class="language-plaintext highlighter-rouge">Hijos = [[bart,lisa,maggie],[homero,herbert]]</code></p>
+
+<p>Ya que estamos en lógico, pensemos qué otras consultas podríamos querer hacer:</p>
+
+<p><code class="language-plaintext highlighter-rouge">?- mapRecursivo(padre, Padres, [bart, lisa, maggie]).</code>
+<code class="language-plaintext highlighter-rouge">Padres = [homero, homero, homero] ;</code>
+<code class="language-plaintext highlighter-rouge">No</code></p>
+
+<p>Nuestra primer versión recursiva es inversible para el segundo o el tercer argumento (aunque no ambos simultáneamente). Si probamos lo mismo con nuestra versión no recursiva, nos vamos a encontrar con un problema ya que en la implementación estamos usando member/2 con la primera lista, y member/2 no es inversible para la lista.</p>
+
+<p>Lógicamente ninguna versión será inversible respecto al primer argumento, ya que necesita saber qué predicado quiere consultar en el call.</p>
+
+<p>Bueno, la versión built-in de map en SWI-Prolog es <strong>maplist/3</strong>, y se comporta como nuestra versión recursiva.</p>
+
+<h3 id="cómo-seguimos">¿Cómo seguimos?</h3>
+
+<p>Otro predicado de orden superior muy útil es mejorSegun/3 que relaciona un predicado de aridad 2 a invocar, una lista y al valor que maximiza el segundo argumento del predicado en cuestión. Se animan a resolverlo?</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>177</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>158e5115</td>
+                        <td>Thu Feb 2 19:09:43 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Recordemos los predicados de orden superior que vimos hasta el momento, esos “predicados que relacionan predicados”:  *not/1 *findall/3 *forall/2  ¿Eso es todo lo que ...»</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

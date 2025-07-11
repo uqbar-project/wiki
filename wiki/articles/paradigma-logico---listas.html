@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Paradigma logico   listas</title>
+  <meta property="og:title" content="Paradigma logico   listas" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/paradigma-logico---listas.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/paradigma-logico---listas.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Paradigma logico   listas</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="motivación">Motivación</h2>
+
+<p>Si nuestra base de conocimiento es</p>
+
+<pre><code class="language-Prolog">padre(homero,bart).
+padre(homero,maggie).
+padre(homero,lisa).
+</code></pre>
+
+<p>Vimos varias consultas posibles</p>
+
+<pre><code class="language-Prolog">%Es cierto que homero es padre de bart?
+?- padre(homero,bart).
+Yes
+%Es cierto que homero es papá?
+?- padre(homero,_).
+Yes
+%Quienes son los padres de bart?
+?- padre(P,bart).
+P = homero
+%Quienes son los hijos de homero?
+?- padre(homero,H).
+H = bart;
+...
+</code></pre>
+
+<pre><code class="language-Prolog">%Quienes son padre e hijo?
+?- padre(X,Y).
+X = homero
+Y = bart;
+etc.
+</code></pre>
+
+<p>Pero a pesar de esta gran gama de consultas hay ciertas preguntas que se vuelven complicadas o imposibles. Vamos a tomar como ejemplo la siguiente pregunta: ¿Cuántos hijos tiene homero?.</p>
+
+<p>En el estado actual de las cosas tenemos que hacer la consulta</p>
+
+<pre><code class="language-Prolog">?- padre(homero,H).
+H = bart;
+H = lisa;
+H = maggie;
+No
+</code></pre>
+
+<p>Contamos la cantidad de respuestas, en este caso los posibles valores de H y obtenemos la respuesta … 3. Ahora bien, esto es impracticable cuando el número de respuestas es alto y además no responde a nuestra pregunta de forma directa.</p>
+
+<p>Pensemos en predicados e individuos y definamos un predicado que relacione lo que nos interesa … una persona y su cantidad de hijos. Dicho predicado puede llamarse cantidadDeHijos/2.</p>
+
+<pre><code class="language-Prolog">?- cantidadDeHijos(homero,C).
+C = 3
+</code></pre>
+
+<p>Perfecto, ya tenemos definido nuestro objetivo ahora definamos el predicado a través de una regla (lo quiero hacer por comprensión porque quiero que me sirva para cualquier persona, no solo homero)</p>
+
+<pre><code class="language-Prolog">cantidadDeHijos(P,Cantidad) :- ... .
+</code></pre>
+
+<p>Para resolver esto volvamos un poco para atrás. En el mundo del paradigma lógico ¿qué es lo que da 3? La cantidad de respuestas de la consulta .</p>
+
+<p>Entonces lo que nos gustaría hacer es tener en un solo lugar todas las respuestas a la consulta para después contar todos los posibles valores de H pero todavía no sabemos cómo hacer eso así que imaginemos que por el momento es magia.</p>
+
+<h2 id="el-conjunto-como-un-individuo">El conjunto como un individuo</h2>
+
+<p>Sin importar como obtenemos esas respuestas las queremos tener identificadas en un solo lugar, en un solo individuo … un individuo compuesto que representa un conjunto!</p>
+
+<p>En el caso de homero ese conjunto va a ser .</p>
+
+<p>A este tipo de individuo que representa conjuntos lo vamos a llamar <strong>lista</strong> y se encierra entre corchetes () donde cada elemento del conjunto se separa por coma ().</p>
+
+<p>En nuestra definición del predicado vamos a definir una variable Hijos que va representar a dicho conjunto, pero a nosotros no nos interesa el conjunto de hijos sino la cantidad de elementos que tiene ese conjunto …</p>
+
+<p>Una vez hecha la magia, lo que necesitamos es un predicado que relacione a un conjunto con su cantidad de elementos y eso ya viene con prolog. Ese predicado se llama .</p>
+
+<pre><code class="language-Prolog">cantidadDeHijos(P,Cantidad) :- 
+    acá va la magia que le da valor a la variable Hijos,
+    length(Hijos,Cantidad).
+</code></pre>
+
+<p>Nos falta hacer la magia!</p>
+
+<h2 id="cómo-obtener-todas-las-respuestas-juntas">¿Cómo obtener todas las respuestas ‘juntas’?</h2>
+
+<p>Si tenemos una forma de obtener múltiples respuestas a una consulta (en este caso, todos los H que son respuesta de la consulta padre(P,H) cuando P es por ejemplo homero), y lo que queremos es que todas esas respuestas estén juntas en una lista, hay un predicado en Prolog que hace exactamente eso:</p>
+
+<pre><code class="language-Prolog">findall(UnIndividuo,Consulta,Conjunto)
+</code></pre>
+
+<p>Donde:</p>
+
+<ul>
+  <li>
+    <p>normalmente es una variable que se usa en la Consulta</p>
+  </li>
+  <li>
+    <p>es una lista con todos los individuos que se encontraron al consultar la Consulta</p>
+  </li>
+</ul>
+
+<p>Entonces:</p>
+
+<p>findall es un predicado que relaciona a una consulta con el conjunto (lista) de sus respuestas.</p>
+
+<p>El otro parámetro me permite indicar qué es lo que me interesa para completar la lista. Volviendo a nuestro ejemplo</p>
+
+<pre><code class="language-Prolog">cantidadDeHijos(P, Cantidad) :- 
+    findall(H, padre(P,H), Hijos),
+    length(Hijos, Cantidad).
+</code></pre>
+
+<p>Con esta definición nuestro objetivo se cumple</p>
+
+<pre><code class="language-Prolog">?- cantidadDeHijos(homero,C).
+C = 3
+</code></pre>
+
+<p>Observamos que la variable de la cláusula que define cantidadDeHijos llega ligada al findall, por lo tanto la consulta que está adentro (el 2do parámetro) queda que efectivamente tiene 3 respuestas.</p>
+
+<h2 id="inversibilidad-del-predicado-findall">Inversibilidad del predicado findall</h2>
+
+<p>Ahora bien, agregemos algunos hechos a la base de conocimiento</p>
+
+<pre><code class="language-Prolog">padre(homero,bart).
+padre(homero,maggie).
+padre(homero,lisa).
+padre(abraham,homero).
+padre(abraham,herbert).
+</code></pre>
+
+<p>Y pensemos en otra consulta</p>
+
+<pre><code class="language-Prolog">?- cantidadDeHijos(P,C).
+C = 5.
+</code></pre>
+
+<p>No funciona como esperábamos, ¿a qué se debe?</p>
+
+<p>Debemos mirar la consulta que se está realizando en el findall (el 2do parámetro): . Si pensamos cuántas respuestas tiene esa pregunta veremos que ¡efectivamente son 5!</p>
+
+<pre><code class="language-Prolog">%Quienes son padre e hijo?
+?- padre(P,H).
+P = homero,
+H = bart ;
+P = homero,
+H = maggie ;
+P = homero,
+H = lisa ;
+P = abraham,
+H = homero ;
+P = abraham,
+H = herbert.
+</code></pre>
+
+<p>En el findall/3 como primer parámetro dijimos que nos interesa solamente la variable H de cada respuesta, e Hijos será un conjunto de esos H. Por lo tanto Hijos es la lista [bart,maggie,lisa,homero,herbert] que tiene 5 elementos (la respuesta a nuestra consulta).</p>
+
+<h3 id="un-findall-totalmente-inversible-generación">Un findall <em>totalmente inversible</em>: Generación</h3>
+
+<p>El problema está en la consulta de adentro del findall, no queremos preguntar “¿Quienes son padre e hijo?” sino “¿Quienes son hijos de P?” (risas) y para preguntar eso P debe llegar ligada al findall, para poder preguntar por los hijos de una persona en particular.</p>
+
+<p>Ahora tenemos que averiguar cómo ligar a P, y para eso hay que pensar cuáles serían los posibles P que nos interesan. Una respuesta sencilla es pensar que queremos que P sea una persona, entonces podríamos agregar al antecedente la restricción: .</p>
+
+<p>(También se podría usar el predicado padre/2 en lugar de persona/1, analizamos la diferencia entre ambos en el próximo apartado.)</p>
+
+<pre><code class="language-Prolog">cantidadDeHijos(P,Cantidad) :-
+    persona(P), % Generacion, asi la variable P llega ligada al findall
+    findall(H,padre(P,H),Hijos),
+    length(Hijos,Cantidad).
+</code></pre>
+
+<p>Lo que logramos al hacer que P llegue ligada al findall es que el predicado cantidadDeHijos/2 sea totalmente inversible. A esta técnica la denominamos <a href="generacion.html">generación</a>.</p>
+
+<h3 id="dos-formas-distintas-de-generación">Dos formas distintas de generación</h3>
+
+<p>Dijimos que en realidad hay dos formas de determinar cuáles son todos los P que me interesan:</p>
+
+<ol>
+  <li>Una forma es decir que P es una persona, entonces podríamos poner:</li>
+  <li>Por el otro podemos pensar que P tiene que ser padre, entonces surge la opción: . (Me interesa que sea padre y no me importa en principio cuáles son sus hijos.</li>
+</ol>
+
+<p>¿Qué pasaría si usamos en lugar de como generador?</p>
+
+<pre><code class="language-Prolog">cantidadDeHijos(P,Cantidad) :-
+    padre(P,_), %Generacion, asi la variable P llega ligada al findall
+    findall(H,padre(P,H),Hijos),
+    length(Hijos,Cantidad).
+</code></pre>
+
+<p>La diferencia la vamos a encontrar si hacemos la consulta:</p>
+
+<pre><code class="language-Prolog">?- cantidadDeHijos(bart,C).
+</code></pre>
+
+<p>Con la solución propuesta en el apartado anterior nos dice que bart tiene cero hijos:</p>
+
+<pre><code class="language-Prolog">?- cantidadDeHijos(bart,C).
+C = 0
+</code></pre>
+
+<p>Con la segunda posibilidad, bart no es una posible respuesta para (porque no es padre de nadie). Entonces lo que voy a obtener es:</p>
+
+<pre><code class="language-Prolog">?- cantidadDeHijos(bart,C).
+No
+</code></pre>
+
+<p>En este caso consideramos que es más saludable un 0 que un No. Independientemente de eso, lo que debe quedar de todo esto es que las distintas formas de generar nos pueden dar diferentes resultados como respuesta y hay que elegir qué queremos.</p>
+
+<p>Una pregunta adicional que podría surgir es: ¿qué pasa si no tenemos el predicado persona? Bueno, habrá que agregarlo a la base de conocimientos, y para ello tenemos dos posibilidades:</p>
+
+<p>Por extensión:uno por uno enumerando cada persona (un hecho para cada persona:</p>
+
+<pre><code class="language-Prolog">persona(bart).
+persona(lisa).
+... etc.
+</code></pre>
+
+<p>Por comprensión:con una regla descubrir quiénes podemos considerar persona a partir de la información que ya tenemos. Una forma de hacer eso sería:</p>
+
+<pre><code class="language-Prolog">persona(Papa) :- padre(Papa,_).
+persona(Hijo) :- padre(_,Hijo).
+</code></pre>
+
+<p>Es decir, el que es padre de alguien es una persona, y el que es hijo también.</p>
+
+<h2 id="haciendo-consultas-más-heavies">Haciendo consultas más heavies</h2>
+
+<p>En el segundo parámetro del findall se pueden poner cualquier tipo de consulta, no es necesario que solo 1 predicado esté involucrado.</p>
+
+<p>findall(X,(p(X),q(X),r(X),…,s(X)), Xs)</p>
+
+<p>Hay que encerrarla entre paréntesis para no cambiar la aridad de findall que es tres (3).</p>
+
+<h3 id="ejemplo">Ejemplo</h3>
+
+<p>Si queremos hacer un predicado que me diga cuantos hijos pibes tiene una persona podemos hacer esto</p>
+
+<p>Los X que me interesan son los que cumplen la consulta (padre(P,H),esPibe(H))</p>
+
+<pre><code class="language-Prolog">cuantosPibes(Persona,Cant) :- 
+     persona(Persona),
+     findall(H,(padre(Persona,H),esPibe(H)),Pibes),
+     length(Pibes,Cant).
+</code></pre>
+
+<p>Otro ejemplo usando listas</p>
+
+<pre><code class="language-Prolog">interseccion(Xs,Ys,Zs) :-
+    findall(E,(member(E,Xs),member(E,Ys)),Zs).
+</code></pre>
+
+<h2 id="usando-individuos-compuestos-en-el-primer-parámetro-del-findall">Usando individuos compuestos en el primer parámetro del findall</h2>
+
+<p>En ciertas situaciones nos interesa tener una lista de individuos que hasta el momento no existían en nuestro programa o que no están presentes explícitamente en la consulta (o sea, en el 2do parámetro del findall).</p>
+
+<h3 id="ejemplo-1">Ejemplo:</h3>
+
+<p>Imagínense que tenemos un programa en donde se define el predicado puntaje/2 que relaciona a un equipo con la cantidad de puntos que tiene. Un requerimiento bastante usual en un programa de este estilo, es conocer la tabla de posiciones que se puede ver como un conjunto de individuos o sea una lista en donde cada individuo que la compone es un equipo con su cantidad de puntos.</p>
+
+<pre><code class="language-Prolog">?- findall( ???? , puntaje(Equipo,Cant), Tabla ).
+</code></pre>
+
+<p>La pregunta a responder es qué ponemos en ????. Necesitamos definir un individuo que está compuesto por otros 2 individuos (Equipo y Cant). Para hacer esto nada mejor que un functor (un indivudo compuesto de tamaño fijo), le inventamos un nombre por ejemplo ptos</p>
+
+<pre><code class="language-Prolog">?- findall( ptos(Equipo,Cant) , puntaje(Equipo,Cant) , Tabla )
+</code></pre>
+
+<p>Recuerden:</p>
+
+<ul>
+  <li>ptos es un functor no un predicado</li>
+  <li>puntaje es un predicado no un functor</li>
+  <li>Tabla es una lista de functores ptos que verifican la consulta que está como segundo parámetro del findall</li>
+</ul>
+
+<h2 id="sacando-los-repetidos-con-distinct">Sacando los repetidos con distinct</h2>
+
+<ul>
+  <li>Ver <a href="distinct.html">Distinct</a></li>
+</ul>
+
+<h2 id="recursividad-con-listas">Recursividad Con Listas</h2>
+
+<ul>
+  <li>Ver <a href="recursividad-en-logico.html">Recursividad en Logico</a></li>
+</ul>
+
+<h2 id="errores-comunes">Errores comunes</h2>
+
+<h3 id="findall-y-member">findall y member</h3>
+
+<p>El error más común para quienes no están acostumbrados a pensar en términos del paradigma es armar listas cuando no son necesarias para la resolución del problema. Esto se pone en evidencia por el uso del findall seguido por un member sobre la lista resultante. El findall arma listas, el member las desarma… son operaciones inversas!</p>
+
+<p>Por ejemplo, si quiero saber quiénes son los hijos de homero puedo consultar padre(homero,Hijo). Resolver esto como:</p>
+
+<pre><code class="language-Prolog">?- findall(H, padre(homero,H), Hijos), member(Hijo,Hijos).
+</code></pre>
+
+<p>es no estar entendiendo la forma de pensar.</p>
+
+<p>Si bien este primer ejemplo puede parecer obvio, hay casos en los cuales no es tan evidente, por ejemplo cuando se arma una lista de los que cumplen CONDICION con el predicado A y el predicado B consulta A y luego se obtienen los elementos con member.</p>
+
+<p>Siguiendo el ejemplo anterior de los hijos pibes, podemos mostrar el problema anterior de esta forma:</p>
+
+<pre><code class="language-Prolog">hijosPibes(P,Pibes) :- persona(P),
+     findall(H,(padre(P,H),esPibe(H)),Pibes).
+esHijoPibe(Persona,Hijo) :-
+     hijosPibes(Persona,Pibes),
+     member(Hijo,Pibes).
+</code></pre>
+
+<p>En ese caso todo lo que necesitábamos era consultar por existencia quién cumple CONDICION, y si todavía nos interesa hijosPibes/2 podríamos hacer los siguientes cambios:</p>
+
+<pre><code class="language-Prolog">hijosPibes(P,Pibes) :- persona(P),
+     findall(Hijo,esHijoPibe(P,Hijo),Pibes).
+esHijoPibe(Persona,Hijo) :-
+     padre(Persona,H),
+     esPibe(H).
+</code></pre>
+
+<p>En este caso fue simple porque B modelaba directamente CONDICION, pero bien podría pasar que nos esté faltando una abstracción para modelar CONDICION, que podemos solucionar definiendo otro predicado C y modificando los predicados A y B para que usen C.</p>
+
+<h3 id="findall-y-length">findall y length</h3>
+
+<p>Uno de los usos más comunes de findall tiene como objetivo saber cuántos individuos cumplen una determinada condicion, como en el ejemplo visto anteriormente de cantidadDeHijos/3. Sin embargo hay casos en los cuales pensamos la solución a un problema básico en término de cantidad de respuestas, lo cual disminuye la <a href="declaratividad.html">declaratividad</a> de la solución. Veamos un par de ejemplos:</p>
+
+<pre><code class="language-Prolog"> esPadre(Persona) :- persona(Persona),
+      findall(Hijo, padre(Persona, Hijo), Hijos),
+      length(Hijos, CantidadDeHijos),
+      CantidadDeHijos &gt;= 1.
+</code></pre>
+
+<pre><code class="language-Prolog"> noTieneHijos(Persona) :- persona(Persona),
+      findall(Hijo, padre(Persona, Hijo), Hijos),
+      length(Hijos, 0).
+</code></pre>
+
+<p>Estos dos predicados podrían definirse sin uso de listas, y no sólo eso sino que la solución de ambos es mucho más sencilla. En ambos casos debería simplemente trabajar con la idea de existencia, ya sea afirmándola o negándola, o sea:</p>
+
+<pre><code class="language-Prolog"> esPadre(Persona) :- padre(Persona,_).
+</code></pre>
+
+<pre><code class="language-Prolog"> noTieneHijos(Persona) :- persona(Persona),
+      not(padre(Persona, _)).
+</code></pre>
+
+<h4 id="caso-existe-más-de-un">Caso “existe más de un”</h4>
+
+<p>Un problema común es saber si hay más de un individuo que cumple una condición. Si alguien tiene más de un hijo, por ejemplo. Eso lo podemos saber así:</p>
+
+<pre><code class="language-Prolog"> tieneMasDeUnHijo(Persona) :- persona(Persona),
+      findall(Hijo, padre(Persona, Hijo), Hijos),
+      length(Hijos, CantidadDeHijos),
+      CantidadDeHijos &gt; 1.
+</code></pre>
+
+<p>Hay un problema nuevamente con la declaratividad, y con la manera de pensar lógicamente. Si le damos una vuelta de tuerca, podemos resolver este ejercicio <strong>sin necesidad de armar una lista y contar</strong>.</p>
+
+<p>Esto se logra pensando así: tengo más de un hijo <em>si existen dos hijos diferentes</em>.</p>
+
+<pre><code class="language-Prolog"> tieneMasDeUnHijo(Persona):-
+      padre(Persona,Hijo1),
+      padre(Persona,Hijo2),
+      Hijo1 \= Hijo2.
+</code></pre>
+
+<p>¡Es mucho más directo! Y respeta mejor las ideas del paradigma.</p>
+
+<h3 id="caso-existe-sólo-un">Caso “existe sólo un”</h3>
+
+<p>Este es para pensar:</p>
+
+<pre><code class="language-Prolog"> tieneSoloUnHijo(Persona) :- persona(Persona),
+      findall(Hijo, padre(Persona, Hijo), Hijos),
+      length(Hijos, 1).
+</code></pre>
+
+<p>¿No podría hacerlo de otra forma?</p>
+
+<p>Alguien tiene un sólo hijo si:</p>
+
+<ul>
+  <li>Existe al menos un hijo, y</li>
+  <li>No existe más de un hijo</li>
+</ul>
+
+<p>(sale usando lo explicado arriba)</p>
+
+<h3 id="findall-y-forall">findall y forall</h3>
+
+<p><a href="paradigma-logico---forall---no-siempre-con-member.html">Y otro caso típico de mal uso de findall y member aparece al tratar de usar el forall</a>.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on August 20, 2020 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>22</td>
+                                <td>211</td>
+                                <td>116</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Gleiva</td>
+                                <td>Gleiva@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>6</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>8</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>098fc34d</td>
+                        <td>Thu Aug 20 17:04:59 2020 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update paradigma-logico---listas.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c9836e04</td>
+                        <td>Mon Aug 19 11:14:23 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update paradigma-logico---listas.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a22c7cd7</td>
+                        <td>Thu Oct 5 00:33:27 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update paradigma-logico---listas.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c72ef640</td>
+                        <td>Thu Feb 2 19:12:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Un findall totalmente inversible: Generación */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

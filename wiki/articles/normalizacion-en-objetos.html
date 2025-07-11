@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Normalizacion en objetos</title>
+  <meta property="og:title" content="Normalizacion en objetos" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/normalizacion-en-objetos.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/normalizacion-en-objetos.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Normalizacion en objetos</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Objetivo</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Ejemplo</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Recordemos qué busca la normalización</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">2</span> <span class="toctext">Primer modelo posible</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">3</span> <span class="toctext">Aplicando reglas de normalización (o no)</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#tocAnchor-1-6"><span class="tocnumber">4</span> <span class="toctext">Resumen</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Objetivo</h1>
+
+<p>El proceso de normalización se origina con el esquema relacional y ha sido ampliamente estudiado y difundido, ya que los RDBMS surgieron como una alternativa a los motores de bases de datos jerárquicos que permitían redundancia de la información y tenían problemas de consistencia, lo que llevaba a tener datos faltantes o duplicados.</p>
+
+<p>Si bien el modelo de objetos tiene algunas características diferenciales respecto al relacional, podemos encontrar decisiones que tienen que ver con la aplicación (o no) de la normalización y el almacenamiento redundante de la información.</p>
+
+<h2 id="tocAnchor-1-1-1">Ejemplo</h2>
+
+<p>Consideraremos como ejemplo un dominio conocido: la relación many-to-many entre alumnos y cursos. Un alumno se inscribe en varios cursos y en cada curso tenemos muchos alumnos.</p>
+
+<p>
+  <img src="/img/wiki/EjemploCursosAlumnos.png " title="EjemploCursosAlumnos.png " alt="" />
+</p>
+
+<h2 id="tocAnchor-1-1-2">Recordemos qué busca la normalización</h2>
+
+<ul>
+  <li>Evitar redundancias</li>
+  <li>Evitar inconsistencias: no quiero que un profesor renuncie y el curso quede apuntando a un profesor inexistente</li>
+  <li>Reducir el impacto de los cambios en los datos: si cargué mal la información de un profesor, debería actualizarlo en un solo lugar</li>
+</ul>
+
+<h1 id="tocAnchor-1-4">Primer modelo posible</h1>
+
+<p>El alumno tiene como atributos nombre, y los cursos. El curso tiene el nombre del profesor (un String) y los alumnos que participan.</p>
+
+<h1 id="tocAnchor-1-5">Aplicando reglas de normalización (o no)</h1>
+
+<h3 id="campos-calculados">Campos calculados</h3>
+
+<p>Es una técnica usual en muchas tecnologías, en objetos también. Podríamos pensar ejemplos:</p>
+
+<ul>
+  <li>la cantidad de alumnos de un curso</li>
+  <li>la cantidad de alumnos de un curso en condiciones de firmar</li>
+  <li>el promedio de notas de un alumno en un curso</li>
+</ul>
+
+<p>se trata de atributos que pueden calcularse pero que por algún motivo elegimos almacenarlos como dato, ya sea</p>
+
+<p>1) <strong>porque es conveniente cuando lo migramos a un esquema relacional</strong>, para facilitar las consultas posteriores, ej: conocer los cursos con más de 40 alumnos sería</p>
+
+<div class="language-sql highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="k">select</span><span class="err"> </span><span class="o">*</span>
+<span class="err">  </span><span class="k">from</span><span class="err"> </span><span class="n">cursos</span><span class="err"> </span><span class="k">c</span>
+<span class="err"> </span><span class="k">where</span><span class="err"> </span><span class="k">c</span><span class="p">.</span><span class="n">cantidad_alumnos</span><span class="err"> </span><span class="o">&gt;</span><span class="err"> </span><span class="mi">40</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Mientras que si no estuviera ese dato necesitaríamos hacer un join con la tabla de relación cursos-alumnos + el correspondiente count.</p>
+
+<p>2) <strong>porque queremos mejorar la performance</strong>, aun en objetos, en especial cuando es más frecuente consultar la cantidad de alumnos en un curso vs. inscribir un alumno a un curso</p>
+
+<h3 id="campos-calculados-vs-datos-del-negocio-no-siempre-calculables">Campos calculados vs. datos del negocio no siempre calculables</h3>
+
+<p>Si necesitamos saber cuántos inscriptos hubo al comienzo del cuatrimestre, debemos tener en cuenta que</p>
+
+<ul>
+  <li>el campo se puede calcular en un momento t<sub>0</sub></li>
+  <li>pero una vez pasado ese momento, el cálculo puede perderse (por ejemplo porque algún alumno abandona la cursada o se cambia de curso)</li>
+</ul>
+
+<p>Este requerimiento <strong>no tiene nada que ver con la normalización, porque no hay redundancia</strong>, en ese caso lo que tenemos que hacer es crear un atributo en el Curso…</p>
+
+<p>
+  <img src="/img/wiki/Curso-cantidadInscriptosmalizado.png " title="Curso-cantidadInscriptosmalizado.png " alt="" />
+</p>
+
+<h3 id="1fn-aplicabilidad-en-objetos">1FN: Aplicabilidad en objetos</h3>
+
+<p>La primera forma normal nos pide que</p>
+
+<ul>
+  <li><strong>no haya filas duplicadas</strong>, y esto se da mediante la identificación de claves candidatas</li>
+  <li><strong>no haya campos repetitivos / atributos multivaluados</strong></li>
+</ul>
+
+<p>Aquí vemos que las restricciones de primera forma normal no aplican para el modelo de objetos, dado que no existe el concepto de relación o tabla como punto de concentración de todos los alumnos. Cada alumno que se crea forma parte del ambiente mientras tenga una referencia, y no hay riesgo de “filas duplicadas” ni necesidad de usar una clave candidata, ya que cada objeto nuevo tiene su propia identidad respecto a los demás objetos.</p>
+
+<p>Por otra parte, un alumno puede tener una colección de cursos y cada curso una colección de alumnos (o un mapa alumno-notas). La restricción de no tener atributos multivaluados, o un atributo subdivisible en una estructura interna no aplica tampoco al modelo de objetos, donde la referencia es a cualquier tipo de objeto, incluido una colección.</p>
+
+<h3 id="2fn-y-3fn-en-objetos">2FN y 3FN en objetos</h3>
+
+<p>Tanto 2 como 3FN buscan que todo determinante sea clave candidata, o explicado en una manera más simple, no haya dependencias de ningún atributo con otro atributo</p>
+
+<ul>
+  <li>que forme parte de la clave principal</li>
+  <li>que no forme parte de la clave principal</li>
+</ul>
+
+<p>Dado que en objetos no utilizamos el concepto de clave primaria, no tiene sentido discriminar cada caso en particular. Lo que sí podemos revisar es el ejemplo nuevamente, donde en el objeto Curso se registra la información sobre el legajoDocente (un entero) y el nombreDocente (un String).</p>
+
+<p>
+  <img src="/img/wiki/ObjetoCursoDesnormalizado.png " title="ObjetoCursoDesnormalizado.png " alt="" />
+</p>
+
+<p>pasa a…</p>
+
+<p>
+  <img src="/img/wiki/ObjetoCursoNormalizado.png " title="ObjetoCursoNormalizado.png " alt="" />
+</p>
+
+<p>Nosotros podemos llegar a encontrar una abstracción Docente de dos maneras posibles:</p>
+
+<ul>
+  <li>aplicando la lógica de normalización, donde vemos que existe una dependencia funcional entre el nombre del docente y su legajo (sólo que el legajo y el nombre forman parte de la abstracción Docente y la forma de normalizarlo implica generar una referencia del curso hacia el objeto Docente)</li>
+  <li>o bien mucho antes, cuando necesitamos la abstracción Docente, porque es necesario agregarle <strong>comportamiento</strong></li>
+</ul>
+
+<p><em>El proceso de normalización de entidades en el esquema relacional surge naturalmente como un proceso de generación de abstracciones posibles en el modelo de objetos</em>.</p>
+
+<p>Por último, podríamos decidir que nuestro objeto Curso tuviera los atributos docente (una referencia a un objeto Docente), legajoDocente y nombreDocente por dos motivos:</p>
+
+<ul>
+  <li>uno de negocio, si como en el caso anterior necesitáramos almacenar la información del docente en el momento de tomar el curso</li>
+  <li>para mejorar la performance, en ese caso introducimos una redundancia desnormalizando la información del curso. Eso permite que podamos obtener la información de un curso sin necesidad de navegar hacia otras entidades (dejando la referencia al docente en modo LAZY), algo que todo diseñador debe contemplar para los casos de uso que el negocio exige.</li>
+</ul>
+
+<h3 id="redundancias-por-problemas-de-navegabilidad">Redundancias por problemas de navegabilidad</h3>
+
+<p>El modelo relacional es sumamente flexible, en una relación many-to-many Alumno-Curso, podemos navegar la relación partiendo desde el curso o bien desde el alumno. En cambio, si en el modelo de objetos necesitamos resolver estos requerimientos</p>
+
+<ul>
+  <li>saber qué alumnos del curso de Diseño aprobaron el primer parcial</li>
+  <li>saber en cuántos cursos está anotado un alumno de lunes a viernes</li>
+</ul>
+
+<p>Es mucho más fácil encarar estos objetivos si la relación de asociación entre Alumno y Curso es bidireccional, es decir que un alumno conoce la lista de cursos en los que está inscripto y un curso conoce la lista de alumnos que forman parte.</p>
+
+<h1 id="tocAnchor-1-6">Resumen</h1>
+
+<p>En el modelo de objetos podemos aplicar ciertas reglas de normalización o redundancia, generando referencias hacia nuevas entidades o bien duplicando la información de un objeto en otro.</p>
+
+<h3 id="diferencias-entre-el-modelo-relacional-y-el-de-objetos">Diferencias entre el modelo relacional y el de objetos</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Modelo relacional</th>
+      <th>Objetos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Elimina duplicados mediante la primary key</td>
+      <td>Trabaja con identidad, no necesita claves naturales ni subrogadas</td>
+    </tr>
+    <tr>
+      <td>No permite atributos multivaluados</td>
+      <td>Permite referenciar a cualquier tipo de objeto, incluido conjuntos y mapas</td>
+    </tr>
+    <tr>
+      <td>Es un modelo flexible para navegar en cualquier dirección</td>
+      <td>Las referencias tienen una sola dirección, para tener una relación bidireccional es necesario utilizar otra referencia</td>
+    </tr>
+    <tr>
+      <td>Puedo manipular los datos, los triggers o constraints me permiten asegurar la consistencia de los datos</td>
+      <td>No accedo directamente a los datos sino que envío mensajes, y los métodos permiten asegurar la consistencia del estado de cada objeto</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 06, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>43</td>
+                                <td>28</td>
+                                <td>24</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>41</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>1b62d919</td>
+                        <td>Mon Feb 6 21:50:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Add plugin for formar wiki images</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3fe0b2c3</td>
+                        <td>Thu Feb 2 19:12:05 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Campos calculados vs. datos del negocio no siempre calculables */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>520cb93b</td>
+                        <td>Thu Feb 2 19:12:05 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Campos calculados */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>36fcb5cb</td>
+                        <td>Thu Feb 2 19:12:05 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Campos calculados */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

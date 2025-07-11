@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Formas de vincular una vista con el modelo de dominio</title>
+  <meta property="og:title" content="Formas de vincular una vista con el modelo de dominio" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/ui-mvcpesado-formas-de-vincular-una-vista-con-el-modelo-de-dominio.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/ui-mvcpesado-formas-de-vincular-una-vista-con-el-modelo-de-dominio.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Formas de vincular una vista con el modelo de dominio</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Interacciones entre vista y modelo</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Vinculación indirecta</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Binding</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#tocAnchor-1-3-1"><span class="tocnumber">3.1</span> <span class="toctext">Binding transaccional</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">4</span> <span class="toctext">Comportamiento a nivel de vista</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-5-1"><span class="tocnumber">4.1</span> <span class="toctext">Modelo de aplicación</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#tocAnchor-1-5-2"><span class="tocnumber">4.2</span> <span class="toctext">Value Models</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#tocAnchor-1-8"><span class="tocnumber">5</span> <span class="toctext">Links relacionados</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Interacciones entre vista y modelo</h1>
+
+<p>Dado que el objetivo de la interfaz de usuario es permitir la interacción con el modelo de dominio, cada uno de los elementos que conforman la interfaz de usuario tendrá como tarea alguna parte de esta interacción, ya sea mostrar al usuario una porción del modelo de dominio, o bien permitirle realizar acciones que lo modifiquen.</p>
+
+<p>Una forma simple de ordenar una interfaz de usuario es considerar que cada vista (que puede ser una ventana, una página o bien una porción bien delimitada de una vista más grande) tiene como responsabilidad interactuar con un único objeto de dominio. A este objeto de dominio lo denominaremos modelo de la vista.</p>
+
+<p>Desde esa premisa básica podemos imaginar que cada vez que haya un control editable en una vista, ese control estará editando algún atributo del modelo. Luego, las modificaciones que realicemos sobre estos controles editables, de alguna manera deberán ser <em>impactadas</em> sobre los atributos asociados. Al componente de software que toma la responsabilidad de impactar esos cambios lo denominamos controller.</p>
+
+<p>Los mecanismos para trasladar o impactar una modificación hecha por el usuario sobre cualquier control editable se pueden dividir en dos grandes grupos:</p>
+
+<ul>
+  <li>Vinculación indirecta o manual</li>
+  <li>Vinculación directa o automática (<em>binding</em>).</li>
+</ul>
+
+<!-- -->
+
+<h1 id="tocAnchor-1-2">Vinculación indirecta</h1>
+
+<p>En este tipo de estrategias los controles editables de la UI toman la responsabilidad de almacenar los valores que va ingresando el usuario a la espera de un evento que <em>dispare</em> la ejecución de la operación (en aplicaciones web este evento suele ser el <em>submit</em> de un formulario HTTP).</p>
+
+<p>Naturalmente, ante esta disociación, el objeto de dominio asociado no se ve afectado por las acciones del usuario hasta que no se produzca el evento antes mencionado. En el momento que se produce el <em>submit</em>, el controller deberá tomar la responsabilidad de leer todos los valores del formulario de los controles en los que fueron almacenados y recién ahí impactarlos en el modelo de dominio.</p>
+
+<p>De esta forma, cualquier validación o modificación dinámica de los valores en la vista deberá ser realizada sin la intervención del dominio o bien esperar hasta el momento del submit para poder llevarse a cabo. Esto incluye a muchos de los comportamientos denominados <em>ricos</em> de una UI, por ejemplo:</p>
+
+<ul>
+  <li>Validaciones realizadas a medida que se cargan los datos en un formulario</li>
+  <li>Valores que dependen unos de otros (un caso típico: combos anidados).</li>
+  <li>Controles que se habilitan o deshabilitan dependiendo de los demás valores ingresados.</li>
+</ul>
+
+<p>La principal desventaja de este esquema radica en la no-intervención del modelo de dominio durante la interacción con el usuario, lo que impide aprovechar toda la lógica que contenga este objeto, que deberá tomar uno de dos caminos:</p>
+
+<ul>
+  <li>Esperar al momento de submit para intervenir, con lo cual se pierden muchas de las posibilidades de UI <em>rica</em> enunciadas en la enumeración anterior.</li>
+  <li>Duplicar la lógica ya contenida en el modelo de dominio, replicándola en la interfaz de usuario de forma de poder realizar validaciones y otros comportamientos dinámicos basándose en el contenido de los controles.</li>
+</ul>
+
+<p>La primera de las opciones produce una limitación en las posibilidades que la UI le puede brindar al usuario, haciéndolo en muchos casos inviable o en otros perdiendo calidad en la UI. La segunda produce una duplicación de la lógica que podemos analizar desde dos perspectivas distintas.</p>
+
+<p>Por un lado, toda duplicación de código genera una potencial inconsistencia ante la posibilidad de que una de las dos partes se modifique quedando la otra desactualizada.</p>
+
+<p>Por el otro, la lógica propia del dominio metida dentro de la interfaz de usuario resulta mucho más incómoda de programar ya que deberemos adaptarnos a las restricciones tecnológicas de componentes que están diseñados prioritariamente para la interacción con el usuario. Como un ejemplo de las dificultades que aparecen, podemos mencionar que en lugar de tener la información necesaria almacenada en variables que tengan un tipo y toda la potencia de nuestro lenguaje de elección, deberemos tener los valores contenidos en controles, en muchos casos sin poder exigir que sean de un tipo determinado. Y entonces lo que para nosotros en el dominio es un número o una fecha en la UI será un String o lo que para nosotros es una referencia a otro objeto de dominio en la UI será un código (String) o un índice numérico en una lista.</p>
+
+<p>Naturalmente todas estas restricciones hacen al código más complejo y más propenso a errores, lo que nos lleva a evaluar la siguiente alternativa.</p>
+
+<!-- -->
+
+<h1 id="tocAnchor-1-3">Binding</h1>
+
+<p>En este esquema, lo que se buscará es automatizar el pasaje de información entre la vista y el dominio. Es decir, se proveerá una descripción (<a href="declaratividad.html">declarativa</a>) de la vinculación entre los componentes visuales y el modelo de dominio para que un componente genérico se ocupe de mantenerlos mutuamente sincronizados.</p>
+
+<p>A esta descripción de la vinculación entre ambos la solemos llamar binding y puede incluir entre otras cosas:</p>
+
+<ul>
+  <li>Un mapeo entre un componente visual y un elemento del dominio, típicamente cada control de la vista estará asociado a un atributo de un objeto de domino.</li>
+  <li>Conversiones a realizar (por ejemplo si el valor a ingresar es una fecha y se ingresa desde la UI como texto, deberá proveerse el formato esperado y la lógica para convertir de ese formato a la representación interna de fechas que use el modelo de dominio).</li>
+  <li>Validaciones a realizar (dado que uno de los objetivos es aprovechar la lógica del modelo de dominio, normalmente las validaciones -salvo las propias de la conversión- serán delegadas en el modelo de dominio y por lo tanto la descripción de la validación consistirá en algún mecanismo para indicar qué consulta realizar sobre el dominio para poder efectuar la validación en cuestión).</li>
+</ul>
+
+<p>Esta estrategia busca fundamentalmente dos objetivos:</p>
+
+<ul>
+  <li>Simplificar la sincronización entre ambas partes de la aplicación, basándose en componentes reutilizables.</li>
+  <li>Aprovechar la lógica contenida en el modelo del dominio para tomar acciones durante su propia edición.</li>
+</ul>
+
+<p>El segundo de estos objetivos es el que suele proponer a veces algunas dificultades, ya que para aprovechar la lógica se necesita impactar las modificaciones realizadas sobre la UI directamente sobre el objeto de dominio. En los casos de aplicaciones que tienen un comportamiento transaccional desde el punto de vista del usuario, esta acción directa sobre el dominio implica algún mecanismo para garantizar que en caso de cancelar la operación el objeto queda sin cambios, en su estado original antes de comenzar.</p>
+
+<p>Adicionalmente esta fuerte vinculación entre la vista y el dominio nos puede presentar dificultades si la vista tiene requerimientos que no son fácilmente atribuibles a un objeto del dominio, es decir, comportamiento específico de la vista. Ejemplos de comportamiento propios de la vista podrían ser paginar una grilla o dividir la información del objeto entre múltiples viñetas o <em>tabs</em>.</p>
+
+<p>Se necesitan entonces herramientas para manejar el nivel de acoplamiento entre la vista y el modelo de dominio, tanto por cuestiones de transaccionalidad como para poder asociar comportamiento no dependiente del dominio.</p>
+
+<!-- -->
+
+<h2 id="tocAnchor-1-3-1">Binding transaccional</h2>
+
+<p>Citamos a continuación algunos de los mecanismos utilizados para desvincular el dominio de la vista para proveer a nuestra aplicación de un comportamiento transaccional:</p>
+
+<h3 id="aprovechamiento-de-la-transaccionalidad-de-la-persistencia">Aprovechamiento de la transaccionalidad de la persistencia</h3>
+
+<p>Es frecuente encontrar aplicaciones donde la transaccionalidad está delegada en el mecanismo persistente, con frecuencia una base de datos relacional. Si el modelo de dominio de la aplicación es persistido en un mecanismo con soporte transaccional y además el ciclo de vida de los componentes de dominio está dominado por la persistencia (es decir, el objeto de dominio dura en memoria sólo durante una transacción y luego es descartado), entonces simplemente cancelando la transacción de persistencia se logra descartar los cambios realizados al modelo de dominio. Esta estrategia es muchas veces la más simple, y si bien tiene algunas limitaciones técnicas, es una de las más utilizadas.</p>
+
+<h3 id="postergación-del-binding-mediante-copias-o-wrappers">Postergación del binding mediante copias o wrappers</h3>
+
+<p>Esta estrategia se basa en bindear la vista contra un objeto que no sea exactamente el dominio, para luego volcar los datos sobre el dominio en un paso posterior (probablemente en el submit). Esto permite garantizar que el dominio no se verá modificado hasta finalizar la acción del usuario, al mismo tiempo que trabajar el comportamiento dinámico de la vista sobre un objeto independiente de la tecnología de presentación. De esta manera, esta estrategia presenta una alternativa intermedia entre una vinculación manual y una automática.</p>
+
+<p>Existen dos variantes a esta estrategia. La primera de ellas es utilizar una copia del objeto de dominio a editarse, que luego deberá reemplazar al original en el dominio o bien trasvasar la información de un objeto a otro. La ventaja de esta estrategia es que permite reutilizar toda la lógica propia del objeto de dominio. El problema es que cuando se editan varios objetos relacionados desde la misma vista, impactar luego los cambios en el dominio puede resultar complejo.</p>
+
+<p>La segunda variante es utilizar un wrapper u otro objeto que no sea de la misma clase que el original. Lo interesante de esta técnica es que provee un mayor desacoplamiento entre vista y modelo (ver <em>modelo de aplicación</em> en el apartado siguiente). La desventaja es que obliga a duplicar la información del objeto original en este nuevo objeto (Al menos en un lenguaje basado en clases, en lenguajes con mecanismos de herencia más flexibles esta problemática puede ser resuelta de otras maneras, como mixins o traits. Lamentablemente, la mayoría de los lenguajes más populares hoy en día no proveen este tipo de mecanismos.)</p>
+
+<h3 id="transaccionalidad-a-nivel-de-dominio">Transaccionalidad a nivel de dominio</h3>
+
+<p>Otra posibilidad es permitir que los objetos de dominio manejen la transaccionalidad, es decir, permitir que sean modificados y, en caso de ser necesario, delegar en ellos mismos la responsabilidad de volver atrás los cambios cancelados por el usuario. Esto puede ser hecho manualmente (aunque puede resultar engorroso) o de forma automática, por ejemplo mediante aspectos.</p>
+
+<h1 id="tocAnchor-1-5">Comportamiento a nivel de vista</h1>
+
+<p>A veces es necesario tener comportamiento en la vista que no es atribuible a ningún objeto de dominio. En ese caso algunas de las estrategias posibles son:</p>
+
+<h2 id="tocAnchor-1-5-1">Modelo de aplicación</h2>
+
+<p>Llamamos modelo de aplicación a un objeto que tiene lógica que no es atribuible a un objeto de dominio, sin embargo es independiente de la tecnología, por lo tanto podemos considerarlo modelo. Un objeto de estas características nos provee de un espacio en donde colocar lógica utilizando las mismas herramientas del dominio pero sin tener que restringirnos a las limitaciones que solemos establecer sobre los objetos de domino.</p>
+
+<p>Típicamente los casos de uso complejos de una aplicación tendrán un modelo de este tipo que contemple la lógica necesaria para llevarlos a cabo. Pueden tener tanto lógica de navegación como de visualización, aunque en algunos casos también se decide separar ambos tipos de lógica.</p>
+
+<h2 id="tocAnchor-1-5-2">Value Models</h2>
+
+<p>Otra forma de desacoplar la vista y el modelo es proveyendo un almacenamiento intermedio para cada control, que guarda el valor manejado por el control hasta el momento del submit, en el cual será volcado al modelo de dominio. Al objeto que contiene el valor durante ese tiempo se lo denomina ValueModel y la principal diferencia con la estrategia anterior es que en ese caso se tenía un único intermediario para toda la vista, mientras que ahora tenemos un intermediario por cada control.</p>
+
+<p>Un ValueModel provee de la posibilidad de definir trasnformaciones y validaciones a cada control. Una ventaja importante de este mecanismo es que provee de una forma sencilla de reutilizar la lógica de transformación y validación.</p>
+
+<p>Por otro lado, la atomización de estos objetos dificulta la posibilidad de establecer lógica sobre este modelo que dependa de más de uno de los controles de la vista.</p>
+
+<p>En los casos en que la relación entre la vista y el modelo de dominio es muy lejana, una solución posible es descartar el binding y pasar a una estrategia de interacción manual entre vista y dominio, aunque, claro, eso implica perder parte de las ventajas de automatizar este comportamiento.</p>
+
+<!-- -->
+
+<h1 id="tocAnchor-1-8">Links relacionados</h1>
+
+<ul>
+  <li><a href="ejemplos-de-binding-entre-vista-y-modelo.html">Ejemplos de Binding entre vista y modelo</a></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on August 11, 2019 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>118</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>e306e882</td>
+                        <td>Sun Aug 11 13:04:57 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Enhancing module 2 - Algo3</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

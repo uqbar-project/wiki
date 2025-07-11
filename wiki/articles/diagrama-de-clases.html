@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Diagrama de clases</title>
+  <meta property="og:title" content="Diagrama de clases" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/diagrama-de-clases.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/diagrama-de-clases.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Diagrama de clases</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>El diagrama de clases es una herramienta para <a href="comunicacion.html">comunicar el diseño</a> de un programa orientado a objetos, permitiendo modelar las relaciones entre las entidades. En UML, una <a href="clases.html">clase</a> es representada por un rectángulo que posee tres divisiones: Nombre de la clase, atributos que tiene y mensajes que entiende.</p>
+
+<p>En el primer cuadro anotamos el nombre de la clase (si es <a href="herencia-clase-abstracta.html">abstracta</a> se escribe en cursiva, o bien se usa un estereotipo &lt;<abstract>&gt; arriba del nombre de la clase).</abstract></p>
+
+<p>En la segunda parte (que para nosotros no será de tanta importancia) van los atributos (o variables de instancia, las <a href="variables-y-metodos-de-clase.html">variables de clase</a> van en subrayado).</p>
+
+<p>En el último cuadro escribimos las operaciones (qué mensajes que puede entender). No confundir con los <a href="mensajes-y-metodos.html">métodos</a> que es cómo lo resuelve cada objeto. Lo importante no es documentar todos los mensajes de un objeto, sino sólo los más relevantes. Así quedan fuera los getters, setters, métodos privados (o auxiliares) y aquellos que uno considere menores. <strong>Moraleja:</strong> cuidado con las herramientas que en base al código generan el diagrama (y viceversa). Bien vale la pena un diagrama útil hecho a mano antes que uno inútil en 3D.</p>
+
+<p><strong>Importante:</strong> Una clase que no tiene comportamiento no está comunicando qué rol cumple en la solución: o está faltando definir qué le puedo pedir o esa clase no debería estar en el diagrama.</p>
+
+<h2 id="relaciones-entre-objetos">Relaciones entre objetos</h2>
+
+<h3 id="relación-usa">RELACIÓN “USA”</h3>
+
+<p>Dependencia: uno de los elementos usa o depende del otro cuando:</p>
+
+<ul>
+  <li>El objeto de clase A recibe o devuelve como parámetro de alguno de sus métodos un objeto de clase B</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Si el objeto de clase A instancia un objeto de clase B (pero no lo almacena como variable de instancia, sólo vive como variable local en el contexto de un método).</li>
+</ul>
+
+<p>Este tipo de relación indica que los dos elementos colaboran entre sí, pero que esa relación es débil, casual; tiene un contexto temporal que no trasciende más allá de una operación. No obstante, sabemos que los cambios en la clase B podrían impactar en alguna medida en la clase A.</p>
+
+<p><img src="/img/wiki/DdC-usa.png " title="DdC-usa.png " alt="" /></p>
+
+<h3 id="relación-conoce">RELACIÓN “CONOCE”</h3>
+
+<p>Asociación: uno de los elementos conoce al otro, almacenándolo como variable de instancia.</p>
+
+<p>Puede definirse una etiqueta que expresa el rol que cumple dicha relación. En cada extremo de la asociación puede agregarse la siguiente información:</p>
+
+<ul>
+  <li>un nombre del rol</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>flechas de navegación: determina el conocimiento (navegabilidad) desde un objeto hacia el otro.</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>multiplicidad: indica cuántos objetos de una clase se relacionan con la otra. La multiplicidad se puede indicar con un rango (0..1, 2..5), un rango sin cota (0..*, 1..*), un valor (1) o una serie de valores (1, 3, 5).</li>
+</ul>
+
+<p>En las asociaciones, hay una relación más fuerte que en las dependencias (uso) entre ambos elementos. El conocimiento implica que la colaboración excede el marco temporal de una operación, aunque cada uno de los objetos sigue teniendo objetivos diferentes.</p>
+
+<p><img src="/img/wiki/DdC-conoce.png " title="DdC-conoce.png " alt="" /></p>
+
+<h2 id="relaciones-entre-clases">Relaciones entre clases</h2>
+
+<h3 id="relacion-hereda">RELACION “HEREDA”</h3>
+
+<p>Generalización: una clase específica hereda los atributos, relaciones, operaciones y métodos de otra más general.</p>
+
+<p>Cuando una subclase redefine el comportamiento de su superclase, se escriben los nombres de los métodos que redefine.</p>
+
+<p><img src="/img/wiki/DdC-hereda.png " title="DdC-hereda.png " alt="" /></p>
+
+<h3 id="relación-implementa">RELACIÓN “IMPLEMENTA”</h3>
+
+<p>Realización: se establece entre una clase y una <a href="interfaz.html">interfaz</a>; esto implica que la clase debe implementar todas las operaciones que defina la interfaz. Si bien no todos los lenguajes requieren explicitar por código la existencia de una interfaz (en Smalltalk no hace falta, pero en Java sí por tener un checkeo de tipos estático), desde un punto de vista conceptual la interfaz existe y puede comunicarse en el diagrama.</p>
+
+<p><img src="/img/wiki/DdC-implementa.png " title="DdC-implementa.png " alt="" /></p>
+
+<h2 id="herramientas-para-diagramar">Herramientas para diagramar</h2>
+
+<p><a href="http://yuml.me/">yUML</a></p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 06, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>78</td>
+                                <td>5</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>1b62d919</td>
+                        <td>Mon Feb 6 21:50:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Add plugin for formar wiki images</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c22dafd5</td>
+                        <td>Thu Feb 2 19:09:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0af5f2de</td>
+                        <td>Thu Feb 2 19:09:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «El diagrama de clases es una herramienta para [[Comunicación|comunicar el diseño]] de un programa orientado a objetos, permitiendo modelar las relaciones entre las entida...»</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

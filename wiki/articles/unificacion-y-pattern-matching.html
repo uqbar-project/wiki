@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Unificacion y pattern matching</title>
+  <meta property="og:title" content="Unificacion y pattern matching" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/unificacion-y-pattern-matching.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/unificacion-y-pattern-matching.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Unificacion y pattern matching</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Unificación</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Cómo obtuvo ese resultado Prolog?</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Y pattern-matching?</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Unificación</h1>
+
+<p>Dentro de los conceptos del paradigma lógico no está incluido el concepto de <strong>asignación</strong>. Para dejar en claro esto vamos a llamar a esta idea <strong><a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html">Asignación Destructiva</a></strong>, esto se debe a que una asignación me permite “destruir” el valor que tiene una variable en un momento dado y reemplazarlo por otro. Esta idea de asignación no tiene sentido cuando pensamos en incógnitas (si en un momento dado decimos que una variable X vale 1, su valor será 1 y ningún otro hasta que se empiece a buscar otra solución a la misma consulta, en ese momento se desligan todas las variables y se empieza de nuevo). Las variables en el paradigma lógico se asemejan a la idea de variable matemática, y el mecanismo por el cual se le dan valores a las variables se llama <strong>unificación</strong>. Cuando una variable que no tiene ningún valor pasa a tenerlo vamos a decir que dicha variable a sido <strong>ligada</strong>, en caso contrario la variable se encuentra <strong>sin ligar o no ligada</strong>.</p>
+
+<p>Si nuestra base de conocimiento es</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="ss">padre</span><span class="p">(</span><span class="ss">homero</span><span class="p">,</span><span class="ss">bart</span><span class="p">).</span>
+
+<span class="ss">padre</span><span class="p">(</span><span class="ss">homero</span><span class="p">,</span><span class="ss">maggie</span><span class="p">).</span>
+
+<span class="ss">padre</span><span class="p">(</span><span class="ss">homero</span><span class="p">,</span><span class="ss">lisa</span><span class="p">).</span><span class="o">&lt;/</span><span class="ss">code</span><span class="o">&gt;</span>
+
+<span class="nv">Y</span> <span class="ss">hago</span> <span class="ss">la</span> <span class="ss">consulta</span>
+
+<span class="o">?-</span> <span class="ss">padre</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="ss">lisa</span><span class="p">).</span> <span class="nv">X</span> <span class="o">=</span> <span class="ss">homero</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-1-1">Cómo obtuvo ese resultado Prolog?</h2>
+
+<p>Básicamente lo que hace Prolog es buscar un <strong>consecuente</strong> (revisar al principio de todo qué era eso de consecuente) dentro de todas las cláusulas de nuestra base de conocimiento que unifique con la consulta. Podemos ver un poco la unificación o falta de unificación entre dos hechos (que serían la consulta y el consecuente) haciendo consultas en SWI que jueguen con el = (igual), para la consulta de recién tenemos:</p>
+
+<p>El consecuente de la primer cláusula <strong>NO</strong> unifica con la consulta</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="o">?-</span> <span class="ss">padre</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="ss">lisa</span><span class="p">)</span> <span class="o">=</span> <span class="ss">padre</span><span class="p">(</span><span class="ss">homero</span><span class="p">,</span><span class="ss">bart</span><span class="p">).</span>
+
+<span class="nv">No</span>
+
+ <span class="err">%</span><span class="nv">El</span> <span class="ss">consecuente</span> <span class="ss">de</span> <span class="ss">la</span> <span class="ss">segunda</span> <span class="ss">cláusula</span> <span class="o">**</span><span class="nv">NO</span><span class="o">**</span> <span class="ss">unifica</span> <span class="ss">con</span> <span class="ss">la</span> <span class="ss">consulta</span>
+
+<span class="o">?-</span> <span class="ss">padre</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="ss">lisa</span><span class="p">)</span> <span class="o">=</span> <span class="ss">padre</span><span class="p">(</span><span class="ss">homero</span><span class="p">,</span><span class="ss">maggie</span><span class="p">).</span>
+
+<span class="nv">No</span>
+
+ <span class="err">%</span><span class="nv">El</span> <span class="ss">consecuente</span> <span class="ss">de</span> <span class="ss">la</span> <span class="ss">tercer</span> <span class="ss">cláusula</span> <span class="o">**</span><span class="ss">unifica</span><span class="o">**</span> <span class="ss">con</span> <span class="ss">la</span> <span class="ss">consulta</span>
+
+<span class="o">?-</span> <span class="ss">padre</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="ss">lisa</span><span class="p">)</span> <span class="o">=</span> <span class="ss">padre</span><span class="p">(</span><span class="ss">homero</span><span class="p">,</span><span class="ss">lisa</span><span class="p">).</span>
+
+<span class="nv">X</span> <span class="o">=</span> <span class="ss">homero</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p><strong><em>OJO</em></strong> el = (igual) nooooo lo vamos a usar en los programas, lo usamos acá solamente porque nos ayuda a estudiar sobre la unificación.</p>
+
+<p>Este ejemplo es fácil ya que todas las cláusulas son hechos pero <strong>no es nuestra intención entender en profundidad el mecanismo de unificación</strong>. Si se tratara de reglas, tiene que pasar que se resuelvan los antecedentes de la cláusula cuyo consecuente unificó con la consulta; en el proceso <strong>se agotan todas las posibles soluciones</strong>.</p>
+
+<p>Entonces, se dice que 2 términos unifican si existe algún reemplazo de todas las variables (de los 2 términos) que haga a los términos iguales; se dice que una consulta matchea con un consecuente si el predicado es el mismo y hay un reemplazo coherente que hace que todos los argumentos unifiquen. P.ej. con el reemplazo X/homero pasa que X queda igual que homero (primer argumento) y también que lisa es igual que lisa (segundo argumento), entonces la consulta padre(X,lisa) unifica con padre(homero,lisa) mediante el reemplazo X/homero.</p>
+
+<p>Nos alcanza pensar que un término es un individuo (simple o compuesto - estos últimos pueden tener variables) o una consulta (como en el primer ejemplo).</p>
+
+<div class="language-prolog highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">%</span><span class="nv">Dos</span> <span class="ss">individuos</span> <span class="ss">iguales</span> <span class="ss">unifican</span> <span class="o">?-</span> <span class="m">1</span> <span class="o">=</span> <span class="m">1</span><span class="p">.</span>
+<span class="nv">Yes</span>
+
+<span class="o">?-</span> <span class="ss">homero</span> <span class="o">=</span> <span class="ss">homero</span><span class="p">.</span>
+<span class="nv">Yes</span>
+
+<span class="o">?-</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1901</span><span class="p">)</span> <span class="o">=</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1901</span><span class="p">).</span>
+<span class="nv">Yes</span>
+
+<span class="o">?-</span> <span class="p">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">].</span>
+<span class="nv">Yes</span>
+
+<span class="err">%</span><span class="nv">Existen</span> <span class="ss">reemplazos</span> <span class="ss">de</span> <span class="ss">variables</span> <span class="ss">que</span> <span class="ss">hagan</span> <span class="ss">los</span> <span class="ss">términos</span> <span class="ss">iguales</span> <span class="ss">por</span> <span class="ss">lo</span> <span class="ss">tanto</span> <span class="ss">unifican</span> <span class="o">?-</span> <span class="nv">X</span> <span class="o">=</span> <span class="ss">homero</span><span class="p">.</span>
+<span class="nv">X</span> <span class="o">=</span> <span class="ss">homero</span><span class="p">.</span>
+
+<span class="o">?-</span> <span class="nv">F</span> <span class="o">=</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1901</span><span class="p">).</span>
+<span class="nv">F</span> <span class="o">=</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1901</span><span class="p">).</span>
+
+<span class="o">?-</span> <span class="ss">fecha</span><span class="p">(</span><span class="nv">D</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="nv">A</span><span class="p">)</span> <span class="o">=</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="nv">M</span><span class="p">,</span><span class="m">1901</span><span class="p">).</span>
+<span class="nv">D</span><span class="o">=</span> <span class="m">1</span>
+<span class="nv">M</span><span class="o">=</span> <span class="m">1</span>
+<span class="nv">A</span> <span class="o">=</span> <span class="m">1901</span>
+
+<span class="err">%</span><span class="nv">Dos</span> <span class="ss">individuos</span> <span class="ss">distintos</span> <span class="ss">no</span> <span class="ss">unifican</span> <span class="o">?-</span> <span class="m">1</span> <span class="o">=</span> <span class="m">2</span><span class="p">.</span>
+<span class="nv">No</span>
+
+<span class="o">?-</span> <span class="ss">homero</span> <span class="o">=</span> <span class="ss">marge</span><span class="p">.</span>
+<span class="nv">No</span>
+
+<span class="o">?-</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1901</span><span class="p">)</span> <span class="o">=</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2010</span><span class="p">).</span>
+<span class="nv">No</span>
+
+<span class="o">?-</span> <span class="p">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">a</span><span class="p">].</span>
+<span class="nv">No</span>
+
+<span class="err">%</span><span class="nv">No</span> <span class="ss">existen</span> <span class="ss">reemplazos</span> <span class="ss">de</span> <span class="ss">variables</span> <span class="ss">que</span> <span class="ss">hagan</span> <span class="ss">los</span> <span class="ss">términos</span> <span class="ss">iguales</span> <span class="ss">por</span> <span class="ss">lo</span> <span class="ss">tanto</span> <span class="ss">no</span> <span class="ss">unifican</span> <span class="o">?-</span> <span class="ss">fecha</span><span class="p">(</span><span class="nv">D</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2010</span><span class="p">)</span> <span class="o">=</span> <span class="ss">fecha</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="nv">M</span><span class="p">,</span><span class="m">1901</span><span class="p">).</span> <span class="nv">No</span> <span class="o">?-</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="nv">X</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">].</span>
+<span class="nv">No</span>
+
+<span class="o">?-</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nv">X</span><span class="p">,</span><span class="nv">X</span><span class="p">,</span><span class="m">3</span><span class="p">].</span>
+<span class="nv">No</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<h2 id="tocAnchor-1-1-2">Y pattern-matching?</h2>
+
+<p>Bueno, la diferencia entre decir pattern matching y unificación es bastante gris (algunos autores lo consideran sinónimos). Es muy común decir “unifica” o “matchea” indistintamente.</p>
+
+<p>Vamos a hablar de unificación de variables en relación al valor que las mismas toman en base a una consulta y de pattern matching cuando en el encabezado del predicado se determina la forma que tiene que tener</p>
+
+<p>Mayormente vamos a hablar de pattern matching al involucrar <a href="paradigma-logico---individuos-compuestos.html">individuos compuestos</a>, ya que a partir de los mismos se pueden definir patrones complejos con los cuales los valores usados en las consultas deberían coincidir.</p>
+
+<p>Los patrones más básicos que podemos encontrar son los que no limitan en absoluto qué valores pueden matchear (las variables) y los que sólo matchean si son exactamente iguales (valores concretos). Por ejemplo, una solución de factorial podría resolverse usando pattern matching de modo que existen dos definiciones: una que sólo es válida para el factorial de 0 y otra que es válida para cualquier número.</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>factorial(0, 1).
+factorial(N, F) :- N &gt; 0,
+  M is N - 1,
+  factorial(M, FM),
+  F is N * FM.
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>Si hacemos las siguientes consultas:</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>?- factorial(2, Factorial).
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El 2 no matchea con el 0, pero sí con la variable N, por ende sólo la segunda cláusula es considerada para responder a la consulta.</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code>?- factorial(0, Factorial).
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>El 0 matchea con el 0 y también con la variable N, por ende ambas cláusulas son usadas para responder. Sin embargo, si la variable N se unificó con el valor 0, la consulta N &gt; 0 da falso y no continúa ejecutando porque ya falló.</p>
+
+<p>Al trabajar con individuos compuestos podemos usar otro tipo de patrones que restrinjan parcialmente qué valores pueden pueden matchear.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 06, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>13</td>
+                                <td>90</td>
+                                <td>51</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Gleiva</td>
+                                <td>Gleiva@...</td>
+                                <td>6</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>8945c80d</td>
+                        <td>Mon Feb 6 20:38:51 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Fixed some articles</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d48ae34f</td>
+                        <td>Thu Feb 2 19:14:10 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Y pattern-matching? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>58484dbf</td>
+                        <td>Thu Feb 2 19:14:10 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Unificación */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f705b5a8</td>
+                        <td>Thu Feb 2 19:14:10 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Y pattern-matching? */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

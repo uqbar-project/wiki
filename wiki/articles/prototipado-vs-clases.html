@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Prototipado vs clases</title>
+  <meta property="og:title" content="Prototipado vs clases" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/prototipado-vs-clases.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/prototipado-vs-clases.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Prototipado vs clases</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>En el paradigma orientado a objetos, cuando se suscita el problema de que existan <strong>diferentes objetos con igual comportamiento pero diferente identidad y estado interno</strong>, podemos abordarlo de diferentes formas. Dos esquemas muy usados son el de <strong><a href="clases.html">clases</a></strong> y el que se basa en <strong><a href="prototipado.html">prototipos</a></strong>. Cada lenguaje (o herramienta) suele implementar una sóla de éstas opciones, aunque existen variaciones. Los lenguajes más tradicionales (como Java, Smalltalk, y C#) usan el esquema de clases y <a href="herencia.html">herencia</a>, y en otros lugares (como Javascript, ó en el Object Browser para Smalltalk), se usa el esquema de prototipado.</p>
+
+<p>Más allá de cuál de estos esquemas usemos, la base es la misma: objetos que se mandan mensajes en un ambiente aprovechando las ideas de encapsulamiento, delegación y polimorfismo.</p>
+
+<p>La idea de este artículo es ver cómo se puede trabajar en cada esquema para solucionar los mismos problemas.</p>
+
+<h2 id="compartir-comportamiento-entre-varios-objetos">Compartir comportamiento entre varios objetos</h2>
+
+<p>¿Qué pasa si pepita no es la única golondrina que nos interesa tener en nuestro programa?. También están josefa y pepona que comen y vuelan como pepita y también deben tener una energía que podamos monitorear. Estaría bueno que josefa y pepona puedan tener el mismo comportamiento que pepita sin tener que definir lo mismo 3 veces. Aquí es donde entran los conceptos de clase y de prototipo, dependiendo de las herramientas que tengamos disponibles.</p>
+
+<p>Cuando existe la idea de clase en nuestra implementación del paradigma, el comportamiento se define una sola vez en la clase y tanto pepita como josefa y pepona pasan a ser <strong>instancias</strong> de esta clase. No podemos sólo tener a pepita con su propio código porque todos los objetos son instancias de una clase que las define. Cuando cualquiera de las golondrinas reciba el mensaje vola:, lo van a entender y buscarán el método que lo define en la clase Golondrina.</p>
+
+<p>Si no tenemos la idea de clase, el mecanismo que necesitamos para que josefa y pepona compartan el código con pepita es la <strong>colonación</strong>. Clonando a pepita podemos crear un nuevo objeto (josefa) que entiende los mismos mensajes y tiene sus mismas variables, y además conoce a pepita como su <strong>prototipo</strong>.</p>
+
+<p>Si queremos cambiar el comportamiento general de las golondrinas alcanza con realizar estos cambios sobre la clase Golondrina o sobre el prototipo pepita. Al decir que un objeto es clon de otro estamos estableciendo una relación tan fuerte entre ellos como al decir que un objeto es instancia de una clase al trabajar en el otro esquema.</p>
+
+<h2 id="diferenciar-el-comportamiento-de-algunos-objetos">Diferenciar el comportamiento de algunos objetos</h2>
+
+<p>Supongamos que pepona es otro clon de pepita. Queremos que pepona (que es una golondrina perezosa) entienda el mensaje descansar, que hace subir su energía en 50 joules. Sin embargo pepita y josefa que son golondrinas normales deberían seguir teniendo el mismo comportamiento (no entenderían descansar).</p>
+
+<p>En el esquema de prototipado podemos simplemente modificar a pepona como lo haríamos con cualquier otro objeto, sin importar si fue clonado a partir de pepita o no.</p>
+
+<p><code class="language-plaintext highlighter-rouge">#pepona </code>
+<code class="language-plaintext highlighter-rouge">&gt;&gt; descansar</code>
+<code class="language-plaintext highlighter-rouge">  energia := energia + 50</code></p>
+
+<p>Cuando mandemos el mensaje <code class="language-plaintext highlighter-rouge">pepona</code> <code class="language-plaintext highlighter-rouge">descansar</code> lo va a entender (ya que tiene un método propio para este mensaje), va a ejecutar su método descansar y su energía se incrementará. Si mandáramos <code class="language-plaintext highlighter-rouge">pepita</code> <code class="language-plaintext highlighter-rouge">descansar</code> tendríamos un error porque pepita no entendería ese mensaje.</p>
+
+<p>¿Qué pasaría si estuviéramos trabajando con el esquema de clases? Siempre que aparece comportamiento nuevo, necesitamos crear otra clase que lo incluya, con lo cual necesitaríamos crear una clase GolondrinaPerezosa que <a href="herencia.html">herede</a> de Golondrina y definir allí el método #descansar. De esta forma, pepona ya no debería ser una instancia de Golondrina sino de GolondrinaPerezosa.</p>
+
+<p><code class="language-plaintext highlighter-rouge">pepona := GolondrinaPerezosa new.</code>
+<code class="language-plaintext highlighter-rouge">pepona descansar. "esto va a funcionar"</code>
+<code class="language-plaintext highlighter-rouge">pepita := Golondrina new.</code>
+<code class="language-plaintext highlighter-rouge">pepita descansar. "pepita no va a entender el mensaje descansar"</code></p>
+
+<p>Si lo que queremos es agregar algún atributo nuevo para pepona, estaríamos en la misma situación, habría que agregarlo en el objeto #pepona o en la clase GolondrinaPerezosa respectivamente.</p>
+
+<h2 id="redefinir-comportamiento">Redefinir comportamiento</h2>
+
+<p>Siguiendo con pepona, la golondrina perezosa, sabemos que cuando vuela gasta más energía para despegar (15 en vez de 10). Una primer solución podría ser <a href="redefinicion.html">redefinir</a> el método vola:</p>
+
+<p><code class="language-plaintext highlighter-rouge">#pepona / #GolondrinaPerezosa</code>
+<code class="language-plaintext highlighter-rouge">&gt;&gt; vola: unosKilometros</code>
+<code class="language-plaintext highlighter-rouge">  energia := energia - (unosKilometros * 5 + 15)</code></p>
+
+<p>Cuando le mandemos el mensaje <code class="language-plaintext highlighter-rouge">pepona</code> <code class="language-plaintext highlighter-rouge">vola:</code> <code class="language-plaintext highlighter-rouge">10</code>, buscará una definición propia (o en su clase) para vola: y al encontrarla ejecutará ese método. Haber agregado este método no cambia el comportamiento de pepita y josefa, que es lo que queríamos.</p>
+
+<p>Sin embargo podríamos dar un paso más para evitar la repetición de código, siendo que lo único que cambia es el valor de la energía para despegar. Una solución mejor sería:</p>
+
+<p><code class="language-plaintext highlighter-rouge">#pepita / #Golondrina</code>
+<code class="language-plaintext highlighter-rouge">&gt;&gt; vola: unosKilometros</code>
+<code class="language-plaintext highlighter-rouge">  energia := energia - (unosKilometros * 5 + self energiaParaDespegar)</code>
+<code class="language-plaintext highlighter-rouge">&gt;&gt; energiaParaDespegar</code>
+<code class="language-plaintext highlighter-rouge">  ^ 10</code>
+<code class="language-plaintext highlighter-rouge">#pepona / #GolondrinaPerezosa</code>
+<code class="language-plaintext highlighter-rouge">&gt;&gt; energiaParaDespegar</code>
+<code class="language-plaintext highlighter-rouge">  ^ 15</code></p>
+
+<p>Ahora, cuando le mandemos el mensaje <code class="language-plaintext highlighter-rouge">pepona</code> <code class="language-plaintext highlighter-rouge">vola:</code> <code class="language-plaintext highlighter-rouge">10</code>, buscará una definición propia (o en su clase) para vola:, no la va a encontrar, con lo cual seguirá buscando en su prototipo (o la superclase de su clase) donde sí existe. Al ejecutar esa definición, se enviará a sí misma el mensaje #energiaParaDespegar; empieza a buscar un método con ese nombre en sí misma (o en su clase GolondrinaPerezosa), lo encuentra y retorna 15, valor que se usará para completar la ejecución de vola:</p>
+
+<p>Si le mandamos el mensaje <code class="language-plaintext highlighter-rouge">pepita</code> <code class="language-plaintext highlighter-rouge">vola:</code> <code class="language-plaintext highlighter-rouge">10</code>, encontrará y ejecutará la definición en sí misma (o en su clase Golondrina) al igual que para el mensaje #energiaParaDespegar que retornará el valor 10.</p>
+
+<h2 id="conclusión--corolarios">Conclusión / Corolarios</h2>
+
+<ul>
+  <li>Al solucionar el problema utilizando abstracciones ya existentes, prototipado es conceptualmente más sencillo</li>
+  <li>Entonces, el mecanismo de clases agrega una abstracción, ya no tengo sólo “objetos comunes”.</li>
+  <li>Además, prototipado me resuelve el problema de redefinición sin más conceptos, en cambio en clases yo tengo que agregar la idea de herencia entre las clases para lograr algo parecido.</li>
+  <li>Por otro lado, la separación objeto - clase viene asociada con un mecanismo para conocer a las clases “globalmente”, mientras que si uso prototipado tengo que preocuparme por guardar el prototipo de mis objetos en algún lado</li>
+  <li>Si bien en prototipado se puede usar a prototype para delegar, esto no es lo mismo que usar <strong><a href="super.html">super</a></strong> al usar herencia, ya que prototype referencia a otro objeto (con su propio estado) mientras que super referencia al mismo objeto que recibió el mensaje inicial</li>
+  <li>En prototipado, el “contenedor” de comportamiento es dinámico, es un objeto más de mi sistema. Al usar clases, en muchos lenguajes la separación “clase - objeto” es tal que pertenecen a dos mundos diferentes, el “estático” y el “dinámico”.</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>7</td>
+                                <td>27</td>
+                                <td>11</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a1b687f9</td>
+                        <td>Thu Feb 2 19:13:25 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>61ed803b</td>
+                        <td>Thu Feb 2 19:13:25 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5e1dad9b</td>
+                        <td>Thu Feb 2 19:13:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ce72a6c6</td>
+                        <td>Thu Feb 2 19:13:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Intro a colecciones</title>
+  <meta property="og:title" content="Intro a colecciones" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/intro-a-colecciones.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/intro-a-colecciones.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Intro a colecciones</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Las colecciones nos resultan de utilidad porque nos permiten agrupar objetos, para luego poder operar sobre un elemento en particular, sobre algunos elementos seleccionados mediante un filtro, o sobre una colección como conjunto.</p>
+
+<p>Esto nos permite modelar conjuntos o agregados de cosas, que son muy comunes en casi todos los dominios en los que podemos pensar: las piezas de un tablero de ajedrez, los integrantes de un equipo de fútbol, las líneas de una factura, ¡de todo!</p>
+
+<p>A primera vista una colección es un conjunto de objetos. Si la vemos con más precisión nos damos cuenta que es más preciso pensarla como un conjunto de referencias: los elementos no están adentro de la colección, sino que la colección los conoce. Y como no podía ser de otra forma, las colecciones también son objetos.</p>
+
+<p>No hay un único tipo de colección, hay distintos <a href="sabores-de-colecciones.html">sabores de colecciones</a> que nos van a servir para distintos fines, sin embargo la mayoría de las colecciones entiende un conjunto grande de <a href="mensajes-de-colecciones.html"> mensajes en común</a>, o sea, son polimórficas :) Sólo van a diferir en algunos mensajes particulares debido a la naturaleza de la colección.</p>
+
+<h2 id="qué-podemos-hacer-con-una-colección">¿Qué podemos hacer con una colección?</h2>
+
+<p>Para tratar de responder esta pregunta no es necesario estar familiarizado con la implementación de las colecciones. Recordemos que una de las características ventajosas del Paradigma de Objetos es que acerca nuestro modelado a la forma en que percibimos la realidad.</p>
+
+<p>Entonces ¿que haríamos nosotros con una colección? Pensemos en una colección de estampillas. Podemos:</p>
+
+<ul>
+  <li>Mirarlas -&gt; recorrer la colección y hacer algo con cada elemento</li>
+  <li>Encuadernarlas por fecha -&gt; ordenar la colección</li>
+  <li>Conseguir nuevas estampillas -&gt; agregar elementos a la colección</li>
+  <li>Regalar una estampilla -&gt; quitar elementos de la colección.</li>
+  <li>Quedarme con las estampillas de Brasil -&gt; hacer un filtro o selección de los elementos según un criterio.</li>
+  <li>Saber si tengo una determinada estampilla -&gt; preguntarle a una colección si incluye o no un determinado objeto como elemento.</li>
+</ul>
+
+<p>¿Qué otra colección podemos modelar del mundo real? ¡¡Un carrito del supermercado!!</p>
+
+<p>Mientras vamos de góndola a góndola del super vamos agregándole elementos (referencias a objetos) a esa colección. Cuando llegamos a la caja recorremos esa colección y obtenemos información de la misma: cuánto suma el costo total de sus artículos, cuántos artículos compré…</p>
+
+<p>¿Ahora, como podemos modelar todas estas situaciones en objetos?… ¡Enviando mensajes a colecciones! Recordemos que en el paradigma de objetos todo programa es un conjunto de objetos enviándose mensajes para concretar un objetivo en común. Bien, en este caso los objetos serán las distintas colecciones y sus elementos. Los mensajes que puede recibir una colección serán dependientes del lenguaje, claramente, pero la idea detrás es básicamente la misma.</p>
+
+<p>Un ejemplo rápido en Wollok: En este ejemplo vamos a usar un tipo de colección al que llamamos Set. Supongamos que tenemos 4 objetos distintos que son estampillas (nos interesa que nos sepan decir su origen y su superficie, no importa cómo lo hacen), agreguemos algunas a la colección.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var coleccionEstampillas = #{}
+coleccionEstampillas.add(estampillaBrasileraGrande)
+coleccionEstampillas.add(estampillaAlemana)
+coleccionEstampillas.add(estampillaBrasileraMediana)
+</code></pre></div></div>
+
+<p>Alternativamente, si ya conozco los elementos que va a tener inicialmente, usando el set literal de Wollok podemos crear directamente la colección con esos elementos.</p>
+
+<p><code class="language-plaintext highlighter-rouge">var coleccionEstampillas = #{estampillaBrasileraGrande, estampillaAlemana, estampillaBrasileraMediana}</code></p>
+
+<p>A esta colección de estampillas ya le puedo hacer algunas preguntas</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>coleccionEstampillas.size() // devuelve 3
+coleccionEstampillas.contains(estampillaAlemana) // devuelve true
+coleccionEstampillas.contains(estampillaBrasileraChica) // devuelve false
+</code></pre></div></div>
+
+<p>Claro que para que la colección me sea realmente útil, me debe permitir interactuar con sus elementos, poder hablarle (p.ej.) a estampillaAlemana a través de la colección. Antes de ver cómo hacer esto, clarifiquemos un poco la relación entre una colección y sus elementos.</p>
+
+<h2 id="colecciones-y-referencias">Colecciones y referencias</h2>
+
+<p>Como ya dijimos en la introducción, si miramos una colección en detalle, vemos que es mejor entenderla como un conjunto de referencias a objetos, y no como un conjunto de objetos. ¿Cuál es la diferencia? Que conceptualmente, la colección no tiene “adentro suyo” a sus elementos.</p>
+
+<p>Los elementos de una colección son objetos como cualesquiera otros, al agregarlos a una colección estoy, en realidad, agregando una referencia que parte de la colección y llega al objeto “agregado”. Los objetos que elijo agregar una colección pueden estar referenciados por cualesquiera otros objetos.</p>
+
+<p>En el ejemplo anterior, algunas de las estampillas que creamos son elementos de la colección, y además están referenciadas por variables. Gráficamente tenemos: <img src="Pdep-colecciones-1.PNG" alt="" title="fig:Pdep-colecciones-1.PNG" /></p>
+
+<p>Si se están preguntando ¿en qué orden “están” las estampillas en el Set? Un Set no mantiene sus elementos en un orden determinado, más adelante veremos que hay distintos “sabores” de colecciones, algunos mantienen orden y otros no. En este momento, no es lo que nos interesa.</p>
+
+<p>Ahora agreguemos un objeto más: pedro, el coleccionista, que sabe cuál es su estampilla favorita (la estampillaBrasileraMediana). El ambiente queda así:</p>
+
+<p><img src="/img/wiki/Pdep-colecciones-2.PNG " title="Pdep-colecciones-2.PNG " alt="" /></p>
+
+<p>Ahora hay un objeto que tiene 3 referencias:</p>
+
+<ol>
+  <li>
+    <p>es el objeto referenciado por la variable estampillaBrasileraMediana</p>
+  </li>
+  <li>
+    <p>es un elemento del Set</p>
+  </li>
+  <li>
+    <p>es la estampilla preferida de pedro</p>
+  </li>
+</ol>
+
+<p>Ya podemos ver un poco más en detalle la relación entre una colección y sus elementos. La colección maneja referencias a los elementos que le voy agregando (p.ej. enviándole el mensaje <code class="language-plaintext highlighter-rouge">add(elemento)</code> ), análogas a las referencias de las variables de instancia de otros objetos. Hay dos diferencias entre las referencias que mantiene una colección y las que mantienen nuestros objetos p.ej. pedro:</p>
+
+<ul>
+  <li>Las referencia que usan nuestros objetos tienen un nombre, que es el nombre que luego usará para hablarle al objeto referenciado; las de la colección son anónimas.</li>
+  <li>Nuestros objetos tienen una cantidad fija de referencias (en este caso pedro tiene una única referencia, estampillaPreferida), una colección puede tener una cantidad arbitraria, que puede crecer a medida que le agrego elementos.</li>
+</ul>
+
+<p>Así, los objetos que quedan referenciados por la colección pueden tener otras referencias sin problema. Un objeto no tiene nada especial por ser elemento de una colección, sólo tiene una referencia más hacia él. Un objeto no conoce de qué colecciones es elemento (podría tener una referencia explícita a la colección para saberlo, pero eso habría que programarlo a mano y por lo general tampoco nos interesa).</p>
+
+<p>La referencia a un objeto por ser elemento de una colección cuenta para que el objeto no salga del ambiente cuando pasa el <a href="garbage-collector.html">Garbage collector</a>. Eso significa que si dejamos de referenciar a nuestra estampilla alemana mediante la referencia estampillaAlemana, como la colección de estampillas la conoce, el objeto va a seguir en el sistema.</p>
+
+<p><img src="/img/wiki/Pdep-colecciones-3.PNG " title="Pdep-colecciones-3.PNG " alt="" /></p>
+
+<h2 id="hablando-con-los-elementos">Hablando con los elementos</h2>
+
+<p>Hay algunas operaciones que se hacen sobre una colección en las cuales parte de lo que hay que hacer es responsabilidad de cada elemento.</p>
+
+<p>Por ejemplo, supongamos que quiero obtener de mi colección de estampillas aquellas que tengan más de 10 cm2 de superficie. La colección no sabe la superficie de cada estampilla, sí conoce a las estampillas, entonces puede enviarle mensajes a cada una. Lo que no sabe es qué mensajes puede enviarle, un Set no sabe si lo que tiene son estampillas, perros, números, otros Set, o cualquier otro objeto, sólo representa al conjunto, sin saber nada de sus elementos. Por otro lado, cada estampilla no sabe en qué colección está, de hecho un mismo objeto podría estar en varias colecciones.</p>
+
+<p>Por lo tanto, para resolver mi problema necesito que actúen tanto la colección (que es la que conoce a los elementos) como cada elemento (que es el que sabe su superficie). Veamos cómo lograr esta interacción. Empecemos por decidir a quién le pedimos lo que queremos. Quiero aquellas estampillas, de las que son elementos de coleccionEstampillas, que cumplan una determinada condición.</p>
+
+<p>¿A qué objeto le voy a pedir esto? A la colección.</p>
+
+<p>El mensaje es <code class="language-plaintext highlighter-rouge">filter(algo)</code> en Wollok…</p>
+
+<p>… o sea que necesita un parámetro. Este parámetro va a representar una condición para el filtrado, que es un código que la colección debería evaluar sobre cada elemento, y debe devolver true o false para que la colección sepa si debería o no estar en la colección nueva a devolver.</p>
+
+<p>Los objetos que representan “cachos de código” son los <a href="bloques.html">Bloques</a>, en este caso un bloque con un parámetro</p>
+
+<p><code class="language-plaintext highlighter-rouge">coleccionEstampillas.filter({estampilla =&gt; estampilla.superficie() &gt; 10})</code></p>
+
+<p>Mientras que todos los elementos de la colección entiendan el mensaje superficie y al recibirlo retornen un número, el filtrado va a funcionar correctamente.</p>
+
+<p>En resumen: cuando quiero hacer una operación sobre una colección que necesita enviarle mensajes a cada elemento, la operación se la pido a la colección, y le voy a enviar como parámetro un bloque que describe la interacción con cada elemento.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on September 07, 2017 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>8</td>
+                                <td>59</td>
+                                <td>53</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>cf08408a</td>
+                        <td>Thu Sep 7 20:36:10 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update intro-a-colecciones.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1b62d919</td>
+                        <td>Mon Feb 6 21:50:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Add plugin for formar wiki images</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>136be20e</td>
+                        <td>Thu Feb 2 19:11:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>99ae269e</td>
+                        <td>Thu Feb 2 19:11:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Colecciones y referencias */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Elementos teoricos para comparar tecnologias de presentacion</title>
+  <meta property="og:title" content="Elementos teoricos para comparar tecnologias de presentacion" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/elementos-teoricos-para-comparar-tecnologias-de-presentacion.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/elementos-teoricos-para-comparar-tecnologias-de-presentacion.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Elementos teoricos para comparar tecnologias de presentacion</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="clientes-livianos-y-pesados">Clientes livianos y pesados</h2>
+
+<h3 id="introducción-a-los-conceptos-de-cliente-y-servidor">Introducción a los conceptos de cliente y servidor</h3>
+
+<p>Si una aplicación es accedida por múltiples usuarios simultáneamente, probablemente cada uno de ellos lo haga desde su propia computadora en forma remota. Al programa que se ejecuta en la máquina del usuario se lo denomina <strong>cliente</strong>.</p>
+
+<p>Luego, esos clientes necesitarán poder compartir información entre sí; en muchos casos esa información se centralizará en una o más programas que se denominan <strong>servidor</strong> (en inglés <em>server</em>).</p>
+
+<p>La forma de repartir responsabilidades entre clientes y servidores dan lugar a un primer nivel de clasificación de las posibles arquitectura de una aplicación. Desde el punto de vista de la teoría de presentación, el punto más interesante será el cliente, ya que será el que tenga la responsabilidad de interactuar con el usuario.</p>
+
+<h3 id="clasificación-tradicional">Clasificación tradicional</h3>
+
+<p>Tradicionalmente se solía clasificar a los clientes entre <strong>pesados</strong> y <strong>livianos</strong>. Según esa clasificación, un cliente pesado tiene las siguientes características:</p>
+
+<ul>
+  <li>Se <em>instala</em> en la máquina cliente.</li>
+  <li>Es un programa independiente y completo (en inglés <em>stand alone</em>, esto es, no requiere de la presencia previa de otros programas en la máquina en la que se va a ejecutar (como máquinas virtuales, intérpretes, application clients, etc).</li>
+  <li>Está pensado para ser utilizado en un entorno de ejecución específico (hardware, sistema operativo, etc) y eso le permite aprovechar todos sus recursos sin limitaciones. Por ejemplo:
+    <ul>
+      <li>Se pueden utilizar todos los periféricos de la máquina como ser impresoras o cualquier dispositivo específico.</li>
+      <li>No hay limitaciones en cuanto a las formas de presentar la información o de interactuar con el usuario.</li>
+    </ul>
+  </li>
+  <li>Contiene gran parte o toda la lógica de la aplicación, requiriendo pocos servicios del servidor, que se limita a ser un repositorio central de información.</li>
+  <li>Requiere grandes cantidades de recursos de la máquina cliente.</li>
+</ul>
+
+<p>Los clientes livianos se caracterizan por delegar gran parte de la lógica de la aplicación a la máquina servidora y de esa manera requerir menor cantidad de recursos de la máquina cliente. Sin embargo hay otra característica de un cliente liviano que cambia radicalmente la forma de pensar las aplicaciones y es la aparición del concepto de <strong>application client</strong>.</p>
+
+<p>El application client es un entorno en el cual se ejecutan las aplicaciones clientes de forma controlada, les da servicios que permiten simplificar la programación de las mismas y también tiene políticas que permiten proteger a la máquina de posible código malicioso. El application client más ampliamente conocido es el <strong>web browser</strong>, pero no es el único.</p>
+
+<p>La ejecución dentro de un application client tiene gran impacto sobre las aplicaciones construidas de esta manera:</p>
+
+<ul>
+  <li>El application client se ocupa de obtener dinámicamente el código de la aplicación, eliminando la necesidad de instalación y de actualización de versiones.</li>
+  <li>La aplicación ya no es independiente y sólo puede ejecutarse en una máquina que contenga el application client correspondiente, esto nos lleva con frecuencia a no utilizar el application client que podría ser más útil a nuestros propósito sino a amoldarnos al que es más probable de encontrar instalado en las máquinas en las que querremos ejecutar nuestro programa.</li>
+  <li>Permite que la misma aplicación se ejecute en máquinas totalmente distintas, en tanto tengan el mismo application client.</li>
+  <li>Restringe las posibilidades de uso de la máquina a lo provisto por el application client. Por ejemplo en el caso de una aplicación web, tradicionalmente las aplicaciones estuvieron limitadas a la utilización del lenguaje HTML, lo que limitaba en gran medida las posibilidades de interacción con el usuario.</li>
+</ul>
+
+<h3 id="evolución-de-los-tipos-de-cliente">Evolución de los tipos de cliente</h3>
+
+<p>Con el tiempo la clasificación taxativa entre clientes pesados y livianos se fue diluyendo y fueron apareciendo opciones intermedias. Desde ambos lados fueron apareciendo herramientas que intentaban incorporar en uno de los mundos algunas de las ventajas del otro.</p>
+
+<h4 id="application-clients">Application Clients</h4>
+
+<p>En un primer lugar la universalización del concepto de Virtual Machine o la popularización de diferentes lenguajes interpretados hace que sea difuso cuándo una aplicación es <em>stand alone</em> o está utilizando un application client. Por ejemplo, una aplicación Java puede verse como un cliente liviano que se ejecuta sobre un application cliente preinstalado (la JVM) o bien ver a ambos como un programa instalable único. En definitiva es una cuestión de como se distribuye el programa, ya que hoy en día no existen practicamente lenguajes que no requieran de un intérprete, máquina virtual o determinadas bibliotecas instaladas previamente para poder ejecutar programas.</p>
+
+<p>El cuadro se completa cuando se incorporan herramientas para actualizar código dinámicamente en lenguajes tradicionalmente pensados para aplicaciones pesadas como Java (<em>Java WebStar</em>).</p>
+
+<p>Inclusive la utilización de application clients se ha extendido a nuevos entornos, entre ellos podemos mencionar dos: Firefox y Eclipse, en ambos casos encontramos un entorno base o microkernel que provee de un entorno para la ejecución de aplicaciones y una arquitectura basada en <em>plugins</em> o <em>add-ons</em>, que son los que en última instancia dan forma a la aplicación.</p>
+
+<h4 id="rich-internet-applications">Rich Internet Applications</h4>
+
+<p>Por otro lado la popularización de las aplicaciones en Internet se contrapone con la gran cantidad de limitaciones que impone el HTML como lenguaje base para modelar las interfaces de usuario de dichas aplicaciones. Eso fue dando lugar a la aparición de múltiples tecnologías que intentan sobreponerse a dichas limitaciones, algunos ejemplos son:</p>
+
+<ul>
+  <li>La posibilidad de ejecutar JavaScript dentro del web browser permite tener comportamiento en el cliente que ya no se delega en el servidor.</li>
+  <li>Manipular los componentes visuales desde ese código JavaScript en el cliente, para salir de las limitaciones impuestas por el HTML.</li>
+  <li>La incorporación de tecnologías como AJAX permiten romper la metafora navegacional definida originalmente por el browser.</li>
+</ul>
+
+<p>Adicionalmente, la aparición de herramientas como Flash, Applets, SVGs y HTML5 incorporan nuevos application clients que rompen la visión original del browser-intérprete-de-HTML.</p>
+
+<p>A las aplicaciones que salen de las limitaciones de navegación, interacción y visuales que tenían las aplicaciones web tradicionales se las denomina <strong>Rich Internet Applications (RIA)</strong> y por extensión también a las tecnologías que permiten desarrollar ese tipo de aplicaciones (se podría sumar también JavaScript a esta lista). Si bien se podría decir que este tipo de ideas están aún en evolución, se observa una tendencia a tener application clients cada vez más poderosos.</p>
+
+<h4 id="uso-de-recursos">Uso de Recursos</h4>
+
+<p>Tanto la aparición de applications clients cada vez más poderosos y complejos como la intención de agregar dinamismo y comportamiento a los clientes han producido un incremento considerable en la cantidad de recursos que requiere una aplicación web, habiendo en muchos casos prácticamente ninguna diferencia entre un cliente pesado y un cliente liviano.</p>
+
+<h2 id="descripción-de-la-vista">Descripción de la vista</h2>
+
+<p>Otro de los elementos importantes a analizar al comparar tecnologías de presentación son las herramientas que cada tecnología propone al tiempo de definir una <a href="vista.html">vista</a>.</p>
+
+<p>Los conceptos fundamentales al describir una vista son los de <strong>componente</strong> y <strong>layout</strong>. Los componentes constituyen los elementos activos de la vista, es decir, aquellos con los que el usuario puede interactuar. El layout es la estrategia que indica cómo organizar los componentes espacialmente para poder visualizarlos.</p>
+
+<p>Si bien algunos frameworks modernos se denominan a sí mismos <em>orientados a componentes</em> se puede considerar que en realidad la amplia mayoría de las tecnologías de interfaz de usuario están constituidas por componentes. La diferencia está entonces en la forma de describir esos componentes y su disposición espacial, que se puede clasificar entre:</p>
+
+<p>Programática<br />
+Se basa en la manipulación directa en el programa de los componentes visuales que conforman la vista.</p>
+
+<p>Declarativa<br />
+En la que se utiliza un lenguaje de más alto nivel que describe características de la vista pero sin indicar el algoritmo para su construcción o sin manipular los componentes visuales directametne</p>
+
+<p>Visual<br />
+Que permite escojer los componentes de una paleta y visualmente organizarlos en la pantalla sin necesidad de programar o escribir prácticamente nada de código.</p>
+
+<p><em>Model driven</em><br />
+En la que la interfaz de usuario está guiada por el modelo de dominio y no se necesita programar específicamente (o se reduce notablemente la necesidad de programarla).</p>
+
+<p>Otra dimensión del análisis a realizar pasa por los bloques de construcción de que disponemos, por ejemplo:</p>
+
+<ul>
+  <li>De qué <strong>componentes</strong> disponemos y si es posible agregar nuevos componentes.</li>
+  <li>Qué formas de <strong>layout</strong> están contempladas.</li>
+  <li>Qué <strong>mecanismos de interacción</strong> tiene el usuario predefinidos con esos componentes.</li>
+</ul>
+
+<h3 id="mecanismos-de-descripción">Mecanismos de descripción</h3>
+
+<h4 id="mecanismos-programáticos">Mecanismos programáticos</h4>
+
+<h3 id="herramientas-disponibles">Herramientas disponibles</h3>
+
+<h4 id="componentes">Componentes</h4>
+
+<p>Hay un conjunto de componentes básicos que suelen estar disponibles en todas las tecnologías, que incluyen:</p>
+
+<ul>
+  <li>Campos para ingresar texto, pueden ser de una línea o multilínea.</li>
+  <li>Selectores entre varias opciones (combos, option buttons, etc). Ṕueden ser de selección simple o múltiple.</li>
+  <li><em>Check boxes</em> (para seleccionar o no una opción, combinando varios se puede formar un selector múltiple).</li>
+  <li>Diferentes variantes de botones.</li>
+  <li>Y otros controles <em>informativos</em> como ser labels o imágenes.</li>
+</ul>
+
+<h4 id="posibilidades-de-interacción">Posibilidades de interacción</h4>
+
+<p>También se deben analizar las posibilidades de interacción con esos elementos como por ejemplo:</p>
+
+<ul>
+  <li>Qué eventos se pueden obtener de cada control, es decir, clickear sobre el control, modificar su valor, apretar una tecla, movimiento del mouse, etc.</li>
+  <li>Drag &amp; drop.</li>
+</ul>
+
+<h3 id="layouts">Layouts</h3>
+
+<ul>
+  <li>Fijo xy.</li>
+  <li><em>tabs</em></li>
+</ul>
+
+<h3 id="componentes-1">Componentes</h3>
+
+<ul>
+  <li>Diferentes formas de describir una vista: programática, declarativa, visual, model driven.
+    <ul>
+      <li>Diferencias entre diferentes variantes de declaratividad, scriptlets, etc.</li>
+      <li>Manipulación de componentes vs. manipulación de texto.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="navegación">Navegación</h2>
+
+<ul>
+  <li>Formas de navegación: pantallas y formularios, ventanas y diálogos (o SPI), manipulación directa.
+    <ul>
+      <li>Control de la iniciativa: usuario o aplicación.</li>
+      <li>Integración con el dominio de la aplicación: stateless (basada en servicios) o statefull (basada en objetos y en eventos).</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="modelado">Modelado</h2>
+
+<ul>
+  <li>Estado conversacional: en el cliente, en el server (sesión), en el pedido, en objetos específicos (por ejemplo: caso de uso).</li>
+  <li>Integración de la lógica: eventos y bindings (nivel de campo), formulario o pantalla (submit), objetos específicos (por ejemplo: caso de uso).</li>
+  <li>Arquitecturas: orientado a la presentación, datos, servicios, objetos.</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on June 05, 2017 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>25</td>
+                                <td>28</td>
+                                <td>12</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Lgassman</td>
+                                <td>Lgassma...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>21</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>d64749ce</td>
+                        <td>Mon Jun 5 14:36:00 2017 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update elementos-teoricos-para-comparar-tecnologias-de-presentacion.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3b775648</td>
+                        <td>Thu Feb 2 19:10:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* = Layouts */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>68ffd3eb</td>
+                        <td>Thu Feb 2 19:10:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Posibilidades de interacción */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>55b000d9</td>
+                        <td>Thu Feb 2 19:10:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Herramientas disponibles */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

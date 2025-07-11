@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Cuestiones basicas para resolver el parcial de objetos</title>
+  <meta property="og:title" content="Cuestiones basicas para resolver el parcial de objetos" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/cuestiones-basicas-para-resolver-el-parcial-de-objetos.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/cuestiones-basicas-para-resolver-el-parcial-de-objetos.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Cuestiones basicas para resolver el parcial de objetos</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>Esta es una recopilación de errores comunes a la hora de resolver un parcial de objetos. Son conceptos muy básicos, es decir, esto debe considerarse como “condiciones necesarias” para aprobar el parcial; nunca como “condiciones suficientes”.</p>
+
+<h2 id="conceptos-básicos">Conceptos básicos</h2>
+
+<p>Utilizar los conceptos del paradigma<br />
+Encontrar abstracciones, aprovechar el polimorfismo, delegar responsabilidades, etc.</p>
+
+<p>Hay que programar con objetos, no vale programar como si fuera Algoritmos… para aprender eso ya está Algoritmos.</p>
+
+<!-- -->
+
+<p>Repartir las responsabilidades<br />
+Que no me quede todo el código en un mismo objeto. Es fácil verlo (por ejemplo) cuando una caja del diagrama de clases ocupa la mitad de la página.</p>
+
+<p>Que no todos los mensajes del workspace vayan al mismo objeto.</p>
+
+<p>Que no haya un objeto “Sistema”.</p>
+
+<!-- -->
+
+<p>Ser consistente<br />
+Por ejemplo:</p>
+
+<ul>
+  <li>Si en algún lugar mando un mensaje y trato el resultado como una colección debo asegurarme de que la implementación del método devuelva una colección (lo mismo vale para colecciones como para cualquier otro objeto).</li>
+  <li>Si tengo muchos métodos polimórficos todos deben recibir los mismos parámetros y devolver objetos del mismo tipo.</li>
+  <li>En un método puedo usar las variables de instancia del objeto o los parámetros, cualquier otra variable “mágica” que aparezca constituye un error.</li>
+</ul>
+
+<!-- -->
+
+<p>Ser específico<br />
+Indicar las relaciones de conocimiento en el diagrama de objetos.</p>
+
+<p>También los atributos que tiene cada objeto.</p>
+
+<p>También tiene que quedar claro de qué tipo es cada parámetro que espera un método, y qué devuelve.</p>
+
+<!-- -->
+
+<p>Elegir buenos nombres para clases, métodos y variables<br />
+Por ejemplo diferenciar desde el nombre los métodos que son órdenes de los que son consultas. Para los primeros conviene usar oraciones en infinitivo o en imperativo. Para las consultas en general usamos el indicativo:</p>
+
+<ul>
+  <li>“caminá” o “caminar” podrían indicar la orden de realizar una caminata (en el parcial vale poner el acento para que se note la intención).</li>
+  <li>“caminaste” podría ser una consulta que devuelve un booleano indicando si caminó</li>
+  <li>“cuantoCaminaste” podría ser una consulta que devuelve una cantidad.</li>
+  <li>Por otro lado, un nombre como “caminata” dificulta comprender la intención.</li>
+</ul>
+
+<p>Esto es aún más importante si el método en cuestión no está 100% correcto, ya que al menos permite entender lo que quisieron hacer.</p>
+
+<h2 id="cosas-básicas-de-smalltalk">Cosas básicas de Smalltalk</h2>
+
+<p>Si bien no es nuestro objetivo saber bocha de Smalltalk, hay cositas que impactan directamente en la posibilidad o no de comprender lo que están programando; entonces conviene darles bola:</p>
+
+<p>Tienen la guía de lenguajes, ¡úsenla!<br />
+Por ejemplo deberían aprovecharla para saber qué mensajes entiende una colección, no hace falta acordárselos de memoria para usarlos correctamente.</p>
+
+<!-- -->
+
+<p>No confundir mensajes con variables<br />
+Y además ser bien explícito en el diagrama y en el código, cuándo están enviando un mensaje y cuándo están accediendo a una variable de instancia.</p>
+
+<!-- -->
+
+<p>La sintaxis es objeto-mensaje-parámetro…<br />
+¡No da confundirse con eso!</p>
+
+<!-- -->
+
+<p>Identificar bien mayúsculas y minúsculas.<br />
+Los nombres de clase van con mayúscula, al igual que las variables de clase.</p>
+
+<p>Todo lo demás va en minúscula.</p>
+
+<p>Romper estas reglas obliga a que el corrector tenga dudas de lo que están haciendo.</p>
+
+<h2 id="el-diagrama-de-clases">El diagrama de clases</h2>
+
+<p>¡Debe ser conexo!<br />
+No vale sólo dibujar las cajitas con los métodos y atributos, las relaciones entre los objetos son igual de importantes. Una clase que no se relaciona con nadie no aporta a la solución porque nadie puede mandarle mensajes a sus instancias. Si sólo se comunican con otros objetos por parámetros se dibuja una flecha con línea punteada con la palabrita <usa> que parte del receptor del mensaje en cuestión y llega al objeto que se envía por parámetro.</usa></p>
+
+<!-- -->
+
+<p>Especificar bien las relaciones, diferenciar la herencia de la asociación o conocimiento.<br />
+Si la flecha que se usa para los atributos tiene un triángulo en la punta o si la de herencia es una flecha simple está mal!</p>
+
+<h2 id="la-presentación-del-parcial">La presentación del parcial</h2>
+
+<p>Indicar cómo se usa lo que hicieron<br />
+Para cada punto del parcial, indicar qué mensaje hay que mandarle a qué objeto</p>
+
+<!-- -->
+
+<p>El orden del código es importante a la hora de entender la solución propuesta<br />
+Está bueno ordenarlo “punto por punto” (en contraposición a juntar todos los métodos de una misma clase). No solo facilita la corrección sino además los ayuda a no olvidarse de nada</p>
+
+<p>También está bueno ir “de lo general a lo particular”, es decir, comenzar por el mensaje que se llamaría desde el workspace y luego los que se llaman desde ahí, así sucesivamente hasta los mensajes más específicos.</p>
+
+<!-- -->
+
+<p>Prolijidad<br />
+Hagan buena letra, no amontonen todo, etc.</p>
+
+<!-- -->
+
+<p>No escribir muy apretado<br />
+Así hay lugar para hacer anotaciones y correcciones.</p>
+
+<!-- -->
+
+<p>Ortografía<br />
+Los docentes tenemos indicación explícita del departamento de desaprobar a quienes tengan muchos errores de ortografía, así que pilas con eso.</p>
+
+<p>De paso no estaría mal practicar un poquito de redacción, aunque eso va más que nada para el final.</p>
+
+<h2 id="otras-cuestiones-importantes">Otras cuestiones importantes</h2>
+
+<p>¡No devolver Strings para informar un error!<br />
+Los errores se informan con self error.</p>
+
+<!-- -->
+
+<p>Evitar repetición de código<br />
+En el caso general no está bien tener código repetido; esto suele indicar una falta de abstracción o bien un problema de asignación de responsabilidades.</p>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>24</td>
+                                <td>31</td>
+                                <td>2</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>22</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>da770d50</td>
+                        <td>Thu Feb 2 19:09:37 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* El diagrama de clases */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>24317b7d</td>
+                        <td>Thu Feb 2 19:09:37 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Conceptos básicos */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f58db4fe</td>
+                        <td>Thu Feb 2 19:09:37 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Conceptos básicos */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7f8e829b</td>
+                        <td>Thu Feb 2 19:09:37 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Cosas básicas de Smalltalk */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

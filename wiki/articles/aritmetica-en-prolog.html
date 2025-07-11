@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Aritmetica en prolog</title>
+  <meta property="og:title" content="Aritmetica en prolog" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/aritmetica-en-prolog.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/aritmetica-en-prolog.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Aritmetica en prolog</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="el-predicado-is">El predicado “is”</h2>
+
+<p>En Prolog no pasa como en Haskell que tengo funciones que me devuelven cosas, sino que tengo predicados que relacionan individuos ¿Entonces qué sucede cuando quiero hacer cuentas? Si probamos esto en el intérprete de Prolog, que está pensado para evaluar predicados, vamos a ver que falla:</p>
+
+<pre><code class="language-Prolog">?- 2+2.
+ERROR: Undefined procedure: (+)/2 (DWIM could not correct goal)
+</code></pre>
+
+<p>Eso no es porque no sea posible sumar números, sino que el + no es un predicado. De hecho, si probamos esto otro, sí funciona:</p>
+
+<pre><code class="language-Prolog">?- 2+2 &gt; 1.
+Yes
+</code></pre>
+
+<p>Eso demuestra que la suma anda, y que el predicado (&gt;)/2 se encargó de reducir esa expresión y compararla con el 1, lo cual dio un resultado booleano como hubiéramos esperado.</p>
+
+<p>¿Y como me puedo saber cuál es el resultado de una cuenta? ¿O si una cuenta da un determinado resultado?</p>
+
+<p>Bueno, para esos casos, existe el predicado is, que es un predicado de aridad 2 que se puede escribir de forma infija. Al ser un predicado, sabemos que podemos hacer consultas individuales como la siguiente, para saber si es cierto que se verifica que una cuenta da un determinado resultado:</p>
+
+<pre><code class="language-Prolog">?- 5 is 2 + 3.
+Yes
+</code></pre>
+
+<p>Pero <strong>ojo</strong>, la cuenta sólo puede ir a la derecha:</p>
+
+<pre><code class="language-Prolog">?- 4 + 1 is 2 + 3.
+No.
+</code></pre>
+
+<p>A la derecha del is se escribe una operación aritmética. A la izquierda del is se escribe el resultado de esa operación aritmética.</p>
+
+<p>Luego podemos ver qué tan inversible es para determinar qué otros usos se le puede dar. El is <strong>sólo es inversible por el primer parámetro</strong></p>
+
+<p>Esto funciona:</p>
+
+<pre><code class="language-Prolog">?- X is 6 / 2.
+X = 3
+</code></pre>
+
+<p>Pero esto no:</p>
+
+<pre><code class="language-Prolog">?- 3 is X / 2.
+ERROR: is/2: Arguments are not sufficiently instantiated
+</code></pre>
+
+<h2 id="errores-comunes-con-el-is">Errores comunes con el is</h2>
+
+<p>Acá vienen una serie de warnings que deben tener MUY en cuenta:</p>
+
+<h3 id="error-usar--en-vez-de-is">Error: usar = en vez de is</h3>
+
+<p>Usar = para resolver operaciones aritméticas no es correcto. ¿Por qué no se puede usar = para aritmética? Veamos un ejemplo:</p>
+
+<pre><code class="language-Prolog">?- 3+5 = 2+6.
+No
+?- 3+5 = 5+3.
+No
+?- 3+5 = 8.
+No
+</code></pre>
+
+<p>El muy simpático sólo nos va a decir true cuando las dos expresiones de ambos lados del igual sean idénticas, no va a intentar resolver la igualdad:</p>
+
+<pre><code class="language-Prolog">?- 3+5 = 3+5.
+Yes
+</code></pre>
+
+<p>Muy… “útil”, ¿no? :P</p>
+
+<p>En general en la materia no vamos a usar el = ya que preferimos el uso de pattern matching y consultas individuales cuando eso nos sirva para resolver el problema que tenemos.</p>
+
+<h3 id="error-tratar-de-acumular">Error: tratar de acumular</h3>
+
+<p>Como ya saben, en lógico no hay asignación sino unificación; una vez que las variables se ligan, permanecen ligadas hasta que termine la consulta, por ende no hay que pensar al is como un mecanismo para asignar. Es decir, no vale preguntar algo como:</p>
+
+<pre><code class="language-Prolog">?- edad(pepe,E), E is E + 1.
+No
+</code></pre>
+
+<p>No existe ningún número E que sea igual a E + 1. Supongamos que la edad de pepe era 15, el motivo por el cual es falso es porque 15 no es 16. Básicamente lo que estaría pasando es esto:</p>
+
+<pre><code class="language-Prolog">?- 15 is 15 + 1.
+No
+</code></pre>
+
+<h3 id="error-usar-is-para-verificar-igualdad-de-valores">Error: Usar is para verificar igualdad de valores</h3>
+
+<p>El is es <strong>sólo para operaciones aritméticas</strong>. Si bien funciona, lo siguiente es un error conceptual:</p>
+
+<pre><code class="language-Prolog">edad(juan,Edad) :- 
+  Edad is 10.
+</code></pre>
+<p>La manera correcta de hacerlo es aprovechando que al hacer pattern matching, prolog <em>verifica que el valor sea ese</em>, sin usar el igual ó el is:</p>
+
+<pre><code class="language-Prolog">edad(juan,10).
+</code></pre>
+
+<p>¡Y listo!</p>
+
+<p>Ver <a href="sobre-el-uso-del-igual-----en-prolog.html">Sobre el uso del igual en Prolog</a> para más información.</p>
+
+<h3 id="error-usar-is-para-igualar-variables">Error: Usar is para igualar variables</h3>
+
+<p>Esto es el mismo caso que el error anterior. El is es <strong>sólo para operaciones aritméticas</strong>. Si bien funciona, lo siguiente es un error conceptual:</p>
+
+<pre><code class="language-Prolog">mismaEdad(PersonaA,PersonaB):-
+  edad(PersonaA,EdadA),
+  edad(PersonaB,EdadB),
+  EdadA is EdadB
+</code></pre>
+
+<p>Lo mismo sucede aquí:</p>
+
+<pre><code class="language-Prolog">mismaEdad(PersonaA,PersonaB):-
+  edad(PersonaA,EdadA),
+  edad(PersonaB,EdadB),
+  EdadA = EdadB
+</code></pre>
+
+<p>La manera correcta de hacerlo es:</p>
+
+<pre><code class="language-Prolog">mismaEdad(PersonaA,PersonaB):-
+  edad(PersonaA,Edad),
+  edad(PersonaB,Edad).
+</code></pre>
+
+<p>Porque si dos individuos deben ser el mismo, entonces alcanza con escribirlos con la misma variable, no como otra condición. De esta forma estamos haciendo una <strong>consulta existencial</strong> respecto a la edad de la PersonaA y luego una <strong>consulta individual</strong> para validar si es cierto que la edad de PersonaB es esa que ya conocemos. Vemos que de ésta manera mejoramos la <strong>declaratividad</strong> (leo qué es lo que quiero, y hay menos detalles algorítmicos: si la edad es la misma lo escribo igual y listo). El motor de Prolog se encarga del resto.</p>
+
+<p>Ver <a href="sobre-el-uso-del-igual-----en-prolog.html">Sobre el uso del igual en Prolog</a> para más información.</p>
+
+<h3 id="error-usar-is-para-resolver-ecuaciones">Error: Usar is para resolver ecuaciones</h3>
+
+<p>Como dijimos arriba, el predicado is/2 <strong>no es completamente inversible</strong>, es inversible solo para el primer argumento, lo que va a la izquierda. O sea, no vale preguntar:</p>
+
+<pre><code class="language-Prolog">?- 3 is X + 1.
+ERROR: is/2: Arguments are not sufficiently instantiated
+</code></pre>
+
+<p>Porque el motor de Prolog no sabe resolver ecuaciones. En éste caso, el error dirá algo como “Arguments are not sufficiently instantiated”, lo cual es otra manera de decir “No soy inversible a derecha, sólo me podés poner algo sin unificar a izquierda”</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on July 04, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>9</td>
+                                <td>140</td>
+                                <td>87</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>9435bb74</td>
+                        <td>Thu Jul 4 12:57:00 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update aritmetica-en-prolog.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5703e26e</td>
+                        <td>Tue Jul 10 10:02:44 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update aritmetica-en-prolog.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6ba45ff6</td>
+                        <td>Tue Jul 10 09:58:53 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update aritmetica-en-prolog.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>eb26abb6</td>
+                        <td>Tue Jun 26 12:20:27 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update aritmetica-en-prolog.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>19f67844</td>
+                        <td>Tue Jun 26 12:11:15 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Emprolijo artículo de aritmética en Prolog</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

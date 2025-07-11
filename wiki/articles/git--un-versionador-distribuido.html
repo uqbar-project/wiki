@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Git  un versionador distribuido</title>
+  <meta property="og:title" content="Git  un versionador distribuido" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/git--un-versionador-distribuido.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/git--un-versionador-distribuido.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Git  un versionador distribuido</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h2 id="distribuido">Distribuido…</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Se dice de git que es un sistema de control de versiones distribuido. Que sea distribuido implica que van a existir al menos tantos repositorios como personas trabajando en el proyecto, a lo que se le pueden sumar uno o más repositorios que se usen como intermediarios para compartir cambios entre las distintas personas. Un lugar práctico para hostear repositorios públicos puede ser [<a href="https://github.com/">https://github.com/</a></td>
+      <td>gtihub]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="repositorio">Repositorio</h2>
+
+<p>Por repositorio se entiende el lugar donde se van guardando todas las versiones de un proyecto o de cada una de las cosas que forman parte de él.</p>
+
+<p>En el mundo git en vez de pensar en que cada archivo es una parte que va cambiando de versiones prefirieron pensar en que es todo el proyecto el que se va versionando entonces cada vez que se modifica una parte en realidad se está modificando todo el proyecto.</p>
+
+<p>Un proyecto no es otra cosa que una arbol de directorios y archivos donde la raíz del arbol es la carpeta raíz del proyecto. Este Arbol es lo que va cambiando a medida que avanza el proyecto.</p>
+
+<p>La forma en que git elige modelar el proyecto es como un arbol por lo que en el interior de un repositorio git van a existir tantos árboles como versiones distintas existan del proyecto. Estos árboles van a formar parte de un ¿DAG?</p>
+
+<h2 id="dag-lo-qué">DAG ¿lo qué?</h2>
+
+<p>Veamos primero un dibujito:</p>
+
+<p><img src="Figura1.jpg" alt="" title="Figura1.jpg" /></p>
+
+<p>DAG es la forma cheta de decir grafo dirigido acíclico. O sea un dibujo con circulitos (nodos) y flechitas (vértices) que unen los circulitos sin que se pueda llegar al mismo círculo saltando de círculo en círculo siguiendo las flechitas que los unen.</p>
+
+<p>Un árbol es de por sí un DAG por lo que no tiene problemas en ser parte de un DAG más grande que lo contiene.</p>
+
+<p>Cada uno de los círculos representa un objeto almacenado en el repositorio (nodos en el DAG). Los rectángulos son referencias que sirven como punto de entrada a los objetos que viven en el repositorio, podrían considerarse parte del DAG pero están representados como rectángulos para diferenciar las referencias de los objetos almacenados.</p>
+
+<p>Los distintos colores de los circulos representan cada uno de los 4 tipos de objetos que existen:</p>
+
+<ul>
+  <li>blob. Representa un archivo en el proyecto.</li>
+  <li>tree. Representa una carpeta en el proyecto, el primero corresponde al directorio raiz del proyecto o el mismísimo proyecto.</li>
+  <li>commit. La forma de agregar objetos al repositorio es con la operción commit. Esto agrega un objeto commit que tiene un vértice hacia un tree que representa al directorio raíz del proyecto. El sub-grafo que comienza en este tree representa el estado de todo el proyecto tras la ejecución del commit. En el dibujo se ve que los subgrafos que parten de cada commit comparten un objeto blob, esto significa que el commit B no modificó el archivo que agregó el commit A.</li>
+</ul>
+
+<p>El commit también conoce a su padre que es el commit que lo antecede, entonces los cambios que aplica un commit al proyecto son las diferencias entre el árbol al que apunta y el árbol al que apunta su padre. Cuando se ejecuta la operación merge se qenera un commit que tiene al menos dos padres entonces los cambios que aporta este commit depende de contra cual de sus padres se lo compare.</p>
+
+<ul>
+  <li>tag. La operación tag genera un objeto tag en el repositorio y una referencia de tipo tag para accederlo.</li>
+</ul>
+
+<p>Un tag conoce un commit y a partir de este el estado del proyecto para ese commit. En su cuerpo también uncluye un título un comentario y opcionalmente se le puede agregar una firma gpg. Todos los objetos (círculos en el dibujo) tiene un nombre bastante feo para identificarlos (algo así como 8357799df0b47164c9726be6610ea1b7ed41ff32), este nombre es el resultado de aplicar un función de hash (SHA1) al objeto.</p>
+
+<p>Referencias: Las referencias son los rectángulos en el dibujo, son simplemente puntos de entrada a los objetos almacenados en el repositorio.</p>
+
+<ul>
+  <li>Referencia de tipo tag (amarillo en el dibujo) apunta a un objeto de tipo tag y es inmutable, o más o menos inmutable.</li>
+  <li>Referencia de tipo branch (verde en el dibujo) apunta a un ojeto commit, es mutable y al commit al que apunta es al * último que se agregó para ese branch.</li>
+  <li>Referencia de tipo branch remoto (gris en el dibujo) es muy parecida a un branch sólo que se usa para seguir el estado de un branch en otro repositorio (recuerden que esto era distribuido). La del dibujo (origin/master) significa que sigue un branch llamdo master en un repositorio llamado origin. El nombre del repositorio es un shortcut de la url completa.</li>
+  <li>HEAD esta referencia la usa git para saber que commit será el padre del próximo commit, normalemnte apunta indirectamente a un commit a travez de un branch. Si almomento de ejecutar la operción commit el HEAD apunta a un branch el branch se actualiza para apuntar al nuevo commit.</li>
+</ul>
+
+<h2 id="todo-muy-lindo-pero-cómo-lo-uso">Todo muy lindo… ¿pero cómo lo uso?</h2>
+
+<p>Bueno… primero lo tendrías que tener instaldo. Eso se explica <a href="instalando-git.html"> acá</a>. Ahora que git ya está git intalado y configurado podemos ver un ejemplo partiendo de un proyecto nuevo.</p>
+
+<p>En la consola (git bash si estás en windows)</p>
+
+<p><code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">mkdir</code> <code class="language-plaintext highlighter-rouge">~/prueba</code> <code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">cd</code> <code class="language-plaintext highlighter-rouge">~/prueba</code> <code class="language-plaintext highlighter-rouge">$</code> <code class="language-plaintext highlighter-rouge">git</code> <code class="language-plaintext highlighter-rouge">init</code> Lo que estamos haciendo es comenzar un proyecto cuya carpeta raíz será ~/prueba, y en esa carpeta inicializamos un repositorio git para mantener las versiones de nuestro proyecto de prueba. El repositorio está en una carpeta llamada .git adentro de la carpeta raíz del proyecto. La carpeta ~/prueba con todo su contenido menos la carpeta .git es lo que git llama working tree, algo similar a la working copy de svn.</p>
+
+<p>Git lo llama working tree porque un directorio en el file system que estemos usando es también un árbol y como git entiende los proyectos como árboles dice que la carpeta donde editamos los archivos del proyecto no es otra cosa que el árbol de trabajo.</p>
+
+<p>El repositorio no tiene todavía ningún objeto almacenado (círculos del dibujo) pero sí, tiene la referencia HEAD que apunta a ref/heads/master esto siginifica que apunta a un branch llamado master, el nombre master es el que se les ocurrio a los amigos de git para ponerle al branch principal, algo así como el trunk del svn. Un branch no es otra cosa que una referencia a un commit, pero como todavía no existe ningún commit tampoco existe el branch master. La referencia HEAD sirve para que git sepa en que branch estamos trabajando actualmente, lo que significa que al hacer el próximo commit actualizará el branch apuntado por HEAD. En este caso que todavía no se hizo ningún commit el branch master se creará con el primer commit.</p>
+
+<p>Vamos a crear nuestro primer commit</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ cd ~/prueba #carpeta raíz del proyecto</code>
+<code class="language-plaintext highlighter-rouge">$ touch unTexto.txt #creo un archivo</code>
+<code class="language-plaintext highlighter-rouge">$ git add unTexto.txt #agrego el archivo al index de git</code>
+<code class="language-plaintext highlighter-rouge">$ git commit -m "primer commit" #ejecuto la operación commit pasándole el comentario "primer commit"</code></p>
+
+<p>Basicamente la forma de trabajo es:</p>
+
+<p>Modifico el contenido del working tree (agrego y modifico archivos) Agrego alguno o todos los cambios al index (git add) Ejecuto un commit (git commit) Los cambios que aporta el commit es todo los que esté en el index. ¿Y qué es el index? Es un lugar donde voy acomodando los cambios que van a entrar en el próximo commit. También llamado staging, pero en casi toda la documentación de git aparece como index.</p>
+
+<p>como quedó el grafo de nuestro repo:</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2017 by
+        Ernesto Bossi</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>12</td>
+                                <td>15</td>
+                                <td>13</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Pablob</td>
+                                <td>Pablob@...</td>
+                                <td>11</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1c44daa0</td>
+                        <td>Thu Feb 2 19:10:50 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0b769518</td>
+                        <td>Thu Feb 2 19:10:50 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>16aa3357</td>
+                        <td>Thu Feb 2 19:10:50 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Todo muy lindo... ¿pero cómo lo uso? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>76d384d8</td>
+                        <td>Thu Feb 2 19:10:50 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

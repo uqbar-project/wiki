@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Preparacion de un entorno de desarrollo xtend</title>
+  <meta property="og:title" content="Preparacion de un entorno de desarrollo xtend" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/xtend-preparacion-de-un-entorno-de-desarrollo.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/xtend-preparacion-de-un-entorno-de-desarrollo.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="xtend,entorno,instalacion," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Preparacion de un entorno de desarrollo xtend</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Download e instalación base</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Git Bash (sólo para Windows)</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">JDK: Java Development Kit</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Eclipse</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">Maven</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">Plugin Xtend</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#tocAnchor-1-7"><span class="tocnumber">2</span> <span class="toctext">Configuraciones default del eclipse</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#tocAnchor-1-8"><span class="tocnumber">3</span> <span class="toctext">¿Cómo empezar?</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-9">
+              <a href="#tocAnchor-1-9"><span class="tocnumber">4</span> <span class="toctext">Tips</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-10">
+              <a href="#tocAnchor-1-10"><span class="tocnumber">5</span> <span class="toctext">Documentación</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-11">
+              <a href="#tocAnchor-1-11"><span class="tocnumber">6</span> <span class="toctext">Links útiles</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>
+  <img src="/img/wiki/Xtend-logo.png" height="30%" width="30%" />
+</p>
+
+<h1 id="tocAnchor-1-1">Download e instalación base</h1>
+
+<h2 id="tocAnchor-1-1-1">Git Bash (sólo para Windows)</h2>
+
+<p>Para simplificar el uso de Git en entornos Windows, existe la herramienta <strong>Git Bash</strong> que podés descargar a partir de <a href="https://gitforwindows.org/">esta página</a>, haciendo click en el link “Download”.</p>
+
+<p>Si estás en Mac o Linux, podés saltear este paso.</p>
+
+<h2 id="tocAnchor-1-1-2">JDK: Java Development Kit</h2>
+
+<p>Primero instalaremos el compilador de Java.</p>
+
+<p>Ingresamos a <a href="https://jdk.java.net/java-se-ri/11">esta dirección</a>, y descargamos la <strong>Open JDK 11</strong>, que es la versión oficial que manejamos desde 2020 y cuya licencia es <a href="https://es.wikipedia.org/wiki/GNU_General_Public_License">GPL</a>.</p>
+
+<h3 id="pasos-de-instalación">Pasos de instalación</h3>
+
+<p>Una vez descargado el binario en una carpeta (supongamos que es <code class="language-plaintext highlighter-rouge">C:\jdk11</code>), hay que configurar dos variables de entorno de tu sistema operativo:</p>
+
+<ul>
+  <li>JAVA_HOME: tiene que apuntar a <code class="language-plaintext highlighter-rouge">C:\jdk11</code>)</li>
+  <li>PATH: hay que incorporarle <code class="language-plaintext highlighter-rouge">C:\jdk11\bin</code> (cuidando de no borrar lo que ya está)</li>
+</ul>
+
+<p>Te dejamos <a href="https://www.youtube.com/watch?v=Cr_mwn67kFs">un video que explica cómo hacerlo para Windows</a> (el procedimiento es similar para MacOS / Linux)</p>
+
+<h3 id="chequeos-posteriores-a-la-instalación">Chequeos posteriores a la instalación</h3>
+
+<ul>
+  <li>Dentro de las variables de entorno de tu sistema operativo debe estar JAVA_HOME asignada. En Linux / Mac esto es <code class="language-plaintext highlighter-rouge">env | grep JAVA_HOME</code>, y en Windows <code class="language-plaintext highlighter-rouge">SET JAVA_HOME</code>. <strong>Si la variable no está seteada, eso significa que te salteaste un paso, lo mismo si la carpeta que muestra JAVA_HOME no es la que contiene la versión que vos descargaste</strong>. En ese caso volvé al punto anterior y seguí nuevamente las instrucciones para encontrar lo que está faltando.</li>
+  <li>En una ventana de línea de comandos, verificar la versión de java instalada con <code class="language-plaintext highlighter-rouge">java -version</code>, y el compilador mediante <code class="language-plaintext highlighter-rouge">javac -version</code>. En ambos casos mostrará la versión por defecto para tu máquina. <strong>Si no aparece la versión que descargaste, el sistema operativo asume por defecto otra instalación, que podría ser incluso de una JRE (ver más abajo)</strong>. En ese caso, revisá el link del punto anterior para ver qué puede estar faltando y repetí los pasos.</li>
+</ul>
+
+<h3 id="jdk-sí-jre-no">JDK sí, JRE no</h3>
+
+<blockquote>
+  <p><strong>IMPORTANTE:</strong> tenés que instalar una JDK, no una JRE (Java Runtime Environment) que solo te permite ejecutar programas Java ya compilados. Para saber si tenés una JDK, deberías ir al directorio de instalación y en la carpeta <code class="language-plaintext highlighter-rouge">bin</code> debe estar un programa llamado <code class="language-plaintext highlighter-rouge">javac</code>, que es el compilador de Java.</p>
+</blockquote>
+
+<p>
+  <img src="/img/languages/jdkVsJre.png" alt="image" />
+</p>
+
+<p>Si no tenés ese programa, no vas a poder pasar tus objetos a código ejecutable en el entorno Xtend: la solución es muy simple, descargá e instalá una JDK. Para más información te recomendamos <a href="jdkVsJre.html">esta página</a></p>
+
+<h2 id="tocAnchor-1-1-3">Eclipse</h2>
+
+<p>Nuestro entorno integrado de desarrollo (IDE) permite que en una misma herramienta editemos nuestro código fuente, compilemos, hagamos pruebas, y muchas cosas más. En Algoritmos 1 ya conociste Eclipse, con un entorno modificado especialmente para soportar el lenguaje Wollok. Aquí lo utilizaremos con diferentes plugins, pero seguramente te resultará familiar la forma de trabajar.</p>
+
+<h3 id="pasos-de-instalación-1">Pasos de instalación</h3>
+
+<p>Tenés que descargarlo desde <a href="https://www.eclipse.org/downloads/">esta página</a> utilizando el link más reciente de Eclipse (al 01/03 es <strong>Get Eclipse IDE 2020‑12</strong>)</p>
+
+<blockquote>
+  <p><strong>NOTA:</strong> podés visitar <a href="https://wiki.eclipse.org/Older_Versions_Of_Eclipse">la página histórica de descarga de Eclipses anteriores</a> por si hay versiones más nuevas y te interesa usar la versión 2020-12 que es con la que desarrollamos los ejemplos. Normalmente las actualizaciones de Eclipse siguen funcionando sin mayores problemas con el plugin de Xtend, Java y Maven.</p>
+</blockquote>
+
+<p>Eso te descarga un eclipse-installer, que es el primer paso. Lo abrís con un doble click, y luego seleccionás</p>
+
+<ul>
+  <li>si estás cursando Programación con Herramientas Modernas: “Eclipse IDE for Enterprise Java Developers”</li>
+  <li>cualquier otra cursada: “Eclipse for Java Developers”, seleccionando la carpeta de destino.</li>
+</ul>
+
+<h3 id="chequeos-de-instalación">Chequeos de instalación</h3>
+
+<p>Una vez que lo hayas descomprimido en una carpeta, podés hacer un acceso directo al <code class="language-plaintext highlighter-rouge">eclipse</code> o <code class="language-plaintext highlighter-rouge">eclipse.exe</code> y ejecutarlo con doble click. Necesitarás definir un espacio de trabajo o <em>workspace</em>, que es la carpeta donde vas a ubicar todos tus proyectos.</p>
+
+<h3 id="configuraciones-adicionales">Configuraciones adicionales</h3>
+
+<p>Por lo general no es necesario hacer nada más, pero en caso de necesitarlo, en la carpeta raíz donde descargaste el Eclipse vas a encontrar un archivo <code class="language-plaintext highlighter-rouge">eclipse.ini</code> que permite configurar</p>
+
+<p>f- cuál es la versión de Java requerida (por defecto es 1.11 y no debería ser necesario modificarla)</p>
+<ul>
+  <li>cuál es la ubicación donde está el ejecutable de Java: es importante que apunte a una JDK y no a una JRE, como hemos comentado en la instalación de la JDK. Si por defecto instalaste una JRE, tu Eclipse no será capaz de compilar, recomendamos volver a la página JDK y reinstalar Java. De la misma manera, la JDK a la que apunte Eclipse debería ser la misma que vos instalaste: asegurate de que estén sincronizadas.</li>
+</ul>
+
+<p>A continuación te dejamos un archivo <code class="language-plaintext highlighter-rouge">.ini</code> de ejemplo, ignorando las primeras líneas:</p>
+
+<div class="language-ini highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+      <code><span class="err">...</span>
+<span class="err">--launcher.appendVmargs</span>
+<span class="err">-vm</span>
+<span class="err">/usr/lib/jvm/java-11-openjdk-amd64/bin</span>
+<span class="err">-vmargs</span>
+<span class="py">-Dosgi.instance.area.default</span><span class="p">=</span><span class="s">@user.home/eclipse-workspace</span>
+<span class="err">-XX:+UseG1GC</span>
+<span class="err">-XX:+UseStringDeduplication</span>
+<span class="py">--add-modules</span><span class="p">=</span><span class="s">ALL-SYSTEM</span>
+<span class="py">-Dosgi.requiredJavaVersion</span><span class="p">=</span><span class="s">1.11</span>
+<span class="py">-Dosgi.dataAreaRequiresExplicitInit</span><span class="p">=</span><span class="s">true</span>
+<span class="err">-Xms512m</span>
+<span class="err">-Xmx1768m</span>
+<span class="py">--add-modules</span><span class="p">=</span><span class="s">ALL-SYSTEM</span>
+<span class="py">-Declipse.p2.max.threads</span><span class="p">=</span><span class="s">10</span>
+<span class="py">-Doomph.update.url</span><span class="p">=</span><span class="s">http://download.eclipse.org/oomph/updates/milestone/latest</span>
+<span class="py">-Doomph.redirection.index.redirection</span><span class="p">=</span><span class="s">index:/-&gt;http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/</span>
+</code>
+    </pre>
+  </div>
+</div>
+
+<p>En el ejemplo estamos configurando una memoria inicial de 512 MB y una memoria máxima de 1768 MB, una JDK 1.11 requerida. El resto son valores por defecto que te va a crear el instalador de Eclipse.</p>
+
+<h2 id="tocAnchor-1-1-4">Maven</h2>
+
+<p>Seguí los pasos de instalación de <a href="guia-de-instalacion-de-maven.html">esta página</a></p>
+
+<h2 id="tocAnchor-1-1-5">Plugin Xtend</h2>
+
+<p>Instalá el plugin de Xtend desde el Update Site, siguiendo estos pasos:</p>
+
+<ul>
+  <li>En el menú de Eclipse, Help &gt; Install New Software … botón Add</li>
+  <li>
+    <p>En la ventana de diálogo Add Repository, en el nombre escribir algo como “Xtend Plugin” y en Location copiar esta URL: <a href="http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/">http://download.eclipse.org/modeling/tmf/xtext/updates/milestones/</a></p>
+  </li>
+  <li>A partir del 2021 se estará usando la versión <strong>2.25</strong>, en caso de que vayan saliendo nuevas versiones, se puede elegir qué versión instalar destildando la opción “Show only the latest versions of available software” (más abajo está resaltado en la imagen). En caso de duda sobre qué versión instalar, aconsejamos consultar por la lista de difusión al docente responsable.</li>
+  <li>Seleccionar el check Xtext, y luego Xtend IDE, hacer click en Next y luego en Finish</li>
+</ul>
+
+<p>
+  <img src="/img/wiki/Xtend-installation-2020-2.png" alt="image" />
+</p>
+
+<ul>
+  <li>Reiniciar el Eclipse</li>
+</ul>
+
+<!-- -->
+
+<h1 id="tocAnchor-1-7">Configuraciones default del eclipse</h1>
+
+<p>Antes que nada chequeá las <a href="configuraciones-generales-para-cualquier-eclipse.html">Configuraciones generales para cualquier Eclipse</a></p>
+
+<h1 id="tocAnchor-1-8">¿Cómo empezar?</h1>
+
+<ul>
+  <li>Crear un proyecto Maven (si no instalaste Maven hacelo como se sugiere <a href="guia-de-instalacion-de-maven.html">aquí</a>
+    <ul>
+      <li>en la primera ventana, clickear en la opción “Create a simple project (Skip archetype selection)”, luego Next…</li>
+      <li>definir un groupId, que puede ser el <em>materia</em> . Ej: algo2, phm, etc.</li>
+      <li>definir un artifactId, que se asocia al nombre de tu proyecto</li>
+    </ul>
+  </li>
+  <li>Para definir el archivo <code class="language-plaintext highlighter-rouge">pom.xml</code> de Maven con el que vas a configurar tu proyecto, podés basarte en el modelo de ejemplo de <a href="xtend-creacion-proyecto.html">esta página</a></li>
+</ul>
+
+<!-- -->
+
+<h1 id="tocAnchor-1-9">Tips</h1>
+
+<ul>
+  <li>Para que cuando hagas New &gt; File te aparezcan las clases y las interfaces Xtend, Window &gt; Customize Perspective… &gt; solapa Menu Visibility &gt; expandís File &gt; New &gt; y seleccionás las de Xtend (Xtend class, inteface, annotation y enum).</li>
+</ul>
+
+<!-- -->
+
+<h1 id="tocAnchor-1-10">Documentación</h1>
+
+<ul>
+  <li><a href="http://www.eclipse.org/xtend/documentation/">Documentación oficial</a></li>
+</ul>
+
+<!-- -->
+
+<h1 id="tocAnchor-1-11">Links útiles</h1>
+
+<ul>
+  <li><a href="xtend-creacion-proyecto.html">Siguiente paso: Creación de un proyecto en Xtend</a></li>
+  <li><a href="xtend-principal.html">Volver al menú principal del entorno Xtend</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/xtend" title="xtend">Xtend</a></li>
+            
+             <li><a href="/categories/entorno" title="entorno">Entorno</a></li>
+            
+             <li><a href="/categories/instalacion" title="instalacion">Instalacion</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on February 02, 2022 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>149</td>
+                                <td>1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>89ffd4c2</td>
+                        <td>Wed Feb 2 22:33:08 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Fixing external links</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4769e1df</td>
+                        <td>Tue Jan 18 18:26:57 2022 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Renaming xtend env</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

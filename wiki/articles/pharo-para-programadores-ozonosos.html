@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Pharo para programadores ozonosos</title>
+  <meta property="og:title" content="Pharo para programadores ozonosos" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/pharo-para-programadores-ozonosos.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/pharo-para-programadores-ozonosos.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Pharo para programadores ozonosos</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <p>La migración desde trabajar con Ozono a pasar a la versión full de Pharo puede ser complicado en ciertos sentidos pero más o menos es lo mismo pero tenemos que tener en cuenta las diferencias.</p>
+
+<h2 id="clases-vs-objetos">Clases vs. Objetos</h2>
+
+<p>La primer diferencia que tenemos en este nuevo ambiente es que Pharo esta centrado en las clases y no en los objetos.</p>
+
+<p>Como ya vimos en las clases teóricas, los objetos ya no los vamos a crear uno por uno sino que vamos a crear los objetos a partir de clases.</p>
+
+<p>Por lo tanto, la forma que tiene Pharo (y muchos otros lenguajes orientados a objetos) es organizarse alrededor clases.</p>
+
+<h2 id="system-browser-el-centro-de-nuestro-desarrollo">System Browser, el centro de nuestro desarrollo</h2>
+
+<p>Para comenzar vamos a necesitar una imagen de Pharo, cualquier imagen nos va a servir; pueden seguir usando la que tiene instalada Ozono :D.</p>
+
+<p>Nuestro principal amigo en el desarrollo con Pharo va a ser el <em>System Browser</em>. Este lo encontramos dentro del menú principal de Pharo.</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-World.png" alt="" title="PharoParaOzonosos-World.png" /></p>
+
+<p>Esto nos va a abrir la siguiente ventana (es bastante compleja para decirle ventanita).</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-SystemBrowser.png" alt="" title="PharoParaOzonosos-SystemBrowser.png" /></p>
+
+<h3 id="secciones-del-system-browser">Secciones del System Browser</h3>
+
+<p>Esta ventana se divide en distintas secciones, esta ventana es central, presenta mucha mucha mucha información por eso vamos a analizarla por secciones.</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-SystemBrowserSections.png" alt="" title="PharoParaOzonosos-SystemBrowserSections.png" /></p>
+
+<p>Estas Secciones son:</p>
+
+<ul>
+  <li><strong>Categorias de clases:</strong> en esta sección aparece una forma de categorizar las clases. Las categorías de las clases en Pharo</li>
+</ul>
+
+<p>se llaman Packages, estos paquetes de clases pueden contener una o más subcategorías dentro.</p>
+
+<ul>
+  <li><strong>Clases:</strong> una vez que selecciono un paquete se me van a mostrar las clases que están definidas en ese paquete. Porque algunas</li>
+</ul>
+
+<p>aparecen con signo de admiración (!), porque no tienen escrita la documentación que explica que hace la clase.</p>
+
+<ul>
+  <li><strong>Categorías de Métodos:</strong> cuando selecciono una clase se me van a mostrar los métodos que tiene definida esa clase. Estos</li>
+</ul>
+
+<p>métodos pueden estar clasificados en distintas categorías, esto es muy útil como forma de documentación y suma mucho valor cuando comienza a crecer mi programa.</p>
+
+<ul>
+  <li><strong>Metodos:</strong> al ir navegando las categorías de los métodos van a ir mostrándome la lista de métodos de esa clase en la categoría</li>
+</ul>
+
+<p>seleccionada.</p>
+
+<ul>
+  <li><strong>Área de Edición de Código:</strong> En esta área de la ventana es donde se realiza la edición del código. Si elegimos un método vamos a</li>
+</ul>
+
+<p>ver el código de ese método, pero si elegimos una clase nos muestra un código raro. No entremos en pánico, ese código es la definición de la clase, ya vamos a entrar en el detalle de como hacerlo.</p>
+
+<p>Por ahora debemos entender las distintas secciones del <em>System Browser</em> pronto vamos a ver para que se usa cada cosa con un ejemplo.</p>
+
+<h2 id="workspaces">Workspaces</h2>
+
+<p>Bueno, bueno, todo muy bonito pero a mi me gustaba enviar mensajes a mis objetos. Esto lo perdimos, esto es una mierda. No, no perdimos nada!!!</p>
+
+<p>La forma de enviar mensajes y probar nuestro programa van a ser nuestros bonitos workspace (después vamos a hablar de tests, pero eso es otra versión mucho más cheta aunque menos interactiva).</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-Workspace.png" alt="" title="PharoParaOzonosos-Workspace.png" /></p>
+
+<p>Para crear un workspace lo hacemos desde el menú principal de Pharo, es el mismo que usamos inicialmente.</p>
+
+<p>Además podemos tener muchos workspace abiertos.</p>
+
+<p>Los workspace de Pharo se usan de la misma manera que los de Ozono que ya usamos previamente. Pero con una variación interesante, podemos definir variables dentro del workspace. Estas variables son locales al workspace. Para definirlas debemos usarlas directamente, asignandole un valor. Cuando evaluemos esa línea va a crearse la variable.</p>
+
+<p>Atención, los workspace no se van a guardar solitos como en Ozono, tenemos que guardarlos a mano. Normalmmente no nos vamos a preocupar por esto ya que el código que pongamos en el workspace es para pruebas rápidas. Si queremos guardar algo que vamos a probar varias veces nos sirve la idea de Tests, ya la vamos a ver; pero por ahora con el workspace nos sirve.</p>
+
+<p>Los workspace se guardan como archivos de texto con extensión <em>.ws</em>, para poder guardar y cargar estos archivos tenemos que usar la flechita que esta a la derecha y arriba del workspace.</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-Workspace-Menu.png" alt="" title="PharoParaOzonosos-Workspace-Menu.png" /></p>
+
+<h2 id="un-ejemplo-paso-a-paso">Un ejemplo Paso a Paso</h2>
+
+<p>Para poder mostrar como se usa Pharo, vamos a implementar el siguiente ejemplo.</p>
+
+<p>Vamos a tener que construir un sistema para administrar camiones en una empresa de logística. De cada camión vamos a saber su capacidad en kilos y su carga actual, y además podemos saber si el camión esta lleno o no.</p>
+
+<p>Al analizar y plantear una solución al problema, identificamos que todos los objetos camiones tienen el mismo comportamiento; por lo que extrajimos la siguiente clase:</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-Camion.png" alt="" title="PharoParaOzonosos-Camion.png" /></p>
+
+<p>Tenemos que recordar que la solución se da con los objetos que representan los camiones, las clases sirven para crear muchos camiones iguales, o sea se comportan todos juntos.</p>
+
+<p>Recordemos un poquito la forma de comunicación con los diagramas de clase. Este rectángulo que representa la clase tiene 3 secciones. En la superior va el nombre de la clase. En la del medio los distintos atributos que tienen los objetos creados con esta clase. Y en la inferior los mensajes que entienden los objetos creados con la clase.</p>
+
+<p>Perfecto ya sabemos que es lo que tenemos que hacer, ahora vamos a implementarlo en Pharo!</p>
+
+<h3 id="creación-de-paquetes">Creación de Paquetes</h3>
+
+<p>Para comenzar tenemos que crear un paquete nuevo dentro de Pharo. Todas las clases de Pharo estan definidas dentro de un paquete, es muy recomendable que creemos un paquete para cada uno de los ejercicios o problemas o sistemas que creemos.</p>
+
+<p>Para crear un paquete tenemos que hacer click derecho sobre el sector de paquetes del System Browser y elegir la opción <em>Add Package…</em>. Esta opción nos va a preguntar el nombre del nuevo Paquete.</p>
+
+<p>Podemos ponerle el nombre que queramos, pero existe una convención que se usa en todos lados y que Pharo va a usar para presentarnos la información. Esta convención es separar las palabras con guión del medio.</p>
+
+<p>En este caso vamos a crear el paquete <strong>Logistica</strong>.</p>
+
+<p>Una aclaración importante, es que aunque es probable que Pharo se banque nombres con acentos o ñ o cualquier caracter UTF-8, a los programadores nos gusta obviar los acentos y las ñ; porque siempre siempre siempre van a traer problemas.</p>
+
+<p>Cuando creamos el paquete nos debería quedar algo así:</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-PaqueteCreado.png" alt="" title="PharoParaOzonosos-PaqueteCreado.png" /></p>
+
+<h3 id="creación-de-clases">Creación de Clases</h3>
+
+<p>Ya tenemos nuestro paquete creado, por ahora esta vació y triste y solo; por lo que vamos a comenzar creando la clase Camión.</p>
+
+<p>Para crear una clase tenemos que hacer las siguientes operaciones:</p>
+
+<ol>
+  <li>Hacer click sobre el paquete donde va a vivir nuestra nueva clase.</li>
+  <li>Ingresar la definición de la clase en el <em>Área de Edición de Código</em>, ahora vamos a hablar de que hay que escribir ahí.</li>
+  <li>Aceptar la definición, ya sea haciendo Ctrl+S o haciendo botón derecho y darle la opción Accept.</li>
+</ol>
+
+<h4 id="definición-de-una-clase">Definición de una Clase</h4>
+
+<p>Las clases en cualquier ambiente de Smalltalk se definen a partir de un envió de mensaje. Nadie en la vida se acuerda este mensaje que hay que mandar a la clase Object, pero al hacer click sobre un paquete la herramienta ya nos propone un template:</p>
+
+<pre><code class="language-Smalltalk">  Object subclass: #NameOfSubclass
+         instanceVariableNames: ''
+         classVariableNames: ''
+         category: 'Logistica'
+</code></pre>
+
+<p>La definición de nuestra clase Camion es la siguiente:</p>
+
+<pre><code class="language-Smalltalk">  Object subclass: #LgCamion
+         instanceVariableNames: 'capacidad carga'
+         classVariableNames: ''
+         category: 'Logistica'
+</code></pre>
+
+<p>Si se fijan no es tan tan loca.</p>
+
+<p>Las cosas que voy a modificar son:</p>
+
+<ul>
+  <li>El nombre de la clase, es eso que esta después del numeral</li>
+  <li>Las variables de instancia, acá agrego dentro del string cada uno de los nombres de las variables de instancia separados por un espacio.</li>
+</ul>
+
+<p>En este caso tengo dos variables de instancia, capacidad y carga.</p>
+
+<ul>
+  <li>Nombre de la categoría donde esta clase, acá ya me pone la que corresponde al paquete donde estoy parado, pero siempre lo puedo cambiar.</li>
+</ul>
+
+<p>Un minuto cerebrito, acá dijimos que ibamos a crear la clase Camion y vos le pusiste LgCamion; me estas cargando o todas las clases comienzan con Lg???</p>
+
+<p>Ninguna de las dos cosas, es un prefijo que identifica a nuestro paquete; como cree un paquete llamado Logistica definí que el prefijo que identifique a las clases dentro de este con el prefijo Lg.</p>
+
+<p>Esto lo tenemos que hacer porque Pharo no tiene espacios de nombres independientes, o sea no puedo tener dos clases con el mismo nombre, si quisiera crear una clase con el mismo nombre de otra que existe, voy a pisar la original. Por eso vamos a generar nombres únicos teniendo un prefijo para el paquete y el nombre de la clase.</p>
+
+<p>Si estamos muy muy muy seguros que no existe otra clase que se llame Camion, podría ponerle ese nombre. Pero yo debo contarle el estandard.</p>
+
+<p>Después de crear la clase nos debería quedar algo así:</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-ClaseCreada.png" alt="" title="PharoParaOzonosos-ClaseCreada.png" /></p>
+
+<p>Atención, no nos preocupemos por ese signo de admiración rojo. Ya lo dijimos, pero lo recuerdo, es un indicativo que la clase no esta documentada. Nada importante, por ahora, es algo que nos debería importar.</p>
+
+<h4 id="definición-de-métodos">Definición de Métodos</h4>
+
+<p>Ya definimos nuestra clase ahora debemos agregarle métodos.</p>
+
+<p>Para poder agregar un método a una clase, tenemos que tener seleccionada la clase donde lo vamos a definir y hacer click sobre la categoría del método que vamos a generar; si no tenemos la categoría, la podemos crear o hacer click en <strong>no messages</strong> que es la que tengo cuando esta vacía o en <strong>– all –</strong> si ya tiene alguna.</p>
+
+<p>Cuando hacemos esto la sección de edición de código nos va a ofrecer el template, esto no es solo necesario para que nos muestre el template, sino que lo tengo que hacer para que Pharo sepa donde voy a meter el método.</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-CreandoUnMetodo.png" alt="" title="PharoParaOzonosos-CreandoUnMetodo.png" /></p>
+
+<p>Entonces vamos a escribir el código de nuestro primer método, lo que vamos a hacer es un mensaje para que el camión nos devuelva su capacidad:</p>
+
+<pre><code class="language-Smalltalk">      capacidad
+          ^ capacidad
+</code></pre>
+
+<p>Para guardar el método creado, tenemos que hacer CTRL+s o botón derecho y elegir la opción <strong>Accept</strong>.</p>
+
+<p>Cuando hacemos esto, nos queda el siguiente resultado.</p>
+
+<p><img src="/img/wiki/PharoParaOzonosos-MetodoCreado.png" alt="" title="PharoParaOzonosos-MetodoCreado.png" /></p>
+
+<h4 id="probando-nuestros-objetos">Probando nuestros Objetos</h4>
+
+<p>Ya tenemos creada nuestra clase, ahora probemos los objetos que creamos. Para poder crear objetos y mandarles mensajes necesitamos usar un workspace.</p>
+
+<p>En un nuevo workspace vamos a escribir el siguiente código.</p>
+
+<pre><code class="language-Smalltalk">      unCamion := LgCamion new.
+      unCamion capacidad.
+</code></pre>
+
+<p>Podemos ir ejecutando línea a línea. La primera nos conviene ejecutarla con un Do-It (o haciendo Ctrl+d), ya que es una línea que tiene efecto de lado. Esta línea crea un nuevo objeto a partir de la clase <strong>LgCamion</strong> y lo asigna a la variable local <strong>unCamion</strong>.</p>
+
+<p>La 2da línea la vamos a ejecutar con un Print-It (o haciendo Ctrl+p), ya que es una expresión que va a devolver la capacidad del camión.</p>
+
+<p>Dando como resultado lo siguiente:</p>
+
+<p><img src="/img/wiki/PharoScreenshot.7.png" alt="" title="PharoScreenshot.7.png" /></p>
+
+<p>Pero porque cuando evaluamos la 2da expresión nos devuelve <strong>nil</strong>? Bueno, porque todas los atributos de un objeto arrancan en nil.</p>
+
+<p>Por eso debemos agregarle el método para poder establecer los valores de los objetos. Vamos a agregar los siguientes métodos a la clase <strong>LgCamion</strong>:</p>
+
+<pre><code class="language-Smalltalk">     capacidad: unValor.
+       capacidad := unValor.
+</code></pre>
+
+<pre><code class="language-Smalltalk">     carga
+       ^ carga.
+</code></pre>
+
+<pre><code class="language-Smalltalk">     carga: unValor
+       carga:=unValor.
+</code></pre>
+
+<p>Además vamos a definir el método para responder al mensaje <strong>estasLleno</strong>.</p>
+
+<pre><code class="language-Smalltalk">     estasLleno.
+       ^ capacidad = carga.
+</code></pre>
+
+<p>Entonces una vez que tenemos este mensaje podemos hacer una prueba más interesante con el siguiente workspace.</p>
+
+<pre><code class="language-Smalltalk">     unCamion := LgCamion new.
+     unCamion capacidad:1000. 
+     unCamion carga:1000.
+     unCamion estasLleno.
+</code></pre>
+
+<p>Este workspace ya nos permite probar una variante, que podemos ir modificando para probar nuestros objetos. Una alternativa interesante para esto, es poder crear tests unitarios.</p>
+
+<h3 id="como-guardar-mis-programas">Como guardar mis programas</h3>
+
+<p>En Pharo, los programas se guardan dentro de la imagen, o sea tengo que ir guardando la imagen con el código y los objetos de mis programas.</p>
+
+<h4 id="exportar-a-un-st">Exportar a un .st</h4>
+
+<p>Además puedo exportar los paquetes como un archivo <em>.st</em>. Para realizar esto podemos hacerlo desde el <strong>System Browser</strong> y con el botón derecho sobre un paquete y eligen la opción <strong>File Out</strong>.</p>
+
+<p>Al hacer esto se genera un archivo con el nombre del paquete y la extensión <strong>.st</strong> que incluye todo el código fuente de las clases del paquete.</p>
+
+<h4 id="importar-un-st">Importar un .st</h4>
+
+<p>Para poder importar un archivo <strong>.st</strong> lo más fácil es arrastrar el archivo sobre una imagen de Pharo que se encuentre corriendo y al soltarlo elegir la opción <strong>FileIn Entire File</strong> y listo ya lo va a cargar en la imagen.</p>
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on September 13, 2021 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>12</td>
+                                <td>147</td>
+                                <td>37</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ptesone</td>
+                                <td>Ptesone...</td>
+                                <td>10</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>asanzo</td>
+                                <td>alfredo...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>1ba114fd</td>
+                        <td>Mon Sep 13 12:26:28 2021 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update pharo-para-programadores-ozonosos.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6b9caa9c</td>
+                        <td>Thu Feb 2 19:12:52 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b04f13ca</td>
+                        <td>Thu Feb 2 19:12:52 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>67d30899</td>
+                        <td>Thu Feb 2 19:12:52 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

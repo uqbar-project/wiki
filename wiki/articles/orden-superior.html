@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Orden superior</title>
+  <meta property="og:title" content="Orden superior" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/orden-superior.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/orden-superior.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Orden superior</i>
+    </h1>
+</div>
+
+
+
+<div id="article_content">
+    <h3 id="generalidades">Generalidades</h3>
+
+<p>Llamamos a una determinada operación de orden superior si la misma recibe otra operación (comportamiento) por parámetro, siendo capaz de ejecutarla internamente.</p>
+
+<p>Al usar orden superior tenemos las siguientes ventajas:</p>
+
+<ul>
+  <li>Puedo aislar y <strong>reutilizar comportamiento común</strong>.</li>
+  <li>Puedo partir mi problema, <strong>separando responsabilidades</strong>, entre el código que tiene orden superior, y el comportamiento parametrizado.</li>
+  <li>Puedo tener un código con partes <strong>incompletas</strong>, esperando rellenarlos <strong>pasando comportamiento por parámetro</strong>, y no sólo datos.</li>
+  <li>¡Puedo generar <strong><a href="abstraccion.html">abstracciones</a> más jugosas</strong>! Más allá de las abstracciones de orden superior que ya me proveen los lenguajes, la mayoría de los mismos me dan la posibilidad de armar mi propio comportamiento de orden superior (En la materia lo vemos en Haskell más directamente, aunque se puede también en SWI-Prolog).</li>
+  <li>Con abstracciones más adecuadas, con responsabilidades repartidas, y sin repetición de lógica, genero un código más <a href="declaratividad-vs--expresividad.html"><strong>expresivo</strong> (porque en general es más fácil de leer), y más <strong>declarativo</strong> (porque en general al usar orden superior oculto detalles algorítmicos)</a></li>
+</ul>
+
+<h3 id="paradigma-funcional">Paradigma Funcional</h3>
+
+<p>Tanto en matemática como en informática, se definen las funciones de orden superior como funciones que reciben funciones por parámetro o bien devuelven una función como resultado.</p>
+
+<p>La función filter (en haskell y otros lenguajes funcionales) es un ejemplo común de este tipo de funciones ya que recibe por parámetro una función f y una lista y retorna una nueva lista que contiene aquellos elementos que al ser aplicados como parámetros a f devuelven verdadero. La función f debe tener entonces aridad 1 y devolver un valor booleano.</p>
+
+<p><code class="language-plaintext highlighter-rouge">filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]</code></p>
+
+<p>Otras funciones comunes son map, <a href="fold.html">fold</a>, funciones de ordenamiento o búsqueda, composición de funciones (.), flip, etc (pueden consultar sus tipos en el intérprete con :t).</p>
+
+<p>Ejemplos comunes del análisis matemático que es más difícil de ver en los lenguajes de programación son la derivada y la integral (Vemos al “proceso de derivar” como una función que recibe otra función cualquiera y devuelve su derivada).</p>
+
+<p>En el <a href="http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda">Cálculo lambda</a> no tipado todas las funciones son de orden superior. En el cálculo lambda con tipado, desde el cual la mayoría de los lenguajes funcionales se derivan, las funciones de orden superior son generalmente aquellas cuyos tipos de parámetros “contienen una o más flechitas”.</p>
+
+<p>En matemática a las funciones que retornan funciones se las conoce como operadores o <em>functionals</em>. Un ejemplo común es el cálculo derivativo, ya que mapea una función a otra función.</p>
+
+<h4 id="la-aplicación-parcial-es-también-orden-superior">¿La aplicación parcial es también orden superior?</h4>
+
+<p>En primer lugar, recordemos que en Haskell las funciones están <a href="http://es.wikipedia.org/wiki/Currificaci%C3%B3n">currificadas</a>. La <a href="aplicacion-parcial.html">Aplicación Parcial</a> no es una función, lo que sí podemos analizar es la <a href="aplicacion.html">Aplicación</a> y lo importante es qué recibe y qué devuelve, eso se ve cuando se analiza el tipo de la función. Existe una función que nos va a servir para realizar este análisis llamada $ que lo que hace es aplicarle un parámetro a una función.</p>
+
+<pre><code class="language-Haskell">($) :: (a -&gt; b) -&gt; a -&gt; b
+($) funcion parametro = funcion parametro
+</code></pre>
+
+<p>Si el primer parámetro de la función $ es una función de aridad mayor a 1 (por ejemplo, mod) y la aplicamos de la siguiente forma:</p>
+
+<p><code class="language-plaintext highlighter-rouge">mod $ 10</code></p>
+
+<p>El resultado será una función:</p>
+
+<p><code class="language-plaintext highlighter-rouge">mod $ 10 :: Integral a =&gt; a -&gt; a</code></p>
+
+<p>La aplicación, entonces es una función de orden superior ya que recibe una función por parámetro y si la misma no queda totalmente aplicada también retorna una función.</p>
+
+<h3 id="paradigma-lógico">Paradigma Lógico</h3>
+
+<p>Decimos que un predicado es de Orden Superior si este recibe como argumento una consulta a otro/s predicado/s. Algunos ejemplos son <a href="paradigma-logico---negacion.html">not</a>, <a href="paradigma-logico---listas--como-obtener-todas-las-respuestas--juntas--.html">findall</a> y <a href="paradigma-logico---el-forall.html">forall</a>.</p>
+
+<p>Hacer nuestros propios predicados de orden superior en Prolog no es tan natural como resulta en Haskell, lo cual se desprende de que los predicados y consultas no son valores, sin embargo Prolog nos permite hacerlo mediante el predicado <a href="como-hacer-predicados-de-orden-superior.html">call</a>.</p>
+
+<h3 id="paradigma-estructurado">Paradigma Estructurado</h3>
+
+<p>En el paradigma estructurado, una porción de código puede alcanzar resultados algorítmicos como si fuesen obtenidos a través de funciones de orden superior, ejecutando código dinámicamente (a veces denominadas operaciones <em>“Eval”</em> o <em>“Execute”</em>) durante la evaluación. Desafortunadamente hay limitaciones al alcance del mismo:</p>
+
+<ul>
+  <li>
+    <p>El código en el argumento a ser ejecutado usualmente no posee tipado estático; estos lenguajes generalmente dejan relegado al tipado dinámico la determinación de la seguridad y la buena disposición del código a ser ejecutado.</p>
+  </li>
+  <li>
+    <p>El parámetro es usualmente provisto como un <em>String</em>, cuyo valor no puede ser conocido hasta el momento de ejecución. Este string debe ser o bien compilado durante la ejecución del programa (usando compilación <em>just-in-time</em>) o bien evaluado durante la interpretación, causando un <em>overhead</em> adicional y usualmente generando código menos eficiciente.</p>
+  </li>
+</ul>
+
+<p>También pueden ser utilizadas <em>Macros</em> para lograr algunos de los efectos del orden superior. No obstante ello, estas macros no pueden evitar fácilmente el problema de la captura de variables; también resultan en grandes cantidades de código duplicado, el cual puede ser más difícil de optimizar para un compilador. Generalmente las Macros no son fuertemente tipadas, aunque pueden producir código fuertemente tipado.</p>
+
+<p>Si les interesa profundizar en el uso de orden superior en el lenguaje C, pueden leer <a href="https://docs.google.com/document/d/1GZOTwkO02X194hlLBSECIhFDB_P1VuIwlTy5FS8ASMY/">el siguiente apunte</a> realizado por ayudantes de la cátedra.</p>
+
+<h3 id="y-los-objetos">¿Y los objetos?</h3>
+
+<p>Esta me gustó más, ahí vamos, en objetos no tiene sentido reconocer ordenes, porque lo natural es que si la operacion es el mensaje (recordar valores y operaciones), entonces tanto el receptor del mensaje como los parametros son siempre objetos.</p>
+
+<p>Entonces, estoy estudiando para el final, que tengo que entender:</p>
+<ul>
+  <li>que es eso de “orden”: un X que puede admitir otro X como parametro.</li>
+  <li>digo que reconozco dos ordenes, si eso es una característica especial que quiero remarcar, si no… lo que pasa es que no tiene sentido la distinción de órdenes en este contexto</li>
+  <li>para cada paradigma: si tiene sentido decir algo asi como “orden superior”, y en que casos</li>
+  <li>para qué uso la idea superior, en particular en funcional. Una vez que entendi eso, que herramienta que vimos de Wollok me sirve para un propósito similar.
+    <ul>
+      <li>En Haskell: <code class="language-plaintext highlighter-rouge">filter (&gt;3) unaLista</code></li>
+      <li>En Wollok: <code class="language-plaintext highlighter-rouge">unaLista.filter({elemento =&gt; elemento &gt; 3})</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Está claro que ambos ejemplos sirven para lo mismo, pero ¿qué es lo que recibe por parámetro el filter de la solución objetosa? Es un bloque, y los bloques son objetos.</p>
+
+<p>En general no aplicamos el concepto de orden superior a los objetos porque si la definición fuera “un obeto que recibe otro objeto por parámetro” eso incluye a todos los objetos que reciban algún parámetro en algún mensaje porque…. todos son objetos. Podés pensar que todos son de orden superior, si preferís, pero no podés clasificar a los objetos en “órdenes”.</p>
+
+<p>Por otro lado me gustaría disentir con la idea de relacionar muy fuertemente a los bloques con orden superior, es cierto que estoy pasando “comportamiento” por parámetro. Pero, como decía, eso pasa muchas veces en objetos, entonces hacer una mención especial a los bloques no me parece. En algún momento nosotros mismos lo contamos en esos términos, pero bueno, evolucionamos. Igualmente esa respuesta no se consideraría errónea en un final, pero sí quiero comenzar a transmitirla de esta forma que me parece más adecuada.</p>
+
+<p>Creo que la diferencia del bloque con el resto de los objetos es la creación de comportamiento ad-hoc, para un fin específico, los uso una sola vez y no les pongo nombre. Ese efecto se asemeja a otros elementos del funcional, como ser las <a href="expresiones-lambda.html">Expresiones lambda</a> o la <a href="aplicacion-parcial.html">Aplicación Parcial</a>, que me permiten armar “en el aire” funciones con esas características (fíjense que también pasa en funcional, que las expresiones lambda o la aplicación parcial son útiles para combinarlas con las funciones de orden superior).</p>
+
+<p>Volviendo al tema principal, el chiste del orden superior es que yo paso algo más complejo que un número, una lista o una estructura (functor, tupla, etc) por parámetro. Al pasar un predicado o función yo paso “comportamiento” por parámetro, el conocimiento de cómo resolver el problema ahora no se divide en datos y algoritmo, sino que la función de orden superior tiene parte del “algoritmo” y la otra parte viene por parámetro. (Nótense las comillas al usar las palabras “algoritmo” y “comportamiento” en los paradigmas declarativos.) Eso le da un poder muy piola a lo que construimos. En fin, ¿cómo llevamos eso de nuevo a objetos? Yo creo que se aprovechan beneficios similares a los del orden superior en el momento en que los objetos que interactúan (el receptor del mensaje y el parámetro) tienen dividido el comportamiento en esa forma, es decir, que el objeto receptor le pide al otro cosas que no sean solamente devolver un dato sino que tengan otra complejidad. Claro, cuando uso un bloque eso pasa siempre, y por eso es tentador establecer la relación. Pero si abrimos un poco la cancha, creo que es fácil ver que ocurre casi siempre que tengamos delegación y responsabilidades bien repartidas.</p>
+
+<h3 id="links-relacionados">Links Relacionados</h3>
+
+<ul>
+  <li><a href="lambdas-en-java-8.html">Lambdas en Java 8</a></li>
+  <li><a href="http://www.cs.aau.dk/~normark/prog3-03/html/notes/higher-order-fu_themes-intr-section.html">Introduction to higher-order functions</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Higher-order_function">Higher-order function</a></li>
+  <li><a href="http://weblog.raganwald.com/2007/01/closures-and-higher-order-functions.html">Closures and Higher-Order Functions</a></li>
+  <li><a href="high-order-functions-and-variational-calculus.html">Higher-order functions and variational calculus</a></li>
+  <li><a href="http://boost.org/doc/html/lambda.html">Boost Lambda Library for C++</a></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on June 26, 2019 by
+        GitHub</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>20</td>
+                                <td>31</td>
+                                <td>19</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Lucasvidal</td>
+                                <td>Lucasvi...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mariana</td>
+                                <td>mmatos8...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>10</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>3df69f8c</td>
+                        <td>Wed Jun 26 18:58:51 2019 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Update orden-superior.md</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c01fe080</td>
+                        <td>Thu Apr 26 10:09:29 2018 -0300</td>
+                        <td>GitHub</td>
+                        <td>noreply...</td>
+                        <td>Arreglo cuestiones de formato y Wollokizo ejemplo</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0d468c45</td>
+                        <td>Sun Feb 19 20:39:00 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Fix broken urls</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>99a26c86</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Links Relacionados */</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>

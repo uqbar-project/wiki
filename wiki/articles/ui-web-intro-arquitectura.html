@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Introducción a la Arquitectura web</title>
+  <meta property="og:title" content="Introducción a la Arquitectura web" />
+
+
+
+
+
+
+<link rel="canonical" href="wiki.uqbar.org/wiki/articles/ui-web-intro-arquitectura.html" />
+<meta property="og:url" content="wiki.uqbar.org/wiki/articles/ui-web-intro-arquitectura.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2025-07-10T21:15:21-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="web,arquitectura,intro," />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+    <link type="text/plain" rel="author" href="/humans.txt"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/assets/app-1e946f931f577cd478e6e6610915be9d.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar navbar-background" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><img alt="Uqbar" src="/img/proyecto-uqbarwiki.png" height="100px"
+                    width="100px" /></div>
+        </li>
+    </ul>
+    <ul class="left">
+        <div class="mobile">
+            <div class="navbar-buttons">
+                <div class="navbar-icon-link">
+                    <a href="/"><img alt="Home" src="/img/wiki/home-2.png" height="25px"
+                            width="25px" title="Home" /></a>
+                </div>
+                <div class="navbar-icon-link">
+                    <a href="/articles"><img alt="Artículos" src="/img/wiki/list.png"
+                            height="25px" width="25px" title="Artículos" /></a>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 5px;">
+        <!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="text" id="search-input" name="search-input" placeholder="Artículo a buscar...">
+    <ul id="results-container"></ul>
+    <hr>
+</div>
+
+        <div class="not-mobile">
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Links" role="menu">
+                        <li class="button" role="menuitem"><a href="/" class="sidebar-link"><img
+                                                alt="Home" src="/img/wiki/home-2.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Home</a></li>
+                        <li class="button" role="menuitem"><a href="/articles" class="sidebar-link"><img
+                                                alt="Artículos" src="/img/wiki/list.png" height="35px"
+                                                width="35px" />&nbsp;&nbsp;&nbsp;Artículos</a></li>
+                </ul>
+
+                <hr>
+
+                <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" role="menu">
+                        <img src="/img/wiki/utn.png" alt="UTN" height="40px" width="40px" title="UTN" />
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/paradigmas-de-programacion.html">Paradigmas
+                                        de
+                                        programación</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/design-temario.html">Diseño de
+                                        Sistemas</a>
+                        </li>
+                        <li class="button" role="menuitem"><a
+                                        href="/wiki/articles/tecnicas-avanzadas-de-programacion.html">Técnicas
+                                        avanzadas de programación</a></li>
+                        <br>
+                        <img src="/img/wiki/unsam.png" alt="UNSAM" height="40px" width="40px"
+                                title="UNSAM" />
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo2-temario.html">Algoritmos
+                                        II</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/algo3-temario.html">Algoritmos
+                                        III</a></li>
+                        <li class="button" role="menuitem"><a href="/wiki/articles/phm-temario.html">Programación
+                                        con
+                                        Herramientas
+                                        Modernas</a></li>
+                </ul>
+        </div>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        <i>Introducción a la Arquitectura web</i>
+    </h1>
+</div>
+
+
+    <!-- <div id="mw-indicator-featured-star" class="mw-indicator">
+    <a href="#"
+       title="This is a featured article. Click here for more information."><img
+            alt="This is a featured article"
+            src="/img/featured_star.png" width="20"
+            height="19"
+            data-file-width="462" data-file-height="438">
+    </a>
+</div> -->
+
+
+<div id="article_content">
+    <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Arquitectura distribuida</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Algunas consecuencias</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Pedido/respuesta</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#tocAnchor-1-4"><span class="tocnumber">2</span> <span class="toctext">Cómo se implementa la comunicación</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#tocAnchor-1-5"><span class="tocnumber">3</span> <span class="toctext">HTTP</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#tocAnchor-1-5-1"><span class="tocnumber">3.1</span> <span class="toctext">Tipos de mensaje</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#tocAnchor-1-7"><span class="tocnumber">4</span> <span class="toctext">El camino de un pedido http</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#tocAnchor-1-8"><span class="tocnumber">5</span> <span class="toctext">Consecuencias del mensaje http para las aplicaciones web</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-9">
+              <a href="#tocAnchor-1-9"><span class="tocnumber">6</span> <span class="toctext">Procesamiento de la respuesta en el cliente</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-10">
+              <a href="#tocAnchor-1-10"><span class="tocnumber">7</span> <span class="toctext">Resumen</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-11">
+              <a href="#tocAnchor-1-11"><span class="tocnumber">8</span> <span class="toctext">Links relacionados</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h1 id="tocAnchor-1-1">Arquitectura distribuida</h1>
+
+<p>La arquitectura web trabaja con dos nodos:</p>
+
+<ul>
+  <li>el <strong>cliente</strong> tiene un programa ejecutable (application client, el <em>web browser</em> o navegador es el más común)</li>
+  <li>y el <strong>servidor</strong> tiene otro programa ejecutable: en la materia será nuestro application server el que tendrá una VM donde vivan los objetos de negocio.</li>
+</ul>
+
+<p>Estos nodos son lógicos: pueden estar ubicados físicamente en la misma máquina, pero igualmente tendremos una separación de componentes en cliente y servidor.</p>
+
+<p>El cliente hace pedidos a través de un puerto contra el servidor, el servidor responde. El flujo de mensajes siempre comienza en el cliente:</p>
+
+<ul>
+  <li>cliente pide servicio (request)</li>
+  <li>servidor responde (response)</li>
+</ul>
+
+<p>
+  <img src="/img/wiki/ui-web-arquitectura.png" alt="image" />
+</p>
+
+<h2 id="tocAnchor-1-1-1">Algunas consecuencias</h2>
+
+<ul>
+  <li>Nuestra aplicación pasa a ser una <strong>aplicación distribuida</strong>: va a tener una parte corriendo en el servidor y otra parte corriendo en el cliente. Dependiendo de la arquitectura que elijamos
+    <ul>
+      <li>podemos tener la mayor parte de la lógica en el servidor y tener un cliente liviano (thin) o ZAC (Zero Administration Client). Entonces lo que le llega al cliente es sólo un documento HTML, y es fácil mantener la aplicación cuando tengo muchos clientes ubicados</li>
+      <li>o bien podemos poner gran parte de la lógica en el cliente y utilizar la parte server solamente para sincronizar la información entre sesiones de usuario</li>
+    </ul>
+  </li>
+  <li>de todas maneras, por más liviano que sea el cliente, los <em>browsers</em> no son uniformes, entonces si queremos que una aplicación ande en todos ellos muchas veces vamos a tener que manejar código específico para cada plataforma (browser, versión, sistema operativo y a veces hasta el hardware).</li>
+  <li>como el cliente es el que dispara los pedidos, todas las interacciones entre el usuario y la aplicación deben ser iniciadas por el usuario, la aplicación no puede tomar la iniciativa. Ej: si tengo una lista de tareas pendientes, para que aparezca una nueva tarea hay que obligar al cliente a que dispare el refresh.</li>
+</ul>
+
+<h2 id="tocAnchor-1-1-2">Pedido/respuesta</h2>
+
+<p>Antes de meternos más de lleno, nos preguntamos: la tecnología de objetos ¿es consistente con la metáfora “pedido-respuesta” (request/response)? Sí, en definitiva es la representación de lo que es un mensaje.</p>
+
+<p>Lo que pasa es que en un sistema con objetos no pongo restricciones: cualquiera puede ser emisor y cualquiera receptor. En cambio en la tecnología web siempre es el cliente el que pide y siempre el servidor el que responde.</p>
+
+<h1 id="tocAnchor-1-4">Cómo se implementa la comunicación</h1>
+
+<p>El cliente dice: “necesito x”. Esto se traduce en una dirección de una página en particular, esa dirección recibe el nombre de <strong>URL</strong> (Uniforme Resource Locator, o forma de encontrar un recurso en el servidor):</p>
+
+<pre>
+  <code class="language-url">http://localhost:8080/html-css/index.html
+</code>
+</pre>
+
+<p>donde</p>
+
+<ul>
+  <li>http es HyperText Transfer Protocol, el <strong>protocolo de comunicación</strong> por defecto que usan los navegadores
+    <ul>
+      <li>otros protocolos son https (donde los datos viajan encriptados), ftp, etc.</li>
+    </ul>
+  </li>
+  <li>localhost es el <strong>servidor web</strong> hacia el que vamos a conectarnos
+    <ul>
+      <li>en este caso <code class="language-plaintext highlighter-rouge">localhost</code> es el web server que está en la PC local, que equivale a la dirección IP 127.0.0.1</li>
+      <li>el servidor web puede ser una dirección IP o un nombre que luego es convertido a una dirección IP a través de un DNS (Domain Name Server)</li>
+    </ul>
+  </li>
+  <li>8080 es el puerto donde el servidor está “escuchando” pedidos</li>
+  <li>y finalmente la página que queremos cargar, que recibe el nombre de <strong>recurso</strong></li>
+</ul>
+
+<p>La forma en que publicaremos las páginas como <strong>rutas</strong> depende de la tecnología en la que trabajemos y lo veremos más adelante, lo importante es entender que una página html es accesible para un usuario con una ruta única llamada URL.</p>
+
+<h1 id="tocAnchor-1-5">HTTP</h1>
+
+<p><a href="https://es.wikipedia.org/wiki/Protocolo_de_transferencia_de_hipertexto">Http</a> es un protocolo <strong>no orientado a conexión</strong> que define la forma de comunicación entre el cliente y el servidor.</p>
+
+<p>Recordemos que no-orientado a conexión significa que no guarda ninguna información sobre conexiones anteriores, por lo que no tenemos el concepto de sesión de usuario, es un protocolo sin estado (<em>stateless protocol</em>). Esto tiene varias implicancias, la más fuerte es que requiere que la aplicación mantenga la información necesaria para mantener una sesión (por ejemplo, sabiendo qué usuario es el que está haciendo una operación).</p>
+
+<p>Un mensaje http tiene formato de texto, por lo que es legible al usuario y fácilmente depurable, como vemos en el siguiente video:</p>
+
+<p>
+  <img src="/img/wiki/ui-web-architecture-http-request.gif" alt="video" />
+</p>
+
+<p>Abrimos en un navegador las herramientas de desarrollo (por lo general es la tecla F12), y en la solapa <em>Network</em> podemos inspeccionar las distintas respuestas que procesa el navegador, con el pedido http original que hace un mensaje de tipo <code class="language-plaintext highlighter-rouge">GET</code>.</p>
+
+<h2 id="tocAnchor-1-5-1">Tipos de mensaje</h2>
+
+<p>Un cliente puede enviar un pedido al servidor utilizando diferentes métodos</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">GET</code>: asociada a una operación de lectura, sin ningún otro efecto</li>
+  <li><code class="language-plaintext highlighter-rouge">HEAD</code>: es exactamente igual al pedido vía GET pero enviando únicamente el resultado de la operación en un header, sin el contenido o <em>body</em></li>
+  <li><code class="language-plaintext highlighter-rouge">POST</code>: se suele asociar a una operación que tiene efecto colateral, no repetible</li>
+  <li><code class="language-plaintext highlighter-rouge">PUT</code>: está pensado para agregar información o modificar una entidad existente</li>
+  <li><code class="language-plaintext highlighter-rouge">DELETE</code>: se asocia con la posibilidad de eliminar un recurso existente</li>
+  <li><code class="language-plaintext highlighter-rouge">OPTIONS</code>: permite ver todos los métodos que soporta un determinado servidor web</li>
+  <li><code class="language-plaintext highlighter-rouge">TRACE</code>: permite hacer el seguimiento y depuración de un mensaje http (se agrega información de debug)</li>
+  <li><code class="language-plaintext highlighter-rouge">CONNECT</code>: equivalente a un <code class="language-plaintext highlighter-rouge">ping</code>, permite saber si se tiene acceso a un host</li>
+</ul>
+
+<p>Más adelante volveremos sobre esto al estudiar REST. Ahora veremos la diferencia entre hacer un pedido mediante GET vs. POST.</p>
+
+<h3 id="envío-mediante-get-method">Envío mediante GET method</h3>
+
+<p>Aquí los parámetros viajan dentro de la URL como par <code class="language-plaintext highlighter-rouge">clave=valor</code>:</p>
+
+<pre>
+  <code class="language-url">http://www.appdomain.com/users?size=20&amp;page=5
+</code>
+</pre>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">?</code> delimita el primer parámetro</li>
+  <li><code class="language-plaintext highlighter-rouge">&amp;</code> delimita los siguientes parámetros</li>
+</ul>
+
+<p>La ventaja de utilizar este método es que dado que http es un protocolo no orientado a conexión, podemos reconstruir todo el estado que necesita la página a partir de sus parámetros (es fácil navegar hacia atrás o adelante). Por otra parte es el método sugerido para operaciones sin efecto, que recuperan datos de un recurso.</p>
+
+<p>Por otra parte, no es conveniente para pasar información sensible (como password o ciertos identificadores), algunos navegadores imponen un límite máximo de caracteres para estos pedidos y necesita codificar los caracteres especiales (p. ej. el espacio a <code class="language-plaintext highlighter-rouge">%20</code>) dado que el request solamente trabaja con el conjunto de caracteres ASCII.</p>
+
+<h3 id="envío-mediante-post-method">Envío mediante POST method</h3>
+
+<p>Los parámetros viajan en el BODY del mensaje HTML, no se ven en la URL del browser. Aquí no hay restricciones de tamaño para pasaje de información y tampoco se visualizan los parámetros en la URL del browser.</p>
+
+<h3 id="get-vs-post">GET vs. POST</h3>
+
+<p>La <a href="https://www.w3.org/TR/html4/interact/forms.html#submit-format">recomendación W3C</a> (World Wide Web Consortium) dice que deberíamos usar</p>
+
+<ul>
+  <li>GET cuando sepamos que se trata de consultas que no van a tener efecto colateral (no habrá modificación en el estado del sistema)</li>
+  <li>POST cuando sepamos que el procesamiento de la página causará una alteración del estado del sistema (al registrar el alquiler de una película, al modificar los datos de un socio o al eliminar un producto de la venta). Otros métodos posibles que veremos son PUT y PATCH, para modificaciones y alteraciones parciales, respectivamente.</li>
+</ul>
+
+<h1 id="tocAnchor-1-7">El camino de un pedido http</h1>
+
+<ul>
+  <li>el browser se conecta con el servidor a partir del dominio o IP (localhost = 127.0.0.1) y puerto</li>
+  <li>se envía la petición al servidor en base a dirección, método, parámetros, etc.</li>
+  <li>
+    <p>el servidor responde a ese pedido: esa respuesta es una nueva página con un código de estado HTTP:</p>
+
+    <ul>
+      <li>200 : OK</li>
+      <li>401 : Unauthorized</li>
+      <li>403 : Forbidden</li>
+      <li>404 : Not Found</li>
+      <li>405 : Method not allowed</li>
+      <li>500 : Internal Server Error</li>
+    </ul>
+  </li>
+</ul>
+
+<p>El lector puede buscar la lista de <a href="https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP">códigos de error HTTP</a> (las especificaciones <a href="https://tools.ietf.org/html/rfc2616">RFC 2616</a> y <a href="https://tools.ietf.org/html/rfc4918">RFC 4918</a>) y formas de resolverlos.</p>
+
+<ul>
+  <li>la aplicación cliente o <em>user agent</em> se desconecta del servidor una vez procesada la respuesta</li>
+</ul>
+
+<h1 id="tocAnchor-1-8">Consecuencias del mensaje http para las aplicaciones web</h1>
+
+<p>La página es la mínima unidad de información entre cliente y servidor, lo que implica:</p>
+
+<ul>
+  <li><strong>problemas en la performance</strong>: no siempre debería refrescar toda la página si sólo necesito actualizar parcialmente la información de dicha página</li>
+  <li><strong>problemas en el diseño</strong>: tengo dificultades para poder particionar una pantalla en componentes visuales</li>
+  <li><strong>problemas de usabilidad</strong>: para que la página sea dinámica necesitamos forzar una comunicación con el servidor</li>
+</ul>
+
+<p><strong>String oriented programming</strong>: la comunicación entre cliente y servidor involucra solo texto, necesitamos adaptar fechas, números, booleanos y también los objetos de negocio (socios de un videoclub, alumnos, materias, vehículos de una flota, etc.) así como las colecciones.</p>
+
+<h1 id="tocAnchor-1-9">Procesamiento de la respuesta en el cliente</h1>
+
+<p>El servidor contesta con un string que tiene</p>
+
+<ul>
+  <li>un <em>header</em> donde indica el resultado del pedido</li>
+  <li>un contenido, que forma parte del body, que puede ser HTML, json o cualquier otro formato que el cliente entienda</li>
+</ul>
+
+<p>
+  <img src="/img/wiki/ui-web-architecture-http-response.gif" alt="" />
+</p>
+
+<p><br />
+Arriba vemos la respuesta del navegador al buscar “Cuarteto de Nos” y abajo cómo procesa la consulta el cliente Postman.
+<br /></p>
+
+<p>
+  <img src="/img/wiki/ui-web-architecture-http-response2.gif" alt="" />
+</p>
+
+<h1 id="tocAnchor-1-10">Resumen</h1>
+
+<ul>
+  <li>Muchos clientes se conectan a un único servidor a través del protocolo HTTP</li>
+  <li>En el cliente corre un programa llamado <em>user agent</em> que es el encargado de establecer la comunicación con el web server. Se utiliza el concepto de thin client, es decir que se minimiza la lógica en los clientes, tendiendo a concentrarla en el servidor. <strong>Consecuencias:</strong>
+    <ul>
+      <li>se simplifica la utilización de la aplicación desde múltiples clientes sin costo de instalación ni mantenimiento.</li>
+      <li>se simplifica la lógica al mantener toda la aplicación centralizada.</li>
+    </ul>
+  </li>
+  <li>La descripción de las pantallas se basa en <a href="html.html">HTML</a>. Es decir, una página dinámica es un programa que genera un String conteniendo código HTML.</li>
+  <li>Progresivamente se ha incrementado la tendencia a describir las cuestiones estéticas utilizando <a href="css.html">CSS</a>, por lo tanto la descripción de una vista estará dada por una combinación de HTML y CSS.</li>
+  <li>La comunicación entre el cliente y el servidor está dada en la forma de pedido-respuesta (request-response).</li>
+  <li>Todas las interacciones entre el usuario y la aplicación deben ser iniciadas por el usuario, la aplicación no puede tomar la iniciativa.</li>
+  <li>La respuesta para cada pedido es una página nueva, la mínima unidad de comunicación entre el cliente y el servidor es una página. Esto tiene consecuencias tanto de performance como de usabilidad y también de diseño. Existen muchos tipos de pedido pero los más usuales son GET y POST. Los dos puntos anteriores limitan gravemente la posibilidad de utilizar mecanismos de binding.</li>
+  <li>Cada pedido es independiente de los anteriores, es decir, la tecnología no provee de un soporte directo para manejar el estado de la conversación entre ambos procesos (<strong>stateless</strong>). Para modelar procesos que requieran de una comunicación más poderosa que esa deberán proveerse herramientas adicionales, frecuentemente manipuladas ad-hoc.</li>
+</ul>
+
+<h1 id="tocAnchor-1-11">Links relacionados</h1>
+
+<ul>
+  <li><a href="algo3-temario.html">Temario Algoritmos III</a></li>
+  <li><a href="https://www.w3.org/standards/webarch/">W3 - Web Architecture</a></li>
+  <li><a href="html.html">HTML</a></li>
+</ul>
+
+</div>
+
+
+    <div id="catlinks" class="catlinks" data-mw="interface">
+    <div id="normal-catlinks" class="normal-catlinks"><a href="/wiki/internal/categories.html" title="Help:Category">Categories</a>:
+        <ul>
+            
+             <li><a href="/categories/web" title="web">Web</a></li>
+            
+             <li><a href="/categories/arquitectura" title="arquitectura">Arquitectura</a></li>
+            
+             <li><a href="/categories/intro" title="intro">Intro</a></li>
+            
+        </ul>
+    </div>
+    <div id="hidden-catlinks" class="hidden-catlinks mw-hidden-cats-hidden">Hidden categories:
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div id="article_metadata">
+    <!-- <p><i>Latest update on August 29, 2019 by
+        Fernando Dodino</i></p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>177</td>
+                                <td>7</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Fernando Dodino</td>
+                                <td>fernand...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>2ea47f04</td>
+                        <td>Thu Aug 29 09:19:05 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Adding html page</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d9a61ce1</td>
+                        <td>Tue Aug 27 12:17:25 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>Fix url box in web architecture page</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ca522fb9</td>
+                        <td>Tue Aug 27 08:17:44 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>fix ui web architecture page</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>60168b4a</td>
+                        <td>Mon Aug 26 22:17:16 2019 -0300</td>
+                        <td>Fernando Dodino</td>
+                        <td>fernand...</td>
+                        <td>UI Architecture page</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul> -->
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-12 medium-12 large-12">
+        © 2025 - Uqbar Foundation
+    </div>
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/assets/jquery-aa71a7b50270602be524223735204e4e.js"></script>
+<script src="/assets/jquery.min-92bca385e77eff06fdfc99d71ff5d9cb.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/assets/foundation/foundation-9cdbe0bbce183118de08f9938e53d976.js"></script>
+<script src="/assets/foundation/foundation.abide-89a2bdc8d7b0219f70b26edf2ae6887e.js"></script>
+<script src="/assets/foundation/foundation.accordion-fb975cac4e1d51205357ccef64ad87f4.js"></script>
+<script src="/assets/foundation/foundation.alert-09f0ede105a8181ae99c1e952f89ca3b.js"></script>
+<script src="/assets/foundation/foundation.clearing-1720b58085d63e88f45a453bb9ad3e3b.js"></script>
+<script src="/assets/foundation/foundation.dropdown-644acf98749f084fdf912c4b00957f31.js"></script>
+<script src="/assets/foundation/foundation.equalizer-97288e933d9acc43fab592768c628ba6.js"></script>
+<script src="/assets/foundation/foundation.interchange-083c4df6919a083e985b5e687d5c30b9.js"></script>
+<script src="/assets/foundation/foundation.joyride-c8c49db46553294043e6ec5c19e1285b.js"></script>
+<script src="/assets/foundation/foundation.magellan-2fb6e4d1e4284a920b3a7d892e2cb54c.js"></script>
+<script src="/assets/foundation/foundation.offcanvas-63af9a0eca0822c6f6a77ba0eb3dd7ec.js"></script>
+<script src="/assets/foundation/foundation.orbit-79b5540e0f58a265fd959aaf18fc2345.js"></script>
+<script src="/assets/foundation/foundation.reveal-620cbbd491fb6eaf8dc057949a254e29.js"></script>
+<script src="/assets/foundation/foundation.slider-e5da59a7bd13309d315a6a95e0654b35.js"></script>
+<script src="/assets/foundation/foundation.tab-9ea3a242acf982f76f891ac5e32aa92a.js"></script>
+<script src="/assets/foundation/foundation.tooltip-926551742e978e4456aa7ca8c6ffe334.js"></script>
+<script src="/assets/foundation/foundation.topbar-fa936a3a88514cb2c51c4ccf3fefaeb0.js"></script>
+
+<script src="/assets/jquery.cookie-600df63e64417ec0c172cd3580ffe4f3.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/assets/jekyll-search-db248d3bf113e122870c09fd6d9b0592.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/assets/prism-193ebecb65a347c425ecdb3c4592fd0e.js"></script>
+</body>
+</html>
