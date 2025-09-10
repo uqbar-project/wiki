@@ -19,19 +19,23 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
+              
       - name: Node setup
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
 
+      - name: Install dependencies
+        run: yarn install
+
+      # - name: Install Playwright browsers
+      #   run: npx playwright install --with-deps
+
       - name: Run tests & linter
         run: |
-          yarn install
           yarn run lint && npm run check
           yarn run test:ci
-      - name: Coverage badge
-        uses: demyanets/angular-coverage-badges-action@v1
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
         with:
-          coverage-summary-path: coverage/XXXXXXXXX/coverage-summary.json
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}

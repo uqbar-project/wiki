@@ -70,6 +70,7 @@ Typescript es el lenguaje de programación base en el que vamos a trabajar. Tran
 # Crear un proyecto Svelte desde cero
 
 ```bash
+# reemplazá proyecto-svelte por el nombre de tu proyecto
 npx sv create proyecto-svelte
 ┌  Welcome to the Svelte CLI! (v0.6.5)
 │
@@ -140,7 +141,7 @@ El archivo `tsconfig.json` define cómo vamos a utilizar el intérprete de Types
 		...,
 		"module": "ES2015",
 		"lib": [
-			"ES2015"
+			"ES2016"
 		],
 		"moduleResolution": ...
 ```
@@ -163,12 +164,21 @@ Cuando agregues los tests e2e podés definir estos scripts:
 ```js
   "scripts": {
     ...,
-		"test:e2e": "playwright test --ui",
-		"test": "npm run test:e2e",
-		"test:ci": "npm run test:unit -- --run --coverage && playwright test",
+		"test:unit": "vitest",
+		"test:coverage": "vitest run --coverage",
+		"test:manual:e2e": "playwright test --ui",
+		"test:all": "npm run test:unit -- --run && npm run test:automated:e2e",
     ...,
 	}
 ```
+
+aquí te ofrecemos
+
+- `test:unit`: corre los tests unitarios
+- `test:coverage`: ejecuta los tests unitarios con reporte de cobertura (local)
+- `test:manual:e2e`: levanta el runner de Playwright, requiere que levantes manualmente el backend
+- `test:all`: ejecuta los tests unitarios y los tests e2e
+- podés ver el ejemplo de Tareas para ver cómo ejecutar de forma automática y _headless_ los tests end-to-end (y trasladarlo al CI)
 
 Con eso vas a correr tanto los test escritos con Vitest como los de Playwright (los veremos más adelante).
 
@@ -189,7 +199,7 @@ const config = {
 Ejecutá este comando para agregar las siguientes dependencias:
 
 ```bash
-yarn add @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @types/eslint @vitest/coverage-v8 jsdom
+yarn add @testing-library/dom @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @types/eslint @vitest/coverage-v8 jsdom
 ```
 
 Para agregar dependencias de los tests e2e:
@@ -278,13 +288,17 @@ export default [
       'svelte/no-at-debug-tags': 'error',
       'svelte/no-reactive-functions': 'error',
       'svelte/no-reactive-literals': 'error',
+      'svelte/no-navigation-without-resolve': 'off',
       '@/semi': ['error', 'never'],
       '@/quotes': ['warn', 'single'],
       '@/indent': ['warn', 2],
+      '@typescript-eslint/no-non-null-assertion': 'off',
     }
   }
 ]
 ```
+
+> **IMPORTANTE**: para evitar un molesto mensaje de error `Found a goto() call with a url that isn't resolved.` te recomendamos especialmente desactivar esta configuración: `'@typescript-eslint/no-non-null-assertion': 'off'`
 
 ## Configuración de prettier
 
@@ -343,23 +357,27 @@ import { svelteTesting } from '@testing-library/svelte/vite'
 import { sveltekit } from '@sveltejs/kit/vite'
 
 export default defineConfig({
-	plugins: [sveltekit(), svelteTesting()],
+  plugins: [sveltekit(), svelteTesting()],
 
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}'],
-		globals: true,
-		environment: 'jsdom',
-		setupFiles: ['./vitest-setup.js'],
-		coverage: {
-			include: ['src']
-		}
-	}
+  test: {
+    include: ['src/**/*.{test,spec}.{js,ts}'],
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest-setup.ts'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov', 'html'],
+      reportsDirectory: './coverage',
+      include: ['src'],
+      exclude: ['src/routes/+layout.svelte'],
+    }
+  }
 })
 ```
 
 ## Ejemplo de un archivo para Github Actions
 
-Te dejamos [este archivo de ejemplo](./build_svelte.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto. Después veremos cómo agregar para que ejecuten los tests e2e.
+Te dejamos [este archivo de ejemplo](./build_svelte.yml) que tenés que guardar en `.github/workflows/build.yml`. Descargalo y reemplazá `XXXXXXXXX` por el nombre de la carpeta donde está tu proyecto. Después veremos cómo incorporar los tests e2e al CI.
 
 ## Cómo configurar los badges en tu README
 
