@@ -199,7 +199,7 @@ const config = {
 Ejecutá este comando para agregar las siguientes dependencias:
 
 ```bash
-yarn add @testing-library/dom @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @types/eslint @vitest/coverage-v8 jsdom
+yarn add @testing-library/dom @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @types/eslint @vitest/coverage-v8 jsdom @sveltejs/vite-plugin-svelte
 ```
 
 Para agregar dependencias de los tests e2e:

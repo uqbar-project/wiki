@@ -13,7 +13,7 @@ Se puede ver todo lo que ofrece la wiki en terminos de implementación y feature
 
 Para testear localmente se necesitan los siguientes requerimientos previos.
 
-- Ruby 2.5.0
+- Ruby 3.2.2
 - Bundler
 - imagemagick
 - yarn

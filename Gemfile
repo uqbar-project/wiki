@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '~> 2.7.2'
+ruby '~> 3.2.2'
 # Development dependencies
 gem 'rake', '~> 12.3.3'
 gem 'guard-livereload'
